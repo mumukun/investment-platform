@@ -2,8 +2,9 @@
 
 - Change: `CHG-20260926-000`
 - Validation date: 2026-09-26
-- Scope: implementation and local validation only
+- Scope: implementation, validation, reviewed merge, remote sync, and branch cleanup
 - Production deployment: not performed
+- Main status: `EXACT_TAG_CAPABLE` is merged and remotely synchronized for all three business repositories.
 
 | Repository | Before behavior | After behavior | Exact Tag | Main fallback removed | Lineage | Dry-run | Health behavior | Artifact identity | Remaining gap |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -26,6 +27,11 @@
   - investment-research-dashboard `v0.13.1` → `8ee167fb63870696b79d18f0667c00a61d4d1d62`.
 - No Docker command, checkout, configuration write, migration, restart, NAS launcher, or Production
   action was executed by validation.
+- Final business `main` identities: marketNewsFeed `138ea7cbebfa17df0b27f52b7b15e2907a8eec65`,
+  stock-analyzer `6feda48e3803bbbf9b9836c8a27712f6bb746f83`, and investment-research-dashboard
+  `8625a61d9841e5df94588e5781098d2980d4ac25`.
+- GitHub Actions is not configured for marketNewsFeed or stock-analyzer. Dashboard CI #115 passed on
+  the Change Branch and CI #116 passed on `main`; no CI result is inferred for repositories without CI.
 
 ## Artifact Model
 
