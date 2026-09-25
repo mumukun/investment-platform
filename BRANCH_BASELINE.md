@@ -179,3 +179,27 @@ ahead of `origin/main` and require explicit remote synchronization later.
 
 The `investment-platform` bootstrap exception produced initial Governance Baseline Commit
 `c5684b87e6e462982f1e1f15ac6c6284fb1224e2` directly on its previously unborn local `main`.
+
+## 12. STEP 8B Legacy Branch Cleanup Update
+
+This section is the current state as of 2026-09-26. Earlier sections remain as historical audit
+snapshots and are not rewritten.
+
+| Repository / Branch | Status | Retired date | Evidence |
+| --- | --- | --- | --- |
+| marketNewsFeed `dev` / `origin/dev` | RETIRED | 2026-09-26 | Tip `fe8bad0d7f3cbe5e17025d32db531b375c4cf889` was an exact ancestor of `main`, had 0 unique commits and no branch worktree or Open PR; no protection rule applied. Local and remote refs are absent after prune. |
+| marketNewsFeed `codex/docs/codex-branch-policy` and remote counterpart | RETIRED | 2026-09-26 | The one unique commit modified only `AGENTS.md`; superseded governance was archived before deletion. No worktree, Open PR, or protection rule applied. Local and remote refs are absent after prune. |
+| stock-analyzer `dev` / `origin/dev` | RETIRED | 2026-09-26 | Tip `5a6017085572b17e52dacf36aae2d9065ff2bb51` was an exact ancestor of `main`, had 0 unique commits and no worktree or Open PR; no protection rule applied. Local and remote refs are absent after prune. |
+| investment-research-dashboard `codex/chore/local-sit-stack` | ACTIVE_CHANGE | — | Preserved unchanged at `098ea1a9089560ec2455c358466a74f34f2daf31` with five unique commits and an active clean SIT worktree. |
+
+Current logical branch inventory after cleanup:
+
+| Repository | Protected | Active change | Retired in STEP 8B | Branch review |
+| --- | ---: | ---: | ---: | ---: |
+| marketNewsFeed | 1 | 0 | 2 | 0 |
+| stock-analyzer | 1 | 0 | 1 | 0 |
+| investment-research-dashboard | 1 | 1 | 0 | 0 |
+
+`marketNewsFeed-sit` remains a clean detached worktree at
+`fe8bad0d7f3cbe5e17025d32db531b375c4cf889`, classified `STALE_WORKTREE_REVIEW`. It was not removed
+and does not keep either retired branch ref active. No unexpected new branch was found.

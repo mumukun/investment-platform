@@ -31,3 +31,6 @@
 | GOV-024 | Investment Platform 的分支与发布治理仅由 `investment-platform/AGENTS.md` 和 `investment-platform/RELEASE_RULES.md` 定义；Repository AGENTS 只保留项目技术约束。 |
 | GOV-025 | `investment-platform` 在 unborn `main` 上直接创建首个 Governance Baseline Commit 是一次性 `BOOTSTRAP_EXCEPTION`；在存在稳定 base 后必须恢复正常 Change Branch 流程。 |
 | GOV-026 | Governance-only / `NON_RELEASE_CHANGE` / `Release Impact: NONE` Change 即使为 `READY`，也不进入业务 Release，不分配 Release ID、不升级版本、不 Tag 且不部署。 |
+| GOV-027 | `marketNewsFeed` 的长期 `dev` 集成模型已退休；新开发以 `main` 和平台规范的短生命周期 Change Branch 为基线。 |
+| GOV-028 | `stock-analyzer` 的历史 `dev` Branch 已退休；`main` 是唯一长期开发基线。 |
+| GOV-029 | `marketNewsFeed/codex/docs/codex-branch-policy` 的旧分支治理已归档并退休，不得恢复其 `dev`、全局 `codex/*` 或默认 Release Candidate Branch 模型。 |
