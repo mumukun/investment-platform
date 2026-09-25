@@ -1,0 +1,73 @@
+schema_version: "1.0"
+template: true
+
+# Allowed lifecycle examples: DRAFT, READY_FOR_FORMAL_RELEASE, IN_PROGRESS, RELEASED,
+# BLOCKED, FAILED, PARTIAL, ROLLED_BACK, CANCELLED.
+release_id: null
+status: DRAFT
+created_at: null
+updated_at: null
+
+changes: []
+
+# Populate one entry per changed repository. Each entry should contain:
+# repository, previous_version, new_version, commit_sha, tag, artifact,
+# artifact_digest, dependencies, tests, deployment, verification, and rollback_version.
+repositories: []
+
+previous_version: null
+new_version: null
+commit_sha: null
+tag: null
+
+artifact:
+  identity: null
+  type: null
+  source: null
+artifact_digest: null
+
+dependencies: []
+release_order: []
+rollback_version: null
+
+tests:
+  repository: []
+  contract: []
+  integration: []
+  critical_path_e2e: []
+  release_gates: []
+
+deployment:
+  environment: null
+  status: NOT_STARTED
+  started_at: null
+  completed_at: null
+  steps: []
+  feature_activation: []
+
+# Populate one entry per released repository with its actual Production
+# Git Tag, Commit SHA, Artifact identity, and Artifact digest.
+production_identity: []
+
+verification:
+  status: NOT_STARTED
+  smoke: []
+  health_checks: []
+  version_checks: []
+  contract_checks: []
+  integration_checks: []
+  e2e_checks: []
+  evidence: []
+  known_limitations: []
+
+rollback:
+  status: NOT_STARTED
+  target_version: null
+  target_tag: null
+  target_commit_sha: null
+  artifact: null
+  artifact_digest: null
+  database_restore_point: null
+  steps: []
+
+notes: []

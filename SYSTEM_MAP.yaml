@@ -1,0 +1,363 @@
+schema_version: "2.0"
+last_verified: "2026-09-25"
+scope: investment-platform-governed-repositories
+dependency_direction: provider_to_consumer
+
+status_values:
+  - verified
+  - needs_verification
+  - deprecated
+
+release_policy:
+  order_source:
+    - affected_repositories_in_change
+    - verified_dependency_edges
+  default_order: dynamic
+  include_only_affected_repositories: true
+  fixed_global_release_order: false
+  production_identity: immutable_tag_plus_exact_commit_sha
+
+repositories:
+  marketNewsFeed:
+    name: marketNewsFeed
+    role: research-news-ingestion-analysis-and-contract-provider
+    path: /Users/mukun/work/workspace/stock/marketNewsFeed
+    upstream:
+      - stock-analyzer
+    downstream:
+      - investment-research-dashboard
+    version_source:
+      application: UNKNOWN
+      target_application: VERSION
+      application_status: needs_verification
+      contracts:
+        - investment-dashboard-research-v1
+      rules: MISSING
+    deploy_entry:
+      command: deploy.sh
+      compliance: NON_COMPLIANT
+    health_check:
+      - /api/health
+    contract_docs:
+      - docs/hermes-api.md
+    storage:
+      engine: PostgreSQL
+      boundary: independent_database
+      external_shared_storage: optional Feishu Base co-tenancy with stock-analyzer using separate News tables
+    production_identity:
+      tag: UNKNOWN
+      commit_sha: UNKNOWN
+      artifact: UNKNOWN
+      artifact_digest: UNKNOWN
+      status: needs_verification
+    status: verified
+
+  stock-analyzer:
+    name: stock-analyzer
+    role: stock-market-data-analysis-and-contract-provider
+    path: /Users/mukun/work/workspace/stock/stock-analyzer
+    upstream: []
+    downstream:
+      - marketNewsFeed
+      - investment-research-dashboard
+    version_source:
+      application: stock_analyzer/version.py::APP_VERSION
+      application_status: verified
+      contracts: stock_analyzer API and contract modules
+      rules:
+        - stock_analyzer/short_engine.py::RULES_VERSION
+        - stock_analyzer/swing_engine.py::RULES_VERSION
+        - stock_analyzer/sector_activity_contract.py::RULES_VERSION
+        - stock_analyzer/sector_events.py::RULES_VERSION
+        - stock_analyzer/capital_flow.py::TREND_RULES_VERSION
+    deploy_entry:
+      command: deploy.sh
+      compliance: NON_COMPLIANT
+    health_check:
+      - /api/health
+    contract_docs:
+      - docs/hermes-api.md
+    storage:
+      engine: PostgreSQL
+      boundary: independent_database_and_schema
+      external_shared_storage: optional Feishu Base co-tenancy with marketNewsFeed using separate tables
+    production_identity:
+      tag: UNKNOWN
+      commit_sha: UNKNOWN
+      artifact: UNKNOWN
+      artifact_digest: UNKNOWN
+      status: needs_verification
+    status: verified
+
+  investment-research-dashboard:
+    name: investment-research-dashboard
+    role: downstream-research-consumer-local-projection-and-user-interface
+    path: /Users/mukun/work/workspace/stock/investment-research-dashboard
+    upstream:
+      - marketNewsFeed
+      - stock-analyzer
+    downstream: []
+    version_source:
+      application: VERSION
+      runtime_reader: backend/app/version.py
+      application_status: verified
+      contracts: enforced by backend/app/integrations
+      rules: consumed from stock-analyzer responses
+    deploy_entry:
+      command: deploy.sh <git-ref>
+      compliance: NON_COMPLIANT
+      note: Exact immutable Tag is supported, but the default ref is floating main.
+    health_check:
+      - /api/v1/health
+      - /api/v1/readiness
+      - /api/v1/data-status
+      - /api/v1/system/version
+    contract_docs:
+      - docs/technical/api-contract.md
+      - docs/technical/integrations.md
+      - docs/adr/0004-service-boundary-integration.md
+      - docs/adr/0015-contract-version-compatibility.md
+    storage:
+      engine: PostgreSQL
+      boundary: independent_database_with_local_upstream_projections
+    production_identity:
+      tag: UNKNOWN
+      commit_sha: UNKNOWN
+      artifact: UNKNOWN
+      artifact_digest: UNKNOWN
+      status: needs_verification
+    status: verified
+
+dependencies:
+  - id: market-news-research-api
+    provider: marketNewsFeed
+    consumer: investment-research-dashboard
+    type: runtime_contract
+    interface: GET /api/integrations/investment-dashboard/research (Bearer; investment-dashboard-research-v1)
+    compatibility: exact contract check; evolve backward compatibly
+    release_dependency: optional
+    evidence:
+      - marketNewsFeed/src/admin_api.py
+      - investment-research-dashboard/backend/app/integrations/market_news_feed.py
+      - investment-research-dashboard/backend/app/research_sync.py
+    status: verified
+
+  - id: market-news-dashboard-notification
+    provider: marketNewsFeed
+    consumer: investment-research-dashboard
+    type: async_integration
+    interface: POST /api/v1/research/webhook (X-Webhook-Secret; notification only)
+    compatibility: unversioned notification triggers the versioned read contract
+    release_dependency: optional
+    evidence:
+      - marketNewsFeed/src/common/dashboard_webhook.py
+      - investment-research-dashboard/backend/app/api.py
+    status: verified
+
+  - id: stock-analysis-dashboard-apis
+    provider: stock-analyzer
+    consumer: investment-research-dashboard
+    type: runtime_contract
+    interface: /api/integrations/investment-dashboard/* (Bearer; versioned contract family)
+    compatibility: exact contract checks with a documented swing compatibility window
+    release_dependency: optional
+    evidence:
+      - stock-analyzer/stock_analyzer/api.py
+      - investment-research-dashboard/backend/app/integrations/stock_analyzer.py
+      - stock-analyzer/docs/hermes-api.md
+    status: verified
+
+  - id: stock-management-dashboard-commands
+    provider: stock-analyzer
+    consumer: investment-research-dashboard
+    type: runtime_contract
+    interface: POST /api/stocks/search|add|{query}/remove|{query}/update (Bearer; unversioned)
+    compatibility: documented but unversioned command contract
+    release_dependency: optional
+    evidence:
+      - stock-analyzer/stock_analyzer/api.py
+      - investment-research-dashboard/backend/app/integrations/stock_analyzer.py
+      - stock-analyzer/docs/hermes-api.md
+    status: verified
+
+  - id: stock-lookup-for-trend-report
+    provider: stock-analyzer
+    consumer: marketNewsFeed
+    type: runtime_contract
+    interface: GET /api/stocks/{query}?live=true (Bearer; unversioned)
+    compatibility: undocumented response contract; failure degrades without stopping the report
+    release_dependency: optional
+    evidence:
+      - marketNewsFeed/src/research_feed/trend_stock_report.py
+      - stock-analyzer/stock_analyzer/api.py
+    status: verified
+
+  - id: market-news-to-stock-analyzer-check
+    provider: marketNewsFeed
+    consumer: stock-analyzer
+    type: no_direct_dependency
+    interface: none
+    compatibility: not_applicable
+    release_dependency: none
+    evidence:
+      - No marketNewsFeed URL, token, module, or table reference in stock-analyzer production code
+      - stock-analyzer/docs/prd/PRD-v3.2.md describes future optional integration only
+    status: verified
+
+  - id: optional-shared-feishu-base
+    provider: marketNewsFeed
+    consumer: stock-analyzer
+    type: shared_storage
+    interface: optional co-tenancy in one Feishu Base using separate table IDs; no direct cross-table reads found
+    compatibility: derived display storage, not a PostgreSQL fact source
+    release_dependency: none
+    evidence:
+      - marketNewsFeed/src/research_feed/feishu_sync.py
+      - marketNewsFeed/docs/tech-design-v1.5.md
+      - stock-analyzer/stock_analyzer/feishu_client.py
+    status: verified
+
+  - id: dashboard-local-stock-api-bootstrap
+    provider: stock-analyzer
+    consumer: investment-research-dashboard
+    type: operational_dependency
+    interface: local helper can start the sibling API and check /api/health
+    compatibility: local_development_only
+    release_dependency: none
+    evidence:
+      - investment-research-dashboard/local-api.sh
+      - investment-research-dashboard/local-compose.sh
+    status: verified
+
+contracts:
+  investment-dashboard-research-v1:
+    provider: marketNewsFeed
+    consumers:
+      - investment-research-dashboard
+    version_kind: contract_version
+    status: verified
+  investment-dashboard-stock-contract-family:
+    provider: stock-analyzer
+    consumers:
+      - investment-research-dashboard
+    version_kind: contract_version
+    status: verified
+  trend-stock-generic-stock-lookup:
+    provider: stock-analyzer
+    consumers:
+      - marketNewsFeed
+    version_kind: MISSING
+    status: needs_verification
+  dashboard-stock-management-commands:
+    provider: stock-analyzer
+    consumers:
+      - investment-research-dashboard
+    version_kind: MISSING
+    status: needs_verification
+  market-news-dashboard-webhook:
+    provider: marketNewsFeed
+    consumers:
+      - investment-research-dashboard
+    version_kind: MISSING
+    status: needs_verification
+
+release_dependencies:
+  policy: Evaluate an edge only when both endpoints are affected by the Change.
+  conditional_edges:
+    - provider: marketNewsFeed
+      consumer: investment-research-dashboard
+      baseline: optional
+      required_when: Dashboard consumes a new marketNewsFeed capability
+    - provider: stock-analyzer
+      consumer: investment-research-dashboard
+      baseline: optional
+      required_when: Dashboard consumes a new stock-analyzer capability
+    - provider: stock-analyzer
+      consumer: marketNewsFeed
+      baseline: optional
+      required_when: marketNewsFeed consumes a new stock lookup capability
+
+environment_dependencies:
+  marketNewsFeed:
+    own_storage:
+      - MARKET_NEWS_PG_DSN
+      - MARKET_NEWS_PG_DATABASE
+    inbound_api:
+      - MARKET_NEWS_API_HOST
+      - MARKET_NEWS_API_PORT
+      - MARKET_NEWS_API_TOKEN
+    stock-analyzer:
+      - TREND_STOCK_API_BASE
+      - STOCK_API_TOKEN
+    investment-research-dashboard:
+      - DASHBOARD_WEBHOOK_URL
+      - DASHBOARD_WEBHOOK_SECRET
+      - DASHBOARD_WEBHOOK_TIMEOUT_SECONDS
+      - DASHBOARD_WEBHOOK_DEBOUNCE_SECONDS
+    optional_shared_feishu_base:
+      - FEISHU_BASE_TOKEN
+      - FEISHU_EVENT_TABLE_ID
+      - FEISHU_SIGNAL_TABLE_ID
+      - FEISHU_TOPIC_HEAT_TABLE_ID
+      - FEISHU_BRIEFING_TABLE_ID
+  stock-analyzer:
+    own_storage:
+      - STOCK_ANALYZER_DATABASE_URL
+      - STOCK_ANALYZER_DB_SCHEMA
+    inbound_api:
+      - STOCK_API_HOST
+      - STOCK_API_PORT
+      - STOCK_API_TOKEN
+    dashboard_link_only:
+      - INVESTMENT_DASHBOARD_URL
+    optional_shared_feishu_base:
+      - FEISHU_APP_TOKEN
+      - FEISHU_TABLE_ID
+      - FEISHU_DAILY_STOCK_TABLE_ID
+      - FEISHU_DAILY_SECTOR_TABLE_ID
+      - FEISHU_ALERT_TABLE_ID
+      - FEISHU_REPORT_TABLE_ID
+  investment-research-dashboard:
+    own_storage:
+      - DATABASE_URL
+    marketNewsFeed:
+      - MARKET_NEWS_FEED_BASE_URL
+      - MARKET_NEWS_FEED_TOKEN
+      - MARKET_NEWS_FEED_TIMEOUT_SECONDS
+      - MARKET_NEWS_FEED_WEBHOOK_SECRET
+    stock-analyzer:
+      - STOCK_ANALYZER_BASE_URL
+      - STOCK_ANALYZER_TOKEN
+      - STOCK_ANALYZER_TIMEOUT_SECONDS
+      - WATCHLIST_PROJECTION_SYNC_SECONDS
+
+verification:
+  core_results:
+    marketNewsFeed_to_dashboard: VERIFIED_DIRECT_DEPENDENCY
+    stock_analyzer_to_dashboard: VERIFIED_DIRECT_DEPENDENCY
+    marketNewsFeed_to_stock_analyzer: NO_DIRECT_DEPENDENCY_FOUND
+    stock_analyzer_to_marketNewsFeed: VERIFIED_DIRECT_DEPENDENCY
+    shared_postgresql_between_business_repositories: false
+    optional_shared_feishu_base_design: true
+    optional_shared_feishu_base_production_enablement: UNKNOWN
+    dashboard_direct_upstream_database_access: false
+    fixed_three_repository_serial_chain: false
+  database_boundary:
+    result: independent PostgreSQL boundaries; optional marketNewsFeed and stock-analyzer Feishu Base co-tenancy uses separate tables
+    cross_repository_direct_database_access: []
+    status: verified
+  high_coupling_findings:
+    - Optional marketNewsFeed and stock-analyzer Feishu Base co-tenancy shares an external storage container and credentials boundary
+    - Dashboard stock management commands are unversioned
+    - marketNewsFeed stock lookup response is undocumented and unversioned
+  evidence: DEPENDENCY_EVIDENCE.md
+  production_baseline:
+    result: UNKNOWN
+    status: needs_verification
+  remaining_items:
+    - marketNewsFeed canonical application version source
+    - version the stock lookup and stock management command contracts
+    - version the marketNewsFeed webhook notification
+    - confirm optional shared Feishu Base production enablement and access isolation
+    - decide whether freshness-based readiness is sufficient without direct upstream health gates
+  status: verified

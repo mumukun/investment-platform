@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mukun Deploy Ready"
+  short_description: "单仓库或多仓库统一封板、打标与正式发布"
+  default_prompt: "使用 $mukun-deploy-ready 统一封板相关仓库：按各仓库 AGENTS.md 合并生产分支、同步版本并推送不可变 Tag，但不要部署生产。"
