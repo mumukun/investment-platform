@@ -48,12 +48,7 @@ repositories:
       engine: PostgreSQL
       boundary: independent_database
       external_shared_storage: optional Feishu Base co-tenancy with stock-analyzer using separate News tables
-    production_identity:
-      tag: UNKNOWN
-      commit_sha: UNKNOWN
-      artifact: UNKNOWN
-      artifact_digest: UNKNOWN
-      status: needs_verification
+    production_baseline_status: verified
     status: verified
 
   stock-analyzer:
@@ -89,12 +84,7 @@ repositories:
       engine: PostgreSQL
       boundary: independent_database_and_schema
       external_shared_storage: optional Feishu Base co-tenancy with marketNewsFeed using separate tables
-    production_identity:
-      tag: UNKNOWN
-      commit_sha: UNKNOWN
-      artifact: UNKNOWN
-      artifact_digest: UNKNOWN
-      status: needs_verification
+    production_baseline_status: verified
     status: verified
 
   investment-research-dashboard:
@@ -132,12 +122,7 @@ repositories:
     storage:
       engine: PostgreSQL
       boundary: independent_database_with_local_upstream_projections
-    production_identity:
-      tag: UNKNOWN
-      commit_sha: UNKNOWN
-      artifact: UNKNOWN
-      artifact_digest: UNKNOWN
-      status: needs_verification
+    production_baseline_status: verified
     status: verified
 
 dependencies:

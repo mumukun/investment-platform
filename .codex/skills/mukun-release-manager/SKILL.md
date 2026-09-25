@@ -36,7 +36,8 @@ release mutations.
 Read, in order:
 
 1. `AGENTS.md` and `RELEASE_RULES.md`;
-2. the selected `releases/<release_id>.yaml` or `RELEASE_MANIFEST.yaml` template;
+2. `PRODUCTION_BASELINE.yaml` and the selected `releases/<release_id>.yaml` or
+   `RELEASE_MANIFEST.yaml` template;
 3. included `changes/<CHANGE_ID>.md` files;
 4. `SYSTEM_MAP.yaml`;
 5. affected Repository AGENTS and recorded Git/CI/test/contract evidence.
@@ -75,6 +76,20 @@ gate fails, required evidence is missing, compatibility is unknown, or a depende
   Promote Same Artifact, Registry availability, or an image digest; persist the actual Image ID or
   `ARTIFACT_DIGEST_UNAVAILABLE` honestly and keep the Artifact gate fail-closed when the current
   Release risk requires stronger identity.
+
+## Production baseline and drift gate
+
+- For every affected repository, require a verified `PRODUCTION_BASELINE.yaml` entry before release
+  preparation. Copy its current Production Tag to both `previous_version` and `rollback_version`, and
+  its exact Commit and available Artifact identity into the Release Manifest. `UNKNOWN` or `BLOCKED`
+  rollback state blocks Formal Release.
+- During Prepare Release, re-query the actual Production Tag and Commit through the repository's safe,
+  read-only runtime/checkout evidence. Do not accept baseline age, local `main`, or the latest Tag as
+  proof that Production is unchanged.
+- If actual Production Tag or Commit differs from the persisted baseline, record `BASELINE_DRIFT`, stop
+  release preparation, and require a separate read-only Production baseline refresh. Never overwrite the
+  baseline or infer a new rollback point merely to continue a Release.
+- Treat each repository independently: a fresh verified baseline for one repository does not validate another.
 
 ## Fail closed
 

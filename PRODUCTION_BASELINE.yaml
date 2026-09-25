@@ -1,0 +1,98 @@
+baseline_version: 1
+verified_at: "2026-09-26T01:11:11+08:00"
+status: verified_with_artifact_gaps
+artifact_model: SOURCE_TAG_BUILD
+
+repositories:
+  marketNewsFeed:
+    production:
+      application_version: "2.3.3"
+      application_version_source: DERIVED_FROM_VERIFIED_TAG
+      tag: v2.3.3
+      commit_sha: deb075480b57f448b10d6de6880401a7a23fdc47
+      artifact_model: SOURCE_TAG_BUILD
+      artifact: marketnewsfeed-market-news-feed:v2.3.3
+      artifact_id: sha256:517b71ef8f501f9a64a22d878653178c5b6550449709080583eb3edf6ced1c05
+      artifact_digest: UNKNOWN
+      artifact_identity_status: IMAGE_ID_ONLY
+      containers:
+        - marketnewsfeed-market-news-feed-1
+      deployment_timestamp: "2026-09-19T18:02:57+08:00"
+      health: HEALTHY
+      rollback_baseline:
+        tag: v2.3.3
+        commit_sha: deb075480b57f448b10d6de6880401a7a23fdc47
+        dry_validation: PASS
+        status: VERIFIED
+      confidence: HIGH
+      evidence:
+        - production_checkout_exact_annotated_tag
+        - container_image_id_and_app_revision_labels
+        - runtime_health_endpoint
+        - local_exact_tag_deploy_dry_run
+
+  stock-analyzer:
+    production:
+      application_version: "3.19.3"
+      application_version_source: stock_analyzer/version.py::APP_VERSION
+      tag: v3.19.3
+      commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
+      artifact_model: SOURCE_TAG_BUILD
+      artifact: stock-analyzer:latest
+      artifact_id: sha256:575d5193c39359181190e5f7784ecc92a84b1e320a45e6c077368d675729db0d
+      artifact_digest: UNKNOWN
+      artifact_identity_status: CURRENT_PRODUCTION_LEGACY_ARTIFACT
+      containers:
+        - stock-watch
+        - stock-api
+      deployment_timestamp: "2026-09-25T10:11:42+08:00"
+      health: HEALTHY
+      rollback_baseline:
+        tag: v3.19.3
+        commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
+        dry_validation: PASS
+        status: VERIFIED
+      confidence: MEDIUM
+      evidence:
+        - production_checkout_exact_annotated_tag
+        - runtime_and_source_app_version_match
+        - running_api_and_scheduler_containers
+        - runtime_health_endpoint
+        - local_exact_tag_deploy_dry_run
+
+  investment-research-dashboard:
+    production:
+      application_version: "0.13.1"
+      application_version_source: VERSION
+      tag: v0.13.1
+      commit_sha: 8ee167fb63870696b79d18f0667c00a61d4d1d62
+      artifact_model: SOURCE_TAG_BUILD
+      artifact:
+        web: investment-research-dashboard-nas-web:latest
+        api: investment-research-dashboard-nas-api:latest
+      artifact_id:
+        web: sha256:c9102b716b343c546f2bf29eefc174c283d36b752d7ae4a87dabe01840621d88
+        api: sha256:692924aa3529e346557457598407d802464c1af103d7a3881a84ab07718bcf5f
+      artifact_digest:
+        web: UNKNOWN
+        api: UNKNOWN
+      artifact_identity_status: IMAGE_ID_ONLY
+      containers:
+        - investment-research-dashboard-nas-web-1
+        - investment-research-dashboard-nas-api-1
+      deployment_timestamp: "2026-09-25T10:25:12+08:00"
+      build_time: "2026-09-25T10:16:11+08:00"
+      health: HEALTHY
+      dashboard_exact_sha_runtime: VERIFIED
+      rollback_baseline:
+        tag: v0.13.1
+        commit_sha: 8ee167fb63870696b79d18f0667c00a61d4d1d62
+        dry_validation: PASS
+        status: VERIFIED
+      confidence: HIGH
+      evidence:
+        - production_checkout_exact_annotated_tag
+        - runtime_version_commit_build_metadata
+        - running_healthy_web_and_api_containers
+        - runtime_health_and_readiness_endpoints
+        - local_exact_tag_deploy_dry_run
