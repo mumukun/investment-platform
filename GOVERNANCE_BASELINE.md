@@ -6,7 +6,7 @@
 - Governance Change ID: `CHG-20260925-000`
 - Change type: `NON_RELEASE_CHANGE`
 - Platform governance version: `1.0`
-- investment-platform initial Governance Commit: `PENDING_INITIAL_COMMIT`
+- investment-platform initial Governance Commit: `c5684b87e6e462982f1e1f15ac6c6284fb1224e2`
 - Active Release Governance Skill: `mukun-release-manager`
 - Release impact: `NONE`
 - Business release / Production deployment required: `NO` / `NO`
@@ -15,7 +15,7 @@
 
 | Repository | Local `main` Governance Commit | Remote state |
 | --- | --- | --- |
-| investment-platform | `PENDING_INITIAL_COMMIT` | LOCAL ONLY; initial Push pending user authorization |
+| investment-platform | `c5684b87e6e462982f1e1f15ac6c6284fb1224e2` | LOCAL ONLY; initial Push pending user authorization |
 | marketNewsFeed | `b7a7e982bb688b5f4818bee0a8e5b5cc3d8b8bdb` | local `main` ahead of `origin/main` by 1 |
 | stock-analyzer | `8c5387300dd3ee2fc584319f8147966355f83756` | local `main` ahead of `origin/main` by 1 |
 | investment-research-dashboard | `90ef7edd87fb2581a1ee904417d08ed2687b8b2e` | local `main` ahead of `origin/main` by 1 |

@@ -176,3 +176,6 @@ Local governance baseline commits now reachable from business `main`:
 All three one-time governance branches and their temporary worktrees were removed after Fast Forward.
 No legacy local or remote branch was deleted. All three business `main` branches are one local Commit
 ahead of `origin/main` and require explicit remote synchronization later.
+
+The `investment-platform` bootstrap exception produced initial Governance Baseline Commit
+`c5684b87e6e462982f1e1f15ac6c6284fb1224e2` directly on its previously unborn local `main`.
