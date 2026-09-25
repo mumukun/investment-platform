@@ -66,8 +66,15 @@ gate fails, required evidence is missing, compatibility is unknown, or a depende
   Block on dirty or ambiguous state unless a provably isolated worktree is safe and authorized.
 - Production identity is immutable Git Tag + exact Commit SHA + exact Artifact identity. Record an
   image digest when Docker is used. Never use `main`, `HEAD`, or `latest` as production identity.
-- Current deployment entries are `NON_COMPLIANT`. Formal Release is `BLOCKED` whenever the actual
-  implementation cannot guarantee deployment of the recorded exact Tag or Artifact.
+- Read each target's current `SYSTEM_MAP.yaml` deployment status. An `exact_tag_capable` entry may be
+  used for Formal Release only when the persisted Release Manifest already contains the repository's
+  immutable Tag, exact SHA, and explicit rollback Tag, and the entry's dry-run resolves the same Tag
+  to the same SHA on `origin/main`. Any non-compliant, floating-ref, mismatched, or unverifiable entry
+  blocks Formal Release before deployment.
+- Exact-Tag capability currently uses `SOURCE_TAG_BUILD` on the NAS. It does not prove Build Once /
+  Promote Same Artifact, Registry availability, or an image digest; persist the actual Image ID or
+  `ARTIFACT_DIGEST_UNAVAILABLE` honestly and keep the Artifact gate fail-closed when the current
+  Release risk requires stronger identity.
 
 ## Fail closed
 

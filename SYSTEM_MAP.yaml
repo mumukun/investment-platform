@@ -1,5 +1,5 @@
 schema_version: "2.0"
-last_verified: "2026-09-25"
+last_verified: "2026-09-26"
 scope: investment-platform-governed-repositories
 dependency_direction: provider_to_consumer
 
@@ -34,8 +34,12 @@ repositories:
         - investment-dashboard-research-v1
       rules: MISSING
     deploy_entry:
-      command: deploy.sh
-      compliance: NON_COMPLIANT
+      command: ./deploy.sh <release-tag>
+      compliance: EXACT_TAG_CAPABLE
+      deployment_policy: explicit_immutable_semver_tag_plus_exact_commit
+      deployment_status: exact_tag_capable
+      dry_run: ./deploy.sh <release-tag> --dry-run
+      artifact_model: SOURCE_TAG_BUILD
     health_check:
       - /api/health
     contract_docs:
@@ -71,8 +75,12 @@ repositories:
         - stock_analyzer/sector_events.py::RULES_VERSION
         - stock_analyzer/capital_flow.py::TREND_RULES_VERSION
     deploy_entry:
-      command: deploy.sh
-      compliance: NON_COMPLIANT
+      command: ./deploy.sh <release-tag>
+      compliance: EXACT_TAG_CAPABLE
+      deployment_policy: explicit_immutable_semver_tag_plus_exact_commit
+      deployment_status: exact_tag_capable
+      dry_run: ./deploy.sh <release-tag> --dry-run
+      artifact_model: SOURCE_TAG_BUILD
     health_check:
       - /api/health
     contract_docs:
@@ -104,9 +112,13 @@ repositories:
       contracts: enforced by backend/app/integrations
       rules: consumed from stock-analyzer responses
     deploy_entry:
-      command: deploy.sh <git-ref>
-      compliance: NON_COMPLIANT
-      note: Exact immutable Tag is supported, but the default ref is floating main.
+      command: ./deploy.sh <release-tag>
+      compliance: EXACT_TAG_CAPABLE
+      deployment_policy: explicit_immutable_semver_tag_plus_exact_commit
+      deployment_status: exact_tag_capable
+      dry_run: ./deploy.sh <release-tag> --dry-run
+      artifact_model: SOURCE_TAG_BUILD
+      note: The validated exact Commit is passed to the restricted NAS launcher; Image ID/digest is not currently returned.
     health_check:
       - /api/v1/health
       - /api/v1/readiness
