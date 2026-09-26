@@ -1,0 +1,202 @@
+schema_version: "1.0"
+template: false
+release_id: REL-20260926-001
+status: DRAFT
+created_at: "2026-09-26T23:16:28+08:00"
+updated_at: "2026-09-26T23:16:28+08:00"
+
+changes:
+  - CHG-20260926-003
+  - CHG-20260926-004
+  - CHG-20260926-005
+
+repositories:
+  - repository: stock-analyzer
+    previous_version: "3.19.3"
+    new_version: "3.20.0"
+    commit_sha: 0626c1704569550cc6381b1ff3079df250f30865
+    tag: v3.20.0
+    artifact:
+      identity: stock-analyzer:0626c1704569550cc6381b1ff3079df250f30865
+      type: SOURCE_TAG_BUILD
+      source: v3.20.0
+    artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+    dependencies: []
+    tests:
+      - "python scripts/check_config.py: PASS"
+      - "python -m unittest discover -s tests -p 'test_*.py': PASS (242)"
+      - "python -m compileall -q stock_analyzer scripts tests: PASS"
+      - "Provider contract fixtures for limit-up ladder and swing V5.1: PASS"
+    deployment:
+      entrypoint: ./deploy.sh v3.20.0
+      dry_run: ./deploy.sh v3.20.0 --dry-run
+      status: NOT_STARTED
+    verification:
+      status: NOT_STARTED
+      checks:
+        - /api/health reports version 3.20.0
+        - investment-dashboard-limit-up-ladder-v1 is readable with Bearer authentication
+        - investment-dashboard-swing-selection-v3 reports swing-rules-v5.1.0
+        - scheduler and API containers remain running
+    rollback_version: "3.19.3"
+    rollback_tag: v3.19.3
+    rollback_commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
+  - repository: investment-research-dashboard
+    previous_version: "0.13.1"
+    new_version: "0.14.0"
+    commit_sha: ca6f06de90dfa284cf359a13cf83afa92fb48fac
+    tag: v0.14.0
+    artifact:
+      identity: investment-research-dashboard@ca6f06de90dfa284cf359a13cf83afa92fb48fac
+      type: SOURCE_TAG_BUILD
+      source: v0.14.0
+    artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+    dependencies:
+      - repository: stock-analyzer
+        type: required_provider_before_consumer
+        contract: investment-dashboard-limit-up-ladder-v1
+    tests:
+      - "npm test -- --run: PASS (15 files / 41 tests)"
+      - "npm run build: PASS"
+      - "uv run ruff check backend: PASS"
+      - "uv run pytest -q backend/tests: PASS (90)"
+      - "DATABASE_URL=<local-postgresql> uv run alembic check: PASS"
+      - "Provider to Dashboard contract and critical page paths: PASS"
+    deployment:
+      entrypoint: ./deploy.sh v0.14.0
+      dry_run: ./deploy.sh v0.14.0 --dry-run
+      status: NOT_STARTED
+    verification:
+      status: NOT_STARTED
+      checks:
+        - /api/v1/health reports PostgreSQL healthy
+        - /api/v1/readiness remains ready
+        - runtime build metadata reports version 0.14.0 and frozen commit
+        - swing selection priority and history proxies accept the Provider contracts
+        - market projection background task starts without clearing last-known-good data
+    rollback_version: "0.13.1"
+    rollback_tag: v0.13.1
+    rollback_commit_sha: 8ee167fb63870696b79d18f0667c00a61d4d1d62
+
+previous_version: null
+new_version: null
+commit_sha: null
+tag: null
+
+artifact:
+  identity: MULTI_REPOSITORY_SOURCE_TAG_BUILD
+  type: SOURCE_TAG_BUILD
+  source: frozen_repository_tags
+artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+
+dependencies:
+  - provider: stock-analyzer
+    consumer: investment-research-dashboard
+    type: required
+    reason: investment-dashboard-limit-up-ladder-v1 must exist before the Dashboard consumer deploys
+release_order:
+  - stock-analyzer
+  - investment-research-dashboard
+rollback_version: null
+
+tests:
+  repository:
+    - "stock-analyzer config, 242 tests and compileall: PASS"
+    - "Dashboard 41 frontend tests, build, Ruff, 90 backend tests and Alembic check: PASS"
+  contract:
+    - "limit-up ladder Provider and strict Consumer v1 fixtures: PASS"
+    - "swing selection V3 optional priority fields and history/stats v2 additions: PASS"
+  integration:
+    - "Provider response to Dashboard proxy/projection paths: PASS_WITH_FIXTURES"
+  critical_path_e2e:
+    - "limit-up ladder matrix/detail and swing candidate/effect drill-down local paths: PASS"
+  release_gates:
+    - "selected Changes READY: PASS"
+    - "origin/main synchronized and frozen SHAs: PASS"
+    - "Production baseline revalidated 2026-09-26: PASS"
+    - "new Tags absent locally and remotely: PASS"
+    - "exact-Tag deployment dry runs: PENDING_TAG_CREATION"
+
+deployment:
+  environment: production
+  status: NOT_STARTED
+  started_at: null
+  completed_at: null
+  steps:
+    - order: 1
+      repository: stock-analyzer
+      action: back up the shared PostgreSQL database and verify the dump catalog
+      status: NOT_STARTED
+    - order: 2
+      repository: stock-analyzer
+      action: update SWING_ENGINE_RULES_VERSION to swing-rules-v5.1.0 with a timestamped .env backup
+      status: NOT_STARTED
+    - order: 3
+      repository: stock-analyzer
+      action: deploy exact Tag v3.20.0 and run Provider smoke/contract checks
+      status: NOT_STARTED
+    - order: 4
+      repository: investment-research-dashboard
+      action: deploy exact Tag v0.14.0 and run health/readiness/version/integration checks
+      status: NOT_STARTED
+  feature_activation:
+    - feature: swing-priority-score-and-effect-tracking
+      status: DEPLOY_WITH_PROVIDER_RULE_VERSION
+      gate: SWING_ENGINE_RULES_VERSION=swing-rules-v5.1.0
+    - feature: limit-up-ladder
+      status: REMAIN_DISABLED
+      gate: requires Provider health and at least five real available trading-day snapshots
+      flags:
+        LIMIT_UP_LADDER_ENABLED: false
+        VITE_LIMIT_UP_LADDER_ENABLED: false
+
+production_identity:
+  - repository: stock-analyzer
+    version: "3.19.3"
+    tag: v3.19.3
+    commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
+    observed_at: "2026-09-26T23:15:06+08:00"
+    health: HEALTHY
+  - repository: investment-research-dashboard
+    version: "0.13.1"
+    tag: v0.13.1
+    commit_sha: 8ee167fb63870696b79d18f0667c00a61d4d1d62
+    observed_at: "2026-09-26T23:15:06+08:00"
+    health: HEALTHY_READY
+
+verification:
+  status: NOT_STARTED
+  smoke: []
+  health_checks: []
+  version_checks: []
+  contract_checks: []
+  integration_checks: []
+  e2e_checks: []
+  evidence:
+    - "NAS production checkouts are clean and exactly tagged at the persisted rollback SHAs"
+    - "stock-analyzer /api/health returned ok=true and version 3.19.3 before release"
+    - "Dashboard /api/v1/health returned PostgreSQL healthy and /readiness returned ready=true before release"
+    - "Dashboard in-container build metadata matched v0.13.1 commit 8ee167f before release"
+  known_limitations:
+    - "Artifacts are built from exact source Tags on the NAS; registry digests are unavailable"
+    - "Dashboard primary local checkout contains two unrelated untracked prototype PNGs; they are excluded from the frozen commit and release artifact"
+    - "Limit-up ladder remains disabled until five real trading-day snapshots satisfy activation gates"
+
+rollback:
+  status: READY
+  target_version: null
+  target_tag: null
+  target_commit_sha: null
+  artifact: previous exact source Tags v3.19.3 and v0.13.1
+  artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+  database_restore_point: PENDING_PRE_DEPLOY_BACKUP
+  steps:
+    - disable the affected feature when an operational flag exists
+    - deploy Dashboard v0.13.1 if the consumer fails
+    - deploy stock-analyzer v3.19.3 if the Provider fails
+    - retain additive tables and columns unless data restoration is explicitly required
+
+notes:
+  - marketNewsFeed is excluded because no runtime code changed in the selected Changes
+  - governance-only CHG-20260925-000, CHG-20260926-000, CHG-20260926-001 and CHG-20260926-002 are excluded
+  - user explicitly authorized formal Production release of the current and other completed Changes on 2026-09-26
