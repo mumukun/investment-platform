@@ -70,3 +70,21 @@
 - marketNewsFeed still lacks a canonical root `VERSION` and runtime application-version endpoint.
 - Dashboard authenticated version/data-status endpoints could not be queried without credentials; the baseline
   used safe in-container version metadata and unauthenticated readiness instead.
+
+## REL-20260926-001 refresh (2026-09-27)
+
+- `stock-analyzer` Production is now immutable Tag `v3.20.0` at
+  `0626c1704569550cc6381b1ff3079df250f30865`. Both API and scheduler containers run the exact-SHA image
+  `sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3`; health reports application
+  version `3.20.0`, the scheduler startup marker is present, and the new limit-up/swing contracts passed
+  authenticated read-only smoke checks.
+- `investment-research-dashboard` Production is now immutable Tag `v0.14.0` at
+  `ca6f06de90dfa284cf359a13cf83afa92fb48fac`. In-container build metadata matches the version and Commit;
+  API and Web containers are healthy, `/api/v1/health` passes, and `/api/v1/readiness` remains ready.
+- Before Provider deployment, the real `stock_analyzer` database was backed up in PostgreSQL custom format at
+  `/volume1/docker/stock-analyzer/backups/REL-20260926-001/stock-analyzer-db-pre-v3.20.0.dump`; the 278,685,490-byte
+  dump produced a readable 122-line catalog. The prior `.env` was also retained as
+  `/volume1/docker/stock-analyzer/.env.pre-REL-20260926-001`.
+- Registry digests remain unavailable. The baseline therefore records exact source Tags/SHAs and local Docker
+  Image IDs. The limit-up UI remains disabled pending five real trading-day snapshots, and the next scheduled
+  trading-day scan will create the first V5.1 swing candidate snapshot; no weekend backfill was performed.

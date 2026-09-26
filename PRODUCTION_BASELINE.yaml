@@ -1,5 +1,5 @@
 baseline_version: 1
-verified_at: "2026-09-26T01:11:11+08:00"
+verified_at: "2026-09-27T00:51:04+08:00"
 status: verified_with_artifact_gaps
 artifact_model: SOURCE_TAG_BUILD
 
@@ -33,46 +33,47 @@ repositories:
 
   stock-analyzer:
     production:
-      application_version: "3.19.3"
+      application_version: "3.20.0"
       application_version_source: stock_analyzer/version.py::APP_VERSION
-      tag: v3.19.3
-      commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
+      tag: v3.20.0
+      commit_sha: 0626c1704569550cc6381b1ff3079df250f30865
       artifact_model: SOURCE_TAG_BUILD
-      artifact: stock-analyzer:latest
-      artifact_id: sha256:575d5193c39359181190e5f7784ecc92a84b1e320a45e6c077368d675729db0d
+      artifact: stock-analyzer:0626c1704569550cc6381b1ff3079df250f30865
+      artifact_id: sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3
       artifact_digest: UNKNOWN
-      artifact_identity_status: CURRENT_PRODUCTION_LEGACY_ARTIFACT
+      artifact_identity_status: IMAGE_ID_ONLY
       containers:
         - stock-watch
         - stock-api
-      deployment_timestamp: "2026-09-25T10:11:42+08:00"
+      deployment_timestamp: "2026-09-27T00:14:40+08:00"
       health: HEALTHY
       rollback_baseline:
         tag: v3.19.3
         commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
         dry_validation: PASS
         status: VERIFIED
-      confidence: MEDIUM
+      confidence: HIGH
       evidence:
         - production_checkout_exact_annotated_tag
         - runtime_and_source_app_version_match
         - running_api_and_scheduler_containers
         - runtime_health_endpoint
+        - production_contract_smoke
         - local_exact_tag_deploy_dry_run
 
   investment-research-dashboard:
     production:
-      application_version: "0.13.1"
+      application_version: "0.14.0"
       application_version_source: VERSION
-      tag: v0.13.1
-      commit_sha: 8ee167fb63870696b79d18f0667c00a61d4d1d62
+      tag: v0.14.0
+      commit_sha: ca6f06de90dfa284cf359a13cf83afa92fb48fac
       artifact_model: SOURCE_TAG_BUILD
       artifact:
         web: investment-research-dashboard-nas-web:latest
         api: investment-research-dashboard-nas-api:latest
       artifact_id:
-        web: sha256:c9102b716b343c546f2bf29eefc174c283d36b752d7ae4a87dabe01840621d88
-        api: sha256:692924aa3529e346557457598407d802464c1af103d7a3881a84ab07718bcf5f
+        web: sha256:f67f293b42574522e60d70cfab592f60d991f1571a4d8a4b14d87ebe0ad21311
+        api: sha256:72484abdf4d813077eee5153b9ade55592d7892645a72c6e57740647fd99951c
       artifact_digest:
         web: UNKNOWN
         api: UNKNOWN
@@ -80,8 +81,8 @@ repositories:
       containers:
         - investment-research-dashboard-nas-web-1
         - investment-research-dashboard-nas-api-1
-      deployment_timestamp: "2026-09-25T10:25:12+08:00"
-      build_time: "2026-09-25T10:16:11+08:00"
+      deployment_timestamp: "2026-09-27T00:45:19+08:00"
+      build_time: "2026-09-27T00:32:31+08:00"
       health: HEALTHY
       dashboard_exact_sha_runtime: VERIFIED
       rollback_baseline:
@@ -95,4 +96,5 @@ repositories:
         - runtime_version_commit_build_metadata
         - running_healthy_web_and_api_containers
         - runtime_health_and_readiness_endpoints
+        - production_provider_client_contract_smoke
         - local_exact_tag_deploy_dry_run

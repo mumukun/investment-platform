@@ -1,9 +1,9 @@
 schema_version: "1.0"
 template: false
 release_id: REL-20260926-001
-status: IN_PROGRESS
+status: RELEASED
 created_at: "2026-09-26T23:16:28+08:00"
-updated_at: "2026-09-26T23:18:16+08:00"
+updated_at: "2026-09-27T00:51:04+08:00"
 
 changes:
   - CHG-20260926-003
@@ -20,6 +20,7 @@ repositories:
       identity: stock-analyzer:0626c1704569550cc6381b1ff3079df250f30865
       type: SOURCE_TAG_BUILD
       source: v3.20.0
+      local_image_id: sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3
     artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
     dependencies: []
     tests:
@@ -30,9 +31,9 @@ repositories:
     deployment:
       entrypoint: ./deploy.sh v3.20.0
       dry_run: ./deploy.sh v3.20.0 --dry-run
-      status: NOT_STARTED
+      status: DEPLOYED
     verification:
-      status: NOT_STARTED
+      status: PASS
       checks:
         - /api/health reports version 3.20.0
         - investment-dashboard-limit-up-ladder-v1 is readable with Bearer authentication
@@ -50,6 +51,9 @@ repositories:
       identity: investment-research-dashboard@ca6f06de90dfa284cf359a13cf83afa92fb48fac
       type: SOURCE_TAG_BUILD
       source: v0.14.0
+      local_image_ids:
+        api: sha256:72484abdf4d813077eee5153b9ade55592d7892645a72c6e57740647fd99951c
+        web: sha256:f67f293b42574522e60d70cfab592f60d991f1571a4d8a4b14d87ebe0ad21311
     artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
     dependencies:
       - repository: stock-analyzer
@@ -65,9 +69,9 @@ repositories:
     deployment:
       entrypoint: ./deploy.sh v0.14.0
       dry_run: ./deploy.sh v0.14.0 --dry-run
-      status: NOT_STARTED
+      status: DEPLOYED
     verification:
-      status: NOT_STARTED
+      status: PASS
       checks:
         - /api/v1/health reports PostgreSQL healthy
         - /api/v1/readiness remains ready
@@ -108,41 +112,44 @@ tests:
     - "swing selection V3 optional priority fields and history/stats v2 additions: PASS"
   integration:
     - "Provider response to Dashboard proxy/projection paths: PASS_WITH_FIXTURES"
+    - "Production Dashboard runtime client validated limit-up v1 and swing stats/history v2: PASS"
   critical_path_e2e:
     - "limit-up ladder matrix/detail and swing candidate/effect drill-down local paths: PASS"
   release_gates:
     - "selected Changes READY: PASS"
     - "origin/main synchronized and frozen SHAs: PASS"
-    - "Production baseline revalidated 2026-09-26: PASS"
-    - "new Tags absent locally and remotely: PASS"
+    - "Production baseline revalidated before release: PASS"
+    - "new Tags were absent before immutable creation: PASS"
     - "deployment contract and rollback-Tag dry runs: PASS"
-    - "new exact-Tag dry runs: SCHEDULED_IMMEDIATELY_AFTER_FORMAL_TAG_CREATION"
+    - "new exact-Tag dry runs: PASS"
 
 deployment:
   environment: production
-  status: IN_PROGRESS
+  status: COMPLETED
   started_at: "2026-09-26T23:18:16+08:00"
-  completed_at: null
+  completed_at: "2026-09-27T00:51:04+08:00"
   steps:
     - order: 1
       repository: stock-analyzer
       action: back up the shared PostgreSQL database and verify the dump catalog
-      status: NOT_STARTED
+      status: COMPLETED
+      evidence: /volume1/docker/stock-analyzer/backups/REL-20260926-001/stock-analyzer-db-pre-v3.20.0.dump; 278685490 bytes; 122 catalog lines
     - order: 2
       repository: stock-analyzer
       action: update SWING_ENGINE_RULES_VERSION to swing-rules-v5.1.0 with a timestamped .env backup
-      status: NOT_STARTED
+      status: COMPLETED
+      evidence: /volume1/docker/stock-analyzer/.env.pre-REL-20260926-001
     - order: 3
       repository: stock-analyzer
       action: deploy exact Tag v3.20.0 and run Provider smoke/contract checks
-      status: NOT_STARTED
+      status: COMPLETED
     - order: 4
       repository: investment-research-dashboard
       action: deploy exact Tag v0.14.0 and run health/readiness/version/integration checks
-      status: NOT_STARTED
+      status: COMPLETED
   feature_activation:
     - feature: swing-priority-score-and-effect-tracking
-      status: DEPLOY_WITH_PROVIDER_RULE_VERSION
+      status: DEPLOYED_AWAITING_NEXT_SCHEDULED_SNAPSHOT
       gate: SWING_ENGINE_RULES_VERSION=swing-rules-v5.1.0
     - feature: limit-up-ladder
       status: REMAIN_DISABLED
@@ -153,35 +160,58 @@ deployment:
 
 production_identity:
   - repository: stock-analyzer
-    version: "3.19.3"
-    tag: v3.19.3
-    commit_sha: 5571647bb826f1397fbae96b9c6a502425c02cda
-    observed_at: "2026-09-26T23:15:06+08:00"
+    version: "3.20.0"
+    tag: v3.20.0
+    commit_sha: 0626c1704569550cc6381b1ff3079df250f30865
+    artifact: stock-analyzer:0626c1704569550cc6381b1ff3079df250f30865
+    artifact_id: sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3
+    observed_at: "2026-09-27T00:31:21+08:00"
     health: HEALTHY
   - repository: investment-research-dashboard
-    version: "0.13.1"
-    tag: v0.13.1
-    commit_sha: 8ee167fb63870696b79d18f0667c00a61d4d1d62
-    observed_at: "2026-09-26T23:15:06+08:00"
+    version: "0.14.0"
+    tag: v0.14.0
+    commit_sha: ca6f06de90dfa284cf359a13cf83afa92fb48fac
+    artifact_ids:
+      api: sha256:72484abdf4d813077eee5153b9ade55592d7892645a72c6e57740647fd99951c
+      web: sha256:f67f293b42574522e60d70cfab592f60d991f1571a4d8a4b14d87ebe0ad21311
+    observed_at: "2026-09-27T00:51:04+08:00"
     health: HEALTHY_READY
 
 verification:
-  status: NOT_STARTED
-  smoke: []
-  health_checks: []
-  version_checks: []
-  contract_checks: []
-  integration_checks: []
-  e2e_checks: []
+  status: PASS
+  smoke:
+    - "stock-api and stock-watch running on exact-SHA image; scheduler startup/catch-up completed"
+    - "Dashboard API and Web containers running and Docker health=healthy"
+  health_checks:
+    - "stock-analyzer /api/health: ok=true"
+    - "Dashboard /api/v1/health: status=ok, database=postgresql"
+    - "Dashboard /api/v1/readiness: ready=true"
+  version_checks:
+    - "stock-analyzer runtime version=3.20.0; Production checkout v3.20.0 at frozen SHA"
+    - "Dashboard build metadata version=0.14.0 and git_commit=ca6f06de90dfa284cf359a13cf83afa92fb48fac"
+  contract_checks:
+    - "investment-dashboard-limit-up-ladder-v1: PASS; five dates; quality=partial"
+    - "investment-dashboard-swing-selection-v3: reachable; rules=swing-rules-v5.1.0; no scheduled V5.1 snapshot yet"
+    - "investment-dashboard-swing-history-v2 and swing-stats-v2: PASS; rules=swing-rules-v5.1.0"
+  integration_checks:
+    - "Production Dashboard runtime StockAnalyzerClient strictly validated limit-up v1 and swing history/stats v2"
+    - "Market projection runtime enabled at 300 seconds; no recent API errors"
+  e2e_checks:
+    - "Production runtime Provider-to-Consumer critical contract path: PASS"
+    - "Authenticated browser path covered by frozen release tests; no production credentials exposed"
   evidence:
     - "NAS production checkouts are clean and exactly tagged at the persisted rollback SHAs"
     - "stock-analyzer /api/health returned ok=true and version 3.19.3 before release"
     - "Dashboard /api/v1/health returned PostgreSQL healthy and /readiness returned ready=true before release"
     - "Dashboard in-container build metadata matched v0.13.1 commit 8ee167f before release"
+    - "Both new immutable Tags resolve to their frozen SHAs and were pushed individually"
+    - "Production checkouts are detached at the new exact Tags"
   known_limitations:
     - "Artifacts are built from exact source Tags on the NAS; registry digests are unavailable"
     - "Dashboard primary local checkout contains two unrelated untracked prototype PNGs; they are excluded from the frozen commit and release artifact"
     - "Limit-up ladder remains disabled until five real trading-day snapshots satisfy activation gates"
+    - "No V5.1 swing snapshot was backfilled on the weekend; the next scheduled trading-day scan will populate candidates"
+    - "The old Production deploy scripts predated the exact-Tag interface; each checkout was bootstrapped only after validating the new Tag, SHA and origin/main ancestry, then the new exact-Tag deploy entrypoint executed"
 
 rollback:
   status: READY
@@ -190,7 +220,7 @@ rollback:
   target_commit_sha: null
   artifact: previous exact source Tags v3.19.3 and v0.13.1
   artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
-  database_restore_point: PENDING_PRE_DEPLOY_BACKUP
+  database_restore_point: /volume1/docker/stock-analyzer/backups/REL-20260926-001/stock-analyzer-db-pre-v3.20.0.dump
   steps:
     - disable the affected feature when an operational flag exists
     - deploy Dashboard v0.13.1 if the consumer fails
@@ -201,3 +231,4 @@ notes:
   - marketNewsFeed is excluded because no runtime code changed in the selected Changes
   - governance-only CHG-20260925-000, CHG-20260926-000, CHG-20260926-001 and CHG-20260926-002 are excluded
   - user explicitly authorized formal Production release of the current and other completed Changes on 2026-09-26
+  - formal release completed on 2026-09-27 after midnight Asia/Shanghai
