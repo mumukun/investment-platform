@@ -1,9 +1,9 @@
 schema_version: "1.0"
 template: false
 release_id: REL-20260927-001
-status: IN_PROGRESS
+status: RELEASED
 created_at: "2026-09-27T16:31:33+08:00"
-updated_at: "2026-09-27T16:31:33+08:00"
+updated_at: "2026-09-27T16:50:18+08:00"
 
 changes:
   - CHG-20260927-000
@@ -57,10 +57,13 @@ repositories:
     deployment:
       entrypoint: ./deploy.sh v0.14.1
       dry_run: ./deploy.sh v0.14.1 --dry-run
-      status: NOT_STARTED
+      status: DEPLOYED
     verification:
-      status: NOT_STARTED
-      checks: []
+      status: PASS
+      checks:
+        - API and Web containers are healthy
+        - runtime version is 0.14.1 at the frozen commit
+        - both limit-up flags are active and upstream timeout is 60 seconds
     rollback_version: "0.14.0"
     rollback_tag: v0.14.0
     rollback_commit_sha: ca6f06de90dfa284cf359a13cf83afa92fb48fac
@@ -95,7 +98,8 @@ tests:
   integration:
     - "Provider snapshot recovery before Consumer activation: PASS"
   critical_path_e2e:
-    - "production verification pending Dashboard deploy"
+    - "production browser navigation exposes the limit-up ladder and Dashboard v0.14.1: PASS"
+    - "authenticated detail rendering requires user login; no credentials were read or entered"
   release_gates:
     - "real Production tags, SHAs and image IDs revalidated: PASS"
     - "new Dashboard Tag absent before immutable creation: PASS"
@@ -103,9 +107,9 @@ tests:
 
 deployment:
   environment: production
-  status: IN_PROGRESS
+  status: COMPLETED
   started_at: "2026-09-27T16:19:00+08:00"
-  completed_at: null
+  completed_at: "2026-09-27T16:50:18+08:00"
   steps:
     - order: 1
       repository: stock-analyzer
@@ -114,17 +118,18 @@ deployment:
     - order: 2
       repository: investment-research-dashboard
       action: back up .env; enable both limit-up flags; raise upstream timeout to 60 seconds
-      status: NOT_STARTED
+      status: COMPLETED
+      evidence: /volume1/docker/investment-research-dashboard/.env.pre-REL-20260927-001
     - order: 3
       repository: investment-research-dashboard
       action: deploy exact Tag v0.14.1 and verify health, version and contracts
-      status: NOT_STARTED
+      status: COMPLETED
   feature_activation:
     - feature: swing-priority-score-and-effect-tracking
       status: ACTIVE
       gate: v5.1 snapshot exists for 2026-09-25
     - feature: limit-up-ladder
-      status: PENDING_ACTIVATION
+      status: ACTIVE
       gate: user explicitly accepts five real days with partial quality
       flags:
         LIMIT_UP_LADDER_ENABLED: true
@@ -139,21 +144,41 @@ production_identity:
     artifact_id: sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3
     observed_at: "2026-09-27T16:20:00+08:00"
     health: HEALTHY
+  - repository: investment-research-dashboard
+    version: "0.14.1"
+    tag: v0.14.1
+    commit_sha: b7e005c2613c3e9e23fe154327cb5e608caa1a40
+    artifact: investment-research-dashboard@b7e005c2613c3e9e23fe154327cb5e608caa1a40
+    artifact_ids:
+      api: sha256:25a4592c53809ded583e57b77031490cd11a773616471425c5bbf9f61831e058
+      web: sha256:1fbcd36cdc75c5dc4e94d4333736fd26f4d00513932bd6009ed8c1b8a3a3fb3d
+    observed_at: "2026-09-27T16:49:00+08:00"
+    health: HEALTHY_READY
 
 verification:
-  status: IN_PROGRESS
-  smoke: []
-  health_checks: []
+  status: PASS
+  smoke:
+    - "Dashboard API and Web containers are running and healthy"
+    - "production frontend navigation contains 涨停天梯"
+  health_checks:
+    - "Dashboard /api/v1/health: status=ok, database=postgresql"
+    - "Dashboard /api/v1/readiness: ready=true"
   version_checks:
     - "stock-analyzer remains v3.20.0 at the frozen production SHA"
+    - "Dashboard runtime VERSION=0.14.1 and APP_GIT_COMMIT=b7e005c2613c3e9e23fe154327cb5e608caa1a40"
   contract_checks:
     - "swing selection V3: ok=true; rules=swing-rules-v5.1.0; trade_date=2026-09-25; 1071 stocks"
     - "limit-up ladder v1: readable; five dates; source_status=partial"
-  integration_checks: []
-  e2e_checks: []
+  integration_checks:
+    - "production Dashboard client at configured 60-second timeout validated swing and limit-up contracts"
+  e2e_checks:
+    - "browser app shell reports Dashboard v0.14.1 and shows the 涨停天梯 navigation entry"
+    - "authenticated detail page redirects to login when the browser session is not authenticated"
   evidence:
     - "original Dashboard production flags were false"
     - "original 20-second upstream timeout reproduced one full-response timeout"
+    - "post-deploy swing response: ok=true, v5.1, 2026-09-25, 1071 stocks"
+    - "post-deploy limit-up response: ok=true, five days, actual date 2026-09-25, quality=partial"
   known_limitations:
     - "limit-up ladder is enabled with truthful partial quality until native snapshots accumulate"
     - "artifacts are exact-source-Tag builds on the NAS; registry digests are unavailable"
