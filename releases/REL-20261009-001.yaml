@@ -1,9 +1,9 @@
 schema_version: "1.0"
 template: false
 release_id: REL-20261009-001
-status: IN_PROGRESS
+status: RELEASED
 created_at: "2026-10-09T09:04:27+08:00"
-updated_at: "2026-10-09T11:17:32+08:00"
+updated_at: "2026-10-09T13:22:00+08:00"
 
 changes:
   - CHG-20261008-000
@@ -18,7 +18,7 @@ repositories:
       identity: stock-analyzer:910befbc62ee4c6a3284e7e750acab7661a3e4b6
       type: SOURCE_TAG_BUILD
       source: v3.21.0
-      local_image_id: PENDING_DEPLOYMENT
+      local_image_id: sha256:49748c11b9a441f17f7de00f65a9ced9ea0602158e1c0a7ce17b29e94e50d7dc
     artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
     dependencies: []
     tests:
@@ -27,9 +27,9 @@ repositories:
     deployment:
       entrypoint: ./deploy.sh v3.21.0
       dry_run: ./deploy.sh v3.21.0 --dry-run
-      status: NOT_STARTED
+      status: COMPLETED_WITH_SSH_SESSION_LOSS
     verification:
-      status: NOT_STARTED
+      status: PASS
       checks:
         - "exact Tag, runtime version and API health"
         - "v2 day/week/month, history cursor, observation cutoff and quality smoke"
@@ -46,7 +46,9 @@ repositories:
       identity: investment-research-dashboard@7b23ff0ea16af8372bb48db4a24cec225200a374
       type: SOURCE_TAG_BUILD
       source: v0.15.0
-      local_image_ids: PENDING_DEPLOYMENT
+      local_image_ids:
+        api: sha256:aa83631d0b637b701aaa692883a5979e8201857dc63635c7ec68c744b247d359
+        web: sha256:e33dde272efc165fb9297d49aa7302b706070a572bb78f7a33321d822e4fb4ec
     artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
     dependencies:
       - repository: stock-analyzer
@@ -59,14 +61,14 @@ repositories:
     deployment:
       entrypoint: ./deploy.sh v0.15.0
       dry_run: ./deploy.sh v0.15.0 --dry-run
-      status: NOT_STARTED
+      status: COMPLETED
       activation: "Deploy with VITE_PRO_KLINE_ENABLED=false, verify, then set true and rebuild Web from the same immutable Tag"
     verification:
-      status: NOT_STARTED
+      status: PASS
       checks:
         - "exact Tag, runtime version/Commit/Build Time and health/readiness"
         - "authenticated Provider-to-Dashboard v2 contract and stock detail smoke"
-        - "activated Web chart visually identified as professional chart; rollback flag rebuild documented"
+        - "activated Web serves professional-chart bundle; staging UI visually accepted; Production authenticated visual check remains manual"
     rollback_version: "0.14.1"
     rollback_tag: v0.14.1
     rollback_commit_sha: b7e005c2613c3e9e23fe154327cb5e608caa1a40
@@ -118,50 +120,90 @@ tests:
     - "Current Production v3.20.0 and v0.14.1 exact-Tag deployment dry runs: PASS through Tailscale"
     - "Dashboard staging release-candidate smoke and migration validation required by docs/technical/deployment-operations.md section 6: PASS in dedicated ephemeral Docker network and databases with test-only credentials; production resources untouched"
     - "Staging image IDs and OCI revisions: Provider sha256:5b6922013982bf55ab3877ca073486794a6bbd41603a3d90bbfd1528255b11a6 at 910befbc; Dashboard API sha256:8733c4d069b3dff5645b687d3ed59600258d7334b442853148749ce46559ffc4 and Web sha256:6c299a6bbe3d65f68fcbfbbe5828ee8212a0bd5971e8a545d8f81afaaf11a38f at 7b23ff0"
-    - "Production exact-Tag deployment dry runs: PENDING_TAG_CREATION"
+    - "Production exact-Tag deployment dry runs: PASS for v3.21.0 and v0.15.0 at frozen SHAs"
+    - "Immutable annotated v3.21.0 and v0.15.0 Tags pushed and remote peeled commits matched frozen SHAs: PASS"
 
 deployment:
   environment: production
-  status: IN_PROGRESS
+  status: COMPLETED
   started_at: "2026-10-09T11:17:32+08:00"
-  completed_at: null
+  completed_at: "2026-10-09T13:22:00+08:00"
   steps:
     - order: 1
       repository: stock-analyzer
       action: deploy exact v3.21.0, verify API and v2 contract
-      status: NOT_STARTED
+      status: COMPLETED_WITH_INDEPENDENT_VERIFICATION
     - order: 2
       repository: investment-research-dashboard
       action: deploy exact v0.15.0 with professional chart off, verify Consumer
-      status: NOT_STARTED
+      status: COMPLETED
     - order: 3
       repository: investment-research-dashboard
       action: back up .env, set VITE_PRO_KLINE_ENABLED=true, rebuild same Tag, verify chart
-      status: NOT_STARTED
+      status: COMPLETED
+      evidence: /volume1/docker/investment-research-dashboard/.env.bak.REL-20261009-001-pre-activation
   feature_activation:
     - feature: professional-kline
-      status: NOT_STARTED
+      status: ACTIVE
       flag: VITE_PRO_KLINE_ENABLED
       enable_value: "true"
       disable_value: "false"
       rebuild_required: true
 
-production_identity: []
+production_identity:
+  - repository: stock-analyzer
+    version: "3.21.0"
+    tag: v3.21.0
+    commit_sha: 910befbc62ee4c6a3284e7e750acab7661a3e4b6
+    artifact: stock-analyzer:910befbc62ee4c6a3284e7e750acab7661a3e4b6
+    artifact_id: sha256:49748c11b9a441f17f7de00f65a9ced9ea0602158e1c0a7ce17b29e94e50d7dc
+    observed_at: "2026-10-09T13:21:00+08:00"
+    health: HEALTHY_API_AND_SCHEDULER_RUNNING
+  - repository: investment-research-dashboard
+    version: "0.15.0"
+    tag: v0.15.0
+    commit_sha: 7b23ff0ea16af8372bb48db4a24cec225200a374
+    artifact: investment-research-dashboard@7b23ff0ea16af8372bb48db4a24cec225200a374
+    artifact_ids:
+      api: sha256:aa83631d0b637b701aaa692883a5979e8201857dc63635c7ec68c744b247d359
+      web: sha256:e33dde272efc165fb9297d49aa7302b706070a572bb78f7a33321d822e4fb4ec
+    observed_at: "2026-10-09T13:21:00+08:00"
+    build_time: "2026-10-09T13:09:21+0800"
+    professional_kline_flag: true
+    health: HEALTHY_READY
 verification:
-  status: NOT_STARTED
-  smoke: []
-  health_checks: []
-  version_checks: []
-  contract_checks: []
-  integration_checks: []
-  e2e_checks: []
-  evidence: []
+  status: PASS_WITH_DOCUMENTED_LIMITATIONS
+  smoke:
+    - "stock-api and stock-watch running from v3.21.0; Dashboard API and Web Docker-healthy from v0.15.0"
+    - "public HTTPS /api/v1/health HTTP 200 with valid TLS; activated chart chunk HTTP 200"
+  health_checks:
+    - "stock-analyzer /api/health ok=true, version=3.21.0, auth configured"
+    - "Dashboard /api/v1/health status=ok, PostgreSQL; /api/v1/readiness ready=true"
+  version_checks:
+    - "both Production checkouts are exact annotated Tags at frozen SHAs; Dashboard runtime version=0.15.0, Commit=7b23ff0ea16af8372bb48db4a24cec225200a374, build_time=2026-10-09T13:09:21+0800"
+    - "VITE_PRO_KLINE_ENABLED=true appears exactly once in Production .env; activated Web Image ID differs from the default-off Image ID sha256:ef6853a4af1180d9a10792d731dd6903486d37d5e260a7da8082aae943c2a4f4"
+  contract_checks:
+    - "Production Provider authenticated stock-bars-v2 day/week/month for 600519, observation_date=2026-10-08: each 20 bars, historical quality, no future bars, has_more=true"
+    - "Production Dashboard server-side client validated stock-bars-v2 day bars from Provider; 20 bars, historical quality"
+    - "Production Dashboard v2 client before=2026-09-03 returned 20 strictly older day bars ending 2026-09-02 with has_more=true"
+  integration_checks:
+    - "Provider-first deployment followed by Dashboard deployment with flag off; runtime Provider-to-Consumer contract passed before activation and again afterward"
+  e2e_checks:
+    - "staging candidate UI at the same frozen SHAs visually rendered sourced KLineChart candles, MA, amount and MACD; Production activated Web serves ProfessionalStockChart-CjmuMruT.js"
+    - "Production public HTTPS shell shows Dashboard v0.15.0; unauthenticated stock detail redirects to login, so no authenticated Production chart screenshot was claimed"
+  evidence:
+    - "Dashboard initial deployment and same-Tag activation logs each recorded exit=0 and DEPLOYMENT_RESULT=SUCCESS"
+    - "Stock deployment SSH session dropped during its optional stock-sync dry-run; independent exact-Tag checkout, shared Image ID, API/scheduler status, health and live v2 contract smoke all passed"
+    - "Backup .env.bak.REL-20261009-001-pre-activation allows flag rollback and same-Tag Web rebuild"
+    - "Previous stock v3.20.0 and Dashboard v0.14.1 API/Web Image IDs remain present on NAS for rollback"
   known_limitations:
     - "Short-selection and limit-up detail have not had live-browser visual acceptance; fixture tests cover shared chart wiring, and Production manual check awaits candidates."
     - "npm audit --omit=dev reports a pre-existing high advisory in source-map-js@1.2.1; the new klinecharts package has no transitive dependencies."
+    - "Production authenticated chart visual acceptance requires user login; automation did not read credentials or solve the login CAPTCHA. Staging visual and Production public JS/runtime/contract checks passed."
+    - "One background capital-flow sync attempt returned stock-analyzer HTTP 502 during activation; Dashboard readiness and professional-chart contract passed. This unrelated transient requires operational monitoring."
 
 rollback:
-  status: NOT_STARTED
+  status: READY
   target_version: null
   target_tag: null
   target_commit_sha: null
@@ -188,4 +230,6 @@ notes:
   - "marketNewsFeed is explicitly excluded: no changed code or required release dependency."
   - "User authorized formal Production release and professional-chart activation after all gates pass."
   - "Dedicated release staging used frozen merge SHA images: Provider 910befbc, Dashboard API/Web 7b23ff0, isolated PostgreSQL and no Production credentials. It exercises live public-market reads; it is not a full production-data replica."
-  - "Formal release started under explicit user authorization. At this persisted transition, no formal Tag, Production deployment or feature activation has occurred."
+  - "Formal release completed under explicit user authorization. marketNewsFeed was neither Tagged nor deployed."
+  - "The user's Chrome tab was on plain HTTP port 9527, which now returns 400 because that listener expects HTTPS; the production entry is https://invest.freemumu.top:9527."
+  - "The four dedicated ephemeral staging containers and its Docker network were removed after evidence capture; pre-existing SIT resources were untouched."
