@@ -88,3 +88,25 @@
 - Registry digests remain unavailable. The baseline therefore records exact source Tags/SHAs and local Docker
   Image IDs. The limit-up UI remains disabled pending five real trading-day snapshots, and the next scheduled
   trading-day scan will create the first V5.1 swing candidate snapshot; no weekend backfill was performed.
+
+## Read-only Tailscale refresh (2026-10-09)
+
+- Scope: `stock-analyzer` and `investment-research-dashboard` only. `marketNewsFeed` was not reverified.
+  The Tailscale NAS peer was online; port 9352 and SSH succeeded using the previously trusted host key.
+- `stock-analyzer` Production checkout has no tracked changes at exact Tag `v3.20.0`, Commit
+  `0626c1704569550cc6381b1ff3079df250f30865`. Both running containers use Image ID
+  `sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3`;
+  `/api/health` returned HTTP 200 and application version `3.20.0`. Its pre-existing untracked `backups/`
+  directory was preserved.
+- Dashboard Production checkout is clean at exact Tag `v0.14.1`, Commit
+  `b7e005c2613c3e9e23fe154327cb5e608caa1a40`. In-container build metadata reports that version and
+  Commit, build time `2026-09-27T16:33:22+0800`, and `production` environment. API and Web are running and
+  Docker-healthy at Image IDs `sha256:25a4592c53809ded583e57b77031490cd11a773616471425c5bbf9f61831e058`
+  and `sha256:1fbcd36cdc75c5dc4e94d4333736fd26f4d00513932bd6009ed8c1b8a3a3fb3d` respectively.
+  `/api/v1/health` and `/api/v1/readiness` returned HTTP 200; unauthenticated `/api/v1/system/version`
+  returned 401, so no credential was used.
+- The previous baseline's Dashboard `v0.14.0` was stale after `REL-20260927-001`; it is now the rollback Tag.
+  `v0.14.0^{commit}` resolves to `ca6f06de90dfa284cf359a13cf83afa92fb48fac`, and both previously
+  recorded API/Web rollback Image IDs remain present locally. The current Image IDs match the prior Release
+  Manifest. No registry digest is available.
+- No Production configuration, code, Tag, container, database, or Feature Flag was changed during this refresh.
