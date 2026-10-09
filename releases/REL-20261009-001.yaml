@@ -1,9 +1,9 @@
 schema_version: "1.0"
 template: false
 release_id: REL-20261009-001
-status: READY_FOR_FORMAL_RELEASE
+status: IN_PROGRESS
 created_at: "2026-10-09T09:04:27+08:00"
-updated_at: "2026-10-09T11:16:29+08:00"
+updated_at: "2026-10-09T11:17:32+08:00"
 
 changes:
   - CHG-20261008-000
@@ -122,8 +122,8 @@ tests:
 
 deployment:
   environment: production
-  status: NOT_STARTED
-  started_at: null
+  status: IN_PROGRESS
+  started_at: "2026-10-09T11:17:32+08:00"
   completed_at: null
   steps:
     - order: 1
@@ -188,4 +188,4 @@ notes:
   - "marketNewsFeed is explicitly excluded: no changed code or required release dependency."
   - "User authorized formal Production release and professional-chart activation after all gates pass."
   - "Dedicated release staging used frozen merge SHA images: Provider 910befbc, Dashboard API/Web 7b23ff0, isolated PostgreSQL and no Production credentials. It exercises live public-market reads; it is not a full production-data replica."
-  - "READY only: no formal Tag, Production deployment or feature activation has occurred."
+  - "Formal release started under explicit user authorization. At this persisted transition, no formal Tag, Production deployment or feature activation has occurred."
