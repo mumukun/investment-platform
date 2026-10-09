@@ -1,9 +1,9 @@
 schema_version: "1.0"
 template: false
 release_id: REL-20261009-002
-status: READY_FOR_FORMAL_RELEASE
+status: IN_PROGRESS
 created_at: "2026-10-09T14:55:00+08:00"
-updated_at: "2026-10-09T14:59:46+08:00"
+updated_at: "2026-10-09T15:17:23+08:00"
 environment: Production
 
 changes:
@@ -117,10 +117,11 @@ tests:
 
 deployment:
   environment: Production
-  status: NOT_STARTED
-  started_at: null
+  status: IN_PROGRESS
+  started_at: "2026-10-09T15:17:23+08:00"
   completed_at: null
-  steps: []
+  steps:
+    - "Formal authorization reconfirmed; frozen origin/main SHAs, unused Tags, NAS production baseline and backups revalidated before Tag creation."
   feature_activation: []
 
 production_identity: []
