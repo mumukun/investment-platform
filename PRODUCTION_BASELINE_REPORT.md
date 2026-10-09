@@ -110,3 +110,33 @@
   recorded API/Web rollback Image IDs remain present locally. The current Image IDs match the prior Release
   Manifest. No registry digest is available.
 - No Production configuration, code, Tag, container, database, or Feature Flag was changed during this refresh.
+
+## REL-20261009-001 release refresh (2026-10-09)
+
+- Scope: `stock-analyzer` and `investment-research-dashboard` only; `marketNewsFeed` was not deployed.
+- `stock-analyzer` is at exact annotated Tag `v3.21.0`, Commit
+  `910befbc62ee4c6a3284e7e750acab7661a3e4b6`. Both API and scheduler run Image ID
+  `sha256:49748c11b9a441f17f7de00f65a9ced9ea0602158e1c0a7ce17b29e94e50d7dc`.
+  API health reports version `3.21.0`. Authenticated production v2 day/week/month and exclusive
+  history-cursor checks passed. The deployment SSH session dropped during optional stock-sync
+  dry-run; the exact Tag, runtime, scheduler, health and contract were independently verified.
+- Dashboard is at exact annotated Tag `v0.15.0`, Commit
+  `7b23ff0ea16af8372bb48db4a24cec225200a374`. Runtime metadata reports version `0.15.0`,
+  build time `2026-10-09T13:09:21+0800`, and production environment. API Image ID is
+  `sha256:aa83631d0b637b701aaa692883a5979e8201857dc63635c7ec68c744b247d359`;
+  activated Web Image ID is
+  `sha256:e33dde272efc165fb9297d49aa7302b706070a572bb78f7a33321d822e4fb4ec`.
+  Both containers are Docker-healthy; API health and readiness are HTTP 200. The server-side
+  Dashboard client validated the live Provider's v2 contract, including older-page cursor.
+- `VITE_PRO_KLINE_ENABLED=true` appears once in the production `.env`; the pre-activation copy is
+  `/volume1/docker/investment-research-dashboard/.env.bak.REL-20261009-001-pre-activation`.
+  The public HTTPS endpoint `https://invest.freemumu.top:9527` serves the activated
+  `ProfessionalStockChart-CjmuMruT.js` chunk with valid TLS and HTTP 200. Staging visually
+  exercised the same frozen code with live sourced candles, MA, amount and MACD. Authenticated
+  production detail rendering was not inspected because the browser session redirected to login;
+  no credential or CAPTCHA bypass was attempted.
+- Fresh pre-deployment custom-format PostgreSQL backups and SHA-256 values are recorded in
+  `releases/REL-20261009-001.yaml`. Registry digests remain unavailable; exact Tags, SHAs and
+  observed local Image IDs identify the deployed artifacts. A background capital-flow sync
+  returned one stock-analyzer HTTP 502 during activation, while the chart path and readiness
+  passed; monitor that unrelated integration separately.
