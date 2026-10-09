@@ -1,0 +1,186 @@
+schema_version: "1.0"
+template: false
+release_id: REL-20261009-001
+status: BLOCKED
+created_at: "2026-10-09T09:04:27+08:00"
+updated_at: "2026-10-09T09:07:34+08:00"
+
+changes:
+  - CHG-20261008-000
+
+repositories:
+  - repository: stock-analyzer
+    previous_version: "3.20.0"
+    new_version: "3.21.0"
+    commit_sha: 910befbc62ee4c6a3284e7e750acab7661a3e4b6
+    tag: v3.21.0
+    artifact:
+      identity: stock-analyzer:910befbc62ee4c6a3284e7e750acab7661a3e4b6
+      type: SOURCE_TAG_BUILD
+      source: v3.21.0
+      local_image_id: PENDING_DEPLOYMENT
+    artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+    dependencies: []
+    tests:
+      - "Python 3.13: 255 unit tests and compileall PASS at f9ce720; merged tree is identical"
+      - "v2 stock-bars contract and additive swing_daily_bar migration tests PASS"
+    deployment:
+      entrypoint: ./deploy.sh v3.21.0
+      dry_run: ./deploy.sh v3.21.0 --dry-run
+      status: NOT_STARTED
+    verification:
+      status: NOT_STARTED
+      checks:
+        - "exact Tag, runtime version and API health"
+        - "v2 day/week/month, history cursor, observation cutoff and quality smoke"
+    rollback_version: "3.20.0"
+    rollback_tag: v3.20.0
+    rollback_commit_sha: 0626c1704569550cc6381b1ff3079df250f30865
+    rollback_artifact_id: sha256:c722c8db7e4100560642494f1cd35de5fe4597275f41619785c1d1467f1d96c3
+  - repository: investment-research-dashboard
+    previous_version: "0.14.1"
+    new_version: "0.15.0"
+    commit_sha: 7b23ff0ea16af8372bb48db4a24cec225200a374
+    tag: v0.15.0
+    artifact:
+      identity: investment-research-dashboard@7b23ff0ea16af8372bb48db4a24cec225200a374
+      type: SOURCE_TAG_BUILD
+      source: v0.15.0
+      local_image_ids: PENDING_DEPLOYMENT
+    artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+    dependencies:
+      - repository: stock-analyzer
+        type: required_provider_before_consumer
+        contracts: [investment-dashboard-stock-bars-v2]
+    tests:
+      - "main merge SHA 7b23ff0 GitHub CI 37867384781 PASS: 45 Vitest, backend, Ruff and builds"
+      - "isolated PostgreSQL migration/check and 100 backend pytest PASS at identical merged tree"
+      - "default-off and enabled frontend production builds, including NAS-equivalent image, PASS"
+    deployment:
+      entrypoint: ./deploy.sh v0.15.0
+      dry_run: ./deploy.sh v0.15.0 --dry-run
+      status: NOT_STARTED
+      activation: "Deploy with VITE_PRO_KLINE_ENABLED=false, verify, then set true and rebuild Web from the same immutable Tag"
+    verification:
+      status: NOT_STARTED
+      checks:
+        - "exact Tag, runtime version/Commit/Build Time and health/readiness"
+        - "authenticated Provider-to-Dashboard v2 contract and stock detail smoke"
+        - "activated Web chart visually identified as professional chart; rollback flag rebuild documented"
+    rollback_version: "0.14.1"
+    rollback_tag: v0.14.1
+    rollback_commit_sha: b7e005c2613c3e9e23fe154327cb5e608caa1a40
+    rollback_artifact_ids:
+      api: sha256:25a4592c53809ded583e57b77031490cd11a773616471425c5bbf9f61831e058
+      web: sha256:1fbcd36cdc75c5dc4e94d4333736fd26f4d00513932bd6009ed8c1b8a3a3fb3d
+
+previous_version: null
+new_version: null
+commit_sha: null
+tag: null
+artifact:
+  identity: SOURCE_TAG_BUILD
+  type: SOURCE_TAG_BUILD
+  source: frozen_repository_tags
+artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+dependencies:
+  - provider: stock-analyzer
+    consumer: investment-research-dashboard
+    type: required
+    reason: v2 stock-bars Provider must pass Production smoke before the Dashboard Consumer deploys
+release_order:
+  - stock-analyzer
+  - investment-research-dashboard
+rollback_version: null
+
+tests:
+  repository:
+    - "stock-analyzer 255 tests and compileall: PASS; merge tree equals tested head"
+    - "Dashboard main CI 37867384781: PASS at frozen SHA"
+  contract:
+    - "v2 Provider and Dashboard adapter healthy/error/quality/pagination fixtures: PASS"
+    - "v1 swing-candles compatibility route preserved: PASS"
+  integration:
+    - "isolated PostgreSQL additive migration and Dashboard Alembic check: PASS"
+    - "local live read-only Sina/AkShare Provider through Dashboard adapter: PASS"
+  critical_path_e2e:
+    - "isolated local watchlist and swing-selection professional-chart golden path: PASS"
+    - "short-selection and limit-up enabled-flag wiring: fixture tests PASS; live visual acceptance pending candidates"
+  release_gates:
+    - "Change READY on governance main 38dfdaf: PASS"
+    - "Production baseline and rollback Tag/Image IDs via Tailscale: PASS at 2026-10-09 08:43 +08:00"
+    - "Proposed v3.21.0 and v0.15.0 remote Tags absent; frozen main SHAs verified: PASS"
+    - "Production stock_analyzer and investment_dashboard pg_dump backups created with mode 0600; pg_restore -l readability checks passed"
+    - "Current Production v3.20.0 and v0.14.1 exact-Tag deployment dry runs: PASS through Tailscale"
+    - "Dashboard staging release-candidate smoke and migration validation required by docs/technical/deployment-operations.md section 6: BLOCKED; no configured staging environment found"
+    - "Production exact-Tag deployment dry runs: PENDING_TAG_CREATION"
+
+deployment:
+  environment: production
+  status: NOT_STARTED
+  started_at: null
+  completed_at: null
+  steps:
+    - order: 1
+      repository: stock-analyzer
+      action: deploy exact v3.21.0, verify API and v2 contract
+      status: NOT_STARTED
+    - order: 2
+      repository: investment-research-dashboard
+      action: deploy exact v0.15.0 with professional chart off, verify Consumer
+      status: NOT_STARTED
+    - order: 3
+      repository: investment-research-dashboard
+      action: back up .env, set VITE_PRO_KLINE_ENABLED=true, rebuild same Tag, verify chart
+      status: NOT_STARTED
+  feature_activation:
+    - feature: professional-kline
+      status: NOT_STARTED
+      flag: VITE_PRO_KLINE_ENABLED
+      enable_value: "true"
+      disable_value: "false"
+      rebuild_required: true
+
+production_identity: []
+verification:
+  status: NOT_STARTED
+  smoke: []
+  health_checks: []
+  version_checks: []
+  contract_checks: []
+  integration_checks: []
+  e2e_checks: []
+  evidence: []
+  known_limitations:
+    - "Short-selection and limit-up detail have not had live-browser visual acceptance; fixture tests cover shared chart wiring, and Production manual check awaits candidates."
+    - "npm audit --omit=dev reports a pre-existing high advisory in source-map-js@1.2.1; the new klinecharts package has no transitive dependencies."
+
+rollback:
+  status: NOT_STARTED
+  target_version: null
+  target_tag: null
+  target_commit_sha: null
+  artifact: null
+  artifact_digest: null
+  database_restore_point:
+    stock_analyzer:
+      path: /volume1/docker/stock-analyzer/backups/pre-REL-20261009-001-stock-analyzer.dump
+      sha256: 82463bd358b8830dba711f1d8c85454900877107af0c03a74b515823f345329c
+      format: pg_dump_custom
+      readability: PASS
+    investment_dashboard:
+      path: /volume1/docker/investment-research-dashboard/backups/pre-REL-20261009-001-investment-dashboard.dump
+      sha256: a929a0ac1e2540db4629e8d6887caa1fb9a669beb139f1527bcd7a454ad1a83b
+      format: pg_dump_custom
+      readability: PASS
+  steps:
+    - "If activation alone fails, set VITE_PRO_KLINE_ENABLED=false and rebuild Dashboard Web from v0.15.0."
+    - "If Dashboard release fails, deploy v0.14.1 and verify exact runtime identity; keep additive database changes."
+    - "If Provider release fails before Consumer deployment, deploy v3.20.0 and verify API/stock-watch; keep additive schema."
+    - "Database restore requires an incident review; prefer forward repair and do not auto-downgrade or overwrite live data."
+
+notes:
+  - "marketNewsFeed is explicitly excluded: no changed code or required release dependency."
+  - "User authorized formal Production release and professional-chart activation after all gates pass."
+  - "BLOCKED before formal Tag: Dashboard standard release process requires staging release-candidate smoke and migration validation, but no configured staging environment or acceptance evidence is available. Isolated local and CI checks are recorded separately and are not mislabeled as staging."
+  - "No formal Tag, production deployment or feature activation has occurred."
