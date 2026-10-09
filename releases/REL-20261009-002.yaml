@@ -1,0 +1,215 @@
+schema_version: "1.0"
+template: false
+release_id: REL-20261009-002
+status: RELEASED
+created_at: "2026-10-09T14:55:00+08:00"
+updated_at: "2026-10-09T16:51:32+08:00"
+environment: Production
+
+changes:
+  - CHG-20261008-001
+
+repositories:
+  - repository: stock-analyzer
+    previous_version: "3.21.0"
+    new_version: "3.22.0"
+    commit_sha: 17bd04eafdf802c031392591f9ecc2df597b698f
+    tag: v3.22.0
+    artifact:
+      identity: stock-analyzer:17bd04eafdf802c031392591f9ecc2df597b698f
+      type: SOURCE_TAG_BUILD
+      source: v3.22.0
+      local_image_id: sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95
+    artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+    dependencies: []
+    tests:
+      - "255 unittest, 13 focused pytest, compileall, Ruff and real AKShare + isolated PostgreSQL: PASS"
+      - "Provider PRs #2 and #3 merged; no GitHub Actions workflow configured"
+    deployment:
+      entrypoint: ./deploy.sh v3.22.0
+      dry_run: ./deploy.sh v3.22.0 --dry-run
+      status: COMPLETED
+    verification:
+      status: PASS
+      checks:
+        - "Exact Tag/SHA, app version 3.22.0, API health and protected seat-flow contract"
+        - "Real seat 10026937, concept coverage, source quality and latency"
+    rollback_version: "3.21.0"
+    rollback_tag: v3.21.0
+    rollback_commit_sha: 910befbc62ee4c6a3284e7e750acab7661a3e4b6
+    rollback_artifact_id: sha256:49748c11b9a441f17f7de00f65a9ced9ea0602158e1c0a7ce17b29e94e50d7dc
+  - repository: investment-research-dashboard
+    previous_version: "0.15.0"
+    new_version: "0.16.0"
+    commit_sha: ad7e9abff12006ed42103587aeaf799e84bf7672
+    tag: v0.16.0
+    artifact:
+      identity: investment-research-dashboard@ad7e9abff12006ed42103587aeaf799e84bf7672
+      type: SOURCE_TAG_BUILD
+      source: v0.16.0
+      local_image_ids:
+        api: sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac
+        web: sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb
+    artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+    dependencies:
+      - repository: stock-analyzer
+        type: required_provider_before_consumer
+        contracts: [investment-dashboard-seat-flow-v1]
+    tests:
+      - "Dashboard feature PR #3 and version PR #5 merged; each latest head push/pull_request CI PASS"
+      - "Version PR #5: backend pytest, Alembic upgrade/check, Ruff, 46 Vitest and production builds PASS in GitHub CI"
+    deployment:
+      entrypoint: ./deploy.sh v0.16.0
+      dry_run: ./deploy.sh v0.16.0 --dry-run
+      status: COMPLETED
+    verification:
+      status: PASS
+      checks:
+        - "Exact Tag/SHA, app version 0.16.0, health/readiness and authenticated seat-flow proxy"
+        - "Seat report and explicit AI path; no real paid model call required"
+    rollback_version: "0.15.0"
+    rollback_tag: v0.15.0
+    rollback_commit_sha: 7b23ff0ea16af8372bb48db4a24cec225200a374
+    rollback_artifact_ids:
+      api: sha256:aa83631d0b637b701aaa692883a5979e8201857dc63635c7ec68c744b247d359
+      web: sha256:e33dde272efc165fb9297d49aa7302b706070a572bb78f7a33321d822e4fb4ec
+
+previous_version: null
+new_version: null
+commit_sha: null
+tag: null
+artifact:
+  identity: SOURCE_TAG_BUILD
+  type: SOURCE_TAG_BUILD
+  source: frozen_repository_tags
+artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+
+dependencies:
+  - provider: stock-analyzer
+    consumer: investment-research-dashboard
+    type: required
+    reason: Dashboard seat-flow Consumer requires the new Provider endpoint
+release_order:
+  - stock-analyzer
+  - investment-research-dashboard
+rollback_version: null
+
+tests:
+  repository:
+    - "Provider 255 unittest and 13 focused pytest PASS at branch tip; merge tree differs only by version metadata"
+    - "Dashboard PR #5 GitHub push and pull_request CI PASS at version branch tip; merge tree differs only by merge commit"
+  contract:
+    - "seat-flow-v1 Provider and Dashboard adapter including partial concept quality and stale fallback: PASS"
+  integration:
+    - "Local real AKShare -> Provider -> isolated PostgreSQL -> Dashboard HTTP/browser: PASS"
+    - "Target NAS read-only AKShare 179 trades and production healthy concept snapshot coverage 124/179: PASS"
+    - "Frozen Dashboard v0.16.0 candidate in disposable Docker staging: PostgreSQL 17 base-to-head migration 9b1e4c6d8f20 and Alembic check PASS; API health/readiness/data-status 200; Web and same-network API proxy 200"
+  critical_path_e2e:
+    - "Local real-data page, trends, sector clues and stale fallback: PASS"
+    - "Production authenticated Dashboard HTTP seat-flow -> Provider -> real AKShare/classification data: 179 trades, 124 concept-covered trades and 8 sector clues; public HTTPS /seat-flow TLS valid and Web seat-flow assets present: PASS"
+  release_gates:
+    - "CHG-20261008-001 READY on governance main 068c3d7: PASS"
+    - "Production exact Tag/SHA and image IDs rechecked 2026-10-09 14:42-14:55 +08:00: PASS"
+    - "Current rollback Tags v3.21.0 and v0.15.0 exact-tag NAS dry-run: PASS"
+    - "Proposed Tags v3.22.0 and v0.16.0 absent from origin: PASS"
+    - "Fresh 2026-10-09 14:58-14:59 +08:00 PostgreSQL custom-format backups, mode 600, nonempty and pg_restore -l readable: PASS"
+    - "NAS configuration, Docker and restricted deploy launcher access, disk capacity: PASS"
+    - "Immutable annotated v3.22.0 and v0.16.0 Tags pushed at frozen SHAs; NAS exact-Tag dry runs resolved those SHAs: PASS"
+    - "Dashboard frozen-SHA staging API Image ID sha256:d525a38fe745458e7504a95447f2de750a6e1287ec6b14d1b264c8d62c6b3fed and Web Image ID sha256:4e665067f8876a0c4487521d47f278919c49bbc7fa4d0e6057f52c2e5376694d: PASS; disposable staging containers and network removed"
+    - "Dashboard v0.16.0 deployed at exact SHA with healthy API/Web runtime Image IDs; production smoke, migration check, authenticated seat-flow contract and public HTTPS: PASS"
+    - "Provider v3.22.0 deployed at exact SHA and runtime Image ID sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95; script exit 0, health and authenticated real-data seat-flow smoke PASS"
+
+deployment:
+  environment: Production
+  status: COMPLETED
+  started_at: "2026-10-09T15:17:23+08:00"
+  completed_at: "2026-10-09T16:51:32+08:00"
+  steps:
+    - "Formal authorization reconfirmed; frozen origin/main SHAs, unused Tags, NAS production baseline and backups revalidated before Tag creation."
+    - "Annotated v3.22.0 and v0.16.0 Tags created and pushed at the frozen Commit SHAs; both NAS exact-Tag dry runs passed."
+    - "Frozen Dashboard candidate API/Web images built and tested against disposable PostgreSQL staging; migration, Alembic check, health, readiness, data-status and Web proxy passed."
+    - "Provider v3.22.0 deployed from exact Tag; runtime health/version, image identity, authenticated 紫阳东路 report and unauthenticated 401 verified before Dashboard deployment."
+    - "Dashboard v0.16.0 deployed from exact Tag after Provider smoke; API/Web health, migration head/check, production smoke, authenticated seat-flow and public HTTPS route verified."
+  feature_activation: []
+
+production_identity:
+  - repository: stock-analyzer
+    version: "3.22.0"
+    tag: v3.22.0
+    commit_sha: 17bd04eafdf802c031392591f9ecc2df597b698f
+    artifact: stock-analyzer:17bd04eafdf802c031392591f9ecc2df597b698f
+    artifact_id: sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95
+    observed_at: "2026-10-09T16:28:33+08:00"
+    health: PASS
+  - repository: investment-research-dashboard
+    version: "0.16.0"
+    tag: v0.16.0
+    commit_sha: ad7e9abff12006ed42103587aeaf799e84bf7672
+    artifact: investment-research-dashboard@ad7e9abff12006ed42103587aeaf799e84bf7672
+    artifact_ids:
+      api: sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac
+      web: sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb
+    observed_at: "2026-10-09T16:51:32+08:00"
+    build_time: "2026-10-09T16:42:52+0800"
+    health: HEALTHY_READY
+
+verification:
+  status: PASS_WITH_DOCUMENTED_LIMITATIONS
+  smoke:
+    - "Provider 紫阳东路 90d: 179 trades, 90 stocks, 124 concept-covered trades, 8 sector clues, partial quality; unauthenticated endpoint 401: PASS"
+    - "Dashboard production_smoke.py: readiness, three dashboard phases, US overnight and calendar all HTTP 200 with non-mock data: PASS"
+    - "Dashboard authenticated HTTP /api/v1/seat-flow for 紫阳东路: 179 trades, 124 concept-covered trades, 8 sector clues, partial quality: PASS"
+  health_checks:
+    - "Provider stock-api /api/health ok=true, auth configured; stock-api and stock-watch containers running: PASS"
+    - "Dashboard API and Web Docker health healthy; /api/v1/readiness and /api/v1/data-status 200: PASS"
+  version_checks:
+    - "Provider Production checkout exact v3.22.0/17bd04e and both containers Image ID sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95: PASS"
+    - "Dashboard Production checkout exact v0.16.0/ad7e9ab; runtime app_version=0.16.0, git_commit=ad7e9ab, build_time=2026-10-09T16:42:52+0800; API/Web Image IDs recorded: PASS"
+  contract_checks:
+    - "Provider authenticated investment-dashboard-seat-flow-v1 and seat-flow-rules-v3 real-data response: PASS"
+    - "Dashboard authenticated server route accepted Provider investment-dashboard-seat-flow-v1, partial concept quality and matching counts: PASS"
+  integration_checks:
+    - "Provider-first then Dashboard deployment; production Dashboard to Provider real seat-flow request and source data: PASS"
+    - "Dashboard Alembic current 9b1e4c6d8f20 (head) and check No new upgrade operations detected: PASS"
+  e2e_checks:
+    - "Public https://invest.freemumu.top:9527/seat-flow HTTP 200, TLS verify 0, seat-flow JS assets present; authenticated backend path PASS; browser visual acceptance requires user login."
+  evidence:
+    - "Provider deploy runner exit=0, DEPLOYMENT_RESULT=SUCCESS, HEALTH_RESULT=PASS. Script ARTIFACT_ID line returned previous Image ID; Docker inspect of running stock-api and stock-watch and SHA-tagged image independently proved new Image ID."
+    - "Dashboard deploy runner exit=0, DEPLOYMENT_RESULT=SUCCESS and both Docker containers healthy; restricted launcher completed."
+    - "Previous Provider and Dashboard API/Web Image IDs remain on NAS; both fresh readable backups remain present."
+  known_limitations:
+    - "AKShare uses Eastmoney under the hood; user directed personal-use license-document check to be skipped. No third-party license was independently verified."
+    - "Concept coverage is partial (124/179 target trades) and must be labelled as such."
+    - "SOURCE_TAG_BUILD has local Image IDs but no registry digest; use exact Tag/SHA and record built Image IDs."
+    - "npm audit --omit=dev reports one pre-existing high advisory in transitive source-map-js, also recorded in REL-20261009-001."
+    - "Provider deploy.sh reports compose images -q before compose up, so its ARTIFACT_ID line reflected the previous container image; runtime Docker inspect is authoritative for this release."
+    - "Production authenticated browser visual check requires user login and was not claimed; local real-data page E2E and production authenticated HTTP contract passed."
+    - "DeepSeek key is configured; real paid model generation was not invoked during release smoke."
+
+rollback:
+  status: READY
+  target_version: null
+  target_tag: null
+  target_commit_sha: null
+  artifact: null
+  artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
+  database_restore_point:
+    stock-analyzer:
+      path: /volume1/docker/stock-analyzer/backups/pre-REL-20261009-002-stock-analyzer.dump
+      sha256: daa34cbad98da3d77f9613efc60cecb5474af489d2a6b9f4e9301e1f8ee9954a
+      size: 301M
+      format: PostgreSQL custom
+      verification: mode_600_nonempty_pg_restore_list_pass
+    investment-research-dashboard:
+      path: /volume1/docker/investment-research-dashboard/backups/pre-REL-20261009-002-investment-dashboard.dump
+      sha256: 0653122bd2dfaefbc6cd444e37e770103d72927f127924fa1ad8f1a1111e5fc4
+      size: 7.3M
+      format: PostgreSQL custom
+      verification: mode_600_nonempty_pg_restore_list_pass
+  steps:
+    - "Stop downstream if Provider smoke fails; redeploy stock-analyzer v3.21.0 with exact-tag entrypoint."
+    - "If Dashboard fails, redeploy Dashboard v0.15.0; no schema removal or destructive migration in this Change."
+
+notes:
+  - "Only stock-analyzer and investment-research-dashboard are affected; marketNewsFeed and CHG-20261008-002 are excluded."
+  - "Formal production release is explicitly authorized by the user, conditional on all gates."

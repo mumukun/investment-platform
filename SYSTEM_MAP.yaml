@@ -250,6 +250,17 @@ contracts:
       - stock-analyzer/stock_analyzer/limit_up_contract.py
       - investment-research-dashboard/backend/app/integrations/stock_analyzer.py
     status: verified
+  investment-dashboard-seat-flow-v1:
+    provider: stock-analyzer
+    consumers:
+      - investment-research-dashboard
+    version_kind: contract_version
+    rules_version: seat-flow-rules-v3
+    interface: GET /api/integrations/investment-dashboard/seat-flow
+    evidence:
+      - stock-analyzer/stock_analyzer/seat_flow.py
+      - investment-research-dashboard/backend/app/integrations/stock_analyzer.py
+    status: needs_verification
   trend-stock-generic-stock-lookup:
     provider: stock-analyzer
     consumers:
