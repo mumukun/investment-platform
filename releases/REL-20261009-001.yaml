@@ -1,9 +1,9 @@
 schema_version: "1.0"
 template: false
 release_id: REL-20261009-001
-status: BLOCKED
+status: READY_FOR_FORMAL_RELEASE
 created_at: "2026-10-09T09:04:27+08:00"
-updated_at: "2026-10-09T09:07:34+08:00"
+updated_at: "2026-10-09T11:16:29+08:00"
 
 changes:
   - CHG-20261008-000
@@ -103,16 +103,21 @@ tests:
   integration:
     - "isolated PostgreSQL additive migration and Dashboard Alembic check: PASS"
     - "local live read-only Sina/AkShare Provider through Dashboard adapter: PASS"
+    - "ephemeral isolated staging at frozen SHAs: PostgreSQL 17 base-to-head migration and Alembic check PASS; Dashboard API/readiness/Web proxy HTTP 200; live Provider-to-Dashboard stock-bars-v2 day/week/month, observation cutoff and exclusive history cursor PASS"
   critical_path_e2e:
     - "isolated local watchlist and swing-selection professional-chart golden path: PASS"
+    - "ephemeral staging Web v0.15.0 with professional flag enabled: watchlist stock detail rendered klinecharts candle/MA/amount/MACD using live Provider bars, visually PASS"
     - "short-selection and limit-up enabled-flag wiring: fixture tests PASS; live visual acceptance pending candidates"
   release_gates:
     - "Change READY on governance main 38dfdaf: PASS"
     - "Production baseline and rollback Tag/Image IDs via Tailscale: PASS at 2026-10-09 08:43 +08:00"
+    - "Production baseline reconfirmed at 2026-10-09 11:13 +08:00: stock v3.20.0/0626c17 and Dashboard v0.14.1/b7e005c; all three expected containers running; professional K-line flag UNSET"
     - "Proposed v3.21.0 and v0.15.0 remote Tags absent; frozen main SHAs verified: PASS"
     - "Production stock_analyzer and investment_dashboard pg_dump backups created with mode 0600; pg_restore -l readability checks passed"
+    - "Fresh pre-deployment stock_analyzer and investment_dashboard custom-format pg_dump backups completed on NAS; mode 0600, SHA-256 and pg_restore -l checks PASS"
     - "Current Production v3.20.0 and v0.14.1 exact-Tag deployment dry runs: PASS through Tailscale"
-    - "Dashboard staging release-candidate smoke and migration validation required by docs/technical/deployment-operations.md section 6: BLOCKED; no configured staging environment found"
+    - "Dashboard staging release-candidate smoke and migration validation required by docs/technical/deployment-operations.md section 6: PASS in dedicated ephemeral Docker network and databases with test-only credentials; production resources untouched"
+    - "Staging image IDs and OCI revisions: Provider sha256:5b6922013982bf55ab3877ca073486794a6bbd41603a3d90bbfd1528255b11a6 at 910befbc; Dashboard API sha256:8733c4d069b3dff5645b687d3ed59600258d7334b442853148749ce46559ffc4 and Web sha256:6c299a6bbe3d65f68fcbfbbe5828ee8212a0bd5971e8a545d8f81afaaf11a38f at 7b23ff0"
     - "Production exact-Tag deployment dry runs: PENDING_TAG_CREATION"
 
 deployment:
@@ -164,13 +169,13 @@ rollback:
   artifact_digest: null
   database_restore_point:
     stock_analyzer:
-      path: /volume1/docker/stock-analyzer/backups/pre-REL-20261009-001-stock-analyzer.dump
-      sha256: 82463bd358b8830dba711f1d8c85454900877107af0c03a74b515823f345329c
+      path: /volume1/docker/stock-analyzer/backups/pre-REL-20261009-001-stock-analyzer-1115.dump
+      sha256: a617ec9210036c71c9d820e3fa688abf8b9cc43e891bd3cfa9ca6697c86057d4
       format: pg_dump_custom
       readability: PASS
     investment_dashboard:
-      path: /volume1/docker/investment-research-dashboard/backups/pre-REL-20261009-001-investment-dashboard.dump
-      sha256: a929a0ac1e2540db4629e8d6887caa1fb9a669beb139f1527bcd7a454ad1a83b
+      path: /volume1/docker/investment-research-dashboard/backups/pre-REL-20261009-001-investment-dashboard-1118.dump
+      sha256: 027a4bd87ca58a1d67cf6bfdefef127ac2be6413144eb38e32eccd3e6973e890
       format: pg_dump_custom
       readability: PASS
   steps:
@@ -182,5 +187,5 @@ rollback:
 notes:
   - "marketNewsFeed is explicitly excluded: no changed code or required release dependency."
   - "User authorized formal Production release and professional-chart activation after all gates pass."
-  - "BLOCKED before formal Tag: Dashboard standard release process requires staging release-candidate smoke and migration validation, but no configured staging environment or acceptance evidence is available. Isolated local and CI checks are recorded separately and are not mislabeled as staging."
-  - "No formal Tag, production deployment or feature activation has occurred."
+  - "Dedicated release staging used frozen merge SHA images: Provider 910befbc, Dashboard API/Web 7b23ff0, isolated PostgreSQL and no Production credentials. It exercises live public-market reads; it is not a full production-data replica."
+  - "READY only: no formal Tag, Production deployment or feature activation has occurred."
