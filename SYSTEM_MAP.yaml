@@ -255,7 +255,7 @@ contracts:
     consumers:
       - investment-research-dashboard
     version_kind: contract_version
-    rules_version: seat-flow-rules-v2
+    rules_version: seat-flow-rules-v3
     interface: GET /api/integrations/investment-dashboard/seat-flow
     evidence:
       - stock-analyzer/stock_analyzer/seat_flow.py
