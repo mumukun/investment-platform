@@ -3,7 +3,7 @@ template: false
 release_id: REL-20261009-002
 status: IN_PROGRESS
 created_at: "2026-10-09T14:55:00+08:00"
-updated_at: "2026-10-09T15:21:23+08:00"
+updated_at: "2026-10-09T16:28:33+08:00"
 environment: Production
 
 changes:
@@ -19,7 +19,7 @@ repositories:
       identity: stock-analyzer:17bd04eafdf802c031392591f9ecc2df597b698f
       type: SOURCE_TAG_BUILD
       source: v3.22.0
-      local_image_id: PENDING_BUILD
+      local_image_id: sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95
     artifact_digest: ARTIFACT_DIGEST_UNAVAILABLE
     dependencies: []
     tests:
@@ -28,9 +28,9 @@ repositories:
     deployment:
       entrypoint: ./deploy.sh v3.22.0
       dry_run: ./deploy.sh v3.22.0 --dry-run
-      status: NOT_STARTED
+      status: COMPLETED
     verification:
-      status: NOT_STARTED
+      status: PASS
       checks:
         - "Exact Tag/SHA, app version 3.22.0, API health and protected seat-flow contract"
         - "Real seat 10026937, concept coverage, source quality and latency"
@@ -116,7 +116,8 @@ tests:
     - "NAS configuration, Docker and restricted deploy launcher access, disk capacity: PASS"
     - "Immutable annotated v3.22.0 and v0.16.0 Tags pushed at frozen SHAs; NAS exact-Tag dry runs resolved those SHAs: PASS"
     - "Dashboard frozen-SHA staging API Image ID sha256:d525a38fe745458e7504a95447f2de750a6e1287ec6b14d1b264c8d62c6b3fed and Web Image ID sha256:4e665067f8876a0c4487521d47f278919c49bbc7fa4d0e6057f52c2e5376694d: PASS; disposable staging containers and network removed"
-    - "Candidate artifact build and target deployed smoke are formal-release steps after immutable Tags: PENDING"
+    - "Dashboard target artifact build and deployed smoke: PENDING"
+    - "Provider v3.22.0 deployed at exact SHA and runtime Image ID sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95; script exit 0, health and authenticated real-data seat-flow smoke PASS"
 
 deployment:
   environment: Production
@@ -127,24 +128,39 @@ deployment:
     - "Formal authorization reconfirmed; frozen origin/main SHAs, unused Tags, NAS production baseline and backups revalidated before Tag creation."
     - "Annotated v3.22.0 and v0.16.0 Tags created and pushed at the frozen Commit SHAs; both NAS exact-Tag dry runs passed."
     - "Frozen Dashboard candidate API/Web images built and tested against disposable PostgreSQL staging; migration, Alembic check, health, readiness, data-status and Web proxy passed."
+    - "Provider v3.22.0 deployed from exact Tag; runtime health/version, image identity, authenticated 紫阳东路 report and unauthenticated 401 verified before Dashboard deployment."
   feature_activation: []
 
-production_identity: []
+production_identity:
+  - repository: stock-analyzer
+    version: "3.22.0"
+    tag: v3.22.0
+    commit_sha: 17bd04eafdf802c031392591f9ecc2df597b698f
+    artifact: stock-analyzer:17bd04eafdf802c031392591f9ecc2df597b698f
+    artifact_id: sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95
+    observed_at: "2026-10-09T16:28:33+08:00"
+    health: PASS
 
 verification:
   status: NOT_STARTED
-  smoke: []
-  health_checks: []
-  version_checks: []
-  contract_checks: []
+  smoke:
+    - "Provider 紫阳东路 90d: 179 trades, 90 stocks, 124 concept-covered trades, 8 sector clues, partial quality; unauthenticated endpoint 401: PASS"
+  health_checks:
+    - "Provider stock-api /api/health ok=true, auth configured; stock-api and stock-watch containers running: PASS"
+  version_checks:
+    - "Provider Production checkout exact v3.22.0/17bd04e and both containers Image ID sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95: PASS"
+  contract_checks:
+    - "Provider authenticated investment-dashboard-seat-flow-v1 and seat-flow-rules-v3 real-data response: PASS"
   integration_checks: []
   e2e_checks: []
-  evidence: []
+  evidence:
+    - "Provider deploy runner exit=0, DEPLOYMENT_RESULT=SUCCESS, HEALTH_RESULT=PASS. Script ARTIFACT_ID line returned previous Image ID; Docker inspect of running stock-api and stock-watch and SHA-tagged image independently proved new Image ID."
   known_limitations:
     - "AKShare uses Eastmoney under the hood; user directed personal-use license-document check to be skipped. No third-party license was independently verified."
     - "Concept coverage is partial (124/179 target trades) and must be labelled as such."
     - "SOURCE_TAG_BUILD has local Image IDs but no registry digest; use exact Tag/SHA and record built Image IDs."
     - "npm audit --omit=dev reports one pre-existing high advisory in transitive source-map-js, also recorded in REL-20261009-001."
+    - "Provider deploy.sh reports compose images -q before compose up, so its ARTIFACT_ID line reflected the previous container image; runtime Docker inspect is authoritative for this release."
 
 rollback:
   status: READY
