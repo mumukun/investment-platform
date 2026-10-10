@@ -10,6 +10,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
 import image_release as release
 import nas_image_release as nas
+import check_docker_proxy as proxy
 
 
 def candidate(repo="stock-analyzer"):
@@ -96,6 +97,29 @@ def plan():
 
 
 class PlanTests(unittest.TestCase):
+    def test_actual_docker_info_proxy_keys_are_reported_by_both_tools(self):
+        for enabled in (False, True):
+            info = {"Architecture": "x86_64", "HttpProxy": "http://127.0.0.1:7890" if enabled else "", "HttpsProxy": "http://127.0.0.1:7890" if enabled else ""}
+            for module in (nas, proxy):
+                with self.subTest(enabled=enabled, module=module.__name__), ExitStack() as stack:
+                    output = stack.enter_context(redirect_stdout(io.StringIO()))
+                    argv = ["tool", "preflight"] if module is nas else ["tool", "--proxy", "http://127.0.0.1:7890"]
+                    stack.enter_context(patch.object(sys, "argv", argv))
+                    if module is nas:
+                        stack.enter_context(patch.object(sys, "stdin", io.StringIO(json.dumps(plan()))))
+                        stack.enter_context(patch.object(nas.os, "geteuid", return_value=0))
+                        stack.enter_context(patch.object(nas, "load_config", return_value={"repositories": {"stock-analyzer": {"path": "/fixture", "version_command": ["fixture"]}}}))
+                        stack.enter_context(patch.object(Path, "is_file", return_value=True))
+                        stack.enter_context(patch.object(nas, "run", return_value=json.dumps(info)))
+                    else:
+                        stack.enter_context(patch.object(proxy.subprocess, "check_output", return_value=json.dumps(info)))
+                        stack.enter_context(patch.object(proxy, "probe", return_value={"reachable": True}))
+                    module.main()
+                    result = json.loads(output.getvalue())
+                    prefix = "" if module is nas else "daemon_"
+                    self.assertEqual(result[prefix + "http_proxy_configured"], enabled)
+                    self.assertEqual(result[prefix + "https_proxy_configured"], enabled)
+
     def test_preparation_allows_pending_target_acceptance_but_never_deployment(self):
         value = plan()
         value["status"] = "NEEDS_TARGET_VERIFICATION"

@@ -559,8 +559,8 @@ def main():
             json.dumps(
                 {
                     "preflight": "PASS",
-                    "http_proxy_configured": bool(info.get("HTTPProxy")),
-                    "https_proxy_configured": bool(info.get("HTTPSProxy")),
+                    "http_proxy_configured": bool(info.get("HttpProxy")),
+                    "https_proxy_configured": bool(info.get("HttpsProxy")),
                     "note": "private registry pull and live smoke are separate gates",
                 }
             )

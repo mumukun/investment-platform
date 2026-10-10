@@ -54,8 +54,8 @@ def main():
         json.dumps(
             {
                 "docker_version": info.get("ServerVersion"),
-                "daemon_http_proxy_configured": bool(info.get("HTTPProxy")),
-                "daemon_https_proxy_configured": bool(info.get("HTTPSProxy")),
+                "daemon_http_proxy_configured": bool(info.get("HttpProxy")),
+                "daemon_https_proxy_configured": bool(info.get("HttpsProxy")),
                 "direct_registry_connection": probe(None),
                 "mihomo_registry_connection": probe(args.proxy),
                 "note": "connection timing only; measure private image pull throughput separately",
