@@ -1,0 +1,25 @@
+{
+  "deploy_user": "freemumu",
+  "git_bin": "/usr/local/bin/git",
+  "state_root": "/volume1/docker/.investment-platform-releases",
+  "repositories": {
+    "stock-analyzer": {
+      "path": "/volume1/docker/stock-analyzer",
+      "compose_file": "docker-compose.yml",
+      "backup_command": [],
+      "verify_backup_command": [],
+      "health_command": [],
+      "version_command": [],
+      "smoke_command": []
+    },
+    "investment-research-dashboard": {
+      "path": "/volume1/docker/investment-research-dashboard",
+      "compose_file": "compose.yaml",
+      "backup_command": [],
+      "verify_backup_command": [],
+      "health_command": [],
+      "version_command": [],
+      "smoke_command": []
+    }
+  }
+}

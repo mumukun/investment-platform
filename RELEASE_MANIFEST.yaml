@@ -26,6 +26,11 @@ artifact:
   source: null
 artifact_digest: null
 
+# Optional CI_BUILD_ONCE inputs/evidence; historical SOURCE_TAG_BUILD remains supported.
+image_execution_plan: null
+candidate_evidence: []
+deployment_receipts: []
+
 dependencies: []
 release_order: []
 rollback_version: null

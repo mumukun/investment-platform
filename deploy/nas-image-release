@@ -1,0 +1,5 @@
+#!/bin/sh
+# Install this wrapper and both Python modules root-owned; grant sudo only this command.
+PATH=/usr/local/bin:/usr/bin:/bin
+export PATH
+exec /usr/bin/python3 /usr/local/lib/investment-platform/nas_image_release.py "$@"

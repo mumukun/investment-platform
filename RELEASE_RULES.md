@@ -126,3 +126,25 @@ Tag/Artifact；数据库优先前向修复，只有 downgrade 已验证且不会
 
 Release 阶段只读取 Change 文件、系统图、Manifest、相关 AGENTS、Git status/diff、版本源、Tags、CI 和测试
 结果。禁止默认重新扫描完整源码。只有 gate 失败、证据不一致或兼容性无法判断时，才深入受影响模块。
+
+## 11. 候选镜像与同一产物发布
+
+支持新增 `CI_BUILD_ONCE` 模型，实现与验收见 `docs/image-release.md`。真实 CI/GHCR/NAS、备份及
+回滚验收前标记 `NEEDS_TARGET_VERIFICATION`，不得替代已验证的 SOURCE_TAG_BUILD。
+
+- 版本更新优先纳入业务 PR，仍按 Release 收集范围核对独立 SemVer。PR SHA 与合并 SHA 不同时，
+  合并结果拥有独立有效证据，不直接复用 PR 通过标记。
+- main 成功 CI 生成精确 SHA 的候选。准备阶段可构建、隔离验收和在明确范围预取；不得创建正式
+  Tag、启动生产、迁移或激活。fixture 不代替真实数据、跨仓和目标环境验收。
+- 候选绑定 source SHA/version/platform/build arguments/digest/config Image ID/CI run 和 smoke。
+  正式 Tag 指向该 SHA，使用同一产物，Tag 不重建。生产必须 `--no-build --pull never`，不回退到
+  源码构建或浮动镜像。正式 deploy 再验证 GitHub 候选证据与 NAS 基线。
+- Manifest 为共享治理记录，附加 image-release-v1 执行计划和 receipt 为可执行输入/证据；scope、
+  order、baseline、rollback 和 gates 必须一致。独立构建可并行，生产按依赖顺序并持 NAS 全局锁。
+  原源码入口过渡期也须治理串行操作，不能绕开新锁手工并发。
+- 正式切换前运行 fresh readable backup。GHCR 和离线归档可作为传输方式；离线归档验证 tar hash
+  与 CI config Image ID，不以 load 后缺失 RepoDigests 推测身份。
+- journal 保存阶段、结果和耗时；重试核对运行身份，不覆盖迁移前备份。传输方式变化不改变冻结
+  产物；更换产物/范围重新准备。回滚使用保留稳定镜像，不自动 downgrade DB。
+- 汇总自动证据，按重要状态转换提交；不要求每个检查单独 PR。失败/部分状态也须保存真实范围。
+  当前授权不足时不 Commit/Push/Merge、创建正式 Tag 或切换生产。
