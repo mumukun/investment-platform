@@ -17,6 +17,10 @@ IMAGE = "sha256:e684c11a6c7c127c1b7602063cc6a13db0a12b62dfd770d83936c089751d498d
 DATABASES = ("stock_analyzer", "investment_dashboard")
 
 
+class RestoreFailure(RuntimeError):
+    """Only fixed stage names and error types; never captured database output."""
+
+
 def checked_files(folder):
     if os.geteuid() != 0:
         raise ValueError("administrator required")
@@ -66,7 +70,8 @@ def restore(folder):
         # No host mounts, published ports, production credentials or shared volumes.
         container = docker(
             "run", "-d", "--pull", "never", "--network", "none",
-            "--restart", "no", "--memory", "1g", "--cpus", "1",
+            # DS920plus has memory limits but no CPU CFS quota support.
+            "--restart", "no", "--memory", "1g",
             "--name", name, "--label", "investment-platform.change=CHG-20261010-001",
             "-e", "POSTGRES_USER=postgres", "-e", "POSTGRES_DB=postgres",
             "-e", "POSTGRES_HOST_AUTH_METHOD=trust", IMAGE,
@@ -77,7 +82,8 @@ def restore(folder):
         stage = "wait for isolated PostgreSQL"
         for attempt in range(60):
             try:
-                docker("exec", container, "pg_isready", "-U", "postgres", "-d", "postgres")
+                # Entry-point initialization uses a temporary Unix-only server.
+                docker("exec", container, "pg_isready", "-h", "127.0.0.1", "-U", "postgres", "-d", "postgres")
                 break
             except subprocess.CalledProcessError:
                 if attempt == 59:
@@ -107,13 +113,19 @@ def restore(folder):
                 "application_tables": table_count,
             }
             print(db + ": isolated restore PASS", flush=True)
-    except (OSError, ValueError, subprocess.SubprocessError):
+    except (OSError, ValueError, subprocess.SubprocessError) as error:
         # Database errors can contain application data; never print captured output.
-        raise RuntimeError("restore verification failed at " + stage) from None
+        code = " exit=" + str(error.returncode) if isinstance(error, subprocess.CalledProcessError) else ""
+        raise RestoreFailure(
+            "restore verification failed at " + stage + "; " + type(error).__name__ + code
+        ) from None
     finally:
         if container:
             # Only the exact ID returned by our own successful create; removes anonymous volume.
-            docker("rm", "-f", "-v", container)
+            try:
+                docker("rm", "-f", "-v", container)
+            except (OSError, subprocess.SubprocessError):
+                raise RestoreFailure("temporary container cleanup failed") from None
     receipt = {
         "scope": "isolated-database-restore", "result": "PASS",
         "at": datetime.now(timezone.utc).isoformat(), "postgres_image_id": IMAGE,
@@ -133,5 +145,8 @@ if __name__ == "__main__":
         if len(sys.argv) != 2:
             raise ValueError("one reviewed backup directory required")
         restore(Path(sys.argv[1]))
-    except (OSError, ValueError, RuntimeError, subprocess.SubprocessError):
+    except (ValueError, RestoreFailure) as error:
+        print(str(error), file=sys.stderr)
+        raise SystemExit("Restore check stopped; no production database was targeted.") from None
+    except (OSError, subprocess.SubprocessError):
         raise SystemExit("Restore check stopped; no production database was targeted.") from None
