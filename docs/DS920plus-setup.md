@@ -142,6 +142,27 @@ EOF
 仅向自己的完整容器 ID 执行 createdb/pg_restore。成功后清理临时容器及匿名卷，在备份目录写入
 0600 的 restore receipt（含备份摘要、镜像 ID 和应用表数量，不含实际数据）。它不调用生产
 数据库，也不能替代新发布器或应用回滚验收。只有 root-owned 700 目录内的非空 600 备份被接受。
+本机共享目录继承 Synology ACL：即使 mkdtemp/umask077，实测备份目录和文件仍为777，
+且继承多个账号权限。不要仅根据创建命令推断备份保护成功。先用 synoacltool -get 和 stat
+检查，在管理员核对三个对象都为本 Change 创建且 root-owned、非符号链接后，移除仅这三个
+对象的继承 ACL 并设置 POSIX 权限。不得对整个共享目录或其他备份做递归操作：
+
+```sh
+(
+set -e
+backup_dir=/volume1/docker/CHG-20261010-001-backup-re4h3fb7
+/usr/syno/bin/synoacltool -del "$backup_dir"
+chmod 700 "$backup_dir"
+for backup_path in "$backup_dir/stock_analyzer.dump" "$backup_dir/investment_dashboard.dump"; do
+  /usr/syno/bin/synoacltool -del "$backup_path"
+  chmod 600 "$backup_path"
+done
+stat -c '%n mode=%a owner=%U' "$backup_dir" "$backup_dir/stock_analyzer.dump" "$backup_dir/investment_dashboard.dump"
+)
+```
+
+如任一步报错，停止；不得绕过恢复工具的权限检查。发布器的 state_root 也位于共享目录，
+首次验收需实际核对 root-only 权限；未验证前不能进入生产部署。现有文件不以 umask 代替权限证据。
 脚本或清理失败均不得视作通过；如果容器创建本身失败，检查本次唯一名称的残留资源，不做模糊清理。
 
 完成登录和安装后告知 Codex，无需发送任何密码：
