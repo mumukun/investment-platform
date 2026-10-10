@@ -1,0 +1,164 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261010-900",
+  "environment": "Production",
+  "status": "NEEDS_TARGET_VERIFICATION",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "ea4bc5b678ab913e29cae5829ac105baa76643f5",
+        "version": "3.22.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f4c7713f1515c51877a89b3bdc4980ab1a373ce5b0ed284f0fc6ef88ee872022"
+        },
+        "image_ids": {
+          "app": "sha256:8486f52e84dd0987500bc909161537347b9fcd0e634e8ebc9574873b42fe86d6"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "ea4bc5b678ab913e29cae5829ac105baa76643f5",
+            "run_id": "38029135842"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:f4c7713f1515c51877a89b3bdc4980ab1a373ce5b0ed284f0fc6ef88ee872022"
+            }
+          },
+          "candidate_run_id": "38029167380"
+        }
+      },
+      "tag": "v3.22.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.22.0",
+        "commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
+        "image_ids": {
+          "stock-api": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95",
+          "stock-watch": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+        }
+      },
+      "rollback": {
+        "tag": "v3.22.0",
+        "commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
+        "version": "3.22.0",
+        "images": {
+          "app": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "8d93f4887d8fde087eee2557e902c8d2921d069f",
+        "version": "0.16.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1915f2639ff2e27d4a059b5a581dcceacaebabda35aadf71195578e338e0239f",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f48a88b3e27ee5ca14cff07edd6b0718243e7a47547de964c6ac131d300953dc"
+        },
+        "image_ids": {
+          "api": "sha256:059f5b614760b529bfe651e0cf14aa0b2fe887ee372ada7f3001dd662f890ca8",
+          "web": "sha256:b33d31436aee80556e8f6a5463addc59676c02f9d427e2e6bcc340ae76b313bc"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "8d93f4887d8fde087eee2557e902c8d2921d069f",
+            "run_id": "38028988190"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1915f2639ff2e27d4a059b5a581dcceacaebabda35aadf71195578e338e0239f",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f48a88b3e27ee5ca14cff07edd6b0718243e7a47547de964c6ac131d300953dc"
+            }
+          },
+          "candidate_run_id": "38029080041"
+        }
+      },
+      "tag": "v0.16.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.16.0",
+        "commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
+        "image_ids": {
+          "api": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+          "web": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+        },
+        "build_time": "2026-10-09T16:42:52+0800"
+      },
+      "rollback": {
+        "tag": "v0.16.0",
+        "commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
+        "version": "0.16.0",
+        "images": {
+          "api": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+          "web": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+        }
+      }
+    }
+  ],
+  "transport": {
+    "mode": "archive",
+    "archives": {
+      "stock-analyzer": {
+        "path": "/volume1/docker/image-transfer/REL-20261010-900/stock-analyzer.tar",
+        "sha256": "3314c39b38792416b60aa011ed8a48b34f693501d0f2462b0d3a654bd1bd62a5"
+      },
+      "investment-research-dashboard": {
+        "path": "/volume1/docker/image-transfer/REL-20261010-900/investment-research-dashboard.tar",
+        "sha256": "550ae0f04dbce43580745ff36f0f526de5b44793a3f98b40aa9f405d04ac96b1"
+      }
+    }
+  },
+  "authorization": {
+    "status": "NOT_AUTHORIZED",
+    "evidence": ""
+  },
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "changes/CHG-20261010-001.md"
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "changes/CHG-20261010-001.md"
+    },
+    "integration": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "real_data": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "configuration": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "rollback": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    }
+  },
+  "note": "Preparation acceptance only; provisional journal ID, not a formal release. Existing version tags must not be reused for these candidate SHAs."
+}
