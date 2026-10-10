@@ -60,7 +60,7 @@ def docker(*args, **kwargs):
     ).stdout.decode().strip()
 
 
-def restore(folder):
+def restore(folder, after_restore=None):
     files = checked_files(folder)
     hashes = {path.name: digest(path) for path in files}
     name = "chg-20261010-001-restore-" + uuid.uuid4().hex
@@ -113,6 +113,10 @@ def restore(folder):
                 "application_tables": table_count,
             }
             print(db + ": isolated restore PASS", flush=True)
+        acceptance = None
+        if after_restore is not None:
+            stage = "isolated candidate acceptance"
+            acceptance = after_restore(container)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         # Database errors can contain application data; never print captured output.
         code = " exit=" + str(error.returncode) if isinstance(error, subprocess.CalledProcessError) else ""
@@ -132,6 +136,8 @@ def restore(folder):
         "databases": results, "temporary_container_removed": True,
         "note": "Does not verify application rollback or migration compatibility",
     }
+    if acceptance is not None:
+        receipt["candidate_acceptance"] = acceptance
     path = folder / ("restore-receipt-" + uuid.uuid4().hex + ".json")
     with path.open("x") as f:
         os.chmod(path, 0o600)
