@@ -136,6 +136,14 @@ EOF
 
 ## 5. 接下来由 Codex 验收
 
+备份 `pg_restore --list` 通过后，管理员审查并运行
+`scripts/verify_nas_restore.py <protected-backup-directory>`，执行实际隔离恢复。
+工具固定使用已核对的 PostgreSQL 镜像 ID，创建无网络、无发布端口、无生产挂载的临时容器；
+仅向自己的完整容器 ID 执行 createdb/pg_restore。成功后清理临时容器及匿名卷，在备份目录写入
+0600 的 restore receipt（含备份摘要、镜像 ID 和应用表数量，不含实际数据）。它不调用生产
+数据库，也不能替代新发布器或应用回滚验收。只有 root-owned 700 目录内的非空 600 备份被接受。
+脚本或清理失败均不得视作通过；如果容器创建本身失败，检查本次唯一名称的残留资源，不做模糊清理。
+
 完成登录和安装后告知 Codex，无需发送任何密码：
 
 1. 检查 PR CI、main CI、候选 run/artifact 与私有包权限；冻结 SemVer 后生成新 SHA 的候选。
