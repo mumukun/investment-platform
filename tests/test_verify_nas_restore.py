@@ -10,6 +10,23 @@ import verify_nas_restore as restore
 
 
 class RestoreTests(unittest.TestCase):
+    def test_failed_acceptance_hook_still_removes_database_and_writes_no_receipt(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            files = [folder / (db + ".dump") for db in restore.DATABASES]
+            for file in files:
+                file.write_bytes(b"fixture")
+            cid = "a" * 64
+            def docker(*args, **kwargs):
+                return cid if args[0] == "run" else "1" if "psql" in args else ""
+            hook = unittest.mock.Mock(side_effect=restore.RestoreFailure("acceptance failed"))
+            with patch.object(restore, "checked_files", return_value=files), patch.object(restore, "docker", side_effect=docker) as calls:
+                with self.assertRaisesRegex(restore.RestoreFailure, "acceptance failed"):
+                    restore.restore(folder, after_restore=hook)
+                self.assertEqual(calls.call_args.args, ("rm", "-f", "-v", cid))
+            hook.assert_called_once_with(cid)
+            self.assertFalse(list(folder.glob("restore-receipt-*")))
+
     def test_non_admin_rejected_before_docker(self):
         with patch.object(restore.os, "geteuid", return_value=501):
             with self.assertRaises(ValueError):

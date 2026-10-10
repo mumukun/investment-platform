@@ -110,6 +110,23 @@ CI config ID、标签和平台；Compose 用完整 config ID 启动，不伪造 
 
 ## 5. 执行与恢复
 
+### NAS 隔离候选与保留镜像验收
+
+`scripts/verify_nas_candidates.py` 是 CHG-20261010-001 的固定管理员验收工具，不加入 sudoers。
+复用 `verify_nas_restore.py` 的 root-only 备份保护、隔离 PostgreSQL 创建与清理。必须在审查后的
+同一 scripts 目录运行；参数仅为已审查备份目录。所有镜像固定为已验证候选 digest 或旧生产 Image ID，
+`--pull never`，不挂载宿主目录、不发布端口，应用共享临时 network=none 数据库的 loopback。
+仅使用测试凭据，不复制生产 .env，不启动 stock 调度器；Dashboard 不配置上游 projection 地址。
+
+工具在克隆数据库上运行候选迁移/API smoke、跨容器 stock watchlist HTTP/鉴权契约和静态 Web 服务，
+随后启动旧镜像验证候选迁移后的读取兼容性，不自动 downgrade。失败清理自己的全部应用容器，
+再由恢复工具清理自己的数据库与匿名卷；失败不生成成功 receipt。数据库原始错误与业务响应不输出。
+成功将 candidate_acceptance 写入受保护 restore receipt。此证据不代表生产配置、外部数据刷新、
+浏览器 E2E、新受限发布器 rollback/resume 或整个 Release 通过。
+
+这次为检查真实备份上的应用兼容性，需要再次恢复到临时数据库；常规发布仍使用 fresh readable backup，
+不把完整恢复演练强加到每次发布。预计恢复耗时与已完成的数据库恢复演练相近，应后台运行并保存日志。
+
 先由部署用户安全 fetch 精确 Tag 和 origin/main；执行器只读校验已有 Tag/SHA/lineage，不以 root
 执行用户仓库的 fetch/hooks。统一本地入口：
 
