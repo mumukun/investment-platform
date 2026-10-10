@@ -12,7 +12,7 @@ gh auth login --hostname github.com --git-protocol ssh --web
 gh auth status
 ```
 
-使用可以访问 mumukun 三个私有仓库及 Actions 的账号。已有 Git SSH key 可跳过上传；不在聊天中提供
+使用可以访问 mumukun 三个仓库及 Actions 的账号（两个业务仓为 private，治理仓为 public）。已有 Git SSH key 可跳过上传；不在聊天中提供
 Token。登录后由 Codex 创建 PR、检查 CI、按精确 PR head 合并并检查 main 候选。
 Dashboard 两个 candidate repository variables 必须为字符串 `true`，与当前生产一致。
 
