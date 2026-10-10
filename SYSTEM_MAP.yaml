@@ -76,6 +76,13 @@ repositories:
       deployment_status: exact_tag_capable
       dry_run: ./deploy.sh <release-tag> --dry-run
       artifact_model: SOURCE_TAG_BUILD
+      candidate_image_entry:
+        command: python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas>
+        controller_repository: investment-platform
+        repository_wrapper: ./deploy-image.sh <plan.json> deploy
+        artifact_model: CI_BUILD_ONCE
+        deployment_status: NEEDS_TARGET_VERIFICATION
+        evidence: docs/image-release.md
     health_check:
       - /api/health
     contract_docs:
@@ -109,6 +116,13 @@ repositories:
       dry_run: ./deploy.sh <release-tag> --dry-run
       artifact_model: SOURCE_TAG_BUILD
       note: The validated exact Commit is passed to the restricted NAS launcher; Image ID/digest is not currently returned.
+      candidate_image_entry:
+        command: python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas>
+        controller_repository: investment-platform
+        repository_wrapper: ./deploy-image.sh <plan.json> deploy
+        artifact_model: CI_BUILD_ONCE
+        deployment_status: NEEDS_TARGET_VERIFICATION
+        evidence: docs/image-release.md
     health_check:
       - /api/v1/health
       - /api/v1/readiness

@@ -1,0 +1,1 @@
+freemumu ALL=(root) NOPASSWD: /usr/local/sbin/nas-image-release preflight, /usr/local/sbin/nas-image-release prefetch, /usr/local/sbin/nas-image-release deploy, /usr/local/sbin/nas-image-release verify, /usr/local/sbin/nas-image-release rollback

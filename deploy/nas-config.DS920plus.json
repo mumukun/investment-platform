@@ -1,0 +1,25 @@
+{
+  "deploy_user": "freemumu",
+  "git_bin": "/usr/local/bin/git",
+  "state_root": "/volume1/docker/.investment-platform-releases",
+  "repositories": {
+    "stock-analyzer": {
+      "path": "/volume1/docker/stock-analyzer",
+      "compose_file": "docker-compose.yml",
+      "backup_command": ["/usr/local/bin/docker", "exec", "shared-postgres", "sh", "-c", "exec pg_dump -U \"$POSTGRES_USER\" -d stock_analyzer -Fc --no-owner --no-acl"],
+      "verify_backup_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "verify-backup", "{backup}"],
+      "health_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "health", "stock-analyzer"],
+      "version_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "version", "stock-analyzer"],
+      "smoke_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "smoke", "stock-analyzer"]
+    },
+    "investment-research-dashboard": {
+      "path": "/volume1/docker/investment-research-dashboard",
+      "compose_file": "compose.yaml",
+      "backup_command": ["/usr/local/bin/docker", "exec", "shared-postgres", "sh", "-c", "exec pg_dump -U \"$POSTGRES_USER\" -d investment_dashboard -Fc --no-owner --no-acl"],
+      "verify_backup_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "verify-backup", "{backup}"],
+      "health_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "health", "investment-research-dashboard"],
+      "version_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "version", "investment-research-dashboard"],
+      "smoke_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "smoke", "investment-research-dashboard"]
+    }
+  }
+}

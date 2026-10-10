@@ -76,6 +76,11 @@ gate fails, required evidence is missing, compatibility is unknown, or a depende
   Promote Same Artifact, Registry availability, or an image digest; persist the actual Image ID or
   `ARTIFACT_DIGEST_UNAVAILABLE` honestly and keep the Artifact gate fail-closed when the current
   Release risk requires stronger identity.
+- A candidate_image_entry marked NEEDS_TARGET_VERIFICATION is not an approved production entry.
+  For CI_BUILD_ONCE follow docs/image-release.md and RELEASE_RULES section 11: verify frozen-SHA CI,
+  exact candidate artifact, digest/config IDs and target evidence. Formal Tag creation must reuse
+  that image without rebuilding. Persist the executable plan and receipts alongside the Manifest.
+  Missing target or offline identity evidence blocks switching models; never silently fall back.
 
 ## Production baseline and drift gate
 
