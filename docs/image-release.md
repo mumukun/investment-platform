@@ -35,6 +35,12 @@ Dashboard repository variables：`CANDIDATE_PRO_KLINE_ENABLED` 与
 不得将 fixture smoke 直接填入 real_data/integration。没有正式授权不生成正式 Tag、不启动生产、不
 迁移、不启用功能。版本更新优先纳入业务 PR；Release 收集期间如有并行 Change 仍须重新核对 SemVer。
 
+仅 `preflight` / `prefetch` 可以接收 `NEEDS_TARGET_VERIFICATION` 计划：scope、compatibility
+仍须 PASS 并有证据，四项目标门禁必须显式为 PASS、NOT_RUN 或 PENDING；失败或缺失仍拒绝。
+精确候选、生产基线、回滚镜像、顺序和传输验证保持不变，本地 prefetch 先核对真实 GitHub 候选证据。
+这些模式不启动业务容器、不迁移数据库。deploy / verify / rollback 仍要求全部门禁 PASS 与
+READY_FOR_FORMAL_RELEASE；deploy / rollback 另要求正式发布授权。预取 receipt 不代表发布通过。
+
 本地 `python3 scripts/image_release.py check <plan.json>` 验证结构；
 `python3 scripts/image_release.py verify-ci <plan.json>` 使用 gh 查询成功 CI 和候选 run，并下载候选
 artifact 与计划逐字段比较。合并后的 SHA 与 PR SHA 不同时，合并结果必须有自己的有效证据。

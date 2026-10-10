@@ -96,6 +96,51 @@ def plan():
 
 
 class PlanTests(unittest.TestCase):
+    def test_preparation_allows_pending_target_acceptance_but_never_deployment(self):
+        value = plan()
+        value["status"] = "NEEDS_TARGET_VERIFICATION"
+        for name in ("integration", "real_data", "configuration", "rollback"):
+            value["gates"][name] = {"status": "NOT_RUN", "evidence": ""}
+        release.validate_plan(value, preparation=True)
+        for kwargs in ({}, {"formal": True}, {"formal": True, "preparation": True}):
+            with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                release.validate_plan(value, **kwargs)
+
+    def test_preparation_still_rejects_failed_gates_and_invalid_identity(self):
+        for change in (
+            lambda p: p["gates"]["scope"].update(status="NOT_RUN"),
+            lambda p: p["gates"]["compatibility"].update(evidence=""),
+            lambda p: p["gates"]["rollback"].update(status="FAIL"),
+            lambda p: p["gates"]["real_data"].update(evidence=""),
+            lambda p: p["gates"].pop("configuration"),
+            lambda p: p["repositories"][0]["candidate"]["images"].update(
+                app="ghcr.io/mumukun/stock-analyzer:latest"
+            ),
+        ):
+            value = plan()
+            change(value)
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                release.validate_plan(value, preparation=True)
+
+    def test_both_entrypoints_only_use_preparation_gates_for_safe_modes(self):
+        for module in (release, nas):
+            for mode in ("preflight", "prefetch", "deploy", "verify", "rollback"):
+                with self.subTest(module=module.__name__, mode=mode), tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "plan.json"
+                    path.write_text(json.dumps(plan()))
+                    argv = ["runner", mode] + ([str(path)] if module is release else [])
+                    with ExitStack() as stack:
+                        stack.enter_context(patch.object(sys, "argv", argv))
+                        stack.enter_context(patch.object(sys, "stdin", io.StringIO(path.read_text())))
+                        stack.enter_context(patch.object(nas.os, "geteuid", return_value=0))
+                        validate = stack.enter_context(patch.object(module, "validate_plan", side_effect=ValueError("stop before execution")))
+                        with self.assertRaisesRegex(ValueError, "stop before execution"):
+                            module.main()
+                        validate.assert_called_once_with(
+                            plan(), formal=mode in {"deploy", "rollback"},
+                            preparation=mode in {"preflight", "prefetch"},
+                        )
+
     def test_archive_transport_rejects_foreign_path_or_missing_hash(self):
         value = plan()
         value["transport"] = {
