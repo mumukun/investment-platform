@@ -53,13 +53,22 @@ cd /root/CHG-20261010-001-image-release
 chown root:root deploy/nas-config.DS920plus.json
 chmod 600 deploy/nas-config.DS920plus.json
 bash deploy/install-nas-image-release.sh deploy/nas-config.DS920plus.json
-/usr/sbin/visudo -cf deploy/sudoers.DS920plus
+if command -v visudo >/dev/null 2>&1; then
+  visudo -cf deploy/sudoers.DS920plus
+else
+  echo "未发现 visudo，先人工审查固定 sudoers 文件"
+  cat deploy/sudoers.DS920plus
+fi
 test ! -e /etc/sudoers.d/investment-platform-image-release && install -o root -m 440 deploy/sudoers.DS920plus /etc/sudoers.d/investment-platform-image-release
-/usr/sbin/visudo -c
+if command -v visudo >/dev/null 2>&1; then visudo -c; fi
+sudo -l -U freemumu
 ```
 
 新 sudoers 文件必须不存在才能使用上述 install；如已有同名文件，保留并检查已有规则，不覆盖。
 root 模块、wrapper 和配置不能给予 freemumu 写权限。sudo 只允许五个固定模式，不允许任意 shell。
+本机已确认常用目录没有 visudo；不要假设 `/usr/sbin/visudo` 存在。检查 sudo 列表中的五个固定
+模式与审查文件一致，再从 freemumu 会话检查 `sudo -n -l`。sudo 规则加载验证与全局 visudo
+语法检查分别记录，缺失工具时不能宣称后者通过。
 
 在 root 会话中执行只读检查：
 
@@ -91,11 +100,39 @@ root Docker 登录，因为实际拉取由 root 发布器执行：
 已确认 mihomo-1 使用 host 网络，HTTP 端口 7890，代理连接 GHCR 可达；Docker daemon 尚未配置代理。
 ContainerManager 的现有配置位于 `/var/packages/ContainerManager/etc/dockerd.json`，普通账号无法读取。
 
-管理员先备份、审查现有 JSON 和服务启动参数，再将 `deploy/docker-proxy.example.json` 的 proxies
-设置合并进现有 JSON，保留其他配置和原有 no-proxy 规则；不要整文件覆盖。应用配置和通过 DSM
-套件中心重启 ContainerManager 需要另行确认维护窗口。重启前记录所有运行容器，重启后核对全部恢复、
-mihomo 已就绪、Docker info 中 daemon HTTP/HTTPS proxy 生效，再测精确镜像 pull。没有重启授权时
-停在配置审查前。无需更改业务容器现有 HTTP_PROXY。
+管理员先备份配置并记录所有运行容器。真实启动参数使用
+`/var/packages/ContainerManager/etc/dockerd.json`，实际路径为
+`/volume1/@appconf/ContainerManager/dockerd.json`。2026-10-10 管理员合并 proxies 且
+dockerd --validate 通过，但套件重启后 Docker info 代理仍为空。启动脚本会先运行
+`updater postinst updatedockerdconf`，不能把直接修改此文件当作已生效的代理方案。
+
+本机经实际重启验证生效的方案是独立服务 drop-in；不要覆盖套件原始 service 或同名文件：
+
+```sh
+(
+set -e
+umask 022
+set -C
+cat > /etc/systemd/system/pkg-ContainerManager-dockerd.service.d/90-investment-platform-mihomo.conf <<'EOF'
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:7890"
+Environment="HTTPS_PROXY=http://127.0.0.1:7890"
+Environment="NO_PROXY=localhost,127.0.0.1,::1"
+EOF
+/usr/syno/bin/synosystemctl daemon-reload
+)
+```
+
+本机已存在 root-owned 服务 drop-in 目录，且原服务没有代理参数；其他机器需先检查这些条件及
+既有 no-proxy 规则，不直接复制。本机 mihomo 为 host 网络、restart=unless-stopped。
+经授权维护窗口在 DSM 套件中心停止并启动 ContainerManager，会短暂中断容器服务。重启后
+确认原运行容器全部恢复、mihomo 就绪、业务健康及版本、Docker info 中两个代理指向
+`http://127.0.0.1:7890`，再测精确镜像 pull。没有重启授权时停在配置审查前。
+无需更改业务容器现有 HTTP_PROXY；daemon 代理生效不等于私有镜像拉取或吞吐验收通过。
+
+本次 JSON 配置及原运行容器名单备份在 `/root/docker-proxy-backup-q4wtqxb_`；如需回退，管理员
+先审查并备份当前配置，只移除本次独立 drop-in、恢复已核对的配置，再 reload 和按维护流程重启。
+备份目前用于本次维护，长期保留需另存到受保护持久目录。
 
 ## 5. 接下来由 Codex 验收
 
