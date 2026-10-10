@@ -70,6 +70,32 @@ root 模块、wrapper 和配置不能给予 freemumu 写权限。sudo 只允许�
 模式与审查文件一致，再从 freemumu 会话检查 `sudo -n -l`。sudo 规则加载验证与全局 visudo
 语法检查分别记录，缺失工具时不能宣称后者通过。
 
+### 发布状态目录（首次创建）
+
+本机共享目录继承的 Synology ACL 会把 mode700 创建意图变成实际 mode777。仅当下列路径尚不存在时，
+管理员执行以下步骤；存在则先检查归属和内容，不覆盖、不递归清理共享目录 ACL。
+
+```sh
+(
+set -e
+state_dir=/volume1/docker/.investment-platform-releases
+test ! -e "$state_dir" && test ! -L "$state_dir"
+mkdir -m 700 "$state_dir"
+/usr/syno/bin/synoacltool -del "$state_dir"
+chmod 700 "$state_dir"
+/usr/bin/python3 - <<'PY'
+from pathlib import Path
+import stat
+p = Path('/volume1/docker/.investment-platform-releases')
+s = p.lstat()
+assert not p.is_symlink() and s.st_uid == 0 and stat.S_IMODE(s.st_mode) == 0o700
+print('state directory protection PASS')
+PY
+)
+```
+
+不通过时停止预取。新入口仍自行检查实际权限；不得以 chmod 命令成功代替权限验收。
+
 在 root 会话中执行只读检查：
 
 ```sh

@@ -533,7 +533,10 @@ def main():
     raw = sys.stdin.read(1024 * 1024 + 1)
     require(len(raw) <= 1024 * 1024, "plan exceeds size limit")
     plan = json.loads(raw)
-    validate_plan(plan, formal=args.mode in {"deploy", "rollback"})
+    validate_plan(
+        plan, formal=args.mode in {"deploy", "rollback"},
+        preparation=args.mode in {"preflight", "prefetch"},
+    )
     config = load_config()
     require(
         all(

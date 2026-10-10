@@ -86,7 +86,8 @@ def validate_candidate(candidate):
         )
 
 
-def validate_plan(plan, formal=False):
+def validate_plan(plan, formal=False, preparation=False):
+    require(not (formal and preparation), "formal operations cannot use preparation gates")
     require(
         plan.get("schema_version") == "image-release-v1",
         "unsupported release plan schema",
@@ -98,7 +99,10 @@ def validate_plan(plan, formal=False):
     require(
         plan.get("environment") == "Production", "explicit Production target required"
     )
-    require(plan.get("status") == "READY_FOR_FORMAL_RELEASE", "prepared plan required")
+    allowed_status = {"READY_FOR_FORMAL_RELEASE"}
+    if preparation:
+        allowed_status.add("NEEDS_TARGET_VERIFICATION")
+    require(plan.get("status") in allowed_status, "prepared plan required")
     entries = plan.get("repositories", [])
     require(bool(entries), "empty release scope")
     names = [entry["candidate"]["repository"] for entry in entries]
@@ -172,6 +176,16 @@ def validate_plan(plan, formal=False):
         "rollback",
     ):
         gate = plan.get("gates", {}).get(name, {})
+        if preparation and name not in {"scope", "compatibility"}:
+            require(
+                gate.get("status") in {"PASS", "NOT_RUN", "PENDING"},
+                f"preparation gate missing or failed: {name}",
+            )
+            require(
+                gate["status"] != "PASS" or bool(gate.get("evidence")),
+                f"preparation PASS evidence missing: {name}",
+            )
+            continue
         require(
             gate.get("status") == "PASS" and bool(gate.get("evidence")),
             f"release gate missing: {name}",
@@ -341,13 +355,16 @@ def main():
     parser.add_argument("--bundle-dir", type=Path)
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
-    validate_plan(plan, formal=args.mode in {"deploy", "rollback"})
+    validate_plan(
+        plan, formal=args.mode in {"deploy", "rollback"},
+        preparation=args.mode in {"preflight", "prefetch"},
+    )
     if args.mode == "check":
         print(
             "plan structural gates PASS; GitHub, live NAS and backup checks remain separate"
         )
         return
-    if args.mode in {"verify-ci", "export-bundle", "deploy"}:
+    if args.mode in {"verify-ci", "export-bundle", "prefetch", "deploy"}:
         verify_ci(plan)
     if args.mode == "verify-ci":
         return
