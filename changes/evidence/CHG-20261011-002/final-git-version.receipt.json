@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "at": "2026-10-11T13:04:15.677535+00:00",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "planned_tag": "v3.23.0",
+      "tag_unused": true,
+      "worktree_clean": true,
+      "reachable_from_origin_main": true
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "sha": "054802065d60d2460e6098542da59fa785652ced",
+      "planned_tag": "v0.17.0",
+      "tag_unused": true,
+      "worktree_clean": true,
+      "reachable_from_origin_main": true
+    }
+  ]
+}
