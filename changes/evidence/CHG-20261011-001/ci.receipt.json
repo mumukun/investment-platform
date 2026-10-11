@@ -80,6 +80,14 @@
       "status": "completed",
       "url": "https://github.com/mumukun/investment-platform/actions/runs/38139686765",
       "repository": "investment-platform"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "054802065d60d2460e6098542da59fa785652ced",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140236146",
+      "repository": "investment-research-dashboard"
     }
   ],
   "latest_dashboard_candidate": "PENDING; only successful exact-SHA evidence may be frozen",
