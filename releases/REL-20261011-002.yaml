@@ -237,7 +237,17 @@
       },
       "runtime_version": "3.22.0",
       "health": "PASS",
-      "tracked_clean": true
+      "tracked_clean": true,
+      "version": "3.22.0",
+      "artifact": {
+        "type": "SOURCE_TAG_BUILD",
+        "identity": {
+          "stock-api": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95",
+          "stock-watch": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+        },
+        "source": "v3.22.0"
+      },
+      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE"
     },
     {
       "repository": "investment-research-dashboard",
@@ -249,7 +259,17 @@
       },
       "runtime_version": "0.16.0",
       "health": "PASS",
-      "tracked_clean": true
+      "tracked_clean": true,
+      "version": "0.16.0",
+      "artifact": {
+        "type": "SOURCE_TAG_BUILD",
+        "identity": {
+          "investment-research-dashboard-nas-api-1": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+          "investment-research-dashboard-nas-web-1": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+        },
+        "source": "v0.16.0"
+      },
+      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE"
     }
   ],
   "verification": {
