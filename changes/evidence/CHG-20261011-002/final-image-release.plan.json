@@ -121,8 +121,8 @@
     "mode": "registry"
   },
   "authorization": {
-    "status": "NOT_AUTHORIZED",
-    "evidence": ""
+    "status": "FORMAL",
+    "evidence": "2026-10-11 user explicitly instructed 正式发布 in task 01a11720-0cbd-7da0-a9ec-c51b45b74358 for prepared REL-20261011-002."
   },
   "gates": {
     "scope": {

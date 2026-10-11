@@ -1,0 +1,97 @@
+{
+  "result": "PASS",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v3.23.0",
+      "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "version": "3.23.0",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:1a4ed573a13b61bca2d957d64b100489b7c7b2a3d3903bd1bf04b119269a7f37"
+      },
+      "containers": {
+        "stock-api": {
+          "container_id": "a2a23b2eee1dd52d5639e3d42b415c31d9bb0974b960bb16533b5acbf1fef721",
+          "image_id": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994",
+          "started_at": "2026-10-11T13:22:57.057407538Z"
+        },
+        "stock-watch": {
+          "container_id": "066abb5a3f06b9f8c4e401caabe2d881f7fe3b2d153cba64a371b701c64a97dd",
+          "image_id": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994",
+          "started_at": "2026-10-11T13:22:56.202866617Z"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.17.0",
+      "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+      "version": "0.17.0",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f65555c5bf07703c211593e464e9419b40a14eccd1d241482791239f9b2d1428",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:6d4160afbf9676ded68dddf71962a2c9523b4fa1d294a5cf29f029ed77795813"
+      },
+      "containers": {
+        "api": {
+          "container_id": "9d7bc6e08cde8c0e8ef092d5f6ec1c5d670cd2839f06c22b4755494a4da7742f",
+          "image_id": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+          "started_at": "2026-10-11T13:23:57.096568975Z"
+        },
+        "web": {
+          "container_id": "9a7231ac82555ed1c2175f1f13ee049a74ea1e10658a10904ff9ae2e828f8758",
+          "image_id": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a",
+          "started_at": "2026-10-11T13:24:17.399418584Z"
+        }
+      },
+      "result": "PASS"
+    }
+  ],
+  "seat_and_auth": {
+    "result": "PASS",
+    "checks": [
+      {
+        "check": "/api/v1/seat-tracking/subscriptions authenticated read",
+        "result": "PASS"
+      },
+      {
+        "check": "/api/v1/seat-tracking/reports authenticated read",
+        "result": "PASS"
+      },
+      {
+        "check": "/api/v1/seat-tracking/reviews authenticated read",
+        "result": "PASS"
+      },
+      {
+        "check": "/api/v1/system/version authenticated read",
+        "result": "PASS"
+      },
+      {
+        "check": "live seat directory through strict Consumer",
+        "result": "PASS"
+      },
+      {
+        "check": "live five-market-day tracking through strict Consumer",
+        "result": "PASS"
+      },
+      {
+        "check": "live case outcomes through strict Consumer",
+        "result": "PASS"
+      },
+      {
+        "check": "production migration a8d6210f1101 and seat tables",
+        "result": "PASS"
+      }
+    ],
+    "runtime": {
+      "app_version": "0.17.0",
+      "git_commit": "054802065d60d2460e6098542da59fa785652ced",
+      "build_time": "2026-10-11T12:43:59Z",
+      "environment": "production",
+      "api_version": "v1"
+    },
+    "paid_model_invoked": false,
+    "subscription_or_review_writes": false
+  },
+  "observed_at": "2026-10-11T13:25:29.573334+00:00"
+}

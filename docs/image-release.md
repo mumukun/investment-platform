@@ -178,3 +178,8 @@ archive 分支注入一次缓存未命中，实际检查 SHA256 并执行 docker
 Git、备份内容和健康/smoke 为明确的测试配置；不是生产 Tag 验证、真实数据库备份或业务
 smoke。真实备份恢复及应用兼容性由独立候选验收工具覆盖。此工具不调用安装入口、不修改
 root 配置、不放宽正式发布门禁，不把成功写成正式 Release 或授权生产部署。
+
+
+## 2026-10-11 实机正式发布验收
+
+REL-20261011-002 已正式使用同一CI固定镜像发布到DS920plus：Stock Analyzer v3.23.0先于Dashboard v0.17.0；新备份、版本/镜像身份、生产smoke、真实席位契约、鉴权与新增迁移通过。受限发布入口已实机验证 exact-image capability；数据库回滚仍不自动downgrade，保留旧镜像和迁移前备份。详见 `releases/REL-20261011-002.yaml` 与 `releases/evidence/REL-20261011-002/`；用户确认公网历史9527存在家中路由回环限制；局域网HTTP9360页面与营业部搜索已在登录Chrome验收通过，操作入口可走Tailscale。
