@@ -1,0 +1,102 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261011-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested 盘前驾驶舱功能 继续处理完成上线 on 2026-10-11"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "d482526907324d4b74aea1aeb84751064c9179ad",
+        "version": "0.18.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a6a787656262e72904d43f87cb1dd7cf1f6df39d20fccb4886011fa86327e6d4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3324a501f75f865fe6930050188f01614269379665c43e90bc47abc5342bf701"
+        },
+        "image_ids": {
+          "api": "sha256:bc3e4db085dc0ee8882a510d6f07162b9f0ae4d813ab3d65b4e3c44c6c666e68",
+          "web": "sha256:374d92e8487e0ad200f3cfd633239a6530fb39d92724867bc701586f0401b37c"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "d482526907324d4b74aea1aeb84751064c9179ad",
+            "run_id": "38147303852"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a6a787656262e72904d43f87cb1dd7cf1f6df39d20fccb4886011fa86327e6d4",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3324a501f75f865fe6930050188f01614269379665c43e90bc47abc5342bf701"
+            }
+          },
+          "candidate_run_id": "38147447552"
+        }
+      },
+      "tag": "v0.18.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v0.17.0",
+        "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+        "image_ids": {
+          "api": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+          "web": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a"
+        },
+        "build_time": "2026-10-11T12:43:59Z"
+      },
+      "rollback": {
+        "tag": "v0.17.0",
+        "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+        "version": "0.17.0",
+        "images": {
+          "api": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+          "web": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261008-002; dashboard PR4 merged; only Dashboard changed"
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No migration or Provider contract change; existing candidate tests"
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "12 affected pytest and 3 Vitest PASS; main CI38147303852; candidate38147447552"
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Production read-only five APIs200; real last snapshot2026-10-09 14:47; honest incomplete-close degradation tested"
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Existing NAS configuration; same enabled K-line and ladder flags; deploy validates baseline"
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified production v0.17.0 retained exact image IDs; no rollback rehearsal required"
+    }
+  },
+  "note": "Routine single-repository release; one deploy only; no source rebuild or database clone."
+}
