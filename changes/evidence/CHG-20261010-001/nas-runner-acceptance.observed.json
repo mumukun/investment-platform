@@ -1,0 +1,31 @@
+{
+  "evidence_type": "administrator_terminal_receipt_readback",
+  "reported_on": "2026-10-11",
+  "timezone": "Asia/Shanghai",
+  "tool_commit": "4dee581972a1bce474a0d114f31d22d88371a20d",
+  "pull_request": "https://github.com/mumukun/investment-platform/pull/27",
+  "result": "PASS",
+  "temporary_containers_removed": true,
+  "production_unchanged": true,
+  "checks": {
+    "stock-analyzer": {
+      "archive_hash_load_identity": "PASS",
+      "interrupted_deployment_resume_without_recreation": "PASS",
+      "partial_recreation_resume": "PASS",
+      "retained_image_rollback": "PASS"
+    },
+    "investment-research-dashboard": {
+      "archive_hash_load_identity": "PASS",
+      "interrupted_deployment_resume_without_recreation": "PASS",
+      "partial_recreation_resume": "PASS",
+      "retained_image_rollback": "PASS"
+    }
+  },
+  "scope": "isolated Compose lifecycle using real Deployer; fixture Git, backup and health/smoke",
+  "limitations": [
+    "Archive cache miss injected; existing image layers retained, not cold recovery",
+    "Controller interruption simulated by exception, not an actual network disconnect",
+    "Original root-only receipt not read directly by the controller",
+    "Not production configuration, Tag acceptance or formal production deployment"
+  ]
+}
