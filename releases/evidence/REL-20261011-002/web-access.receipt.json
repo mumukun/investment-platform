@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "entry": "http://100.86.90.115:9360/seat-flow",
+  "status": 200,
+  "loaded_assets": [
+    "/assets/index-DzIx5gof.js",
+    "/assets/SeatFlowView-DkiOUcrH.js"
+  ],
+  "historical_https_entry": "https://invest.freemumu.top:9527/seat-flow",
+  "historical_https_status": "UNREACHABLE_FROM_CLIENT",
+  "nas_loopback_9527_listening": false,
+  "authenticated_browser_visual_acceptance": "NOT_RUN",
+  "seat_route_bundle": "PASS",
+  "nas_reverse_proxy_https": {
+    "url": "https://invest.freemumu.top/seat-flow",
+    "resolved_via": "Tailscale IP with correct hostname/SNI",
+    "http_status": 200,
+    "tls_verify": 0
+  },
+  "client_dns_address": "192.168.1.70",
+  "access_limitation": "Current client DNS/routing cannot reach historical external9527; NAS443 reverse proxy works with valid certificate. A router port forward may terminate at443, so no NAS9527 listener is not evidence of an application failure."
+}

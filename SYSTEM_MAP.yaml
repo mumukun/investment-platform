@@ -81,7 +81,8 @@ repositories:
         controller_repository: investment-platform
         repository_wrapper: ./deploy-image.sh <plan.json> deploy
         artifact_model: CI_BUILD_ONCE
-        deployment_status: NEEDS_TARGET_VERIFICATION
+        deployment_status: exact_image_capable
+        verified_release: REL-20261011-002
         evidence: docs/image-release.md
     health_check:
       - /api/health
@@ -121,7 +122,8 @@ repositories:
         controller_repository: investment-platform
         repository_wrapper: ./deploy-image.sh <plan.json> deploy
         artifact_model: CI_BUILD_ONCE
-        deployment_status: NEEDS_TARGET_VERIFICATION
+        deployment_status: exact_image_capable
+        verified_release: REL-20261011-002
         evidence: docs/image-release.md
     health_check:
       - /api/v1/health

@@ -7,9 +7,9 @@
   "schema_version": "1.0",
   "template": false,
   "release_id": "REL-20261011-002",
-  "status": "IN_PROGRESS",
+  "status": "RELEASED",
   "created_at": "2026-10-11T12:52:40.544973+00:00",
-  "updated_at": "2026-10-11T13:24:46.558290+00:00",
+  "updated_at": "2026-10-11T13:29:52.786778+00:00",
   "environment": "Production",
   "changes": [
     "CHG-20261010-001",
@@ -23,7 +23,7 @@
       "new_version": "3.23.0",
       "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
       "tag": "v3.23.0",
-      "tag_state": "CREATED_PUSHED",
+      "tag_state": "CREATED_PUSHED_VERIFIED_PRODUCTION",
       "artifact": {
         "type": "CI_BUILD_ONCE",
         "identity": {
@@ -58,7 +58,29 @@
       },
       "verification": {
         "status": "PASS",
-        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json"
+        "production_identity": {
+          "repository": "stock-analyzer",
+          "tag": "v3.23.0",
+          "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+          "version": "3.23.0",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:1a4ed573a13b61bca2d957d64b100489b7c7b2a3d3903bd1bf04b119269a7f37"
+          },
+          "containers": {
+            "stock-api": {
+              "container_id": "a2a23b2eee1dd52d5639e3d42b415c31d9bb0974b960bb16533b5acbf1fef721",
+              "image_id": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994",
+              "started_at": "2026-10-11T13:22:57.057407538Z"
+            },
+            "stock-watch": {
+              "container_id": "066abb5a3f06b9f8c4e401caabe2d881f7fe3b2d153cba64a371b701c64a97dd",
+              "image_id": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994",
+              "started_at": "2026-10-11T13:22:56.202866617Z"
+            }
+          },
+          "result": "PASS"
+        },
+        "evidence": "releases/evidence/REL-20261011-002/production-acceptance.receipt.json"
       },
       "rollback_version": "3.22.0",
       "rollback_tag": "v3.22.0",
@@ -73,7 +95,7 @@
       "new_version": "0.17.0",
       "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
       "tag": "v0.17.0",
-      "tag_state": "CREATED_PUSHED",
+      "tag_state": "CREATED_PUSHED_VERIFIED_PRODUCTION",
       "artifact": {
         "type": "CI_BUILD_ONCE",
         "identity": {
@@ -113,7 +135,30 @@
       },
       "verification": {
         "status": "PASS",
-        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json"
+        "production_identity": {
+          "repository": "investment-research-dashboard",
+          "tag": "v0.17.0",
+          "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+          "version": "0.17.0",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f65555c5bf07703c211593e464e9419b40a14eccd1d241482791239f9b2d1428",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:6d4160afbf9676ded68dddf71962a2c9523b4fa1d294a5cf29f029ed77795813"
+          },
+          "containers": {
+            "api": {
+              "container_id": "9d7bc6e08cde8c0e8ef092d5f6ec1c5d670cd2839f06c22b4755494a4da7742f",
+              "image_id": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+              "started_at": "2026-10-11T13:23:57.096568975Z"
+            },
+            "web": {
+              "container_id": "9a7231ac82555ed1c2175f1f13ee049a74ea1e10658a10904ff9ae2e828f8758",
+              "image_id": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a",
+              "started_at": "2026-10-11T13:24:17.399418584Z"
+            }
+          },
+          "result": "PASS"
+        },
+        "evidence": "releases/evidence/REL-20261011-002/production-acceptance.receipt.json"
       },
       "rollback_version": "0.16.0",
       "rollback_tag": "v0.16.0",
@@ -127,7 +172,12 @@
         "to": "a8d6210f1101",
         "strategy": "add two seat storage tables; preserve during app rollback; no automatic downgrade",
         "verification": "PASS_FINAL_CLONE_UPGRADE_AND_ALEMBIC_CHECK; RETAINED_OLD_IMAGE_READ_COMPATIBLE",
-        "production_verification": "PENDING_FINAL_ACCEPTANCE"
+        "production_verification": "PASS a8d6210f1101 and both seat tables",
+        "backup": {
+          "path": "/volume1/docker/.investment-platform-releases/REL-20261011-002/investment-research-dashboard.dump",
+          "sha256": "7beba966a913c349fdb097e487f519052076667430c3132de3bce4f36adb5928",
+          "size": 7690456
+        }
       }
     }
   ],
@@ -143,7 +193,8 @@
     "changes/evidence/CHG-20261011-002/final-dashboard-candidate/candidate.json"
   ],
   "deployment_receipts": [
-    "releases/evidence/REL-20261011-002/deployment.receipt.json"
+    "releases/evidence/REL-20261011-002/deployment.receipt.json",
+    "releases/evidence/REL-20261011-002/verify.receipt.json"
   ],
   "dependencies": [
     {
@@ -238,7 +289,7 @@
   },
   "deployment": {
     "environment": "Production",
-    "status": "DEPLOYED_PENDING_FINAL_ACCEPTANCE",
+    "status": "COMPLETED",
     "started_at": "2026-10-11T13:18:24.029412+00:00",
     "completed_at": "2026-10-11T13:24:21.157131+00:00",
     "steps": [
@@ -252,53 +303,55 @@
   "production_identity": [
     {
       "repository": "stock-analyzer",
-      "tag": "v3.22.0",
-      "commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
-      "image_ids": {
-        "stock-api": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95",
-        "stock-watch": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+      "tag": "v3.23.0",
+      "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "version": "3.23.0",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:1a4ed573a13b61bca2d957d64b100489b7c7b2a3d3903bd1bf04b119269a7f37"
       },
-      "runtime_version": "3.22.0",
-      "health": "PASS",
-      "tracked_clean": true,
-      "version": "3.22.0",
-      "artifact": {
-        "type": "SOURCE_TAG_BUILD",
-        "identity": {
-          "stock-api": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95",
-          "stock-watch": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+      "containers": {
+        "stock-api": {
+          "container_id": "a2a23b2eee1dd52d5639e3d42b415c31d9bb0974b960bb16533b5acbf1fef721",
+          "image_id": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994",
+          "started_at": "2026-10-11T13:22:57.057407538Z"
         },
-        "source": "v3.22.0"
+        "stock-watch": {
+          "container_id": "066abb5a3f06b9f8c4e401caabe2d881f7fe3b2d153cba64a371b701c64a97dd",
+          "image_id": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994",
+          "started_at": "2026-10-11T13:22:56.202866617Z"
+        }
       },
-      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE"
+      "result": "PASS"
     },
     {
       "repository": "investment-research-dashboard",
-      "tag": "v0.16.0",
-      "commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
-      "image_ids": {
-        "investment-research-dashboard-nas-api-1": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
-        "investment-research-dashboard-nas-web-1": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+      "tag": "v0.17.0",
+      "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+      "version": "0.17.0",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f65555c5bf07703c211593e464e9419b40a14eccd1d241482791239f9b2d1428",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:6d4160afbf9676ded68dddf71962a2c9523b4fa1d294a5cf29f029ed77795813"
       },
-      "runtime_version": "0.16.0",
-      "health": "PASS",
-      "tracked_clean": true,
-      "version": "0.16.0",
-      "artifact": {
-        "type": "SOURCE_TAG_BUILD",
-        "identity": {
-          "investment-research-dashboard-nas-api-1": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
-          "investment-research-dashboard-nas-web-1": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+      "containers": {
+        "api": {
+          "container_id": "9d7bc6e08cde8c0e8ef092d5f6ec1c5d670cd2839f06c22b4755494a4da7742f",
+          "image_id": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+          "started_at": "2026-10-11T13:23:57.096568975Z"
         },
-        "source": "v0.16.0"
+        "web": {
+          "container_id": "9a7231ac82555ed1c2175f1f13ee049a74ea1e10658a10904ff9ae2e828f8758",
+          "image_id": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a",
+          "started_at": "2026-10-11T13:24:17.399418584Z"
+        }
       },
-      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE"
+      "result": "PASS"
     }
   ],
   "verification": {
-    "status": "DEPLOYER_SMOKE_PASS_PENDING_FINAL_ACCEPTANCE",
+    "status": "PASS_WITH_DOCUMENTED_LIMITATIONS",
     "smoke": [
-      "Frozen candidates and retained baseline stock/API/Web smoke PASS on isolated real-data clone"
+      "Frozen candidates and retained baseline stock/API/Web smoke PASS on isolated real-data clone",
+      "Production NAS HTTPS443 reverse-proxy seat route200 with valid TLS; current client external9527 routing unavailable"
     ],
     "health_checks": [
       "Fresh baseline runtime health PASS"
@@ -310,12 +363,16 @@
       "Provider V3 -> strict Consumer metadata -> HTTP and public seat models PASS"
     ],
     "integration_checks": [
-      "Migration, staged real-data HTTP, seat new-table APIs and old-image read compatibility PASS"
+      "Migration, staged real-data HTTP, seat new-table APIs and old-image read compatibility PASS",
+      "Production authenticated seat subscriptions/report/review/version reads PASS; missing auth returns401",
+      "Production live directory/tracking/case strict Consumer contracts PASS",
+      "Production Alembic a8d6210f1101 and both new tables PASS"
     ],
     "e2e_checks": [
       "Local actual chart red/green and wide/mobile layout PASS",
       "Local seat subscription/report/case/review persistence browser path (explicit fixtures) PASS",
-      "Final NAS exact-image historical data -> Consumer -> staged archive -> HTTP PASS; seat migrated empty-state APIs PASS; not production authenticated browser acceptance"
+      "Final NAS exact-image historical data -> Consumer -> staged archive -> HTTP PASS; seat migrated empty-state APIs PASS; not production authenticated browser acceptance",
+      "Production exact source/digest -> authenticated API -> live upstream strict seat contracts PASS; Tailscale seat route and JS bundle200; browser visual acceptance not run"
     ],
     "evidence": [
       "changes/evidence/CHG-20261011-002/final-ci.receipt.json",
@@ -329,7 +386,9 @@
       "changes/evidence/CHG-20261011-002/final-source-hashes.json",
       "changes/evidence/CHG-20261011-002/final-prefetch.receipt.json",
       "releases/evidence/REL-20261011-002/formal-baseline.receipt.json",
-      "releases/evidence/REL-20261011-002/authorization.json"
+      "releases/evidence/REL-20261011-002/authorization.json",
+      "releases/evidence/REL-20261011-002/production-acceptance.receipt.json",
+      "releases/evidence/REL-20261011-002/web-access.receipt.json"
     ],
     "known_limitations": [
       "Live full concept refresh/backfill not included; stocks missing from real snapshot remain explicitly unavailable or unrecorded",
@@ -337,7 +396,8 @@
       "Real paid LLM call not invoked; AI contract/cache/auth paths are tested with isolated model responses",
       "Validated historical sample has 58/100 concept-covered stocks and healthy concept snapshot quality; missing stocks remain absent from source snapshot, never fabricated.",
       "Old production images have retained local IDs, no registry digest; rollback is exact retained image ID",
-      "Fresh protected readable backup required immediately before formal migration; streaming clone/restore is validation, not a retained production rollback backup"
+      "Fresh protected readable backup required immediately before formal migration; streaming clone/restore is validation, not a retained production rollback backup",
+      "Current client resolves invest.freemumu.top to192.168.1.70 and cannot reach historical9527; independently resolved NAS443 reverse-proxy HTTPS /seat-flow returns200 with TLS verify0. Tailscale HTTP9360 and exact seat bundle alsoPASS. Client DNS/routing is outside this release; authenticated browser visual acceptance not run."
     ]
   },
   "rollback": {
@@ -347,11 +407,23 @@
     "target_commit_sha": null,
     "artifact": null,
     "artifact_digest": "PER_REPOSITORY",
-    "database_restore_point": "Before formal migration a8d6210f1101, create fresh protected custom-format backups and verify readability; isolated streamed clone is acceptance only. App rollback preserves new seat tables, subscriptions, notes and reviews; no automatic database downgrade.",
+    "database_restore_point": {
+      "stock-analyzer": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261011-002/stock-analyzer.dump",
+        "sha256": "3f556a8b955a434efcb967a6b3d6c8e4b9a53fba49e76179e9f49073008ee6c4",
+        "size": 315563089
+      },
+      "investment-research-dashboard": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261011-002/investment-research-dashboard.dump",
+        "sha256": "7beba966a913c349fdb097e487f519052076667430c3132de3bce4f36adb5928",
+        "size": 7690456
+      }
+    },
     "steps": [
       "Reverse selected release order; use retained verified baseline images and immutable tags",
       "No automatic database downgrade"
-    ]
+    ],
+    "notes": "Keep fresh pre-migration backups and retained v3.22.0/v0.16.0 exact images. App rollback preserves seat tables/data; no automatic database downgrade. Production rollback not invoked; old-image compatibility and runner rollback were tested in isolation."
   },
   "notes": [
     "Unified scope explicitly authorized by user in 新增游资席位追踪分析模块; human authorization verified through thread user message.",
@@ -362,7 +434,8 @@
     "Final target attempt1 stopped at an acceptance-driver shape error: reviews returns a list. Product contract confirmed, driver corrected; failed receipt/log retained. Full new isolated attempt is required before readiness.",
     "Final retry completed full target acceptance PASS after correcting the driver response-shape assumption; failed attempt preserved, product code unchanged.",
     "Formal user authorization recorded; baseline/remote exact SHAs/unused Tags and live GitHub candidate evidence revalidated. Frozen plan hash unchanged; restricted runner will create readable backups before mutations.",
-    "Both planned annotated immutable Tags created and pushed at exact frozen SHAs; remote peeled refs independently verified. No rebuild performed. Tag guard initially used Git missing-ref exit code incorrectly; confirmed no refs/mutations and corrected guard before creation."
+    "Both planned annotated immutable Tags created and pushed at exact frozen SHAs; remote peeled refs independently verified. No rebuild performed. Tag guard initially used Git missing-ref exit code incorrectly; confirmed no refs/mutations and corrected guard before creation.",
+    "Formal release completed using identical CI artifacts, upstream then downstream; fresh readable backups, fixed image IDs/versions, production smoke and seat/auth/migration contracts PASS. Public entry routing limitation recorded separately. No paid LLM call or subscription/review write performed by acceptance script."
   ],
   "candidate_prefetch": {
     "status": "PASS",
@@ -396,5 +469,6 @@
         }
       }
     ]
-  }
+  },
+  "released_at": "2026-10-11T13:29:52.786778+00:00"
 }
