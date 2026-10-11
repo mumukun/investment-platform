@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-11T12:30:19.060444+00:00",
+  "scope": "CHG-20261011-002",
+  "result": "PASS",
+  "branches": [
+    {
+      "repository": "stock-analyzer",
+      "branch": "fix/CHG-20261011-002-stock-reading",
+      "merge_sha": "2cd238f01b1c7bfc44b0c86c9262fac370098bad",
+      "local_deleted": true,
+      "remote_deleted": true,
+      "worktree_retained_detached": true
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "branch": "fix/CHG-20261011-002-stock-reading",
+      "merge_sha": "01f030341aff685a6a56e1e118ef50f4f182a049",
+      "local_deleted": true,
+      "remote_deleted": true,
+      "worktree_retained_detached": true
+    },
+    {
+      "repository": "investment-platform",
+      "branch": "fix/CHG-20261011-002-stock-reading",
+      "merge_sha": "9625c63cd87fbc59a65af96e4043636d7df13139",
+      "local_deleted": true,
+      "remote_deleted": true,
+      "worktree_retained_detached": true
+    }
+  ],
+  "checks": [
+    "clean",
+    "merged ancestry",
+    "no unique commits",
+    "no active branch worktree after detach",
+    "no open PR using task branch",
+    "branch CI completed"
+  ],
+  "unrelated_work": "Original checkouts, untracked prototypes and other Change worktrees retained."
+}

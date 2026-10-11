@@ -1,0 +1,64 @@
+{
+  "target_acceptance": {
+    "result": "PASS",
+    "at": "2026-10-11T12:44:01.867986+00:00",
+    "scope": "exact frozen images on isolated live-data clone; no production credential copied, ports, mounts, scheduler, refresh or production mutation",
+    "checks": [
+      {
+        "check": "isolated PostgreSQL readiness",
+        "result": "PASS",
+        "summary": "command passed"
+      },
+      {
+        "check": "stream real-data clone stock_analyzer",
+        "result": "PASS"
+      },
+      {
+        "check": "stream real-data clone investment_dashboard",
+        "result": "PASS"
+      },
+      {
+        "check": "frozen Provider historical real-data contract",
+        "result": "PASS",
+        "summary": "{\"items\": 100, \"concept_covered\": 58, \"qualities\": [\"healthy\"]}"
+      },
+      {
+        "check": "frozen Dashboard real-data smoke",
+        "result": "PASS",
+        "summary": "command passed"
+      },
+      {
+        "check": "frozen Consumer to Provider concept metadata",
+        "result": "PASS",
+        "summary": "{\"items\": 100, \"concept_covered\": 58}"
+      },
+      {
+        "check": "frozen Dashboard migration compatibility",
+        "result": "PASS",
+        "summary": "command passed"
+      },
+      {
+        "check": "frozen Web serves application",
+        "result": "PASS",
+        "summary": "command passed"
+      },
+      {
+        "check": "retained Provider rollback compatibility",
+        "result": "PASS",
+        "summary": "{\"items\": 100, \"concept_covered\": 58, \"qualities\": [\"healthy\"]}"
+      },
+      {
+        "check": "retained Dashboard rollback compatibility",
+        "result": "PASS",
+        "summary": "command passed"
+      },
+      {
+        "check": "retained Web rollback compatibility",
+        "result": "PASS",
+        "summary": "command passed"
+      }
+    ],
+    "production_runtime_unchanged": true,
+    "cleanup": "PASS"
+  }
+}
