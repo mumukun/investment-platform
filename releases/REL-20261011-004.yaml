@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261011-004",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "created_at": "2026-10-11T15:32:30.353109+00:00",
+  "changes": [
+    "CHG-20261011-004"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.23.0",
+      "new_version": "3.23.1",
+      "commit_sha": "707d619916e2ad745bded153f1d4cdede7d705c9",
+      "tag": "v3.23.1",
+      "business_pr": "https://github.com/mumukun/stock-analyzer/pull/8",
+      "candidate_evidence": "releases/evidence/REL-20261011-004/stock-analyzer/candidate.json",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ec9a94a73614481e53313755082e46f815195d7b20c51e92651dc9b2a129fac6"
+      },
+      "image_ids": {
+        "app": "sha256:597b7575545bbecda0869749b8d48202ecf450e4493dc3d25b9c62e83c3867d1"
+      },
+      "rollback": {
+        "tag": "v3.23.0",
+        "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+        "version": "3.23.0",
+        "images": {
+          "app": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994"
+        }
+      },
+      "ci": "https://github.com/mumukun/stock-analyzer/actions/runs/38151724899",
+      "candidate": "https://github.com/mumukun/stock-analyzer/actions/runs/38151765610"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.18.0",
+      "new_version": "0.18.1",
+      "commit_sha": "ceb1b03d15c18973f3d3c6d9574384e680293d74",
+      "tag": "v0.18.1",
+      "business_pr": "https://github.com/mumukun/investment-research-dashboard/pull/10",
+      "ci": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38151867514",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:526a780b391e71994f4a664340d4632bc58c884f1863c549350ebd27c5d68c17",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8606b48767332e97b990aaa2dac0711e1be6e28f870c5a43dbd200c2e7d224b5"
+      },
+      "image_ids": {
+        "api": "sha256:b11e6d013cc5db011c7197f7ff38fb86c8a1f34c7969d20feb208b1c1ed74b04",
+        "web": "sha256:5c4e14ba90145c00dd7d20e23a03da5637c2aa67ead46d54d0f3d669a0559809"
+      },
+      "rollback": {
+        "tag": "v0.18.0",
+        "commit_sha": "d482526907324d4b74aea1aeb84751064c9179ad",
+        "version": "0.18.0",
+        "images": {
+          "api": "sha256:bc3e4db085dc0ee8882a510d6f07162b9f0ae4d813ab3d65b4e3c44c6c666e68",
+          "web": "sha256:374d92e8487e0ad200f3cfd633239a6530fb39d92724867bc701586f0401b37c"
+        }
+      },
+      "candidate": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38152012518",
+      "candidate_evidence": "releases/evidence/REL-20261011-004/investment-research-dashboard/candidate.json"
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "started_at": "2026-10-11T15:39:33.987222+00:00",
+    "completed_at": "2026-10-11T15:44:07.940780+00:00",
+    "stage_seconds": 260.978
+  },
+  "authorization": {
+    "human_request": "先不做，先把刚才的功能提交 发布正式环境吧。"
+  },
+  "notes": [
+    "Only previously implemented navigation, concise field guides, Element Plus forms and swing history fixes. New swing optimization analysis excluded.",
+    "No database migration or selection rules change. Reuse prior local tests; exact main CI and candidate required.",
+    "Business PRs merged; Tags pushed and exact CI images deployed. Governance closeout PR follows. Active local preview worktrees retained; unrelated user work untouched."
+  ],
+  "timing_started_at": "2026-10-11T15:31:07+00:00",
+  "timing_limitation": "First recorded clock after initial governance review; elapsed is a lower bound on total user wait.",
+  "updated_at": "2026-10-11T16:01:46.298441+00:00",
+  "image_execution_plan": "releases/evidence/REL-20261011-004/image-release.plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261011-004/deployment.receipt.json"
+  ],
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261011-004/deployment.receipt.json",
+      "releases/evidence/REL-20261011-004/swing-history.receipt.json"
+    ],
+    "known_limitations": [
+      "No production browser rerun or user-data write; UI was checked in local preview.",
+      "v5.1.0 has 83 formal signals, matching all/path details, but no complete five-day return samples.",
+      "Initial focused probe exited unsuccessfully without retained diagnostics; the identical query then passed in diagnostic mode and the final recorded rerun. No application code or configuration changed."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION",
+    "evidence": [
+      "releases/evidence/REL-20261011-004/deployment.receipt.json"
+    ]
+  },
+  "observed_handling_seconds": 1839.3
+}

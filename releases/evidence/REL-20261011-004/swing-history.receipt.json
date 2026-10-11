@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "rules_version": "swing-rules-v5.1.0",
+  "runtime": {
+    "app_version": "0.18.1",
+    "git_commit": "ceb1b03d15c18973f3d3c6d9574384e680293d74",
+    "build_time": "2026-10-11T15:37:06Z"
+  },
+  "checks": [
+    {
+      "pattern": "全部",
+      "summary_formal_signals": 83,
+      "returned_samples": 83,
+      "with_outcome": 0,
+      "result": "PASS"
+    },
+    {
+      "pattern": "趋势通道",
+      "summary_formal_signals": 69,
+      "returned_samples": 69,
+      "with_outcome": 0,
+      "result": "PASS"
+    },
+    {
+      "pattern": "低位蓄势",
+      "summary_formal_signals": 8,
+      "returned_samples": 8,
+      "with_outcome": 0,
+      "result": "PASS"
+    },
+    {
+      "pattern": "突破回踩",
+      "summary_formal_signals": 6,
+      "returned_samples": 6,
+      "with_outcome": 0,
+      "result": "PASS"
+    }
+  ],
+  "paid_model_invoked": false,
+  "user_data_writes": false,
+  "observed_at": "2026-10-11T16:01:01.835681+00:00"
+}
