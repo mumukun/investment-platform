@@ -88,8 +88,16 @@
       "status": "completed",
       "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140236146",
       "repository": "investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "054802065d60d2460e6098542da59fa785652ced",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140377621",
+      "repository": "investment-research-dashboard"
     }
   ],
-  "latest_dashboard_candidate": "PENDING; only successful exact-SHA evidence may be frozen",
+  "latest_dashboard_candidate": "PASS (38140377621, final SHA 054802065d60d2460e6098542da59fa785652ced; isolated-fixture smoke only)",
   "excluded_failed_candidate_run": "38139834891"
 }
