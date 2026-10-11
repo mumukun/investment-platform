@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-11T20:40:00+08:00",
+  "scope": "public AKShare/Eastmoney/Sina + isolated local empty database (not NAS production data)",
+  "directory": {
+    "elapsed_seconds": 4.158,
+    "items": [
+      {
+        "code": "10026937",
+        "name": "国泰海通证券股份有限公司武汉紫阳东路证券营业部"
+      }
+    ],
+    "coverage": "近60个自然日公开活跃营业部；未匹配可用准确营业部代码核验",
+    "consumer_contract": "PASS"
+  },
+  "tracking": {
+    "actual_trade_date": "2026-10-09",
+    "window": 5,
+    "record_count": 1,
+    "included_count": 1,
+    "quality": "partial",
+    "consumer_contract": "PASS",
+    "classification": "missing in the isolated empty test database, explicitly partial"
+  },
+  "price_case": {
+    "code": "000980",
+    "event_date": "2026-09-28",
+    "as_of": "2026-10-09",
+    "consumer_contract": "PASS",
+    "horizon_status": {
+      "1": "ready",
+      "3": "ready",
+      "5": "pending",
+      "10": "pending"
+    },
+    "future_returns_null": true
+  },
+  "limitations": [
+    "Not target NAS integration",
+    "Not a paid LLM call",
+    "Not all subscribed departments or all market days",
+    "Cold annual directory took ~46 seconds; 60-natural-day directory took 4.158 seconds in this probe; no latency guarantee"
+  ],
+  "production_writes": false
+}
