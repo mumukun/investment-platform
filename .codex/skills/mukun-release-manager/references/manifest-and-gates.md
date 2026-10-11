@@ -9,15 +9,22 @@ scripts, and CI for concrete commands; do not copy every repository command into
 - Manifest path: `releases/<release_id>.yaml`, initialized from `RELEASE_MANIFEST.yaml`.
 - A Release may contain multiple READY Changes. Its repository scope is the union of their affected
   repositories, reduced to repositories with actual release changes.
-- Persist after every material state transition. Chat output is a summary, not the system of record.
+- Persist state locally/NAS journal at material transitions; combine shared governance commit/PR at closeout.
+  A separate commit, CI wait or PR per transition is not required. Chat is not the system of record.
 
 At minimum record:
 
 - `release_id`, `status`, `changes`, timestamps, environment, and release order;
 - per repository: name, previous/new version, exact SHA, Tag, Artifact identity/digest,
-  dependencies, rollback version, tests, deployment, and verification;
-- Repository, Contract, Integration, Smoke, Critical-path E2E, Feature Flag, Production identity,
-  limitations, and rollback evidence.
+  retained rollback identity and links to current CI/candidate/deployment evidence;
+- result, backup/rollback point, actual changed-boundary checks and limitations, preferably by receipt link.
+
+Omit inapplicable fields and duplicated top-level/per-repository versions or test detail. Do not create extra
+identity, hash, configuration or test summary files when the candidate/deploy receipt already provides the
+same evidence. Keep the existing image-release-v1 executable plan and required fields unchanged. An unchanged
+boundary needs one honest evidence reference, not another probe/report. No separate READY/preparation governance
+PR before deployment; persist locally and archive once at closeout. Ordinary personal-use features do not
+require a new flag, grey rollout or observation gate.
 
 ## Git and worktree preflight
 
@@ -48,6 +55,12 @@ does not authorize including unrelated changes.
     migration evidence is readable where applicable.
 12. **Authorization** — current user wording authorizes the exact next mutation and environment.
 
+For routine releases, these are review gates, not twelve fresh test runs. Reuse successful frozen-main CI
+and verified unchanged-boundary evidence with its source/reason/limitations. Existing PASS in image-release-v1
+may represent evidence review; do not describe skipped execution as a newly run test. Live baseline, readable
+backup, image identity, health and smoke remain enforced by deploy. Apply RELEASE_RULES.md's risk table for
+changed boundaries; no blanket restore/rollback/browser rerun or separate production-baseline refresh.
+
 Use `dashboard-contract-check` when a Dashboard/upstream contract change needs specialized
 validation and that Skill is available. Do not duplicate all contract schemas here.
 
@@ -58,5 +71,6 @@ temporary branch when it is merged into the correct target, has no unique Commit
 unpublished work, active worktree, open/dependent PR, CI/automation consumer, protected status, or
 unknown ownership. Squash/Rebase merges require platform merge evidence, not ancestry alone.
 
-If any condition cannot be proven, record `REVIEW` and retain the branch. Never delete protected or
+If any condition cannot be proven, retain the exact branch and record pending cleanup; this does not demote
+an otherwise READY Change or RELEASED deployment. Never delete protected or
 unknown historical branches.

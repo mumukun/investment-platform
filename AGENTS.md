@@ -1,6 +1,6 @@
 # Investment Platform Governance
 
-治理规范版本：1.0（2026-09-25）。
+治理规范版本：1.1（2026-10-11）。
 
 本仓库是 `marketNewsFeed`、`stock-analyzer` 与
 `investment-research-dashboard` 的 Control Plane / Governance Repository。它管理跨仓库
@@ -35,9 +35,12 @@ Change ID、分支模型、`main` 语义、发布授权、版本治理和跨仓�
 - 一个 Change 使用一个 Codex 对话和一个 `changes/<CHANGE_ID>.md` 文件。
 - 新 Change 从 `changes/TEMPLATE.md` 建立；已有 Change 优先读取其状态和证据，不重新发现全部上下文。
 - Change 只列真实受影响仓库、依赖、接口、数据库、兼容策略、测试、回滚和发布影响。
-- Change 在开发、测试、PR、合并和分支清理全部完成后才能标记 `READY`。
-- “开发完成”表示：测试通过、PR 满足要求、已合入 `main`、临时分支已安全删除、Change 已进入
-  `READY`；它不授权创建 Tag 或部署生产。
+- 日常 Change 使用精简模板；没有变化的接口/数据库/契约不逐项填写 None，不复制测试日志。
+- Change 在开发、必要测试、PR 和合并完成后即可标记 `READY`；安全分支清理放在收尾，不阻塞发布。
+- 业务 PR 合并且必要检查通过后，可先将本地 Change 标记 `READY`；不为状态更新单独开治理 PR
+  或等待其 CI。发布后统一归档提交，共享事实仍以已提交的记录为准。
+- “开发完成”表示：测试通过、PR 满足要求、已合入 `main`、Change 已进入 `READY`；临时分支允许
+  记录待清理。它不授权创建 Tag 或部署生产。
 
 ## 4. 分支与 `main`
 
@@ -72,6 +75,9 @@ Change ID、分支模型、`main` 语义、发布授权、版本治理和跨仓�
 版本和 Commit freeze、回滚计划、Release Manifest 与 release gates。它们禁止正式 Tag、生产部署和
 Feature Activation。
 
+本项目为单人自用，默认执行 `RELEASE_RULES.md` 的日常精简流程。正式发布请求可在同一轮完成
+简短准备和发布，不要求先单独“准备发版”、反复确认或逐阶段提交治理 PR。
+
 只有用户在当前请求中明确说“正式发布”或给出明确等价授权，才允许创建并推送不可变 Tag、部署
 精确 Tag/Artifact、生产 smoke、集成/E2E 验证、必要的 Feature Activation 和 Release closeout。
 详细流程以 `RELEASE_RULES.md` 为准；任何关键 gate 失败都必须 fail closed。
@@ -85,11 +91,16 @@ Feature Activation。
   migration 单独审查。
 - 高风险、跨仓库、用户可见或需要灰度的能力优先分离 Deployment 和 Feature Activation；
   Feature Flag 不是所有功能的强制要求。
+- 单人自用的普通功能随部署直接生效，不仅因用户可见或涉及两个仓库就新增 Feature Flag、
+  灰度、观察期或独立激活步骤；已有开关按实际用途处理。
 
 ## 8. 测试与发布顺序
 
 平台级证据分为 Repository Test、Contract Test、Integration Test 和 Critical-path E2E。允许少量
 稳定黄金链路 E2E，不默认引入大规模浏览器测试、截图回归或脆弱 DOM selector 测试。
+复用冻结 main SHA 的本地/CI 证据；正式发布不重复全套测试、隔离数据库恢复、旧镜像兼容、
+发布器中断/回滚演练。演练默认不执行；数据库、契约、部署或恢复机制变化优先本地针对性测试，
+仅已识别且未能排除的实际数据安全风险需要另行确定最小验证。未受影响的能力不重验。
 
 发布范围和顺序根据 `SYSTEM_MAP.yaml` 与当前 Change 的真实依赖动态计算，遵循 Provider/Upstream
 → Consumer/Downstream。每个上游部署和 smoke 成功后才继续下游；不相关仓库不得进入 Release。
@@ -99,6 +110,7 @@ Feature Activation。
 开始新需求时按顺序读取：当前请求、对应 Change 文件、`SYSTEM_MAP.yaml`，然后只搜索相关模块和
 受影响仓库。Release 阶段优先读取 Change 文件、Git status/diff、Tags、CI、测试证据和 Release
 Manifest；禁止默认重新阅读完整源码，只有 gate 失败或证据不足时才深入。
+已读取且未变化的规则无需每阶段重读；提交后不默认再开一轮全量代码审查。
 
 实际 Release Manifest 应从根目录 `RELEASE_MANIFEST.yaml` 模板生成并保存为
 `releases/<release_id>.yaml`。Release 状态、Tag、SHA、Artifact、验证和回滚点必须落盘。

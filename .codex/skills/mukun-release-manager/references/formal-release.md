@@ -1,60 +1,35 @@
 # Formal Release
 
-Use this workflow only after explicit Production authorization for a specific prepared Release.
+Requires explicit Production authorization. If no prepared Manifest exists, do the concise preparation in
+prepare-release.md in the same turn. Follow RELEASE_RULES.md's personal-use routine by default.
 
-## Revalidation
+## Execute once
 
-1. Read the persisted Manifest; require status `READY_FOR_FORMAL_RELEASE`.
-2. Reconfirm Release ID, included Changes, affected repositories, environment, versions, exact SHAs,
-   Tags, Artifacts, dependencies, release order, and rollback points.
-3. Re-run concise Git preflight and verify frozen SHAs, relevant remote state, CI/test evidence, and
-   critical gates are unchanged and current.
-4. Require every target deployment implementation to prove it deploys the exact recorded Tag or
-   Artifact. If it falls back to floating `main`/`latest`, set `BLOCKED` before creating release
-   side effects.
+1. Freeze the selected merged-main SHA/version/candidate and retained Production rollback identity. Confirm
+   applicable evidence and authorization; record READY_FOR_FORMAL_RELEASE then IN_PROGRESS locally.
+2. Create/push immutable Tags at those SHAs. Fetch precise Tags/main as the NAS deploy user. Select the same
+   CI artifacts; Tags do not rebuild. Never include unrelated repositories or a newer floating main.
+3. Call image_release.py deploy once. It already verifies CI, cached/pinned images, live baseline, protected
+   readable backup, exact checkout, dependency order, running identity, health/version and production smoke.
+   Do not routinely prepend preflight/prefetch or append verify, a full production acceptance script, clone
+   restore, runner rollback drill or browser suite. A targeted extra check is required only for an affected
+   boundary not covered by existing smoke; use the risk table, not a blanket test list.
+4. Save the returned receipt; reference its actual identity, time and backup details from the Manifest/baseline,
+   recording only rollback context and limitations not already captured there;
+   mark RELEASED only on real success. Combine governance changes into one closeout commit/PR with authorization.
+   Safe branch cleanup and optional page inspection follow without delaying successful deployment reporting.
 
-## Execution
+## Failure and timing
 
-1. Set the Manifest to `IN_PROGRESS` and persist the start time.
-2. Create an immutable `vMAJOR.MINOR.PATCH` Tag for each affected repository at its recorded SHA;
-   never move or overwrite an existing Tag.
-3. Push only the explicitly planned Tag when push is part of the current authorization.
-4. Build or select the exact Tag/SHA-derived Artifact and record identity plus digest before deploy.
-5. Deploy in the dynamic dependency order. After each repository, run its version check, health,
-   migration verification, and smoke test before continuing.
-6. Stop downstream deployment when an upstream required edge or compatibility gate fails.
-7. Run affected Contract and Integration verification, plus a small stable critical-path E2E when
-   required by the Change risk.
-8. Activate a Feature Flag only when recorded in the Manifest and only after deployment and
-   end-to-end verification; record its disable path.
-9. Record the actual Production Tag, SHA, Artifact identity/digest, deployment time, verification,
-   known limitations, and rollback point for every released repository.
-10. Mark the Release and included Changes `RELEASED` only after all required production evidence is
-    persisted.
-11. During closeout, clean up only temporary branches explicitly associated with this Release and
-    only when every safety condition in `manifest-and-gates.md` is proven.
+Stop at critical failure, preserve the real partial receipt/journal, do not deploy downstream or claim success.
+Resume only the same frozen plan; unknown drift blocks. Roll back to the retained stable artifact under the
+recorded plan, never invent database downgrade or move Tags. A network/migration timeout may exceed the target;
+do not kill a live migration merely to meet five minutes.
 
-## Failure handling
-
-At the first critical failure:
-
-- stop immediately and do not continue to dependent repositories;
-- preserve logs and evidence without exposing secrets;
-- record exactly which Tags were created/pushed and which Artifacts were deployed;
-- set the honest Manifest state (`BLOCKED`, `FAILED`, `PARTIAL`, or `ROLLED_BACK`);
-- follow the recorded repository rollback/fix-forward plan without inventing database downgrade;
-- do not create replacement Tags or deploy floating branches to make the run appear complete.
-
-## Compact result
-
-Return:
-
-- Release ID
-- Repository versions and Production Tags
-- Deployment order
-- Smoke and critical-path E2E results
-- Exact Production identities
-- Rollback points
-- `RELEASED`
-
-If unsuccessful, return `BLOCKED` and only the blocking conditions plus the persisted partial state.
+Target ~300 seconds for routine handling, timed from the user’s submit/merge/prepare request when that
+preceded formal authorization, or from the direct formal request. Include commit/merge/CI waiting, assistant
+preparation, Tags and deployment. Report prepare/formal phase durations and handling total, with user approval
+waiting separate; prepare-only authorization never permits deployment. Review existing evidence once in ~30–60
+seconds; investigate only missing/conflicting evidence. Report the total user wait as well as its breakdown.
+Keep archival/cleanup asynchronous and explicitly report any unfinished closeout. Use one compact result: Release, versions,
+verification result, access link, rollback availability and any actual limitation.

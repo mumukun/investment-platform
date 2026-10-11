@@ -1,7 +1,11 @@
 # 一次构建、同一镜像发布
 
-Change: CHG-20261010-001。新增能力在 GitHub/NAS 实机验收前为 `NEEDS_TARGET_VERIFICATION`；既有
-`./deploy.sh <tag>` 和历史 Release 不变。marketNewsFeed 不在此次范围。
+Change: CHG-20261010-001；日常流程精简：CHG-20261011-003。镜像发布入口已在
+REL-20261011-002 完成 GitHub/NAS 实机正式验收。marketNewsFeed 既有源码入口不在此次改造范围。
+
+版本更新并入功能 PR，必要验证随开发完成。提交后只核对本次 diff 与成功 main CI/候选，
+不再另开版本/READY/准备治理 PR、全量重审或填写重复证明文件。正式授权后调用一次 deploy；
+receipt 已有的运行身份、备份和检查结果直接引用。归档/清理放在上线后，普通功能随部署直接生效。
 
 ## 1. 候选构建
 
@@ -19,6 +23,29 @@ Dashboard repository variables：`CANDIDATE_PRO_KLINE_ENABLED` 与
 `CANDIDATE_LIMIT_UP_LADDER_ENABLED`，字符串 true/false，缺省 false。当前生产功能必须显式保持，
 不能因缺省值关闭；部署器比较 NAS Compose 中冻结的参数，差异 fail closed。参数变化需新候选构建。
 两组件合并时必须来自同一 workflow run、SHA、版本与参数。
+
+## 日常使用（2026-10-11 起）
+
+以 `RELEASE_RULES.md` 的精简流程为准：本地受影响验证 → 合并 main/自动 CI 候选 → 正式授权打 Tag →
+一次 deploy → 集中记录。下面的安装、传输与隔离工具章节是能力说明，不是每次发版的待办清单。
+已验证的 NAS 安装/配置无需重装；默认只用 registry，网络失败时才使用 archive。
+
+默认不运行全库恢复、旧镜像兼容、发布器中断/回滚演练，也不重复 preflight/prefetch/verify。
+数据库、契约、部署或恢复机制变化时，优先本地针对性测试，不自动追加演练。
+旧工具仅用于用户明确要求或已说明且无法通过针对性检查排除的数据安全问题。
+从用户要求提交/合并/准备发版开始计时，提交、合并、CI构建等待及助手准备均计入；
+准备完成与正式授权后上线分别报告耗时，日常处理以约五分钟为目标，不能只计部署；
+日常预检只核对已有证据一次，目标30–60秒，不再做整轮发布前验收。
+REL-20261011-002 的NAS切换实测约211秒，包含两库约104秒备份；此值不代表完整发布耗时。
+
+```sh
+python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas> --key <key-path> --receipt <deployment-receipt.json>
+```
+
+这个 deploy 已包含 CI/镜像/基线检查、一次备份、切换、版本/健康与生产 smoke，不再另跑 verify。
+正式 Tag/main 仍先由部署用户精确 fetch；不使用浮动 main/latest、不在 NAS 重建。
+执行计划 gates 可引用已经验证且边界未变的证据，明确“复用、未重跑”；不把审核通过冒充新测试。
+结果/失败 receipt 和 Manifest 集中收尾，不为每个阶段开 PR；分支清理不阻塞切换。
 
 ## 2. 准备发布
 
@@ -47,7 +74,7 @@ artifact 与计划逐字段比较。合并后的 SHA 与 PR SHA 不同时，合�
 本地控制器依赖 Python 3、Docker CLI、已授权读取本项目 Actions artifact 的 GitHub CLI `gh`。
 
 正式 Tag 创建在正式授权后，指向候选冻结 SHA；禁止 Tag workflow 重建。所有计划/候选/备份和
-receipt 引用需落入正式 Manifest，并按治理要求提交后才成为共享事实。
+receipt 引用需落入正式 Manifest，集中在收尾提交后成为共享事实，不要求逐阶段提交。
 
 ## 3. NAS 一次性安装
 
@@ -128,7 +155,7 @@ CI config ID、标签和平台；Compose 用完整 config ID 启动，不伪造 
 不把完整恢复演练强加到每次发布。预计恢复耗时与已完成的数据库恢复演练相近，应后台运行并保存日志。
 
 先由部署用户安全 fetch 精确 Tag 和 origin/main；执行器只读校验已有 Tag/SHA/lineage，不以 root
-执行用户仓库的 fetch/hooks。统一本地入口：
+执行用户仓库的 fetch/hooks。以下是可用模式说明；日常只执行上面的 deploy，其他模式用于排障或已触发的专项检查：
 
 ```
 python3 scripts/image_release.py preflight <plan.json> --host <user@nas> --key <key-path>
