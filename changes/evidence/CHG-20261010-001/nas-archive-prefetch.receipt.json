@@ -1,0 +1,71 @@
+{
+  "release_id": "REL-20261010-900",
+  "plan_hash": "76eadde7486a13984c1e7742a9e5277fc6bab89b288bb30096ea09cc77321693",
+  "repositories": {},
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-10T09:32:12.555339+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.234
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-10T09:32:12.828544+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.152
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-10T10:09:02.132837+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.108
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-10T10:09:02.395645+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.272
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-10T10:47:35.159360+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.083
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-10T10:47:35.378012+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.188
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v3.22.0",
+      "commit_sha": "ea4bc5b678ab913e29cae5829ac105baa76643f5",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:f4c7713f1515c51877a89b3bdc4980ab1a373ce5b0ed284f0fc6ef88ee872022"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.16.0",
+      "commit_sha": "8d93f4887d8fde087eee2557e902c8d2921d069f",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1915f2639ff2e27d4a059b5a581dcceacaebabda35aadf71195578e338e0239f",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f48a88b3e27ee5ca14cff07edd6b0718243e7a47547de964c6ac131d300953dc"
+      }
+    }
+  ],
+  "last_operation": "prefetch",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-10T10:47:35.661222+00:00"
+}

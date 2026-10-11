@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v3.23.0",
+      "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "remote_refs": [
+        "e6d402584a1499dcf1aa905cc46fa8afaf29aaa8\trefs/tags/v3.23.0",
+        "703c066deef763c0d003b9378f076e6ca0e0b4f1\trefs/tags/v3.23.0^{}"
+      ]
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.17.0",
+      "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+      "remote_refs": [
+        "65de461031720b03bb4436ee03df1cdb0676e493\trefs/tags/v0.17.0",
+        "054802065d60d2460e6098542da59fa785652ced\trefs/tags/v0.17.0^{}"
+      ]
+    }
+  ]
+}

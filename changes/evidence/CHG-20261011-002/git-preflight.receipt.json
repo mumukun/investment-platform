@@ -1,0 +1,29 @@
+[
+  {
+    "repository": "stock-analyzer",
+    "head": "2cd238f01b1c7bfc44b0c86c9262fac370098bad",
+    "branch": "detached",
+    "remote": "git@github.com:mumukun/stock-analyzer.git",
+    "unfinished_operations": [],
+    "status": "",
+    "worktrees": "worktree /Users/mukun/work/workspace/stock/stock-analyzer\nHEAD 0626c1704569550cc6381b1ff3079df250f30865\nbranch refs/heads/main\n\nworktree /Users/mukun/.codex/worktrees/release-pipeline/stock-analyzer\nHEAD 703c066deef763c0d003b9378f076e6ca0e0b4f1\ndetached\n\nworktree /Users/mukun/work/workspace/stock/stock-analyzer-chg-20260926-002\nHEAD 173d539c6aa97544fa9456038635f0831a2f1f5d\nbranch refs/heads/feat/CHG-20260926-002-agent-portability\n\nworktree /Users/mukun/work/workspace/stock/stock-analyzer-chg-20261008-000\nHEAD 910befbc62ee4c6a3284e7e750acab7661a3e4b6\ndetached\n\nworktree /Users/mukun/work/workspace/stock/stock-analyzer-chg-20261008-001\nHEAD 17bd04eafdf802c031392591f9ecc2df597b698f\ndetached\n\nworktree /Users/mukun/work/workspace/stock/stock-analyzer-chg-20261011-002\nHEAD 2cd238f01b1c7bfc44b0c86c9262fac370098bad\ndetached"
+  },
+  {
+    "repository": "investment-research-dashboard",
+    "head": "01f030341aff685a6a56e1e118ef50f4f182a049",
+    "branch": "detached",
+    "remote": "git@github.com:mumukun/investment-research-dashboard.git",
+    "unfinished_operations": [],
+    "status": "",
+    "worktrees": "worktree /Users/mukun/work/workspace/stock/investment-research-dashboard\nHEAD b7e005c2613c3e9e23fe154327cb5e608caa1a40\nbranch refs/heads/main\n\nworktree /Users/mukun/.codex/worktrees/release-pipeline/investment-research-dashboard\nHEAD d48a5ddf52a80774d1bb3518cf7eb6c7dc73e103\nbranch refs/heads/fix/CHG-20261011-001-web-build-fixture\n\nworktree /Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20260926-002\nHEAD f163f0c2a40b676a98caf87fb316513d6d84a4a0\nbranch refs/heads/feat/CHG-20260926-002-agent-portability\n\nworktree /Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20261008-000\nHEAD 7b23ff0ea16af8372bb48db4a24cec225200a374\ndetached\n\nworktree /Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20261008-001\nHEAD ad7e9abff12006ed42103587aeaf799e84bf7672\ndetached\n\nworktree /Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20261008-002\nHEAD 9f3050a8a1a66cc65fc7ee6f15890527039ca2cf\nbranch refs/heads/feat/CHG-20261008-002-premarket-cockpit\n\nworktree /Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20261011-002\nHEAD 01f030341aff685a6a56e1e118ef50f4f182a049\ndetached\n\nworktree /Users/mukun/work/workspace/stock/investment-research-dashboard-sit\nHEAD 098ea1a9089560ec2455c358466a74f34f2daf31\nbranch refs/heads/codex/chore/local-sit-stack"
+  },
+  {
+    "repository": "investment-platform",
+    "head": "9625c63cd87fbc59a65af96e4043636d7df13139",
+    "branch": "fix/CHG-20261011-002-release-closeout",
+    "remote": "git@github.com:mumukun/investment-platform.git",
+    "unfinished_operations": [],
+    "status": "M changes/CHG-20261010-001.md\n M changes/CHG-20261011-002.md\n?? changes/evidence/CHG-20261011-002/branch-cleanup.receipt.json\n?? changes/evidence/CHG-20261011-002/ci.receipt.json\n?? changes/evidence/CHG-20261011-002/configuration.receipt.json\n?? changes/evidence/CHG-20261011-002/dashboard-candidate/\n?? changes/evidence/CHG-20261011-002/image-release.plan.json\n?? changes/evidence/CHG-20261011-002/nas-prefetch.receipt.json\n?? changes/evidence/CHG-20261011-002/production-baseline.receipt.json\n?? changes/evidence/CHG-20261011-002/stock-candidate/\n?? changes/evidence/CHG-20261011-002/target-acceptance.log\n?? changes/evidence/CHG-20261011-002/target-acceptance.py\n?? releases/REL-20261011-001.yaml",
+    "worktrees": "worktree /Users/mukun/work/workspace/stock/investment-platform\nHEAD acc81c5c8ad68535bc3cf7a674f5c5c1e0818026\nbranch refs/heads/main\n\nworktree /Users/mukun/.codex/worktrees/premarket-cockpit/investment-platform\nHEAD d650be21a16a2a60d4821739dfdd982303db541c\nbranch refs/heads/feat/CHG-20261008-002-premarket-cockpit\n\nworktree /Users/mukun/.codex/worktrees/release-pipeline/investment-platform\nHEAD de6a0338237d532a85fa46d50145be8e2921f246\nbranch refs/heads/fix/CHG-20261011-001-release-readiness\n\nworktree /Users/mukun/.codex/worktrees/seat-tracker/investment-platform\nHEAD 14df2882ef6032c8364f4de11bf090c4054462d4\ndetached\n\nworktree /Users/mukun/.codex/worktrees/stock-kline-upgrade/investment-platform\nHEAD 308e4946b3fae27995c6737cde968ca022fea3cc\nbranch refs/heads/feat/CHG-20261008-000-release-closeout\n\nworktree /Users/mukun/.codex/worktrees/stock-reading-fixes/investment-platform\nHEAD 9625c63cd87fbc59a65af96e4043636d7df13139\nbranch refs/heads/fix/CHG-20261011-002-release-closeout"
+  }
+]

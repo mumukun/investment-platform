@@ -1,0 +1,103 @@
+{
+  "result": "PASS",
+  "runs": [
+    {
+      "conclusion": "success",
+      "headSha": "835fd01a51c03b919e6c64dad897108daa28bd72",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139505724",
+      "repository": "stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "82b2246c34bb4b8d3d40c2038e985e03a388f89f",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139588584",
+      "repository": "stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "2aaaf278e8c54f74be6b2242a4046d9e9687fae8",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139860507",
+      "repository": "stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139946213",
+      "repository": "stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139979680",
+      "repository": "stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "5ca40e3a2a62c109e9996ed5877a994d7d72c809",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38139518863",
+      "repository": "investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "729300d456abca24b43a7778fb83a6db8e019ed7",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38139705950",
+      "repository": "investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "d48a5ddf52a80774d1bb3518cf7eb6c7dc73e103",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140049026",
+      "repository": "investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "f58e623f0aca30bbf208d264d4580745488ed00f",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-platform/actions/runs/38139592490",
+      "repository": "investment-platform"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "de6a0338237d532a85fa46d50145be8e2921f246",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-platform/actions/runs/38139686765",
+      "repository": "investment-platform"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "054802065d60d2460e6098542da59fa785652ced",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140236146",
+      "repository": "investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "054802065d60d2460e6098542da59fa785652ced",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140377621",
+      "repository": "investment-research-dashboard"
+    }
+  ],
+  "latest_dashboard_candidate": "PASS (38140377621, final SHA 054802065d60d2460e6098542da59fa785652ced; isolated-fixture smoke only)",
+  "excluded_failed_candidate_run": "38139834891"
+}

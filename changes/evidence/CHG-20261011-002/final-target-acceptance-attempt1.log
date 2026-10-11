@@ -1,0 +1,8 @@
+isolated PostgreSQL readiness PASS
+isolated clone stock_analyzer PASS
+isolated clone investment_dashboard PASS
+frozen Provider historical real-data contract PASS
+frozen Dashboard real-data smoke PASS
+frozen Consumer to Provider concept metadata PASS
+frozen Dashboard migration compatibility PASS
+{"target_acceptance": {"result": "FAILED", "error_type": "RuntimeError", "checks": [{"check": "stock-analyzer final source hash provenance", "result": "PASS"}, {"check": "investment-research-dashboard final source hash provenance", "result": "PASS"}, {"check": "isolated PostgreSQL readiness", "result": "PASS", "summary": "command passed"}, {"check": "stream real-data clone stock_analyzer", "result": "PASS"}, {"check": "stream real-data clone investment_dashboard", "result": "PASS"}, {"check": "frozen Provider historical real-data contract", "result": "PASS", "summary": "{\"items\": 100, \"concept_covered\": 58, \"qualities\": [\"healthy\"]}"}, {"check": "frozen Dashboard real-data smoke", "result": "PASS", "summary": "command passed"}, {"check": "frozen Consumer to Provider concept metadata", "result": "PASS", "summary": "{\"items\": 100, \"concept_covered\": 58}"}, {"check": "frozen Dashboard migration compatibility", "result": "PASS", "summary": "command passed"}]}}

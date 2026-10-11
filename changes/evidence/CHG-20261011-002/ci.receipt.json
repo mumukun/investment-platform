@@ -1,0 +1,69 @@
+{
+  "result": "PASS",
+  "runs": [
+    {
+      "conclusion": "success",
+      "headSha": "315710b53720c74f12680858c32133ef4b63e3ff",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139276757",
+      "repository": "mumukun/stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "2cd238f01b1c7bfc44b0c86c9262fac370098bad",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139326005",
+      "repository": "mumukun/stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "2cd238f01b1c7bfc44b0c86c9262fac370098bad",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139357965",
+      "repository": "mumukun/stock-analyzer"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "7a0143668d64b30ef1cc6405a1a959461040d9de",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38139315732",
+      "repository": "mumukun/investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "01f030341aff685a6a56e1e118ef50f4f182a049",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38139447815",
+      "repository": "mumukun/investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "01f030341aff685a6a56e1e118ef50f4f182a049",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38139571282",
+      "repository": "mumukun/investment-research-dashboard"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "c302e40f4ae476bd9f092feb565ecc55fe1d4c8e",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-platform/actions/runs/38139343247",
+      "repository": "mumukun/investment-platform"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "9625c63cd87fbc59a65af96e4043636d7df13139",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-platform/actions/runs/38139397252",
+      "repository": "mumukun/investment-platform"
+    }
+  ]
+}

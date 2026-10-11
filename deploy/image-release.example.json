@@ -1,0 +1,17 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-YYYYMMDD-NNN",
+  "environment": "Production",
+  "status": "DRAFT",
+  "release_order": [],
+  "repositories": [],
+  "gates": {
+    "scope": {"status": "NOT_RUN", "evidence": ""},
+    "compatibility": {"status": "NOT_RUN", "evidence": ""},
+    "integration": {"status": "NOT_RUN", "evidence": ""},
+    "real_data": {"status": "NOT_RUN", "evidence": ""},
+    "configuration": {"status": "NOT_RUN", "evidence": ""},
+    "rollback": {"status": "NOT_RUN", "evidence": ""}
+  },
+  "authorization": {"status": "NOT_AUTHORIZED", "evidence": ""}
+}

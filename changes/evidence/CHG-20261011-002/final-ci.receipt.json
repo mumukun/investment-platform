@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "runs": [
+    {
+      "conclusion": "success",
+      "headSha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139946213"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/stock-analyzer/actions/runs/38139979680"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "054802065d60d2460e6098542da59fa785652ced",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140236146"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "054802065d60d2460e6098542da59fa785652ced",
+      "name": "Candidate images",
+      "status": "completed",
+      "url": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38140377621"
+    }
+  ]
+}
