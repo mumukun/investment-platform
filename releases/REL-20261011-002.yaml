@@ -9,7 +9,7 @@
   "release_id": "REL-20261011-002",
   "status": "IN_PROGRESS",
   "created_at": "2026-10-11T12:52:40.544973+00:00",
-  "updated_at": "2026-10-11T13:18:24.029412+00:00",
+  "updated_at": "2026-10-11T13:20:07.531411+00:00",
   "environment": "Production",
   "changes": [
     "CHG-20261010-001",
@@ -23,7 +23,7 @@
       "new_version": "3.23.0",
       "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
       "tag": "v3.23.0",
-      "tag_state": "PLANNED_NOT_CREATED",
+      "tag_state": "CREATED_PUSHED",
       "artifact": {
         "type": "CI_BUILD_ONCE",
         "identity": {
@@ -63,7 +63,7 @@
       "new_version": "0.17.0",
       "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
       "tag": "v0.17.0",
-      "tag_state": "PLANNED_NOT_CREATED",
+      "tag_state": "CREATED_PUSHED",
       "artifact": {
         "type": "CI_BUILD_ONCE",
         "identity": {
@@ -338,7 +338,8 @@
     "Baseline diagnostic initially inspected Compose component names as containers; corrected administrator container mapping passed actual identity/version/health, not baseline drift.",
     "Final target attempt1 stopped at an acceptance-driver shape error: reviews returns a list. Product contract confirmed, driver corrected; failed receipt/log retained. Full new isolated attempt is required before readiness.",
     "Final retry completed full target acceptance PASS after correcting the driver response-shape assumption; failed attempt preserved, product code unchanged.",
-    "Formal user authorization recorded; baseline/remote exact SHAs/unused Tags and live GitHub candidate evidence revalidated. Frozen plan hash unchanged; restricted runner will create readable backups before mutations."
+    "Formal user authorization recorded; baseline/remote exact SHAs/unused Tags and live GitHub candidate evidence revalidated. Frozen plan hash unchanged; restricted runner will create readable backups before mutations.",
+    "Both planned annotated immutable Tags created and pushed at exact frozen SHAs; remote peeled refs independently verified. No rebuild performed. Tag guard initially used Git missing-ref exit code incorrectly; confirmed no refs/mutations and corrected guard before creation."
   ],
   "candidate_prefetch": {
     "status": "PASS",
