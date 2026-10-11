@@ -1,0 +1,1 @@
+{"result": "FAILED", "stage": "investment-research-dashboard image IDs", "error_type": "CalledProcessError", "reason": "check failed", "verified": [{"repository": "stock-analyzer", "tag": "v3.22.0", "commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f", "runtime_version": "3.22.0", "identity": "PASS"}]}

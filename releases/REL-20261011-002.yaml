@@ -1,0 +1,327 @@
+{
+  "previous_version": null,
+  "new_version": null,
+  "commit_sha": null,
+  "tag": null,
+  "rollback_version": null,
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261011-002",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "created_at": "2026-10-11T12:52:40.544973+00:00",
+  "updated_at": "2026-10-11T13:09:30.228770+00:00",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261010-001",
+    "CHG-20261011-001",
+    "CHG-20261011-002"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.22.0",
+      "new_version": "3.23.0",
+      "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+      "tag": "v3.23.0",
+      "tag_state": "PLANNED_NOT_CREATED",
+      "artifact": {
+        "type": "CI_BUILD_ONCE",
+        "identity": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:1a4ed573a13b61bca2d957d64b100489b7c7b2a3d3903bd1bf04b119269a7f37"
+        },
+        "config_image_ids": {
+          "app": "sha256:f898375dbdcafc29de17d2f677c01183e459696bb4c1d730e5db2eff92be8994"
+        },
+        "source": "main CI candidate 38139979680"
+      },
+      "artifact_digest": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:1a4ed573a13b61bca2d957d64b100489b7c7b2a3d3903bd1bf04b119269a7f37"
+      },
+      "dependencies": [],
+      "tests": [
+        "main CI PASS run 38139946213",
+        "candidate fixture smoke PASS run 38139979680"
+      ],
+      "deployment": {
+        "entrypoint": "./deploy-image.sh <frozen-plan.json> deploy",
+        "status": "NOT_STARTED"
+      },
+      "verification": {
+        "status": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json"
+      },
+      "rollback_version": "3.22.0",
+      "rollback_tag": "v3.22.0",
+      "rollback_commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
+      "rollback_images": {
+        "app": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.16.0",
+      "new_version": "0.17.0",
+      "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+      "tag": "v0.17.0",
+      "tag_state": "PLANNED_NOT_CREATED",
+      "artifact": {
+        "type": "CI_BUILD_ONCE",
+        "identity": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f65555c5bf07703c211593e464e9419b40a14eccd1d241482791239f9b2d1428",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:6d4160afbf9676ded68dddf71962a2c9523b4fa1d294a5cf29f029ed77795813"
+        },
+        "config_image_ids": {
+          "api": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+          "web": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a"
+        },
+        "source": "main CI candidate 38140377621"
+      },
+      "artifact_digest": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f65555c5bf07703c211593e464e9419b40a14eccd1d241482791239f9b2d1428",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:6d4160afbf9676ded68dddf71962a2c9523b4fa1d294a5cf29f029ed77795813"
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "tests": [
+        "main CI PASS run 38140236146",
+        "candidate fixture smoke PASS run 38140377621"
+      ],
+      "deployment": {
+        "entrypoint": "./deploy-image.sh <frozen-plan.json> deploy",
+        "status": "NOT_STARTED"
+      },
+      "verification": {
+        "status": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json"
+      },
+      "rollback_version": "0.16.0",
+      "rollback_tag": "v0.16.0",
+      "rollback_commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
+      "rollback_images": {
+        "api": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+        "web": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+      },
+      "migration": {
+        "from": "9b1e4c6d8f20",
+        "to": "a8d6210f1101",
+        "strategy": "add two seat storage tables; preserve during app rollback; no automatic downgrade",
+        "verification": "PASS_FINAL_CLONE_UPGRADE_AND_ALEMBIC_CHECK; RETAINED_OLD_IMAGE_READ_COMPATIBLE"
+      }
+    }
+  ],
+  "artifact": {
+    "identity": "frozen main CI candidates",
+    "type": "CI_BUILD_ONCE",
+    "source": "private GHCR"
+  },
+  "artifact_digest": "PER_REPOSITORY",
+  "image_execution_plan": "changes/evidence/CHG-20261011-002/final-image-release.plan.json",
+  "candidate_evidence": [
+    "changes/evidence/CHG-20261011-002/final-stock-candidate/candidate.json",
+    "changes/evidence/CHG-20261011-002/final-dashboard-candidate/candidate.json"
+  ],
+  "deployment_receipts": [],
+  "dependencies": [
+    {
+      "provider": "stock-analyzer",
+      "consumer": "investment-research-dashboard",
+      "type": "required",
+      "reason": "Dashboard seat subscriptions require new Provider directory/tracking/case contracts; Provider must precede Consumer."
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "tests": {
+    "repository": [
+      "Exact final main CI and candidate runs PASS; see final-ci.receipt.json",
+      "Provider 255 unittest + 23 focused pytest; Dashboard 131 backend / 55 frontend tests, Ruff, migration upgrade/check and professional build PASS; stock reading regression 54 tests on final stock-reading merge",
+      "Governance PR32/33 Python3.8/3.13 CI PASS; final preparation documentation PR will be independently checked"
+    ],
+    "contract": [
+      "54 Provider tests; 4 Consumer tests; V3 partial tags/meta and frontend multi-tag search"
+    ],
+    "integration": [
+      "Exact final source/versions/config Image IDs/registry digests verified on NAS",
+      "Final Provider historical V3 real 100-stock data -> strict Consumer -> staged clone archive -> Dashboard HTTP: 58 concept-covered, healthy snapshot, dates <= observation date PASS",
+      "Frozen API/Web health/readiness/real-data smoke; migrated subscriptions/reports/reviews endpoints PASS",
+      "Cloned real DB migration to a8d6210f1101 and Alembic check PASS; old Provider/API/Web retained images read/serve after candidate migration PASS",
+      "Public source directory, 5-market-day disclosure and case strict Consumer PASS; tested source module hashes match final candidate images (local public-source evidence, not a NAS external-network probe)"
+    ],
+    "critical_path_e2e": [
+      "Local actual chart red/green and wide/mobile layout PASS",
+      "Local seat subscription/report/case/review persistence browser path (explicit fixtures) PASS",
+      "Final NAS exact-image historical data -> Consumer -> staged archive -> HTTP PASS; seat migrated empty-state APIs PASS; not production authenticated browser acceptance"
+    ],
+    "release_gates": [
+      {
+        "gate": "scope",
+        "result": "PASS",
+        "evidence": "releases/REL-20261011-002.yaml + committed READY Changes CHG-20261010-001 / CHG-20261011-001 / CHG-20261011-002"
+      },
+      {
+        "gate": "compatibility",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json + changes/CHG-20261011-001.md"
+      },
+      {
+        "gate": "integration",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json + changes/evidence/CHG-20261011-001/public-source-check.json + final source hash provenance"
+      },
+      {
+        "gate": "real_data",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json + changes/evidence/CHG-20261011-001/public-source-check.json"
+      },
+      {
+        "gate": "configuration",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/configuration.receipt.json + changes/evidence/CHG-20261011-002/final-production-baseline.receipt.json"
+      },
+      {
+        "gate": "rollback",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json + changes/evidence/CHG-20261011-002/final-production-baseline.receipt.json"
+      },
+      {
+        "gate": "git_identity_version_unused_tags",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-git-version.receipt.json"
+      },
+      {
+        "gate": "main_ci_and_artifacts",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-ci.receipt.json"
+      },
+      {
+        "gate": "production_identity_no_drift",
+        "result": "PASS",
+        "evidence": "changes/evidence/CHG-20261011-002/final-production-baseline.receipt.json"
+      },
+      {
+        "gate": "backup_readability_and_migration",
+        "result": "PASS_FOR_PREPARATION",
+        "evidence": "Live custom-format streamed dumps restored successfully to disposable DBs; current old-image compatibility passed. Formal runner must create/verify fresh protected backup before actual migration; no automatic downgrade."
+      },
+      {
+        "gate": "authorization",
+        "result": "PASS_PREPARE_ONLY",
+        "evidence": "Human authorized commit, merge and unified release preparation. NOT_AUTHORIZED for formal Tag/deployment/activation."
+      }
+    ]
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "NOT_STARTED",
+    "started_at": null,
+    "completed_at": null,
+    "steps": [
+      "Revalidate frozen candidates/main CI, baseline and fresh readable backups",
+      "Create immutable planned tags only after formal authorization; do not rebuild",
+      "As deploy user safely fetch exact newly authorized Tags and origin/main on NAS; verify exact frozen Tag/SHA/lineage before locked deployment.",
+      "Deploy same pinned images Provider then Consumer with restricted locked nas-image-release; smoke each before next"
+    ],
+    "feature_activation": []
+  },
+  "production_identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v3.22.0",
+      "commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
+      "image_ids": {
+        "stock-api": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95",
+        "stock-watch": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+      },
+      "runtime_version": "3.22.0",
+      "health": "PASS",
+      "tracked_clean": true
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.16.0",
+      "commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
+      "image_ids": {
+        "investment-research-dashboard-nas-api-1": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+        "investment-research-dashboard-nas-web-1": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+      },
+      "runtime_version": "0.16.0",
+      "health": "PASS",
+      "tracked_clean": true
+    }
+  ],
+  "verification": {
+    "status": "PASS_WITH_DOCUMENTED_LIMITATIONS",
+    "smoke": [
+      "Frozen candidates and retained baseline stock/API/Web smoke PASS on isolated real-data clone"
+    ],
+    "health_checks": [
+      "Fresh baseline runtime health PASS"
+    ],
+    "version_checks": [
+      "Fresh baseline Tags/SHA/runtime/Image IDs match persisted baseline"
+    ],
+    "contract_checks": [
+      "Provider V3 -> strict Consumer metadata -> HTTP and public seat models PASS"
+    ],
+    "integration_checks": [
+      "Migration, staged real-data HTTP, seat new-table APIs and old-image read compatibility PASS"
+    ],
+    "e2e_checks": [
+      "Local actual chart red/green and wide/mobile layout PASS",
+      "Local seat subscription/report/case/review persistence browser path (explicit fixtures) PASS",
+      "Final NAS exact-image historical data -> Consumer -> staged archive -> HTTP PASS; seat migrated empty-state APIs PASS; not production authenticated browser acceptance"
+    ],
+    "evidence": [
+      "changes/evidence/CHG-20261011-002/final-ci.receipt.json",
+      "changes/evidence/CHG-20261011-002/configuration.receipt.json",
+      "changes/evidence/CHG-20261011-002/unified-prefetch.receipt.json",
+      "changes/evidence/CHG-20261011-001/public-source-check.json",
+      "changes/evidence/CHG-20261011-002/final-production-baseline.receipt.json",
+      "changes/evidence/CHG-20261011-002/final-target-acceptance-attempt1.receipt.json",
+      "changes/evidence/CHG-20261011-002/final-git-version.receipt.json",
+      "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json",
+      "changes/evidence/CHG-20261011-002/final-source-hashes.json",
+      "changes/evidence/CHG-20261011-002/final-prefetch.receipt.json"
+    ],
+    "known_limitations": [
+      "No formal Tag/deployment/production migration/activation authorized",
+      "Live full concept refresh/backfill not included; stocks missing from real snapshot remain explicitly unavailable or unrecorded",
+      "CI/local fixture and isolated clone evidence do not claim production browser acceptance",
+      "Real paid LLM call not invoked; AI contract/cache/auth paths are tested with isolated model responses",
+      "Validated historical sample has 58/100 concept-covered stocks and healthy concept snapshot quality; missing stocks remain absent from source snapshot, never fabricated.",
+      "Old production images have retained local IDs, no registry digest; rollback is exact retained image ID",
+      "Fresh protected readable backup required immediately before formal migration; streaming clone/restore is validation, not a retained production rollback backup"
+    ]
+  },
+  "rollback": {
+    "status": "READY",
+    "target_version": null,
+    "target_tag": null,
+    "target_commit_sha": null,
+    "artifact": null,
+    "artifact_digest": "PER_REPOSITORY",
+    "database_restore_point": "Before formal migration a8d6210f1101, create fresh protected custom-format backups and verify readability; isolated streamed clone is acceptance only. App rollback preserves new seat tables, subscriptions, notes and reviews; no automatic database downgrade.",
+    "steps": [
+      "Reverse selected release order; use retained verified baseline images and immutable tags",
+      "No automatic database downgrade"
+    ]
+  },
+  "notes": [
+    "Unified scope explicitly authorized by user in 新增游资席位追踪分析模块; human authorization verified through thread user message.",
+    "Three READY Changes; only stock-analyzer and Dashboard are business release repositories; marketNewsFeed and unrelated open PRs excluded.",
+    "REL-20261011-001 cancelled after scope/SHA changed. REL-20261011-900 is only a preparation journal; immutable journals are retained, never overwritten.",
+    "Final candidates bind exact versions/source/platform/build args/digests/config IDs; formal Tags must point to those SHAs and reuse same images without rebuilding.",
+    "Baseline diagnostic initially inspected Compose component names as containers; corrected administrator container mapping passed actual identity/version/health, not baseline drift.",
+    "Final target attempt1 stopped at an acceptance-driver shape error: reviews returns a list. Product contract confirmed, driver corrected; failed receipt/log retained. Full new isolated attempt is required before readiness.",
+    "Final retry completed full target acceptance PASS after correcting the driver response-shape assumption; failed attempt preserved, product code unchanged."
+  ],
+  "candidate_prefetch": {
+    "status": "PASS",
+    "plan_hash": "8af07f402fb30f695cce760fbb279ff03eed1faf0e58cf98bc9786c33adb81a6",
+    "evidence": "changes/evidence/CHG-20261011-002/final-prefetch.receipt.json",
+    "production_started": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "stock-analyzer": {
+    "stock_analyzer/seat_tracking.py": "1ede00a81e866a57429ecdc7352812b0fa117733bb33aa67bd676877f52fe4c1",
+    "stock_analyzer/seat_flow.py": "ba0c36c2efbc34efccd49941269935657d37b015dd06e0ab5fd9edb801ac9483"
+  },
+  "investment-research-dashboard": {
+    "backend/app/integrations/seat_tracking.py": "b2603c2878d68e78158b5e3f4569beef956350c13d007624bb33c5c74ba17c40"
+  }
+}

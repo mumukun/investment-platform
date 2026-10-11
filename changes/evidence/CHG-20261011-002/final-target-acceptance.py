@@ -1,6 +1,7 @@
 """Release-only NAS acceptance; never targets live DB for writes or publishes ports."""
 import json, subprocess, sys, time, uuid
 from datetime import datetime, timezone
+SOURCE_HASHES = {'stock-analyzer': {'stock_analyzer/seat_tracking.py': '1ede00a81e866a57429ecdc7352812b0fa117733bb33aa67bd676877f52fe4c1', 'stock_analyzer/seat_flow.py': 'ba0c36c2efbc34efccd49941269935657d37b015dd06e0ab5fd9edb801ac9483'}, 'investment-research-dashboard': {'backend/app/integrations/seat_tracking.py': 'b2603c2878d68e78158b5e3f4569beef956350c13d007624bb33c5c74ba17c40'}}
 D = "/usr/local/bin/docker"
 PG = "sha256:e684c11a6c7c127c1b7602063cc6a13db0a12b62dfd770d83936c089751d498d"
 containers = []
@@ -66,6 +67,24 @@ assert any(x.concept_tags for x in p.items), 'no real concept memberships availa
 for x in p.items:
  m=x.classification_meta
  assert not m.get('concept_snapshot_date') or m['concept_snapshot_date'] <= '2026-10-09'
+from datetime import datetime
+from sqlalchemy import select
+from app.database import SessionLocal
+from app.models import Snapshot
+payload=p.model_dump(mode='json')
+with SessionLocal() as db:
+ row=db.scalar(select(Snapshot).where(Snapshot.domain=='swing-selection',Snapshot.key=='2026-10-09').order_by(Snapshot.business_time.desc()))
+ if row is None:
+  row=Snapshot(domain='swing-selection',key='2026-10-09',session='intraday',source='isolated exact candidate acceptance',business_time=datetime.fromisoformat(payload['data_time']),quality='healthy',version=payload['contract_version'],is_mock=False,payload=payload)
+  db.add(row)
+ else:
+  row.payload=payload;row.version=payload['contract_version'];row.is_mock=False
+ db.commit()
+with urllib.request.urlopen('http://127.0.0.1:8000/api/v1/swing-selection?trade_date=2026-10-09',timeout=15) as r:
+ served=json.load(r)
+ assert served['contract_version']==payload['contract_version']
+ assert served['items'][0]['classification_meta']==payload['items'][0]['classification_meta']
+ assert served['items'][0]['concept_tags']==payload['items'][0]['concept_tags']
 print(json.dumps({'items':len(p.items),'concept_covered':sum(bool(x.concept_tags) for x in p.items)}))
 """
 
@@ -75,7 +94,8 @@ opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
 for path in ['/api/v1/seat-tracking/subscriptions','/api/v1/seat-tracking/reports?observation_date=2026-10-09&window=5','/api/v1/seat-tracking/reviews']:
  with opener.open('http://127.0.0.1:8000'+path,timeout=10) as r:
   p=json.load(r)
-  assert r.status==200 and isinstance(p['items'],list)
+  assert r.status==200
+  assert isinstance(p if path.endswith('/reviews') else p['items'],list)
 print('migrated seat subscription/report/review APIs PASS')
 """
 
@@ -89,6 +109,12 @@ def main(plan):
             assert info['Id']==c['image_ids'][component]
             assert info['Config']['Labels']['org.opencontainers.image.revision']==c['commit_sha']
             assert info['Config']['Labels']['org.opencontainers.image.version']==c['version']
+    for repo,expected in SOURCE_HASHES.items():
+        component='app' if repo=='stock-analyzer' else 'api'
+        code="import hashlib,json;from pathlib import Path;print(json.dumps({p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in "+repr(list(expected))+"}))"
+        actual=json.loads(run('run','--rm','--pull','never','--network','none','--entrypoint','python' if component=='app' else '.venv/bin/python',images[repo]['images'][component],'-c',code))
+        assert actual==expected
+        checks.append({'check':repo+' final source hash provenance','result':'PASS'})
     before={n:run('inspect','--format','{{.Id}} {{.Image}} {{.State.StartedAt}}',n) for n in ['stock-api','stock-watch','investment-research-dashboard-nas-api-1','investment-research-dashboard-nas-web-1']}
     db=create(PG,['POSTGRES_USER=postgres','POSTGRES_DB=postgres','POSTGRES_HOST_AUTH_METHOD=trust'],['postgres','-c','fsync=off','-c','synchronous_commit=off','-c','full_page_writes=off'])
     check(db,['pg_isready','-h','127.0.0.1','-U','postgres'], 'isolated PostgreSQL readiness')
