@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261011-003",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "created_at": "2026-10-11T14:32:58.213767+00:00",
+  "updated_at": "2026-10-11T14:35:52.942496+00:00",
+  "changes": [
+    "CHG-20261008-002"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.17.0",
+      "new_version": "0.18.0",
+      "commit_sha": "d482526907324d4b74aea1aeb84751064c9179ad",
+      "tag": "v0.18.0",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a6a787656262e72904d43f87cb1dd7cf1f6df39d20fccb4886011fa86327e6d4",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3324a501f75f865fe6930050188f01614269379665c43e90bc47abc5342bf701"
+      },
+      "image_ids": {
+        "api": "sha256:bc3e4db085dc0ee8882a510d6f07162b9f0ae4d813ab3d65b4e3c44c6c666e68",
+        "web": "sha256:374d92e8487e0ad200f3cfd633239a6530fb39d92724867bc701586f0401b37c"
+      },
+      "rollback": {
+        "tag": "v0.17.0",
+        "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+        "version": "0.17.0",
+        "images": {
+          "api": "sha256:0a3a43384d1e05080b6887c03bcabbd1f429a7991970cce438c38d9aee13e798",
+          "web": "sha256:d750b0f1adabee1d55dcadabad403a59a7f880cdcdf2c0a2b9cdc15bc6aa026a"
+        }
+      },
+      "business_pr": "https://github.com/mumukun/investment-research-dashboard/pull/4",
+      "ci": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38147303852",
+      "candidate": "https://github.com/mumukun/investment-research-dashboard/actions/runs/38147447552"
+    }
+  ],
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261011-003/image-release.plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261011-003/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "started_at": "2026-10-11T14:32:58.213767+00:00",
+    "completed_at": "2026-10-11T14:34:17.579318+00:00",
+    "stage_seconds": 76.674
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261011-003/premarket.receipt.json",
+      "Chrome signed-in home LAN HTTP9360/dashboard renders v0.18.0, all four sections and incomplete-close degradation label"
+    ],
+    "known_limitations": [
+      "Capital-flow last available2026-10-09 14:47 is incomplete-close, explicitly degraded; upstream outage not declared fixed.",
+      "Overnight source reports CNH=X missing. No paid AI or user-data write performed."
+    ]
+  },
+  "authorization": {
+    "human_request": "盘前驾驶舱功能 继续处理完成上线"
+  },
+  "notes": [
+    "Only Dashboard deployed; no migration, temporary database, full restore or old/new-image drill.",
+    "Current task included finishing existing feature and inspecting unrelated work; stage_seconds is deployment only, not full user waiting."
+  ]
+}

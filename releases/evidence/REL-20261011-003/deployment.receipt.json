@@ -1,0 +1,70 @@
+{
+  "release_id": "REL-20261011-003",
+  "plan_hash": "661bf3c596ab98e55a97cbc336f7893e65e5517ef454568ecc0f7a139d9467b8",
+  "repositories": {
+    "investment-research-dashboard": {
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261011-003/investment-research-dashboard.dump",
+        "sha256": "f5bbc75441cf0cdff6da0c828dffc88a9fdfd6387aec326e38c61b244185788a",
+        "size": 7746939
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "api": "sha256:bc3e4db085dc0ee8882a510d6f07162b9f0ae4d813ab3d65b4e3c44c6c666e68",
+        "web": "sha256:374d92e8487e0ad200f3cfd633239a6530fb39d92724867bc701586f0401b37c"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-11T14:32:58.213767+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 26.858
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-10-11T14:33:26.031659+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 3.684
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-10-11T14:33:30.158418+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.155
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-10-11T14:33:30.801960+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 43.09
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-10-11T14:34:14.380937+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 2.887
+    }
+  ],
+  "identity": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.18.0",
+      "commit_sha": "d482526907324d4b74aea1aeb84751064c9179ad",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a6a787656262e72904d43f87cb1dd7cf1f6df39d20fccb4886011fa86327e6d4",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3324a501f75f865fe6930050188f01614269379665c43e90bc47abc5342bf701"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-11T14:34:17.579318+00:00"
+}
