@@ -7,9 +7,9 @@
   "schema_version": "1.0",
   "template": false,
   "release_id": "REL-20261011-002",
-  "status": "READY_FOR_FORMAL_RELEASE",
+  "status": "IN_PROGRESS",
   "created_at": "2026-10-11T12:52:40.544973+00:00",
-  "updated_at": "2026-10-11T13:09:30.228770+00:00",
+  "updated_at": "2026-10-11T13:18:24.029412+00:00",
   "environment": "Production",
   "changes": [
     "CHG-20261010-001",
@@ -215,8 +215,8 @@
   },
   "deployment": {
     "environment": "Production",
-    "status": "NOT_STARTED",
-    "started_at": null,
+    "status": "IN_PROGRESS",
+    "started_at": "2026-10-11T13:18:24.029412+00:00",
     "completed_at": null,
     "steps": [
       "Revalidate frozen candidates/main CI, baseline and fresh readable backups",
@@ -304,10 +304,11 @@
       "changes/evidence/CHG-20261011-002/final-git-version.receipt.json",
       "changes/evidence/CHG-20261011-002/final-target-acceptance.receipt.json",
       "changes/evidence/CHG-20261011-002/final-source-hashes.json",
-      "changes/evidence/CHG-20261011-002/final-prefetch.receipt.json"
+      "changes/evidence/CHG-20261011-002/final-prefetch.receipt.json",
+      "releases/evidence/REL-20261011-002/formal-baseline.receipt.json",
+      "releases/evidence/REL-20261011-002/authorization.json"
     ],
     "known_limitations": [
-      "No formal Tag/deployment/production migration/activation authorized",
       "Live full concept refresh/backfill not included; stocks missing from real snapshot remain explicitly unavailable or unrecorded",
       "CI/local fixture and isolated clone evidence do not claim production browser acceptance",
       "Real paid LLM call not invoked; AI contract/cache/auth paths are tested with isolated model responses",
@@ -336,12 +337,40 @@
     "Final candidates bind exact versions/source/platform/build args/digests/config IDs; formal Tags must point to those SHAs and reuse same images without rebuilding.",
     "Baseline diagnostic initially inspected Compose component names as containers; corrected administrator container mapping passed actual identity/version/health, not baseline drift.",
     "Final target attempt1 stopped at an acceptance-driver shape error: reviews returns a list. Product contract confirmed, driver corrected; failed receipt/log retained. Full new isolated attempt is required before readiness.",
-    "Final retry completed full target acceptance PASS after correcting the driver response-shape assumption; failed attempt preserved, product code unchanged."
+    "Final retry completed full target acceptance PASS after correcting the driver response-shape assumption; failed attempt preserved, product code unchanged.",
+    "Formal user authorization recorded; baseline/remote exact SHAs/unused Tags and live GitHub candidate evidence revalidated. Frozen plan hash unchanged; restricted runner will create readable backups before mutations."
   ],
   "candidate_prefetch": {
     "status": "PASS",
     "plan_hash": "8af07f402fb30f695cce760fbb279ff03eed1faf0e58cf98bc9786c33adb81a6",
     "evidence": "changes/evidence/CHG-20261011-002/final-prefetch.receipt.json",
     "production_started": false
+  },
+  "authorization": {
+    "release_id": "REL-20261011-002",
+    "authorization": "FORMAL",
+    "human_request": "正式发布",
+    "task_id": "01a11720-0cbd-7da0-a9ec-c51b45b74358",
+    "recorded_at": "2026-10-11T13:18:24.029412+00:00",
+    "plan_hash": "8af07f402fb30f695cce760fbb279ff03eed1faf0e58cf98bc9786c33adb81a6",
+    "scope": [
+      {
+        "repository": "stock-analyzer",
+        "tag": "v3.23.0",
+        "commit_sha": "703c066deef763c0d003b9378f076e6ca0e0b4f1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:1a4ed573a13b61bca2d957d64b100489b7c7b2a3d3903bd1bf04b119269a7f37"
+        }
+      },
+      {
+        "repository": "investment-research-dashboard",
+        "tag": "v0.17.0",
+        "commit_sha": "054802065d60d2460e6098542da59fa785652ced",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f65555c5bf07703c211593e464e9419b40a14eccd1d241482791239f9b2d1428",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:6d4160afbf9676ded68dddf71962a2c9523b4fa1d294a5cf29f029ed77795813"
+        }
+      }
+    ]
   }
 }
