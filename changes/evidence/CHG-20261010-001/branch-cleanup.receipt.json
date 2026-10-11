@@ -1,0 +1,134 @@
+{
+  "change_id": "CHG-20261010-001",
+  "performed_on": "2026-10-11",
+  "timezone": "Asia/Shanghai",
+  "authorization": "User explicitly authorized local and remote task branch cleanup",
+  "repositories": [
+    {
+      "repository": "investment-platform",
+      "merged_main": "9539cda8b8babb07a4739c91eb540567d0c7bfcc",
+      "worktree_retained_detached": "/Users/mukun/.codex/worktrees/release-pipeline/investment-platform",
+      "branches": [
+        {
+          "name": "feat/CHG-20261010-001-image-promotion",
+          "local_sha": "7afd1253de97aa0852fefb61cdcd23c5546ed0ab",
+          "remote_sha": "7afd1253de97aa0852fefb61cdcd23c5546ed0ab",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "feat/CHG-20261010-001-nas-proxy-evidence",
+          "local_sha": "7a1c00445b4cecf16f337a91b0f6307cdf15f4a5",
+          "remote_sha": "7a1c00445b4cecf16f337a91b0f6307cdf15f4a5",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "feat/CHG-20261010-001-nas-verification",
+          "local_sha": "ed76e5470ae6a1dd49eb8ee1ed364e020c0909fa",
+          "remote_sha": "ed76e5470ae6a1dd49eb8ee1ed364e020c0909fa",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "feat/CHG-20261010-001-private-pull-evidence",
+          "local_sha": "43a1868c77486753d431b5ceaf894ec53a56ec3b",
+          "remote_sha": "43a1868c77486753d431b5ceaf894ec53a56ec3b",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "feat/CHG-20261010-001-restore-verification",
+          "local_sha": "977d9b86c131255def1464f158ee32417b845d56",
+          "remote_sha": "977d9b86c131255def1464f158ee32417b845d56",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "feat/CHG-20261010-001-validation-evidence",
+          "local_sha": "f4aa47db4e147d06b6d8474c684db563cb598e37",
+          "remote_sha": "f4aa47db4e147d06b6d8474c684db563cb598e37",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-isolated-candidate-acceptance",
+          "local_sha": "f3ce3d3f19faf3f55ea8cca63ecb3f605d6e4692",
+          "remote_sha": "f3ce3d3f19faf3f55ea8cca63ecb3f605d6e4692",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-isolated-runner",
+          "local_sha": "5764f29154a087f6254862f3363653521b0dc73d",
+          "remote_sha": "5764f29154a087f6254862f3363653521b0dc73d",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-nas-backup-permissions",
+          "local_sha": "01f0b9f6df2e2bb9b1e73ccb03be217efca78269",
+          "remote_sha": "01f0b9f6df2e2bb9b1e73ccb03be217efca78269",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-preparation-gates",
+          "local_sha": "406d8bea5378bec6dd6db2718285279a416a1cdc",
+          "remote_sha": "406d8bea5378bec6dd6db2718285279a416a1cdc",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-restore-compatibility",
+          "local_sha": "a4ea4484b4fd7fb5f58c7707a12606879443af8f",
+          "remote_sha": "a4ea4484b4fd7fb5f58c7707a12606879443af8f",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-runner-acceptance",
+          "local_sha": "701c7449a6d5c2fa8925bb70c59d2378d9fb5d15",
+          "remote_sha": "701c7449a6d5c2fa8925bb70c59d2378d9fb5d15",
+          "local_deleted": true,
+          "remote_deleted": true
+        },
+        {
+          "name": "fix/CHG-20261010-001-target-evidence",
+          "local_sha": "46078c489fbbaba72da5eaf0ef426d52c6ffb771",
+          "remote_sha": "46078c489fbbaba72da5eaf0ef426d52c6ffb771",
+          "local_deleted": true,
+          "remote_deleted": true
+        }
+      ]
+    },
+    {
+      "repository": "stock-analyzer",
+      "merged_main": "ea4bc5b678ab913e29cae5829ac105baa76643f5",
+      "worktree_retained_detached": "/Users/mukun/.codex/worktrees/release-pipeline/stock-analyzer",
+      "branches": [
+        {
+          "name": "feat/CHG-20261010-001-image-promotion",
+          "local_sha": "e931b0f4e88e4bbc62c842553821fb803414d3e3",
+          "remote_sha": "e931b0f4e88e4bbc62c842553821fb803414d3e3",
+          "local_deleted": true,
+          "remote_deleted": true
+        }
+      ]
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "merged_main": "8d93f4887d8fde087eee2557e902c8d2921d069f",
+      "worktree_retained_detached": "/Users/mukun/.codex/worktrees/release-pipeline/investment-research-dashboard",
+      "branches": [
+        {
+          "name": "feat/CHG-20261010-001-image-promotion",
+          "local_sha": "aef6b8d18e7f819146003207b142713bf4806346",
+          "remote_sha": "aef6b8d18e7f819146003207b142713bf4806346",
+          "local_deleted": true,
+          "remote_deleted": true
+        }
+      ]
+    }
+  ]
+}
