@@ -1,0 +1,234 @@
+{
+  "previous_version": null,
+  "new_version": null,
+  "commit_sha": null,
+  "tag": null,
+  "rollback_version": null,
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261011-001",
+  "status": "CANCELLED",
+  "created_at": "2026-10-11T12:32:33.358160+00:00",
+  "updated_at": "2026-10-11T12:32:33.358160+00:00",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261010-001",
+    "CHG-20261011-002"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.22.0",
+      "new_version": "3.23.0",
+      "commit_sha": "2cd238f01b1c7bfc44b0c86c9262fac370098bad",
+      "tag": "v3.23.0",
+      "tag_state": "PLANNED_NOT_CREATED",
+      "artifact": {
+        "type": "CI_BUILD_ONCE",
+        "identity": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:89f6d756c71a2770795ce7b1c204c29332e6db7cb98492b4e52a29c0f39841bf"
+        },
+        "config_image_ids": {
+          "app": "sha256:359a58d3733bbbeae3febbaade7572545095d3ea8154a2a5f5c3b5d757a8621b"
+        },
+        "source": "main CI candidate 38139357965"
+      },
+      "artifact_digest": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:89f6d756c71a2770795ce7b1c204c29332e6db7cb98492b4e52a29c0f39841bf"
+      },
+      "dependencies": [],
+      "tests": [
+        "main CI PASS run 38139326005",
+        "candidate fixture smoke PASS run 38139357965"
+      ],
+      "deployment": {
+        "entrypoint": "./deploy-image.sh <frozen-plan.json> deploy",
+        "status": "NOT_STARTED"
+      },
+      "verification": {
+        "status": "PENDING"
+      },
+      "rollback_version": "3.22.0",
+      "rollback_tag": "v3.22.0",
+      "rollback_commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
+      "rollback_images": {
+        "app": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.16.0",
+      "new_version": "0.17.0",
+      "commit_sha": "01f030341aff685a6a56e1e118ef50f4f182a049",
+      "tag": "v0.17.0",
+      "tag_state": "PLANNED_NOT_CREATED",
+      "artifact": {
+        "type": "CI_BUILD_ONCE",
+        "identity": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:faeffe09bffaf776a581d354510d21dbfa67e8337c2e746a43aefd707be885f3",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:d7f2740725517d8ee2eb6742feb64e26c678f074cf302a9d26e3bf4d3b0898b9"
+        },
+        "config_image_ids": {
+          "api": "sha256:684464d252848419eca2edfbeda32247d6a568e453e8c0429c574fe654818652",
+          "web": "sha256:b59c81410e18bb406733835ca91e815645ae829381589ece5c6d50b7aeb67d40"
+        },
+        "source": "main CI candidate 38139571282"
+      },
+      "artifact_digest": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:faeffe09bffaf776a581d354510d21dbfa67e8337c2e746a43aefd707be885f3",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:d7f2740725517d8ee2eb6742feb64e26c678f074cf302a9d26e3bf4d3b0898b9"
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "tests": [
+        "main CI PASS run 38139447815",
+        "candidate fixture smoke PASS run 38139571282"
+      ],
+      "deployment": {
+        "entrypoint": "./deploy-image.sh <frozen-plan.json> deploy",
+        "status": "NOT_STARTED"
+      },
+      "verification": {
+        "status": "PENDING"
+      },
+      "rollback_version": "0.16.0",
+      "rollback_tag": "v0.16.0",
+      "rollback_commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
+      "rollback_images": {
+        "api": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+        "web": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+      }
+    }
+  ],
+  "artifact": {
+    "identity": "frozen main CI candidates",
+    "type": "CI_BUILD_ONCE",
+    "source": "private GHCR"
+  },
+  "artifact_digest": "PER_REPOSITORY",
+  "image_execution_plan": "changes/evidence/CHG-20261011-002/image-release.plan.json",
+  "candidate_evidence": [
+    "changes/evidence/CHG-20261011-002/stock-candidate/candidate.json",
+    "changes/evidence/CHG-20261011-002/dashboard-candidate/candidate.json"
+  ],
+  "deployment_receipts": [],
+  "dependencies": [
+    {
+      "provider": "stock-analyzer",
+      "consumer": "investment-research-dashboard",
+      "type": "optional",
+      "reason": "Existing concept fields remain compatible; release Provider first for restored partial concept coverage."
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "tests": {
+    "repository": [
+      "PR CI PASS for exact heads; merged main CI independently checked"
+    ],
+    "contract": [
+      "54 Provider tests; 4 Consumer tests; V3 partial tags/meta and frontend multi-tag search"
+    ],
+    "integration": [
+      "isolated real-data target acceptance pending"
+    ],
+    "critical_path_e2e": [
+      "local wide/mobile layout and actual chart colors PASS; frozen real-data HTTP pending; authenticated production browser not run"
+    ],
+    "release_gates": []
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "NOT_STARTED",
+    "started_at": null,
+    "completed_at": null,
+    "steps": [
+      "Revalidate frozen candidates/main CI, baseline and fresh readable backups",
+      "Create immutable planned tags only after formal authorization; do not rebuild",
+      "Deploy same pinned images Provider then Consumer with restricted locked nas-image-release; smoke each before next"
+    ],
+    "feature_activation": []
+  },
+  "production_identity": [
+    {
+      "repository": "stock-analyzer",
+      "observed_at": "2026-10-11T12:32:33.358160+00:00",
+      "production": {
+        "tag": "v3.22.0",
+        "commit_sha": "17bd04eafdf802c031392591f9ecc2df597b698f",
+        "image_ids": {
+          "stock-api": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95",
+          "stock-watch": "sha256:312c96d54c7ed9e826a67c5a1c43ff2928007d2e5c52d2ac1709345a778feb95"
+        }
+      },
+      "runtime_version": "3.22.0",
+      "checkout_tracked_clean": true,
+      "health": "PASS",
+      "baseline_comparison": "PASS"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "observed_at": "2026-10-11T12:32:33.358160+00:00",
+      "production": {
+        "tag": "v0.16.0",
+        "commit_sha": "ad7e9abff12006ed42103587aeaf799e84bf7672",
+        "image_ids": {
+          "api": "sha256:6c41c692d494d1c1f7084df6c768c5eac62410c40d6315e1c3b1acee026ad0ac",
+          "web": "sha256:fd7be7f1a46eed1ea316384a658889e48ae959ac398b2788a973dcc5a4b753cb"
+        },
+        "build_time": "2026-10-09T16:42:52+0800"
+      },
+      "runtime_version": "0.16.0",
+      "checkout_tracked_clean": true,
+      "health": "PASS",
+      "baseline_comparison": "PASS"
+    }
+  ],
+  "verification": {
+    "status": "PASS_INTERMEDIATE_SCOPE_ONLY",
+    "smoke": [],
+    "health_checks": [
+      "Fresh baseline runtime health PASS"
+    ],
+    "version_checks": [
+      "Fresh baseline Tags/SHA/runtime/Image IDs match persisted baseline"
+    ],
+    "contract_checks": [],
+    "integration_checks": [],
+    "e2e_checks": [],
+    "evidence": [
+      "changes/evidence/CHG-20261011-002/production-baseline.receipt.json",
+      "changes/evidence/CHG-20261011-002/nas-prefetch.receipt.json",
+      "changes/evidence/CHG-20261011-002/target-acceptance.receipt.json"
+    ],
+    "known_limitations": [
+      "CI fixture evidence does not replace target real-data validation",
+      "No formal tag, deploy, migration or activation authorized",
+      "Production SOURCE_TAG_BUILD images have local IDs without registry digests; rollback uses retained IDs",
+      "Other open task branches/PRs are excluded",
+      "Real external concept catalog refresh and historical backfill not included"
+    ]
+  },
+  "rollback": {
+    "status": "PENDING",
+    "target_version": null,
+    "target_tag": null,
+    "target_commit_sha": null,
+    "artifact": null,
+    "artifact_digest": "PER_REPOSITORY",
+    "database_restore_point": "Fresh readable backups must be created and verified before formal production mutation; no migration in these Changes",
+    "steps": [
+      "Reverse selected release order; use retained verified baseline images and immutable tags",
+      "No automatic database downgrade"
+    ]
+  },
+  "notes": [
+    "Both READY Changes are included because main delta from current production includes the unreleased image pipeline; versions are MINOR.",
+    "Only the two business repositories change; governance has no business version, marketNewsFeed excluded.",
+    "Authorization: commit/push/PR/merge/safe task cleanup and prepare; formal release remains NOT_AUTHORIZED.",
+    "Intermediate two-Change preparation completed prefetch and restored-data acceptance. User authorized unified scope including CHG-20261011-001; final main SHAs changed. Immutable NAS journal cannot be overwritten; final scope will be re-prepared under REL-20261011-002. No tag or production deployment occurred."
+  ]
+}
