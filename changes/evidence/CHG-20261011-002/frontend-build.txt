@@ -1,0 +1,98 @@
+
+> investment-research-dashboard@0.16.0 build
+> vue-tsc -b && vite build
+
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 2357 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                      1.26 kB │ gzip:   0.47 kB
+dist/assets/css-CzNlr7lQ.css                         0.16 kB │ gzip:   0.12 kB
+dist/assets/css-Wv38huFO.css                         0.16 kB │ gzip:   0.13 kB
+dist/assets/UsersView-CExTMXBd.css                   0.17 kB │ gzip:   0.13 kB
+dist/assets/EventsView-D7Ix9j11.css                  0.21 kB │ gzip:   0.17 kB
+dist/assets/PostmarketReviewView-DsYQJ2gq.css        0.31 kB │ gzip:   0.19 kB
+dist/assets/css-B0pQhKGi.css                         0.70 kB │ gzip:   0.31 kB
+dist/assets/ResearchLibraryView-D5_dVssE.css         0.84 kB │ gzip:   0.25 kB
+dist/assets/css-BAyktVMS.css                         0.92 kB │ gzip:   0.32 kB
+dist/assets/css-DJFxnum_.css                         1.24 kB │ gzip:   0.45 kB
+dist/assets/css-B0_1wuTg.css                         1.57 kB │ gzip:   0.52 kB
+dist/assets/css-BDEDkXh7.css                         3.18 kB │ gzip:   0.76 kB
+dist/assets/CapitalFlowView-D8Jnl7oq.css             3.88 kB │ gzip:   1.02 kB
+dist/assets/css-4sOBTGxz.css                         3.90 kB │ gzip:   0.94 kB
+dist/assets/SeatFlowView-DK9RC-C1.css                4.17 kB │ gzip:   1.09 kB
+dist/assets/css-hrelhGmJ.css                         4.40 kB │ gzip:   0.95 kB
+dist/assets/ProfessionalStockChart-ZWxYMHZb.css      5.23 kB │ gzip:   1.32 kB
+dist/assets/css-5dg7T6Vb.css                         5.23 kB │ gzip:   1.36 kB
+dist/assets/DecisionCenterView-BEWZfcjP.css          5.36 kB │ gzip:   1.36 kB
+dist/assets/css-DgHkEboq.css                         5.77 kB │ gzip:   0.98 kB
+dist/assets/TableHeaderHelp-CS0gQeJ1.css             6.26 kB │ gzip:   1.22 kB
+dist/assets/swingSelection-B7gvwdWB.css              6.95 kB │ gzip:   1.17 kB
+dist/assets/LimitUpLadderView-BnsnYaUb.css           7.85 kB │ gzip:   1.73 kB
+dist/assets/css-COxjNVN7.css                         8.10 kB │ gzip:   1.90 kB
+dist/assets/SectorsView-CTA6YDZI.css                 8.41 kB │ gzip:   2.03 kB
+dist/assets/css-Csn_yPGm.css                         9.82 kB │ gzip:   1.69 kB
+dist/assets/UsIndustryView-BI2C7qCX.css             10.63 kB │ gzip:   2.07 kB
+dist/assets/LoginView-CtCKcCE5.css                  12.16 kB │ gzip:   2.93 kB
+dist/assets/css-CW8tbnL5.css                        14.65 kB │ gzip:   2.40 kB
+dist/assets/ShortSelectionView-DoPdQGfb.css         14.69 kB │ gzip:   2.94 kB
+dist/assets/css-BAqbG0fR.css                        16.66 kB │ gzip:   2.42 kB
+dist/assets/SwingSelectionView-CmRVYGiJ.css         19.53 kB │ gzip:   3.45 kB
+dist/assets/WatchlistView-to-n6PXo.css              25.68 kB │ gzip:   4.37 kB
+dist/assets/css-CNpL_Sag.css                        27.75 kB │ gzip:   3.95 kB
+dist/assets/css-BJOKiTHx.css                        31.20 kB │ gzip:   4.29 kB
+dist/assets/index-B5tWJ-X0.css                      88.67 kB │ gzip:  14.67 kB
+dist/assets/css-5eBZO4zz.js                          0.02 kB │ gzip:   0.04 kB
+dist/assets/css-DjPOSqBy.js                          0.02 kB │ gzip:   0.04 kB
+dist/assets/css-KHISy5US.js                          0.02 kB │ gzip:   0.04 kB
+dist/assets/css-VeVSdVUw.js                          0.02 kB │ gzip:   0.04 kB
+dist/assets/_plugin-vue_export-helper-BDNMzG2s.js    0.08 kB │ gzip:   0.09 kB
+dist/assets/PageHeader-DtelBLAH.js                   0.39 kB │ gzip:   0.27 kB
+dist/assets/AsyncState-DxNCZ1eU.js                   0.70 kB │ gzip:   0.49 kB
+dist/assets/rolldown-runtime-hePW80VL.js             0.71 kB │ gzip:   0.42 kB
+dist/assets/css-CnjvoGOR.js                          0.79 kB │ gzip:   0.46 kB
+dist/assets/omit-Dbi-gBXc.js                         0.88 kB │ gzip:   0.52 kB
+dist/assets/click-outside-BoZT6EIZ.js                0.92 kB │ gzip:   0.51 kB
+dist/assets/css-BSSzQN4p.js                          1.20 kB │ gzip:   0.53 kB
+dist/assets/css-Hn8v5ifD.js                          1.72 kB │ gzip:   0.89 kB
+dist/assets/tag-Tij-vBnc.js                          1.93 kB │ gzip:   0.87 kB
+dist/assets/css-D9oxcrkV.js                          1.96 kB │ gzip:   0.92 kB
+dist/assets/css-x-IMgzTq.js                          2.45 kB │ gzip:   1.15 kB
+dist/assets/SystemStatusView-BZHrEQ2U.js             2.58 kB │ gzip:   1.36 kB
+dist/assets/EventsView-CX9vfoQ9.js                   2.58 kB │ gzip:   1.40 kB
+dist/assets/css-BJDMNGHv.js                          4.97 kB │ gzip:   1.73 kB
+dist/assets/radio-CR9DUJrt.js                        5.15 kB │ gzip:   2.13 kB
+dist/assets/PostmarketReviewView-Jm8dl2PW.js         5.56 kB │ gzip:   2.64 kB
+dist/assets/focus-trap-Cyyp5jpl.js                   6.49 kB │ gzip:   2.75 kB
+dist/assets/css-BWY3O9RJ.js                          6.96 kB │ gzip:   2.80 kB
+dist/assets/MarketDashboardView-CUngPvXD.js          6.96 kB │ gzip:   3.10 kB
+dist/assets/UsersView-DWqotGcH.js                    8.34 kB │ gzip:   2.99 kB
+dist/assets/css-BUjk_vfh.js                          9.27 kB │ gzip:   3.68 kB
+dist/assets/SeatFlowView-JdX-pXVw.js                12.01 kB │ gzip:   4.43 kB
+dist/assets/css-BhOyuv-8.js                         12.28 kB │ gzip:   5.09 kB
+dist/assets/LimitUpLadderView-CC__FVCX.js           13.96 kB │ gzip:   5.12 kB
+dist/assets/swingSelection-DY7Wt0x7.js              14.12 kB │ gzip:   5.19 kB
+dist/assets/SectorsView-leXOnCKd.js                 14.39 kB │ gzip:   5.50 kB
+dist/assets/ResearchLibraryView-b1vU6DYT.js         15.29 kB │ gzip:   5.74 kB
+dist/assets/runtime-dom.esm-bundler-CBx6Y4rI.js     15.92 kB │ gzip:   6.71 kB
+dist/assets/install-Br9QHcYA.js                     18.19 kB │ gzip:   6.40 kB
+dist/assets/DecisionCenterView-DSDkNrAz.js          19.95 kB │ gzip:   6.47 kB
+dist/assets/LoginView-DmRg-dv4.js                   21.29 kB │ gzip:   7.55 kB
+dist/assets/UsIndustryView-5YeO7Zq8.js              21.97 kB │ gzip:   7.82 kB
+dist/assets/css-WjCLzt2l.js                         26.56 kB │ gzip:   9.14 kB
+dist/assets/css-D1zhife6.js                         30.12 kB │ gzip:  10.19 kB
+dist/assets/ShortSelectionView-B2_E6VpP.js          40.44 kB │ gzip:  13.38 kB
+dist/assets/CapitalFlowView-B4m4QvYn.js             45.39 kB │ gzip:  16.14 kB
+dist/assets/TableHeaderHelp-DJz_zFUP.js             45.82 kB │ gzip:  16.95 kB
+dist/assets/css-BknMuVhO.js                         46.34 kB │ gzip:  16.38 kB
+dist/assets/SwingSelectionView-Dvij9YR8.js          47.59 kB │ gzip:  14.59 kB
+dist/assets/WatchlistView-EfAzrhCG.js               60.32 kB │ gzip:  18.16 kB
+dist/assets/api-DWJfeblU.js                         69.91 kB │ gzip:  27.01 kB
+dist/assets/css-BwF1ARYS.js                        100.72 kB │ gzip:  35.21 kB
+dist/assets/css-wZYs3mKZ.js                        109.39 kB │ gzip:  29.86 kB
+dist/assets/index-BPDVT-3z.js                      168.89 kB │ gzip:  58.48 kB
+dist/assets/ProfessionalStockChart-eV03NfTR.js     232.60 kB │ gzip:  61.43 kB
+dist/assets/installCanvasRenderer-aSVMSN9k.js      494.03 kB │ gzip: 167.57 kB
+
+✓ built in 1.59s
