@@ -351,7 +351,7 @@
     "status": "PASS_WITH_DOCUMENTED_LIMITATIONS",
     "smoke": [
       "Frozen candidates and retained baseline stock/API/Web smoke PASS on isolated real-data clone",
-      "Production NAS HTTPS443 reverse-proxy seat route200 with valid TLS; current client external9527 routing unavailable"
+      "Production NAS HTTPS443 reverse-proxy seat route200 with valid TLS; home LAN and Tailscale HTTP9360 return200; external9527 home hairpin limitation confirmed by user"
     ],
     "health_checks": [
       "Fresh baseline runtime health PASS"
@@ -372,7 +372,7 @@
       "Local actual chart red/green and wide/mobile layout PASS",
       "Local seat subscription/report/case/review persistence browser path (explicit fixtures) PASS",
       "Final NAS exact-image historical data -> Consumer -> staged archive -> HTTP PASS; seat migrated empty-state APIs PASS; not production authenticated browser acceptance",
-      "Production exact source/digest -> authenticated API -> live upstream strict seat contracts PASS; Tailscale seat route and JS bundle200; browser visual acceptance not run"
+      "Production exact source/digest -> authenticated API -> live upstream strict seat contracts PASS; signed-in Chrome over home LAN HTTP9360 renders seat module and exact branch10026937 search result PASS"
     ],
     "evidence": [
       "changes/evidence/CHG-20261011-002/final-ci.receipt.json",
@@ -392,12 +392,12 @@
     ],
     "known_limitations": [
       "Live full concept refresh/backfill not included; stocks missing from real snapshot remain explicitly unavailable or unrecorded",
-      "CI/local fixture and isolated clone evidence do not claim production browser acceptance",
+      "Production browser acceptance covers signed-in route, empty state and exact branch search; persistence was tested in isolation without modifying real user subscriptions/reviews",
       "Real paid LLM call not invoked; AI contract/cache/auth paths are tested with isolated model responses",
       "Validated historical sample has 58/100 concept-covered stocks and healthy concept snapshot quality; missing stocks remain absent from source snapshot, never fabricated.",
       "Old production images have retained local IDs, no registry digest; rollback is exact retained image ID",
       "Fresh protected readable backup required immediately before formal migration; streaming clone/restore is validation, not a retained production rollback backup",
-      "Current client resolves invest.freemumu.top to192.168.1.70 and cannot reach historical9527; independently resolved NAS443 reverse-proxy HTTPS /seat-flow returns200 with TLS verify0. Tailscale HTTP9360 and exact seat bundle alsoPASS. Client DNS/routing is outside this release; authenticated browser visual acceptance not run."
+      "User confirms home router hairpin limitation for historical external9527. Home LAN HTTP9360 and Tailscale HTTP9360 are reachable; signed-in Chrome http://invest.freemumu.top:9360/seat-flow (DNS192.168.1.70) renders and branch search PASS. NAS443 reverse-proxy HTTPS returns200 with TLS verify0. Literal LAN IP has separate login origin."
     ]
   },
   "rollback": {
@@ -470,5 +470,16 @@
       }
     ]
   },
-  "released_at": "2026-10-11T13:29:52.786778+00:00"
+  "released_at": "2026-10-11T13:29:52.786778+00:00",
+  "closeout": {
+    "governance_pull_request": "https://github.com/mumukun/investment-platform/pull/35",
+    "temporary_branches": [
+      {
+        "repository": "investment-platform",
+        "branch": "fix/CHG-20261011-001-formal-release",
+        "owner_task": "01a11720-0cbd-7da0-a9ec-c51b45b74358",
+        "cleanup": "After exact-head CI PASS and PR merge, verify clean checkout/main ancestry/no other worktree or open PR dependency, detach then delete only exact branch with SHA lease. Preserve worktree and evidence."
+      }
+    ]
+  }
 }

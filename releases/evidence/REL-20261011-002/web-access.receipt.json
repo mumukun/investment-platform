@@ -9,7 +9,7 @@
   "historical_https_entry": "https://invest.freemumu.top:9527/seat-flow",
   "historical_https_status": "UNREACHABLE_FROM_CLIENT",
   "nas_loopback_9527_listening": false,
-  "authenticated_browser_visual_acceptance": "NOT_RUN",
+  "authenticated_browser_visual_acceptance": "PASS_READ_ONLY",
   "seat_route_bundle": "PASS",
   "nas_reverse_proxy_https": {
     "url": "https://invest.freemumu.top/seat-flow",
@@ -18,5 +18,33 @@
     "tls_verify": 0
   },
   "client_dns_address": "192.168.1.70",
-  "access_limitation": "Current client DNS/routing cannot reach historical external9527; NAS443 reverse proxy works with valid certificate. A router port forward may terminate at443, so no NAS9527 listener is not evidence of an application failure."
+  "access_limitation": "Historical external HTTPS9527 is unavailable from home client; user identifies router hairpin limitation. LAN HTTP9360 and Tailscale HTTP9360 return200. NAS443 reverse proxy returns200 with TLS verification0. Signed-in Chrome domain HTTP9360 seat route and branch search passed.",
+  "lan_http": {
+    "url": "http://192.168.1.70:9360/seat-flow",
+    "http_status": 200
+  },
+  "browser_acceptance": {
+    "observed_at": "2026-10-11T13:37:37.292918+00:00",
+    "browser": "Existing signed-in Google Chrome session",
+    "url": "http://invest.freemumu.top:9360/seat-flow",
+    "client_dns_address": "192.168.1.70",
+    "checks": [
+      "Dashboard v0.17.0 displayed",
+      "Seat subscriptions and review route renders",
+      "Daily report empty state and five requested starter seats displayed",
+      "Subscription management search renders",
+      "Purple Yang East Road shortcut resolves exact branch 10026937 in result list"
+    ],
+    "subscription_or_review_writes": false,
+    "paid_llm_calls": false,
+    "limitations": [
+      "No production subscription create/delete or review save; those persistence paths passed isolated browser acceptance.",
+      "Observed signed-in domain HTTP page; literal LAN IP opens login due separate browser origin."
+    ]
+  },
+  "router_context": {
+    "source": "User statement in current release conversation",
+    "home": "LAN HTTP port accepted due router hairpin limitation",
+    "office": "Tailscale accepted; application ports differ from SSH/external ingress"
+  }
 }
