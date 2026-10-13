@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261013-001",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "release_target_seconds": 300,
+  "created_at": "2026-10-13T09:14:57.128530+00:00",
+  "updated_at": "2026-10-13T09:40:34.908487+00:00",
+  "changes": [
+    "CHG-20261013-002"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.23.1",
+      "new_version": "3.24.0",
+      "commit_sha": "ef81bd1c03282268385e8b696c382871a3e2ef5c",
+      "tag": "v3.24.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:7f0587551ca34c84d74078b659e202a52f38c345536b5cc42fcc9dea3e861f5b"
+      },
+      "artifact_id": {
+        "app": "sha256:770fa603bdeb66f1aee8c555dc251129e7e7da92cf7e1a5c46b3dce7b4f2b376"
+      },
+      "rollback_version": "v3.23.1",
+      "rollback_commit_sha": "707d619916e2ad745bded153f1d4cdede7d705c9",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ec9a94a73614481e53313755082e46f815195d7b20c51e92651dc9b2a129fac6"
+      },
+      "rollback_artifact_id": {
+        "app": "sha256:597b7575545bbecda0869749b8d48202ecf450e4493dc3d25b9c62e83c3867d1"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261013-001/stock-analyzer/candidate.json",
+      "business_pr": "https://github.com/mumukun/stock-analyzer/pull/9",
+      "deployment_status": "PASS"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.18.1",
+      "new_version": "0.19.0",
+      "commit_sha": "7ee75fbe35c95d1f625e91bb20658bac486d0882",
+      "tag": "v0.19.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c0e0735262187c5aaa02baf53457c4a201e21fd7521e201c1a952141f2b15471",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:46c5812267586bc3777edbfbf4bdf3719cef3f51506e98e39c82f2ac91b9539c"
+      },
+      "artifact_id": {
+        "api": "sha256:2a111e082a227fc92e002a5cc1089774ea26ec7f6692a65d925e36c9755bc939",
+        "web": "sha256:e6e11b40d9c4fbc63641e0c69090d8555e1cef5fbc4791331a3ded999b9237bf"
+      },
+      "rollback_version": "v0.18.1",
+      "rollback_commit_sha": "ceb1b03d15c18973f3d3c6d9574384e680293d74",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:526a780b391e71994f4a664340d4632bc58c884f1863c549350ebd27c5d68c17",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8606b48767332e97b990aaa2dac0711e1be6e28f870c5a43dbd200c2e7d224b5"
+      },
+      "rollback_artifact_id": {
+        "api": "sha256:b11e6d013cc5db011c7197f7ff38fb86c8a1f34c7969d20feb208b1c1ed74b04",
+        "web": "sha256:5c4e14ba90145c00dd7d20e23a03da5637c2aa67ead46d54d0f3d669a0559809"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261013-001/investment-research-dashboard/candidate.json",
+      "business_pr": "https://github.com/mumukun/investment-research-dashboard/pull/11",
+      "deployment_status": "PASS"
+    }
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261013-001/image-release.plan.json",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "开发完成之后就进行提交代码 发版本吧；我切换网络了 你继续发布；NAS root updater successfully installed by user screenshot."
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "started_at": "2026-10-13T09:18:00.622580+00:00",
+    "completed_at": "2026-10-13T09:23:55.013099+00:00",
+    "elapsed_seconds": 330.4
+  },
+  "verification": {
+    "status": "PASS",
+    "known_limitations": [
+      "830000 source unavailable; no replacement or synthetic candles.",
+      "Unsupported breadth and self-built statistics disabled; state confirmation paused.",
+      "No keyed vendor adapter enabled. ETF flow is explicitly an estimate.",
+      "Legu historical snapshots before first collection are not reconstructed; ETF share/NAV missing dates remain gaps.",
+      "THS883421 source last actual day 2026-10-12; no 2026-10-13 fill.",
+      "Production browser OAuth/UI was not rerun; cached query path and authenticated Provider integration plus unauthenticated Consumer 401 checked."
+    ],
+    "evidence": [
+      "releases/evidence/REL-20261013-001/deployment.receipt.json",
+      "releases/evidence/REL-20261013-001/market-structure.receipt.json",
+      "releases/evidence/REL-20261013-001/provider-initial-cache.receipt.json"
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION"
+  },
+  "runner_update": {
+    "source_sha": "6b8c98a5e6393eeb5e16d1bf546b0bc76aae9197",
+    "archive": "/tmp/CHG-20261013-002-image-runner-6b8c98a.tar.gz",
+    "sha256": "160a5414cb20d2f8a7d68683aa9a08e3ed356ddbc9d1bda9da2287c868e411be",
+    "installer": "/tmp/CHG-20261013-002-image-runner-6b8c98a-install.sh",
+    "status": "INSTALLED_HASH_VERIFIED"
+  },
+  "notes": [
+    "Handling began in earlier conversation turns; exact initial timestamp unavailable. Network interruption and human root installation wait exceeded routine target.",
+    "Administrator root runner update hashes verified; credentials preserved in protected env backups on NAS.",
+    "Initial targeted smoke used an incorrect regime field name; corrected probe to primary_state and reran successfully without application changes.",
+    "Both business PRs merged, immutable tags pushed, exact CI artifacts deployed. Active local preview worktrees retained; original checkout/unrelated work preserved."
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261013-001/deployment.receipt.json"
+  ],
+  "timing": {
+    "first_retained_preparation_at": "2026-10-13T09:14:57.128530+00:00",
+    "observed_handling_lower_bound_seconds": 1537.8,
+    "limitation": "Initial submit/formal request and network/admin wait occurred earlier; timestamps unavailable. This is a lower bound, not total user wait. Routine five-minute target exceeded including preparation/CI/first data cache."
+  }
+}
