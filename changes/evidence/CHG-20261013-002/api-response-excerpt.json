@@ -1,0 +1,4808 @@
+{
+  "etf_overview": {
+    "funds": [
+      {
+        "code": "159338",
+        "name": "国泰中证A500交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sz",
+        "group_id": "E003",
+        "nav_date": "2026-10-12",
+        "unit_nav": 1.1217,
+        "entity_id": "159338",
+        "window_1d": {
+          "value": 97587900.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 97587900.0
+        },
+        "window_5d": {
+          "value": 500213700.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 500213700.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": -59234699.99999999,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -59234699.99999999
+        },
+        "price_close": 1.122,
+        "share_delta": 87000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:49.128824+00:00",
+        "effective_to": null,
+        "flow_est_cny": 97587900.0,
+        "reason_codes": [],
+        "total_shares": 21512086664.0,
+        "turnover_cny": 2775315780.095,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "159338",
+            "name": "中证A500ETF国泰",
+            "exchange": "sz",
+            "raw_unit": "份",
+            "data_time": "2026-10-12",
+            "raw_value": 21512086664.0,
+            "fetched_at": "2026-10-13T03:11:52.367322+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SZSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 21512086664.0,
+            "first_seen_at": "2026-10-13T03:11:52.367322+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://www.szse.cn/market/fund/volume/etf/index.html",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159338",
+            "exchange": "sz",
+            "raw_unit": "元/份",
+            "unit_nav": 1.1217,
+            "data_time": "2026-10-12",
+            "raw_value": "1.1217",
+            "fetched_at": "2026-10-13T03:10:24.645594+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:10:24.645594+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159338",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 1.133,
+              "振幅": 1.67,
+              "收盘": 1.122,
+              "日期": "2026-10-12",
+              "最低": 1.119,
+              "最高": 1.138,
+              "成交量": 24596280,
+              "成交额": 2775315780.095,
+              "换手率": 11.43,
+              "涨跌幅": -1.15,
+              "涨跌额": -0.013
+            },
+            "fetched_at": "2026-10-13T03:10:30.585659+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 1.122,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 2775315780.095,
+            "first_seen_at": "2026-10-13T03:10:30.585659+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 97587900.0,
+        "flow_est_5d_cny": 500213700.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159338.html",
+        "aum_start_1d_cny": 24321758380.9728,
+        "aum_start_5d_cny": 24141143990.944798,
+        "flow_est_20d_cny": -59234699.99999999,
+        "aum_start_20d_cny": 25768636554.1408,
+        "tracking_index_id": "csi000510",
+        "tracking_index_name": "中证A500指数",
+        "flow_strength_1d_pct": 0.40123702600525857,
+        "flow_strength_5d_pct": 2.0720380947465755,
+        "flow_strength_20d_pct": -0.2298713006237091
+      },
+      {
+        "code": "159531",
+        "name": "南方中证2000交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sz",
+        "group_id": "E006",
+        "nav_date": "2026-10-12",
+        "unit_nav": 1.395,
+        "entity_id": "159531",
+        "window_1d": {
+          "value": -55800000.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -55800000.0
+        },
+        "window_5d": {
+          "value": -27134800.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -27134800.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": -96315800.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -96315800.0
+        },
+        "price_close": 1.393,
+        "share_delta": -40000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:51.985614+00:00",
+        "effective_to": null,
+        "flow_est_cny": -55800000.0,
+        "reason_codes": [],
+        "total_shares": 944608406.0,
+        "turnover_cny": 203587238.8,
+        "effective_from": "2026-07-06",
+        "flow_direction": "negative",
+        "source_records": [
+          {
+            "code": "159531",
+            "name": "中证2000ETF南方",
+            "exchange": "sz",
+            "raw_unit": "份",
+            "data_time": "2026-10-12",
+            "raw_value": 944608406.0,
+            "fetched_at": "2026-10-13T03:11:52.368508+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SZSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 944608406.0,
+            "first_seen_at": "2026-10-13T03:11:52.368508+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://www.szse.cn/market/fund/volume/etf/index.html",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159531",
+            "exchange": "sz",
+            "raw_unit": "元/份",
+            "unit_nav": 1.395,
+            "data_time": "2026-10-12",
+            "raw_value": "1.3950",
+            "fetched_at": "2026-10-13T03:09:59.700112+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:59.700112+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159531",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 1.426,
+              "振幅": 2.38,
+              "收盘": 1.393,
+              "日期": "2026-10-12",
+              "最低": 1.393,
+              "最高": 1.427,
+              "成交量": 1447677,
+              "成交额": 203587238.8,
+              "换手率": 15.33,
+              "涨跌幅": -2.52,
+              "涨跌额": -0.036
+            },
+            "fetched_at": "2026-10-13T03:10:04.580473+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 1.393,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 203587238.8,
+            "first_seen_at": "2026-10-13T03:10:04.580473+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": -55800000.0,
+        "flow_est_5d_cny": -27134800.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159531.html",
+        "aum_start_1d_cny": 1406316186.2898,
+        "aum_start_5d_cny": 1396560050.2068,
+        "flow_est_20d_cny": -96315800.0,
+        "aum_start_20d_cny": 1478284447.542,
+        "tracking_index_id": "csi932000",
+        "tracking_index_name": "中证2000指数",
+        "flow_strength_1d_pct": -3.9678132516709352,
+        "flow_strength_5d_pct": -1.9429740952407977,
+        "flow_strength_20d_pct": -6.515376669229522
+      },
+      {
+        "code": "159915",
+        "name": "易方达创业板交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sz",
+        "group_id": "E008",
+        "nav_date": "2026-10-12",
+        "unit_nav": 2.9832,
+        "entity_id": "159915",
+        "window_1d": {
+          "value": 608572800.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 608572800.0
+        },
+        "window_5d": {
+          "value": 4125758100.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 4125758100.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 6424331700.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 6424331700.0
+        },
+        "price_close": 2.983,
+        "share_delta": 204000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:54.821710+00:00",
+        "effective_to": null,
+        "flow_est_cny": 608572800.0,
+        "reason_codes": [],
+        "total_shares": 22226454936.0,
+        "turnover_cny": 4784452497.19,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "159915",
+            "name": "创业板ETF易方达",
+            "exchange": "sz",
+            "raw_unit": "份",
+            "data_time": "2026-10-12",
+            "raw_value": 22226454936.0,
+            "fetched_at": "2026-10-13T03:11:52.373775+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SZSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 22226454936.0,
+            "first_seen_at": "2026-10-13T03:11:52.373775+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://www.szse.cn/market/fund/volume/etf/index.html",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159915",
+            "exchange": "sz",
+            "raw_unit": "元/份",
+            "unit_nav": 2.9832,
+            "data_time": "2026-10-12",
+            "raw_value": "2.9832",
+            "fetched_at": "2026-10-13T03:10:18.804360+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:10:18.804360+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159915",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 3.039,
+              "振幅": 2.87,
+              "收盘": 2.983,
+              "日期": "2026-10-12",
+              "最低": 2.981,
+              "最高": 3.069,
+              "成交量": 15816850,
+              "成交额": 4784452497.19,
+              "换手率": 7.12,
+              "涨跌幅": -2.64,
+              "涨跌额": -0.081
+            },
+            "fetched_at": "2026-10-13T03:10:23.522409+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 2.983,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 4784452497.19,
+            "first_seen_at": "2026-10-13T03:10:23.522409+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 608572800.0,
+        "flow_est_5d_cny": 4125758100.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159915.html",
+        "aum_start_1d_cny": 67445970486.99361,
+        "aum_start_5d_cny": 65919158924.7984,
+        "flow_est_20d_cny": 6424331700.0,
+        "aum_start_20d_cny": 66385603836.012,
+        "tracking_index_id": "sz399006",
+        "tracking_index_name": "创业板指数(价格)",
+        "flow_strength_1d_pct": 0.9023115771124653,
+        "flow_strength_5d_pct": 6.258814838197084,
+        "flow_strength_20d_pct": 9.677296475105663
+      },
+      {
+        "code": "159919",
+        "name": "嘉实沪深300交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sz",
+        "group_id": "E002",
+        "nav_date": "2026-10-12",
+        "unit_nav": 4.5519,
+        "entity_id": "159919",
+        "window_1d": {
+          "value": -53257230.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -53257230.0
+        },
+        "window_5d": {
+          "value": 1137528630.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 1137528630.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 2783095290.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 2783095290.0
+        },
+        "price_close": 4.55,
+        "share_delta": -11700000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:47.681719+00:00",
+        "effective_to": null,
+        "flow_est_cny": -53257230.0,
+        "reason_codes": [],
+        "total_shares": 6844716676.0,
+        "turnover_cny": 640883604.2,
+        "effective_from": "2026-07-06",
+        "flow_direction": "negative",
+        "source_records": [
+          {
+            "code": "159919",
+            "name": "沪深300ETF嘉实",
+            "exchange": "sz",
+            "raw_unit": "份",
+            "data_time": "2026-10-12",
+            "raw_value": 6844716676.0,
+            "fetched_at": "2026-10-13T03:11:52.373824+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SZSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 6844716676.0,
+            "first_seen_at": "2026-10-13T03:11:52.373824+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://www.szse.cn/market/fund/volume/etf/index.html",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159919",
+            "exchange": "sz",
+            "raw_unit": "元/份",
+            "unit_nav": 4.5519,
+            "data_time": "2026-10-12",
+            "raw_value": "4.5519",
+            "fetched_at": "2026-10-13T03:10:31.675817+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:10:31.675817+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "159919",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 4.58,
+              "振幅": 1.29,
+              "收盘": 4.55,
+              "日期": "2026-10-12",
+              "最低": 4.542,
+              "最高": 4.601,
+              "成交量": 1403385,
+              "成交额": 640883604.2,
+              "换手率": 2.05,
+              "涨跌幅": -0.66,
+              "涨跌额": -0.03
+            },
+            "fetched_at": "2026-10-13T03:10:36.745329+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 4.55,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 640883604.2,
+            "first_seen_at": "2026-10-13T03:10:36.745329+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": -53257230.0,
+        "flow_est_5d_cny": 1137528630.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159919.html",
+        "aum_start_1d_cny": 31422957626.108,
+        "aum_start_5d_cny": 30401669826.332,
+        "flow_est_20d_cny": 2783095290.0,
+        "aum_start_20d_cny": 30131462911.638397,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": -0.16948509632253975,
+        "flow_strength_5d_pct": 3.7416649693851514,
+        "flow_strength_20d_pct": 9.23650902102406
+      },
+      {
+        "code": "510050",
+        "name": "上证50交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E001",
+        "nav_date": "2026-10-12",
+        "unit_nav": 2.9325,
+        "entity_id": "510050",
+        "window_1d": {
+          "value": -7917750.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -7917750.0
+        },
+        "window_5d": {
+          "value": -717764310.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -717764310.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 895578030.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 895578030.0
+        },
+        "price_close": 2.932,
+        "share_delta": -2700000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:43.400701+00:00",
+        "effective_to": null,
+        "flow_est_cny": -7917750.0,
+        "reason_codes": [],
+        "total_shares": 7119666800.000001,
+        "turnover_cny": 1022028312.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "negative",
+        "source_records": [
+          {
+            "code": "510050",
+            "name": "50ETF",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 711966.68,
+            "fetched_at": "2026-10-13T03:09:17.238640+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 7119666800.000001,
+            "first_seen_at": "2026-10-13T03:09:17.238640+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510050",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 2.9325,
+            "data_time": "2026-10-12",
+            "raw_value": "2.9325",
+            "fetched_at": "2026-10-13T03:10:05.757004+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:10:05.757004+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510050",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 2.919,
+              "振幅": 1.1,
+              "收盘": 2.932,
+              "日期": "2026-10-12",
+              "最低": 2.915,
+              "最高": 2.947,
+              "成交量": 3487494,
+              "成交额": 1022028312.0,
+              "换手率": 4.9,
+              "涨跌幅": 0.45,
+              "涨跌额": 0.013
+            },
+            "fetched_at": "2026-10-13T03:10:11.741713+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 2.932,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 1022028312.0,
+            "first_seen_at": "2026-10-13T03:10:11.741713+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": -7917750.0,
+        "flow_est_5d_cny": -717764310.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510050.html",
+        "aum_start_1d_cny": 20801584476.08,
+        "aum_start_5d_cny": 21497933272.600006,
+        "flow_est_20d_cny": 895578030.0,
+        "aum_start_20d_cny": 20668559851.280003,
+        "tracking_index_id": "sh000016",
+        "tracking_index_name": "上证50指数",
+        "flow_strength_1d_pct": -0.03806320623847052,
+        "flow_strength_5d_pct": -3.3387595956250355,
+        "flow_strength_20d_pct": 4.333045148980406
+      },
+      {
+        "code": "510300",
+        "name": "华泰柏瑞沪深300交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E002",
+        "nav_date": "2026-10-12",
+        "unit_nav": 4.3602,
+        "entity_id": "510300",
+        "window_1d": {
+          "value": 600399540.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 600399540.0
+        },
+        "window_5d": {
+          "value": 1538851410.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 1538851410.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 5154410610.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 5154410610.0
+        },
+        "price_close": 4.36,
+        "share_delta": 137700000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:44.365031+00:00",
+        "effective_to": null,
+        "flow_est_cny": 600399540.0,
+        "reason_codes": [],
+        "total_shares": 24529987700.0,
+        "turnover_cny": 3046819274.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "510300",
+            "name": "300ETF",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 2452998.77,
+            "fetched_at": "2026-10-13T03:09:17.238679+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 24529987700.0,
+            "first_seen_at": "2026-10-13T03:09:17.238679+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510300",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 4.3602,
+            "data_time": "2026-10-12",
+            "raw_value": "4.3602",
+            "fetched_at": "2026-10-13T03:09:47.105041+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:47.105041+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510300",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 4.384,
+              "振幅": 1.3,
+              "收盘": 4.36,
+              "日期": "2026-10-12",
+              "最低": 4.351,
+              "最高": 4.408,
+              "成交量": 6962188,
+              "成交额": 3046819274.0,
+              "换手率": 2.84,
+              "涨跌幅": -0.57,
+              "涨跌额": -0.025
+            },
+            "fetched_at": "2026-10-13T03:09:52.496187+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 4.36,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 3046819274.0,
+            "first_seen_at": "2026-10-13T03:09:52.496187+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 600399540.0,
+        "flow_est_5d_cny": 1538851410.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510300.html",
+        "aum_start_1d_cny": 107077264545.46,
+        "aum_start_5d_cny": 106705154446.40999,
+        "flow_est_20d_cny": 5154410610.0,
+        "aum_start_20d_cny": 107878246609.19,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": 0.5607161730818201,
+        "flow_strength_5d_pct": 1.4421528350562014,
+        "flow_strength_20d_pct": 4.77798886431002
+      },
+      {
+        "code": "510310",
+        "name": "易方达沪深300交易型开放式指数发起式证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E002",
+        "nav_date": "2026-10-12",
+        "unit_nav": 4.2363,
+        "entity_id": "510310",
+        "window_1d": {
+          "value": 76253400.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 76253400.0
+        },
+        "window_5d": {
+          "value": 1287607680.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 1287607680.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 3341462850.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 3341462850.0
+        },
+        "price_close": 4.239,
+        "share_delta": 18000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:45.408098+00:00",
+        "effective_to": null,
+        "flow_est_cny": 76253400.0,
+        "reason_codes": [],
+        "total_shares": 12113744000.0,
+        "turnover_cny": 706778015.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "510310",
+            "name": "HS300ETF",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 1211374.4,
+            "fetched_at": "2026-10-13T03:09:17.238681+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 12113744000.0,
+            "first_seen_at": "2026-10-13T03:09:17.238681+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510310",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 4.2363,
+            "data_time": "2026-10-12",
+            "raw_value": "4.2363",
+            "fetched_at": "2026-10-13T03:10:12.822037+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:10:12.822037+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510310",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 4.27,
+              "振幅": 1.31,
+              "收盘": 4.239,
+              "日期": "2026-10-12",
+              "最低": 4.226,
+              "最高": 4.282,
+              "成交量": 1662682,
+              "成交额": 706778015.0,
+              "换手率": 1.37,
+              "涨跌幅": -0.59,
+              "涨跌额": -0.025
+            },
+            "fetched_at": "2026-10-13T03:10:17.679122+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 4.239,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 706778015.0,
+            "first_seen_at": "2026-10-13T03:10:17.679122+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 76253400.0,
+        "flow_est_5d_cny": 1287607680.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510310.html",
+        "aum_start_1d_cny": 51585929011.200005,
+        "aum_start_5d_cny": 50635860441.600006,
+        "flow_est_20d_cny": 3341462850.0,
+        "aum_start_20d_cny": 50884104283.600006,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": 0.1478182160554758,
+        "flow_strength_5d_pct": 2.5428770613763736,
+        "flow_strength_20d_pct": 6.566810789036443
+      },
+      {
+        "code": "510330",
+        "name": "华夏沪深300交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E002",
+        "nav_date": "2026-10-12",
+        "unit_nav": 4.5469,
+        "entity_id": "510330",
+        "window_1d": {
+          "value": -28645470.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -28645470.0
+        },
+        "window_5d": {
+          "value": 140020020.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 140020020.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 763023420.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 763023420.0
+        },
+        "price_close": 4.547,
+        "share_delta": -6300000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:46.392098+00:00",
+        "effective_to": null,
+        "flow_est_cny": -28645470.0,
+        "reason_codes": [],
+        "total_shares": 8543049800.0,
+        "turnover_cny": 356775514.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "negative",
+        "source_records": [
+          {
+            "code": "510330",
+            "name": "华夏300",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 854304.98,
+            "fetched_at": "2026-10-13T03:09:17.238686+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 8543049800.0,
+            "first_seen_at": "2026-10-13T03:09:17.238686+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510330",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 4.5469,
+            "data_time": "2026-10-12",
+            "raw_value": "4.5469",
+            "fetched_at": "2026-10-13T03:09:53.830670+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:53.830670+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510330",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 4.606,
+              "振幅": 1.51,
+              "收盘": 4.547,
+              "日期": "2026-10-12",
+              "最低": 4.537,
+              "最高": 4.606,
+              "成交量": 781227,
+              "成交额": 356775514.0,
+              "换手率": 0.91,
+              "涨跌幅": -0.61,
+              "涨跌额": -0.028
+            },
+            "fetched_at": "2026-10-13T03:09:58.579493+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 4.547,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 356775514.0,
+            "first_seen_at": "2026-10-13T03:09:58.579493+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": -28645470.0,
+        "flow_est_5d_cny": 140020020.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510330.html",
+        "aum_start_1d_cny": 39136358579.46,
+        "aum_start_5d_cny": 39168335264.74,
+        "flow_est_20d_cny": 763023420.0,
+        "aum_start_20d_cny": 40348611767.56,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": -0.07319400945757393,
+        "flow_strength_5d_pct": 0.35748269374636504,
+        "flow_strength_20d_pct": 1.8910772553851916
+      },
+      {
+        "code": "510500",
+        "name": "中证500交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E004",
+        "nav_date": "2026-10-12",
+        "unit_nav": 7.125,
+        "entity_id": "510500",
+        "window_1d": {
+          "value": -302100000.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": -302100000.0
+        },
+        "window_5d": {
+          "value": 1180788080.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 1180788080.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 3503074880.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 3503074880.0
+        },
+        "price_close": 7.125,
+        "share_delta": -42400000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:50.091223+00:00",
+        "effective_to": null,
+        "flow_est_cny": -302100000.0,
+        "reason_codes": [],
+        "total_shares": 5677768600.0,
+        "turnover_cny": 2607929698.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "negative",
+        "source_records": [
+          {
+            "code": "510500",
+            "name": "500ETF",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 567776.86,
+            "fetched_at": "2026-10-13T03:09:17.238703+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 5677768600.0,
+            "first_seen_at": "2026-10-13T03:09:17.238703+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510500",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 7.125,
+            "data_time": "2026-10-12",
+            "raw_value": "7.1250",
+            "fetched_at": "2026-10-13T03:09:40.723221+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:40.723221+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "510500",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 7.265,
+              "振幅": 2.38,
+              "收盘": 7.125,
+              "日期": "2026-10-12",
+              "最低": 7.111,
+              "最高": 7.284,
+              "成交量": 3634995,
+              "成交额": 2607929698.0,
+              "换手率": 6.4,
+              "涨跌幅": -2.16,
+              "涨跌额": -0.157
+            },
+            "fetched_at": "2026-10-13T03:09:45.835955+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 7.125,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 2607929698.0,
+            "first_seen_at": "2026-10-13T03:09:45.835955+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": -302100000.0,
+        "flow_est_5d_cny": 1180788080.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510500.html",
+        "aum_start_1d_cny": 41661703964.38,
+        "aum_start_5d_cny": 41021389810.08,
+        "flow_est_20d_cny": 3503074880.0,
+        "aum_start_20d_cny": 40052912699.54,
+        "tracking_index_id": "sh000905",
+        "tracking_index_name": "中证500指数",
+        "flow_strength_1d_pct": -0.7251263660706005,
+        "flow_strength_5d_pct": 2.8784692217079644,
+        "flow_strength_20d_pct": 8.746117682573013
+      },
+      {
+        "code": "512100",
+        "name": "南方中证1000交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E005",
+        "nav_date": "2026-10-12",
+        "unit_nav": 2.8548,
+        "entity_id": "512100",
+        "window_1d": {
+          "value": 519573600.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 519573600.0
+        },
+        "window_5d": {
+          "value": 2960920400.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 2960920400.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 4405596600.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 4405596600.0
+        },
+        "price_close": 2.856,
+        "share_delta": 182000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:51.034681+00:00",
+        "effective_to": null,
+        "flow_est_cny": 519573600.0,
+        "reason_codes": [],
+        "total_shares": 8065217600.0,
+        "turnover_cny": 2668088305.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "512100",
+            "name": "1000ETF",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 806521.76,
+            "fetched_at": "2026-10-13T03:09:17.238843+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 8065217600.0,
+            "first_seen_at": "2026-10-13T03:09:17.238843+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "512100",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 2.8548,
+            "data_time": "2026-10-12",
+            "raw_value": "2.8548",
+            "fetched_at": "2026-10-13T03:09:27.238815+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:27.238815+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "512100",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 2.901,
+              "振幅": 1.86,
+              "收盘": 2.856,
+              "日期": "2026-10-12",
+              "最低": 2.851,
+              "最高": 2.905,
+              "成交量": 9292216,
+              "成交额": 2668088305.0,
+              "换手率": 11.52,
+              "涨跌幅": -1.82,
+              "涨跌额": -0.053
+            },
+            "fetched_at": "2026-10-13T03:09:32.153577+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 2.856,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 2668088305.0,
+            "first_seen_at": "2026-10-13T03:09:32.153577+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 519573600.0,
+        "flow_est_5d_cny": 2960920400.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512100.html",
+        "aum_start_1d_cny": 22931491676.64,
+        "aum_start_5d_cny": 20874393696.96,
+        "flow_est_20d_cny": 4405596600.0,
+        "aum_start_20d_cny": 19977219140.16,
+        "tracking_index_id": "sh000852",
+        "tracking_index_name": "中证1000指数",
+        "flow_strength_1d_pct": 2.2657645099000803,
+        "flow_strength_5d_pct": 14.184461800350196,
+        "flow_strength_20d_pct": 22.053102431776775
+      },
+      {
+        "code": "588000",
+        "name": "华夏上证科创板50成份交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E007",
+        "nav_date": "2026-10-12",
+        "unit_nav": 1.5073,
+        "entity_id": "588000",
+        "window_1d": {
+          "value": 384361500.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 384361500.0
+        },
+        "window_5d": {
+          "value": 10698592800.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 10698592800.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 14329626900.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 14329626900.0
+        },
+        "price_close": 1.506,
+        "share_delta": 255000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:52.985847+00:00",
+        "effective_to": null,
+        "flow_est_cny": 384361500.0,
+        "reason_codes": [],
+        "total_shares": 63233668200.0,
+        "turnover_cny": 6189001114.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "588000",
+            "name": "科创50",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 6323366.82,
+            "fetched_at": "2026-10-13T03:09:17.240437+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 63233668200.0,
+            "first_seen_at": "2026-10-13T03:09:17.240437+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "588000",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 1.5073,
+            "data_time": "2026-10-12",
+            "raw_value": "1.5073",
+            "fetched_at": "2026-10-13T03:09:33.488944+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:33.488944+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "588000",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 1.524,
+              "振幅": 3.31,
+              "收盘": 1.506,
+              "日期": "2026-10-12",
+              "最低": 1.505,
+              "最高": 1.556,
+              "成交量": 40601767,
+              "成交额": 6189001114.0,
+              "换手率": 6.42,
+              "涨跌幅": -2.27,
+              "涨跌额": -0.035
+            },
+            "fetched_at": "2026-10-13T03:09:39.042812+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 1.506,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 6189001114.0,
+            "first_seen_at": "2026-10-13T03:09:39.042812+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 384361500.0,
+        "flow_est_5d_cny": 10698592800.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588000.html",
+        "aum_start_1d_cny": 96961957560.72,
+        "aum_start_5d_cny": 92647773119.88,
+        "flow_est_20d_cny": 14329626900.0,
+        "aum_start_20d_cny": 90112564087.56,
+        "tracking_index_id": "sh000688",
+        "tracking_index_name": "上证科创板50成份指数",
+        "flow_strength_1d_pct": 0.3964044349654381,
+        "flow_strength_5d_pct": 11.54759843623736,
+        "flow_strength_20d_pct": 15.901918944484011
+      },
+      {
+        "code": "588080",
+        "name": "易方达上证科创板50成份交易型开放式指数证券投资基金",
+        "quality": "healthy",
+        "exchange": "sh",
+        "group_id": "E007",
+        "nav_date": "2026-10-12",
+        "unit_nav": 1.462,
+        "entity_id": "588080",
+        "window_1d": {
+          "value": 324564000.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 324564000.0
+        },
+        "window_5d": {
+          "value": 3118579500.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 3118579500.0
+        },
+        "share_date": "2026-10-12",
+        "trade_date": "2026-10-12",
+        "window_20d": {
+          "value": 4264590600.0,
+          "missing_days": 0,
+          "reason_codes": [],
+          "missing_dates": [],
+          "covered_subtotal_cny": 4264590600.0
+        },
+        "price_close": 1.461,
+        "share_delta": 222000000.0,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:53.916077+00:00",
+        "effective_to": null,
+        "flow_est_cny": 324564000.0,
+        "reason_codes": [],
+        "total_shares": 28426628100.0,
+        "turnover_cny": 1309644173.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "positive",
+        "source_records": [
+          {
+            "code": "588080",
+            "name": "科创板50",
+            "exchange": "sh",
+            "raw_unit": "万份",
+            "data_time": "2026-10-12",
+            "raw_value": 2842662.81,
+            "fetched_at": "2026-10-13T03:09:17.240455+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "SSE ETF清算份额",
+            "history_mode": "retrospective_rebuilt",
+            "total_shares": 28426628100.0,
+            "first_seen_at": "2026-10-13T03:09:17.240455+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "份",
+            "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+            "source_published_at": null,
+            "normalization_factor": 10000,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "588080",
+            "exchange": "sh",
+            "raw_unit": "元/份",
+            "unit_nav": 1.462,
+            "data_time": "2026-10-12",
+            "raw_value": "1.4620",
+            "fetched_at": "2026-10-13T03:09:20.930242+00:00",
+            "trade_date": "2026-10-12",
+            "source_name": "东方财富单位净值",
+            "history_mode": "retrospective_rebuilt",
+            "first_seen_at": "2026-10-13T03:09:20.930242+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元/份",
+            "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          },
+          {
+            "code": "588080",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-12",
+            "raw_value": {
+              "开盘": 1.48,
+              "振幅": 3.28,
+              "收盘": 1.461,
+              "日期": "2026-10-12",
+              "最低": 1.46,
+              "最高": 1.509,
+              "成交量": 8861436,
+              "成交额": 1309644173.0,
+              "换手率": 3.12,
+              "涨跌幅": -2.21,
+              "涨跌额": -0.033
+            },
+            "fetched_at": "2026-10-13T03:09:25.978675+00:00",
+            "trade_date": "2026-10-12",
+            "price_close": 1.461,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "retrospective_rebuilt",
+            "turnover_cny": 1309644173.0,
+            "first_seen_at": "2026-10-13T03:09:25.978675+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-12"
+          }
+        ],
+        "flow_est_1d_cny": 324564000.0,
+        "flow_est_5d_cny": 3118579500.0,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588080.html",
+        "aum_start_1d_cny": 42112330216.11,
+        "aum_start_5d_cny": 42054344505.45,
+        "flow_est_20d_cny": 4264590600.0,
+        "aum_start_20d_cny": 41383774381.5,
+        "tracking_index_id": "sh000688",
+        "tracking_index_name": "上证科创板50成份指数",
+        "flow_strength_1d_pct": 0.7707101419807888,
+        "flow_strength_5d_pct": 7.415594123921847,
+        "flow_strength_20d_pct": 10.304982239383225
+      }
+    ],
+    "phase": "eod",
+    "groups": [
+      {
+        "id": "E001",
+        "name": "上证50",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": -7917750.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -0.03806320623847052,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "neutral",
+            "covered_subtotal_cny": -7917750.0,
+            "complete_flow_member_count": 1
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": -717764310.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -3.3387595956250355,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "up_redemption",
+            "covered_subtotal_cny": -717764310.0,
+            "complete_flow_member_count": 1
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": 895578030.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 4.333045148980406,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 895578030.0,
+            "complete_flow_member_count": 1
+          }
+        },
+        "index_id": "sh000016",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E002",
+        "name": "沪深300",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": 594750240.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 0.25946415149931523,
+            "missing_etf_codes": [],
+            "known_member_count": 4,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 594750240.0,
+            "complete_flow_member_count": 4
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": 4104007740.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 1.8086418810238178,
+            "missing_etf_codes": [],
+            "known_member_count": 4,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 4104007740.0,
+            "complete_flow_member_count": 4
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": 12041992170.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 5.252950949176938,
+            "missing_etf_codes": [],
+            "known_member_count": 4,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 12041992170.0,
+            "complete_flow_member_count": 4
+          }
+        },
+        "index_id": "sh000300",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E003",
+        "name": "中证A500",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": 97587900.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 0.40123702600525857,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": 97587900.0,
+            "complete_flow_member_count": 1
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": 500213700.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 2.0720380947465755,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": 500213700.0,
+            "complete_flow_member_count": 1
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": -59234699.99999999,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -0.2298713006237091,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": -59234699.99999999,
+            "complete_flow_member_count": 1
+          }
+        },
+        "index_id": "csi000510",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E004",
+        "name": "中证500",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": -302100000.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -0.7251263660706005,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_redemption",
+            "covered_subtotal_cny": -302100000.0,
+            "complete_flow_member_count": 1
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": 1180788080.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 2.8784692217079644,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 1180788080.0,
+            "complete_flow_member_count": 1
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": 3503074880.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 8.746117682573013,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 3503074880.0,
+            "complete_flow_member_count": 1
+          }
+        },
+        "index_id": "sh000905",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E005",
+        "name": "中证1000",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": 519573600.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 2.2657645099000803,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 519573600.0,
+            "complete_flow_member_count": 1
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": 2960920400.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 14.184461800350196,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 2960920400.0,
+            "complete_flow_member_count": 1
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": 4405596600.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 22.053102431776775,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 4405596600.0,
+            "complete_flow_member_count": 1
+          }
+        },
+        "index_id": "sh000852",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E006",
+        "name": "中证2000",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": -55800000.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -3.9678132516709352,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_redemption",
+            "covered_subtotal_cny": -55800000.0,
+            "complete_flow_member_count": 1
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": -27134800.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -1.9429740952407977,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_redemption",
+            "covered_subtotal_cny": -27134800.0,
+            "complete_flow_member_count": 1
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": -96315800.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": -6.515376669229522,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_redemption",
+            "covered_subtotal_cny": -96315800.0,
+            "complete_flow_member_count": 1
+          }
+        },
+        "index_id": "csi932000",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E007",
+        "name": "科创50",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": 708925500.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 0.5097459144551578,
+            "missing_etf_codes": [],
+            "known_member_count": 2,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 708925500.0,
+            "complete_flow_member_count": 2
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": 13817172300.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 10.257576156621427,
+            "missing_etf_codes": [],
+            "known_member_count": 2,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 13817172300.0,
+            "complete_flow_member_count": 2
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": 18594217500.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 14.140483086055713,
+            "missing_etf_codes": [],
+            "known_member_count": 2,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 18594217500.0,
+            "complete_flow_member_count": 2
+          }
+        },
+        "index_id": "sh000688",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E008",
+        "name": "创业板指",
+        "windows": {
+          "1": {
+            "quality": "healthy",
+            "flow_est_cny": 608572800.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 0.9023115771124653,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 608572800.0,
+            "complete_flow_member_count": 1
+          },
+          "5": {
+            "quality": "healthy",
+            "flow_est_cny": 4125758100.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 6.258814838197084,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 4125758100.0,
+            "complete_flow_member_count": 1
+          },
+          "20": {
+            "quality": "healthy",
+            "flow_est_cny": 6424331700.0,
+            "reason_codes": [],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": 9.677296475105663,
+            "missing_etf_codes": [],
+            "known_member_count": 1,
+            "flow_price_relation": "down_subscription",
+            "covered_subtotal_cny": 6424331700.0,
+            "complete_flow_member_count": 1
+          }
+        },
+        "index_id": "sz399006",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      }
+    ],
+    "market": {
+      "quality": "partial",
+      "st_count": null,
+      "data_time": null,
+      "flat_count": 65,
+      "coverage_pct": null,
+      "distribution": [
+        {
+          "count": 141,
+          "label": "≤−7%"
+        },
+        {
+          "count": 304,
+          "label": "(−7,−5]%"
+        },
+        {
+          "count": 973,
+          "label": "(−5,−3]%"
+        },
+        {
+          "count": 2618,
+          "label": "(−3,0)%"
+        },
+        {
+          "count": 65,
+          "label": "0%"
+        },
+        {
+          "count": 890,
+          "label": "(0,3)%"
+        },
+        {
+          "count": 104,
+          "label": "[3,5)%"
+        },
+        {
+          "count": 43,
+          "label": "[5,7)%"
+        },
+        {
+          "count": 72,
+          "label": "≥7%"
+        }
+      ],
+      "ma20_quality": "healthy",
+      "ma60_quality": "healthy",
+      "median_index": null,
+      "reason_codes": [
+        "MARKET_UNIVERSE_INCOMPLETE",
+        "COVERAGE_BELOW_REGIME_GATE",
+        "OPTIONAL_INDEX_SOURCE_UNAVAILABLE"
+      ],
+      "rising_count": 1109,
+      "turnover_cny": 1536835592643.95,
+      "falling_count": 4036,
+      "above_ma20_pct": 30.507497116493653,
+      "above_ma60_pct": 42.69141531322506,
+      "activity_ratio": null,
+      "data_time_kind": "unavailable",
+      "expected_count": null,
+      "mean_return_pct": -1.607455076965451,
+      "rise_ge_3_count": 219,
+      "suspended_count": null,
+      "first_quote_time": null,
+      "rising_ratio_pct": 21.28598848368522,
+      "universe_version": "sh-sz-a-daily-v1",
+      "eligible_ids_hash": "4fedbf1c137564fe27b330b7ffe059e9bbb88d3398f9ad55aa48a38170824540",
+      "liquidity_quality": "partial",
+      "ma20_coverage_pct": 99.84644913627639,
+      "ma60_coverage_pct": 99.27063339731286,
+      "median_return_pct": -1.695945595,
+      "universe_verified": false,
+      "equal_weight_index": null,
+      "turnover_avg20_cny": null,
+      "valid_return_count": 5210,
+      "ma20_eligible_count": 5202,
+      "ma60_eligible_count": 5172,
+      "fall_le_minus_3_count": 1418,
+      "liquidity_reason_codes": [
+        "LIQUIDITY_HISTORY_INCOMPLETE"
+      ],
+      "new_low_close_20_count": 1461,
+      "abnormal_excluded_count": 2,
+      "new_high_close_20_count": 278,
+      "hs300_minus_equal_20d_pp": null,
+      "average_nominal_price_cny": 26.474664107485605,
+      "new_high_low_eligible_count": 5201
+    },
+    "regime": {
+      "phase": "eod",
+      "summary": "市场结构：INSUFFICIENT_EVIDENCE。价格趋势与股票广度独立计算；ETF申赎仅描述已覆盖基金，不能识别机构。",
+      "trend_axis": "DOWN",
+      "breadth_axis": null,
+      "changed_from": null,
+      "primary_state": "INSUFFICIENT_EVIDENCE",
+      "rules_version": "market-structure-rules-v1.0.0",
+      "candidate_state": "INSUFFICIENT_EVIDENCE",
+      "confirmed_state": null,
+      "watch_conditions": [
+        "观察MA20广度五日变化是否越过±5个百分点",
+        "等待连续两个完整收盘候选一致",
+        "核对ETF份额与净值同日配对"
+      ],
+      "change_reason_codes": [
+        "MARKET_UNIVERSE_INCOMPLETE",
+        "COVERAGE_BELOW_REGIME_GATE",
+        "BREADTH_HISTORY_INCOMPLETE"
+      ],
+      "confirmation_status": "pending",
+      "supporting_evidence": [
+        {
+          "unit": "%",
+          "value": -5.815983835722638,
+          "metric_id": "benchmark_return_20d",
+          "trade_date": "2026-10-12",
+          "snapshot_ref": "22215b291d4553e7d7ebc63e2e3d5f6e743049ffc5f6afd48f0c95303d03e595"
+        },
+        {
+          "unit": "pp",
+          "value": null,
+          "metric_id": "breadth_ma20_delta_5d",
+          "threshold": 5,
+          "trade_date": "2026-10-12",
+          "snapshot_ref": "22215b291d4553e7d7ebc63e2e3d5f6e743049ffc5f6afd48f0c95303d03e595"
+        }
+      ],
+      "contradicting_evidence": [
+        "历史股票池或均线资格证据不足，尚不能确认广度轴",
+        "样本覆盖不完整，不代表完整全市场"
+      ],
+      "breadth_ma20_delta_5d_pp": null
+    },
+    "styles": [
+      {
+        "name": "上证50",
+        "returns": {
+          "5": 0.4442560225726089,
+          "20": -3.570683457543411,
+          "60": -4.605280965786063,
+          "120": -2.761194287231805
+        },
+        "index_id": "sh000016",
+        "relative_returns_pp": {
+          "5": 1.6601721294294824,
+          "20": 2.1475914075086537,
+          "60": 5.702848025447615
+        }
+      },
+      {
+        "name": "沪深300",
+        "returns": {
+          "5": -1.2159161068568736,
+          "20": -5.718274865052065,
+          "60": -10.308128991233678,
+          "120": -7.708963335234554
+        },
+        "index_id": "sh000300",
+        "relative_returns_pp": {
+          "5": 0.0,
+          "20": 0.0,
+          "60": 0.0
+        }
+      },
+      {
+        "name": "中证500",
+        "returns": {
+          "5": -4.178160841900491,
+          "20": -7.313376080829082,
+          "60": -16.59166248234647,
+          "120": -10.977822960201811
+        },
+        "index_id": "sh000905",
+        "relative_returns_pp": {
+          "5": -2.962244735043617,
+          "20": -1.5951012157770172,
+          "60": -6.283533491112793
+        }
+      },
+      {
+        "name": "中证1000",
+        "returns": {
+          "5": -3.73860219874228,
+          "20": -6.481275530794117,
+          "60": -14.354665778678765,
+          "120": -12.511260882404606
+        },
+        "index_id": "sh000852",
+        "relative_returns_pp": {
+          "5": -2.5226860918854066,
+          "20": -0.7630006657420525,
+          "60": -4.046536787445087
+        }
+      },
+      {
+        "name": "中证2000",
+        "returns": {
+          "5": -3.346066141894599,
+          "20": -3.8345067150332923,
+          "60": -8.311666091249892,
+          "120": -11.173500195356445
+        },
+        "index_id": "csi932000",
+        "relative_returns_pp": {
+          "5": -2.1301500350377256,
+          "20": 1.8837681500187724,
+          "60": 1.9964628999837863
+        }
+      },
+      {
+        "name": "科创50",
+        "returns": {
+          "5": -8.307304721140374,
+          "20": -9.550134401785249,
+          "60": -30.908773934856516,
+          "120": 3.7395749260155986
+        },
+        "index_id": "sh000688",
+        "relative_returns_pp": {
+          "5": -7.091388614283501,
+          "20": -3.831859536733184,
+          "60": -20.60064494362284
+        }
+      },
+      {
+        "name": "创业板指",
+        "returns": {
+          "5": -5.605416871030822,
+          "20": -9.819719766928847,
+          "60": -22.87202067280293,
+          "120": -14.745544292437085
+        },
+        "index_id": "sz399006",
+        "relative_returns_pp": {
+          "5": -4.389500764173948,
+          "20": -4.101444901876782,
+          "60": -12.56389168156925
+        }
+      },
+      {
+        "name": "中证A500",
+        "returns": {
+          "5": null,
+          "20": null,
+          "60": null,
+          "120": null
+        },
+        "index_id": "csi000510",
+        "relative_returns_pp": {
+          "5": null,
+          "20": null,
+          "60": null
+        }
+      }
+    ],
+    "indices": [
+      {
+        "id": "sh000001",
+        "ma20": 3886.1035,
+        "name": "上证指数",
+        "close": 3797.24,
+        "quality": "healthy",
+        "returns": {
+          "5": -0.6899221156914104,
+          "20": -3.3810672447660672,
+          "60": -4.977778667520827,
+          "120": -4.796718615239593
+        },
+        "return_pct": -0.43395152853199503,
+        "slope5_pct": -0.8726595787149183,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 11.090617272912347,
+        "max_drawdown20_pct": -3.9191524570295067
+      },
+      {
+        "id": "sh000016",
+        "ma20": 2858.2845,
+        "name": "上证50",
+        "close": 2819.41,
+        "quality": "healthy",
+        "returns": {
+          "5": 0.4442560225726089,
+          "20": -3.570683457543411,
+          "60": -4.605280965786063,
+          "120": -2.761194287231805
+        },
+        "return_pct": 0.42565165665762184,
+        "slope5_pct": -0.9890754155715387,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 10.614111454888814,
+        "max_drawdown20_pct": -4.05942930628187
+      },
+      {
+        "id": "sh000300",
+        "ma20": 4457.1265,
+        "name": "沪深300",
+        "close": 4287.98,
+        "quality": "healthy",
+        "returns": {
+          "5": -1.2159161068568736,
+          "20": -5.718274865052065,
+          "60": -10.308128991233678,
+          "120": -7.708963335234554
+        },
+        "return_pct": -0.6779778794371527,
+        "slope5_pct": -1.4011610087500959,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 13.17683317080576,
+        "max_drawdown20_pct": -6.274070933023257
+      },
+      {
+        "id": "sh000985",
+        "ma20": 5765.626,
+        "name": "中证全指",
+        "close": 5491.06,
+        "quality": "healthy",
+        "returns": {
+          "5": -2.471315406202257,
+          "20": -5.815983835722638,
+          "60": -11.649834033508643,
+          "120": -10.039253977823792
+        },
+        "return_pct": -1.4228985049332787,
+        "slope5_pct": -1.3236006009621604,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 17.532941747371076,
+        "max_drawdown20_pct": -7.300413606820289
+      },
+      {
+        "id": "sh000905",
+        "ma20": 7591.613,
+        "name": "中证500",
+        "close": 7093.02,
+        "quality": "healthy",
+        "returns": {
+          "5": -4.178160841900491,
+          "20": -7.313376080829082,
+          "60": -16.59166248234647,
+          "120": -10.977822960201811
+        },
+        "return_pct": -2.178868874818818,
+        "slope5_pct": -1.6075453440674403,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 21.32177150391646,
+        "max_drawdown20_pct": -9.648581997533901
+      },
+      {
+        "id": "sh000852",
+        "ma20": 7488.398,
+        "name": "中证1000",
+        "close": 7021.47,
+        "quality": "healthy",
+        "returns": {
+          "5": -3.73860219874228,
+          "20": -6.481275530794117,
+          "60": -14.354665778678765,
+          "120": -12.511260882404606
+        },
+        "return_pct": -1.8787268146189584,
+        "slope5_pct": -1.4564989689210273,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 23.757742501924717,
+        "max_drawdown20_pct": -9.590887845352947
+      },
+      {
+        "id": "csi932000",
+        "ma20": 3141.974,
+        "name": "中证2000",
+        "close": 3000.95,
+        "quality": "healthy",
+        "returns": {
+          "5": -3.346066141894599,
+          "20": -3.8345067150332923,
+          "60": -8.311666091249892,
+          "120": -11.173500195356445
+        },
+        "return_pct": -2.099305125110118,
+        "slope5_pct": -0.6593152265362612,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 23.817839321173846,
+        "max_drawdown20_pct": -7.940388798051412
+      },
+      {
+        "id": "sh000688",
+        "ma20": 1573.271,
+        "name": "科创50",
+        "close": 1426.72,
+        "quality": "healthy",
+        "returns": {
+          "5": -8.307304721140374,
+          "20": -9.550134401785249,
+          "60": -30.908773934856516,
+          "120": 3.7395749260155986
+        },
+        "return_pct": -2.0963857075215975,
+        "slope5_pct": -2.1713534559493985,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 35.19572084426221,
+        "max_drawdown20_pct": -14.313169653581891
+      },
+      {
+        "id": "sz399006",
+        "ma20": 3260.967,
+        "name": "创业板指",
+        "close": 2963.82,
+        "quality": "healthy",
+        "returns": {
+          "5": -5.605416871030822,
+          "20": -9.819719766928847,
+          "60": -22.87202067280293,
+          "120": -14.745544292437085
+        },
+        "return_pct": -2.6125986994509187,
+        "slope5_pct": -2.133502238032281,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 29.507433078981165,
+        "max_drawdown20_pct": -12.827028791769235
+      },
+      {
+        "id": "csi000510",
+        "ma20": null,
+        "name": "中证A500",
+        "close": null,
+        "quality": "unavailable",
+        "returns": {
+          "5": null,
+          "20": null,
+          "60": null,
+          "120": null
+        },
+        "return_pct": null,
+        "slope5_pct": null,
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [
+          "INDEX_SOURCE_UNAVAILABLE"
+        ],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": null,
+        "max_drawdown20_pct": null
+      }
+    ],
+    "quality": {
+      "status": "partial",
+      "sources": [
+        "SSE ETF清算份额",
+        "SZSE ETF清算份额",
+        "东方财富ETF二级行情",
+        "东方财富前复权日线",
+        "东方财富单位净值",
+        "东方财富指数日线",
+        "新浪交易日历"
+      ],
+      "reason_codes": [
+        "MARKET_UNIVERSE_INCOMPLETE",
+        "COVERAGE_BELOW_REGIME_GATE",
+        "OPTIONAL_INDEX_SOURCE_UNAVAILABLE",
+        "BREADTH_HISTORY_INCOMPLETE"
+      ]
+    },
+    "input_hash": "22215b291d4553e7d7ebc63e2e3d5f6e743049ffc5f6afd48f0c95303d03e595",
+    "trade_date": "2026-10-12",
+    "volatility": {
+      "risk_level": "low",
+      "volatility20_pct": 17.532941747371076,
+      "reference_samples": 119,
+      "max_drawdown20_pct": -7.300413606820289
+    },
+    "methodology": {
+      "flow": "(当日可比份额−前交易日份额)×同日单位净值；金额CNY元。",
+      "equal": "每日可比收益均值复合；基准1000；缺少连续合格历史时不续接。",
+      "trend": "中证全指：收盘/MA20、MA20五日斜率、20日收益三项同向判UP/DOWN，否则FLAT。",
+      "median": "每日收益中位数复合，不是一段时间个股累计收益的中位数。",
+      "breadth": "MA20广度五交易日变化≥+5pp扩张，≤−5pp收缩，其他稳定。",
+      "coverage": "≥98%完整；90%至98%部分；不足90%或历史股票池未知不得确认主状态。",
+      "research": "初版阈值待验证，不输出收益优势、交易概率或机构身份。",
+      "strength": "同一成员窗口金额总和÷窗口期初份额×净值规模总和×100。",
+      "universe": "沪深普通A股，含ST；北交所/B股/ETF排除。停牌单列；新股均线资格分别判断。",
+      "liquidity": "成交活跃比以此前20个完整交易日均额为分母，不含当日。",
+      "volatility": "20日收益样本标准差×sqrt(252)，最大回撤按同窗口收盘；仅描述风险。",
+      "flow_window": "连续1/5/20交易日逐日金额求和，缺任一天完整金额为null。",
+      "confirmation": "连续两个完整收盘候选相同才确认；盘中暂算不覆盖EOD。",
+      "rules_version": "market-structure-rules-v1.0.0",
+      "mapping_version": "market-structure-etf-mapping-v1",
+      "relative_strength": "同日期区间收益相减，单位百分点。"
+    },
+    "benchmark_id": "sh000985",
+    "etf_nav_date": "2026-10-12",
+    "generated_at": "2026-10-13T04:32:16.297819Z",
+    "rules_version": "market-structure-rules-v1.0.0",
+    "facts_cutoff_at": "2026-10-13T04:32:16.297819+00:00",
+    "mapping_version": "market-structure-etf-mapping-v1",
+    "material_changes": [
+      {
+        "unit": "pp",
+        "label": "MA20广度",
+        "value": 30.507497116493653,
+        "change": -9.72327211427558,
+        "metric_id": "above_ma20_pct",
+        "trade_date": "2026-10-12",
+        "previous_value": 40.23076923076923
+      },
+      {
+        "unit": "pp",
+        "label": "当日收益中位数",
+        "value": -1.695945595,
+        "change": -2.179037385,
+        "metric_id": "median_return_pct",
+        "trade_date": "2026-10-12",
+        "previous_value": 0.48309179
+      }
+    ],
+    "style_assessment": {
+      "labels": [
+        "small_cap_leading"
+      ],
+      "threshold_pp": 1
+    },
+    "history_integrity": "retrospective_partial",
+    "first_available_at": "2026-10-13T04:32:16.297819Z",
+    "etf_share_trade_date": "2026-10-12",
+    "etf_funding_assessment": {
+      "quality": "healthy",
+      "direction": "subscription",
+      "coverage_mode": "representative_sample",
+      "covered_subtotal_5d_cny": 25943961210.0
+    }
+  },
+  "ok": true,
+  "contract_version": "investment-dashboard-market-structure-v1",
+  "rules_version": "market-structure-rules-v1.0.0",
+  "requested_date": "2026-10-13",
+  "actual_market_trade_date": "2026-10-13",
+  "etf_share_trade_date": "2026-10-12",
+  "etf_nav_date": "2026-10-12",
+  "history_mode": "rebuilt",
+  "generated_at": "2026-10-13T04:34:38.912445+00:00",
+  "overview": {
+    "funds": [
+      {
+        "code": "159338",
+        "name": "国泰中证A500交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sz",
+        "group_id": "E003",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "159338",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 486435300.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 292235100.0
+        },
+        "price_close": 1.104,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:49.128824+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 2252522236.7,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "159338",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 1.109,
+              "振幅": 1.16,
+              "收盘": 1.104,
+              "日期": "2026-10-13",
+              "最低": 1.099,
+              "最高": 1.112,
+              "成交量": 20377523,
+              "成交额": 2252522236.7,
+              "换手率": 9.47,
+              "涨跌幅": -1.6,
+              "涨跌额": -0.018
+            },
+            "fetched_at": "2026-10-13T03:15:38.793135+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 1.104,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 2252522236.7,
+            "first_seen_at": "2026-10-13T03:15:38.793135+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159338.html",
+        "aum_start_1d_cny": 24130107611.008797,
+        "aum_start_5d_cny": 24207600107.6048,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 25645322072.7792,
+        "tracking_index_id": "csi000510",
+        "tracking_index_name": "中证A500指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "159531",
+        "name": "南方中证2000交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sz",
+        "group_id": "E006",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "159531",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": -44633200.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": -66761800.0
+        },
+        "price_close": 1.361,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:51.985614+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 167175771.4,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "159531",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 1.369,
+              "振幅": 2.87,
+              "收盘": 1.361,
+              "日期": "2026-10-13",
+              "最低": 1.34,
+              "最高": 1.38,
+              "成交量": 1231299,
+              "成交额": 167175771.4,
+              "换手率": 13.04,
+              "涨跌幅": -2.3,
+              "涨跌额": -0.032
+            },
+            "fetched_at": "2026-10-13T03:15:35.408508+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 1.361,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 167175771.4,
+            "first_seen_at": "2026-10-13T03:15:35.408508+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159531.html",
+        "aum_start_1d_cny": 1317728726.3700001,
+        "aum_start_5d_cny": 1424090377.6292,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 1469732841.5462,
+        "tracking_index_id": "csi932000",
+        "tracking_index_name": "中证2000指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "159915",
+        "name": "易方达创业板交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sz",
+        "group_id": "E008",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "159915",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 4549506300.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 9151416900.0
+        },
+        "price_close": 2.903,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:54.821710+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 5384436768.176,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "159915",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 2.93,
+              "振幅": 2.21,
+              "收盘": 2.903,
+              "日期": "2026-10-13",
+              "最低": 2.88,
+              "最高": 2.946,
+              "成交量": 18515930,
+              "成交额": 5384436768.176,
+              "换手率": 8.33,
+              "涨跌幅": -2.68,
+              "涨跌额": -0.08
+            },
+            "fetched_at": "2026-10-13T03:15:17.865286+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 2.903,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 5384436768.176,
+            "first_seen_at": "2026-10-13T03:15:17.865286+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159915.html",
+        "aum_start_1d_cny": 66305960365.0752,
+        "aum_start_5d_cny": 65555917644.1128,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 65926618098.28641,
+        "tracking_index_id": "sz399006",
+        "tracking_index_name": "创业板指数(价格)",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "159919",
+        "name": "嘉实沪深300交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sz",
+        "group_id": "E002",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "159919",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 1046209050.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 2617338150.0
+        },
+        "price_close": 4.483,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:47.681719+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 426565705.8,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "159919",
+            "exchange": "sz",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 4.5,
+              "振幅": 0.92,
+              "收盘": 4.483,
+              "日期": "2026-10-13",
+              "最低": 4.472,
+              "最高": 4.514,
+              "成交量": 949637,
+              "成交额": 426565705.8,
+              "换手率": 1.39,
+              "涨跌幅": -1.47,
+              "涨跌额": -0.067
+            },
+            "fetched_at": "2026-10-13T03:15:00.614204+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 4.483,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 426565705.8,
+            "first_seen_at": "2026-10-13T03:15:00.614204+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159919.html",
+        "aum_start_1d_cny": 31156465837.484398,
+        "aum_start_5d_cny": 30526644391.3796,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 30474191743.569202,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "510050",
+        "name": "上证50交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E001",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "510050",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": -381011670.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 267262650.0
+        },
+        "price_close": 2.896,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:43.400701+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 844531845.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "510050",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 2.91,
+              "振幅": 0.72,
+              "收盘": 2.896,
+              "日期": "2026-10-13",
+              "最低": 2.89,
+              "最高": 2.911,
+              "成交量": 2911821,
+              "成交额": 844531845.0,
+              "换手率": 4.09,
+              "涨跌幅": -1.23,
+              "涨跌额": -0.036
+            },
+            "fetched_at": "2026-10-13T03:15:28.007890+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 2.896,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 844531845.0,
+            "first_seen_at": "2026-10-13T03:15:28.007890+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510050.html",
+        "aum_start_1d_cny": 20878422891.000004,
+        "aum_start_5d_cny": 21188425829.760002,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 21212419242.960003,
+        "tracking_index_id": "sh000016",
+        "tracking_index_name": "上证50指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "510300",
+        "name": "华泰柏瑞沪深300交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E002",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "510300",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 1598495760.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 3892742189.9999995
+        },
+        "price_close": 4.296,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:44.365031+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 2583577559.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "510300",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 4.313,
+              "振幅": 0.89,
+              "收盘": 4.296,
+              "日期": "2026-10-13",
+              "最低": 4.286,
+              "最高": 4.325,
+              "成交量": 6000396,
+              "成交额": 2583577559.0,
+              "换手率": 2.45,
+              "涨跌幅": -1.47,
+              "涨跌额": -0.064
+            },
+            "fetched_at": "2026-10-13T03:15:10.844004+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 4.296,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 2583577559.0,
+            "first_seen_at": "2026-10-13T03:15:10.844004+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510300.html",
+        "aum_start_1d_cny": 106955652369.54,
+        "aum_start_5d_cny": 106761564917.37,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 109775771814.62999,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "510310",
+        "name": "易方达沪深300交易型开放式指数发起式证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E002",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "510310",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 1055893680.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 2838336570.0
+        },
+        "price_close": 4.176,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:45.408098+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 343053329.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "510310",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 4.201,
+              "振幅": 0.94,
+              "收盘": 4.176,
+              "日期": "2026-10-13",
+              "最低": 4.163,
+              "最高": 4.203,
+              "成交量": 820539,
+              "成交额": 343053329.0,
+              "换手率": 0.68,
+              "涨跌幅": -1.49,
+              "涨跌额": -0.063
+            },
+            "fetched_at": "2026-10-13T03:15:21.186964+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 4.176,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 343053329.0,
+            "first_seen_at": "2026-10-13T03:15:21.186964+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510310.html",
+        "aum_start_1d_cny": 51317453707.2,
+        "aum_start_5d_cny": 50921914904.00001,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 51686956205.200005,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "510330",
+        "name": "华夏沪深300交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E002",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "510330",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 156603780.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 514705770.00000006
+        },
+        "price_close": 4.483,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:46.392098+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 191867391.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "510330",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 4.512,
+              "振幅": 0.9,
+              "收盘": 4.483,
+              "日期": "2026-10-13",
+              "最低": 4.471,
+              "最高": 4.512,
+              "成交量": 427070,
+              "成交额": 191867391.0,
+              "换手率": 0.5,
+              "涨跌幅": -1.41,
+              "涨跌额": -0.064
+            },
+            "fetched_at": "2026-10-13T03:15:31.659270+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 4.483,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 191867391.0,
+            "first_seen_at": "2026-10-13T03:15:31.659270+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510330.html",
+        "aum_start_1d_cny": 38844393135.62,
+        "aum_start_5d_cny": 39196867488.68,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 40834215006.899994,
+        "tracking_index_id": "sh000300",
+        "tracking_index_name": "沪深300指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "510500",
+        "name": "中证500交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E004",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "510500",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 472461440.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 1075371680.0
+        },
+        "price_close": 6.979,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:50.091223+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 1775414439.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "510500",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 7.013,
+              "振幅": 1.89,
+              "收盘": 6.979,
+              "日期": "2026-10-13",
+              "最低": 6.932,
+              "最高": 7.067,
+              "成交量": 2537889,
+              "成交额": 1775414439.0,
+              "换手率": 4.47,
+              "涨跌幅": -2.05,
+              "涨跌额": -0.146
+            },
+            "fetched_at": "2026-10-13T03:15:04.080951+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 6.979,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 1775414439.0,
+            "first_seen_at": "2026-10-13T03:15:04.080951+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510500.html",
+        "aum_start_1d_cny": 40454101275.0,
+        "aum_start_5d_cny": 41944956225.48,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 43040132213.46,
+        "tracking_index_id": "sh000905",
+        "tracking_index_name": "中证500指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "512100",
+        "name": "南方中证1000交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E005",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "512100",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 3157468400.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 4349803800.0
+        },
+        "price_close": 2.792,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:51.034681+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 2656994106.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "512100",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 2.8,
+              "振幅": 2.21,
+              "收盘": 2.792,
+              "日期": "2026-10-13",
+              "最低": 2.762,
+              "最高": 2.825,
+              "成交量": 9512454,
+              "成交额": 2656994106.0,
+              "换手率": 11.79,
+              "涨跌幅": -2.24,
+              "涨跌额": -0.064
+            },
+            "fetched_at": "2026-10-13T03:15:24.613249+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 2.792,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 2656994106.0,
+            "first_seen_at": "2026-10-13T03:15:24.613249+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512100.html",
+        "aum_start_1d_cny": 23024583204.48,
+        "aum_start_5d_cny": 20772198012.800003,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 20380544472.96,
+        "tracking_index_id": "sh000852",
+        "tracking_index_name": "中证1000指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "588000",
+        "name": "华夏上证科创板50成份交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E007",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "588000",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 10400224800.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 15287029500.0
+        },
+        "price_close": 1.471,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:52.985847+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 4729896189.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "588000",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 1.473,
+              "振幅": 2.92,
+              "收盘": 1.471,
+              "日期": "2026-10-13",
+              "最低": 1.453,
+              "最高": 1.497,
+              "成交量": 32133309,
+              "成交额": 4729896189.0,
+              "换手率": 5.08,
+              "涨跌幅": -2.32,
+              "涨跌额": -0.035
+            },
+            "fetched_at": "2026-10-13T03:15:07.444485+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 1.471,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 4729896189.0,
+            "first_seen_at": "2026-10-13T03:15:07.444485+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588000.html",
+        "aum_start_1d_cny": 95312108077.86,
+        "aum_start_5d_cny": 93746675608.31999,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 91362264750.12,
+        "tracking_index_id": "sh000688",
+        "tracking_index_name": "上证科创板50成份指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      },
+      {
+        "code": "588080",
+        "name": "易方达上证科创板50成份交易型开放式指数证券投资基金",
+        "quality": "unavailable",
+        "exchange": "sh",
+        "group_id": "E007",
+        "nav_date": null,
+        "unit_nav": null,
+        "entity_id": "588080",
+        "window_1d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": null
+        },
+        "window_5d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 2819435700.0
+        },
+        "share_date": null,
+        "trade_date": "2026-10-13",
+        "window_20d": {
+          "value": null,
+          "missing_days": 1,
+          "reason_codes": [
+            "FLOW_WINDOW_INCOMPLETE"
+          ],
+          "missing_dates": [
+            "2026-10-13"
+          ],
+          "covered_subtotal_cny": 4641816600.0
+        },
+        "price_close": 1.427,
+        "share_delta": null,
+        "source_name": "东方财富基金档案明确跟踪标的",
+        "verified_at": "2026-10-13T03:14:53.916077+00:00",
+        "effective_to": null,
+        "flow_est_cny": null,
+        "reason_codes": [
+          "ETF_SHARE_PENDING",
+          "NAV_DATE_MISMATCH"
+        ],
+        "total_shares": null,
+        "turnover_cny": 1056446917.0,
+        "effective_from": "2026-07-06",
+        "flow_direction": "unknown",
+        "source_records": [
+          {
+            "code": "588080",
+            "exchange": "sh",
+            "raw_unit": "元",
+            "data_time": "2026-10-13",
+            "raw_value": {
+              "开盘": 1.428,
+              "振幅": 2.94,
+              "收盘": 1.427,
+              "日期": "2026-10-13",
+              "最低": 1.409,
+              "最高": 1.452,
+              "成交量": 7399004,
+              "成交额": 1056446917.0,
+              "换手率": 2.6,
+              "涨跌幅": -2.33,
+              "涨跌额": -0.034
+            },
+            "fetched_at": "2026-10-13T03:15:14.263529+00:00",
+            "trade_date": "2026-10-13",
+            "price_close": 1.427,
+            "source_name": "东方财富ETF二级行情",
+            "history_mode": "observed",
+            "turnover_cny": 1056446917.0,
+            "first_seen_at": "2026-10-13T03:15:14.263529+00:00",
+            "source_version": "1.18.64",
+            "normalized_unit": "元",
+            "source_endpoint": "fund_etf_hist_em",
+            "source_published_at": null,
+            "normalization_factor": 1,
+            "observation_trade_date": "2026-10-13"
+          }
+        ],
+        "flow_est_1d_cny": null,
+        "flow_est_5d_cny": null,
+        "mapping_version": "market-structure-etf-mapping-v1",
+        "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588080.html",
+        "aum_start_1d_cny": 41559730282.2,
+        "aum_start_5d_cny": 42717458173.23,
+        "flow_est_20d_cny": null,
+        "aum_start_20d_cny": 42018721191.450005,
+        "tracking_index_id": "sh000688",
+        "tracking_index_name": "上证科创板50成份指数",
+        "flow_strength_1d_pct": null,
+        "flow_strength_5d_pct": null,
+        "flow_strength_20d_pct": null
+      }
+    ],
+    "phase": "intraday",
+    "groups": [
+      {
+        "id": "E001",
+        "name": "上证50",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "510050"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "510050"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "510050"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "sh000016",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E002",
+        "name": "沪深300",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159919",
+              "510300",
+              "510310",
+              "510330"
+            ],
+            "known_member_count": 4,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159919",
+              "510300",
+              "510310",
+              "510330"
+            ],
+            "known_member_count": 4,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159919",
+              "510300",
+              "510310",
+              "510330"
+            ],
+            "known_member_count": 4,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "sh000300",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E003",
+        "name": "中证A500",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159338"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159338"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159338"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "csi000510",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E004",
+        "name": "中证500",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "510500"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "510500"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "510500"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "sh000905",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E005",
+        "name": "中证1000",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "512100"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "512100"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "512100"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "sh000852",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E006",
+        "name": "中证2000",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159531"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159531"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159531"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "csi932000",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E007",
+        "name": "科创50",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "588000",
+              "588080"
+            ],
+            "known_member_count": 2,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "588000",
+              "588080"
+            ],
+            "known_member_count": 2,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "588000",
+              "588080"
+            ],
+            "known_member_count": 2,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "sh000688",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      },
+      {
+        "id": "E008",
+        "name": "创业板指",
+        "windows": {
+          "1": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159915"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "5": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159915"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          },
+          "20": {
+            "quality": "unavailable",
+            "flow_est_cny": null,
+            "reason_codes": [
+              "ETF_GROUP_PARTIAL"
+            ],
+            "coverage_mode": "representative_sample",
+            "flow_strength_pct": null,
+            "missing_etf_codes": [
+              "159915"
+            ],
+            "known_member_count": 1,
+            "flow_price_relation": "unknown",
+            "covered_subtotal_cny": null,
+            "complete_flow_member_count": 0
+          }
+        },
+        "index_id": "sz399006",
+        "mapping_version": "market-structure-etf-mapping-v1"
+      }
+    ],
+    "market": {
+      "quality": "healthy",
+      "st_count": 198,
+      "data_time": "2026-10-13T11:14:35+08:00",
+      "flat_count": 104,
+      "coverage_pct": 100.0,
+      "distribution": [
+        {
+          "count": 87,
+          "label": "≤−7%"
+        },
+        {
+          "count": 205,
+          "label": "(−7,−5]%"
+        },
+        {
+          "count": 998,
+          "label": "(−5,−3]%"
+        },
+        {
+          "count": 3156,
+          "label": "(−3,0)%"
+        },
+        {
+          "count": 104,
+          "label": "0%"
+        },
+        {
+          "count": 508,
+          "label": "(0,3)%"
+        },
+        {
+          "count": 85,
+          "label": "[3,5)%"
+        },
+        {
+          "count": 28,
+          "label": "[5,7)%"
+        },
+        {
+          "count": 54,
+          "label": "≥7%"
+        }
+      ],
+      "ma20_quality": "healthy",
+      "ma60_quality": "healthy",
+      "median_index": 1000.0,
+      "reason_codes": [
+        "OPTIONAL_INDEX_SOURCE_UNAVAILABLE"
+      ],
+      "rising_count": 675,
+      "turnover_cny": 939066330000.0,
+      "falling_count": 4446,
+      "above_ma20_pct": 21.756678839131272,
+      "above_ma60_pct": 34.68006959211289,
+      "activity_ratio": null,
+      "data_time_kind": "quote_timestamp",
+      "expected_count": 5225,
+      "mean_return_pct": -1.7164976076555023,
+      "rise_ge_3_count": 167,
+      "suspended_count": null,
+      "first_quote_time": "2026-10-13T11:11:42+08:00",
+      "rising_ratio_pct": 12.918660287081341,
+      "universe_version": "sh-sz-a-daily-v1",
+      "eligible_ids_hash": "b48050bd48ed262c78eb913a3e180b66aded582d2aa338f4d88e605a787a25a0",
+      "liquidity_quality": "partial",
+      "ma20_coverage_pct": 99.57894736842105,
+      "ma60_coverage_pct": 99.00478468899522,
+      "median_return_pct": -1.81,
+      "universe_verified": true,
+      "equal_weight_index": 1000.0,
+      "turnover_avg20_cny": null,
+      "valid_return_count": 5225,
+      "ma20_eligible_count": 5203,
+      "ma60_eligible_count": 5173,
+      "fall_le_minus_3_count": 1290,
+      "liquidity_reason_codes": [
+        "LIQUIDITY_HISTORY_INCOMPLETE"
+      ],
+      "new_low_close_20_count": 2114,
+      "abnormal_excluded_count": 0,
+      "new_high_close_20_count": 136,
+      "hs300_minus_equal_20d_pp": null,
+      "average_nominal_price_cny": 25.865735885167464,
+      "new_high_low_eligible_count": 5203
+    },
+    "regime": {
+      "phase": "intraday",
+      "summary": "市场结构：INSUFFICIENT_EVIDENCE。价格趋势与股票广度独立计算；ETF申赎仅描述已覆盖基金，不能识别机构。",
+      "trend_axis": "DOWN",
+      "breadth_axis": null,
+      "changed_from": null,
+      "primary_state": "INSUFFICIENT_EVIDENCE",
+      "rules_version": "market-structure-rules-v1.0.0",
+      "candidate_state": "INSUFFICIENT_EVIDENCE",
+      "confirmed_state": null,
+      "watch_conditions": [
+        "观察MA20广度五日变化是否越过±5个百分点",
+        "等待连续两个完整收盘候选一致",
+        "核对ETF份额与净值同日配对"
+      ],
+      "change_reason_codes": [
+        "BREADTH_HISTORY_INCOMPLETE"
+      ],
+      "confirmation_status": "intraday_provisional",
+      "supporting_evidence": [
+        {
+          "unit": "%",
+          "value": -8.50063379313738,
+          "metric_id": "benchmark_return_20d",
+          "trade_date": "2026-10-13",
+          "snapshot_ref": "81effea53421f4a81e9d4969b28ed28f4071c6566c517cb49ce07f13f0a51b29"
+        },
+        {
+          "unit": "pp",
+          "value": null,
+          "metric_id": "breadth_ma20_delta_5d",
+          "threshold": 5,
+          "trade_date": "2026-10-13",
+          "snapshot_ref": "81effea53421f4a81e9d4969b28ed28f4071c6566c517cb49ce07f13f0a51b29"
+        }
+      ],
+      "contradicting_evidence": [
+        "历史股票池或均线资格证据不足，尚不能确认广度轴"
+      ],
+      "breadth_ma20_delta_5d_pp": null
+    },
+    "styles": [
+      {
+        "name": "上证50",
+        "returns": {
+          "5": -0.9579662078487816,
+          "20": -4.414214230028202,
+          "60": -4.462118845664042,
+          "120": -4.821180638674772
+        },
+        "index_id": "sh000016",
+        "relative_returns_pp": {
+          "5": 1.859158856302312,
+          "20": 3.284549928379853,
+          "60": 5.602668242920906
+        }
+      },
+      {
+        "name": "沪深300",
+        "returns": {
+          "5": -2.8171250641510936,
+          "20": -7.698764158408055,
+          "60": -10.064787088584948,
+          "120": -10.177653745362958
+        },
+        "index_id": "sh000300",
+        "relative_returns_pp": {
+          "5": 0.0,
+          "20": 0.0,
+          "60": 0.0
+        }
+      },
+      {
+        "name": "中证500",
+        "returns": {
+          "5": -6.676676125022352,
+          "20": -10.522246007085624,
+          "60": -14.686771178672286,
+          "120": -14.163937506876989
+        },
+        "index_id": "sh000905",
+        "relative_returns_pp": {
+          "5": -3.8595510608712584,
+          "20": -2.8234818486775684,
+          "60": -4.621984090087338
+        }
+      },
+      {
+        "name": "中证1000",
+        "returns": {
+          "5": -6.338536725207677,
+          "20": -10.188418925145559,
+          "60": -11.900845547872652,
+          "120": -15.761422067685238
+        },
+        "index_id": "sh000852",
+        "relative_returns_pp": {
+          "5": -3.5214116610565838,
+          "20": -2.4896547667375035,
+          "60": -1.8360584592877043
+        }
+      },
+      {
+        "name": "中证2000",
+        "returns": {
+          "5": -6.042282554850664,
+          "20": -7.327690828565581,
+          "60": -4.796308290155449,
+          "120": -14.078501285948096
+        },
+        "index_id": "csi932000",
+        "relative_returns_pp": {
+          "5": -3.2251574906995706,
+          "20": 0.3710733298424742,
+          "60": 5.268478798429499
+        }
+      },
+      {
+        "name": "科创50",
+        "returns": {
+          "5": -11.468515426867343,
+          "20": -13.9997400233979,
+          "60": -30.33414898311204,
+          "120": -1.1180937604532204
+        },
+        "index_id": "sh000688",
+        "relative_returns_pp": {
+          "5": -8.65139036271625,
+          "20": -6.300975864989844,
+          "60": -20.269361894527094
+        }
+      },
+      {
+        "name": "创业板指",
+        "returns": {
+          "5": -8.383292602209657,
+          "20": -15.28740569868301,
+          "60": -22.677735046407697,
+          "120": -19.09271525039834
+        },
+        "index_id": "sz399006",
+        "relative_returns_pp": {
+          "5": -5.566167538058563,
+          "20": -7.5886415402749545,
+          "60": -12.61294795782275
+        }
+      },
+      {
+        "name": "中证A500",
+        "returns": {
+          "5": null,
+          "20": null,
+          "60": null,
+          "120": null
+        },
+        "index_id": "csi000510",
+        "relative_returns_pp": {
+          "5": null,
+          "20": null,
+          "60": null
+        }
+      }
+    ],
+    "indices": [
+      {
+        "id": "sh000001",
+        "ma20": 3877.2855,
+        "name": "上证指数",
+        "close": 3756.34,
+        "quality": "healthy",
+        "returns": {
+          "5": -1.9347596235429143,
+          "20": -4.48445088615963,
+          "60": -4.022954731858375,
+          "120": -6.712561124314876
+        },
+        "return_pct": -1.0770981028325743,
+        "slope5_pct": -0.9006083544066956,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 11.503374794507703,
+        "max_drawdown20_pct": -4.954037443100301
+      },
+      {
+        "id": "sh000016",
+        "ma20": 2851.858,
+        "name": "上证50",
+        "close": 2783.2,
+        "quality": "healthy",
+        "returns": {
+          "5": -0.9579662078487816,
+          "20": -4.414214230028202,
+          "60": -4.462118845664042,
+          "120": -4.821180638674772
+        },
+        "return_pct": -1.2843112566104264,
+        "slope5_pct": -0.9943240746960624,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 11.29694557634741,
+        "max_drawdown20_pct": -4.414214230028202
+      },
+      {
+        "id": "sh000300",
+        "ma20": 4439.5155,
+        "name": "沪深300",
+        "close": 4222.8,
+        "quality": "healthy",
+        "returns": {
+          "5": -2.8171250641510936,
+          "20": -7.698764158408055,
+          "60": -10.064787088584948,
+          "120": -10.177653745362958
+        },
+        "return_pct": -1.5200630599956022,
+        "slope5_pct": -1.4857744024343478,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 13.429667502818972,
+        "max_drawdown20_pct": -7.698764158408055
+      },
+      {
+        "id": "sh000985",
+        "ma20": 5740.5785,
+        "name": "中证全指",
+        "close": 5392.14,
+        "quality": "healthy",
+        "returns": {
+          "5": -4.568116455024107,
+          "20": -8.50063379313738,
+          "60": -10.155707180525342,
+          "120": -12.768728271613528
+        },
+        "return_pct": -1.8014736681078003,
+        "slope5_pct": -1.4832822908560694,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 17.52316639021595,
+        "max_drawdown20_pct": -8.970372246138258
+      },
+      {
+        "id": "sh000905",
+        "ma20": 7550.79,
+        "name": "中证500",
+        "close": 6942.91,
+        "quality": "healthy",
+        "returns": {
+          "5": -6.676676125022352,
+          "20": -10.522246007085624,
+          "60": -14.686771178672286,
+          "120": -14.163937506876989
+        },
+        "return_pct": -2.116305889451897,
+        "slope5_pct": -1.810553988011998,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 21.1089016247335,
+        "max_drawdown20_pct": -11.560694377923387
+      },
+      {
+        "id": "sh000852",
+        "ma20": 7449.4815,
+        "name": "中证1000",
+        "close": 6861.03,
+        "quality": "healthy",
+        "returns": {
+          "5": -6.338536725207677,
+          "20": -10.188418925145559,
+          "60": -11.900845547872652,
+          "120": -15.761422067685238
+        },
+        "return_pct": -2.284991604322184,
+        "slope5_pct": -1.6806973897377842,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 23.403170411492983,
+        "max_drawdown20_pct": -11.656728467628852
+      },
+      {
+        "id": "csi932000",
+        "ma20": 3130.351,
+        "name": "中证2000",
+        "close": 2939.89,
+        "quality": "healthy",
+        "returns": {
+          "5": -6.042282554850664,
+          "20": -7.327690828565581,
+          "60": -4.796308290155449,
+          "120": -14.078501285948096
+        },
+        "return_pct": -2.034689015145197,
+        "slope5_pct": -0.9466602199560303,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 23.63504369256067,
+        "max_drawdown20_pct": -9.813515594562839
+      },
+      {
+        "id": "sh000688",
+        "ma20": 1561.9625,
+        "name": "科创50",
+        "close": 1389.36,
+        "quality": "healthy",
+        "returns": {
+          "5": -11.468515426867343,
+          "20": -13.9997400233979,
+          "60": -30.33414898311204,
+          "120": -1.1180937604532204
+        },
+        "return_pct": -2.6185936974318813,
+        "slope5_pct": -2.525869955655069,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 34.22583811972449,
+        "max_drawdown20_pct": -16.556959592562347
+      },
+      {
+        "id": "sz399006",
+        "ma20": 3234.9885,
+        "name": "创业板指",
+        "close": 2879.11,
+        "quality": "healthy",
+        "returns": {
+          "5": -8.383292602209657,
+          "20": -15.28740569868301,
+          "60": -22.677735046407697,
+          "120": -19.09271525039834
+        },
+        "return_pct": -2.8581357842244137,
+        "slope5_pct": -2.4798247826023467,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": 26.750573708764332,
+        "max_drawdown20_pct": -15.31855067604332
+      },
+      {
+        "id": "csi000510",
+        "ma20": null,
+        "name": "中证A500",
+        "close": null,
+        "quality": "unavailable",
+        "returns": {
+          "5": null,
+          "20": null,
+          "60": null,
+          "120": null
+        },
+        "return_pct": null,
+        "slope5_pct": null,
+        "trade_date": "2026-10-13",
+        "source_name": "东方财富指数日线",
+        "reason_codes": [
+          "INDEX_SOURCE_UNAVAILABLE"
+        ],
+        "source_endpoint": "stock_zh_index_daily_em",
+        "volatility20_pct": null,
+        "max_drawdown20_pct": null
+      }
+    ],
+    "quality": {
+      "status": "healthy",
+      "sources": [
+        "东方财富ETF二级行情",
+        "东方财富前复权日线",
+        "东方财富指数日线",
+        "新浪交易日历",
+        "沪深证券目录",
+        "腾讯证券公开行情"
+      ],
+      "reason_codes": [
+        "OPTIONAL_INDEX_SOURCE_UNAVAILABLE",
+        "BREADTH_HISTORY_INCOMPLETE"
+      ]
+    },
+    "input_hash": "81effea53421f4a81e9d4969b28ed28f4071c6566c517cb49ce07f13f0a51b29",
+    "trade_date": "2026-10-13",
+    "volatility": {
+      "risk_level": "low",
+      "volatility20_pct": 17.52316639021595,
+      "reference_samples": 120,
+      "max_drawdown20_pct": -8.970372246138258
+    },
+    "methodology": {
+      "flow": "(当日可比份额−前交易日份额)×同日单位净值；金额CNY元。",
+      "equal": "每日可比收益均值复合；基准1000；缺少连续合格历史时不续接。",
+      "trend": "中证全指：收盘/MA20、MA20五日斜率、20日收益三项同向判UP/DOWN，否则FLAT。",
+      "median": "每日收益中位数复合，不是一段时间个股累计收益的中位数。",
+      "breadth": "MA20广度五交易日变化≥+5pp扩张，≤−5pp收缩，其他稳定。",
+      "coverage": "≥98%完整；90%至98%部分；不足90%或历史股票池未知不得确认主状态。",
+      "research": "初版阈值待验证，不输出收益优势、交易概率或机构身份。",
+      "strength": "同一成员窗口金额总和÷窗口期初份额×净值规模总和×100。",
+      "universe": "沪深普通A股，含ST；北交所/B股/ETF排除。停牌单列；新股均线资格分别判断。",
+      "liquidity": "成交活跃比以此前20个完整交易日均额为分母，不含当日。",
+      "volatility": "20日收益样本标准差×sqrt(252)，最大回撤按同窗口收盘；仅描述风险。",
+      "flow_window": "连续1/5/20交易日逐日金额求和，缺任一天完整金额为null。",
+      "confirmation": "连续两个完整收盘候选相同才确认；盘中暂算不覆盖EOD。",
+      "rules_version": "market-structure-rules-v1.0.0",
+      "mapping_version": "market-structure-etf-mapping-v1",
+      "relative_strength": "同日期区间收益相减，单位百分点。"
+    },
+    "benchmark_id": "sh000985",
+    "etf_nav_date": "2026-10-12",
+    "generated_at": "2026-10-13T04:32:18.068095Z",
+    "rules_version": "market-structure-rules-v1.0.0",
+    "facts_cutoff_at": "2026-10-13T04:32:18.068095+00:00",
+    "mapping_version": "market-structure-etf-mapping-v1",
+    "material_changes": [
+      {
+        "unit": "pp",
+        "label": "MA20广度",
+        "value": 21.756678839131272,
+        "change": -8.75081827736238,
+        "metric_id": "above_ma20_pct",
+        "trade_date": "2026-10-13",
+        "previous_value": 30.507497116493653
+      },
+      {
+        "unit": "pp",
+        "label": "当日收益中位数",
+        "value": -1.81,
+        "change": -0.11405440500000008,
+        "metric_id": "median_return_pct",
+        "trade_date": "2026-10-13",
+        "previous_value": -1.695945595
+      }
+    ],
+    "style_assessment": {
+      "labels": [
+        "mixed"
+      ],
+      "threshold_pp": 1
+    },
+    "history_integrity": "observed",
+    "first_available_at": "2026-10-13T04:32:18.068095Z",
+    "etf_share_trade_date": "2026-10-12",
+    "etf_funding_assessment": {
+      "quality": "unavailable",
+      "direction": "pending",
+      "coverage_mode": "representative_sample",
+      "covered_subtotal_5d_cny": null
+    }
+  },
+  "quality": {
+    "status": "healthy",
+    "sources": [
+      "东方财富ETF二级行情",
+      "东方财富前复权日线",
+      "东方财富指数日线",
+      "新浪交易日历",
+      "沪深证券目录",
+      "腾讯证券公开行情"
+    ],
+    "reason_codes": [
+      "OPTIONAL_INDEX_SOURCE_UNAVAILABLE",
+      "BREADTH_HISTORY_INCOMPLETE"
+    ]
+  },
+  "ai_enabled": false,
+  "methodology": {
+    "flow": "(当日可比份额−前交易日份额)×同日单位净值；金额CNY元。",
+    "equal": "每日可比收益均值复合；基准1000；缺少连续合格历史时不续接。",
+    "trend": "中证全指：收盘/MA20、MA20五日斜率、20日收益三项同向判UP/DOWN，否则FLAT。",
+    "median": "每日收益中位数复合，不是一段时间个股累计收益的中位数。",
+    "breadth": "MA20广度五交易日变化≥+5pp扩张，≤−5pp收缩，其他稳定。",
+    "coverage": "≥98%完整；90%至98%部分；不足90%或历史股票池未知不得确认主状态。",
+    "research": "初版阈值待验证，不输出收益优势、交易概率或机构身份。",
+    "strength": "同一成员窗口金额总和÷窗口期初份额×净值规模总和×100。",
+    "universe": "沪深普通A股，含ST；北交所/B股/ETF排除。停牌单列；新股均线资格分别判断。",
+    "liquidity": "成交活跃比以此前20个完整交易日均额为分母，不含当日。",
+    "volatility": "20日收益样本标准差×sqrt(252)，最大回撤按同窗口收盘；仅描述风险。",
+    "flow_window": "连续1/5/20交易日逐日金额求和，缺任一天完整金额为null。",
+    "confirmation": "连续两个完整收盘候选相同才确认；盘中暂算不覆盖EOD。",
+    "rules_version": "market-structure-rules-v1.0.0",
+    "mapping_version": "market-structure-etf-mapping-v1",
+    "relative_strength": "同日期区间收益相减，单位百分点。"
+  },
+  "last_sync_at": "2026-10-13T04:33:42.602813+00:00",
+  "history_summary": {
+    "status": 200,
+    "first": "2026-04-14",
+    "last": "2026-10-13",
+    "days": 121
+  }
+}

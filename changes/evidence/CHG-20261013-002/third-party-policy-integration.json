@@ -1,0 +1,64 @@
+{
+  "processed_generations": 121,
+  "new_generations": 121,
+  "start": "2026-04-14",
+  "end": "2026-10-13",
+  "elapsed_seconds": 4.706,
+  "overview": {
+    "trade_date": "2026-10-13",
+    "rules_version": "market-structure-rules-v1.2.0",
+    "stats": {
+      "quality": "healthy",
+      "raw_unit": "%",
+      "data_time": "2026-10-13T15:00:00+08:00",
+      "entity_id": "legu:market-activity",
+      "raw_value": {
+        "上涨": "2790",
+        "下跌": "2267",
+        "停牌": "13",
+        "平盘": "155",
+        "涨停": "70",
+        "跌停": "10",
+        "活跃度": "活跃度 53.40%",
+        "st st*涨停": "3",
+        "st st*跌停": "2",
+        "真实涨停": "62",
+        "真实跌停": "5"
+      },
+      "fetched_at": "2026-10-13T08:14:19.621710+00:00",
+      "flat_count": 155,
+      "trade_date": "2026-10-13",
+      "source_name": "乐咕乐股沪深市场赚钱效应",
+      "history_mode": "observed",
+      "reason_codes": [],
+      "rising_count": 2790,
+      "falling_count": 2267,
+      "first_seen_at": "2026-10-13T08:14:19.621710+00:00",
+      "source_metric": "活跃度",
+      "source_version": "1.18.64",
+      "normalized_unit": "%",
+      "source_endpoint": "https://legulegu.com/stockdata/market-activity",
+      "suspended_count": 13,
+      "rising_ratio_pct": 53.4,
+      "observation_phase": "eod",
+      "source_published_at": null,
+      "normalization_factor": 1,
+      "observation_trade_date": "2026-10-13"
+    },
+    "disabled_fields": {
+      "average_nominal_price_cny": null,
+      "median_return_pct": null,
+      "equal_weight_index": null,
+      "median_index": null,
+      "above_ma20_pct": null,
+      "new_high_close_20_count": null
+    },
+    "regime": "INSUFFICIENT_EVIDENCE",
+    "a500": 5222.87,
+    "ths_all_a": {
+      "close": null,
+      "quality": "unavailable",
+      "turnover_cny": null
+    }
+  }
+}

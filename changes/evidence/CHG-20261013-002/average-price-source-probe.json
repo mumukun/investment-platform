@@ -1,0 +1,32 @@
+{
+  "tested_at": "2026-10-13T07:49:33.164526+00:00",
+  "kind": "live_public_nonproduction_read_only",
+  "scope": "830000 availability; 883421 is a control, not a replacement",
+  "results": [
+    {
+      "url": "https://d.10jqka.com.cn/v6/line/bk_830000/01/last1200.js",
+      "http_status": 404,
+      "body_prefix": "",
+      "bytes": 0
+    },
+    {
+      "url": "https://d.10jqka.com.cn/v6/line/bk_883421/01/last1200.js",
+      "http_status": 200,
+      "body_prefix": "quotebridge_v6_line_bk_883421_01_last1200({\"rt\":\"0930-1130,1300-1500\",\"num\":690,\"total\":\"690\",\"start\":\"20231204\",\"year\":{\"2023\":20,\"2024\":242,\"2025\":243,\"2026\":185},\"name\":\"\\u540c\\u82b1\\u987a\\u5168A(\\u6caa\\u6df1)\",\"data\":\"20231204,1000.540,1003.801,998.582,1000.108,70463198000,851006770000.000,,,,0;20231205,998.141,998.141,982.226,982.226,69683536000,822362670000.000,,,,0;20231206,980.213,993.297,979.764,987.010,69641478000,816885150000.000,,,,0;",
+      "bytes": 54779
+    },
+    {
+      "url": "https://qt.gtimg.cn/q=sh830000,sz830000,bk830000,zs830000",
+      "http_status": 200,
+      "body_prefix": "v_pv_none_match=\"1\";\n",
+      "bytes": 21
+    },
+    {
+      "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=90.830000&fields=f57,f58,f43",
+      "http_status": 200,
+      "body_prefix": "{\"rc\":100,\"rt\":1,\"svr\":183640256,\"lt\":1,\"full\":1,\"dlmkts\":\"\",\"dsc\":\"0\",\"data\":null}",
+      "bytes": 83
+    }
+  ],
+  "status": "830000_SOURCE_NOT_READY"
+}

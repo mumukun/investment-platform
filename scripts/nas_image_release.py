@@ -261,6 +261,10 @@ class Deployer:
                             ],
                         }
                     )
+                if component == "web" and "VITE_MARKET_STRUCTURE_ENABLED" in candidate["build_args"]:
+                    required["investment-platform.market-structure"] = candidate["build_args"][
+                        "VITE_MARKET_STRUCTURE_ENABLED"
+                    ]
                 require(
                     all(labels.get(key) == value for key, value in required.items()),
                     "image label/source mismatch",

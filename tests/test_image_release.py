@@ -446,5 +446,18 @@ class DeploymentTests(unittest.TestCase):
             git.assert_not_called()
 
 
+class MarketStructureBuildIdentityTests(unittest.TestCase):
+    def test_new_dashboard_requires_module_build_identity_and_legacy_survives(self):
+        value = candidate("investment-research-dashboard")
+        value["version"] = "0.18.1"
+        value["build_args"].pop("VITE_MARKET_STRUCTURE_ENABLED")
+        release.validate_candidate(value)
+        value["version"] = "0.19.0"
+        with self.assertRaisesRegex(ValueError, "build arguments"):
+            release.validate_candidate(value)
+        value["build_args"]["VITE_MARKET_STRUCTURE_ENABLED"] = "true"
+        release.validate_candidate(value)
+
+
 if __name__ == "__main__":
     unittest.main()

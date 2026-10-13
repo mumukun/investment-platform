@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "requests": 20,
+    "p95_ms": 600.0542499823496,
+    "median_ms": 423.33335350849666,
+    "bytes": 4966896,
+    "scope": "localhost cached data, not production or cold browser navigation"
+  },
+  "overview": {
+    "requests": 20,
+    "p95_ms": 1915.9558330429718,
+    "median_ms": 560.2944994752761,
+    "bytes": 5203340,
+    "scope": "localhost cached data, not production or cold browser navigation"
+  },
+  "history": {
+    "requests": 20,
+    "p95_ms": 643.8511660089716,
+    "median_ms": 498.02187498426065,
+    "bytes": 5361051,
+    "scope": "localhost cached data, not production or cold browser navigation"
+  }
+}

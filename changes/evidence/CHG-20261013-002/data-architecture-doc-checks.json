@@ -1,0 +1,20 @@
+{
+  "data-architecture-2026-10-13.md": {
+    "lines": 501,
+    "absolute_links": 13,
+    "fences": "balanced"
+  },
+  "data-model-fields-2026-10-13.md": {
+    "lines": 1046,
+    "absolute_links": 3,
+    "fences": "balanced"
+  },
+  "inventory": {
+    "tables": 58,
+    "provider": 32,
+    "news": 11,
+    "dashboard": 15,
+    "main_document_coverage": "58/58",
+    "ORM_column_coverage": "pass"
+  }
+}

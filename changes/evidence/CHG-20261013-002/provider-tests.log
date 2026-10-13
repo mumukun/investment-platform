@@ -1,0 +1,39 @@
+2026-10-13 12:14:47,985 INFO test retention pruned: keep_dates=2 deleted=1.
+.........2026-10-13 12:14:47,994 INFO Hotmap starting day=2026-07-17 mode=intraday dry_run=True reports=morning
+2026-10-13 12:14:47,995 INFO Morning premarket empty template: skip A-share snapshot and indicator pipeline.
+.......2026-10-13 12:14:48,000 INFO 历史涨停池已应用：1 只。
+.....................2026-10-13 12:14:48,028 ERROR 异动事件写入主库失败，已跳过外部推送: database unavailable
+.2026-10-13 12:14:48,030 INFO ALERT 600001 快速上涨 2分钟+3pct -> Discord/飞书
+2026-10-13 12:14:48,031 INFO Alert records written to PostgreSQL: 1.
+2026-10-13 12:14:48,031 INFO Alert monitor evaluated=1 fired=1 max_up=600001 测试股份 +3.00% max_down=600001 测试股份 +3.00%
+.2026-10-13 12:14:48,035 WARNING 异动推送不完整，已加入补推队列: code=600001 trigger=日内涨幅 channels=Discord
+2026-10-13 12:14:48,035 INFO ALERT 600001 日内涨幅 +3% -> 飞书
+2026-10-13 12:14:48,035 INFO Alert records written to PostgreSQL: 1.
+2026-10-13 12:14:48,036 INFO Alert monitor evaluated=1 fired=1 max_up=600001 测试股份 +3.00% max_down=600001 测试股份 +3.00%
+2026-10-13 12:14:48,037 INFO 异动待补推成功: code=600001 trigger=日内涨幅 channels=Discord
+2026-10-13 12:14:48,038 INFO Alert monitor evaluated=1 fired=0 max_up=600001 测试股份 +3.00% max_down=600001 测试股份 +3.00%
+.......................2026-10-13 12:14:49,042 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,048 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+..2026-10-13 12:14:49,057 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,064 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+............2026-10-13 12:14:49,324 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,338 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+..2026-10-13 12:14:49,351 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,369 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+2026-10-13 12:14:49,378 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+2026-10-13 12:14:49,388 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,403 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,416 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+...2026-10-13 12:14:49,434 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+.2026-10-13 12:14:49,450 WARNING 概念分类快照读取失败，概念标签降级为空: failed to resolve host 'db': [Errno 8] nodename nor servname provided, or not known
+...2026-10-13 12:14:49,457 WARNING swing daily backfill failed for 000001: network down
+..........................................................................................................................................2026-10-13 12:14:49,518 WARNING swing quote batch failed (1 codes): network down
+......2026-10-13 12:14:49,523 INFO Carried swing observation pool from 2026-09-04 to 2026-09-07 (1 rows).
+...............2026-10-13 12:14:49,553 INFO Swing-only startup catch-up starting. jobs=startup_hotmap_cache, startup_swing_scan_daily
+2026-10-13 12:14:49,553 INFO Swing-only startup catch-up finished.
+.....................
+----------------------------------------------------------------------
+Ran 271 tests in 1.578s
+
+OK
+Config check passed.

@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://legulegu.com/stockdata/ma-statistics",
+    "http_status": 200,
+    "scripts": [
+      "https://image.legulegu.com/js/lg-charts-ma-statistics.js?date=202610112227"
+    ],
+    "tables": [
+      "统计说明 统计收盘价高于 5/20/60 日均线的股票数量占指数成分股总数的比例（0%~100%），统计时剔除停牌股，非实时更新，每天16:30左右更新。"
+    ]
+  },
+  {
+    "url": "https://legulegu.com/stockdata/high-low-statistics",
+    "http_status": 200,
+    "scripts": [
+      "/static/js/lg-charts-low-high-statistics.js?date=202610112227"
+    ],
+    "tables": [
+      "统计说明 统计创20/60/120日新高、创20/60/120日新低的个股的数量，统计时剔除停牌股。"
+    ]
+  }
+]
