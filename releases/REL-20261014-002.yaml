@@ -1,0 +1,38 @@
+schema_version: "1.0"
+release_id: REL-20261014-002
+status: BLOCKED
+release_profile: routine
+created_at: "2026-10-14T07:37:43+08:00"
+updated_at: "2026-10-14T07:37:43+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.4
+    previous_commit_sha: f0324d1c5e0171f82abe1ef2da36b1476c389f8e
+    rollback_image_id: sha256:43d150511eb81c4c95ebbe191106a54c4fc1bb81887d0f0ba569d856ace39857
+    new_version: v2.3.5
+    tag: v2.3.5
+    commit_sha: c14b44683416e1d59f738ceec83443d19079adef
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: NOT_BUILT_ON_NAS
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/2
+    ci: "No Actions workflows; 28 affected local tests passed."
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: BLOCKED
+  reason: "Root-owned global lock requires administrator terminal invocation. Command prepared and requested; no unlocked mutation."
+verification:
+  status: PRE_DEPLOY_PASSED
+  evidence:
+    - "8 resume API/storage tests, 19 CTEE regressions, 1 admin research contract test PASS."
+    - "Config, compileall, diff and prepared command bash syntax checks PASS."
+  known_limitations:
+    - "Old pause not cleared until v2.3.5 deployed and authenticated original-site probe succeeds."
+    - "Resume permits next scheduled low-frequency retry, not forced push."
+rollback:
+  status: PREVIOUS_IDENTITY_VERIFIED
+  evidence:
+    - "v2.3.4 actual production verified in REL-20261014-001; preserve local image/config and readable backup before switch."
+notes:
+  - "Existing authorization includes commit, merge and formal release; user additionally requested old-state clearance."
