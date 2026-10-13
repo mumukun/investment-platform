@@ -1,0 +1,48 @@
+{
+  "release_id": "REL-20261014-001",
+  "status": "SUCCESS",
+  "tag": "v2.3.4",
+  "commit_sha": "f0324d1c5e0171f82abe1ef2da36b1476c389f8e",
+  "image_id": "sha256:43d150511eb81c4c95ebbe191106a54c4fc1bb81887d0f0ba569d856ace39857",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "completed_at": "2026-10-14T07:26:27+08:00",
+  "execution": "Administrator invoked existing deployment entry under global flock",
+  "backup": {
+    "path": "/volume1/docker/marketNewsFeed/data/backups/v2.3.4-ttG1gJUX/market_news.dump",
+    "bytes": 66278010,
+    "sha256": "0e706508a670a1c3d85e72710393ce58c517f34a8f6d75aa4bfae0991266fa01",
+    "directory_mode": "0700",
+    "file_mode": "0600",
+    "readability": "pg_restore -l PASS",
+    "runtime_env_retained": true
+  },
+  "health": {
+    "ok": true,
+    "enabled_child_processes": 6,
+    "restart_count": 0
+  },
+  "source_smoke": {
+    "execution": "isolated --rm container using exact production image, actual NAS env and host proxy",
+    "curl_cffi": "0.16.3",
+    "category": "semi",
+    "api_status": 403,
+    "html_status": 200,
+    "recent_articles": 5,
+    "stable_ctee_ids": true,
+    "direct_fallback": false,
+    "no_llm_or_push": true,
+    "no_business_state_write": true
+  },
+  "natural_collection": {
+    "status": "WAITING_EXISTING_CIRCUIT",
+    "blocked_until": "2026-10-14T11:34:11+08:00"
+  },
+  "rollback": {
+    "tag": "v2.3.3",
+    "commit_sha": "deb075480b57f448b10d6de6880401a7a23fdc47",
+    "image_id": "sha256:517b71ef8f501f9a64a22d878653178c5b6550449709080583eb3edf6ced1c05",
+    "retained_image_tag": "marketnewsfeed-market-news-feed:rollback-v2.3.3",
+    "retained": true,
+    "rehearsed": false
+  }
+}
