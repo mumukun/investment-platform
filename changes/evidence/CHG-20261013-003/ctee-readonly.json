@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-14",
+  "scope": "Read-only original CTEE source through current NAS Mihomo proxy; no LLM, database writes or notifications",
+  "comparison": {
+    "same_endpoint": "/api/category/semi/1",
+    "old_client": {"curl_cffi": "0.13.0", "chrome_profile": "chrome136", "http_status": 403, "cf_mitigated": "challenge"},
+    "new_client": {"curl_cffi": "0.16.3", "chrome_profile": "chrome150", "http_status": 200},
+    "new_public_channel_page_http_status": 200
+  },
+  "actual_project_function": {
+    "function": "ctee.source._fetch_channel_articles",
+    "channel": "semi",
+    "http_status": 200,
+    "recent_articles": 15,
+    "stable_ctee_ids": true,
+    "sample_content_lengths": [200, 200, 200]
+  },
+  "isolated_linux_image": {
+    "image": "market-news-feed:chg-20261013-003-ctee-validation",
+    "runtime": "linux/amd64 Python 3.13",
+    "curl_cffi": "0.16.3",
+    "channel": "livenews/tech",
+    "http_status": 200,
+    "recent_articles": 45,
+    "stable_ctee_ids": true,
+    "sample_content_lengths": [200, 200, 200]
+  },
+  "final_request_hardening": {
+    "runtime": "linux/amd64 Python 3.13",
+    "channel": "semi",
+    "http_status": 200,
+    "recent_articles": 15,
+    "stable_ctee_ids": true,
+    "direct_fallback_enabled": false,
+    "mocked_regression_tests": 30,
+    "covered": ["API and HTML request header isolation", "429 stops fallback requests", "Retry-After seconds and HTTP-date parsing", "pause persists past configured backoff ceiling", "shared MKTNews behavior remains compatible"]
+  },
+  "limits": [
+    "Local isolated validation image, not a deployment to the NAS application container",
+    "Preserves existing API content field; does not add full article-body fetching",
+    "Does not prove production natural polling or message delivery",
+    "No user browser cookies or private profiles were copied",
+    "Future source policy changes may require another compatibility update or publisher authorization"
+  ]
+}
