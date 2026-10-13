@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261013-004",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "created_at": "2026-10-13T11:21:27.833661+00:00",
+  "updated_at": "2026-10-13T15:29:17.665805+00:00",
+  "changes": [
+    "CHG-20261013-002"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.24.1",
+      "new_version": "3.24.2",
+      "tag": "v3.24.2",
+      "commit_sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa"
+      },
+      "artifact_id": {
+        "app": "sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679"
+      },
+      "rollback_version": "v3.24.1",
+      "rollback_commit_sha": "83afa02b2afcde42a11c9d8834657491ff0865ca",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:aa1d05467464c4dfb9c1f519d7af841bc92a3d755f87b372fa5dec653fcbf253"
+      },
+      "rollback_artifact_id": {
+        "app": "sha256:98ddd3cd5e4bcf81381256cda19f54782c312585b5432f8c63a84452fc996dde"
+      },
+      "business_pr": "https://github.com/mumukun/stock-analyzer/pull/11",
+      "candidate_evidence": "releases/evidence/REL-20261013-004/stock-analyzer/candidate.json"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.19.2",
+      "new_version": "0.19.3",
+      "tag": "v0.19.3",
+      "commit_sha": "ad357aa186dea935309de90f344de37d976db980",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191"
+      },
+      "artifact_id": {
+        "api": "sha256:b019b7405d88738ce41de26628bca302e4bfe98259701c790dcfa89503c8e65b",
+        "web": "sha256:651495d8aefb9e87436a35ff990f11a40968f51b626bfe4638c91794033c735f"
+      },
+      "rollback_version": "v0.19.2",
+      "rollback_commit_sha": "4d43e180df5bfbd53f03d4e6c83c794b40020c93",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:082ffde2c91d1f602323f5ab370cfb1eda06bce03c5d76a7295335b070e9daf9",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bb53539d07d184f217230f57e24a9b8a72796d028cf118df930add5fc3077d98"
+      },
+      "rollback_artifact_id": {
+        "api": "sha256:f110b9d78882221275276ca1a3ca4ba9d7e7527d2a0ddc07fa2b8f398422288c",
+        "web": "sha256:dc78020e4a0ffe1b2ce6cfe46b7d4722bb9eeeb861d179fb4955a85a193ac84d"
+      },
+      "business_pr": "https://github.com/mumukun/investment-research-dashboard/pull/14",
+      "candidate_evidence": "releases/evidence/REL-20261013-004/investment-research-dashboard/candidate.json"
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Same CHG-20261013-002 source-policy correction; user now does not recommend Legu. Earlier explicit 开发完成之后就进行提交代码 发版本吧 authorization persists."
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/evidence/CHG-20261013-002/legu-removal-validation.json",
+      "releases/evidence/REL-20261013-004/deployment.receipt.json",
+      "releases/evidence/REL-20261013-004/statistics-cache.receipt.json",
+      "releases/evidence/REL-20261013-004/page-asset.receipt.json"
+    ],
+    "known_limitations": [
+      "No replacement market statistics vendor activated; counts/percentage missing. MA breadth/regime confirmation remain paused.",
+      "Historical Legu facts/generations retained for audit; no DB/history deletion. Historical valuation backfill lacks PE/PB/market cap source and leaves those fields empty.",
+      "No production browser OAuth rerun or Feishu valuation backfill execution."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION",
+    "evidence": [
+      "releases/evidence/REL-20261013-004/deployment.receipt.json"
+    ]
+  },
+  "timing_started_at": "2026-10-13T11:15:20+00:00",
+  "timing_limitation": "First retained clock during this source-removal turn; initial read-only inspection started earlier. Includes subsequent development/PR/CI/build/deployment as lower bound.",
+  "notes": [
+    "Stop Legu collection, new-generation use, current/legacy-cache UI statistics and optional historical-valuation backfill. Average price and ETF sources unchanged."
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261013-004/image-release.plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261013-004/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "started_at": "2026-10-13T11:29:49.103287+00:00",
+    "completed_at": "2026-10-13T11:35:15.818294+00:00",
+    "elapsed_seconds": 326.7
+  },
+  "receipt_recovery": {
+    "verified_at": "2026-10-13T15:25:51.114519+00:00",
+    "original_ssh_stream_stalled_seconds_lower_bound": 13835.3,
+    "no_repeat_deployment": true,
+    "cache_update": "Already automatically synchronized; read-only live configured Bearer API/cache check passed, no manual compute or projection write."
+  },
+  "observed_handling_lower_bound_seconds": 15237.7
+}

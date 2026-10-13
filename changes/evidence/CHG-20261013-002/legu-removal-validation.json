@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "tested_at": "2026-10-13T11:18:26.679955+00:00",
+  "scope": "fixture/local isolated PostgreSQL; no production write during tests",
+  "provider_tests": 21,
+  "consumer_contract_projection_tests": 9,
+  "frontend_tests": 3,
+  "frontend_type_build": "PASS",
+  "provider_compileall": "PASS",
+  "regressions": [
+    "collector does not call disabled Legu source",
+    "persisted legacy statistics do not appear in new generation, sources or timestamp",
+    "average-price remains original Eastmoney OHLC"
+  ],
+  "production_verification": {
+    "status": "PASS",
+    "evidence": "releases/evidence/REL-20261013-004/statistics-cache.receipt.json",
+    "scope": "separate live configured Bearer API and persisted Consumer read-only check"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scope": "production live configured Bearer Provider API -> persisted Consumer cache/route query; no browser OAuth rerun",
+  "tested_at": "2026-10-13T15:26:28.145050+00:00",
+  "days": 121,
+  "actual_market_trade_date": "2026-10-13",
+  "latest": {
+    "id": "eastmoney:47.800005",
+    "low": 25.14,
+    "code": "800005",
+    "high": 26.44,
+    "name": "A股平均股价",
+    "open": 25.58,
+    "unit": "元/股",
+    "close": 26.17,
+    "quality": "healthy",
+    "trade_date": "2026-10-13",
+    "source_name": "东方财富A股平均股价",
+    "reason_codes": [],
+    "first_seen_at": "2026-10-13T10:45:35.877262Z",
+    "source_endpoint": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+    "observation_phase": "eod"
+  },
+  "disabled_statistics_null": true,
+  "disabled_source_absent": true,
+  "old_830000_close": null,
+  "local_stock_average": null,
+  "rules_version": "market-structure-rules-v1.2.2",
+  "quality": {
+    "status": "partial",
+    "sources": [
+      "东方财富A股平均股价",
+      "东方财富ETF二级行情",
+      "东方财富单位净值",
+      "东方财富指数日线",
+      "同花顺全A(沪深)",
+      "新浪交易日历"
+    ],
+    "reason_codes": [
+      "SELF_BUILT_STATISTICS_DISABLED",
+      "THIRD_PARTY_MARKET_STATISTICS_DISABLED",
+      "BREADTH_HISTORY_INCOMPLETE"
+    ]
+  },
+  "build_time": "2026-10-13T11:24:35Z",
+  "app_url": "http://s.freemumu.top:9360"
+}
