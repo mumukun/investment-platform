@@ -447,6 +447,38 @@ class DeploymentTests(unittest.TestCase):
 
 
 class MarketStructureBuildIdentityTests(unittest.TestCase):
+    def test_new_flags_are_checked_on_target_checkout_before_start(self):
+        with tempfile.TemporaryDirectory() as directory:
+            value = entry("investment-research-dashboard")
+            release_plan = plan()
+            release_plan["repositories"] = [value]
+            release_plan["release_order"] = ["investment-research-dashboard"]
+            config = {"repositories": {"investment-research-dashboard": {"version_command": ["version"]}}}
+            deployer = nas.Deployer(release_plan, config, Path(directory) / "state.json")
+            switched, started = [], []
+
+            def git(_, *args):
+                if args[0] == "checkout":
+                    switched.append(args[-1])
+                return value["expected_production"]["commit_sha"]
+
+            def compose(_, overlay, *args):
+                if args[0] == "config":
+                    self.assertEqual(switched, [value["candidate"]["commit_sha"]])
+                    return json.dumps({"services": {"web": {"build": {"args": value["candidate"]["build_args"]}}}})
+                started.append(args[0])
+
+            with ExitStack() as stack:
+                for name in ("tag_check", "backup", "verify", "overlay"):
+                    stack.enter_context(patch.object(deployer, name))
+                stack.enter_context(patch.object(deployer, "git", side_effect=git))
+                stack.enter_context(patch.object(deployer, "compose", side_effect=compose))
+                stack.enter_context(patch.object(deployer, "current_images", return_value=value["expected_production"]["image_ids"]))
+                stack.enter_context(patch.object(deployer, "inspect_images", return_value={"api": "new", "web": "new"}))
+                stack.enter_context(patch("nas_image_release.run", return_value=value["expected_production"]["tag"][1:]))
+                deployer.deploy(value)
+            self.assertEqual(started, ["up"])
+
     def test_new_dashboard_requires_module_build_identity_and_legacy_survives(self):
         value = candidate("investment-research-dashboard")
         value["version"] = "0.18.1"
