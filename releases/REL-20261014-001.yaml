@@ -1,11 +1,11 @@
 schema_version: "1.0"
 release_id: REL-20261014-001
-status: BLOCKED
+status: RELEASED
 release_profile: routine
 release_target_seconds: 300
 assistant_review_target_seconds: 60
 created_at: "2026-10-14T00:48:07+08:00"
-updated_at: "2026-10-14T00:47:53+08:00"
+updated_at: "2026-10-14T07:27:33+08:00"
 changes: [CHG-20261013-003]
 repositories:
   - repository: marketNewsFeed
@@ -16,29 +16,34 @@ repositories:
     tag: v2.3.4
     commit_sha: f0324d1c5e0171f82abe1ef2da36b1476c389f8e
     artifact_model: SOURCE_TAG_BUILD
-    artifact: NOT_BUILT_ON_NAS
+    artifact: sha256:43d150511eb81c4c95ebbe191106a54c4fc1bb81887d0f0ba569d856ace39857
     pull_request: https://github.com/mumukun/marketNewsFeed/pull/1
     ci: "No Actions workflows; reuse 30 affected local tests and final Linux amd64 build/source evidence."
+deployment_receipts:
+  - evidence/REL-20261014-001/deployment.receipt.json
 release_order: [marketNewsFeed]
 deployment:
   environment: Synology NAS
-  status: BLOCKED
-  reason: "Global release.lock is root-only; current SSH identity lacks lock access. Existing nas-image-release configuration excludes marketNewsFeed. Administrator execution requested; no unlocked production mutation."
+  status: SUCCESS
+  completed_at: "2026-10-14T07:26:27+08:00"
+  execution: "Administrator invoked prepared command under NAS global flock; existing deploy.sh built and switched exact immutable tag."
 verification:
-  status: PRE_DEPLOY_PASSED
+  status: PASSED
   evidence:
     - ../changes/evidence/CHG-20261013-003/ctee-readonly.json
     - "30 affected unit tests, config/compileall/Compose/diff checks PASS."
     - "Final Linux amd64 Python 3.13 source request through NAS proxy HTTP 200, 15 original CTEE semi items."
-    - "Previous production /api/health ok=true; not new-version health."
+    - "Exact production image source smoke: HTML HTTP 200, 5 recent original CTEE items, stable IDs, no direct fallback."
+    - "New production /api/health ok=true; supervisor and six enabled Python children running."
   known_limitations:
     - "Original API content field semantics retained; not a new full-article scraper."
-    - "Natural production collection/push not yet verified. Persisted circuit retained."
+    - "Natural production collection/push not yet verified. Persisted circuit retained until 2026-10-14 11:34:11 Asia/Shanghai."
+    - "Post-deploy semi JSON API returned 403; original-site HTML fallback returned 200 and parsed 5 recent items. Earlier API 200 evidence remains historical, not current guarantee."
     - "Low-frequency round-robin can delay or miss articles. Future site restrictions remain possible."
 rollback:
   status: IDENTITY_VERIFIED_NOT_REHEARSED
   evidence:
-    - "Retain old image and protected env/database backup before actual switch; none created yet."
+    - "Old image retained as marketnewsfeed-market-news-feed:rollback-v2.3.3; protected runtime.env and readable custom-format dump created at /volume1/docker/marketNewsFeed/data/backups/v2.3.4-ttG1gJUX."
 notes:
-  - "Business PR merged; this governance closeout records the blocked deployment."
-  - "User explicitly authorized commit, merge and formal release after verification. Production release not complete."
+  - "Previous lock blocker resolved by administrator execution; current closeout records actual deployment."
+  - "User explicitly authorized commit, merge and formal release. Original-source smoke uses an isolated container of the exact production image, with no LLM, push or business-state writes."
