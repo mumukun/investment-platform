@@ -40,5 +40,5 @@ rollback:
   evidence:
     - "Retain old image and protected env/database backup before actual switch; none created yet."
 notes:
-  - "Only business repository PR merged. Governance records currently local pending terminal closeout."
+  - "Business PR merged; this governance closeout records the blocked deployment."
   - "User explicitly authorized commit, merge and formal release after verification. Production release not complete."
