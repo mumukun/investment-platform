@@ -1,0 +1,4605 @@
+{
+  "schema_version": 1,
+  "scope": "read-only source AST; not runtime trace or production schema",
+  "tables": {
+    "market_structure_fact": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_store.py",
+        "function": "save_facts",
+        "line": 17,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_store.py",
+        "function": "load_facts",
+        "line": 47,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_sync.py",
+        "function": "collect",
+        "line": 78,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "market_structure_generation": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_store.py",
+        "function": "save_generation",
+        "line": 130,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_store.py",
+        "function": "generations",
+        "line": 149,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "a_share_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "_upsert_snapshot",
+        "line": 469,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "latest_snapshot",
+        "line": 511,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_limit_up_history",
+        "line": 693,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "latest_scored_snapshot",
+        "line": 773,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "previous_limit_streaks",
+        "line": 855,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_eod_history_for_codes",
+        "line": 864,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_sync.py",
+        "function": "collect",
+        "line": 78,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_sync.py",
+        "function": "compute",
+        "line": 342,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/sector_activity_contract.py",
+        "function": "_cached_industry_contract",
+        "line": 496,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/sector_activity_contract.py",
+        "function": "build_sector_workbench_envelope",
+        "line": 573,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_contract.py",
+        "function": "_previous_trade_date",
+        "line": 73,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_contract.py",
+        "function": "_yesterday_limit_avg_change",
+        "line": 81,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_outcomes.py",
+        "function": "_daily_path",
+        "line": 59,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_outcomes.py",
+        "function": "_atr_proxy",
+        "line": 75,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "append_completed_snapshot_bars",
+        "line": 220,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "liquid_universe",
+        "line": 320,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_outcomes.py",
+        "function": "_post_daily_bars",
+        "line": 83,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_outcomes.py",
+        "function": "settle_event",
+        "line": 157,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_sector_history_means",
+        "line": 646,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_report.py",
+        "function": "load_daily_history",
+        "line": 173,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "a_share_daily_close": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_snapshot",
+        "line": 490,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "_history",
+        "line": 806,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "close_history_count",
+        "line": 840,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_close_history",
+        "line": 845,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_contract.py",
+        "function": "_amount_vs_5d_avg",
+        "line": 99,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_contract.py",
+        "function": "_minimum_listing_date_cutoff",
+        "line": 112,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/scripts/import_trade_rules.py",
+        "function": "build_rules",
+        "line": 113,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "a_share_daily_metric": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "latest_scored_snapshot",
+        "line": 773,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "_upsert_metrics",
+        "line": 948,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "liquid_universe",
+        "line": 320,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "latest_daily_metrics_for_codes",
+        "line": 417,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_metric_rows",
+        "line": 826,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "a_share_security_profile": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_limit_up_history",
+        "line": 693,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_security_profiles",
+        "line": 895,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_security_profiles",
+        "line": 924,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/sector_activity_contract.py",
+        "function": "_cached_industry_contract",
+        "line": 496,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "security_classification_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/security_classification.py",
+        "function": "save_concept_snapshot",
+        "line": 217,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/security_classification.py",
+        "function": "refresh_concept_snapshot",
+        "line": 277,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/security_classification.py",
+        "function": "_latest_healthy_concept_snapshot",
+        "line": 320,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/security_classification.py",
+        "function": "_latest_partial_concept_snapshot",
+        "line": 336,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "security_concept_membership": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_limit_up_snapshot",
+        "line": 520,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/security_classification.py",
+        "function": "save_concept_snapshot",
+        "line": 217,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL删 DELETE",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/security_classification.py",
+        "function": "load_security_classifications",
+        "line": 352,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "job_run": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "job_run",
+        "line": 454,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "record_job_result",
+        "line": 973,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      }
+    ],
+    "security_trade_rule": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_limit_up_snapshot",
+        "line": 520,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_limit_up_history",
+        "line": 693,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_security_profiles",
+        "line": 895,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/market_structure_sync.py",
+        "function": "compute",
+        "line": 342,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "upsert_trade_rules",
+        "line": 53,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "load_trade_rules",
+        "line": 108,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "liquid_universe",
+        "line": 320,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_trade_rules",
+        "line": 680,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "limit_up_snapshot_run": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_limit_up_snapshot",
+        "line": 520,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_limit_up_history",
+        "line": 693,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "limit_up_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "save_limit_up_snapshot",
+        "line": 520,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/local_db.py",
+        "function": "load_limit_up_history",
+        "line": 693,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "intraday_market_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "save_market_snapshot_row",
+        "line": 370,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      }
+    ],
+    "intraday_sector_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "save_sector_snapshot_rows",
+        "line": 392,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      }
+    ],
+    "intraday_stock_bar": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "save_intraday_bars",
+        "line": 273,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "load_intraday_bars",
+        "line": 299,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "load_historical_poll_bars",
+        "line": 321,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_outcomes.py",
+        "function": "_entry_from_intraday",
+        "line": 58,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "save_intraday_bars",
+        "line": 500,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "insert_intraday_bars",
+        "line": 528,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_today_bars",
+        "line": 556,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_latest_today_bars",
+        "line": 579,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_same_time_amount_history",
+        "line": 601,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "count_intraday_history_days",
+        "line": 811,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "short_candidate_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "save_candidate_snapshots",
+        "line": 122,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "latest_candidate_states",
+        "line": 164,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "short_signal_event": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+        "function": "investment_dashboard_short_selection_history",
+        "line": 805,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_outcomes.py",
+        "function": "_events_to_settle",
+        "line": 43,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "record_signal_event",
+        "line": 184,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "list_signal_events",
+        "line": 210,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "short_signal_outcome": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_outcomes.py",
+        "function": "_events_to_settle",
+        "line": 43,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/short_engine_store.py",
+        "function": "upsert_signal_outcomes",
+        "line": 231,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      }
+    ],
+    "setup_pattern_ledger": [],
+    "short_factor_ledger": [],
+    "swing_daily_bar": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/sector_activity_contract.py",
+        "function": "_latest_complete_bar_date",
+        "line": 34,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/sector_activity_contract.py",
+        "function": "_cached_industry_contract",
+        "line": 496,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "append_completed_snapshot_bars",
+        "line": 220,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "save_swing_daily_bars",
+        "line": 261,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "load_latest_bar_date",
+        "line": 314,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_intraday_data.py",
+        "function": "recent_trade_dates",
+        "line": 169,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_swing_bars",
+        "line": 358,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "swing_index_daily": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_daily_data.py",
+        "function": "save_index_daily",
+        "line": 294,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_index_closes",
+        "line": 393,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "swing_feature_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "save_feature_snapshots",
+        "line": 91,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_feature_snapshot_map",
+        "line": 627,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "swing_setup_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_contract.py",
+        "function": "latest_setup_trade_date",
+        "line": 641,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_contract.py",
+        "function": "build_swing_stats_envelope",
+        "line": 1703,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_intraday_data.py",
+        "function": "latest_observation_codes",
+        "line": 185,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "save_setup_snapshots",
+        "line": 110,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "replace_daily_setup_snapshots",
+        "line": 132,
+        "operations": [
+          "SQL删 DELETE",
+          "SQL读 FROM/JOIN",
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_setup_snapshots",
+        "line": 170,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "latest_setup_trade_date_before",
+        "line": 187,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_previous_setup_state",
+        "line": 204,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_setup_contexts",
+        "line": 224,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "observation_dates_count",
+        "line": 690,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "update_setup_state",
+        "line": 709,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "update_setup_states",
+        "line": 763,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      }
+    ],
+    "swing_state_event": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_contract.py",
+        "function": "build_swing_history_envelope",
+        "line": 1546,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_contract.py",
+        "function": "build_swing_stats_envelope",
+        "line": 1703,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "record_state_event",
+        "line": 271,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "record_state_events",
+        "line": 289,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_state_events",
+        "line": 316,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_unsettled_events",
+        "line": 448,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "swing_signal_outcome": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_contract.py",
+        "function": "build_swing_history_envelope",
+        "line": 1546,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_contract.py",
+        "function": "build_swing_stats_envelope",
+        "line": 1703,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "save_outcome",
+        "line": 436,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_unsettled_events",
+        "line": 448,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/swing_store.py",
+        "function": "load_outcomes",
+        "line": 836,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "us_market_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "save_snapshot",
+        "line": 13,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "latest_snapshot",
+        "line": 52,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "snapshot_history",
+        "line": 78,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "us_market_calendar_event": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "upsert_calendar_events",
+        "line": 93,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "delete_calendar_events_by_source",
+        "line": 142,
+        "operations": [
+          "SQL删 DELETE",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "calendar_events",
+        "line": 152,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "us_market_calendar_run": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "save_calendar_run",
+        "line": 171,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/us_market_store.py",
+        "function": "latest_calendar_run",
+        "line": 189,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "watchlist_item": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "upsert_items",
+        "line": 209,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "list_items",
+        "line": 246,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "find_item",
+        "line": 270,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "update_item",
+        "line": 284,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "update_quotes",
+        "line": 309,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "current_revision",
+        "line": 337,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "latest_strategy_snapshot",
+        "line": 374,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "watchlist_strategy_snapshot": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "save_strategy_snapshot",
+        "line": 346,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL删 DELETE",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "latest_strategy_snapshot",
+        "line": 374,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "watchlist_alert_event": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "save_alert_events",
+        "line": 400,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "update_alert_deliveries",
+        "line": 434,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/watchlist_store.py",
+        "function": "list_alert_events",
+        "line": 451,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_center.py",
+        "function": "load_events",
+        "line": 87,
+        "operations": [
+          "SQL读 FROM/JOIN",
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_center.py",
+        "function": "_compact_input",
+        "line": 147,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_center.py",
+        "function": "call_llm",
+        "line": 283,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_center.py",
+        "function": "run",
+        "line": 621,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_doc.py",
+        "function": "load_events",
+        "line": 51,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "upsert_event",
+        "line": 311,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "update_relevance",
+        "line": 389,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "upsert_signal",
+        "line": 407,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_event_state",
+        "line": 501,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "list_dashboard_research",
+        "line": 576,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "build_briefing",
+        "line": 812,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "update_push_status",
+        "line": 950,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "update_pending_push_status",
+        "line": 978,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_retention_candidates",
+        "line": 1167,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_recency_candidates",
+        "line": 1265,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/trend_stock_report.py",
+        "function": "_recent_events",
+        "line": 94,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/trend_stock_report.py",
+        "function": "_topic_stats",
+        "line": 115,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/trend_stock_report.py",
+        "function": "build_candidates",
+        "line": 207,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_center.py",
+        "function": "load_events",
+        "line": 87,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_doc.py",
+        "function": "load_events",
+        "line": 51,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "_migrate_signals",
+        "line": 282,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "upsert_signal",
+        "line": 407,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_signal_analysis",
+        "line": 517,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "list_dashboard_research",
+        "line": 576,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "build_briefing",
+        "line": 812,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_retention_candidates",
+        "line": 1167,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/trend_stock_report.py",
+        "function": "_recent_events",
+        "line": 94,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "topic_heat": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/feishu_sync.py",
+        "function": "_upsert_topic_heat",
+        "line": 357,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/feishu_sync.py",
+        "function": "sync_pending",
+        "line": 399,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/feishu_sync.py",
+        "function": "refresh_recency_flags",
+        "line": 480,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/monitor.py",
+        "function": "_queue_feishu_topic_heat",
+        "line": 1208,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "_migrate_topic_heat",
+        "line": 238,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "update_topic_heat",
+        "line": 670,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_topic_heat_records",
+        "line": 748,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "build_briefing",
+        "line": 812,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "_should_enqueue_feishu_sync",
+        "line": 1009,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_recency_candidates",
+        "line": 1265,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "ashare_map": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "_seed_default_ashare_map",
+        "line": 295,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "ashare_names_for_topics",
+        "line": 769,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/trend_stock_report.py",
+        "function": "_mapped_stocks",
+        "line": 140,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "daily_briefings": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "save_briefing",
+        "line": 927,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      }
+    ],
+    "source_runtime_state": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_source_runtime_state",
+        "line": 142,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "mark_source_blocked",
+        "line": 157,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "mark_source_healthy",
+        "line": 211,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      }
+    ],
+    "feishu_sync_queue": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "enqueue_feishu_sync",
+        "line": 1031,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_pending_sync_items",
+        "line": 1056,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "mark_sync_success",
+        "line": 1080,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "mark_sync_failure",
+        "line": 1098,
+        "operations": [
+          "SQL改 UPDATE",
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "feishu_record_map": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_record_id",
+        "line": 1126,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "save_feishu_record_id",
+        "line": 1146,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_retention_candidates",
+        "line": 1167,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "delete_feishu_record_mappings",
+        "line": 1240,
+        "operations": [
+          "SQL删 DELETE",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/storage.py",
+        "function": "get_feishu_recency_candidates",
+        "line": 1265,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "x_watch_users": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/admin_api.py",
+        "function": "_x_user_counts",
+        "line": 77,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/admin_api.py",
+        "function": "_x_users",
+        "line": 94,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "sync_list_members",
+        "line": 146,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "list_members_sync_due",
+        "line": 205,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "active_users",
+        "line": 239,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "init_latest_post_id",
+        "line": 262,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "update_latest_post_id",
+        "line": 319,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      }
+    ],
+    "x_watch_posts": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/research_feed/report_center.py",
+        "function": "load_events",
+        "line": 87,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "init_db",
+        "line": 93,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "store_post",
+        "line": 278,
+        "operations": [
+          "SQL写 INSERT",
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "save_analysis",
+        "line": 419,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "update_push_status",
+        "line": 566,
+        "operations": [
+          "SQL改 UPDATE"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "retry_failed_pushes",
+        "line": 636,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "x_watch_api_usage": [
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/admin_api.py",
+        "function": "_x_usage",
+        "line": 123,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/admin_api.py",
+        "function": "_sync_x_list",
+        "line": 151,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "init_db",
+        "line": 93,
+        "operations": [
+          "动态表名参数/常量引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "record_usage",
+        "line": 114,
+        "operations": [
+          "SQL写 INSERT"
+        ]
+      },
+      {
+        "file": "/Users/mukun/work/workspace/stock/marketNewsFeed/src/x_watch/x_monitor.py",
+        "function": "list_members_sync_due",
+        "line": 205,
+        "operations": [
+          "SQL读 FROM/JOIN"
+        ]
+      }
+    ],
+    "dashboard_users": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "_dashboard_user_record",
+        "line": 62,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "_auth_user_from_db",
+        "line": 74,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "login",
+        "line": 145,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "change_password",
+        "line": 180,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "list_users",
+        "line": 204,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "create_user",
+        "line": 210,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+        "function": "update_user",
+        "line": 234,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/main.py",
+        "function": "lifespan",
+        "line": 34,
+        "operations": [
+          "ORM insert",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "captcha_challenges": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/login_security.py",
+        "function": "issue_captcha",
+        "line": 112,
+        "operations": [
+          "ORM delete",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/login_security.py",
+        "function": "verify_captcha",
+        "line": 154,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/login_security.py",
+        "function": "consume_captcha",
+        "line": 220,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "login_attempts": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/login_security.py",
+        "function": "enforce_login_throttle",
+        "line": 192,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/login_security.py",
+        "function": "record_login_failure",
+        "line": 238,
+        "operations": [
+          "ORM delete",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/login_security.py",
+        "function": "clear_subject_failures",
+        "line": 246,
+        "operations": [
+          "ORM delete",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "snapshots": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "system_version",
+        "line": 171,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "data_status",
+        "line": 220,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "dashboard",
+        "line": 230,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "capital_flow",
+        "line": 274,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "seat_flow",
+        "line": 427,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "seat_flow_analysis",
+        "line": 509,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "limit_up_ladder",
+        "line": 588,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "_latest_us_snapshot",
+        "line": 1653,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "us_industry_history",
+        "line": 1732,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "archived",
+        "line": 600,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "available_dates",
+        "line": 775,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "archived",
+        "line": 783,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "archive_and_return",
+        "line": 812,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "query",
+        "line": 1659,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/company_profiles.py",
+        "function": "_cached",
+        "line": 216,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/company_profiles.py",
+        "function": "build_company_profile",
+        "line": 232,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "_snapshot_reference",
+        "line": 37,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "_stored_decision_input",
+        "line": 47,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "_latest_snapshot",
+        "line": 80,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_dashboard.py",
+        "function": "load_market_dashboard_inputs",
+        "line": 21,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_dashboard.py",
+        "function": "present_stored_market_dashboard",
+        "line": 102,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_dashboard.py",
+        "function": "compose_market_dashboard",
+        "line": 116,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_data_projection.py",
+        "function": "available_snapshot_dates",
+        "line": 74,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_data_projection.py",
+        "function": "archived_snapshot",
+        "line": 90,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_data_projection.py",
+        "function": "sync_capital_flow_snapshot",
+        "line": 108,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_data_projection.py",
+        "function": "sync_short_selection_snapshot",
+        "line": 146,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_structure.py",
+        "function": "sync_projection",
+        "line": 177,
+        "operations": [
+          "ORM insert",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_structure.py",
+        "function": "read_projection",
+        "line": 208,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "available_review_dates",
+        "line": 28,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "_snapshot",
+        "line": 84,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "_derived_review",
+        "line": 107,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/readiness.py",
+        "function": "_latest_real",
+        "line": 13,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/readiness.py",
+        "function": "_snapshot_result",
+        "line": 22,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking.py",
+        "function": "latest_snapshot",
+        "line": 40,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking.py",
+        "function": "refresh_one",
+        "line": 99,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "create_case",
+        "line": 271,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "reviews",
+        "line": 315,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "analysis",
+        "line": 370,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "outcomes",
+        "line": 447,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "_seed_us_market_demo",
+        "line": 26,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/us_market_sync.py",
+        "function": "_store_overnight",
+        "line": 39,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/us_market_sync.py",
+        "function": "_store_calendar",
+        "line": 65,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "seat_subscriptions": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking.py",
+        "function": "refresh_subscribed",
+        "line": 163,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "audit",
+        "line": 90,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "subscriptions",
+        "line": 142,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "subscribe",
+        "line": 167,
+        "operations": [
+          "ORM insert",
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "update_subscription",
+        "line": 199,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "reports",
+        "line": 232,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "seat_reviews": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "create_case",
+        "line": 271,
+        "operations": [
+          "ORM insert",
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "reviews",
+        "line": 315,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "update_review",
+        "line": 353,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "analysis",
+        "line": 370,
+        "operations": [
+          "ORM insert",
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "outcomes",
+        "line": 447,
+        "operations": [
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "watchlist_items": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "swing_selection_candles",
+        "line": 883,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "watchlist",
+        "line": 979,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "_watchlist_upstream_query",
+        "line": 991,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "search_watchlist_candidates",
+        "line": 1024,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "add_watchlist_item",
+        "line": 1063,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "remove_watchlist_item",
+        "line": 1115,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "restore_watchlist_item",
+        "line": 1147,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "watchlist_strategy_profiles",
+        "line": 1254,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "update_watchlist",
+        "line": 1293,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "_watchlist_score",
+        "line": 152,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "generate_latest_decisions",
+        "line": 219,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/watchlist_sync.py",
+        "function": "sync_watchlist",
+        "line": 109,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "decisions",
+        "line": 1320,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "decision_feedback",
+        "line": 1380,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "_decision",
+        "line": 173,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "generate_latest_decisions",
+        "line": 219,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "_derived_review",
+        "line": 107,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "market_events": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "events",
+        "line": 1403,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "update_event",
+        "line": 1409,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "generate_latest_decisions",
+        "line": 219,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_events.py",
+        "function": "sync_sector_events",
+        "line": 19,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "_event_text",
+        "line": 101,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "_derived_review",
+        "line": 107,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "research_items": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "research",
+        "line": 1429,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "create_research",
+        "line": 1555,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/research_sync.py",
+        "function": "sync_research",
+        "line": 60,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "update_review",
+        "line": 1598,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "available_review_dates",
+        "line": 28,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "_stored_review",
+        "line": 241,
+        "operations": [
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/postmarket_review.py",
+        "function": "build_postmarket_review",
+        "line": 262,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "decision_feedback": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "decision_feedback",
+        "line": 1380,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "audit_logs": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "_sync_watchlist_after_mutation",
+        "line": 996,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "update_watchlist",
+        "line": 1293,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "generate_decisions",
+        "line": 1350,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "decision_feedback",
+        "line": 1380,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "update_event",
+        "line": 1409,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "create_research",
+        "line": 1555,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "update_review",
+        "line": 1598,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "audit",
+        "line": 1764,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/research_sync.py",
+        "function": "record_research_sync_failure",
+        "line": 45,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/research_sync.py",
+        "function": "sync_research",
+        "line": 60,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+        "function": "audit",
+        "line": 90,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/us_market_sync.py",
+        "function": "sync_us_market",
+        "line": 92,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/us_market_sync.py",
+        "function": "record_us_market_sync_failure",
+        "line": 167,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/watchlist_sync.py",
+        "function": "record_watchlist_sync_failure",
+        "line": 86,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/watchlist_sync.py",
+        "function": "sync_watchlist",
+        "line": 109,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "sync_states": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "system_version",
+        "line": 171,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "data_status",
+        "line": 220,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "sync_version",
+        "line": 1513,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_data_projection.py",
+        "function": "_record_projection_result",
+        "line": 183,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_structure.py",
+        "function": "read_projection",
+        "line": 208,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_structure.py",
+        "function": "refresh",
+        "line": 392,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/research_sync.py",
+        "function": "_sync_state",
+        "line": 31,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking.py",
+        "function": "state_for",
+        "line": 56,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking.py",
+        "function": "refresh_one",
+        "line": 99,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/us_market_sync.py",
+        "function": "_sync_state",
+        "line": 25,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/watchlist_sync.py",
+        "function": "_sync_state",
+        "line": 72,
+        "operations": [
+          "ORM select",
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ],
+    "sector_scores": [
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+        "function": "sectors",
+        "line": 329,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/decision_engine.py",
+        "function": "generate_latest_decisions",
+        "line": 219,
+        "operations": [
+          "ORM select",
+          "ORM模型引用"
+        ]
+      },
+      {
+        "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seed.py",
+        "function": "seed_demo_data",
+        "line": 71,
+        "operations": [
+          "ORM构造对象（写入候选）",
+          "ORM模型引用"
+        ]
+      }
+    ]
+  },
+  "api_routes": [
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/health",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "health",
+      "line": 395,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "POST",
+      "path": "/api/stocks/search",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "search",
+      "line": 406,
+      "parameters": "payload: SearchRequest",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "POST",
+      "path": "/api/stocks/add",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "add",
+      "line": 413,
+      "parameters": "payload: AddStockRequest, background_tasks: BackgroundTasks",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/stocks",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "list_stocks",
+      "line": 433,
+      "parameters": "attention: Attention | None=None, include_paused: bool=False, limit: int=Query(default=200, ge=1, le=500)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_record_to_stock",
+        "watchlist_store.list_items"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/watchlist",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_watchlist",
+      "line": 449,
+      "parameters": "include_paused: bool=True, refresh_quotes: bool=False, limit: int=Query(default=500, ge=1, le=500)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_dashboard_watchlist_record",
+        "load_security_classifications",
+        "watchlist_store.list_items"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/company-profile/{code}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_company_profile",
+      "line": 498,
+      "parameters": "code: str",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "fetch_industry"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/nextday-watch",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_nextday_watch",
+      "line": 521,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_dashboard_nextday_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/short-selection/candles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_short_selection_candles",
+      "line": 574,
+      "parameters": "code: str=Query(min_length=6, max_length=6, pattern='^\\\\d{6}$'), end_date: str | None=Query(default=None), days: int=Query(default=60, ge=20, le=120)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_selection_candles_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/stocks/{code}/candles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_stock_candles",
+      "line": 584,
+      "parameters": "code: str, end_date: str | None=Query(default=None), days: int=Query(default=60, ge=20, le=120)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_selection_candles_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/seat-directory",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_seat_directory",
+      "line": 597,
+      "parameters": "query: str=Query(min_length=1, max_length=80), observation_date: date | None=None, limit: int=Query(default=20, ge=1, le=50)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/seat-case",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_seat_case",
+      "line": 611,
+      "parameters": "code: str=Query(pattern='^\\\\d{6}$'), event_date: date=Query(), as_of: date | None=None",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_case_outcome"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/seat-tracking",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_seat_tracking",
+      "line": 623,
+      "parameters": "query: str=Query(min_length=1, max_length=80), observation_date: date | None=None, window: int=Query(default=20, ge=5, le=120), start_date: date | None=None",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_tracking_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/seat-flow",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_seat_flow",
+      "line": 644,
+      "parameters": "query: str=Query(min_length=1, max_length=80), observation_date: date | None=None, days: int=Query(default=90, ge=7, le=180)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_seat_flow_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/stocks/{code}/bars",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_stock_bars",
+      "line": 664,
+      "parameters": "code: str, period: Literal['day', 'week', 'month']='day', observation_date: date | None=None, before: date | None=None, limit: int=Query(default=60, ge=20, le=120)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_stock_bars_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/limit-up-ladder",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_limit_up_ladder",
+      "line": 694,
+      "parameters": "observation_date: date | None=None, days: int=Query(default=5, ge=1, le=20)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_limit_up_ladder_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/short-selection",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_short_selection",
+      "line": 748,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/watchlist/strategy-profiles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_watchlist_strategy_profiles",
+      "line": 773,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "watchlist_store.latest_strategy_snapshot"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/market-regime",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_market_regime",
+      "line": 785,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_market_regime_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/short-selection/history",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_short_selection_history",
+      "line": 805,
+      "parameters": "limit: int=Query(default=100, ge=1, le=500)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        ".fetchone"
+      ],
+      "direct_table_references": [
+        "events",
+        "short_signal_event"
+      ]
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/swing-selection",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_swing_selection",
+      "line": 844,
+      "parameters": "trade_date: date | None=Query(default=None), pattern: str | None=Query(default=None), state: str | None=Query(default=None), grade: str | None=Query(default=None), industry: str | None=Query(default=None), min_score: float | None=Query(default=None, ge=0, le=100), strategy_path: str | None=Query(default=None), path_role: Literal['primary', 'any']=Query(default='primary'), lifecycle_stage: str | None=Query(default=None), confirmation_state: str | None=Query(default=None), participation_decision: str | None=Query(default=None), contract_version: str=Query(default=CONTRACT_SELECTION), limit: int=Query(default=20000, ge=1, le=20000), cursor: int=Query(default=0, ge=0)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_swing_selection_envelope",
+        "build_swing_selection_v3_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/swing-selection/candles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_swing_selection_candles",
+      "line": 924,
+      "parameters": "code: str=Query(min_length=6, max_length=6, pattern='^\\\\d{6}$'), end_date: str | None=Query(default=None), days: int=Query(default=60, ge=20, le=120)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_selection_candles_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/swing-selection/history",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_swing_selection_history",
+      "line": 936,
+      "parameters": "date_from: str | None=Query(default=None), date_to: str | None=Query(default=None), code: str | None=Query(default=None), pattern: str | None=Query(default=None), settled_only: bool=Query(default=False), rules_version: str | None=Query(default=None), limit: int=Query(default=500, ge=1, le=2000)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_swing_history_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/swing-selection/stats",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_swing_selection_stats",
+      "line": 966,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_swing_stats_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/capital-flow",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_capital_flow",
+      "line": 986,
+      "parameters": "",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_capital_flow_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/sector-workbench",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_sector_workbench",
+      "line": 998,
+      "parameters": "category: Literal['行业', '概念']=Query(default='行业'), days: int=Query(default=60, ge=20, le=180), sector: str | None=Query(default=None, max_length=80)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_sector_workbench_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/us-market/overnight",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_us_market_overnight",
+      "line": 1021,
+      "parameters": "trade_date: str | None=Query(default=None, pattern='^\\\\d{4}-\\\\d{2}-\\\\d{2}$')",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_overnight_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/us-market/calendar",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_us_market_calendar",
+      "line": 1049,
+      "parameters": "date_from: Annotated[date, Query(alias='from')], date_to: Annotated[date, Query(alias='to')]",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_calendar_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/us-market/history",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_us_market_history",
+      "line": 1075,
+      "parameters": "limit: int=Query(default=30, ge=1, le=180)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "build_history_envelope"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/monitor",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_monitor",
+      "line": 1102,
+      "parameters": "alert_limit: int=Query(default=50, ge=1, le=100)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/stocks/{query}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "get_stock",
+      "line": 1135,
+      "parameters": "query: str, live: bool=False",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_fetch_live_quote",
+        "_record_to_stock"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "POST",
+      "path": "/api/stocks/{query}/update",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "update_stock",
+      "line": 1151,
+      "parameters": "query: str, payload: StockUpdateRequest, background_tasks: BackgroundTasks",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_record_to_stock",
+        "_update_record"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "POST",
+      "path": "/api/stocks/{query}/remove",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "remove_stock",
+      "line": 1178,
+      "parameters": "query: str, background_tasks: BackgroundTasks, payload: RemoveStockRequest | None=None",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "_record_to_stock",
+        "_update_record",
+        "record.get"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/alerts/recent",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "recent_alerts",
+      "line": 1199,
+      "parameters": "limit: int=Query(default=20, ge=1, le=100)",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [
+        "watchlist_store.list_alert_events"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "stock-analyzer",
+      "method": "GET",
+      "path": "/api/integrations/investment-dashboard/market-structure",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/stock-analyzer/stock_analyzer/api.py",
+      "function": "investment_dashboard_market_structure",
+      "line": 1205,
+      "parameters": "as_of: date | None=None, lookback: int=Query(default=120, ge=5, le=120), mode: Literal['known', 'rebuilt']='rebuilt'",
+      "return_annotation": "dict[str, Any]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/health",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "health",
+      "line": 152,
+      "parameters": "db: Session=Depends(get_db)",
+      "return_annotation": "dict[str, str]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/readiness",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "readiness",
+      "line": 158,
+      "parameters": "db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/system/version",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "system_version",
+      "line": 171,
+      "parameters": "db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "build_metadata",
+        "capital_version_snapshot.payload.get",
+        "item.payload.get"
+      ],
+      "direct_table_references": [
+        "snapshots",
+        "sync_states"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/data-status",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "data_status",
+      "line": 220,
+      "parameters": "db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "snapshots",
+        "sync_states"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/dashboard/{session}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "dashboard",
+      "line": 230,
+      "parameters": "session: str, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "compose_market_dashboard",
+        "load_market_dashboard_inputs",
+        "present_stored_market_dashboard"
+      ],
+      "direct_table_references": [
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/capital-flow",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "capital_flow",
+      "line": 274,
+      "parameters": "trade_date: date | None=None, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "archived_snapshot",
+        "payload.get",
+        "sync_capital_flow_snapshot"
+      ],
+      "direct_table_references": [
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/sectors",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "sectors",
+      "line": 329,
+      "parameters": "category: str | None=None, db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "sector_scores"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/sector-workbench",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "sector_workbench",
+      "line": 337,
+      "parameters": "category: str='行业', days: int=Query(default=60, ge=20, le=180), sector: str | None=Query(default=None, max_length=80), stock_client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "stock_client.fetch_sector_workbench"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/company-profiles/{code}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "company_profile",
+      "line": 358,
+      "parameters": "code: str, payload: CompanyProfileRequest, refresh: bool=False, db: Session=Depends(get_db), stock_client: StockAnalyzerClient=Depends(get_stock_analyzer_client), ai_client: DeepSeekClient=Depends(get_deepseek_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "build_company_profile"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/short-selection",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "short_selection",
+      "line": 381,
+      "parameters": "trade_date: date | None=None, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "archived_snapshot",
+        "sync_short_selection_snapshot"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/seat-flow",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "seat_flow",
+      "line": 427,
+      "parameters": "query: str=Query(default='紫阳东路', min_length=1, max_length=80), observation_date: date | None=None, days: int=Query(default=90, ge=7, le=180), client: StockAnalyzerClient=Depends(get_stock_analyzer_client), db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [
+        "client.fetch_seat_flow",
+        "snapshot.payload.get"
+      ],
+      "direct_table_references": [
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/seat-flow/analysis",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "seat_flow_analysis",
+      "line": 509,
+      "parameters": "request: SeatFlowAIRequest, db: Session=Depends(get_db), ai_client: SeatFlowAIClient=Depends(get_seat_flow_ai_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "ai_client.generate",
+        "ai_client.model.encode",
+        "result_payload",
+        "snapshot.payload.get"
+      ],
+      "direct_table_references": [
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/limit-up-ladder",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "limit_up_ladder",
+      "line": 588,
+      "parameters": "observation_date: date | None=None, days: int=Query(default=5, ge=1, le=20), db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "archived",
+        "client.fetch_limit_up_ladder",
+        "payload.get"
+      ],
+      "direct_table_references": [
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/stocks/{code}/candles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "stock_candles",
+      "line": 674,
+      "parameters": "code: str, trade_date: date | None=None, days: int=Query(default=60, ge=20, le=120), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_stock_candles"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/stocks/{code}/bars",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "stock_bars",
+      "line": 699,
+      "parameters": "code: str, period: Literal['day', 'week', 'month']='day', observation_date: date | None=None, before: date | None=None, limit: int=Query(default=60, ge=20, le=120), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_stock_bars"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/short-selection/{code}/candles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "short_selection_candles",
+      "line": 727,
+      "parameters": "code: str, trade_date: date | None=None, days: int=Query(default=60, ge=20, le=120), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_short_selection_candles"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/swing-selection",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "swing_selection",
+      "line": 752,
+      "parameters": "trade_date: date | None=None, strategy_path: str | None=None, path_role: str='primary', lifecycle_stage: str | None=None, confirmation_state: str | None=None, participation_decision: str | None=None, industry: str | None=None, limit: int=20000, cursor: int=0, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "archive_and_return",
+        "archived",
+        "client.fetch_swing_selection",
+        "payload.get",
+        "swing_selection_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/swing-selection/{code}/candles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "swing_selection_candles",
+      "line": 883,
+      "parameters": "code: str, trade_date: date | None=None, days: int=Query(default=60, ge=20, le=120), db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_swing_candles",
+        "selection_candles_payload"
+      ],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/swing-selection/stats",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "swing_selection_stats",
+      "line": 928,
+      "parameters": "client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_swing_stats",
+        "swing_stats_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/swing-selection/history",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "swing_selection_history",
+      "line": 946,
+      "parameters": "date_from: str | None=Query(default=None), date_to: str | None=Query(default=None), code: str | None=Query(default=None), pattern: str | None=Query(default=None), settled_only: bool=Query(default=False), rules_version: str | None=Query(default=None), limit: int=Query(default=500, ge=1, le=2000), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_swing_history",
+        "swing_history_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/watchlist",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "watchlist",
+      "line": 979,
+      "parameters": "board: str | None=None, db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/watchlist/search",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "search_watchlist_candidates",
+      "line": 1024,
+      "parameters": "payload: WatchlistSearchIn, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.search_stocks"
+      ],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/watchlist",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "add_watchlist_item",
+      "line": 1063,
+      "parameters": "payload: WatchlistAddIn, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_sync_watchlist_after_mutation",
+        "client.add_stock",
+        "client.restore_stock",
+        "payload.reason.strip"
+      ],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "DELETE",
+      "path": "/api/v1/watchlist/{item_id}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "remove_watchlist_item",
+      "line": 1115,
+      "parameters": "item_id: UUID, payload: WatchlistRemoveIn | None=None, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_sync_watchlist_after_mutation",
+        "client.remove_stock",
+        "payload.reason.strip"
+      ],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/watchlist/{item_id}/restore",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "restore_watchlist_item",
+      "line": 1147,
+      "parameters": "item_id: UUID, payload: WatchlistRestoreIn, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_sync_watchlist_after_mutation",
+        "client.restore_stock"
+      ],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/watchlist/sync",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "sync_watchlist_from_upstream",
+      "line": 1183,
+      "parameters": "db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "record_watchlist_sync_failure",
+        "sync_watchlist"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/watchlist/monitor",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "watchlist_monitor",
+      "line": 1207,
+      "parameters": "alert_limit: int=Query(default=50, ge=1, le=100), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_monitor"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/watchlist/nextday-strategy",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "watchlist_nextday_strategy",
+      "line": 1220,
+      "parameters": "client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_nextday_strategy"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/watchlist/rule-profiles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "watchlist_rule_profiles",
+      "line": 1232,
+      "parameters": "trade_date: str | None=None",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "rule_profile_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/watchlist/strategy-profiles",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "watchlist_strategy_profiles",
+      "line": 1254,
+      "parameters": "trade_date: str | None=None, db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "client.fetch_watchlist_strategy_profiles",
+        "strategy_profile_payload"
+      ],
+      "direct_table_references": [
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "PATCH",
+      "path": "/api/v1/watchlist/{item_id}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "update_watchlist",
+      "line": 1293,
+      "parameters": "item_id: UUID, payload: WatchlistUpdate, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "payload.model_dump"
+      ],
+      "direct_table_references": [
+        "audit_logs",
+        "watchlist_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/decisions",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "decisions",
+      "line": 1320,
+      "parameters": "latest_only: bool=True, strategy_type: str | None=Query(default=None, pattern='^(intraday|next_day)$'), db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "decisions"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/decisions/generate",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "generate_decisions",
+      "line": 1350,
+      "parameters": "strategy_type: str=Query(default='intraday', pattern='^(intraday|next_day)$'), db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [
+        "generate_latest_decisions"
+      ],
+      "direct_table_references": [
+        "audit_logs"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/decisions/{decision_id}/feedback",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "decision_feedback",
+      "line": 1380,
+      "parameters": "decision_id: UUID, payload: DecisionFeedbackIn, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "payload.model_dump"
+      ],
+      "direct_table_references": [
+        "audit_logs",
+        "decision_feedback",
+        "decisions"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/events",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "events",
+      "line": 1403,
+      "parameters": "db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "market_events"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "PATCH",
+      "path": "/api/v1/events/{event_id}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "update_event",
+      "line": 1409,
+      "parameters": "event_id: UUID, payload: EventStatusUpdate, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "audit_logs",
+        "market_events"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/research",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "research",
+      "line": 1429,
+      "parameters": "min_level: int=Query(default=2, ge=1, le=5), limit: int=Query(default=500, ge=1, le=500), db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "research_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/research/sync",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "sync_research_from_upstream",
+      "line": 1448,
+      "parameters": "min_level: int=Query(default=2, ge=1, le=5), db: Session=Depends(get_db), client: MarketNewsFeedClient=Depends(get_market_news_feed_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "record_research_sync_failure",
+        "sync_research"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/research/webhook",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "research_webhook",
+      "line": 1474,
+      "parameters": "x_webhook_secret: str=Header(default=''), db: Session=Depends(get_db), client: MarketNewsFeedClient=Depends(get_market_news_feed_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_research_sync_lock.acquire",
+        "_research_sync_lock.release",
+        "record_research_sync_failure",
+        "sync_research"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/research/stream",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "research_stream",
+      "line": 1510,
+      "parameters": "request: Request",
+      "return_annotation": "StreamingResponse",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/research",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "create_research",
+      "line": 1555,
+      "parameters": "payload: ResearchCreate, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "payload.model_dump"
+      ],
+      "direct_table_references": [
+        "audit_logs",
+        "research_items"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/reviews/latest",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "latest_review",
+      "line": 1575,
+      "parameters": "db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "build_postmarket_review"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/reviews/{observation_date}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "review",
+      "line": 1586,
+      "parameters": "observation_date: date, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "build_postmarket_review"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "PATCH",
+      "path": "/api/v1/reviews/{trading_date}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "update_review",
+      "line": 1598,
+      "parameters": "trading_date: date, payload: ReviewUpdate, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "build_postmarket_review",
+        "payload.model_dump"
+      ],
+      "direct_table_references": [
+        "audit_logs",
+        "reviews"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/us-industries",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "us_industries",
+      "line": 1687,
+      "parameters": "observation_date: date | None=Query(default=None, alias='date'), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/us-industries/overnight",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "us_industries",
+      "line": 1687,
+      "parameters": "observation_date: date | None=Query(default=None, alias='date'), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/us-industries/calendar",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "us_industry_calendar",
+      "line": 1706,
+      "parameters": "date_from: date | None=Query(default=None, alias='from'), date_to: date | None=Query(default=None, alias='to'), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "payload.get"
+      ],
+      "direct_table_references": [
+        "events"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/us-industries/history",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "us_industry_history",
+      "line": 1732,
+      "parameters": "limit: int=Query(default=30, ge=1, le=180), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/us-industries/sync",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "sync_us_industries",
+      "line": 1752,
+      "parameters": "db: Session=Depends(get_db), client: StockAnalyzerClient=Depends(get_stock_analyzer_client)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "record_us_market_sync_failure",
+        "sync_us_market"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/audit",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/api.py",
+      "function": "audit",
+      "line": 1764,
+      "parameters": "limit: int=Query(default=50, ge=1, le=200), db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "audit_logs"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/auth/config",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "auth_config",
+      "line": 95,
+      "parameters": "",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/auth/me",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "auth_me",
+      "line": 106,
+      "parameters": "request: Request",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_user_payload"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/auth/captcha",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "captcha",
+      "line": 122,
+      "parameters": "request: Request, width: int=Query(default=320, ge=260, le=420), height: int=Query(default=150, ge=130, le=180), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/auth/captcha/verify",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "captcha_verify",
+      "line": 135,
+      "parameters": "payload: CaptchaVerifyIn, request: Request, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/auth/login",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "login",
+      "line": 145,
+      "parameters": "payload: LoginIn, request: Request, response: Response, db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_user_payload",
+        "payload.username.strip",
+        "record_login_failure"
+      ],
+      "direct_table_references": [
+        "dashboard_users"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/auth/change-password",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "change_password",
+      "line": 180,
+      "parameters": "payload: ChangePasswordIn, request: Request, db: Session=Depends(get_db)",
+      "return_annotation": "Response",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "dashboard_users"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/auth/users",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "list_users",
+      "line": 204,
+      "parameters": "_: AuthUser=Depends(require_admin), db: Session=Depends(get_db)",
+      "return_annotation": "list[dict]",
+      "data_call_symbols": [
+        "_dashboard_user_record"
+      ],
+      "direct_table_references": [
+        "dashboard_users"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/auth/users",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "create_user",
+      "line": 210,
+      "parameters": "payload: UserCreateIn, _: AuthUser=Depends(require_admin), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_dashboard_user_record",
+        "payload.display_name.strip",
+        "payload.username.strip"
+      ],
+      "direct_table_references": [
+        "dashboard_users"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "PATCH",
+      "path": "/api/v1/auth/users/{user_id}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "update_user",
+      "line": 234,
+      "parameters": "user_id: UUID, payload: UserUpdateIn, _: AuthUser=Depends(require_admin), db: Session=Depends(get_db)",
+      "return_annotation": "dict",
+      "data_call_symbols": [
+        "_dashboard_user_record",
+        "payload.display_name.strip"
+      ],
+      "direct_table_references": [
+        "dashboard_users"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/auth/feishu/login",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "feishu_login",
+      "line": 270,
+      "parameters": "request: Request, next: str='/dashboard'",
+      "return_annotation": "RedirectResponse",
+      "data_call_symbols": [
+        "build_feishu_authorize_url"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/auth/feishu/callback",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "feishu_callback",
+      "line": 286,
+      "parameters": "request: Request, code: str | None=None, state: str | None=None",
+      "return_annotation": "RedirectResponse",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/auth/logout",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/auth_api.py",
+      "function": "logout",
+      "line": 316,
+      "parameters": "",
+      "return_annotation": "Response",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/main.py",
+      "function": "root",
+      "line": 162,
+      "parameters": "",
+      "return_annotation": "dict[str, str]",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/market-structure/overview",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_structure.py",
+      "function": "overview",
+      "line": 298,
+      "parameters": "data: dict=Depends(read)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/market-structure/{section:path}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/market_structure.py",
+      "function": "section",
+      "line": 303,
+      "parameters": "section: str, window: int=Query(default=5, ge=1, le=20), data: dict=Depends(read)",
+      "return_annotation": "dict",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/seat-tracking/subscriptions",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "subscriptions",
+      "line": 142,
+      "parameters": "request: Request, db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "seat_subscriptions"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/seat-tracking/directory",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "directory",
+      "line": 159,
+      "parameters": "query: str=Query(min_length=1, max_length=80), client=Depends(get_client)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [
+        "fetch_directory"
+      ],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/seat-tracking/subscriptions",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "subscribe",
+      "line": 167,
+      "parameters": "body: SubscriptionIn, db: Session=Depends(get_db), client=Depends(get_client)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [
+        "fetch_directory"
+      ],
+      "direct_table_references": [
+        "seat_subscriptions"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "PATCH",
+      "path": "/api/v1/seat-tracking/subscriptions/{subscription_id}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "update_subscription",
+      "line": 199,
+      "parameters": "subscription_id: UUID, body: SubscriptionUpdate, db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "seat_subscriptions"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/seat-tracking/reports",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "reports",
+      "line": 232,
+      "parameters": "observation_date: date | None=None, window: int=Query(default=20, ge=5, le=120), start_date: date | None=None, db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "seat_subscriptions"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/seat-tracking/refresh",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "refresh",
+      "line": 256,
+      "parameters": "body: RefreshIn",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": []
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/seat-tracking/cases",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "create_case",
+      "line": 271,
+      "parameters": "body: CaseIn, db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "seat_reviews",
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "GET",
+      "path": "/api/v1/seat-tracking/reviews",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "reviews",
+      "line": 315,
+      "parameters": "kind: Literal['case', 'analysis'] | None=None, code: str | None=None, observation_date: date | None=None, favorite: bool=False, stock: str | None=Query(default=None, pattern='^\\\\d{6}$'), offset: int=Query(default=0, ge=0, le=5000), db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "seat_reviews",
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "PATCH",
+      "path": "/api/v1/seat-tracking/reviews/{review_id}",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "update_review",
+      "line": 353,
+      "parameters": "review_id: UUID, body: ReviewUpdate, db: Session=Depends(get_db)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [],
+      "direct_table_references": [
+        "seat_reviews"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/seat-tracking/analysis",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "analysis",
+      "line": 370,
+      "parameters": "body: AnalysisIn, db: Session=Depends(get_db), ai=Depends(get_ai)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [
+        "generate"
+      ],
+      "direct_table_references": [
+        "seat_reviews",
+        "snapshots"
+      ]
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "method": "POST",
+      "path": "/api/v1/seat-tracking/reviews/{review_id}/outcomes",
+      "file": "/Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard/backend/app/seat_tracking_api.py",
+      "function": "outcomes",
+      "line": 447,
+      "parameters": "review_id: UUID, body: OutcomesIn, db: Session=Depends(get_db), client=Depends(get_client)",
+      "return_annotation": "未声明",
+      "data_call_symbols": [
+        "fetch_case",
+        "fetch_tracking"
+      ],
+      "direct_table_references": [
+        "seat_reviews",
+        "snapshots"
+      ]
+    }
+  ],
+  "parse_errors": []
+}

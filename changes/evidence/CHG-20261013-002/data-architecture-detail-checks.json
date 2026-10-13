@@ -1,0 +1,36 @@
+{
+  "data-api-function-index-2026-10-13.md": {
+    "lines": 1331,
+    "links": 110,
+    "checks": "pass"
+  },
+  "data-architecture-2026-10-13.md": {
+    "lines": 503,
+    "links": 16,
+    "checks": "pass"
+  },
+  "data-architecture-detail-2026-10-13.md": {
+    "lines": 444,
+    "links": 17,
+    "checks": "pass"
+  },
+  "data-model-fields-2026-10-13.md": {
+    "lines": 1046,
+    "links": 3,
+    "checks": "pass"
+  },
+  "data-table-function-index-2026-10-13.md": {
+    "lines": 646,
+    "links": 343,
+    "checks": "pass"
+  },
+  "evidence": {
+    "tables": 58,
+    "table_function_refs": 341,
+    "FastAPI_routes": 110,
+    "Vue_files_checked": 14,
+    "ETF_example_math": "pass",
+    "source_function_locations": "pass",
+    "production_DB_access": "not performed"
+  }
+}

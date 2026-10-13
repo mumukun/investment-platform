@@ -261,6 +261,10 @@ class Deployer:
                             ],
                         }
                     )
+                if component == "web" and "VITE_MARKET_STRUCTURE_ENABLED" in candidate["build_args"]:
+                    required["investment-platform.market-structure"] = candidate["build_args"][
+                        "VITE_MARKET_STRUCTURE_ENABLED"
+                    ]
                 require(
                     all(labels.get(key) == value for key, value in required.items()),
                     "image label/source mismatch",
@@ -439,18 +443,6 @@ class Deployer:
                 "baseline runtime version drift",
             )
         self.step(repo, "backup", lambda: self.backup(entry))
-        if repo == "investment-research-dashboard":
-            configured = json.loads(
-                self.compose(entry, None, "config", "--format", "json")
-            )
-            actual = configured["services"]["web"].get("build", {}).get("args", {})
-            require(
-                all(
-                    str(actual.get(key)).lower() == value
-                    for key, value in entry["candidate"]["build_args"].items()
-                ),
-                "NAS build flag drift; explicitly reconcile configuration before deployment",
-            )
         require(
             self.git(entry, "rev-parse", "HEAD")
             in {
@@ -468,6 +460,19 @@ class Deployer:
                 entry, "checkout", "--detach", entry["candidate"]["commit_sha"]
             ),
         )
+        # New build flags exist only in the frozen target Compose, not the old checkout.
+        if repo == "investment-research-dashboard":
+            configured = json.loads(
+                self.compose(entry, None, "config", "--format", "json")
+            )
+            actual = configured["services"]["web"].get("build", {}).get("args", {})
+            require(
+                all(
+                    str(actual.get(key)).lower() == value
+                    for key, value in entry["candidate"]["build_args"].items()
+                ),
+                "NAS build flag drift; explicitly reconcile configuration before deployment",
+            )
         overlay = self.overlay(entry)
         self.step(
             repo,

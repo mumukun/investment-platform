@@ -1,0 +1,871 @@
+
+> investment-research-dashboard@0.19.0 test
+> vitest run --run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/market-structure-etf/investment-research-dashboard
+
+ ❯ src/views/LimitUpLadderView.spec.ts (3 tests | 1 failed) 9785ms
+     × groups by streak and industry and opens dated stock detail 5282ms
+stderr | src/views/ShortSelectionView.spec.ts > ShortSelectionView > opens the professional chart for a selected candidate when enabled
+Unhandled error during execution of render function {
+  label: [Getter/Setter],
+  name: [Getter/Setter],
+  closable: [Getter/Setter],
+  disabled: [Getter/Setter],
+  lazy: [Getter/Setter]
+} at <ElTabPane>
+at <ElTabs>
+at <ElFocusTrap>
+at <ElOverlay>
+at <Transition>
+at <ElDrawer>
+at <ShortSelectionView>
+at <VTUROOT> [
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: 'data-v-bd2d3f1d',
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: Comment {},
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: 'data-v-bd2d3f1d',
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLDivElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: Text {},
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: [Array],
+      transition: null,
+      el: [HTMLDivElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: 'data-v-bd2d3f1d',
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [Comment],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: [Object],
+      scopeId: null,
+      slotScopeIds: null,
+      children: null,
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 4,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: null,
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: null,
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 4,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: [Object],
+      ctx: null
+    },
+    recurseCount: 0
+  }
+]
+Unhandled error during execution of component update {
+  loop: [Getter/Setter],
+  trapped: [Getter/Setter],
+  focusTrapEl: [Getter/Setter],
+  focusStartEl: [Getter/Setter],
+  onKeydown: [Getter/Setter]
+} at <ElFocusTrap>
+at <ElOverlay>
+at <Transition>
+at <ElDrawer>
+at <ShortSelectionView>
+at <VTUROOT> [
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: Text {},
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: [Array],
+      transition: null,
+      el: [HTMLDivElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: 'data-v-bd2d3f1d',
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [Comment],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: [Object],
+      scopeId: null,
+      slotScopeIds: null,
+      children: null,
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 4,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: null,
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: null,
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 4,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: [Object],
+      ctx: null
+    },
+    recurseCount: 0
+  }
+]
+
+stderr | src/views/ShortSelectionView.spec.ts > ShortSelectionView > opens the professional chart for a selected candidate when enabled
+Unhandled error during execution of watcher callback {
+  type: [Getter/Setter],
+  closable: [Getter/Setter],
+  addable: [Getter/Setter],
+  modelValue: [Getter/Setter],
+  defaultValue: [Getter/Setter],
+  editable: [Getter/Setter],
+  tabPosition: [Getter/Setter],
+  beforeLeave: [Getter/Setter],
+  stretch: [Getter/Setter],
+  tabindex: [Getter/Setter]
+} at <ElTabs>
+at <ElFocusTrap>
+at <ElOverlay>
+at <Transition>
+at <ElDrawer>
+at <ShortSelectionView>
+at <VTUROOT> [
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: 'data-v-bd2d3f1d',
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLDivElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: Text {},
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: [Array],
+      transition: null,
+      el: [HTMLDivElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: null,
+      scopeId: 'data-v-bd2d3f1d',
+      slotScopeIds: null,
+      children: [Object],
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [Comment],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 36,
+      patchFlag: 8,
+      dynamicProps: [Array],
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: [Object],
+      key: null,
+      ref: [Object],
+      scopeId: null,
+      slotScopeIds: null,
+      children: null,
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 4,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: null,
+      ctx: [Object]
+    },
+    recurseCount: 0
+  },
+  {
+    vnode: {
+      __v_isVNode: true,
+      __v_skip: true,
+      type: [Object],
+      props: null,
+      key: null,
+      ref: null,
+      scopeId: null,
+      slotScopeIds: null,
+      children: null,
+      component: [Object],
+      suspense: null,
+      ssContent: null,
+      ssFallback: null,
+      dirs: null,
+      transition: null,
+      el: [HTMLElement],
+      anchor: null,
+      target: null,
+      targetStart: null,
+      targetAnchor: null,
+      staticCount: 0,
+      shapeFlag: 4,
+      patchFlag: 0,
+      dynamicProps: null,
+      dynamicChildren: null,
+      appContext: [Object],
+      ctx: null
+    },
+    recurseCount: 0
+  }
+]
+
+ ❯ src/views/ShortSelectionView.spec.ts (3 tests | 3 failed) 13312ms
+     × shows the explainable selection pipeline, candidates and tracking results 6988ms
+     × keeps the current-day route live and refreshes every 30 seconds 3088ms
+     × opens the professional chart for a selected candidate when enabled 3226ms
+ ❯ src/views/SwingSelectionView.spec.ts (7 tests | 1 failed) 24375ms
+     × shows V5 one-row multi-path candidates without grade or fixed-count gates 8024ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/LimitUpLadderView.spec.ts > LimitUpLadderView > groups by streak and industry and opens dated stock detail
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/views/LimitUpLadderView.spec.ts:55:3
+     53|   })
+     54|
+     55|   it('groups by streak and industry and opens dated stock detail', asy…
+       |   ^
+     56|     const wrapper = mount(LimitUpLadderView, {
+     57|       global: {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/views/ShortSelectionView.spec.ts > ShortSelectionView > shows the explainable selection pipeline, candidates and tracking results
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/views/ShortSelectionView.spec.ts:87:3
+     85|   })
+     86|
+     87|   it('shows the explainable selection pipeline, candidates and trackin…
+       |   ^
+     88|     const wrapper = mount(ShortSelectionView, { global: { plugins: [El…
+     89|     await flushPromises()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/views/ShortSelectionView.spec.ts > ShortSelectionView > keeps the current-day route live and refreshes every 30 seconds
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ src/views/ShortSelectionView.spec.ts:163:28
+    161|     const wrapper = mount(ShortSelectionView, { global: { plugins: [El…
+    162|     await flushPromises()
+    163|     expect(selectionCalls).toBe(1)
+       |                            ^
+    164|     tick?.()
+    165|     await flushPromises()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/views/ShortSelectionView.spec.ts > ShortSelectionView > opens the professional chart for a selected candidate when enabled
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ src/views/ShortSelectionView.spec.ts:195:8
+    193|     await flushPromises()
+    194|     expect(document.body.querySelector('[data-testid="professional-cha…
+    195|       .toContain('688981 · 102.8 · 101.9')
+       |        ^
+    196|     wrapper.unmount()
+    197|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/views/SwingSelectionView.spec.ts > SwingSelectionView > shows V5 one-row multi-path candidates without grade or fixed-count gates
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/views/SwingSelectionView.spec.ts:214:3
+    212|   })
+    213|
+    214|   it('shows V5 one-row multi-path candidates without grade or fixed-co…
+       |   ^
+    215|     const wrapper = mount(SwingSelectionView, { global: { plugins: [El…
+    216|     await flushPromises()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'total_market_cap_yi')
+ ❯ src/views/ShortSelectionView.vue:475:66
+    473|             <div v-else-if="candleData" class="drawer-basic-card">
+    474|               <div class="drawer-basic-grid">
+    475|                 <div><small>总市值</small><b>{{ yi(candleData.basic.total…
+       |                                                                  ^
+    476|                 <div><small>流通市值</small><b>{{ yi(candleData.basic.circ…
+    477|                 <div><small>换手率</small><b>{{ plainPercent(candleData.b…
+ ❯ renderFnWithContext node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:704:13
+ ❯ renderSlot node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:3327:55
+ ❯ Proxy.<anonymous> node_modules/element-plus/es/components/tabs/src/tab-pane.vue_vue_type_script_setup_true_lang.mjs:65:8
+ ❯ renderComponentRoot node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:4661:16
+ ❯ ReactiveEffect.componentUpdateFn [as fn] node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:6272:26
+ ❯ ReactiveEffect.run node_modules/@vue/reactivity/dist/reactivity.cjs.js:268:19
+ ❯ updateComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:6130:18
+ ❯ processComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:6064:7
+ ❯ patch node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5558:11
+
+This error originated in "src/views/ShortSelectionView.spec.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "opens the professional chart for a selected candidate when enabled". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'total_market_cap_yi')
+ ❯ src/views/SwingSelectionView.vue:714:66
+    712|             <div v-else-if="candleData" class="basic-info-card">
+    713|               <div class="basic-info-grid">
+    714|                 <div><small>总市值</small><b>{{ yi(candleData.basic.total…
+       |                                                                  ^
+    715|                 <div><small>流通市值</small><b>{{ yi(candleData.basic.circ…
+    716|                 <div><small>换手率</small><b>{{ plainPercent(candleData.b…
+ ❯ renderFnWithContext node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:704:13
+ ❯ renderSlot node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:3327:55
+ ❯ Proxy.<anonymous> node_modules/element-plus/es/components/tabs/src/tab-pane.vue_vue_type_script_setup_true_lang.mjs:65:8
+ ❯ renderComponentRoot node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:4661:16
+ ❯ ReactiveEffect.componentUpdateFn [as fn] node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:6272:26
+ ❯ ReactiveEffect.run node_modules/@vue/reactivity/dist/reactivity.cjs.js:268:19
+ ❯ updateComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:6130:18
+ ❯ processComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:6064:7
+ ❯ patch node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5558:11
+
+This error originated in "src/views/SwingSelectionView.spec.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "accepts a compatible V5 rule patch without requiring a Dashboard release". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  3 failed | 17 passed (20)
+      Tests  5 failed | 57 passed (62)
+     Errors  2 errors
+   Start at  11:59:45
+   Duration  38.51s (transform 22.84s, setup 1.10s, import 84.35s, tests 88.72s, environment 64.53s)

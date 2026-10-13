@@ -1,0 +1,238 @@
+{
+  "verified_at": "2026-10-13",
+  "final_coverage_counts": [
+    {
+      "kind": "adjustment_check",
+      "versions": 2,
+      "entities": 2,
+      "first": "2025-01-01",
+      "last": "2026-01-01"
+    },
+    {
+      "kind": "calendar",
+      "versions": 8797,
+      "entities": 1,
+      "first": "1990-12-19",
+      "last": "2026-12-31"
+    },
+    {
+      "kind": "etf_price",
+      "versions": 2232,
+      "entities": 12,
+      "first": "2025-12-31",
+      "last": "2026-10-13"
+    },
+    {
+      "kind": "index",
+      "versions": 1674,
+      "entities": 9,
+      "first": "2025-12-31",
+      "last": "2026-10-13"
+    },
+    {
+      "kind": "mapping",
+      "versions": 24,
+      "entities": 12,
+      "first": "2025-12-31",
+      "last": "2026-07-06"
+    },
+    {
+      "kind": "nav",
+      "versions": 2220,
+      "entities": 12,
+      "first": "2025-12-31",
+      "last": "2026-10-12"
+    },
+    {
+      "kind": "quote",
+      "versions": 5225,
+      "entities": 5225,
+      "first": "2026-10-13",
+      "last": "2026-10-13"
+    },
+    {
+      "kind": "share",
+      "versions": 1344,
+      "entities": 12,
+      "first": "2026-04-13",
+      "last": "2026-10-12"
+    },
+    {
+      "kind": "stock",
+      "versions": 964148,
+      "entities": 5225,
+      "first": "2025-12-31",
+      "last": "2026-10-13"
+    },
+    {
+      "kind": "sync",
+      "versions": 2,
+      "entities": 1,
+      "first": "2026-10-12",
+      "last": "2026-10-13"
+    },
+    {
+      "kind": "universe",
+      "versions": 2,
+      "entities": 1,
+      "first": "2026-10-13",
+      "last": "2026-10-13"
+    }
+  ],
+  "math_samples": {
+    "sh:510300": {
+      "today_shares": {
+        "code": "510300",
+        "name": "300ETF",
+        "exchange": "sh",
+        "raw_unit": "万份",
+        "data_time": "2026-10-12",
+        "raw_value": 2452998.77,
+        "fetched_at": "2026-10-13T03:09:17.238679+00:00",
+        "trade_date": "2026-10-12",
+        "source_name": "SSE ETF清算份额",
+        "history_mode": "retrospective_rebuilt",
+        "total_shares": 24529987700.0,
+        "first_seen_at": "2026-10-13T03:09:17.238679+00:00",
+        "source_version": "1.18.64",
+        "normalized_unit": "份",
+        "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+        "source_published_at": null,
+        "normalization_factor": 10000,
+        "observation_trade_date": "2026-10-12"
+      },
+      "previous_shares": {
+        "code": "510300",
+        "name": "300ETF",
+        "exchange": "sh",
+        "raw_unit": "万份",
+        "data_time": "2026-10-09",
+        "raw_value": 2439228.77,
+        "fetched_at": "2026-10-13T03:09:15.700768+00:00",
+        "trade_date": "2026-10-09",
+        "source_name": "SSE ETF清算份额",
+        "history_mode": "retrospective_rebuilt",
+        "total_shares": 24392287700.0,
+        "first_seen_at": "2026-10-13T03:09:15.700768+00:00",
+        "source_version": "1.18.64",
+        "normalized_unit": "份",
+        "source_endpoint": "https://query.sse.com.cn/commonQuery.do",
+        "source_published_at": null,
+        "normalization_factor": 10000,
+        "observation_trade_date": "2026-10-09"
+      },
+      "unit_nav": {
+        "code": "510300",
+        "exchange": "sh",
+        "raw_unit": "元/份",
+        "unit_nav": 4.3602,
+        "data_time": "2026-10-12",
+        "raw_value": "4.3602",
+        "fetched_at": "2026-10-13T03:09:47.105041+00:00",
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富单位净值",
+        "history_mode": "retrospective_rebuilt",
+        "first_seen_at": "2026-10-13T03:09:47.105041+00:00",
+        "source_version": "1.18.64",
+        "normalized_unit": "元/份",
+        "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+        "source_published_at": null,
+        "normalization_factor": 1,
+        "observation_trade_date": "2026-10-12"
+      },
+      "computed": {
+        "share_delta": 137700000.0,
+        "flow_est_cny": 600399540.0,
+        "flow_direction": "positive",
+        "reason_codes": [],
+        "quality": "healthy"
+      }
+    },
+    "sz:159919": {
+      "today_shares": {
+        "code": "159919",
+        "name": "沪深300ETF嘉实",
+        "exchange": "sz",
+        "raw_unit": "份",
+        "data_time": "2026-10-12",
+        "raw_value": 6844716676.0,
+        "fetched_at": "2026-10-13T03:11:52.373824+00:00",
+        "trade_date": "2026-10-12",
+        "source_name": "SZSE ETF清算份额",
+        "history_mode": "retrospective_rebuilt",
+        "total_shares": 6844716676.0,
+        "first_seen_at": "2026-10-13T03:11:52.373824+00:00",
+        "source_version": "1.18.64",
+        "normalized_unit": "份",
+        "source_endpoint": "https://www.szse.cn/market/fund/volume/etf/index.html",
+        "source_published_at": null,
+        "normalization_factor": 1,
+        "observation_trade_date": "2026-10-12"
+      },
+      "previous_shares": {
+        "code": "159919",
+        "name": "沪深300ETF嘉实",
+        "exchange": "sz",
+        "raw_unit": "份",
+        "data_time": "2026-10-09",
+        "raw_value": 6856416676.0,
+        "fetched_at": "2026-10-13T03:11:50.045568+00:00",
+        "trade_date": "2026-10-09",
+        "source_name": "SZSE ETF清算份额",
+        "history_mode": "retrospective_rebuilt",
+        "total_shares": 6856416676.0,
+        "first_seen_at": "2026-10-13T03:11:50.045568+00:00",
+        "source_version": "1.18.64",
+        "normalized_unit": "份",
+        "source_endpoint": "https://www.szse.cn/market/fund/volume/etf/index.html",
+        "source_published_at": null,
+        "normalization_factor": 1,
+        "observation_trade_date": "2026-10-09"
+      },
+      "unit_nav": {
+        "code": "159919",
+        "exchange": "sz",
+        "raw_unit": "元/份",
+        "unit_nav": 4.5519,
+        "data_time": "2026-10-12",
+        "raw_value": "4.5519",
+        "fetched_at": "2026-10-13T03:10:31.675817+00:00",
+        "trade_date": "2026-10-12",
+        "source_name": "东方财富单位净值",
+        "history_mode": "retrospective_rebuilt",
+        "first_seen_at": "2026-10-13T03:10:31.675817+00:00",
+        "source_version": "1.18.64",
+        "normalized_unit": "元/份",
+        "source_endpoint": "https://api.fund.eastmoney.com/f10/lsjz",
+        "source_published_at": null,
+        "normalization_factor": 1,
+        "observation_trade_date": "2026-10-12"
+      },
+      "computed": {
+        "share_delta": -11700000.0,
+        "flow_est_cny": -53257230.0,
+        "flow_direction": "negative",
+        "reason_codes": [],
+        "quality": "healthy"
+      }
+    }
+  },
+  "adjustment_registry": [
+    {
+      "year": "2026",
+      "events": 83,
+      "complete": true
+    },
+    {
+      "year": "2025",
+      "events": 96,
+      "complete": true
+    }
+  ],
+  "limitations": [
+    "Historical SH/SZ membership not verified; never reuse current directory as historical membership",
+    "A500 free index adapter failed; no substitute benchmark",
+    "Annual split registry is a public cross-check, source publication time is unavailable",
+    "Free-source historical first_seen_at is collection time, not historical publication time"
+  ]
+}

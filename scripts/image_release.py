@@ -15,7 +15,7 @@ COMPONENTS = {
     "stock-analyzer": {"app": ("stock-api", "stock-watch")},
     "investment-research-dashboard": {"api": ("api",), "web": ("web",)},
 }
-FLAGS = {"VITE_LIMIT_UP_LADDER_ENABLED", "VITE_PRO_KLINE_ENABLED"}
+FLAGS = {"VITE_LIMIT_UP_LADDER_ENABLED", "VITE_PRO_KLINE_ENABLED", "VITE_MARKET_STRUCTURE_ENABLED"}
 SHA = re.compile(r"[0-9a-f]{40}")
 VERSION = re.compile(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)")
 IMAGE_ID = re.compile(r"sha256:[0-9a-f]{64}")
@@ -58,8 +58,15 @@ def validate_candidate(candidate):
         "CI must certify each config Image ID for archive transport",
     )
     flags = candidate.get("build_args", {})
+    expected_flags = FLAGS if repo == "investment-research-dashboard" else set()
+    legacy_dashboard = (
+        repo == "investment-research-dashboard"
+        and tuple(int(v) for v in candidate["version"].split(".")) < (0, 19, 0)
+    )
     require(
-        set(flags) == (FLAGS if repo == "investment-research-dashboard" else set()),
+        set(flags) == expected_flags or (
+            legacy_dashboard and set(flags) == FLAGS - {"VITE_MARKET_STRUCTURE_ENABLED"}
+        ),
         "unexpected or missing build arguments",
     )
     require(

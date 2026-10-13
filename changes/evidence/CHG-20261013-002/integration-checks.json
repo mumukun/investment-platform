@@ -1,0 +1,24 @@
+{
+  "provider_authenticated": {
+    "status": 200
+  },
+  "provider_no_token": {
+    "status": 401
+  },
+  "consumer_overview": {
+    "status": 200,
+    "first": "2026-04-14",
+    "last": "2026-10-13",
+    "days": 121
+  },
+  "invalid_window": {
+    "status": 422
+  },
+  "future_date": {
+    "status": 422
+  },
+  "known_before_first_seen": {
+    "status": 200,
+    "days": 0
+  }
+}
