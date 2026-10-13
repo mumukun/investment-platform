@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261013-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "开发完成之后就进行提交代码 发版本吧；我切换网络了 你继续发布；NAS root updater successfully installed by user screenshot."
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "ef81bd1c03282268385e8b696c382871a3e2ef5c",
+        "version": "3.24.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7f0587551ca34c84d74078b659e202a52f38c345536b5cc42fcc9dea3e861f5b"
+        },
+        "image_ids": {
+          "app": "sha256:770fa603bdeb66f1aee8c555dc251129e7e7da92cf7e1a5c46b3dce7b4f2b376"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "ef81bd1c03282268385e8b696c382871a3e2ef5c",
+            "run_id": "38372759092"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:7f0587551ca34c84d74078b659e202a52f38c345536b5cc42fcc9dea3e861f5b"
+            }
+          },
+          "candidate_run_id": "38372831178"
+        }
+      },
+      "tag": "v3.24.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.23.1",
+        "commit_sha": "707d619916e2ad745bded153f1d4cdede7d705c9",
+        "image_ids": {
+          "stock-api": "sha256:597b7575545bbecda0869749b8d48202ecf450e4493dc3d25b9c62e83c3867d1",
+          "stock-watch": "sha256:597b7575545bbecda0869749b8d48202ecf450e4493dc3d25b9c62e83c3867d1"
+        }
+      },
+      "rollback": {
+        "tag": "v3.23.1",
+        "commit_sha": "707d619916e2ad745bded153f1d4cdede7d705c9",
+        "version": "3.23.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:ec9a94a73614481e53313755082e46f815195d7b20c51e92651dc9b2a129fac6"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "7ee75fbe35c95d1f625e91bb20658bac486d0882",
+        "version": "0.19.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c0e0735262187c5aaa02baf53457c4a201e21fd7521e201c1a952141f2b15471",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:46c5812267586bc3777edbfbf4bdf3719cef3f51506e98e39c82f2ac91b9539c"
+        },
+        "image_ids": {
+          "api": "sha256:2a111e082a227fc92e002a5cc1089774ea26ec7f6692a65d925e36c9755bc939",
+          "web": "sha256:e6e11b40d9c4fbc63641e0c69090d8555e1cef5fbc4791331a3ded999b9237bf"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "7ee75fbe35c95d1f625e91bb20658bac486d0882",
+            "run_id": "38373304547"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c0e0735262187c5aaa02baf53457c4a201e21fd7521e201c1a952141f2b15471",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:46c5812267586bc3777edbfbf4bdf3719cef3f51506e98e39c82f2ac91b9539c"
+            }
+          },
+          "candidate_run_id": "38373537722"
+        }
+      },
+      "tag": "v0.19.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.18.1",
+        "commit_sha": "ceb1b03d15c18973f3d3c6d9574384e680293d74",
+        "image_ids": {
+          "api": "sha256:b11e6d013cc5db011c7197f7ff38fb86c8a1f34c7969d20feb208b1c1ed74b04",
+          "web": "sha256:5c4e14ba90145c00dd7d20e23a03da5637c2aa67ead46d54d0f3d669a0559809"
+        },
+        "build_time": "2026-10-11T15:37:06Z"
+      },
+      "rollback": {
+        "tag": "v0.18.1",
+        "commit_sha": "ceb1b03d15c18973f3d3c6d9574384e680293d74",
+        "version": "0.18.1",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:526a780b391e71994f4a664340d4632bc58c884f1863c549350ebd27c5d68c17",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8606b48767332e97b990aaa2dac0711e1be6e28f870c5a43dbd200c2e7d224b5"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261013-002 only; Provider PR9, Dashboard PR11, governance PR38 merged; exact main CI and candidates PASS; marketNewsFeed excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "New market-structure-v1 contract and additive PostgreSQL tables/indexes; optional extensions; existing capabilities preserved. Focused migration, contract and source tests passed; exact main CI passed."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Real local PostgreSQL facts and 121 Provider generations projected through Bearer API to Consumer; frontend tests/build passed; see changes/evidence/CHG-20261013-002/third-party-policy-integration.json. New production cache boundary check follows deployment."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Public source probes verified original Legu statistics, THS883421 and A500 sh000510; unavailable 830000 and unsupported breadth remain null/paused. ETF flows explicitly estimates. Candidate smoke is isolated fixture only."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Root image runner installed by administrator; local/remote module hashes match reviewed 6b8c98a. Existing credentials preserved; enable module/sync and frontend flag before deployment. All three frontend candidate flags true."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified current v3.23.1/v0.18.1 exact SHA and digest/config IDs from REL-20261011-004; deploy checks live drift, retains rollback images and readable backups. No rehearsal."
+    }
+  }
+}

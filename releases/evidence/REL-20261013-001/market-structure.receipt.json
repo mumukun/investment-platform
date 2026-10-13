@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "tested_at": "2026-10-13T09:39:32.676135+00:00",
+  "scope": "Configured live Bearer Provider API -> persisted Consumer cache/route query; unauthenticated HTTP protected; no browser OAuth rerun",
+  "days": 121,
+  "actual_market_trade_date": "2026-10-13",
+  "third_party_market_stats": {
+    "quality": "healthy",
+    "raw_unit": "%",
+    "data_time": "2026-10-13T15:00:00+08:00",
+    "entity_id": "legu:market-activity",
+    "raw_value": {
+      "上涨": "2790",
+      "下跌": "2267",
+      "停牌": "13",
+      "平盘": "155",
+      "涨停": "70",
+      "跌停": "10",
+      "活跃度": "活跃度 53.40%",
+      "st st*涨停": "3",
+      "st st*跌停": "2",
+      "真实涨停": "62",
+      "真实跌停": "5"
+    },
+    "fetched_at": "2026-10-13T09:21:51.925854+00:00",
+    "flat_count": 155,
+    "trade_date": "2026-10-13",
+    "source_name": "乐咕乐股沪深市场赚钱效应",
+    "history_mode": "observed",
+    "reason_codes": [],
+    "rising_count": 2790,
+    "falling_count": 2267,
+    "first_seen_at": "2026-10-13T09:21:51.925854Z",
+    "source_metric": "活跃度",
+    "source_version": "1.19.1",
+    "normalized_unit": "%",
+    "source_endpoint": "https://legulegu.com/stockdata/market-activity",
+    "suspended_count": 13,
+    "rising_ratio_pct": 53.4,
+    "observation_phase": "eod",
+    "source_published_at": null,
+    "normalization_factor": 1,
+    "observation_trade_date": "2026-10-13"
+  },
+  "average_price_index": {
+    "id": "ths:830000",
+    "low": null,
+    "code": "830000",
+    "high": null,
+    "name": "A股平均股价",
+    "open": null,
+    "unit": "元/股",
+    "close": null,
+    "quality": "unavailable",
+    "trade_date": "2026-10-13",
+    "source_name": "同花顺平均股价830000",
+    "reason_codes": [
+      "AVERAGE_PRICE_SOURCE_UNAVAILABLE"
+    ],
+    "first_seen_at": null,
+    "source_endpoint": null,
+    "observation_phase": null
+  },
+  "state": "INSUFFICIENT_EVIDENCE",
+  "quality": {
+    "status": "partial",
+    "sources": [
+      "东方财富ETF二级行情",
+      "东方财富指数日线",
+      "乐咕乐股沪深市场赚钱效应",
+      "新浪交易日历"
+    ],
+    "reason_codes": [
+      "SELF_BUILT_STATISTICS_DISABLED",
+      "OPTIONAL_INDEX_SOURCE_UNAVAILABLE",
+      "BREADTH_HISTORY_INCOMPLETE"
+    ]
+  },
+  "provider_days": 121,
+  "build_time": "2026-10-13T09:03:06Z",
+  "app_url": "http://s.freemumu.top:9360",
+  "api_http_unauthenticated_status": 401
+}
