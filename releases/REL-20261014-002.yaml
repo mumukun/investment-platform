@@ -1,0 +1,42 @@
+schema_version: "1.0"
+release_id: REL-20261014-002
+status: RELEASED
+release_profile: routine
+created_at: "2026-10-14T07:37:43+08:00"
+updated_at: "2026-10-14T07:43:23+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.4
+    previous_commit_sha: f0324d1c5e0171f82abe1ef2da36b1476c389f8e
+    rollback_image_id: sha256:43d150511eb81c4c95ebbe191106a54c4fc1bb81887d0f0ba569d856ace39857
+    new_version: v2.3.5
+    tag: v2.3.5
+    commit_sha: c14b44683416e1d59f738ceec83443d19079adef
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: sha256:58c10c3ecd635420ceefc369339e45be27b3ebccba758fbff442eb203e780e08
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/2
+    ci: "No Actions workflows; 28 affected local tests passed."
+deployment_receipts:
+  - evidence/REL-20261014-002/deployment.receipt.json
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: SUCCESS
+  completed_at: "2026-10-13T23:42:12.029271+00:00"
+  execution: "Administrator invocation under global flock; existing deploy.sh and authenticated Admin API recovery."
+verification:
+  status: PASSED
+  evidence:
+    - "8 resume API/storage tests, 19 CTEE regressions, 1 admin research contract test PASS."
+    - "Config, compileall, diff and prepared command bash syntax checks PASS."
+    - "Production health PASS, 6 enabled children running; authenticated original-site probe HTTP 200, 5 articles, old pause cleared through CAS."
+  known_limitations:
+    - "Old pause cleared. Next natural collection and push not yet verified."
+    - "Resume permits next scheduled low-frequency retry, not forced push."
+rollback:
+  status: PREVIOUS_IMAGE_AND_READABLE_BACKUP_RETAINED
+  evidence:
+    - "v2.3.4 image retained as rollback-v2.3.4; protected readable database dump and runtime config preserved in deployment receipt."
+notes:
+  - "Existing authorization includes commit, merge and formal release; user additionally requested old-state clearance."

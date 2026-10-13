@@ -1,0 +1,47 @@
+{
+  "release_id": "REL-20261014-002",
+  "status": "SUCCESS",
+  "tag": "v2.3.5",
+  "commit_sha": "c14b44683416e1d59f738ceec83443d19079adef",
+  "image_id": "sha256:58c10c3ecd635420ceefc369339e45be27b3ebccba758fbff442eb203e780e08",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "completed_at": "2026-10-13T23:42:12.029271+00:00",
+  "backup": {
+    "path": "/volume1/docker/marketNewsFeed/data/backups/v2.3.5-BgArZW5Z/market_news.dump",
+    "bytes": 66284232,
+    "sha256": "9d66b4229c7e9a1f3f03542f5cb783d59ae82bee2ea955bd146990fabb4d03ab",
+    "directory_mode": "0o700",
+    "file_mode": "0o600",
+    "readability": "pg_restore -l PASS",
+    "runtime_env_retained": true
+  },
+  "recovery": {
+    "ok": true,
+    "source": "CTEE",
+    "changed": true,
+    "probe_count": 5,
+    "state": {
+      "source": "CTEE",
+      "status": "retry_pending",
+      "failure_count": 0,
+      "blocked_until": null,
+      "last_success_at": "2026-10-08T20:27:28.559232+00:00",
+      "updated_at": "2026-10-13T23:42:16.489047+00:00"
+    },
+    "next_action": "Retry at the next scheduled low-frequency poll."
+  },
+  "health": {
+    "ok": true,
+    "enabled_child_processes": 6,
+    "restart_count": 0
+  },
+  "rollback": {
+    "tag": "v2.3.4",
+    "commit_sha": "f0324d1c5e0171f82abe1ef2da36b1476c389f8e",
+    "image_id": "sha256:43d150511eb81c4c95ebbe191106a54c4fc1bb81887d0f0ba569d856ace39857"
+  },
+  "execution": "Administrator invoked prepared command under NAS global flock; existing deploy.sh then authenticated Admin recovery endpoint",
+  "limits": [
+    "Next natural low-frequency poll and push pending; no forced push or seen/sent changes."
+  ]
+}
