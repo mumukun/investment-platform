@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "live public source -> isolated PostgreSQL facts/generations; repeated facts deduplicate",
+  "source_rows": 428,
+  "persisted_unique_rows": 428,
+  "processed_generations": 121,
+  "new_generations": 121,
+  "start": "2026-04-14",
+  "end": "2026-10-13",
+  "latest": {
+    "id": "eastmoney:47.800005",
+    "low": 25.14,
+    "code": "800005",
+    "high": 26.44,
+    "name": "A股平均股价",
+    "open": 25.58,
+    "unit": "元/股",
+    "close": 26.17,
+    "quality": "healthy",
+    "trade_date": "2026-10-13",
+    "source_name": "东方财富A股平均股价",
+    "reason_codes": [],
+    "first_seen_at": "2026-10-13T10:13:31.207264+00:00",
+    "source_endpoint": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+    "observation_phase": "eod"
+  }
+}

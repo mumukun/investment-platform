@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261013-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Same Change average-price correction under previous 开发完成之后就进行提交代码 发版本吧 authorization; current user permits provider-specific average-price codes and public HTTP original data storage."
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "83afa02b2afcde42a11c9d8834657491ff0865ca",
+        "version": "3.24.1",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:aa1d05467464c4dfb9c1f519d7af841bc92a3d755f87b372fa5dec653fcbf253"
+        },
+        "image_ids": {
+          "app": "sha256:98ddd3cd5e4bcf81381256cda19f54782c312585b5432f8c63a84452fc996dde"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "83afa02b2afcde42a11c9d8834657491ff0865ca",
+            "run_id": "38383880976"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:aa1d05467464c4dfb9c1f519d7af841bc92a3d755f87b372fa5dec653fcbf253"
+            }
+          },
+          "candidate_run_id": "38383953157"
+        }
+      },
+      "tag": "v3.24.1",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.24.0",
+        "commit_sha": "ef81bd1c03282268385e8b696c382871a3e2ef5c",
+        "image_ids": {
+          "stock-api": "sha256:770fa603bdeb66f1aee8c555dc251129e7e7da92cf7e1a5c46b3dce7b4f2b376",
+          "stock-watch": "sha256:770fa603bdeb66f1aee8c555dc251129e7e7da92cf7e1a5c46b3dce7b4f2b376"
+        }
+      },
+      "rollback": {
+        "tag": "v3.24.0",
+        "commit_sha": "ef81bd1c03282268385e8b696c382871a3e2ef5c",
+        "version": "3.24.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7f0587551ca34c84d74078b659e202a52f38c345536b5cc42fcc9dea3e861f5b"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "b98b4ab079b61d583fe52594963227d1d2ed3083",
+        "version": "0.19.1",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ec7464066c98dd8cbff0723cb80e8c6f45f1bb7987e052c6bbed3bdf7698100c",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:76f4b9cbe00dc3e98044212db9b90883987d93ee38e816facdb0e38bef2c9ba2"
+        },
+        "image_ids": {
+          "api": "sha256:47761db5a423eeb52dbc5cd992c199ff0910244f95eba2c1182d99edad823322",
+          "web": "sha256:7b1b135428692c728f104de960bf97b9eb2dd4c275b20a818b96fff990aab272"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "b98b4ab079b61d583fe52594963227d1d2ed3083",
+            "run_id": "38384109367"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ec7464066c98dd8cbff0723cb80e8c6f45f1bb7987e052c6bbed3bdf7698100c",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:76f4b9cbe00dc3e98044212db9b90883987d93ee38e816facdb0e38bef2c9ba2"
+            }
+          },
+          "candidate_run_id": "38384341070"
+        }
+      },
+      "tag": "v0.19.1",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.19.0",
+        "commit_sha": "7ee75fbe35c95d1f625e91bb20658bac486d0882",
+        "image_ids": {
+          "api": "sha256:2a111e082a227fc92e002a5cc1089774ea26ec7f6692a65d925e36c9755bc939",
+          "web": "sha256:e6e11b40d9c4fbc63641e0c69090d8555e1cef5fbc4791331a3ded999b9237bf"
+        },
+        "build_time": "2026-10-13T09:03:06Z"
+      },
+      "rollback": {
+        "tag": "v0.19.0",
+        "commit_sha": "7ee75fbe35c95d1f625e91bb20658bac486d0882",
+        "version": "0.19.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c0e0735262187c5aaa02baf53457c4a201e21fd7521e201c1a952141f2b15471",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:46c5812267586bc3777edbfbf4bdf3719cef3f51506e98e39c82f2ac91b9539c"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Same CHG-20261013-002 average-price correction only; Provider PR10 and Consumer PR12 merged; exact main CI and candidates PASS; News excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Optional third_party_average_price_index added; previous 830000 identity/fields/history retained. Exact v0.19.0 Consumer successfully parsed new Provider envelope in isolated real integration. No DB or auth/config migration. Rules v1.2.1."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "22 Provider, 9 Consumer, 3 frontend tests/build/Ruff passed; 121 generated days through real local Bearer API to immutable projections, repeat sync0. Evidence changes/evidence/CHG-20261013-002/average-price-800005-consumer-integration.json."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Eastmoney official suggestion confirms47.800005 named A股平均股价; public history428real OHLC records and latest26.17validated; isolated PostgreSQL fact dedup PASS. Candidate smoke is fixture only; source-only production initialization/cache query follows deployment."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No environment/credential/build flag changes; current three frontendflags true; no Key. Reuse root image runner installed and hash-verified in REL-20261013-001; actual drift checked by deployer."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified current v3.24.0 and v0.19.0 from committed baseline/REL001 receipts; deploy retains exact images and makes readable protected backups; no destructive migration/rehearsal."
+    }
+  }
+}

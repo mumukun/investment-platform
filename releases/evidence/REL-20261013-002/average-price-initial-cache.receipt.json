@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "production average-price source-only initialization",
+  "completed_at": "2026-10-13T10:46:00.846641+00:00",
+  "source_rows": 331,
+  "processed_generations": 121,
+  "new_generations": 121,
+  "start": "2026-04-14",
+  "end": "2026-10-13",
+  "days": 121,
+  "latest": {
+    "id": "eastmoney:47.800005",
+    "low": 25.14,
+    "code": "800005",
+    "high": 26.44,
+    "name": "A股平均股价",
+    "open": 25.58,
+    "unit": "元/股",
+    "close": 26.17,
+    "quality": "healthy",
+    "trade_date": "2026-10-13",
+    "source_name": "东方财富A股平均股价",
+    "reason_codes": [],
+    "first_seen_at": "2026-10-13T10:45:35.877262+00:00",
+    "source_endpoint": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+    "observation_phase": "eod"
+  }
+}

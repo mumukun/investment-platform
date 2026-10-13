@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "live public data in isolated Provider PostgreSQL -> real local Bearer API -> Consumer projection and persisted query; previous v0.19.0 Consumer accepts optional extension",
+  "created_projections": 121,
+  "repeated_created_projections": 0,
+  "days": 121,
+  "latest": {
+    "id": "eastmoney:47.800005",
+    "low": 25.14,
+    "code": "800005",
+    "high": 26.44,
+    "name": "A股平均股价",
+    "open": 25.58,
+    "unit": "元/股",
+    "close": 26.17,
+    "quality": "healthy",
+    "trade_date": "2026-10-13",
+    "source_name": "东方财富A股平均股价",
+    "reason_codes": [],
+    "first_seen_at": "2026-10-13T10:13:31.207264Z",
+    "source_endpoint": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+    "observation_phase": "eod"
+  },
+  "old_consumer_accepts": true
+}

@@ -445,3 +445,7 @@ ORDER BY business_time DESC, created_at DESC;
 本次只调整/补充治理仓库文档与Change记录；没有修改业务代码、数据库、部署配置，未Commit/Push/Merge/Tag/发布。
 
 2026-10-13 用户来源政策修订：市场结构规则1.2.0停止使用个股池派生统计。新增JSONB字段third_party_market_stats（乐咕原始百分比/家数及真实时刻），指数ths883421与厂商成交额；A500外部调用sh000510，内部身份保留。旧数据/版本不删，字段字典中原均线广度/分布/等权/中位说明只适用于旧版本，当前页面暂停这些维度；平均股价仅830000且尚未获得真实行情。
+
+### 平均股价来源修正（2026-10-13，当前）
+
+用户取消830000限定。当前直接采集东方财富公开日K，官方标识47.800005、名称A股平均股价，按原始元/股OHLC存入Provider market_structure_fact（kind=average_price_index、entity_id=eastmoney:47.800005）。规则v1.2.1新增可选third_party_average_price_index，经Bearer API写入Consumer Snapshot；旧830000对象和历史保留，曲线按平台身份隔离。无Key、无新表/迁移、不使用本地个股池计算。此前830000未就绪描述仅为初版历史。
