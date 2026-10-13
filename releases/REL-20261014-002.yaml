@@ -1,9 +1,9 @@
 schema_version: "1.0"
 release_id: REL-20261014-002
-status: BLOCKED
+status: RELEASED
 release_profile: routine
 created_at: "2026-10-14T07:37:43+08:00"
-updated_at: "2026-10-14T07:37:43+08:00"
+updated_at: "2026-10-14T07:43:23+08:00"
 changes: [CHG-20261013-003]
 repositories:
   - repository: marketNewsFeed
@@ -14,25 +14,29 @@ repositories:
     tag: v2.3.5
     commit_sha: c14b44683416e1d59f738ceec83443d19079adef
     artifact_model: SOURCE_TAG_BUILD
-    artifact: NOT_BUILT_ON_NAS
+    artifact: sha256:58c10c3ecd635420ceefc369339e45be27b3ebccba758fbff442eb203e780e08
     pull_request: https://github.com/mumukun/marketNewsFeed/pull/2
     ci: "No Actions workflows; 28 affected local tests passed."
+deployment_receipts:
+  - evidence/REL-20261014-002/deployment.receipt.json
 release_order: [marketNewsFeed]
 deployment:
   environment: Synology NAS
-  status: BLOCKED
-  reason: "Root-owned global lock requires administrator terminal invocation. Command prepared and requested; no unlocked mutation."
+  status: SUCCESS
+  completed_at: "2026-10-13T23:42:12.029271+00:00"
+  execution: "Administrator invocation under global flock; existing deploy.sh and authenticated Admin API recovery."
 verification:
-  status: PRE_DEPLOY_PASSED
+  status: PASSED
   evidence:
     - "8 resume API/storage tests, 19 CTEE regressions, 1 admin research contract test PASS."
     - "Config, compileall, diff and prepared command bash syntax checks PASS."
+    - "Production health PASS, 6 enabled children running; authenticated original-site probe HTTP 200, 5 articles, old pause cleared through CAS."
   known_limitations:
-    - "Old pause not cleared until v2.3.5 deployed and authenticated original-site probe succeeds."
+    - "Old pause cleared. Next natural collection and push not yet verified."
     - "Resume permits next scheduled low-frequency retry, not forced push."
 rollback:
-  status: PREVIOUS_IDENTITY_VERIFIED
+  status: PREVIOUS_IMAGE_AND_READABLE_BACKUP_RETAINED
   evidence:
-    - "v2.3.4 actual production verified in REL-20261014-001; preserve local image/config and readable backup before switch."
+    - "v2.3.4 image retained as rollback-v2.3.4; protected readable database dump and runtime config preserved in deployment receipt."
 notes:
   - "Existing authorization includes commit, merge and formal release; user additionally requested old-state clearance."
