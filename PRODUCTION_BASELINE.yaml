@@ -1,5 +1,5 @@
 baseline_version: 1
-verified_at: "2026-10-13T10:45:10.091563+00:00"
+verified_at: "2026-10-13T11:02:46.010050+00:00"
 status: verified_with_artifact_gaps
 artifact_model: MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD
 
@@ -68,45 +68,46 @@ repositories:
       - releases/evidence/REL-20261013-002/average-price.receipt.json
   investment-research-dashboard:
     production:
-      verified_at: '2026-10-13T10:45:10.091563+00:00'
-      application_version: 0.19.1
+      verified_at: '2026-10-13T11:02:46.010050+00:00'
+      application_version: 0.19.2
       application_version_source: VERSION
-      tag: v0.19.1
-      commit_sha: b98b4ab079b61d583fe52594963227d1d2ed3083
+      tag: v0.19.2
+      commit_sha: 4d43e180df5bfbd53f03d4e6c83c794b40020c93
       artifact_model: CI_BUILD_ONCE
       artifact:
-        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:ec7464066c98dd8cbff0723cb80e8c6f45f1bb7987e052c6bbed3bdf7698100c
-        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:76f4b9cbe00dc3e98044212db9b90883987d93ee38e816facdb0e38bef2c9ba2
+        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:082ffde2c91d1f602323f5ab370cfb1eda06bce03c5d76a7295335b070e9daf9
+        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:bb53539d07d184f217230f57e24a9b8a72796d028cf118df930add5fc3077d98
       artifact_id:
-        api: sha256:47761db5a423eeb52dbc5cd992c199ff0910244f95eba2c1182d99edad823322
-        web: sha256:7b1b135428692c728f104de960bf97b9eb2dd4c275b20a818b96fff990aab272
+        api: sha256:f110b9d78882221275276ca1a3ca4ba9d7e7527d2a0ddc07fa2b8f398422288c
+        web: sha256:dc78020e4a0ffe1b2ce6cfe46b7d4722bb9eeeb861d179fb4955a85a193ac84d
       artifact_digest:
-        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:ec7464066c98dd8cbff0723cb80e8c6f45f1bb7987e052c6bbed3bdf7698100c
-        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:76f4b9cbe00dc3e98044212db9b90883987d93ee38e816facdb0e38bef2c9ba2
+        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:082ffde2c91d1f602323f5ab370cfb1eda06bce03c5d76a7295335b070e9daf9
+        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:bb53539d07d184f217230f57e24a9b8a72796d028cf118df930add5fc3077d98
       artifact_identity_status: VERIFIED_REGISTRY_DIGEST_AND_CONFIG_ID
       containers:
       - investment-research-dashboard-nas-api-1
       - investment-research-dashboard-nas-web-1
-      deployment_timestamp: '2026-10-13T10:45:10.091563+00:00'
+      deployment_timestamp: '2026-10-13T11:02:46.010050+00:00'
       health: HEALTHY
       rollback_baseline:
-        tag: v0.19.0
-        commit_sha: 7ee75fbe35c95d1f625e91bb20658bac486d0882
-        version: 0.19.0
+        tag: v0.19.1
+        commit_sha: b98b4ab079b61d583fe52594963227d1d2ed3083
+        version: 0.19.1
         images:
-          api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:c0e0735262187c5aaa02baf53457c4a201e21fd7521e201c1a952141f2b15471
-          web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:46c5812267586bc3777edbfbf4bdf3719cef3f51506e98e39c82f2ac91b9539c
+          api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:ec7464066c98dd8cbff0723cb80e8c6f45f1bb7987e052c6bbed3bdf7698100c
+          web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:76f4b9cbe00dc3e98044212db9b90883987d93ee38e816facdb0e38bef2c9ba2
         image_ids:
-          api: sha256:2a111e082a227fc92e002a5cc1089774ea26ec7f6692a65d925e36c9755bc939
-          web: sha256:e6e11b40d9c4fbc63641e0c69090d8555e1cef5fbc4791331a3ded999b9237bf
+          api: sha256:47761db5a423eeb52dbc5cd992c199ff0910244f95eba2c1182d99edad823322
+          web: sha256:7b1b135428692c728f104de960bf97b9eb2dd4c275b20a818b96fff990aab272
         status: VERIFIED_RETAINED_PRODUCTION
         dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
       confidence: HIGH
       evidence:
-      - releases/REL-20261013-002.yaml
-      - releases/evidence/REL-20261013-002/deployment.receipt.json
+      - releases/REL-20261013-003.yaml
+      - releases/evidence/REL-20261013-003/deployment.receipt.json
+      - releases/evidence/REL-20261013-003/chart-asset.receipt.json
       - releases/evidence/REL-20261013-002/average-price.receipt.json
-      build_time: '2026-10-13T10:35:04Z'
+      build_time: '2026-10-13T10:56:53Z'
       professional_kline_enabled: true
       market_structure_enabled: true
       dashboard_exact_sha_runtime: VERIFIED

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "production changed UI static artifact only; no browser/session bypass",
+  "tested_at": "2026-10-13T11:04:03.531518+00:00",
+  "asset": "/usr/share/nginx/html/assets/MarketStructureView-BGqEkjSn.js",
+  "fixed_830000_legend_absent": true,
+  "candlestick_present": true,
+  "build_time": "2026-10-13T10:56:53Z"
+}
