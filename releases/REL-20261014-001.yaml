@@ -1,0 +1,44 @@
+schema_version: "1.0"
+release_id: REL-20261014-001
+status: BLOCKED
+release_profile: routine
+release_target_seconds: 300
+assistant_review_target_seconds: 60
+created_at: "2026-10-14T00:48:07+08:00"
+updated_at: "2026-10-14T00:47:53+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.3
+    previous_commit_sha: deb075480b57f448b10d6de6880401a7a23fdc47
+    rollback_image_id: sha256:517b71ef8f501f9a64a22d878653178c5b6550449709080583eb3edf6ced1c05
+    new_version: v2.3.4
+    tag: v2.3.4
+    commit_sha: f0324d1c5e0171f82abe1ef2da36b1476c389f8e
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: NOT_BUILT_ON_NAS
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/1
+    ci: "No Actions workflows; reuse 30 affected local tests and final Linux amd64 build/source evidence."
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: BLOCKED
+  reason: "Global release.lock is root-only; current SSH identity lacks lock access. Existing nas-image-release configuration excludes marketNewsFeed. Administrator execution requested; no unlocked production mutation."
+verification:
+  status: PRE_DEPLOY_PASSED
+  evidence:
+    - ../changes/evidence/CHG-20261013-003/ctee-readonly.json
+    - "30 affected unit tests, config/compileall/Compose/diff checks PASS."
+    - "Final Linux amd64 Python 3.13 source request through NAS proxy HTTP 200, 15 original CTEE semi items."
+    - "Previous production /api/health ok=true; not new-version health."
+  known_limitations:
+    - "Original API content field semantics retained; not a new full-article scraper."
+    - "Natural production collection/push not yet verified. Persisted circuit retained."
+    - "Low-frequency round-robin can delay or miss articles. Future site restrictions remain possible."
+rollback:
+  status: IDENTITY_VERIFIED_NOT_REHEARSED
+  evidence:
+    - "Retain old image and protected env/database backup before actual switch; none created yet."
+notes:
+  - "Business PR merged; this governance closeout records the blocked deployment."
+  - "User explicitly authorized commit, merge and formal release after verification. Production release not complete."
