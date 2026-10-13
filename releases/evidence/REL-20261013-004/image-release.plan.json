@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261013-004",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Same CHG-20261013-002 source-policy correction under explicit 开发完成之后就进行提交代码 发版本吧 authorization; user does not recommend Legu."
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+        "version": "3.24.2",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa"
+        },
+        "image_ids": {
+          "app": "sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+            "run_id": "38389720294"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa"
+            }
+          },
+          "candidate_run_id": "38389786466"
+        }
+      },
+      "tag": "v3.24.2",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.24.1",
+        "commit_sha": "83afa02b2afcde42a11c9d8834657491ff0865ca",
+        "image_ids": {
+          "stock-api": "sha256:98ddd3cd5e4bcf81381256cda19f54782c312585b5432f8c63a84452fc996dde",
+          "stock-watch": "sha256:98ddd3cd5e4bcf81381256cda19f54782c312585b5432f8c63a84452fc996dde"
+        }
+      },
+      "rollback": {
+        "tag": "v3.24.1",
+        "commit_sha": "83afa02b2afcde42a11c9d8834657491ff0865ca",
+        "version": "3.24.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:aa1d05467464c4dfb9c1f519d7af841bc92a3d755f87b372fa5dec653fcbf253"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "ad357aa186dea935309de90f344de37d976db980",
+        "version": "0.19.3",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191"
+        },
+        "image_ids": {
+          "api": "sha256:b019b7405d88738ce41de26628bca302e4bfe98259701c790dcfa89503c8e65b",
+          "web": "sha256:651495d8aefb9e87436a35ff990f11a40968f51b626bfe4638c91794033c735f"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "ad357aa186dea935309de90f344de37d976db980",
+            "run_id": "38389723667"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191"
+            }
+          },
+          "candidate_run_id": "38389993788"
+        }
+      },
+      "tag": "v0.19.3",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.19.2",
+        "commit_sha": "4d43e180df5bfbd53f03d4e6c83c794b40020c93",
+        "image_ids": {
+          "api": "sha256:f110b9d78882221275276ca1a3ca4ba9d7e7527d2a0ddc07fa2b8f398422288c",
+          "web": "sha256:dc78020e4a0ffe1b2ce6cfe46b7d4722bb9eeeb861d179fb4955a85a193ac84d"
+        },
+        "build_time": "2026-10-13T10:56:53Z"
+      },
+      "rollback": {
+        "tag": "v0.19.2",
+        "commit_sha": "4d43e180df5bfbd53f03d4e6c83c794b40020c93",
+        "version": "0.19.2",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:082ffde2c91d1f602323f5ab370cfb1eda06bce03c5d76a7295335b070e9daf9",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bb53539d07d184f217230f57e24a9b8a72796d028cf118df930add5fc3077d98"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Same CHG002 source-removal only; PR11/14 merged main exact CI/candidates PASS; News excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Contract structure and optional legacy statistics model retained. New rules1.2.2 publish null statistics; no DB/auth/config migration or history deletion."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "21 Provider,9 Consumer isolated PostgreSQL,3 frontend tests/type/build/compileall PASS; old facts cannot contaminate generation. See changes/evidence/CHG-20261013-002/legu-removal-validation.json. New-generation API/cache smoke follows compute-only cache update."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Removed Legu collector and legacy AKShare valuation call. No replacement enabled. Average-price/ETF/index source boundaries unchanged; reuse REL002 published OHLC and real Bearer->cache validation; not rerun source collection. New-production cache smoke checks preserved800005 and null statistics."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No env/keys/buildflags/runner changes; reuse REL003 configuration and current baseline; actual drift checked inside deploy."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Retained actual Provider3.24.1/Dashboard0.19.2 exact images from committed baseline/receipts; deploy makes protected readable backups; no destructive migration or restore rehearsal."
+    }
+  }
+}

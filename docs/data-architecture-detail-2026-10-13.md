@@ -449,3 +449,5 @@ ORDER BY business_time DESC, created_at DESC;
 ### 平均股价来源修正（2026-10-13，当前）
 
 用户取消830000限定。当前直接采集东方财富公开日K，官方标识47.800005、名称A股平均股价，按原始元/股OHLC存入Provider market_structure_fact（kind=average_price_index、entity_id=eastmoney:47.800005）。规则v1.2.1新增可选third_party_average_price_index，经Bearer API写入Consumer Snapshot；旧830000对象和历史保留，曲线按平台身份隔离。无Key、无新表/迁移、不使用本地个股池计算。此前830000未就绪描述仅为初版历史。
+
+当前来源政策补正（规则1.2.2）：用户不建议使用乐咕，已停用采集、新代次引用和页面统计；third_party_market_stats保留兼容字段但新代次null，旧数据/代次保留审计。旧飞书个股历史回填的AKShare乐咕估值尝试也已移除，缺失估值不填零。平均股价现为东方财富800005（QuoteID47.800005），已发布原始日K并入库，不自行计算。

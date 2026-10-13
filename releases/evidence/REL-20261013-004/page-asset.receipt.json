@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "production changed UI static artifact only; no browser/session bypass",
+  "tested_at": "2026-10-13T15:29:00.534002+00:00",
+  "asset": "/usr/share/nginx/html/assets/MarketStructureView-Gyre5Icd.js",
+  "disabled_statistics_renderer_absent": true,
+  "fixed_830000_legend_absent": true,
+  "candlestick_present": true,
+  "build_time": "2026-10-13T11:24:35Z"
+}
