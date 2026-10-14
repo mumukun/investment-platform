@@ -1,0 +1,51 @@
+schema_version: "1.0"
+release_id: REL-20261014-005
+status: RELEASED
+release_profile: routine
+created_at: "2026-10-14T15:25:38+08:00"
+updated_at: "2026-10-14T15:38:00+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.6
+    previous_commit_sha: 8d74da6eebad9830ead8ff96311440bdf0dce19b
+    rollback_image_id: sha256:128c3cc68e0418afbd3dae66fda932f5aee0b6fd100a9970a7c460a6adbafbe0
+    new_version: v2.3.7
+    tag: v2.3.7
+    commit_sha: bd9ad9c8abfa6b3e53cb8c16f898530a6929f236
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: sha256:327c642e13a6e1f6fd3e39beb1fd2722a17ffb2639a7707d99cca3b24f0dc479
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/4
+    ci: "No Actions workflows; tested branch/main tree identical; 55 affected tests and NAS browser/collector probes PASS."
+deployment_receipts:
+  - evidence/REL-20261014-005/source-plan.json
+  - evidence/REL-20261014-005/deployment.receipt.json
+  - evidence/REL-20261014-005/build-proxy-verification.json
+  - evidence/REL-20261014-004/configuration-activation.json
+  - evidence/REL-20261014-004/build-recovery.json
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: SUCCESS
+  execution: "Passwordless restricted nas-image-release; global lock, protected readable backup, exact source build."
+verification:
+  status: FAILED_CTEE_BROWSER_STARTUP
+  evidence:
+    - "Ordinary Chrome same-page two rounds 600s apart HTTP200; actual source across restarts stock/tech/semi three rounds HTTP200/5 articles over 20 minutes."
+    - "Unprivileged browser/environment boundary and offline persistent cookie restart PASS; no database, LLM or push in probes."
+    - "CTEE loopback fixed proxy17891 and public Discord gateway200 with TLS validation; original manual groups preserved."
+  known_limitations:
+    - "HTML JSON-LD covers partial homepage articles/descriptions; future WAF changes cannot be guaranteed."
+rollback:
+  status: PREVIOUS_IMAGE_AND_CONFIG_RETAINED
+  configuration_directory: /volume1/docker/.investment-platform-releases/ctee-v2.3.7-configuration-20261014
+  evidence:
+    - "Original env/Mihomo files root600 in root700 directory; existing runtime.env in source deploy contains staged new settings. Restore original config from the separate pre-activation backup."
+notes:
+  - "Explicit user authorization includes commit, merge and formal release. No seen/sent edits or forced replay."
+  - "Browser uses its own anonymous NAS profile; no user Chrome cookies copied."
+
+  - "Retry of failed REL-20261014-004 with same immutable v2.3.7 source; NAS build-only override passes HTTP_PROXY/HTTPS_PROXY to fixed local listener using host build network. No tracked source edits or tag movement."
+
+  - "Deployment health/auth smoke PASS at15:35:31; actual image from protected receipt is327c642e. deploy.sh pre-recreation ARTIFACT_ID printed prior image; do not use that line for runtime identity."
+  - "First natural CTEE poll failed before network: unprivileged worker could not import source_errors.py copied with0600 NAS permissions. Exact production image offline reproduces PermissionError. Fix follows as new immutable v2.3.8."

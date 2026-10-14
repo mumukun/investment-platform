@@ -1,0 +1,14 @@
+{
+  "configuration_activation": "PASS",
+  "global_release_lock": "HELD",
+  "original_manual_groups_preserved": true,
+  "ctee_group": "🇭🇰 香港Y04 | IEPL",
+  "listener": "127.0.0.1:17891",
+  "backups": "/volume1/docker/.investment-platform-releases/ctee-v2.3.7-configuration-20261014",
+  "previous_env_sha256": "ab16663c70cde6ab47f36cc35682423deb04db6b0cdae7d3b8adf8a5eaf7e5f7",
+  "previous_mihomo_sha256": "9b7e9a997ed615ff682ca83a574f967835d999f2c935bafa71e022b8e5c82fd1",
+  "new_mihomo_sha256": "a1053eeb042bf01b80711ef4a445965656f994422ecdd5ffbaf6a73e6d3ca1f3",
+  "new_env_sha256": "533a436c1a16cdab946b0d349f7f0728a3842531647c1457dbe69d33a6a23d2a",
+  "application_restarted": false,
+  "browser_profile": "MIGRATED_PRIVATE_SESSION"
+}

@@ -1,0 +1,8 @@
+{
+  "build_proxy": "http://127.0.0.1:17891",
+  "build_network": "host",
+  "compose_validation": "PASS",
+  "observation": "BuildKit log headless-shell 114.3 MiB download from 438.3s zero-percent to445.3s100-percent; prior direct build stalled at10-percent after620s of download.",
+  "source_tag": "v2.3.7",
+  "source_sha": "bd9ad9c8abfa6b3e53cb8c16f898530a6929f236"
+}

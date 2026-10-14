@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261014-007",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.9",
+      "commit_sha": "eefb786c7f370b34eac17365338b932370eb2683",
+      "expected_production": {
+        "tag": "v2.3.8",
+        "commit_sha": "9eff6f5c2967fc63c386c8f95edad3d39300f214",
+        "image_id": "sha256:f05ee98b2da85e03fc90dc5b915648013765cc9fe2423022f97b0ec72592d1c1"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "eefb786c7f370b34eac17365338b932370eb2683",
+        "evidence": "PR6 merged; main tree identical to tested6549cdf. 14 browser tests/config/compileall/Compose/diff PASS; exact NAS candidate with changed worker/transport passes real offline browser across2process restarts, UID1042/profile0700/business credentials absent."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "marketNewsFeed only; stock-analyzer and dashboard excluded. CTEE dedicated listener configuration separately backed up under NAS global lock."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No schema or research contract changes; original IDs, publication times, existing homepage descriptions and dedupe retained."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Original ordinary Chrome/profile/fixed proxy retained; startup45s/request120s bounded; always opens fresh tab in existing context; no original response fails before indexing; timeout/cleanup/tab-empty/credential boundary tests PASS. No schema/contract changes."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Earlier stock/tech/semi repeated original reads PASS. v2.3.8 actual NAS runtime startup IndexError; same own anonymous profile isolated15s startup TimeoutError;45s startup same profile returns original HTTP200. Fresh-profile CDP diagnostic alsooriginalHTTP200; no database/LLM/push called."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Browser/fixed proxy17891 env and profile retained; NAS Compose build override passes both HTTP_PROXY/HTTPS_PROXY with host network. Confirmed Chromium and114MB shell downloads complete; source permissions normalized in Dockerfile. No Cookie/config permission change."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Actual production v2.3.8 SHA/Image confirmed by protected REL006 receipt and read-only runtime check. Prior image/env retained and new protected readable dump required; original pre-activation config backups remain separate."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested commit, merge and formal release after verified repair; original-site-only recovery remains the same task."
+  }
+}

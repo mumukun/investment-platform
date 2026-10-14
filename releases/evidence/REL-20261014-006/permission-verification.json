@@ -1,0 +1,18 @@
+{
+  "old_image": "sha256:327c642e13a6e1f6fd3e39beb1fd2722a17ffb2639a7707d99cca3b24f0dc479",
+  "old_import": "PermissionError: source_errors.py mode0600",
+  "candidate_image": "da293b563558",
+  "only_change": "chmod -R a+rX /app/src",
+  "offline_cookie_restart": "PASS",
+  "worker_uid": 1042,
+  "profile_mode": "0700",
+  "business_credentials_absent": true,
+  "external_site_requested": false,
+  "local_tests": 12,
+  "checks": [
+    "config",
+    "compileall",
+    "Compose",
+    "diff"
+  ]
+}

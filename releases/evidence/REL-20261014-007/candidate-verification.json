@@ -1,0 +1,20 @@
+{
+  "candidate_image": "a1f124eefab0",
+  "only_source_changes": [
+    "browser_worker.py",
+    "browser_transport.py"
+  ],
+  "browser_restart_cookie_persistence": "PASS",
+  "uid": 1042,
+  "profile_mode": "0700",
+  "business_credentials_absent": true,
+  "external_site_requested": false,
+  "browser_tests": 14,
+  "checks": [
+    "config",
+    "compileall",
+    "Compose",
+    "diff"
+  ],
+  "same_profile_isolated_with_startup45s": "original HTTP200"
+}

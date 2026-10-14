@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-14 16:02:23 Asia/Shanghai",
+  "mode": "production natural poll",
+  "channel": "semi",
+  "http_status": 200,
+  "html_bytes": 149530,
+  "cf_ray": "a4a510ba987a14b4-HKG",
+  "articles": 5,
+  "today_new_articles": 0,
+  "real_delivery": "PENDING_ELIGIBLE_NEW_ARTICLE",
+  "seen_sent_changed_manually": false
+}
