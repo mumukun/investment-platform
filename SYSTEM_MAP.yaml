@@ -40,6 +40,9 @@ repositories:
       deployment_status: exact_tag_capable
       dry_run: ./deploy.sh <release-tag> --dry-run
       artifact_model: SOURCE_TAG_BUILD
+      automatic_entry: scripts/image_release.py deploy <source-plan.json>
+      target_runner: sudo -n /usr/local/sbin/nas-image-release deploy
+      automatic_status: pending_administrator_source_runner_upgrade
     health_check:
       - /api/health
     contract_docs:

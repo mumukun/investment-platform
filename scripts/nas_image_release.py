@@ -102,6 +102,12 @@ def load_config(path=CONFIG):
             "{backup}" in item["verify_backup_command"],
             "backup readability command required",
         )
+    for repo, item in config.get("source_repositories", {}).items():
+        require(repo == "marketNewsFeed" and item.get("path") == "/volume1/docker/marketNewsFeed", "source repository path must be fixed")
+        require(item.get("compose_file") == "docker-compose.yml", "source Compose entrypoint must be fixed")
+        for key in ("backup_command", "verify_backup_command", "health_command", "smoke_command"):
+            require(isinstance(item.get(key), list) and item[key] and all(isinstance(arg, str) for arg in item[key]), "source administrator command missing: " + key)
+        require("{backup}" in item["verify_backup_command"], "source backup readability required")
     return config
 
 
@@ -538,6 +544,10 @@ def main():
     raw = sys.stdin.read(1024 * 1024 + 1)
     require(len(raw) <= 1024 * 1024, "plan exceeds size limit")
     plan = json.loads(raw)
+    if plan.get("artifact_model") == "SOURCE_TAG_BUILD":
+        from nas_source_release import execute_source
+        execute_source(plan, load_config(), args.mode)
+        return
     validate_plan(
         plan, formal=args.mode in {"deploy", "rollback"},
         preparation=args.mode in {"preflight", "prefetch"},

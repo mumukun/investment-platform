@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-YYYYMMDD-NNN",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.6",
+      "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_production": {
+        "tag": "v2.3.5",
+        "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "image_id": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "evidence": "affected tests"
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "reviewed"
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "reviewed"
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "reviewed"
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "reviewed"
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "reviewed"
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "reviewed"
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Replace with actual user formal-release authorization"
+  }
+}

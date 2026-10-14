@@ -21,5 +21,37 @@
       "version_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "version", "investment-research-dashboard"],
       "smoke_command": ["/usr/bin/python3", "/usr/local/lib/investment-platform/nas_checks.py", "smoke", "investment-research-dashboard"]
     }
+  },
+  "source_repositories": {
+    "marketNewsFeed": {
+      "path": "/volume1/docker/marketNewsFeed",
+      "compose_file": "docker-compose.yml",
+      "backup_command": [
+        "/usr/local/bin/docker",
+        "exec",
+        "shared-postgres",
+        "sh",
+        "-c",
+        "exec pg_dump -U \"$POSTGRES_USER\" -d market_news -Fc --no-owner --no-acl"
+      ],
+      "verify_backup_command": [
+        "/usr/bin/python3",
+        "/usr/local/lib/investment-platform/nas_checks.py",
+        "verify-backup",
+        "{backup}"
+      ],
+      "health_command": [
+        "/usr/bin/python3",
+        "/usr/local/lib/investment-platform/nas_checks.py",
+        "health",
+        "marketNewsFeed"
+      ],
+      "smoke_command": [
+        "/usr/bin/python3",
+        "/usr/local/lib/investment-platform/nas_checks.py",
+        "smoke",
+        "marketNewsFeed"
+      ]
+    }
   }
 }

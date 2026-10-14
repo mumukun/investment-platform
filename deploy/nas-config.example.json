@@ -21,5 +21,15 @@
       "version_command": [],
       "smoke_command": []
     }
+  },
+  "source_repositories": {
+    "marketNewsFeed": {
+      "path": "/volume1/docker/marketNewsFeed",
+      "compose_file": "docker-compose.yml",
+      "backup_command": [],
+      "verify_backup_command": [],
+      "health_command": [],
+      "smoke_command": []
+    }
   }
 }
