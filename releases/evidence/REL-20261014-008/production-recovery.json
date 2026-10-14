@@ -1,0 +1,1 @@
+{"ok": true, "changed": true, "source": "CTEE", "probe_count": 5, "next_action": "Retry at the next scheduled low-frequency poll.", "http_status": 200, "state": {"source": "CTEE", "status": "retry_pending", "failure_count": 0, "blocked_until": null, "last_success_at": "2026-10-14T10:44:35.110284+00:00", "updated_at": "2026-10-14T14:17:16.696839+00:00"}}
