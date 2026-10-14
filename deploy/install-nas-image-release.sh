@@ -10,6 +10,10 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 2
 fi
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
+# Check the complete package before changing any protected runtime file.
+for required_file in scripts/image_release.py scripts/nas_image_release.py scripts/nas_source_release.py scripts/nas_checks.py deploy/nas-image-release; do
+  [ -f "$repo_dir/$required_file" ] || { echo "Missing installation file: $required_file" >&2; exit 2; }
+done
 # Validate before installing; the supplied config must already be root-owned.
 python3 -c 'import sys; from pathlib import Path; sys.path.insert(0,sys.argv[1]); from nas_image_release import load_config; load_config(Path(sys.argv[2]))' "$repo_dir/scripts" "$1"
 install -d -o root -m 755 /usr/local/lib/investment-platform
