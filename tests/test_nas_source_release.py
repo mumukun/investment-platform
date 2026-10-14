@@ -71,7 +71,7 @@ class SourceDeployTest(unittest.TestCase):
         calls = []
         real_stat = Path.stat
         def stat(path, **kwargs):
-            if path == root: return SimpleNamespace(st_uid=0, st_mode=0o700)
+            if path == root: return SimpleNamespace(st_uid=0, st_mode=0o40700)
             return real_stat(path, **kwargs)
         def run(command, output=None, timeout=300):
             nonlocal switched
