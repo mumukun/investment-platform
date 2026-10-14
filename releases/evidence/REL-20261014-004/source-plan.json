@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261014-004",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.7",
+      "commit_sha": "bd9ad9c8abfa6b3e53cb8c16f898530a6929f236",
+      "expected_production": {
+        "tag": "v2.3.6",
+        "commit_sha": "8d74da6eebad9830ead8ff96311440bdf0dce19b",
+        "image_id": "sha256:128c3cc68e0418afbd3dae66fda932f5aee0b6fd100a9970a7c460a6adbafbe0"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "bd9ad9c8abfa6b3e53cb8c16f898530a6929f236",
+        "evidence": "PR4 merged; main tree equals tested 43952495. 55 affected tests, config/compileall/Compose/shell/diff PASS; NAS build, isolated real browser cookie restart persistence PASS."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "marketNewsFeed only; stock-analyzer and dashboard excluded. CTEE dedicated listener configuration separately backed up under NAS global lock."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No schema or research contract changes; original IDs, publication times, existing homepage descriptions and dedupe retained."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Private UID1042/environment boundary and real browser cookie persistence PASS; dedicated CTEE push session/no ambiguous replay tests PASS; fixed-node public Discord gateway HTTP200 with TLS validation."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Ordinary Chrome same stock page two rounds 600s apart HTTP200. Actual collector across browser restarts: stock 14:12:47, tech 14:23:18, semi 14:33:44, each HTTP200 and 5 original articles; no database/LLM/push in probes."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Protected global-lock configuration activation PASS; custom proxy127.0.0.1:17891 and browser mode; manual groups preserved; own validated profile migrated privately with UID1042."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified v2.3.6 SHA/Image retained; original env and Mihomo config backed up root700/files600 in /volume1/docker/.investment-platform-releases/ctee-v2.3.7-configuration-20261014. Source deploy will also take protected readable pg_dump and retain old image."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested commit, merge and formal release after verified repair; original-site-only recovery remains the same task."
+  }
+}

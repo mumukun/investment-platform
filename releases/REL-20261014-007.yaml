@@ -1,0 +1,55 @@
+schema_version: "1.0"
+release_id: REL-20261014-007
+status: RELEASED
+release_profile: routine
+created_at: "2026-10-14T16:01:17+08:00"
+updated_at: "2026-10-14T16:02:25+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.8
+    previous_commit_sha: 9eff6f5c2967fc63c386c8f95edad3d39300f214
+    rollback_image_id: sha256:f05ee98b2da85e03fc90dc5b915648013765cc9fe2423022f97b0ec72592d1c1
+    new_version: v2.3.9
+    tag: v2.3.9
+    commit_sha: eefb786c7f370b34eac17365338b932370eb2683
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/6
+    ci: "No Actions workflows; tested branch/main tree identical; 14 browser tests/config/compileall/Compose/diff PASS; NAS candidate startup and offline browser persistence PASS."
+deployment_receipts:
+  - evidence/REL-20261014-007/source-plan.json
+  - evidence/REL-20261014-007/deployment.receipt.json
+  - evidence/REL-20261014-007/candidate-verification.json
+  - evidence/REL-20261014-007/runtime-verification.json
+  - evidence/REL-20261014-007/natural-collection.json
+  - evidence/REL-20261014-007/diagnostic-cleanup.json
+  - evidence/REL-20261014-005/build-proxy-verification.json
+  - evidence/REL-20261014-004/configuration-activation.json
+  - evidence/REL-20261014-004/build-recovery.json
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: SUCCESS
+  completed_at: "2026-10-14T08:02:25.134537+00:00"
+  execution: "Passwordless restricted nas-image-release; global lock, readable protected backup, immutable tag/source build; same fixed proxy and private session retained."
+verification:
+  status: PASSED_COLLECTION_DELIVERY_PENDING
+  evidence:
+    - "Actual running tag/SHA/image match protected receipt; health/auth smoke PASS,6 children running,restart count0."
+    - "Actual container env: browser/custom_proxy; collection and independent push proxy127.0.0.1:17891."
+    - "First natural semi poll original HTTP200/5 articles,0 new eligible."
+  known_limitations:
+    - "Real delivery awaits natural eligible new articles."
+    - "HTML JSON-LD covers partial homepage articles/descriptions; future WAF changes cannot be guaranteed."
+rollback:
+  status: PREVIOUS_IMAGE_AND_READABLE_BACKUP_RETAINED
+  configuration_directory: /volume1/docker/.investment-platform-releases/ctee-v2.3.7-configuration-20261014
+  evidence:
+    - "Previous v2.3.8 image/env and readable pg_dump retained; original pre-activation env/Mihomo backups remain separate. No schema changes or automatic database downgrade."
+notes:
+  - "Existing user authorization includes commit, merge and formal release. No seen/sent edits, forced replay or test webhook."
+  - "Private anonymous profile remains0700/UID1042; source-read fix does not broaden profile/config access."
+
+  - "GitHub release: https://github.com/mumukun/marketNewsFeed/releases/tag/v2.3.9"
+  - "Own temporary17890 proxy removed under global lock; production17891 remains active. Private diagnostics/backup files retained."

@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261014-006",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.8",
+      "commit_sha": "9eff6f5c2967fc63c386c8f95edad3d39300f214",
+      "expected_production": {
+        "tag": "v2.3.7",
+        "commit_sha": "bd9ad9c8abfa6b3e53cb8c16f898530a6929f236",
+        "image_id": "sha256:327c642e13a6e1f6fd3e39beb1fd2722a17ffb2639a7707d99cca3b24f0dc479"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "9eff6f5c2967fc63c386c8f95edad3d39300f214",
+        "evidence": "PR5 merged; main tree equals tested65b70ab. 12 browser tests/config/compileall/Compose/diff PASS. Actual v2.3.7 image reproduces UID1042 PermissionError on source_errors.py0600; same image with only source-read permission correction passes offline real browser two-process cookie persistence, UID1042/profile0700/business credentials absent."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "marketNewsFeed only; stock-analyzer and dashboard excluded. CTEE dedicated listener configuration separately backed up under NAS global lock."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No schema or research contract changes; original IDs, publication times, existing homepage descriptions and dedupe retained."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Private UID1042/environment boundary and real browser cookie persistence PASS; dedicated CTEE push session/no ambiguous replay tests PASS; fixed-node public Discord gateway HTTP200 with TLS validation."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Ordinary Chrome same stock page two rounds 600s apart HTTP200. Actual collector across browser restarts: stock 14:12:47, tech 14:23:18, semi 14:33:44, each HTTP200 and 5 original articles; no database/LLM/push in probes."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Browser/fixed proxy17891 env and profile retained; NAS Compose build override passes both HTTP_PROXY/HTTPS_PROXY with host network. Confirmed Chromium and114MB shell downloads complete; source permissions normalized in Dockerfile. No Cookie/config permission change."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Actual production v2.3.7 SHA/Image confirmed by protected REL005 receipt and read-only runtime check. Runner retains old image/config and takes protected readable pg_dump. Original pre-activation config backup retained separately; no schema/data changes."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested commit, merge and formal release after verified repair; original-site-only recovery remains the same task."
+  }
+}

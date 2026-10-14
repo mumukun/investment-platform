@@ -1,0 +1,49 @@
+schema_version: "1.0"
+release_id: REL-20261014-006
+status: RELEASED
+release_profile: routine
+created_at: "2026-10-14T15:41:24+08:00"
+updated_at: "2026-10-14T15:42:27+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.7
+    previous_commit_sha: bd9ad9c8abfa6b3e53cb8c16f898530a6929f236
+    rollback_image_id: sha256:327c642e13a6e1f6fd3e39beb1fd2722a17ffb2639a7707d99cca3b24f0dc479
+    new_version: v2.3.8
+    tag: v2.3.8
+    commit_sha: 9eff6f5c2967fc63c386c8f95edad3d39300f214
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: sha256:f05ee98b2da85e03fc90dc5b915648013765cc9fe2423022f97b0ec72592d1c1
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/5
+    ci: "No Actions workflows; tested branch/main tree identical; 12 browser tests/config/compileall/Compose/diff PASS; actual NAS permission repro and offline browser persistence PASS."
+deployment_receipts:
+  - evidence/REL-20261014-006/source-plan.json
+  - evidence/REL-20261014-006/deployment.receipt.json
+  - evidence/REL-20261014-006/permission-verification.json
+  - evidence/REL-20261014-005/build-proxy-verification.json
+  - evidence/REL-20261014-004/configuration-activation.json
+  - evidence/REL-20261014-004/build-recovery.json
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: SUCCESS
+  completed_at: "2026-10-14T07:42:27.126015+00:00"
+  execution: "Passwordless restricted nas-image-release; global lock, readable protected backup, immutable tag/source build; same fixed proxy and private session retained."
+verification:
+  status: FAILED_CTEE_STARTUP_TIMING
+  evidence:
+    - "Actual running tag/SHA/image match protected receipt; health/auth smoke PASS,6 children running,restart count0."
+    - "Actual container env: browser/custom_proxy; collection and independent push proxy127.0.0.1:17891."
+  known_limitations:
+    - "HTML JSON-LD covers partial homepage articles/descriptions; future WAF changes cannot be guaranteed."
+rollback:
+  status: PREVIOUS_IMAGE_AND_READABLE_BACKUP_RETAINED
+  configuration_directory: /volume1/docker/.investment-platform-releases/ctee-v2.3.7-configuration-20261014
+  evidence:
+    - "Previous v2.3.7 image/env and readable pg_dump retained; original pre-activation env/Mihomo backups remain separate. No schema changes or automatic database downgrade."
+notes:
+  - "Existing user authorization includes commit, merge and formal release. No seen/sent edits, forced replay or test webhook."
+  - "Private anonymous profile remains0700/UID1042; source-read fix does not broaden profile/config access."
+
+  - "First natural poll15:42:25 failed with IndexError. Exact NAS image offline browser PASS; same anonymous profile isolation reproduced15s startup TimeoutError and succeeded HTTP200 when startup wait45s. Follow-up v2.3.9 opens a new tab in same context and extends bounded startup/request deadlines."

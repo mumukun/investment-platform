@@ -1,0 +1,16 @@
+{
+  "global_lock": "HELD_BY_ctee-build-recovery-lock",
+  "failed_release": "REL-20261014-004",
+  "failure": "stalled direct Chromium download; compose build terminated before service recreation",
+  "runtime_image_preserved": "sha256:128c3cc68e0418afbd3dae66fda932f5aee0b6fd100a9970a7c460a6adbafbe0",
+  "checkout_restored_to": "8d74da6eebad9830ead8ff96311440bdf0dce19b",
+  "build_override": {
+    "path": "/volume1/docker/marketNewsFeed/docker-compose.override.yml",
+    "previous": "ABSENT",
+    "sha256": "f89ce3b80affbf5e309c0627255ac9eeccc44760d19ef6b930e7e828d67ce157",
+    "network": "host",
+    "HTTP_PROXY": "http://127.0.0.1:17891",
+    "HTTPS_PROXY": "http://127.0.0.1:17891"
+  },
+  "validation": "docker compose config --quiet PASS"
+}

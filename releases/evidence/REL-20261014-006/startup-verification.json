@@ -1,0 +1,14 @@
+{
+  "runtime_tag": "v2.3.8",
+  "image_id": "sha256:f05ee98b2da85e03fc90dc5b915648013765cc9fe2423022f97b0ec72592d1c1",
+  "health": true,
+  "authenticated_smoke": "PASS",
+  "children": 6,
+  "restarts": 0,
+  "natural_poll": "15:42:25 IndexError",
+  "exact_image_offline_browser": "PASS",
+  "same_profile_isolated_15s_startup": "TimeoutError before original-site request",
+  "same_profile_isolated_45s_startup": "HTTP200",
+  "diagnostic_cookie_values_exported": false,
+  "diagnostic_stale_locks": "Only three own stale Chrome symlinks removed after production Chrome process count0; cookies/profile retained under global lock"
+}
