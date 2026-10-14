@@ -13,11 +13,13 @@ SERVICE = 'market-news-feed'
 PATH = '/volume1/docker/marketNewsFeed'
 
 
-def validate_source_plan(plan, formal=False):
+def validate_source_plan(plan, formal=False, preparation=False):
+    require(not (formal and preparation), "formal operations cannot use preparation gates")
     require(plan.get('schema_version') == 'image-release-v1', 'unsupported schema')
     require(plan.get('artifact_model') == 'SOURCE_TAG_BUILD', 'source artifact required')
     require(re.fullmatch(r'REL-[0-9]{8}-[0-9]{3}', plan.get('release_id', '')), 'invalid Release ID')
-    require(plan.get('environment') == 'Production' and plan.get('status') == 'READY_FOR_FORMAL_RELEASE', 'prepared Production plan required')
+    statuses = {'READY_FOR_FORMAL_RELEASE', 'NEEDS_TARGET_VERIFICATION'} if preparation else {'READY_FOR_FORMAL_RELEASE'}
+    require(plan.get('environment') == 'Production' and plan.get('status') in statuses, 'prepared Production plan required')
     entries = plan.get('repositories', [])
     require(len(entries) == 1 and entries[0].get('repository') == REPOSITORY, 'source scope is marketNewsFeed only')
     require(plan.get('release_order') == [REPOSITORY], 'explicit source order required')
@@ -30,7 +32,11 @@ def validate_source_plan(plan, formal=False):
     require(quality.get('status') == 'PASS' and quality.get('commit_sha') == entry['commit_sha'] and quality.get('evidence'), 'frozen source quality evidence required')
     for name in ('scope', 'compatibility', 'integration', 'real_data', 'configuration', 'rollback'):
         gate = plan.get('gates', {}).get(name, {})
-        require(gate.get('status') == 'PASS' and gate.get('evidence'), 'release gate missing: ' + name)
+        if preparation and name not in {'scope', 'compatibility'}:
+            require(gate.get('status') in {'PASS', 'NOT_RUN', 'PENDING'}, 'preparation gate missing: ' + name)
+            require(gate['status'] != 'PASS' or bool(gate.get('evidence')), 'PASS evidence missing: ' + name)
+        else:
+            require(gate.get('status') == 'PASS' and gate.get('evidence'), 'release gate missing: ' + name)
     if formal:
         auth = plan.get('authorization', {})
         require(auth.get('status') == 'FORMAL' and auth.get('evidence'), 'formal authorization required')
@@ -38,7 +44,7 @@ def validate_source_plan(plan, formal=False):
 
 def execute_source(plan, config, mode):
     require(mode in {'preflight', 'deploy', 'verify'}, 'unsupported source operation')
-    validate_source_plan(plan, formal=mode == 'deploy')
+    validate_source_plan(plan, formal=mode == 'deploy', preparation=mode == 'preflight')
     item = config.get('source_repositories', {}).get(REPOSITORY)
     require(item is not None, 'marketNewsFeed source runner is not enabled by administrator')
     entry = plan['repositories'][0]

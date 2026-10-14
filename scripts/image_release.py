@@ -97,7 +97,7 @@ def validate_plan(plan, formal=False, preparation=False):
     require(not (formal and preparation), "formal operations cannot use preparation gates")
     if plan.get("artifact_model") == "SOURCE_TAG_BUILD":
         from nas_source_release import validate_source_plan
-        return validate_source_plan(plan, formal=formal)
+        return validate_source_plan(plan, formal=formal, preparation=preparation)
     require(
         plan.get("schema_version") == "image-release-v1",
         "unsupported release plan schema",

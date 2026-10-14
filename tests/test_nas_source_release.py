@@ -39,6 +39,11 @@ class SourcePlanTest(unittest.TestCase):
         p = plan(); p['repositories'][0]['quality']['commit_sha'] = 'b' * 40
         with self.assertRaises(ValueError): source.validate_source_plan(p)
 
+    def test_target_preparation_does_not_weaken_formal_deployment_gates(self):
+        p = plan(); p['status'] = 'NEEDS_TARGET_VERIFICATION'; p['gates']['configuration'] = {'status': 'PENDING'}
+        controller.validate_plan(p, preparation=True)
+        with self.assertRaises(ValueError): controller.validate_plan(p, formal=True)
+
     def test_source_is_not_enabled_without_administrator_config(self):
         with self.assertRaisesRegex(ValueError, 'not enabled'):
             source.execute_source(plan(), {'source_repositories': {}}, 'deploy')
