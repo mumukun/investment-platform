@@ -1,6 +1,6 @@
 ---
 baseline_version: 1
-verified_at: '2026-10-13T15:25:51.114519+00:00'
+verified_at: '2026-10-14T18:15:51.175795+00:00'
 status: verified_with_artifact_gaps
 artifact_model: MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD
 repositories:
@@ -16,7 +16,8 @@ repositories:
       artifact_id: sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea
       artifact_digest: UNKNOWN
       artifact_identity_status: IMAGE_ID_ONLY
-      containers: [marketnewsfeed-market-news-feed-1]
+      containers:
+      - marketnewsfeed-market-news-feed-1
       deployment_timestamp: '2026-10-14T14:11:30.170979394Z'
       health: HEALTHY
       rollback_baseline:
@@ -33,81 +34,81 @@ repositories:
       - releases/evidence/REL-20261014-008/natural-collection.json
   stock-analyzer:
     production:
-      verified_at: '2026-10-13T15:25:51.114519+00:00'
-      application_version: 3.24.2
+      verified_at: '2026-10-14T18:15:51.175795+00:00'
+      application_version: 3.25.0
       application_version_source: stock_analyzer/version.py::APP_VERSION
-      tag: v3.24.2
-      commit_sha: 99915d2b0b8d8b09cdefe07b9d8693cb967ff338
+      tag: v3.25.0
+      commit_sha: b66818013c9107d6415a6b154a662c486a8d5ca6
       artifact_model: CI_BUILD_ONCE
       artifact:
-        app: ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa
+        app: ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c
       artifact_id:
-        app: sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679
+        app: sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8
       artifact_digest:
-        app: ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa
+        app: ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c
       artifact_identity_status: VERIFIED_REGISTRY_DIGEST_AND_CONFIG_ID
       containers:
       - stock-api
       - stock-watch
-      deployment_timestamp: '2026-10-13T11:32:50.601770+00:00'
+      deployment_timestamp: '2026-10-14T18:07:13.531492+00:00'
       health: HEALTHY
       rollback_baseline:
-        tag: v3.24.1
-        commit_sha: 83afa02b2afcde42a11c9d8834657491ff0865ca
-        version: 3.24.1
+        tag: v3.24.2
+        commit_sha: 99915d2b0b8d8b09cdefe07b9d8693cb967ff338
+        version: 3.24.2
         images:
-          app: ghcr.io/mumukun/stock-analyzer@sha256:aa1d05467464c4dfb9c1f519d7af841bc92a3d755f87b372fa5dec653fcbf253
+          app: ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa
         image_ids:
-          app: sha256:98ddd3cd5e4bcf81381256cda19f54782c312585b5432f8c63a84452fc996dde
+          app: sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679
         status: VERIFIED_RETAINED_PRODUCTION
         dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
       confidence: HIGH
       evidence:
-      - releases/REL-20261013-004.yaml
-      - releases/evidence/REL-20261013-004/deployment.receipt.json
-      - releases/evidence/REL-20261013-004/statistics-cache.receipt.json
+      - releases/REL-20261015-001.yaml
+      - releases/evidence/REL-20261015-001/deployment.receipt.json
+      - releases/evidence/REL-20261015-001/global-board.production.json
   investment-research-dashboard:
     production:
-      verified_at: '2026-10-13T15:25:51.114519+00:00'
-      application_version: 0.19.3
+      verified_at: '2026-10-14T18:15:51.175795+00:00'
+      application_version: 0.20.0
       application_version_source: VERSION
-      tag: v0.19.3
-      commit_sha: ad357aa186dea935309de90f344de37d976db980
+      tag: v0.20.0
+      commit_sha: 2ef01641c87bf4f65fa0f1b26f5b257193cddcdd
       artifact_model: CI_BUILD_ONCE
       artifact:
-        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489
-        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191
+        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e
+        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143
       artifact_id:
-        api: sha256:b019b7405d88738ce41de26628bca302e4bfe98259701c790dcfa89503c8e65b
-        web: sha256:651495d8aefb9e87436a35ff990f11a40968f51b626bfe4638c91794033c735f
+        api: sha256:009086cfdb2025c72c0a869a03ef03bf0abddbf27074dbb78ec02893f2f2a786
+        web: sha256:a721f6979672b9954da54634273a6b936f0d149c4db4c28783a75da8be0ad0c6
       artifact_digest:
-        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489
-        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191
+        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e
+        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143
       artifact_identity_status: VERIFIED_REGISTRY_DIGEST_AND_CONFIG_ID
       containers:
       - investment-research-dashboard-nas-api-1
       - investment-research-dashboard-nas-web-1
-      deployment_timestamp: '2026-10-13T11:35:15.818294+00:00'
+      deployment_timestamp: '2026-10-14T18:10:11.673165+00:00'
       health: HEALTHY
       rollback_baseline:
-        tag: v0.19.2
-        commit_sha: 4d43e180df5bfbd53f03d4e6c83c794b40020c93
-        version: 0.19.2
+        tag: v0.19.3
+        commit_sha: ad357aa186dea935309de90f344de37d976db980
+        version: 0.19.3
         images:
-          api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:082ffde2c91d1f602323f5ab370cfb1eda06bce03c5d76a7295335b070e9daf9
-          web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:bb53539d07d184f217230f57e24a9b8a72796d028cf118df930add5fc3077d98
+          api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489
+          web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191
         image_ids:
-          api: sha256:f110b9d78882221275276ca1a3ca4ba9d7e7527d2a0ddc07fa2b8f398422288c
-          web: sha256:dc78020e4a0ffe1b2ce6cfe46b7d4722bb9eeeb861d179fb4955a85a193ac84d
+          api: sha256:b019b7405d88738ce41de26628bca302e4bfe98259701c790dcfa89503c8e65b
+          web: sha256:651495d8aefb9e87436a35ff990f11a40968f51b626bfe4638c91794033c735f
         status: VERIFIED_RETAINED_PRODUCTION
         dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
       confidence: HIGH
       evidence:
-      - releases/REL-20261013-004.yaml
-      - releases/evidence/REL-20261013-004/deployment.receipt.json
-      - releases/evidence/REL-20261013-004/statistics-cache.receipt.json
-      - releases/evidence/REL-20261013-004/page-asset.receipt.json
-      build_time: '2026-10-13T11:24:35Z'
+      - releases/REL-20261015-001.yaml
+      - releases/evidence/REL-20261015-001/deployment.receipt.json
+      - releases/evidence/REL-20261015-001/global-board.production.json
+      build_time: '2026-10-14T17:58:31Z'
       professional_kline_enabled: true
       market_structure_enabled: true
       dashboard_exact_sha_runtime: VERIFIED
+      global_board_enabled: true
