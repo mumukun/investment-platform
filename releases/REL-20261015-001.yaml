@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261015-001",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "changes": [
+    "CHG-20261015-002"
+  ],
+  "environment": "Production",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "first_recorded_user_request_at": "2026-10-14T16:47:06Z",
+  "development_prs": {
+    "stock-analyzer": "https://github.com/mumukun/stock-analyzer/pull/12",
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/15",
+    "investment-research-dashboard-readiness": "https://github.com/mumukun/investment-research-dashboard/pull/16"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：你与你的意见生成prd文档，然后你可以先开发一版，明天我看下；开发完成之后就先上生产环境吧。明确授权本次首版开发与正式上线。"
+  },
+  "planned_versions": {
+    "stock-analyzer": "3.25.0",
+    "investment-research-dashboard": "0.20.0"
+  },
+  "verification": "changes/evidence/CHG-20261015-002/verification.md；精确main CI和candidate证据随计划保存。",
+  "provider_candidate": "releases/evidence/REL-20261015-001/stock-analyzer/candidate.json",
+  "updated_at": "2026-10-14T18:14:25.244685+00:00",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.24.2",
+      "new_version": "3.25.0",
+      "tag": "v3.25.0",
+      "commit_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c"
+      },
+      "artifact_id": {
+        "app": "sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8"
+      },
+      "rollback_version": "v3.24.2",
+      "rollback_commit_sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa"
+      },
+      "rollback_artifact_id": {
+        "app": "sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261015-001/stock-analyzer/candidate.json"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.19.3",
+      "new_version": "0.20.0",
+      "tag": "v0.20.0",
+      "commit_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143"
+      },
+      "artifact_id": {
+        "api": "sha256:009086cfdb2025c72c0a869a03ef03bf0abddbf27074dbb78ec02893f2f2a786",
+        "web": "sha256:a721f6979672b9954da54634273a6b936f0d149c4db4c28783a75da8be0ad0c6"
+      },
+      "rollback_version": "v0.19.3",
+      "rollback_commit_sha": "ad357aa186dea935309de90f344de37d976db980",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191"
+      },
+      "rollback_artifact_id": {
+        "api": "sha256:b019b7405d88738ce41de26628bca302e4bfe98259701c790dcfa89503c8e65b",
+        "web": "sha256:651495d8aefb9e87436a35ff990f11a40968f51b626bfe4638c91794033c735f"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261015-001/investment-research-dashboard/candidate.json"
+    }
+  ],
+  "execution_plan": "releases/evidence/REL-20261015-001/image-release.plan.json",
+  "deployment_started_at": "2026-10-14T18:02:25.637574+00:00",
+  "production_completed_at": "2026-10-14T18:10:12.601887+00:00",
+  "result": "DEPLOY_PASS",
+  "deployment_receipt": "releases/evidence/REL-20261015-001/deployment.receipt.json",
+  "production_chain_evidence": "releases/evidence/REL-20261015-001/global-board.production.json",
+  "app_url": "http://s.freemumu.top:9360/global-board",
+  "timing": {
+    "development_ci_release_seconds_from_first_recorded_request": 4986.6,
+    "deployment_seconds": 418.7,
+    "user_approval_wait_seconds": 0,
+    "notes": "包含开发、必要修正、CI失败重跑与镜像等待；并非仅部署耗时，尚不含部署后归档。"
+  },
+  "remaining": [
+    "日历首版仅Fed/BEA，BLS403导致CPI/非农尚未接入；无预期/公布值",
+    "政策利率、债券、未验证现货指数未接入",
+    "国内期货/外汇历史日K暂缺；有效采样从上线积累；部分Sina历史OHLC已拒绝并显示缺口",
+    "完整节假日/交易所时段、跨设备收藏、采样保留策略后续完善",
+    "此前其他Change的市场结构来源修复/全平台东财退役草稿未随本次发布"
+  ]
+}

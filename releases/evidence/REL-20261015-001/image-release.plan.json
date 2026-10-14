@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261015-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户2026-10-15授权生成PRD、开发首版并开发完成之后先上生产环境。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+        "version": "3.25.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c"
+        },
+        "image_ids": {
+          "app": "sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+            "run_id": "38605966764"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c"
+            }
+          },
+          "candidate_run_id": "38606052004"
+        }
+      },
+      "tag": "v3.25.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.24.2",
+        "commit_sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+        "image_ids": {
+          "stock-api": "sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679",
+          "stock-watch": "sha256:c924e65b9e01510038e6d8fd7673389171ea6e601442fc11c048962b3e776679"
+        }
+      },
+      "rollback": {
+        "tag": "v3.24.2",
+        "commit_sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+        "version": "3.24.2",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:725f3b7e5d8e61c3676155d3d7f350f5ce0b03542f3e24fbf2130ef5bf851afa"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+        "version": "0.20.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143"
+        },
+        "image_ids": {
+          "api": "sha256:009086cfdb2025c72c0a869a03ef03bf0abddbf27074dbb78ec02893f2f2a786",
+          "web": "sha256:a721f6979672b9954da54634273a6b936f0d149c4db4c28783a75da8be0ad0c6"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+            "run_id": "38608607402"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143"
+            }
+          },
+          "candidate_run_id": "38611189712"
+        }
+      },
+      "tag": "v0.20.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.19.3",
+        "commit_sha": "ad357aa186dea935309de90f344de37d976db980",
+        "image_ids": {
+          "api": "sha256:b019b7405d88738ce41de26628bca302e4bfe98259701c790dcfa89503c8e65b",
+          "web": "sha256:651495d8aefb9e87436a35ff990f11a40968f51b626bfe4638c91794033c735f"
+        },
+        "build_time": "2026-10-13T11:24:35Z"
+      },
+      "rollback": {
+        "tag": "v0.19.3",
+        "commit_sha": "ad357aa186dea935309de90f344de37d976db980",
+        "version": "0.19.3",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9efed38cdbec513b2ba25c1e9e90248bc05ba09d78f70af249685b3114ec8489",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:02b37be8451ca406c38fa9b2585f9068b8f8fbdecdd3ed81a7557a5a456a2191"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261015-002本地READY，PR12/15/16合并，通过冻结main CI。仅Provider与Dashboard，News及其他未提交草稿排除。"
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "新增版本化只读global-board-v1；旧API/其他策略保留；Provider仅新增2表并在隔离PG验初始化/幂等，Dashboard复用Snapshot/SyncState，无migration。readiness兼容旧名且新投影不存在时保留既有检查。"
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "真实源25/25→隔离PG→真实Bearer HTTP Provider API→严格Consumer投影→本地页面验证；10项来源、3项Consumer/10项readiness兼容，前端69项；main CI按冻结SHA再验证，未把fixture当真实源。"
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "新适配器NAS内存只读25/25报价、腾讯上证/道指120日K、Sina黄金113日K/6坏日拒绝；Fed/BEA4事件实际来源验证。历史不齐和BLS403已公开说明，后续政策利率/债券未启用。"
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "无Key/代理/根发布器变更；NAS SCHEDULER_SWING_ONLY/US_MARKET_ONLY均未设置、Dashboard非demo且Provider配置存在，默认任务部署后生效；已有3项VITE开关由候选保留。"
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "沿已验证REL-20261013-004当前生产Provider3.24.2/Dashboard0.19.3精确镜像；deploy内实际漂移校验与一次受保护可读备份，无破坏性migration或额外演练。"
+    }
+  }
+}
