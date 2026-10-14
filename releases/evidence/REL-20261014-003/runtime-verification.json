@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-10-14T10:24:00+08:00",
+  "resume": {
+    "ok": true,
+    "changed": false
+  },
+  "running_children": 6,
+  "natural_collection": {
+    "at": "2026-10-14T10:23:17+08:00",
+    "channel": "semi",
+    "html_status": 200,
+    "html_bytes": 84262,
+    "articles": 5,
+    "new_today": 1
+  },
+  "push": {
+    "status": "FAILED_CONNECTION",
+    "reason": "Discord TLS SSLEOFError through current proxy; public gateway read also failed",
+    "delivery_confirmation": "UNKNOWN; no replay or sent-state mutation",
+    "subsequent_public_gateway_probe": {
+      "runtime": "exact v2.3.6 image and production env in isolated container",
+      "http_status": 200,
+      "real_message_sent": false
+    },
+    "node_probe": {
+      "SG_Y02_discord_delay_ms": 5484,
+      "HK_Y04_discord_delay_ms": 123,
+      "global_node_changed": false
+    }
+  }
+}

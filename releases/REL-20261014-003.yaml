@@ -1,0 +1,42 @@
+schema_version: "1.0"
+release_id: REL-20261014-003
+status: RELEASED
+release_profile: routine
+created_at: "2026-10-14T10:19:37+08:00"
+updated_at: "2026-10-14T10:24:00+08:00"
+changes: [CHG-20261013-003, CHG-20261014-001]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.5
+    previous_commit_sha: c14b44683416e1d59f738ceec83443d19079adef
+    rollback_image_id: sha256:58c10c3ecd635420ceefc369339e45be27b3ebccba758fbff442eb203e780e08
+    new_version: v2.3.6
+    tag: v2.3.6
+    commit_sha: 8d74da6eebad9830ead8ff96311440bdf0dce19b
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: sha256:128c3cc68e0418afbd3dae66fda932f5aee0b6fd100a9970a7c460a6adbafbe0
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/3
+    ci: "No Actions workflows; 28 affected local tests and NAS isolated source smoke PASS."
+deployment_receipts:
+  - evidence/REL-20261014-003/deployment.receipt.json
+  - evidence/REL-20261014-003/runtime-verification.json
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: SUCCESS
+  completed_at: "2026-10-14T02:23:18.299343+00:00"
+  execution: "Passwordless restricted nas-image-release; global lock, protected readable backup, exact source build."
+verification:
+  status: PASSED_WITH_DOWNSTREAM_LIMITATION
+  evidence:
+    - "Health, authenticated research API smoke, exact SHA/Image ID PASS; 6 children running."
+    - "Natural semi collection HTTP 200: 5 articles, 1 new today; resume ok=true/changed=false."
+  known_limitations:
+    - "First Discord delivery failed with TLS EOF; later public gateway probe in exact runtime HTTP 200. Real delivery remains unconfirmed."
+    - "HTML JSON-LD covers partial homepage articles/descriptions; future challenge stability not guaranteed."
+rollback:
+  status: PREVIOUS_IMAGE_AND_READABLE_BACKUP_RETAINED
+  evidence:
+    - "Previous image/env retained; protected pg_dump readability PASS, size 66433158 bytes."
+notes:
+  - "Explicit user authorization includes commit, merge and formal release. No seen/sent edits or forced replay."
