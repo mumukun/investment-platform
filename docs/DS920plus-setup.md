@@ -199,3 +199,17 @@ stat -c '%n mode=%a owner=%U' "$backup_dir" "$backup_dir/stock_analyzer.dump" "$
 4. 全部门禁通过后整理正式 Release；收到本 Change 的正式发布授权才创建 Tag 和切换生产。
 
 目前版本尚未 freeze；未修改应用 VERSION，也未复用生产已有 Tag。此改造完成合并不代表已正式发布。
+
+## marketNewsFeed 一次性免密发布接入（CHG-20261014-001）
+
+旧 nas-deploy 虽有免密权限，但没有全局锁和本次可信备份/基线 gate，不作为平台正式入口。
+marketNewsFeed 的手动 flock 包装未在 sudoers 中，因而每次都要求密码。此次在现有已免密的
+nas-image-release deploy/preflight/verify 入口增加 SOURCE_TAG_BUILD 分支；无需扩展 sudoers。
+
+在已审查、固定 SHA 的本治理仓库快照中执行一次：
+`sudo bash deploy/enable-marketnews-source-release.sh`。安装器持同一全局锁，备份现有 root
+发布器和 config，保留其他仓库实际命令，只添加本仓 source 配置。不重启任何业务或 Docker。
+管理员密码只在 NAS 终端输入。安装后从客户端执行 source plan 的 preflight，核对真实
+v2.3.5 Tag/SHA/Image ID、main lineage 和免密入口。未经安装与目标核验不宣称自动接入完成。
+正式发布依然必须由用户明确授权；下次发版复用该入口，由 Codex 自动执行，不再要求用户手动
+运行临时的 flock＋业务脚本。SOURCE_TAG_BUILD 仍在 NAS 构建，不承诺 CI_BUILD_ONCE 的时限。

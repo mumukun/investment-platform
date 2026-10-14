@@ -210,3 +210,29 @@ root 配置、不放宽正式发布门禁，不把成功写成正式 Release 或
 ## 2026-10-11 实机正式发布验收
 
 REL-20261011-002 已正式使用同一CI固定镜像发布到DS920plus：Stock Analyzer v3.23.0先于Dashboard v0.17.0；新备份、版本/镜像身份、生产smoke、真实席位契约、鉴权与新增迁移通过。受限发布入口已实机验证 exact-image capability；数据库回滚仍不自动downgrade，保留旧镜像和迁移前备份。详见 `releases/REL-20261011-002.yaml` 与 `releases/evidence/REL-20261011-002/`；用户确认公网历史9527存在家中路由回环限制；局域网HTTP9360页面与营业部搜索已在登录Chrome验收通过，操作入口可走Tailscale。
+
+## marketNewsFeed 源码构建自动入口
+
+新增 SOURCE_TAG_BUILD 分支，复用 image-release-v1 计划和已免密的 nas-image-release。
+现有 stock-analyzer/Dashboard 的 CI_BUILD_ONCE 路径不变，不将 marketNewsFeed 宣称为镜像候选发布。
+源码计划仅接受 marketNewsFeed、正式 SemVer Tag、完整 SHA、已验证的当前 Tag/SHA/Image ID、
+同一目标 SHA 的测试证据、既有六项 gate 与明确正式授权。只支持 check/preflight/deploy/verify；
+不接受镜像 export/prefetch、任意仓库/命令、浮动 ref 或直接数据库回滚。
+
+NAS 管理员一次执行 `sudo bash deploy/enable-marketnews-source-release.sh`，保存受保护的旧
+发布器/config 备份，保留实际 root 配置中的其他仓库命令，只启用已审查的 marketNewsFeed 配置。
+这一步必须是管理员安装；不新增宽泛 sudo，不修改 sudoers、Docker 代理，不重启业务服务。
+之后 Codex 可以复用已有 nas-image-release deploy 免密规则执行已授权的正式发布。
+
+部署入口持同一全局 release.lock，核对真实生产基线，fetch 精确 Tag 并检查 origin/main lineage，
+一次 custom pg_dump/pg_restore -l，可读后保留旧镜像和私密运行配置，再以部署用户执行业务
+既有 deploy.sh。切换后重新读取实际容器 Image ID（不依赖旧脚本构建前的 Compose image 查询），
+核对 Git SHA 与 Tag，检查本机 Admin 健康和 Bearer 保护的只读 research API。失败保存阶段与回执，
+不会自动回滚数据库。已使用的 Release ID 不静默重建。健康 API 的内部 1.0 不是应用版本；
+本项目仍以精确 Git Tag/SHA、绑定的实际 Image ID 标识此次 SOURCE_TAG_BUILD。
+
+本机执行 `python3 scripts/image_release.py check <plan.json>`，安装后一次非写入应用的 preflight：
+`python3 scripts/image_release.py preflight <plan.json> --host freemumu@100.86.90.115 --key <SSH-key>`。
+后续得到正式发版授权后将 mode 改为 deploy 并提供 --receipt；常规发布不再重复 preflight/verify。
+计划示例为 `deploy/marketnews-source-release.example.json`，其中占位 SHA/Image ID 必须替换为
+当前真实身份，不作为可直接部署的生产计划。

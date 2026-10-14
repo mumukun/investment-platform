@@ -15,6 +15,7 @@ python3 -c 'import sys; from pathlib import Path; sys.path.insert(0,sys.argv[1])
 install -d -o root -m 755 /usr/local/lib/investment-platform
 install -o root -m 644 "$repo_dir/scripts/image_release.py" /usr/local/lib/investment-platform/image_release.py
 install -o root -m 644 "$repo_dir/scripts/nas_image_release.py" /usr/local/lib/investment-platform/nas_image_release.py
+install -o root -m 644 "$repo_dir/scripts/nas_source_release.py" /usr/local/lib/investment-platform/nas_source_release.py
 install -o root -m 644 "$repo_dir/scripts/nas_checks.py" /usr/local/lib/investment-platform/nas_checks.py
 install -o root -m 755 "$repo_dir/deploy/nas-image-release" /usr/local/sbin/nas-image-release
 install -o root -m 600 "$1" /usr/local/etc/investment-platform-deploy.json

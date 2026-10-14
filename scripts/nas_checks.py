@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 DOCKER = "/usr/local/bin/docker"
-REPOSITORIES = ("stock-analyzer", "investment-research-dashboard")
+REPOSITORIES = ("stock-analyzer", "investment-research-dashboard", "marketNewsFeed")
 STOCK_HEALTH = """
 import json, urllib.request
 from stock_analyzer.settings import load_settings
@@ -45,11 +45,45 @@ with opener.open('http://127.0.0.1:8000/api/v1/health', timeout=5) as r:
     assert json.load(r)['status'] == 'ok'
 """
 
+MARKET_HEALTH = """
+import json, urllib.request
+opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+base = 'http://127.0.0.1:8818'
+def get(path, headers=None):
+    with opener.open(urllib.request.Request(base + path, headers=headers or {}), timeout=5) as r:
+        return json.load(r)
+h = get('/api/health')
+assert h['ok'] and h['auth_configured']
+"""
+MARKET_SMOKE = MARKET_HEALTH + """
+from pathlib import Path
+import urllib.error
+values = {}
+for line in Path('/volume1/docker/marketNewsFeed/.env').read_text().splitlines():
+    key, sep, value = line.partition('=')
+    if sep: values[key.strip()] = value.strip().strip(chr(34)).strip(chr(39))
+token = values.get('MARKET_NEWS_API_TOKEN', '')
+assert token
+path = '/api/integrations/investment-dashboard/research?limit=1'
+try:
+    get(path)
+    raise AssertionError('authentication missing')
+except urllib.error.HTTPError as error:
+    assert error.code == 401
+p = get(path, {'Authorization': 'Bearer ' + token})
+assert p['ok'] and p['contract_version'] == 'investment-dashboard-research-v1'
+assert p['count'] == len(p['items'])
+"""
+
 
 def commands(repository, mode):
     """Only administrator-reviewed fixed commands, independent of a release plan."""
     if repository not in REPOSITORIES or mode not in {"health", "version", "smoke"}:
         raise ValueError("unknown check")
+    if repository == "marketNewsFeed":
+        if mode == "version":
+            raise ValueError("marketNewsFeed has no canonical runtime version; source runner verifies Tag/SHA and Image ID")
+        return [["/usr/bin/python3", "-c", MARKET_HEALTH if mode == "health" else MARKET_SMOKE]]
     if repository == "stock-analyzer":
         code = {
             "health": STOCK_HEALTH,

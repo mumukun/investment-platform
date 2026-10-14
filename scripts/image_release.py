@@ -95,6 +95,9 @@ def validate_candidate(candidate):
 
 def validate_plan(plan, formal=False, preparation=False):
     require(not (formal and preparation), "formal operations cannot use preparation gates")
+    if plan.get("artifact_model") == "SOURCE_TAG_BUILD":
+        from nas_source_release import validate_source_plan
+        return validate_source_plan(plan, formal=formal, preparation=preparation)
     require(
         plan.get("schema_version") == "image-release-v1",
         "unsupported release plan schema",
@@ -371,7 +374,10 @@ def main():
             "plan structural gates PASS; GitHub, live NAS and backup checks remain separate"
         )
         return
-    if args.mode in {"verify-ci", "export-bundle", "prefetch", "deploy"}:
+    source_build = plan.get("artifact_model") == "SOURCE_TAG_BUILD"
+    if source_build:
+        require(args.mode in {"check", "preflight", "deploy", "verify"}, "unsupported SOURCE_TAG_BUILD operation")
+    if not source_build and args.mode in {"verify-ci", "export-bundle", "prefetch", "deploy"}:
         verify_ci(plan)
     if args.mode == "verify-ci":
         return

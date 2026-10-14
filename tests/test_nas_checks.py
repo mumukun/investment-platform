@@ -17,6 +17,16 @@ class NASChecksTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 checks.commands(repo, mode)
 
+    def test_marketnews_checks_use_host_admin_api_without_entering_business_container(self):
+        for mode in ("health", "smoke"):
+            commands = checks.commands("marketNewsFeed", mode)
+            self.assertEqual(commands[0][:2], ["/usr/bin/python3", "-c"])
+            self.assertNotIn("exec", commands[0])
+        self.assertIn("Authorization", checks.MARKET_SMOKE)
+        self.assertNotIn("POST", checks.MARKET_SMOKE)
+        with self.assertRaises(ValueError):
+            checks.commands("marketNewsFeed", "version")
+
     def test_backup_is_streamed_and_invalid_archive_fails(self):
         with patch.object(Path, "open") as opened, patch.object(
             checks.subprocess, "run"
