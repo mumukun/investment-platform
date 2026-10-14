@@ -1,0 +1,53 @@
+schema_version: "1.0"
+release_id: REL-20261014-008
+status: RELEASED
+release_profile: routine
+created_at: "2026-10-14T22:09:36+08:00"
+updated_at: "2026-10-14T22:37:34+08:00"
+changes: [CHG-20261013-003]
+repositories:
+  - repository: marketNewsFeed
+    previous_version: v2.3.9
+    previous_commit_sha: eefb786c7f370b34eac17365338b932370eb2683
+    rollback_image_id: sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872
+    new_version: v2.3.10
+    tag: v2.3.10
+    commit_sha: 1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7
+    artifact_model: SOURCE_TAG_BUILD
+    artifact: sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea
+    pull_request: https://github.com/mumukun/marketNewsFeed/pull/7
+    ci: "No business Actions workflows; tested branch/main tree identical;47 affected tests/config/compile/Compose/diff PASS;NAS failing-profile candidate tests PASS."
+deployment_receipts:
+  - evidence/REL-20261014-008/source-plan.json
+  - evidence/REL-20261014-008/deployment.receipt.json
+  - evidence/REL-20261014-008/candidate-verification.json
+  - evidence/REL-20261014-008/runtime-verification.json
+  - evidence/REL-20261014-008/production-recovery.json
+  - evidence/REL-20261014-008/push-network.json
+  - evidence/REL-20261014-008/natural-collection.json
+release_order: [marketNewsFeed]
+deployment:
+  environment: Synology NAS
+  status: SUCCESS
+  completed_at: "2026-10-14T14:11:36.968932+00:00"
+  execution: "Existing passwordless restricted source runner/global lock/readable backup;LAN routing with trusted HostKeyAlias;exact tag and source build."
+verification:
+  status: PASSED_NATURAL_COLLECTION_NO_NEW_ARTICLES
+  evidence:
+    - "Production tag/SHA/image,health/auth,6 children and restart0 verified."
+    - "22:17:16 protected Admin original-site probe returned5 articles;old pause cleared,failure_count0;last_success_at unchanged."
+    - "22:30:27 natural scheduled semi original HTTP200/147839bytes/5articles,0new;no startup error. Minimum interval after22:17 recovery respected."
+    - "Private failing-profile copy passed6 offline restarts with one tab/cookie persistence;final candidate original semi HTTP200/5articles."
+    - "Dedicated push proxy17891 public Discord gateway200 with TLS verification;no test message."
+  known_limitations:
+    - "22:30 natural semi collection HTTP200/5 articles,0 new after dedupe;new message delivery not verified this release because no new articles. Prior v2.3.9 had2 genuine successful deliveries before browser startup failed."
+    - "Exact internal Chromium startup-window/GPU failure not proven;future WAF policy changes cannot be guaranteed away."
+    - "Existing HTML JSON-LD covers partial homepage articles/descriptions."
+rollback:
+  status: PREVIOUS_IMAGE_AND_READABLE_BACKUP_RETAINED
+  evidence:
+    - "Protected backup66890736bytes/readability PASS;previousv2.3.9 image/env retained.No schema changes/database downgrade."
+notes:
+  - "GitHub release: https://github.com/mumukun/marketNewsFeed/releases/tag/v2.3.10"
+  - "No seen/sent edits,forced replay,test notification or cookie reset;other runtime repositories excluded."
+  - "Current temporary branches and private NAS diagnostic copies retained;unrelatedtest_discord.py preserved."

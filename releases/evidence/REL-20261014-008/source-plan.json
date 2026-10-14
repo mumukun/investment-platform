@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261014-008",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.10",
+      "commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+      "expected_production": {
+        "tag": "v2.3.9",
+        "commit_sha": "eefb786c7f370b34eac17365338b932370eb2683",
+        "image_id": "sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+        "evidence": "PR7 merged; main tree identical to tested4427fbb. 47 affected tests (15browser/24resilience/8resume), config/compileall/Compose/diff PASS. No business Actions workflows."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "marketNewsFeed worker/tab lifecycle, tests and recovery documentation only. Other runtime repositories excluded; unrelated test_discord.py preserved."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No schema, IDs, publication-time, classification, dedupe, seen/sent or API contract change. Reuse v2.3.9 downstream evidence; no forced replay."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "NAS candidate based on exact production06f889 image with changed worker: 6 offline starts using read-only copy of failing private profile pass single-tab/cookie persistence/UID1042 assertions, network none; no business DB/LLM/push called."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Same failing production-profile copy plus no-startup-window reaches CDP in6.2s. Final candidate actual source parser at22:06 returns original semi HTTP200/147860bytes/5stable IDs via unchanged17891 fixed proxy. No API/direct fallback or business DB/LLM/push. Production natural polls pending."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Fixed proxy, private profile, UID, frequency and denial handling unchanged; config/Compose PASS. Cookies not deleted. Keep SOURCE_TAG_BUILD and installed protected runner. LAN SSH uses trusted public HostKeyAlias because public SSH times out."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified previous v2.3.9 tag/SHA/image06f889 retained; protected runner checks actual baseline and takes one readable DB backup, retains old image/env; no schema downgrade required."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested commit, merge and formal release after verified repair; original-site-only recovery remains the same task."
+  }
+}

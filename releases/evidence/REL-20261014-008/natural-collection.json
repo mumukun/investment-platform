@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-14T22:30:27+08:00",
+  "channel": "/industry/semi",
+  "http_status": 200,
+  "bytes": 147839,
+  "articles": 5,
+  "new_articles_after_dedupe": 0,
+  "cf_mitigated": "",
+  "cf_ray": "a4a748613f3acabc-HKG",
+  "natural_scheduled_collection_finished": true,
+  "new_delivery_verified": false,
+  "no_new_article_push_reason": "No new articles after existing deduplication; no forced replay or test notification."
+}

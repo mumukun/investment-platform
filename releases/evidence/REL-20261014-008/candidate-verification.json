@@ -1,0 +1,44 @@
+{
+  "base_image_id": "sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872",
+  "candidate_scope": "same production image plus tested browser_worker; not formal deployment identity",
+  "retained_profile_copy": "read-only production clone; ignored stale Singleton links, retained cookie/profile data",
+  "startup_without_window": {
+    "status": "PASS",
+    "ready_seconds": 6.2,
+    "contexts": 1,
+    "initial_pages": 0
+  },
+  "offline_regression": {
+    "status": "PASS",
+    "restarts": 6,
+    "single_tab_each_round": true,
+    "cookie_persistence": true,
+    "uid": 1042,
+    "external_network": "none"
+  },
+  "original_source": {
+    "status": "PASS",
+    "channel": "/industry/semi",
+    "http_status": 200,
+    "bytes": 147860,
+    "articles": 5,
+    "stable_ctee_ids": true,
+    "proxy": "http://127.0.0.1:17891",
+    "elapsed_seconds": 35.1
+  },
+  "business_db_llm_push_called": false,
+  "repository_checks": {
+    "browser_tests": 15,
+    "resilience_tests": 24,
+    "resume_tests": 8,
+    "config": "PASS",
+    "compileall": "PASS",
+    "compose": "PASS",
+    "diff": "PASS"
+  },
+  "limitations": [
+    "Controlled comparison identifies startup-window stage; precise internal Chromium/GPU failure not proven.",
+    "Production natural collection to be recorded separately."
+  ],
+  "candidate_local_tag": "market-news-feed:ctee-profile-recovery-candidate"
+}

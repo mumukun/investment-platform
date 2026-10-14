@@ -1,0 +1,23 @@
+{
+  "release_id": "REL-20261014-008",
+  "repository": "marketNewsFeed",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "tag": "v2.3.10",
+  "commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+  "status": "PASS",
+  "stage": "verify",
+  "previous": {
+    "tag": "v2.3.9",
+    "commit_sha": "eefb786c7f370b34eac17365338b932370eb2683",
+    "image_id": "sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872"
+  },
+  "started_at": "2026-10-14T14:09:36.300255+00:00",
+  "backup": {
+    "path": "/volume1/docker/.investment-platform-releases/REL-20261014-008/market_news.dump",
+    "sha256": "ae0d9e7cb176b63306dace2ad89c1c7fc733ce0b88c549f4866e2a47ac35beeb",
+    "size": 66890736,
+    "readability": "PASS"
+  },
+  "image_id": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+  "completed_at": "2026-10-14T14:11:36.968932+00:00"
+}

@@ -6,30 +6,31 @@ artifact_model: MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD
 repositories:
   marketNewsFeed:
     production:
-      application_version: 2.3.3
+      verified_at: '2026-10-14T14:39:01.096824+00:00'
+      application_version: 2.3.10
       application_version_source: DERIVED_FROM_VERIFIED_TAG
-      tag: v2.3.3
-      commit_sha: deb075480b57f448b10d6de6880401a7a23fdc47
+      tag: v2.3.10
+      commit_sha: 1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7
       artifact_model: SOURCE_TAG_BUILD
-      artifact: marketnewsfeed-market-news-feed:v2.3.3
-      artifact_id: sha256:517b71ef8f501f9a64a22d878653178c5b6550449709080583eb3edf6ced1c05
+      artifact: sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea
+      artifact_id: sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea
       artifact_digest: UNKNOWN
       artifact_identity_status: IMAGE_ID_ONLY
-      containers:
-      - marketnewsfeed-market-news-feed-1
-      deployment_timestamp: '2026-09-19T18:02:57+08:00'
+      containers: [marketnewsfeed-market-news-feed-1]
+      deployment_timestamp: '2026-10-14T14:11:30.170979394Z'
       health: HEALTHY
       rollback_baseline:
-        tag: v2.3.3
-        commit_sha: deb075480b57f448b10d6de6880401a7a23fdc47
-        dry_validation: PASS
-        status: VERIFIED
+        tag: v2.3.9
+        commit_sha: eefb786c7f370b34eac17365338b932370eb2683
+        image_id: sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872
+        status: VERIFIED_RETAINED_PRODUCTION
+        dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
       confidence: HIGH
       evidence:
-      - production_checkout_exact_annotated_tag
-      - container_image_id_and_app_revision_labels
-      - runtime_health_endpoint
-      - local_exact_tag_deploy_dry_run
+      - releases/REL-20261014-008.yaml
+      - releases/evidence/REL-20261014-008/deployment.receipt.json
+      - releases/evidence/REL-20261014-008/runtime-verification.json
+      - releases/evidence/REL-20261014-008/natural-collection.json
   stock-analyzer:
     production:
       verified_at: '2026-10-13T15:25:51.114519+00:00'
