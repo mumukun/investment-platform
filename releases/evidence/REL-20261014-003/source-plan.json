@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261014-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.6",
+      "commit_sha": "8d74da6eebad9830ead8ff96311440bdf0dce19b",
+      "expected_production": {
+        "tag": "v2.3.5",
+        "commit_sha": "c14b44683416e1d59f738ceec83443d19079adef",
+        "image_id": "sha256:58c10c3ecd635420ceefc369339e45be27b3ebccba758fbff442eb203e780e08"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "8d74da6eebad9830ead8ff96311440bdf0dce19b",
+        "evidence": "PR #3 merged; tested branch and merge trees identical; 20 CTEE resilience and 8 resume API/storage tests PASS; config, compileall and diff checks PASS"
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CTEE HTML-first request order only; no schema or downstream contract change. PR https://github.com/mumukun/marketNewsFeed/pull/3"
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Existing source IDs, low-frequency scheduling, circuit breaker, Admin resume CAS and API fallback preserved; 28 affected tests PASS"
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "NAS isolated container with final source module and existing production image/env: stock HTML 200, 5 recent articles, no API request; no database/LLM/push"
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Bounded original-site semi, stock and tech pages returned HTTP 200 through production proxy; final candidate stock parsed 5 recent articles"
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Installed trusted source runner; passwordless source preflight PASS on exact v2.3.5 production baseline; no sudoers or Docker configuration changes"
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Protected runner retains previous image and runtime env and verifies readable PostgreSQL dump before switching; v2.3.5 exact SHA/image baseline verified"
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested repair, code commit/merge and formal release, then authorized one-time source-runner installation; installation reported success"
+  }
+}
