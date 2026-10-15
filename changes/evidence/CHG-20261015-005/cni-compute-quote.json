@@ -1,0 +1,38 @@
+{
+  "id": "cni-compute-quote",
+  "url": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=399363",
+  "captured_at": "2026-10-15T07:04:21.134939+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "08e96bcaedfe62bc5fb491b37db07f42a4a354c161debbce9f2ebb7d78378ad7",
+  "bytes": 369,
+  "payload": {
+    "code": 200,
+    "message": "指数代码为[399363]的最新实时行情查询失败",
+    "data": {
+      "indexCode": "399363",
+      "indexName": "国证算力",
+      "indexEName": "CNICIX",
+      "indexSource": "1",
+      "realtimemarket": "1",
+      "indexType": "203",
+      "showdetail": "1",
+      "item": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "data": []
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

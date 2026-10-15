@@ -1,0 +1,202 @@
+{
+  "id": "cni-pcb-members",
+  "url": "https://www.cnindex.com.cn/sample-detail/detail?indexcode=980115",
+  "captured_at": "2026-10-15T07:01:57.046321+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "8a198779583f6a5a88614191723b4ec0bce60f97dbdca671ffa46f0319fec3a6",
+  "bytes": 2911,
+  "payload": {
+    "code": 200,
+    "message": "",
+    "data": {
+      "total": 20,
+      "rows": [
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002463",
+          "secname": "沪电股份",
+          "trade": "信息技术",
+          "weight": "13.56"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002384",
+          "secname": "东山精密",
+          "trade": "信息技术",
+          "weight": "11.48"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300476",
+          "secname": "胜宏科技",
+          "trade": "信息技术",
+          "weight": "10.34"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002916",
+          "secname": "深南电路",
+          "trade": "信息技术",
+          "weight": "7.2"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002436",
+          "secname": "兴森科技",
+          "trade": "信息技术",
+          "weight": "4.91"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002938",
+          "secname": "鹏鼎控股",
+          "trade": "信息技术",
+          "weight": "4.42"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603228",
+          "secname": "景旺电子",
+          "trade": "信息技术",
+          "weight": "3.54"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600183",
+          "secname": "生益科技",
+          "trade": "信息技术",
+          "weight": "3.32"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "601208",
+          "secname": "东材科技",
+          "trade": "原材料",
+          "weight": "3.11"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600601",
+          "secname": "方正科技",
+          "trade": "信息技术",
+          "weight": "2.87"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002080",
+          "secname": "中材科技",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688519",
+          "secname": "南亚新材",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301526",
+          "secname": "国际复材",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688183",
+          "secname": "生益电子",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301511",
+          "secname": "德福科技",
+          "trade": "工业",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300903",
+          "secname": "科翔股份",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301217",
+          "secname": "铜冠铜箔",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "605589",
+          "secname": "圣泉集团",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "001389",
+          "secname": "广合科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002636",
+          "secname": "金安国纪",
+          "trade": "信息技术",
+          "weight": "--"
+        }
+      ],
+      "status": false,
+      "msg": null
+    },
+    "total": 40,
+    "sampleDate": ""
+  }
+}

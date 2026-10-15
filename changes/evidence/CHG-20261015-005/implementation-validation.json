@@ -1,0 +1,290 @@
+{
+  "checked_at": "2026-10-15T10:00:13.545905+00:00",
+  "change_id": "CHG-20261015-005",
+  "status": "LOCAL_REVIEW_NOT_RELEASED",
+  "repositories": [
+    {
+      "name": "stock-analyzer",
+      "path": "/Users/mukun/.codex/worktrees/tech-board/stock-analyzer",
+      "branch": "feat/CHG-20261015-005-tech-board",
+      "base_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+      "local_version": "3.26.0",
+      "working_status": [
+        "M CHANGELOG.md",
+        " M docs/hermes-api.md",
+        " M stock_analyzer/api.py",
+        " M stock_analyzer/local_db.py",
+        " M stock_analyzer/scheduler.py",
+        " M stock_analyzer/version.py",
+        "?? docs/tech-board.md",
+        "?? scripts/tech_board_sync.py",
+        "?? stock_analyzer/tech_board.py",
+        "?? tests/fixtures/tech_board_sources.json",
+        "?? tests/test_tech_board.py"
+      ],
+      "diff_check": "PASS"
+    },
+    {
+      "name": "investment-research-dashboard",
+      "path": "/Users/mukun/.codex/worktrees/tech-board/investment-research-dashboard",
+      "branch": "feat/CHG-20261015-005-tech-board",
+      "base_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+      "local_version": "0.21.0",
+      "working_status": [
+        "M CHANGELOG.md",
+        " M VERSION",
+        " M backend/app/integrations/stock_analyzer.py",
+        " M backend/app/main.py",
+        " M package-lock.json",
+        " M package.json",
+        " M pyproject.toml",
+        " M src/App.spec.ts",
+        " M src/App.vue",
+        " M src/router/index.ts",
+        " M src/services/api.ts",
+        " M src/views/ResearchLibraryView.vue",
+        " M uv.lock",
+        "?? backend/app/tech_board.py",
+        "?? backend/app/tech_board_demo.py",
+        "?? backend/app/tech_board_reference.json",
+        "?? backend/tests/fixtures/tech_board_envelope.json",
+        "?? backend/tests/test_tech_board.py",
+        "?? docs/product/tech-board-v1.md",
+        "?? docs/technical/tech-board-contract.md",
+        "?? src/types/techBoard.ts",
+        "?? src/utils/techBoard.spec.ts",
+        "?? src/utils/techBoard.ts",
+        "?? src/views/TechBoardView.vue"
+      ],
+      "diff_check": "PASS"
+    },
+    {
+      "name": "investment-platform",
+      "path": "/Users/mukun/.codex/worktrees/tech-board-planning/investment-platform",
+      "branch": "feat/CHG-20261015-005-tech-board-plan",
+      "base_sha": "c2a80f366edd3020aaf1ba3e425c27f49a0a6848",
+      "local_version": null,
+      "working_status": [
+        "?? changes/CHG-20261015-005.md",
+        "?? changes/evidence/CHG-20261015-005/akshare-ths-source.json",
+        "?? changes/evidence/CHG-20261015-005/cni-api-discovery.json",
+        "?? changes/evidence/CHG-20261015-005/cni-catalog.json",
+        "?? changes/evidence/CHG-20261015-005/cni-common.json",
+        "?? changes/evidence/CHG-20261015-005/cni-compute-info.json",
+        "?? changes/evidence/CHG-20261015-005/cni-compute-members.json",
+        "?? changes/evidence/CHG-20261015-005/cni-compute-quote.json",
+        "?? changes/evidence/CHG-20261015-005/cni-detail-html.json",
+        "?? changes/evidence/CHG-20261015-005/cni-detail-script.json",
+        "?? changes/evidence/CHG-20261015-005/cni-entry.json",
+        "?? changes/evidence/CHG-20261015-005/cni-growth-compute-history.json",
+        "?? changes/evidence/CHG-20261015-005/cni-growth-compute-info.json",
+        "?? changes/evidence/CHG-20261015-005/cni-growth-compute-members.json",
+        "?? changes/evidence/CHG-20261015-005/cni-growth-compute-methodology.json",
+        "?? changes/evidence/CHG-20261015-005/cni-growth-compute-methodology.pdf",
+        "?? changes/evidence/CHG-20261015-005/cni-growth-compute-quote.json",
+        "?? changes/evidence/CHG-20261015-005/cni-memory-history.json",
+        "?? changes/evidence/CHG-20261015-005/cni-memory-info.json",
+        "?? changes/evidence/CHG-20261015-005/cni-memory-members.json",
+        "?? changes/evidence/CHG-20261015-005/cni-memory-methodology.json",
+        "?? changes/evidence/CHG-20261015-005/cni-memory-methodology.pdf",
+        "?? changes/evidence/CHG-20261015-005/cni-memory-quote.json",
+        "?? changes/evidence/CHG-20261015-005/cni-page-discovery.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-history.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-info.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-member-page2.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-members-full.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-members.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-methodology.json",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-methodology.pdf",
+        "?? changes/evidence/CHG-20261015-005/cni-pcb-quote.json",
+        "?? changes/evidence/CHG-20261015-005/csi-optical-members.json",
+        "?? changes/evidence/CHG-20261015-005/csi-optical-members.xls",
+        "?? changes/evidence/CHG-20261015-005/csi-optical-methodology.json",
+        "?? changes/evidence/CHG-20261015-005/csi-optical-methodology.pdf",
+        "?? changes/evidence/CHG-20261015-005/document-validation.json",
+        "?? changes/evidence/CHG-20261015-005/qq-api-discovery.json",
+        "?? changes/evidence/CHG-20261015-005/qq-board-discovery.json",
+        "?? changes/evidence/CHG-20261015-005/qq-board-rank.json",
+        "?? changes/evidence/CHG-20261015-005/qq-legacy-sector.json",
+        "?? changes/evidence/CHG-20261015-005/qq-pt-quote.json",
+        "?? changes/evidence/CHG-20261015-005/qq-sector-current.json",
+        "?? changes/evidence/CHG-20261015-005/sina-concepts.json",
+        "?? changes/evidence/CHG-20261015-005/sina-index-quotes.json",
+        "?? changes/evidence/CHG-20261015-005/sina-industry.json",
+        "?? changes/evidence/CHG-20261015-005/source-validation.json",
+        "?? changes/evidence/CHG-20261015-005/tencent-compute-history.json",
+        "?? changes/evidence/CHG-20261015-005/tencent-index-quotes.json",
+        "?? changes/evidence/CHG-20261015-005/tencent-market-html.json",
+        "?? changes/evidence/CHG-20261015-005/tencent-page-discovery.json",
+        "?? changes/evidence/CHG-20261015-005/tencent-user-focus-quotes.json",
+        "?? changes/evidence/CHG-20261015-005/ths-aidc-detail.json",
+        "?? changes/evidence/CHG-20261015-005/ths-api-discovery.json",
+        "?? changes/evidence/CHG-20261015-005/ths-compute-detail.json",
+        "?? changes/evidence/CHG-20261015-005/ths-concepts-html.json",
+        "?? changes/evidence/CHG-20261015-005/ths-copperlink-detail.json",
+        "?? changes/evidence/CHG-20261015-005/ths-cpo-detail.json",
+        "?? changes/evidence/CHG-20261015-005/ths-cpo-history.json",
+        "?? changes/evidence/CHG-20261015-005/ths-directory.json",
+        "?? changes/evidence/CHG-20261015-005/ths-liquid-detail.json",
+        "?? changes/evidence/CHG-20261015-005/ths-pcb-detail.json",
+        "?? changes/evidence/CHG-20261015-005/ths-pcb-history.json",
+        "?? changes/evidence/CHG-20261015-005/ths-pcb-member-page2.json",
+        "?? changes/evidence/CHG-20261015-005/ths-storage-detail.json",
+        "?? docs/product/tech-board-data-design-v1.md",
+        "?? docs/product/tech-board-data-source-audit-2026-10-15.md",
+        "?? docs/product/tech-board-prd-v1.md",
+        "?? docs/product/tech-board-verified-constituents-2026-10-15.csv"
+      ],
+      "diff_check": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Provider new source/data/store tests",
+      "command": "python -m unittest discover -s tests -p 'test_tech_board.py'",
+      "tests": 7,
+      "result": "PASS",
+      "database": "Explicit isolated local PostgreSQL"
+    },
+    {
+      "name": "Provider global-board regression",
+      "tests": 10,
+      "result": "PASS"
+    },
+    {
+      "name": "Provider local_db regression",
+      "tests": 2,
+      "result": "PASS"
+    },
+    {
+      "name": "Provider config check",
+      "command": "python scripts/check_config.py",
+      "result": "PASS"
+    },
+    {
+      "name": "Provider dry-run",
+      "command": "python scripts/tech_board_sync.py --dry-run",
+      "network": false,
+      "writes": false,
+      "result": "PASS"
+    },
+    {
+      "name": "Python compileall",
+      "result": "PASS"
+    },
+    {
+      "name": "Dashboard tech-board + global-board pytest",
+      "command": "pytest backend/tests/test_tech_board.py backend/tests/test_global_board.py -q",
+      "tests": 16,
+      "result": "PASS"
+    },
+    {
+      "name": "Dashboard backend Ruff",
+      "command": "ruff check backend",
+      "result": "PASS"
+    },
+    {
+      "name": "Isolated database migration",
+      "command": "alembic upgrade head; alembic check",
+      "result": "PASS",
+      "new_dashboard_migrations": false
+    },
+    {
+      "name": "Frontend full Vitest",
+      "command": "npm test",
+      "files": 23,
+      "tests": 71,
+      "result": "PASS"
+    },
+    {
+      "name": "Frontend type check / production build",
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "name": "Real local HTTP Provider -> Consumer -> API",
+      "result": "PASS",
+      "indices": 4,
+      "unique_securities": 151,
+      "membership_relations": 182,
+      "unauthenticated_provider_status": 401,
+      "members_and_history_status": 200
+    },
+    {
+      "name": "Browser manual acceptance",
+      "result": "PASS",
+      "checks": [
+        "Real and MOCK are visibly distinct",
+        "Index ranking and original daily chart render",
+        "Search yields 1 / 40 for 沪电",
+        "HK01879 is separate and denominated in HKD",
+        "Past date without archive has empty state, no future members",
+        "1440px desktop has no page overflow",
+        "390px viewport has no page overflow",
+        "No browser console errors observed"
+      ]
+    }
+  ],
+  "unique_tests": 106,
+  "source_scope": "Public free CNI/Tencent/Sina only; no Tushare, paid data, or synthetic sector returns",
+  "real_data": {
+    "snapshot_id": "fcb37a5fe875fc6a1a75e801f7a0fede2a33a1a0713cf653841be695fbfa6bee",
+    "indices": [
+      {
+        "id": "cni-980115",
+        "member_count": 40,
+        "member_date": "2026-10-14",
+        "quote_time": "2026-10-15T07:00:00Z",
+        "last_bar": "2026-10-14",
+        "bars": 118
+      },
+      {
+        "id": "cni-980138",
+        "member_count": 42,
+        "member_date": "2026-10-14",
+        "quote_time": "2026-10-15T07:00:00Z",
+        "last_bar": "2026-10-14",
+        "bars": 118
+      },
+      {
+        "id": "cni-970083",
+        "member_count": 50,
+        "member_date": "2026-10-14",
+        "quote_time": "2026-10-15T07:00:00Z",
+        "last_bar": "2026-10-14",
+        "bars": 118
+      },
+      {
+        "id": "cni-399363",
+        "member_count": 50,
+        "member_date": "2026-10-14",
+        "quote_time": "2026-10-15T16:14:15+08:00",
+        "last_bar": "2026-10-14",
+        "bars": 119
+      }
+    ]
+  },
+  "preview": {
+    "real": "http://127.0.0.1:55458/tech-board",
+    "mock": "http://127.0.0.1:55460/tech-board",
+    "bind": "127.0.0.1",
+    "separate_demo_database": true,
+    "authentication": "Disabled only for these isolated loopback development previews"
+  },
+  "production_access": "NOT_PERFORMED",
+  "commit_push_merge_tag_release": "NOT_AUTHORIZED_NOT_PERFORMED",
+  "remaining": [
+    "User acceptance",
+    "NAS source reachability and sustained cross-session collection",
+    "Formal integration / production release when authorized",
+    "Free precise CPO/liquid-cooling/materials sources remain unverified; not ranked",
+    "No reconstructed historical member universe before first capture",
+    "No US technology stock pool or bulk constituent daily-bar backfill"
+  ],
+  "document_check": {
+    "result": "PASS",
+    "markdown_files": 7,
+    "relative_links": "All exist",
+    "whitespace": "PASS"
+  }
+}

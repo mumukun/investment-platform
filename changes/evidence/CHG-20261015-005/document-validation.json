@@ -1,0 +1,445 @@
+{
+  "checked_at": "2026-10-15T07:16:33.212581+00:00",
+  "checks": [
+    {
+      "name": "whitespace:changes/CHG-20261015-005.md",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "no_unresolved_template:changes/CHG-20261015-005.md",
+      "ok": true
+    },
+    {
+      "name": "whitespace:docs/product/tech-board-data-design-v1.md",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "link:docs/product/tech-board-data-design-v1.md:tech-board-prd-v1.md",
+      "ok": true
+    },
+    {
+      "name": "link:docs/product/tech-board-data-design-v1.md:tech-board-data-source-audit-2026-10-15.md",
+      "ok": true
+    },
+    {
+      "name": "no_unresolved_template:docs/product/tech-board-data-design-v1.md",
+      "ok": true
+    },
+    {
+      "name": "whitespace:docs/product/tech-board-data-source-audit-2026-10-15.md",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "link:docs/product/tech-board-data-source-audit-2026-10-15.md:tech-board-verified-constituents-2026-10-15.csv",
+      "ok": true
+    },
+    {
+      "name": "link:docs/product/tech-board-data-source-audit-2026-10-15.md:../../changes/evidence/CHG-20261015-005/source-validation.json",
+      "ok": true
+    },
+    {
+      "name": "no_unresolved_template:docs/product/tech-board-data-source-audit-2026-10-15.md",
+      "ok": true
+    },
+    {
+      "name": "whitespace:docs/product/tech-board-prd-v1.md",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "link:docs/product/tech-board-prd-v1.md:tech-board-data-source-audit-2026-10-15.md",
+      "ok": true
+    },
+    {
+      "name": "no_unresolved_template:docs/product/tech-board-prd-v1.md",
+      "ok": true
+    },
+    {
+      "name": "json:akshare-ths-source.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-api-discovery.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-catalog.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-common.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-compute-info.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-compute-members.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-compute-quote.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-detail-html.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-detail-script.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-entry.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-growth-compute-history.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-growth-compute-info.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-growth-compute-members.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-growth-compute-methodology.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-growth-compute-quote.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-memory-history.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-memory-info.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-memory-members.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-memory-methodology.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-memory-quote.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-page-discovery.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-history.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-info.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-member-page2.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-members-full.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-members.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-methodology.json",
+      "ok": true
+    },
+    {
+      "name": "json:cni-pcb-quote.json",
+      "ok": true
+    },
+    {
+      "name": "json:csi-optical-members.json",
+      "ok": true
+    },
+    {
+      "name": "json:csi-optical-methodology.json",
+      "ok": true
+    },
+    {
+      "name": "json:qq-api-discovery.json",
+      "ok": true
+    },
+    {
+      "name": "json:qq-board-discovery.json",
+      "ok": true
+    },
+    {
+      "name": "json:qq-board-rank.json",
+      "ok": true
+    },
+    {
+      "name": "json:qq-legacy-sector.json",
+      "ok": true
+    },
+    {
+      "name": "json:qq-pt-quote.json",
+      "ok": true
+    },
+    {
+      "name": "json:qq-sector-current.json",
+      "ok": true
+    },
+    {
+      "name": "json:sina-concepts.json",
+      "ok": true
+    },
+    {
+      "name": "json:sina-index-quotes.json",
+      "ok": true
+    },
+    {
+      "name": "json:sina-industry.json",
+      "ok": true
+    },
+    {
+      "name": "json:source-validation.json",
+      "ok": true
+    },
+    {
+      "name": "json:tencent-compute-history.json",
+      "ok": true
+    },
+    {
+      "name": "json:tencent-index-quotes.json",
+      "ok": true
+    },
+    {
+      "name": "json:tencent-market-html.json",
+      "ok": true
+    },
+    {
+      "name": "json:tencent-page-discovery.json",
+      "ok": true
+    },
+    {
+      "name": "json:tencent-user-focus-quotes.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-aidc-detail.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-api-discovery.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-compute-detail.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-concepts-html.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-copperlink-detail.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-cpo-detail.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-cpo-history.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-directory.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-liquid-detail.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-pcb-detail.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-pcb-history.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-pcb-member-page2.json",
+      "ok": true
+    },
+    {
+      "name": "json:ths-storage-detail.json",
+      "ok": true
+    },
+    {
+      "name": "constituents:980115",
+      "ok": true,
+      "rows": 40
+    },
+    {
+      "name": "constituents:980138",
+      "ok": true,
+      "rows": 42
+    },
+    {
+      "name": "constituents:970083",
+      "ok": true,
+      "rows": 50
+    },
+    {
+      "name": "constituents:399363",
+      "ok": true,
+      "rows": 50
+    },
+    {
+      "name": "CN_day_dates",
+      "ok": true
+    },
+    {
+      "name": "original_OHLC_validation",
+      "ok": true
+    },
+    {
+      "name": "tracked_git_diff_check",
+      "ok": true,
+      "note": "New untracked Markdown also checked above."
+    }
+  ],
+  "passed": true,
+  "git_status": "?? changes/CHG-20261015-005.md\n?? changes/evidence/CHG-20261015-005/\n?? docs/product/tech-board-data-design-v1.md\n?? docs/product/tech-board-data-source-audit-2026-10-15.md\n?? docs/product/tech-board-prd-v1.md\n?? docs/product/tech-board-verified-constituents-2026-10-15.csv\n",
+  "business_code_changed": false,
+  "business_tests": "NOT_RUN: documentation and public read-only research only",
+  "production_calls": "NOT_RUN",
+  "commit_push_release": "NOT_AUTHORIZED_NOT_EXECUTED",
+  "final_recheck": {
+    "checked_at": "2026-10-15T07:17:59.363308+00:00",
+    "relative_links": 11,
+    "all_links_exist": true,
+    "markdown_whitespace_ok": true,
+    "change_status": "REVIEW",
+    "business_implementation": "NOT_STARTED"
+  },
+  "budget_recheck": {
+    "checked_at": "2026-10-15T07:59:24.980769+00:00",
+    "checks": [
+      {
+        "name": "whitespace:changes/CHG-20261015-005.md",
+        "ok": true
+      },
+      {
+        "name": "zero_fee_scope:changes/CHG-20261015-005.md",
+        "ok": true
+      },
+      {
+        "name": "fences:changes/CHG-20261015-005.md",
+        "ok": true
+      },
+      {
+        "name": "link:changes/CHG-20261015-005.md:../docs/product/tech-board-data-source-audit-2026-10-15.md",
+        "ok": true
+      },
+      {
+        "name": "link:changes/CHG-20261015-005.md:evidence/CHG-20261015-005/source-validation.json",
+        "ok": true
+      },
+      {
+        "name": "link:changes/CHG-20261015-005.md:evidence/CHG-20261015-005/document-validation.json",
+        "ok": true
+      },
+      {
+        "name": "link:changes/CHG-20261015-005.md:../docs/product/tech-board-prd-v1.md",
+        "ok": true
+      },
+      {
+        "name": "link:changes/CHG-20261015-005.md:../docs/product/tech-board-data-design-v1.md",
+        "ok": true
+      },
+      {
+        "name": "link:changes/CHG-20261015-005.md:../docs/product/tech-board-verified-constituents-2026-10-15.csv",
+        "ok": true
+      },
+      {
+        "name": "whitespace:docs/product/tech-board-data-design-v1.md",
+        "ok": true
+      },
+      {
+        "name": "zero_fee_scope:docs/product/tech-board-data-design-v1.md",
+        "ok": true
+      },
+      {
+        "name": "fences:docs/product/tech-board-data-design-v1.md",
+        "ok": true
+      },
+      {
+        "name": "link:docs/product/tech-board-data-design-v1.md:tech-board-prd-v1.md",
+        "ok": true
+      },
+      {
+        "name": "link:docs/product/tech-board-data-design-v1.md:tech-board-data-source-audit-2026-10-15.md",
+        "ok": true
+      },
+      {
+        "name": "whitespace:docs/product/tech-board-data-source-audit-2026-10-15.md",
+        "ok": true
+      },
+      {
+        "name": "zero_fee_scope:docs/product/tech-board-data-source-audit-2026-10-15.md",
+        "ok": true
+      },
+      {
+        "name": "fences:docs/product/tech-board-data-source-audit-2026-10-15.md",
+        "ok": true
+      },
+      {
+        "name": "link:docs/product/tech-board-data-source-audit-2026-10-15.md:tech-board-verified-constituents-2026-10-15.csv",
+        "ok": true
+      },
+      {
+        "name": "link:docs/product/tech-board-data-source-audit-2026-10-15.md:../../changes/evidence/CHG-20261015-005/source-validation.json",
+        "ok": true
+      },
+      {
+        "name": "whitespace:docs/product/tech-board-prd-v1.md",
+        "ok": true
+      },
+      {
+        "name": "zero_fee_scope:docs/product/tech-board-prd-v1.md",
+        "ok": true
+      },
+      {
+        "name": "fences:docs/product/tech-board-prd-v1.md",
+        "ok": true
+      },
+      {
+        "name": "link:docs/product/tech-board-prd-v1.md:tech-board-data-source-audit-2026-10-15.md",
+        "ok": true
+      },
+      {
+        "name": "no_optional_tushare_path",
+        "ok": true
+      }
+    ],
+    "passed": true,
+    "business_code_changed": false,
+    "business_tests": "NOT_RUN: documentation-only budget scope update",
+    "commit_push_release": "NOT_AUTHORIZED_NOT_EXECUTED"
+  }
+}

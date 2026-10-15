@@ -1,0 +1,16 @@
+{
+  "id": "cni-entry",
+  "url": "https://www.cnindex.com.cn/js/pages/entry-index-detail.js",
+  "captured_at": "2026-10-15T07:00:27.349241+00:00",
+  "status": 200,
+  "content_type": "application/javascript",
+  "sha256": "a86fe5f6e5f938a24cd0c0708989f4268c9c44351d7202b993220b8ea56c2137",
+  "bytes": 281,
+  "contexts": [
+    "his page.\r\nrequirejs(['../common'], function (common) {\r\n    requirejs(['../app/index-detail']);\r\n});"
+  ],
+  "urls": [
+    "//Load"
+  ],
+  "module_imports": []
+}

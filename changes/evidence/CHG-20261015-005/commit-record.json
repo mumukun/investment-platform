@@ -1,0 +1,85 @@
+{
+  "recorded_at": "2026-10-15T10:44:49.160964+00:00",
+  "change_id": "CHG-20261015-005",
+  "user_authorization": "好的，先提交代码吧",
+  "authorized_scope": "LOCAL_COMMIT_ONLY",
+  "status": "REVIEW_NOT_PUSHED_NOT_RELEASED",
+  "repositories": [
+    {
+      "name": "stock-analyzer",
+      "branch": "feat/CHG-20261015-005-tech-board",
+      "commit": "ce771e078a043a88207ddaf5273ed7e6e6858c62",
+      "parent": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+      "changed_files": [
+        "CHANGELOG.md",
+        "docs/hermes-api.md",
+        "docs/tech-board.md",
+        "scripts/tech_board_sync.py",
+        "stock_analyzer/api.py",
+        "stock_analyzer/local_db.py",
+        "stock_analyzer/scheduler.py",
+        "stock_analyzer/tech_board.py",
+        "stock_analyzer/version.py",
+        "tests/fixtures/tech_board_sources.json",
+        "tests/test_tech_board.py"
+      ],
+      "working_tree_clean": true
+    },
+    {
+      "name": "investment-research-dashboard",
+      "branch": "feat/CHG-20261015-005-tech-board",
+      "commit": "32aaa7ac825fa2ac2e2c049e0c8393334f20e75b",
+      "parent": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+      "changed_files": [
+        "CHANGELOG.md",
+        "VERSION",
+        "backend/app/integrations/stock_analyzer.py",
+        "backend/app/main.py",
+        "backend/app/tech_board.py",
+        "backend/app/tech_board_demo.py",
+        "backend/app/tech_board_reference.json",
+        "backend/tests/fixtures/tech_board_envelope.json",
+        "backend/tests/test_tech_board.py",
+        "docs/product/tech-board-v1.md",
+        "docs/technical/tech-board-contract.md",
+        "package-lock.json",
+        "package.json",
+        "pyproject.toml",
+        "src/App.spec.ts",
+        "src/App.vue",
+        "src/router/index.ts",
+        "src/services/api.ts",
+        "src/types/techBoard.ts",
+        "src/utils/techBoard.spec.ts",
+        "src/utils/techBoard.ts",
+        "src/views/ResearchLibraryView.vue",
+        "src/views/TechBoardView.vue",
+        "uv.lock"
+      ],
+      "working_tree_clean": true
+    }
+  ],
+  "governance": {
+    "branch": "feat/CHG-20261015-005-tech-board-plan",
+    "commit_identity": "This record is saved in the governance commit that contains it; inspect Git history for its SHA."
+  },
+  "checks": {
+    "scope": "PASS: 11 Provider files, 24 Dashboard files; unrelated worktrees and marketNewsFeed excluded",
+    "whitespace": "PASS: business commits; governance Markdown checked, CSV CRLF normalized to LF with unchanged parsed rows; full staged governance diff checked before commit",
+    "sensitive_information": "PASS: all task text files scanned for private keys, credential URLs, known token formats, literal Bearer and secret assignments; no matches",
+    "governance_relative_links": "PASS",
+    "existing_validation": "implementation-validation.json (106 tests, production build, local HTTP and browser verification)",
+    "new_business_code_since_validation": false,
+    "tests_rerun_this_commit_turn": false,
+    "reason": "Only submission-status documentation and CSV line endings updated; reuse existing implementation evidence."
+  },
+  "not_performed": [
+    "push",
+    "PR",
+    "merge",
+    "tag",
+    "production access",
+    "deployment"
+  ],
+  "historical_evidence": "implementation-validation.json is preserved unchanged as the snapshot taken before local-commit authorization."
+}

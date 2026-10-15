@@ -1,0 +1,22 @@
+{
+  "id": "cni-detail-html",
+  "url": "https://www.cnindex.com.cn/module/index-detail.html?act_menu=1&indexCode=980115",
+  "captured_at": "2026-10-15T06:58:47.014214+00:00",
+  "status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "final_url": "https://www.cnindex.com.cn/module/index-detail.html?act_menu=1&indexCode=980115",
+  "sha256": "0ef05715c1571fbac98062d2e6174eb64eb0dacf3bfd41eb4edac52240e03f06",
+  "bytes": 84490,
+  "scripts": [
+    "/js/lib/datePicker.js",
+    "/js/lib/sdkSZSE.js?v=1.0.0",
+    "/js/lib/jsencrypt.min.js",
+    "/js/lib/GFg2.js",
+    "/js/lib/require.js",
+    "/js/lib/mSlider.js"
+  ],
+  "links": [],
+  "page_title": [
+    "国证指数网-指数详情"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "cni-common",
+  "url": "https://www.cnindex.com.cn/js/common.js",
+  "captured_at": "2026-10-15T07:01:57.046562+00:00",
+  "status": 200,
+  "content_type": "application/javascript",
+  "sha256": "ed065c692f944638f2263ede751812e29bf2529c24a0d53f88a9b009bca68f47",
+  "bytes": 3722,
+  "hqUrl_context": [
+    "uanfan\n * @update: yuanfan (2019-7-30)\n */\nwindow.hqUrl = 'https://hq.cnindex.com.cn'; // 生产环境接口域名\nwindow.domainUrl = 'cnindex.com.cn';\n\n//是否为 TRS 页面\nwindow.isTRS = true;\nvar url = window.location.href,\n  "
+  ]
+}

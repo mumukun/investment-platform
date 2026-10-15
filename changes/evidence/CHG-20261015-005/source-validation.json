@@ -1,0 +1,195 @@
+{
+  "verified_at": "2026-10-15T07:08:25.787213+00:00",
+  "scope": "read-only research; structural and source-field validation only; no local sector return calculation",
+  "indices": [
+    {
+      "code": "980115",
+      "member_rows": 40,
+      "unique_members": 40,
+      "duplicate_members": 0,
+      "member_dates": [
+        "2026-10-14"
+      ],
+      "member_preview": [
+        {
+          "code": "002463",
+          "name": "沪电股份"
+        },
+        {
+          "code": "002384",
+          "name": "东山精密"
+        },
+        {
+          "code": "300476",
+          "name": "胜宏科技"
+        },
+        {
+          "code": "002916",
+          "name": "深南电路"
+        },
+        {
+          "code": "002436",
+          "name": "兴森科技"
+        }
+      ],
+      "official_quote_rows": 1,
+      "quote": {
+        "timestamp": 1792047600000,
+        "current": 6434.828370180259,
+        "high": 6605.719095215109,
+        "open": 6425.542345509461,
+        "low": 6356.553481516521,
+        "close": 0.0,
+        "chg": -201.27702981974107,
+        "percent": -0.030330595686400803,
+        "amount": "80837170680.81",
+        "volume": "1485109670.00",
+        "avg": null
+      },
+      "history_rows": 5,
+      "invalid_ohlc_dates": [],
+      "history_first_date": "2026-10-08",
+      "history_last_date": "2026-10-14",
+      "source_time_beijing": "2026-10-15T15:00:00+08:00"
+    },
+    {
+      "code": "980138",
+      "member_rows": 42,
+      "unique_members": 42,
+      "duplicate_members": 0,
+      "member_dates": [
+        "2026-10-14"
+      ],
+      "member_preview": [
+        {
+          "code": "688008",
+          "name": "澜起科技"
+        },
+        {
+          "code": "603986",
+          "name": "兆易创新"
+        },
+        {
+          "code": "688120",
+          "name": "华海清科"
+        },
+        {
+          "code": "688361",
+          "name": "中科飞测"
+        },
+        {
+          "code": "688012",
+          "name": "中微公司"
+        }
+      ],
+      "official_quote_rows": 1,
+      "quote": {
+        "timestamp": 1792047600000,
+        "current": 2283.3214396839953,
+        "high": 2295.736852003076,
+        "open": 2245.9418161622766,
+        "low": 2235.073318754905,
+        "close": 0.0,
+        "chg": -75.0353603160047,
+        "percent": -0.03181679732091628,
+        "amount": "92258007847.91",
+        "volume": "915246778.00",
+        "avg": null
+      },
+      "history_rows": 5,
+      "invalid_ohlc_dates": [],
+      "history_first_date": "2026-10-08",
+      "history_last_date": "2026-10-14",
+      "source_time_beijing": "2026-10-15T15:00:00+08:00"
+    },
+    {
+      "code": "970083",
+      "member_rows": 50,
+      "unique_members": 50,
+      "duplicate_members": 0,
+      "member_dates": [
+        "2026-10-14"
+      ],
+      "member_preview": [
+        {
+          "code": "300857",
+          "name": "协创数据"
+        },
+        {
+          "code": "300903",
+          "name": "科翔股份"
+        },
+        {
+          "code": "300570",
+          "name": "太辰光"
+        },
+        {
+          "code": "301236",
+          "name": "软通动力"
+        },
+        {
+          "code": "300474",
+          "name": "景嘉微"
+        }
+      ],
+      "official_quote_rows": 1,
+      "quote": {
+        "timestamp": 1792047600000,
+        "current": 4220.212216660242,
+        "high": 4332.2491053142585,
+        "open": 4209.467038643322,
+        "low": 4189.35335949678,
+        "close": 0.0,
+        "chg": -169.9165833397583,
+        "percent": -0.03870423649979433,
+        "amount": "88322222316.39",
+        "volume": "753054018.00",
+        "avg": null
+      },
+      "history_rows": 5,
+      "invalid_ohlc_dates": [],
+      "history_first_date": "2026-10-08",
+      "history_last_date": "2026-10-14",
+      "source_time_beijing": "2026-10-15T15:00:00+08:00"
+    },
+    {
+      "code": "399363",
+      "member_rows": 50,
+      "unique_members": 50,
+      "duplicate_members": 0,
+      "member_dates": [
+        "2026-10-14"
+      ],
+      "member_preview": [
+        {
+          "code": "300502",
+          "name": "新易盛"
+        },
+        {
+          "code": "300308",
+          "name": "中际旭创"
+        },
+        {
+          "code": "688256",
+          "name": "寒武纪"
+        },
+        {
+          "code": "688008",
+          "name": "澜起科技"
+        },
+        {
+          "code": "603986",
+          "name": "兆易创新"
+        }
+      ],
+      "official_quote_rows": 0,
+      "quote": null,
+      "history_rows": 0,
+      "invalid_ohlc_dates": [],
+      "history_first_date": null,
+      "history_last_date": null,
+      "quote_fallback": "Tencent name/code/time/pct matched; CNI official live endpoint empty; Tencent daily OHLC has no published historical pct field"
+    }
+  ],
+  "time_zone_policy": "CNI daily timestamps represent Asia/Shanghai business dates; never truncate UTC date"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cni-page-discovery",
+  "url": "https://www.cnindex.com.cn/module/index-detail.html?act_menu=1&indexCode=980115",
+  "captured_at": "2026-10-15T06:59:37.188234+00:00",
+  "status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "sha256": "0ef05715c1571fbac98062d2e6174eb64eb0dacf3bfd41eb4edac52240e03f06",
+  "bytes": 84490,
+  "contexts": [
+    " src=\"/js/lib/GFg2.js\"></script>\n    <script src=\"/js/lib/require.js\" async=\"async\" defer data-main=\"/js/pages/entry-index-detail\"></script>\n    <script type=\"text/javascript\" async=\"async\" src=\"/js/lib/mSlider.js\"></script>\n  </head>\n\n  <body>\n    <div id=\"index\" v-cl",
+    "tylesheet\" href=\"/css/index.css\" />\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"/css/index-detail.css\" />\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"/font/iconfont.css\" />\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/image/favicon.ico\" />\n    <link ",
+    "ript>\n    <script src=\"/js/lib/require.js\" async=\"async\" defer data-main=\"/js/pages/entry-index-detail\"></script>\n    <script type=\"text/javascript\" async=\"async\" src=\"/js/lib/mSlider.js\"></script>\n  </head>\n\n  <body>\n    <div id=\"index\" v-cloak>\n      <!-- 移动端时间插件弹窗 -->\n",
+    "比\"\n                    v-model=\"searchVal\"\n                    :fetch-suggestions=\"showKeyboardInfo\"\n                    style=\"width: 280px\"\n                    suffix-icon=\"el-icon-circle-plus-outline\"\n                    @select=\"selectOtherIndex\"\n              ",
+    "                 v-model=\"searchVal\"\n                          :fetch-suggestions=\"showKeyboardInfo\"\n                          style=\"width: 394px\"\n                          prefix-icon=\"el-icon-search\"\n                          @select=\"selectOtherIndex\"\n         ",
+    "pan>\n                      <el-dropdown-menu slot=\"dropdown\">\n                        <template v-if=\"dateOptionValue == '1D'\">\n                          <el-dropdown-item command=\"m1\">1min</el-dropdown-item>\n                          <el-dropdown-item command=\"m15",
+    "=\"m60\" :disabled=\"indexType == 700\">60min</el-dropdown-item>\n                        </template>\n                        <template v-else>\n                          <el-dropdown-item command=\"day\" :disabled=\"isContrast || indexType == 700\">日</el-dropdown-item>\n    ",
+    ">60min</el-dropdown-item>\n                        </template>\n                        <template v-else>\n                          <el-dropdown-item command=\"day\" :disabled=\"isContrast || indexType == 700\">日</el-dropdown-item>\n                          <el-dropdown-",
+    "tem command=\"year\" :disabled=\"true\">年</el-dropdown-item> -->\n                        </template>\n                      </el-dropdown-menu>\n                    </el-dropdown>\n                  </div>\n                </div>\n                <div class=\"select-index-mo",
+    "\"\n                    @blur=\"blurHotIndexBox\"\n                  >\n                    <template slot-scope=\"props\">\n                      <el-row :gutter=\"30\">\n                        <el-col :span=\"12\">{{props.item.indexCode}}</el-col>\n                        <el-"
+  ]
+}

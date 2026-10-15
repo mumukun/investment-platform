@@ -1,0 +1,19 @@
+{
+  "id": "tencent-market-html",
+  "url": "https://stockapp.finance.qq.com/mstats/",
+  "captured_at": "2026-10-15T06:58:47.401594+00:00",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "final_url": "https://stockapp.finance.qq.com/mstats/",
+  "sha256": "7f86741059fd5ab365b8157a120f0570836e99f3fe3bbed88a4999a5e39929ba",
+  "bytes": 2727,
+  "scripts": [
+    "https://st.gtimg.com/quotes_center/assets/index.9eebe9c3.js",
+    "https://st.gtimg.com/quotes_center/assets/polyfills-legacy-55560061.js",
+    "https://st.gtimg.com/quotes_center/assets/index-legacy-41bf5976.js"
+  ],
+  "links": [],
+  "page_title": [
+    "行情中心_腾讯证券"
+  ]
+}
