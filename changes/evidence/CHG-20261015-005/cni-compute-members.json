@@ -1,0 +1,472 @@
+{
+  "id": "cni-compute-members",
+  "url": "https://www.cnindex.com.cn/sample-detail/detail?indexcode=399363&pageNum=1&rows=100",
+  "captured_at": "2026-10-15T07:04:21.135476+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "e8a6d640c3382fc8ee487ade4d5644fb42a7e00a27d1f376cdcc4a5d78bbb218",
+  "bytes": 7086,
+  "payload": {
+    "code": 200,
+    "message": "",
+    "data": {
+      "total": 50,
+      "rows": [
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300502",
+          "secname": "新易盛",
+          "trade": "电信业务",
+          "weight": "8.76"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300308",
+          "secname": "中际旭创",
+          "trade": "电信业务",
+          "weight": "8.23"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688256",
+          "secname": "寒武纪",
+          "trade": "信息技术",
+          "weight": "7.69"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688008",
+          "secname": "澜起科技",
+          "trade": "信息技术",
+          "weight": "5.05"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603986",
+          "secname": "兆易创新",
+          "trade": "信息技术",
+          "weight": "4.9"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688041",
+          "secname": "海光信息",
+          "trade": "信息技术",
+          "weight": "4.89"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "601138",
+          "secname": "工业富联",
+          "trade": "信息技术",
+          "weight": "4.3"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300394",
+          "secname": "天孚通信",
+          "trade": "电信业务",
+          "weight": "3.78"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688498",
+          "secname": "源杰科技",
+          "trade": "信息技术",
+          "weight": "2.76"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "601728",
+          "secname": "中国电信",
+          "trade": "电信业务",
+          "weight": "2.63"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600941",
+          "secname": "中国移动",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600183",
+          "secname": "生益科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000063",
+          "secname": "中兴通讯",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603019",
+          "secname": "中科曙光",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002463",
+          "secname": "沪电股份",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600522",
+          "secname": "中天科技",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300857",
+          "secname": "协创数据",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002281",
+          "secname": "光迅科技",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000988",
+          "secname": "华工科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300476",
+          "secname": "胜宏科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688525",
+          "secname": "佰维存储",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301308",
+          "secname": "江波龙",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000977",
+          "secname": "浪潮信息",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600050",
+          "secname": "中国联通",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000938",
+          "secname": "紫光股份",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688521",
+          "secname": "芯原股份",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002938",
+          "secname": "鹏鼎控股",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "001309",
+          "secname": "德明利",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603228",
+          "secname": "景旺电子",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "601869",
+          "secname": "长飞光纤",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300442",
+          "secname": "润泽科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300223",
+          "secname": "君正股份",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002837",
+          "secname": "英维克",
+          "trade": "工业",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300017",
+          "secname": "网宿科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688702",
+          "secname": "盛科通信",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688110",
+          "secname": "东芯股份",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000066",
+          "secname": "中国长城",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688183",
+          "secname": "生益电子",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "600498",
+          "secname": "烽火通信",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002261",
+          "secname": "拓维信息",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301236",
+          "secname": "软通动力",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300474",
+          "secname": "景嘉微",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000034",
+          "secname": "神州数码",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688385",
+          "secname": "复旦微电",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002130",
+          "secname": "沃尔核材",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688047",
+          "secname": "龙芯中科",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300383",
+          "secname": "光环新网",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002335",
+          "secname": "科华数据",
+          "trade": "工业",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301165",
+          "secname": "锐捷网络",
+          "trade": "电信业务",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002518",
+          "secname": "科士达",
+          "trade": "工业",
+          "weight": "--"
+        }
+      ],
+      "status": false,
+      "msg": null
+    },
+    "total": 50,
+    "sampleDate": ""
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-15T11:03:03.905794+00:00",
+  "environment": "NAS source calls in memory",
+  "production_writes": false,
+  "boards": [
+    {
+      "id": "cni-980115",
+      "members": 40,
+      "member_date": "2026-10-14",
+      "quote_time": "2026-10-15T07:00:00+00:00",
+      "bars": 119,
+      "last_bar": "2026-10-15",
+      "status": "PASS"
+    },
+    {
+      "id": "cni-980138",
+      "members": 42,
+      "member_date": "2026-10-14",
+      "quote_time": "2026-10-15T07:00:00+00:00",
+      "bars": 118,
+      "last_bar": "2026-10-14",
+      "status": "PASS"
+    },
+    {
+      "id": "cni-970083",
+      "members": 50,
+      "member_date": "2026-10-14",
+      "quote_time": "2026-10-15T07:00:00+00:00",
+      "bars": 118,
+      "last_bar": "2026-10-14",
+      "status": "PASS"
+    },
+    {
+      "id": "cni-399363",
+      "members": 50,
+      "member_date": "2026-10-15",
+      "quote_time": "2026-10-15T16:14:15+08:00",
+      "bars": 119,
+      "last_bar": "2026-10-14",
+      "status": "PASS"
+    }
+  ]
+}

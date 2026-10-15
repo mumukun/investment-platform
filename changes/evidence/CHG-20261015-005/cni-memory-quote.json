@@ -1,0 +1,52 @@
+{
+  "id": "cni-memory-quote",
+  "url": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=980138",
+  "captured_at": "2026-10-15T07:05:27.054580+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "fb3085aac1ce1d4af88b447428534c2a68f08d4ddc4a2f86bfdf2370ee8d9d8a",
+  "bytes": 482,
+  "payload": {
+    "code": 200,
+    "message": "",
+    "data": {
+      "indexCode": "980138",
+      "indexName": "存储芯片",
+      "indexEName": "CNIMCI",
+      "indexSource": "0",
+      "realtimemarket": "1",
+      "indexType": "203",
+      "showdetail": "1",
+      "item": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "data": [
+        [
+          1792047600000,
+          2283.3214396839953,
+          2295.736852003076,
+          2245.9418161622766,
+          2235.073318754905,
+          0.0,
+          -75.0353603160047,
+          -0.03181679732091628,
+          "92258007847.91",
+          "915246778.00",
+          null
+        ]
+      ]
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

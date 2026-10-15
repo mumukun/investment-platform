@@ -1,0 +1,202 @@
+{
+  "id": "cni-pcb-member-page2",
+  "url": "https://www.cnindex.com.cn/sample-detail/detail?indexcode=980115&pageNum=2&rows=20",
+  "captured_at": "2026-10-15T07:06:25.924143+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "2056da0c18178d05d3c59d365e2dba29eccdeefb6fdf3f8a30d8881f4dda22f9",
+  "bytes": 2886,
+  "payload": {
+    "code": 200,
+    "message": "",
+    "data": {
+      "total": 20,
+      "rows": [
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603920",
+          "secname": "世运电路",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603256",
+          "secname": "宏和科技",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002815",
+          "secname": "崇达技术",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688300",
+          "secname": "联瑞新材",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300657",
+          "secname": "弘信电子",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "000823",
+          "secname": "超声电子",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603002",
+          "secname": "宏昌电子",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603124",
+          "secname": "江南新材",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "002913",
+          "secname": "奥士康",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300814",
+          "secname": "中富电路",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688401",
+          "secname": "路维光电",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "603328",
+          "secname": "依顿电子",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300576",
+          "secname": "容大感光",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300739",
+          "secname": "明阳电路",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300852",
+          "secname": "四会富仕",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301366",
+          "secname": "一博科技",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688603",
+          "secname": "天承科技",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "688138",
+          "secname": "清溢光电",
+          "trade": "信息技术",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "300429",
+          "secname": "强力新材",
+          "trade": "原材料",
+          "weight": "--"
+        },
+        {
+          "dateStr": "2026-10-14",
+          "indexcode": null,
+          "indexname": null,
+          "seccode": "301628",
+          "secname": "强达电路",
+          "trade": "信息技术",
+          "weight": "--"
+        }
+      ],
+      "status": false,
+      "msg": null
+    },
+    "total": 40,
+    "sampleDate": ""
+  }
+}

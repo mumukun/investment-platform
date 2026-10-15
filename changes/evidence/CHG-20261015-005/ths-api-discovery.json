@@ -1,0 +1,17 @@
+{
+  "url": "https://s.thsi.cn/js/q/newq/concept.min.js",
+  "contexts": [
+    {
+      "term": "page",
+      "context": ".index();g(a)});(function(){var a=$(\".series-table .selected\").parent(\"td\").index(),\na=0>a?0:a;setTimeout(function(){g(a);$(\".series-table-wrap\").css(\"left\",\"0\")},500)})();(function(){for(var a=$(\".m-pager-table\").length,b=0;b<a;b++){var c=\"pager\"+b;window[c]=new mpager(\".m-pager-box\"+b);window[c].init()}})()});\n"
+    },
+    {
+      "term": "page",
+      "context": "ies-table .selected\").parent(\"td\").index(),\na=0>a?0:a;setTimeout(function(){g(a);$(\".series-table-wrap\").css(\"left\",\"0\")},500)})();(function(){for(var a=$(\".m-pager-table\").length,b=0;b<a;b++){var c=\"pager\"+b;window[c]=new mpager(\".m-pager-box\"+b);window[c].init()}})()});\n"
+    },
+    {
+      "term": "page",
+      "context": "rent(\"td\").index(),\na=0>a?0:a;setTimeout(function(){g(a);$(\".series-table-wrap\").css(\"left\",\"0\")},500)})();(function(){for(var a=$(\".m-pager-table\").length,b=0;b<a;b++){var c=\"pager\"+b;window[c]=new mpager(\".m-pager-box\"+b);window[c].init()}})()});\n"
+    }
+  ]
+}

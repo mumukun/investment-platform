@@ -1,0 +1,52 @@
+{
+  "id": "cni-growth-compute-quote",
+  "url": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=970083",
+  "captured_at": "2026-10-15T07:04:21.135717+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "44ce8bdddf617b826604c1ae491af70499e1838771cc17501ed3d043133f8fe3",
+  "bytes": 484,
+  "payload": {
+    "code": 200,
+    "message": "",
+    "data": {
+      "indexCode": "970083",
+      "indexName": "创业板算力",
+      "indexEName": "CNTCIX",
+      "indexSource": "0",
+      "realtimemarket": "1",
+      "indexType": "103",
+      "showdetail": "1",
+      "item": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "data": [
+        [
+          1792047600000,
+          4220.212216660242,
+          4332.2491053142585,
+          4209.467038643322,
+          4189.35335949678,
+          0.0,
+          -169.9165833397583,
+          -0.03870423649979433,
+          "88322222316.39",
+          "753054018.00",
+          null
+        ]
+      ]
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

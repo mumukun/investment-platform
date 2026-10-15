@@ -1,0 +1,198 @@
+{
+  "checked_at": "2026-10-15T10:54:10.798465+00:00",
+  "environment": "isolated local PostgreSQL; public market facts only",
+  "schema": "ms_recovery_625590cd3833",
+  "production_writes": false,
+  "source_indices": 11,
+  "source_dates": {
+    "sh000001": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sh000016": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sh000300": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sh000985": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sh000905": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sh000852": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "csi932000": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sh000688": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "sz399006": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "csi000510": {
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    "ths883421": {
+      "count": 71,
+      "last": "2026-10-15"
+    }
+  },
+  "trading_calendar": "Sina original",
+  "ths_evidence": "Existing original THS facts read from production in a read-only transaction; local THS fresh request returned HTTP502 and was not relabeled fresh",
+  "before": "8/9 style rows empty; THS own returns present, relative returns missing",
+  "after_style_rows": [
+    {
+      "name": "上证50",
+      "returns": {
+        "5": -1.422042550764313,
+        "20": -4.987974161627273,
+        "60": -6.802670648147846,
+        "120": null
+      },
+      "index_id": "sh000016",
+      "relative_returns_pp": {
+        "5": 1.9250717898353642,
+        "20": 3.903903544710486,
+        "60": 6.165754890523235
+      }
+    },
+    {
+      "name": "沪深300",
+      "returns": {
+        "5": -3.3471143405996773,
+        "20": -8.891877706337759,
+        "60": -12.968425538671081,
+        "120": null
+      },
+      "index_id": "sh000300",
+      "relative_returns_pp": {
+        "5": 0.0,
+        "20": 0.0,
+        "60": 0.0
+      }
+    },
+    {
+      "name": "中证500",
+      "returns": {
+        "5": -6.610810892841624,
+        "20": -12.858468790992916,
+        "60": -16.917047761421177,
+        "120": null
+      },
+      "index_id": "sh000905",
+      "relative_returns_pp": {
+        "5": -3.2636965522419463,
+        "20": -3.966591084655157,
+        "60": -3.948622222750096
+      }
+    },
+    {
+      "name": "中证1000",
+      "returns": {
+        "5": -6.442877995343621,
+        "20": -12.683688944671069,
+        "60": -14.571562697065554,
+        "120": null
+      },
+      "index_id": "sh000852",
+      "relative_returns_pp": {
+        "5": -3.0957636547439438,
+        "20": -3.7918112383333096,
+        "60": -1.603137158394473
+      }
+    },
+    {
+      "name": "中证2000",
+      "returns": {
+        "5": -6.573759791122713,
+        "20": -10.034665149738986,
+        "60": -8.213867735470949,
+        "120": null
+      },
+      "index_id": "csi932000",
+      "relative_returns_pp": {
+        "5": -3.2266454505230358,
+        "20": -1.142787443401227,
+        "60": 4.754557803200132
+      }
+    },
+    {
+      "name": "科创50",
+      "returns": {
+        "5": -6.646890793232252,
+        "20": -13.957697808943959,
+        "60": -29.34879200943734,
+        "120": null
+      },
+      "index_id": "sh000688",
+      "relative_returns_pp": {
+        "5": -3.299776452632575,
+        "20": -5.0658201026061995,
+        "60": -16.38036647076626
+      }
+    },
+    {
+      "name": "创业板指",
+      "returns": {
+        "5": -8.347658282455061,
+        "20": -17.04337147575089,
+        "60": -26.849160249165504,
+        "120": null
+      },
+      "index_id": "sz399006",
+      "relative_returns_pp": {
+        "5": -5.000543941855383,
+        "20": -8.151493769413133,
+        "60": -13.880734710494423
+      }
+    },
+    {
+      "name": "中证A500",
+      "returns": {
+        "5": -4.392903596600018,
+        "20": -10.409325644636958,
+        "60": -14.919547500958974,
+        "120": null
+      },
+      "index_id": "csi000510",
+      "relative_returns_pp": {
+        "5": -1.0457892560003406,
+        "20": -1.517447938299199,
+        "60": -1.9511219622878926
+      }
+    },
+    {
+      "name": "同花顺全A(沪深)",
+      "returns": {
+        "5": -5.307088265465865,
+        "20": -8.318779462713689,
+        "60": -3.38254790527579,
+        "120": null
+      },
+      "index_id": "ths883421",
+      "relative_returns_pp": {
+        "5": -1.9599739248661874,
+        "20": 0.5730982436240701,
+        "60": 9.585877633395292
+      }
+    }
+  ],
+  "all_5_20_60_returns_and_relative_present": true,
+  "disabled_statistics_still_disabled": true,
+  "consumer_contract_validation": "PASS",
+  "consumer_contract": "investment-dashboard-market-structure-v1",
+  "production_still_unmodified": true
+}

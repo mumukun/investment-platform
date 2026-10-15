@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-10-15T10:55:18.556915+00:00",
+  "production_identity": {
+    "release": "REL-20261015-001",
+    "verified_by": "NAS docker inspect image ID and OCI revision/version",
+    "stock-analyzer": {
+      "tag": "v3.25.0",
+      "commit": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+      "api_and_watch_image_id": "sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8"
+    },
+    "investment-research-dashboard": {
+      "tag": "v0.20.0",
+      "commit": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+      "api_image_id": "sha256:009086cfdb2025c72c0a869a03ef03bf0abddbf27074dbb78ec02893f2f2a786",
+      "web_image_id": "sha256:a721f6979672b9954da54634273a6b936f0d149c4db4c28783a75da8be0ad0c6"
+    }
+  },
+  "diagnostic_method": "Provider own PostgreSQL, explicit read-only transaction; public market facts and sync metadata only",
+  "production_writes": false,
+  "latest_collect_at": "2026-10-15T09:14:40.930230+00:00",
+  "observation": "2026-10-15",
+  "production_gaps": {
+    "most_indices_and_12_etf_prices_latest": "2026-10-13",
+    "sz399006_latest": "2026-10-14",
+    "ths883421_latest": "2026-10-15",
+    "average_price_latest": "2026-10-13",
+    "styles": "8 of 9 rows all 5/20/60 returns null; all 9 relative-return rows null"
+  },
+  "failed_collectors": [
+    "fetch_average_price",
+    "stock_zh_index_daily_em",
+    "fund_etf_hist_em"
+  ],
+  "root_cause": "Production still runs Eastmoney daily price adapters; previous Tencent/Sina recovery draft was never deployed. Missing 14/15 closes invalidate strict trading-day windows. This is not a frontend hidden-value issue.",
+  "not_claimed": "No evidence of provider rate-limit ban; intentional disabled breadth statistics are separate from missing index prices."
+}

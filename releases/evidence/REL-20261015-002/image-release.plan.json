@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261015-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：修改完之后就上线吧，把这次开发完成的功能和bug修复都正式上线。范围包含本对话已完成的科技看板、登录/图片验证码、全球看板当日走势及市场结构采集修复。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "65982853406af8bb07105996d6e7447cc07b1718",
+        "version": "3.26.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:1bcf7773e59d1c3a7f1cb18c0a1a883a6bd8348a74cdcf12468ba14c9144008c"
+        },
+        "image_ids": {
+          "app": "sha256:1f49a40b813c5ef02c2f64f6c9073811e921f152ce1081da5ce95711fb40e5b6"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "65982853406af8bb07105996d6e7447cc07b1718",
+            "run_id": "38724620316"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:1bcf7773e59d1c3a7f1cb18c0a1a883a6bd8348a74cdcf12468ba14c9144008c"
+            }
+          },
+          "candidate_run_id": "38724687259"
+        }
+      },
+      "tag": "v3.26.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.25.0",
+        "commit_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+        "image_ids": {
+          "stock-api": "sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8",
+          "stock-watch": "sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8"
+        }
+      },
+      "rollback": {
+        "tag": "v3.25.0",
+        "commit_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+        "version": "3.25.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+        "version": "0.21.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+        },
+        "image_ids": {
+          "api": "sha256:77b10886455af4dcbc4b21e86592974788bd9f365babc20883ef5a0856a1bb88",
+          "web": "sha256:c91969372c9217ea9bfbf6d3eea2cb3bf94f9ccce69eec61f3585518cd61f028"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+            "run_id": "38724781359"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+            }
+          },
+          "candidate_run_id": "38725072767"
+        }
+      },
+      "tag": "v0.21.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.20.0",
+        "commit_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+        "image_ids": {
+          "api": "sha256:009086cfdb2025c72c0a869a03ef03bf0abddbf27074dbb78ec02893f2f2a786",
+          "web": "sha256:a721f6979672b9954da54634273a6b936f0d149c4db4c28783a75da8be0ad0c6"
+        },
+        "build_time": "2026-10-14T17:58:31Z"
+      },
+      "rollback": {
+        "tag": "v0.20.0",
+        "commit_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+        "version": "0.20.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Four selected Changes READY; Provider PR13 and Dashboard PR17 merged, exact main CI PASS; news and incomplete retirement draft excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Independent additive tech-board-v1 contract; Provider adds fact/run tables and Dashboard reuses snapshots. Captcha only adds kind/answer_hash; old slider API retained. Strict models, isolated migrations/check and main CI pass; no destructive downgrade."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Existing tech-board local public data->Provider Bearer->Consumer->browser evidence reused. Combined 57 Provider regressions, 42 affected Python3.13 Consumer/auth tests, 84 frontend tests and build pass; exact merged-main CI passed. Production affected read paths will be checked after deploy/backfill."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "NAS memory-only source checks: tech 4 indices plus complete member lists/history; market 9 Tencent indices/12 ETFs and exact official CSI2000. Isolated PG reproduces blank style table and restores all 9 5/20/60 rows. Average-price special source and paused breadth remain explicit gaps; no manufactured series."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "NAS existing AUTH/CAPTCHA on, seed demo off, provider URL/token configured, APP_ENVIRONMENT production. Market sync enabled and no explicit old schedule: new default15:20 applies. Candidate flags must equal prior three true values. No new Key/proxy/service; reuse established protected backup/migration mechanism."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current production verified via REL-20261015-001 and NAS image IDs. Retain Provider v3.25.0/b6681801 and Dashboard v0.20.0/2ef01641 digests. Additive tables/columns retained on rollback; no database downgrade or extra rehearsal."
+    }
+  }
+}

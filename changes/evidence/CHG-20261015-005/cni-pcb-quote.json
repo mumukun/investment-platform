@@ -1,0 +1,52 @@
+{
+  "id": "cni-pcb-quote",
+  "url": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=980115",
+  "captured_at": "2026-10-15T07:03:17.741906+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "b8c48a7bc65a6fbc055c0562ece1e0bf3852e29252fbfd11753e6f18bc43340c",
+  "bytes": 481,
+  "payload": {
+    "code": 200,
+    "message": "",
+    "data": {
+      "indexCode": "980115",
+      "indexName": "国证PCB",
+      "indexEName": "CNIPCB",
+      "indexSource": "0",
+      "realtimemarket": "1",
+      "indexType": "203",
+      "showdetail": "1",
+      "item": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "data": [
+        [
+          1792047600000,
+          6434.828370180259,
+          6605.719095215109,
+          6425.542345509461,
+          6356.553481516521,
+          0.0,
+          -201.27702981974107,
+          -0.030330595686400803,
+          "80837170680.81",
+          "1485109670.00",
+          null
+        ]
+      ]
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

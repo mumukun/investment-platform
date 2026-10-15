@@ -1,0 +1,29 @@
+{
+  "id": "cni-growth-compute-info",
+  "url": "https://www.cnindex.com.cn/index/selectIndexByCode?codeValue=970083",
+  "captured_at": "2026-10-15T07:03:17.982932+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "bf71a4e4ff83e244996a3a710cd5fe02171aed4d4a7942bf9ff1a0b9dcf1c81c",
+  "bytes": 422,
+  "payload": {
+    "code": 200,
+    "message": "根据指数code查询当前指数成功！",
+    "data": {
+      "indexcode": "970083",
+      "indextype": "103",
+      "indexsource": "0",
+      "indexname": "创业板算力",
+      "indexename": "CNTCIX",
+      "indexfullename": "SZSE ChiNext Computing Infrastructure Index",
+      "indexfullcname": "创业板算力基础设施指数",
+      "jr": "2022-12-30",
+      "realtimemarket": "1",
+      "showdetail": "1",
+      "dataSource": 0,
+      "onlineIndexList": null
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cni-pcb-info",
+  "url": "https://www.cnindex.com.cn/index/selectIndexByCode?codeValue=980115",
+  "captured_at": "2026-10-15T07:01:57.046011+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "93e12534904ecb950429f149b4b89251845a60f3840f82fc116b161448a5b793",
+  "bytes": 413,
+  "payload": {
+    "code": 200,
+    "message": "根据指数code查询当前指数成功！",
+    "data": {
+      "indexcode": "980115",
+      "indextype": "203",
+      "indexsource": "0",
+      "indexname": "国证PCB",
+      "indexename": "CNIPCB",
+      "indexfullename": "CNI Printed Circuit Board Index",
+      "indexfullcname": "国证印制电路板（PCB）主题指数",
+      "jr": "2018-12-28",
+      "realtimemarket": "1",
+      "showdetail": "1",
+      "dataSource": 0,
+      "onlineIndexList": null
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

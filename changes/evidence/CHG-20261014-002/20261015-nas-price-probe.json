@@ -1,0 +1,138 @@
+{
+  "memory_only": true,
+  "production_writes": false,
+  "quotes": [
+    {
+      "symbol": "sh000001",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000016",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000300",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000985",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000905",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000852",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000688",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sz399006",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh000510",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh510050",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh510300",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh510310",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh510330",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sz159919",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sz159338",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh510500",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh512100",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sz159531",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh588000",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sh588080",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    },
+    {
+      "symbol": "sz159915",
+      "source": "tencent",
+      "count": 71,
+      "last": "2026-10-15"
+    }
+  ],
+  "csi2000": {
+    "source": "CSI official",
+    "count": 71,
+    "last": "2026-10-15",
+    "close": 2862.58
+  }
+}

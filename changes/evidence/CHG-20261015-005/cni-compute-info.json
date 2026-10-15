@@ -1,0 +1,29 @@
+{
+  "id": "cni-compute-info",
+  "url": "https://www.cnindex.com.cn/index/selectIndexByCode?codeValue=399363",
+  "captured_at": "2026-10-15T07:03:17.742962+00:00",
+  "status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "sha256": "84f39eaa44a95ae37ecc63c74fe5ae4d95349d56626ca1fa4a748c8fce7556d0",
+  "bytes": 413,
+  "payload": {
+    "code": 200,
+    "message": "根据指数code查询当前指数成功！",
+    "data": {
+      "indexcode": "399363",
+      "indextype": "203",
+      "indexsource": "1",
+      "indexname": "国证算力",
+      "indexename": "CNICIX",
+      "indexfullename": "CNI Computing Infrastructure Index",
+      "indexfullcname": "国证算力基础设施主题指数",
+      "jr": "2004-12-31",
+      "realtimemarket": "1",
+      "showdetail": "1",
+      "dataSource": 0,
+      "onlineIndexList": null
+    },
+    "total": 0,
+    "sampleDate": ""
+  }
+}

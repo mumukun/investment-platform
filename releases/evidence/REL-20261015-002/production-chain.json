@@ -1,0 +1,326 @@
+{
+  "checked_at": "2026-10-15T12:10:47.165827+00:00",
+  "result": "PASS",
+  "environment": "Production",
+  "no_mock": true,
+  "version": {
+    "app_version": "0.21.0",
+    "git_commit": "492c580a1f4f4cfcef99987da29bce305bd02590",
+    "build_time": "2026-10-15T11:07:21Z",
+    "environment": "production",
+    "api_version": "v1",
+    "upstreams": [
+      {
+        "name": "global-board",
+        "status": "正常",
+        "service_version": null,
+        "contract_version": "investment-dashboard-global-board-v1",
+        "last_success_at": "2026-10-15T20:10:45.198598+08:00"
+      },
+      {
+        "name": "market-structure",
+        "status": "正常",
+        "service_version": null,
+        "contract_version": "investment-dashboard-market-structure-v1",
+        "last_success_at": "2026-10-15T20:03:28.776336+08:00"
+      },
+      {
+        "name": "marketNewsFeed",
+        "status": "正常",
+        "service_version": null,
+        "contract_version": "investment-dashboard-research-v1",
+        "last_success_at": "2026-10-14T23:48:49.762167+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-09:20:",
+        "status": "healthy",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-11T22:35:39.759892+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-09:60:",
+        "status": "healthy",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-11T21:59:35.866715+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-11:20:",
+        "status": "healthy",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-11T23:44:22.140960+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-12:20:",
+        "status": "healthy",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-12T23:47:39.461956+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-13:20:",
+        "status": "failed",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-13T23:38:40.270134+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-14:20:",
+        "status": "healthy",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-14T23:42:46.254001+08:00"
+      },
+      {
+        "name": "seat:10026937:2026-10-15:20:",
+        "status": "healthy",
+        "service_version": null,
+        "contract_version": "investment-dashboard-seat-tracking-v1",
+        "last_success_at": "2026-10-15T20:03:41.753438+08:00"
+      },
+      {
+        "name": "stock-analyzer",
+        "status": "正常",
+        "service_version": "3.25.0",
+        "contract_version": "investment-dashboard-watchlist-v1",
+        "last_success_at": "2026-10-15T20:10:33.600847+08:00"
+      },
+      {
+        "name": "stock-analyzer-market-data",
+        "status": "降级",
+        "service_version": null,
+        "contract_version": "market-projection-v1",
+        "last_success_at": "2026-10-15T13:56:21.559098+08:00"
+      },
+      {
+        "name": "stock-analyzer-us-market",
+        "status": "正常",
+        "service_version": null,
+        "contract_version": "investment-dashboard-us-market-v1",
+        "last_success_at": "2026-10-15T20:03:26.127545+08:00"
+      },
+      {
+        "name": "tech-board",
+        "status": "正常",
+        "service_version": null,
+        "contract_version": "investment-dashboard-tech-board-v1",
+        "last_success_at": "2026-10-15T20:10:44.607311+08:00"
+      }
+    ]
+  },
+  "market_structure": {
+    "trade_date": "2026-10-15",
+    "style_rows": [
+      {
+        "name": "上证50",
+        "returns": {
+          "5": -1.422042550764313,
+          "20": -4.987974161627273,
+          "60": -6.802670648147846,
+          "120": -5.936879201023215
+        },
+        "index_id": "sh000016",
+        "relative_returns_pp": {
+          "5": 1.9250717898353642,
+          "20": 3.903903544710486,
+          "60": 6.165754890523235
+        }
+      },
+      {
+        "name": "沪深300",
+        "returns": {
+          "5": -3.3471143405996773,
+          "20": -8.891877706337759,
+          "60": -12.968425538671081,
+          "120": -12.046590282923852
+        },
+        "index_id": "sh000300",
+        "relative_returns_pp": {
+          "5": 0.0,
+          "20": 0.0,
+          "60": 0.0
+        }
+      },
+      {
+        "name": "中证500",
+        "returns": {
+          "5": -6.610810892841624,
+          "20": -12.858468790992916,
+          "60": -16.917047761421177,
+          "120": -17.24714183724364
+        },
+        "index_id": "sh000905",
+        "relative_returns_pp": {
+          "5": -3.2636965522419463,
+          "20": -3.966591084655157,
+          "60": -3.948622222750096
+        }
+      },
+      {
+        "name": "中证1000",
+        "returns": {
+          "5": -6.442877995343621,
+          "20": -12.683688944671069,
+          "60": -14.571562697065554,
+          "120": -18.87931222959366
+        },
+        "index_id": "sh000852",
+        "relative_returns_pp": {
+          "5": -3.0957636547439438,
+          "20": -3.7918112383333096,
+          "60": -1.603137158394473
+        }
+      },
+      {
+        "name": "中证2000",
+        "returns": {
+          "5": -6.573759791122713,
+          "20": -10.034665149738986,
+          "60": -8.213867735470949,
+          "120": -17.48968109391934
+        },
+        "index_id": "csi932000",
+        "relative_returns_pp": {
+          "5": -3.2266454505230358,
+          "20": -1.142787443401227,
+          "60": 4.754557803200132
+        }
+      },
+      {
+        "name": "科创50",
+        "returns": {
+          "5": -6.646890793232252,
+          "20": -13.957697808943959,
+          "60": -29.34879200943734,
+          "120": -4.409272761789584
+        },
+        "index_id": "sh000688",
+        "relative_returns_pp": {
+          "5": -3.299776452632575,
+          "20": -5.0658201026061995,
+          "60": -16.38036647076626
+        }
+      },
+      {
+        "name": "创业板指",
+        "returns": {
+          "5": -8.347658282455061,
+          "20": -17.04337147575089,
+          "60": -26.849160249165504,
+          "120": -23.249785592357984
+        },
+        "index_id": "sz399006",
+        "relative_returns_pp": {
+          "5": -5.000543941855383,
+          "20": -8.151493769413133,
+          "60": -13.880734710494423
+        }
+      },
+      {
+        "name": "中证A500",
+        "returns": {
+          "5": -4.392903596600018,
+          "20": -10.409325644636958,
+          "60": -14.919547500958974,
+          "120": -14.490553021105645
+        },
+        "index_id": "csi000510",
+        "relative_returns_pp": {
+          "5": -1.0457892560003406,
+          "20": -1.517447938299199,
+          "60": -1.9511219622878926
+        }
+      },
+      {
+        "name": "同花顺全A(沪深)",
+        "returns": {
+          "5": -5.307088265465865,
+          "20": -8.318779462713689,
+          "60": -3.38254790527579,
+          "120": -13.257677530293666
+        },
+        "index_id": "ths883421",
+        "relative_returns_pp": {
+          "5": -1.9599739248661874,
+          "20": 0.5730982436240701,
+          "60": 9.585877633395292
+        }
+      }
+    ],
+    "all_5_20_60_returns_and_relative_present": true,
+    "etf_share_date": "2026-10-14",
+    "etf_nav_date": "2026-10-15",
+    "quality": {
+      "status": "partial",
+      "sources": [
+        "东方财富单位净值",
+        "中证指数官方中证2000日线",
+        "同花顺全A(沪深)",
+        "新浪交易日历",
+        "腾讯证券不复权日线"
+      ],
+      "reason_codes": [
+        "SELF_BUILT_STATISTICS_DISABLED",
+        "THIRD_PARTY_MARKET_STATISTICS_DISABLED",
+        "BREADTH_HISTORY_INCOMPLETE"
+      ]
+    },
+    "average_price_quality": "unavailable",
+    "breadth_still_disabled": true,
+    "funds_with_current_price": 12
+  },
+  "tech_board": {
+    "boards": [
+      {
+        "id": "cni-980115",
+        "members": 40,
+        "member_date": "2026-10-15",
+        "bar_date": "2026-10-15",
+        "source": "国证"
+      },
+      {
+        "id": "cni-980138",
+        "members": 42,
+        "member_date": "2026-10-14",
+        "bar_date": "2026-10-14",
+        "source": "国证"
+      },
+      {
+        "id": "cni-970083",
+        "members": 50,
+        "member_date": "2026-10-14",
+        "bar_date": "2026-10-15",
+        "source": "国证"
+      },
+      {
+        "id": "cni-399363",
+        "members": 50,
+        "member_date": "2026-10-15",
+        "bar_date": "2026-10-14",
+        "source": "腾讯"
+      }
+    ],
+    "securities": 151,
+    "last_sync_at": "2026-10-15T20:10:44.607311+08:00",
+    "archives": [
+      "2026-10-15"
+    ],
+    "projection_stale": false
+  },
+  "global_board": {
+    "instruments": 45,
+    "is_mock": false
+  },
+  "image_captcha": {
+    "http": 200,
+    "size": [
+      180,
+      64
+    ],
+    "expires_in": 120,
+    "no_answer_field": true
+  },
+  "authentication": "Existing signed production-smoke session; no real-user credentials or account changes"
+}

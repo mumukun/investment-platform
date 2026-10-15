@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261015-002",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261014-002",
+    "CHG-20261015-003",
+    "CHG-20261015-004",
+    "CHG-20261015-005"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "first_recorded_formal_request_clock": "2026-10-15T10:57:40Z",
+  "timing_notes": "Clock first recorded after initial scope/authority review; do not present this as the full elapsed user wait. Prior feature development and submit request occurred in earlier turns.",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：修改完之后就上线吧，把这次开发完成的功能和bug修复都正式上线。范围包含本对话已完成的科技看板、登录/图片验证码、全球看板当日走势及市场结构采集修复。"
+  },
+  "planned_versions": {
+    "stock-analyzer": "3.26.0",
+    "investment-research-dashboard": "0.21.0"
+  },
+  "excluded": [
+    "marketNewsFeed",
+    "unfinished platform-wide Eastmoney retirement draft",
+    "unverified average-price/breadth sources"
+  ],
+  "rollback_release": "REL-20261015-001",
+  "updated_at": "2026-10-15T12:12:34.790517+00:00",
+  "development_prs": {
+    "stock-analyzer": "https://github.com/mumukun/stock-analyzer/pull/13",
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/17"
+  },
+  "validation": {
+    "combined_provider_regressions": 57,
+    "combined_dashboard_affected_backend_python313": 42,
+    "combined_frontend": 84,
+    "ruff_format_check": "PASS",
+    "ruff_check": "PASS",
+    "migration_upgrade_check": "PASS on isolated local PostgreSQL",
+    "production_frontend_build": "PASS",
+    "change_source_evidence": "changes/evidence/CHG-20261014-002 and CHG-20261015-005/implementation-validation.json",
+    "not_repeated": "No full database restore/rollback drill; reuse established deployment safety mechanism."
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.25.0",
+      "rollback_version": "v3.25.0",
+      "rollback_commit_sha": "b66818013c9107d6415a6b154a662c486a8d5ca6",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ccd0b074a02c9f72dfa702f58944c6e3a79fa61974a62105304764721ea4fa5c"
+      },
+      "rollback_artifact_id": {
+        "app": "sha256:e350362b554188905d78b1bff4f446f459a4169c7d310d5d5f95796dac9b0fe8"
+      },
+      "new_version": "3.26.0",
+      "tag": "v3.26.0",
+      "commit_sha": "65982853406af8bb07105996d6e7447cc07b1718",
+      "artifact_model": "CI_BUILD_ONCE",
+      "candidate_status": "PASS",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:1bcf7773e59d1c3a7f1cb18c0a1a883a6bd8348a74cdcf12468ba14c9144008c"
+      },
+      "artifact_id": {
+        "app": "sha256:1f49a40b813c5ef02c2f64f6c9073811e921f152ce1081da5ce95711fb40e5b6"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261015-002/stock-analyzer/candidate.json"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.20.0",
+      "rollback_version": "v0.20.0",
+      "rollback_commit_sha": "2ef01641c87bf4f65fa0f1b26f5b257193cddcdd",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2c5c22045b29933600fd73790eb7700c09603bf2b624f06d0a7767c96c9c651e",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f46bd72677d398ffa957a5a33db7ff7e5cfde59b4ab04b4b47d5c5edbaf3e143"
+      },
+      "rollback_artifact_id": {
+        "api": "sha256:009086cfdb2025c72c0a869a03ef03bf0abddbf27074dbb78ec02893f2f2a786",
+        "web": "sha256:a721f6979672b9954da54634273a6b936f0d149c4db4c28783a75da8be0ad0c6"
+      },
+      "new_version": "0.21.0",
+      "tag": "v0.21.0",
+      "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+      "artifact_model": "CI_BUILD_ONCE",
+      "candidate_status": "PASS",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+      },
+      "artifact_id": {
+        "api": "sha256:77b10886455af4dcbc4b21e86592974788bd9f365babc20883ef5a0856a1bb88",
+        "web": "sha256:c91969372c9217ea9bfbf6d3eea2cb3bf94f9ccce69eec61f3585518cd61f028"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261015-002/investment-research-dashboard/candidate.json"
+    }
+  ],
+  "main_ci": {
+    "stock-analyzer": {
+      "run_id": "38724620316",
+      "sha": "65982853406af8bb07105996d6e7447cc07b1718",
+      "status": "PASS"
+    },
+    "investment-research-dashboard": {
+      "run_id": "38724781359",
+      "sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+      "status": "PASS"
+    }
+  },
+  "execution_plan": "releases/evidence/REL-20261015-002/image-release.plan.json",
+  "deployment_requested_at": "2026-10-15T11:10:42.165781+00:00",
+  "remaining": [
+    "Average-price special source still unavailable; old real history preserved, no locally computed replacement.",
+    "Breadth/MA statistics intentionally disabled; nine-grid confirmation remains suspended without reliable third-party evidence.",
+    "Precise free CPO/liquid-cooling/material categories and US tech stock pool remain unverified/not ranked.",
+    "Tech history/member dates reflect publisher availability; some raw daily bars/members remain14th while quotes are15th.",
+    "ETF share date14th and NAV15th retained separately; do not label delayed official shares as15th.",
+    "NAS root registry credentials were not changed; exact images cached with temporary user authentication. Future cache misses may need authenticated preload again.",
+    "Active worktrees/branches retained; no forced cleanup."
+  ],
+  "transient_failures": [
+    {
+      "at": "2026-10-15T11:50:07.387195+00:00",
+      "stage": "local exact candidate evidence redownload",
+      "result": "TLS handshake timeout before NAS execution",
+      "production_changed": false,
+      "action": "Retry unchanged frozen plan; do not skip artifact verification"
+    },
+    {
+      "stage": "NAS registry pull",
+      "at": "2026-10-15T11:50:28Z",
+      "production_changed": false,
+      "receipt": "deployment.receipt.json"
+    }
+  ],
+  "deployment_receipt": "releases/evidence/REL-20261015-002/deployment.receipt.json",
+  "recovery": "Keep unchanged registry plan. Preload the same three pinned digests using temporary NAS user Docker credentials, verify digest+CI config IDs, remove temporary credential directory; restricted root deployer resumes from cached images.",
+  "transport_notes": "Archive export was considered after unauthorized pull, but local Docker containerd exposes index/manifest IDs instead of the legacy config ID expected by existing exporter. Export stopped on identity check; no archive used, no check weakened, no root Docker credential configuration changed.",
+  "resume_at": "2026-10-15T11:58:28.728692+00:00",
+  "resume_verification": {
+    "plan_hash_unchanged": true,
+    "candidate_json_unchanged": true,
+    "current_GitHub_run_states": [
+      {
+        "repository": "stock-analyzer",
+        "workflow": "ci.yml",
+        "run_id": "38724620316",
+        "status": "PASS"
+      },
+      {
+        "repository": "stock-analyzer",
+        "workflow": "candidate.yml",
+        "run_id": "38724687259",
+        "status": "PASS"
+      },
+      {
+        "repository": "investment-research-dashboard",
+        "workflow": "ci.yml",
+        "run_id": "38724781359",
+        "status": "PASS"
+      },
+      {
+        "repository": "investment-research-dashboard",
+        "workflow": "candidate.yml",
+        "run_id": "38725072767",
+        "status": "PASS"
+      }
+    ],
+    "artifact_match_evidence": "Exact GitHub candidate downloads already compared by image_release.py verify_ci before NAS pull failure at11:50:20Z. Reuse that successful check for the unchanged frozen plan.",
+    "entry": "Documented restricted /usr/local/sbin/nas-image-release deploy; all NAS identity/hash/backup/health/smoke gates remain enforced."
+  },
+  "result": "DEPLOY_AND_AFFECTED_PRODUCTION_PATHS_PASS",
+  "production_completed_at": "2026-10-15T12:03:35.905722+00:00",
+  "released_at": "2026-10-15T12:10:47.165827+00:00",
+  "production_chain_evidence": "releases/evidence/REL-20261015-002/production-chain.json",
+  "market_recovery_evidence": "releases/evidence/REL-20261015-002/market-structure.recovery.json",
+  "app_url": "http://s.freemumu.top:9360/global-board",
+  "technology_url": "http://s.freemumu.top:9360/tech-board",
+  "market_structure_url": "http://s.freemumu.top:9360/market-structure",
+  "timing": {
+    "measured_seconds_from_first_recorded_formal_clock_to_verification": 4387.2,
+    "successful_resume_deployment_seconds": 306.8,
+    "protected_backup_seconds": 152.0,
+    "data_recovery_seconds": 290.8,
+    "user_approval_wait_seconds": 0,
+    "limitations": "Initial scope review preceded the first recorded clock; full wait is longer. Download/TLS delay, registry auth failure, retries, CI and data recovery are included. This release did not meet the five-minute end-to-end target."
+  },
+  "governance_closeout": "Changes, baseline, manifest and evidence saved in this single release closeout commit; find its identity and PR through Git/GitHub history."
+}

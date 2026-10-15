@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-15T10:56:00.157230+00:00",
+  "change": "CHG-20261014-002",
+  "status": "LOCAL_REVIEW_UNCOMMITTED_NOT_DEPLOYED",
+  "tests": {
+    "market_structure_sources_collection_transport_scheduler": 45,
+    "global_board_and_local_db_regression": 12,
+    "total": 57,
+    "result": "PASS"
+  },
+  "checks": {
+    "configuration": "PASS",
+    "compileall": "PASS",
+    "sync_dry_run": "PASS: no network or writes",
+    "diff_whitespace": "PASS",
+    "change_relative_links": "PASS",
+    "known_key_token_formats": "PASS"
+  },
+  "live_evidence": [
+    "20261015-production-diagnosis.json",
+    "20261015-nas-price-probe.json",
+    "20261015-local-recovery-validation.json"
+  ],
+  "limitations": [
+    "No production source changes, backfill, recompute or Consumer sync executed.",
+    "No Dashboard source changes; strict model validated against repaired public facts.",
+    "Average-price special source and intentionally disabled breadth statistics remain separate gaps.",
+    "Local THS source check returned HTTP502; existing original THS public facts used only in isolated recovery verification."
+  ],
+  "release_requirement": "Deploy exact reviewed artifact, run existing bounded collector to fill missing dates, recompute, then verify Consumer projection. Do not mark production recovered after code deployment alone."
+}
