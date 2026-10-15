@@ -1,57 +1,87 @@
-schema_version: "1.0"
-release_id: REL-20261015-003
-status: BLOCKED
-release_profile: routine
-authorization_mode: PREPARE_RELEASE
-created_at: "2026-10-15T14:45:18.275917+00:00"
-updated_at: "2026-10-15T14:45:18.275917+00:00"
-changes:
-  - CHG-20261015-009
-repositories:
-  - repository: investment-research-dashboard
-    branch: feat/CHG-20261015-009-watchlist-redesign
-    change_commit_sha: 7fe2154a2177fad81a253db3699fe5b5464ed02f
-    previous_version: v0.21.0
-    new_version: null
-    proposed_version: 0.22.0
-    commit_sha: null
-    tag: null
-    artifact: null
-    rollback_version: v0.21.0
-    rollback_commit_sha: 492c580a1f4f4cfcef99987da29bce305bd02590
-    rollback_artifacts:
-      api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3
-      web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10
-    baseline_evidence:
-      - PRODUCTION_BASELINE.yaml
-      - releases/REL-20261015-002.yaml
-      - releases/evidence/REL-20261015-002/deployment.receipt.json
-    development_evidence:
-      - changes/evidence/CHG-20261015-009/verification.md
-release_order:
-  - investment-research-dashboard
-dependencies: []
-deployment:
-  environment: production
-  status: NOT_STARTED
-verification:
-  status: BLOCKED
-  first_failed_gate: scope
-  blockers:
-    - Change is IN_PROGRESS; business commit is local only and has not merged into main.
-    - Application version remains 0.21.0; proposed 0.22.0 is not frozen.
-    - No merged-main SHA, successful main CI or matching candidate image exists for this Change.
-  reused_evidence:
-    - 18 targeted frontend tests and vue-tsc/Vite build passed for the committed implementation; not rerun.
-  known_limitations:
-    - No production probes, deployment or smoke performed; preparation authorization only.
-    - No API, schema, provider, deployment or configuration changes; no additional integration rehearsals scheduled.
-rollback:
-  status: VERIFIED_PREVIOUS_PRODUCTION_IDENTITY
-  evidence:
-    - PRODUCTION_BASELINE.yaml
-notes:
-  - Scope excludes stock-analyzer and marketNewsFeed.
-  - No formal tag created or pushed; no production writes or feature activation.
-  - Project instructions require explicit authorization for push, PR and merge; current request authorizes local commits and preparation.
-  - Resume after authorization to publish the business branch, create the business PR and merge into main; version belongs in that same business PR.
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261015-003",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_profile": "routine",
+  "authorization_mode": "PREPARE_RELEASE",
+  "created_at": "2026-10-15T14:45:18.275917+00:00",
+  "updated_at": "2026-10-15T15:17:22.621135+00:00",
+  "changes": [
+    "CHG-20261015-009"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.21.0",
+      "new_version": "0.22.0",
+      "tag": "v0.22.0",
+      "tag_status": "PLANNED_NOT_CREATED",
+      "commit_sha": "6f876d00ff66e52e41394cc5870430e908eb110e",
+      "pull_request": "https://github.com/mumukun/investment-research-dashboard/pull/18",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifacts": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0aa864054aff2c090de87c07e96d5fa2a4b719e4402097c909217ab2ededd666",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:64294945310c3bf2ac32c8bc9cc422fd4bef238d9e20b4ab39b7fe178aa7f196"
+      },
+      "image_ids": {
+        "api": "sha256:8c3074cab883645c431dd6f483c737c98308f80d490154e32a8c93e938330d06",
+        "web": "sha256:9fc7bb8ccf08f2f19ef56f29b3bb6a2e88b105191744c4e0052ddddf6b9a5415"
+      },
+      "rollback_version": "v0.21.0",
+      "rollback_commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+      "rollback_artifacts": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+      },
+      "quality_run_id": "38758342060",
+      "candidate_run_id": "38758702461"
+    }
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261015-003/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261015-003/investment-research-dashboard/candidate.json"
+  ],
+  "dependencies": [],
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "deployment": {
+    "environment": "production",
+    "status": "NOT_STARTED"
+  },
+  "verification": {
+    "status": "PASS_PREPARATION_ONLY",
+    "evidence": [
+      "changes/evidence/CHG-20261015-009/verification.md",
+      "https://github.com/mumukun/investment-research-dashboard/actions/runs/38758342060",
+      "https://github.com/mumukun/investment-research-dashboard/actions/runs/38758702461",
+      "releases/REL-20261015-002.yaml"
+    ],
+    "known_limitations": [
+      "Main CI and candidate smoke are isolated fixture checks. Unchanged real-data/integration/configuration/rollback boundaries reuse verified REL-20261015-002 evidence; not rerun.",
+      "No formal Tag, production deployment, smoke or activation performed.",
+      "Prior preparation ended BLOCKED; user authorization waiting is separate. Exact original prompt arrival timing unavailable; resumed handling includes version commit, push, PR, main CI and candidate waiting."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_PREVIOUS_PRODUCTION_IDENTITY",
+    "evidence": [
+      "PRODUCTION_BASELINE.yaml",
+      "releases/evidence/REL-20261015-002/deployment.receipt.json"
+    ]
+  },
+  "notes": [
+    "Dashboard only. stock-analyzer and marketNewsFeed excluded.",
+    "Freeze this exact SHA and candidate; later main commits are not included.",
+    "Local committed governance preparation record; no separate preparation governance PR/CI required."
+  ],
+  "timing": {
+    "resumed_measured_from": "2026-10-15T15:11:19+00:00",
+    "measurement_boundary": "version commit; lower bound excludes initial inspection before commit",
+    "candidate_ready_at": "2026-10-15T15:17:05+00:00",
+    "commit_to_candidate_seconds": 346,
+    "prepared_at": "2026-10-15T15:17:55.872488+00:00",
+    "user_authorization_wait": "separate; not included in resumed measurement",
+    "exact_original_request_arrival": "UNAVAILABLE"
+  }
+}

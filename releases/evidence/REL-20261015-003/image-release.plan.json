@@ -1,0 +1,102 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261015-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "NOT_AUTHORIZED",
+    "evidence": "User authorized push, business PR, merge and release preparation only; no formal release authorization."
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "6f876d00ff66e52e41394cc5870430e908eb110e",
+        "version": "0.22.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0aa864054aff2c090de87c07e96d5fa2a4b719e4402097c909217ab2ededd666",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:64294945310c3bf2ac32c8bc9cc422fd4bef238d9e20b4ab39b7fe178aa7f196"
+        },
+        "image_ids": {
+          "api": "sha256:8c3074cab883645c431dd6f483c737c98308f80d490154e32a8c93e938330d06",
+          "web": "sha256:9fc7bb8ccf08f2f19ef56f29b3bb6a2e88b105191744c4e0052ddddf6b9a5415"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "6f876d00ff66e52e41394cc5870430e908eb110e",
+            "run_id": "38758342060"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0aa864054aff2c090de87c07e96d5fa2a4b719e4402097c909217ab2ededd666",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:64294945310c3bf2ac32c8bc9cc422fd4bef238d9e20b4ab39b7fe178aa7f196"
+            }
+          },
+          "candidate_run_id": "38758702461"
+        }
+      },
+      "tag": "v0.22.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v0.21.0",
+        "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+        "image_ids": {
+          "api": "sha256:77b10886455af4dcbc4b21e86592974788bd9f365babc20883ef5a0856a1bb88",
+          "web": "sha256:c91969372c9217ea9bfbf6d3eea2cb3bf94f9ccce69eec61f3585518cd61f028"
+        },
+        "build_time": "2026-10-15T11:07:21Z"
+      },
+      "rollback": {
+        "tag": "v0.21.0",
+        "version": "0.21.0",
+        "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261015-009 only; Dashboard PR18 merged at frozen main SHA 6f876d00ff66e52e41394cc5870430e908eb110e; main CI 38758342060 and matching candidate passed. Other repositories excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Only frontend presentation and compatible application version metadata changed; no API, database, provider algorithm or configuration changes. Reuse prior boundary evidence; main CI verifies this SHA."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Boundary unchanged. Reuse REL-20261015-002 production-chain.json for established Provider/Consumer integration; not rerun. Main CI uses fixtures, not production integration."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Sources unchanged. Reuse REL-20261015-002 deployment.receipt.json and production-chain.json; no new real-source probe. UI layout evidence uses explicitly synthetic data only."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No configuration changes. Candidate build_args retain all three production flags=true. Reuse verified PRODUCTION_BASELINE.yaml and REL-20261015-002 deployed configuration; deployer will check actual drift before switching."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Reuse verified current production v0.21.0/492c580 and its API/Web digest/config identities from PRODUCTION_BASELINE.yaml and REL-20261015-002. No schema change or database downgrade; no rollback drill rerun."
+    }
+  }
+}
