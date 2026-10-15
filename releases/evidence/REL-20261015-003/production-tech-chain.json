@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "observed_at": "2026-10-15T16:09:53Z",
+  "scope": "read-only new technology concept Provider->Consumer production boundary",
+  "provider_concepts": 17,
+  "dashboard_concepts": 17,
+  "dashboard_version": "0.22.0",
+  "is_mock": false,
+  "concept_mapping_version": "sina-tech-concepts-v1",
+  "sample_member_count": 11,
+  "sample_quoted_members": 4,
+  "snapshot_id": "d0acde8e3d45a4b469b004448a6e79366cbd2735e5d1cb0bffaf3cdfd5697136",
+  "projection_stale": false,
+  "source_issues_count": 0,
+  "runtime": {
+    "app_version": "0.22.0",
+    "git_commit": "53daf53d09a5a26ca492e8136a6621be6d875b7b",
+    "build_time": "2026-10-15T15:59:01Z",
+    "environment": "production"
+  }
+}

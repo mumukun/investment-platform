@@ -1,0 +1,70 @@
+[
+  {
+    "overflow": 0,
+    "path": "/global-board"
+  },
+  {
+    "overflow": 0,
+    "path": "/tech-board"
+  },
+  {
+    "overflow": 0,
+    "path": "/market-structure"
+  },
+  {
+    "path": "/us-industries",
+    "overflow": 0
+  },
+  {
+    "overflow": 0,
+    "path": "/capital-flow"
+  },
+  {
+    "overflow": 0,
+    "path": "/seat-flow"
+  },
+  {
+    "overflow": 0,
+    "path": "/short-selection"
+  },
+  {
+    "overflow": 0,
+    "path": "/swing-selection"
+  },
+  {
+    "overflow": 0,
+    "path": "/decisions"
+  },
+  {
+    "overflow": 0,
+    "path": "/events"
+  },
+  {
+    "overflow": 0,
+    "path": "/review"
+  },
+  {
+    "overflow": 0,
+    "path": "/research"
+  },
+  {
+    "overflow": 0,
+    "path": "/system"
+  },
+  {
+    "overflow": 0,
+    "path": "/users"
+  },
+  {
+    "overflow": 0,
+    "path": "/limit-up-ladder"
+  },
+  {
+    "overflow": 0,
+    "path": "/sectors"
+  },
+  {
+    "overflow": 0,
+    "path": "/watchlist"
+  }
+]

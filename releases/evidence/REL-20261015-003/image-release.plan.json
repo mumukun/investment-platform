@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261015-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户在本对话明确授权：完整之后正式将本次所有功能上线，生产环境发版本上线；随后要求其他任务完成后继续工作。范围CHG-20261015-008/009/010，执行本次正式Tag、精确镜像生产部署、smoke和收尾。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0",
+        "version": "3.27.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:16186591ac7dc848cf20d027c05ebb51d0562f6a49431024860c4a44719f8624"
+        },
+        "image_ids": {
+          "app": "sha256:10e45d6a2de633449a0eb663dc534497859d1aa5a47d81304d70de6e41d168cc"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0",
+            "run_id": "38758509065"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:16186591ac7dc848cf20d027c05ebb51d0562f6a49431024860c4a44719f8624"
+            }
+          },
+          "candidate_run_id": "38758589824"
+        }
+      },
+      "tag": "v3.27.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v3.26.0",
+        "commit_sha": "65982853406af8bb07105996d6e7447cc07b1718",
+        "image_ids": {
+          "stock-api": "sha256:1f49a40b813c5ef02c2f64f6c9073811e921f152ce1081da5ce95711fb40e5b6",
+          "stock-watch": "sha256:1f49a40b813c5ef02c2f64f6c9073811e921f152ce1081da5ce95711fb40e5b6"
+        }
+      },
+      "rollback": {
+        "tag": "v3.26.0",
+        "commit_sha": "65982853406af8bb07105996d6e7447cc07b1718",
+        "version": "3.26.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:1bcf7773e59d1c3a7f1cb18c0a1a883a6bd8348a74cdcf12468ba14c9144008c"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "53daf53d09a5a26ca492e8136a6621be6d875b7b",
+        "version": "0.22.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4a269d3f8cdec34600b271a66a4714e7a5006a612da9a6708f8e5d42e684ce0e",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:314a2c0fa0fe78e3d08db650349e3dbd0f660b4e3597855d1cc770f2a81548f6"
+        },
+        "image_ids": {
+          "api": "sha256:6de0111f8a69372eaf98451f3ad6d55b89ebf8241736c8666daed58d1db292cc",
+          "web": "sha256:e7fa7df58e5551205fa879097e3943ed50c50a5aefa4c9835a1bdda75c766955"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "53daf53d09a5a26ca492e8136a6621be6d875b7b",
+            "run_id": "38764709443"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4a269d3f8cdec34600b271a66a4714e7a5006a612da9a6708f8e5d42e684ce0e",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:314a2c0fa0fe78e3d08db650349e3dbd0f660b4e3597855d1cc770f2a81548f6"
+            }
+          },
+          "candidate_run_id": "38765070219"
+        }
+      },
+      "tag": "v0.22.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.21.0",
+        "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+        "image_ids": {
+          "api": "sha256:77b10886455af4dcbc4b21e86592974788bd9f365babc20883ef5a0856a1bb88",
+          "web": "sha256:c91969372c9217ea9bfbf6d3eea2cb3bf94f9ccce69eec61f3585518cd61f028"
+        },
+        "build_time": "2026-10-15T11:07:21Z"
+      },
+      "rollback": {
+        "tag": "v0.21.0",
+        "commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+        "version": "0.21.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-008/009/010 are READY; PR14/18/19/20 merged. Provider 6a4e8ef and Dashboard 53daf53 frozen; main CI and exact candidates PASS. marketNewsFeed and unrelated Changes excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Optional concept extension preserves tech-board-v1 and original four indices/securities. Fact kinds/snapshots reused without DDL. Auth unchanged; watchlist historical fields retained. Provider12/consumer22 regressions and old-consumer compatibility passed; exact main CI passes migrations/full tests/build. CHG010 changes UI/theme only; 116 frontend tests/build and 18-route desktop/mobile checks passed, no source/contract/DB/auth change. Reuse CHG008 live-source evidence; UI fixture checks are not production data evidence."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Reuse current Change real local Provider Bearer -> Consumer -> browser evidence. 17 Sina concepts/1312 unique quotes; search/paging/favorites verified. Merge-related App/Watchlist21 tests/build passed. No production rerun or unrelated chain checks. CHG010 changes UI/theme only; 116 frontend tests/build and 18-route desktop/mobile checks passed, no source/contract/DB/auth change. Reuse CHG008 live-source evidence; UI fixture checks are not production data evidence."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "CHG008 source evidence uses actual public Sina full pagination and Tencent/Sina quotes through isolated PostgreSQL and authenticated API. Concept aggregate returns absent, never synthesized. CHG009 UI uses explicit synthetic fixture; no backend/source boundary change. No claim of new NAS/source validation. CHG010 changes UI/theme only; 116 frontend tests/build and 18-route desktop/mobile checks passed, no source/contract/DB/auth change. Reuse CHG008 live-source evidence; UI fixture checks are not production data evidence."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No new env/key/service/proxy or auth policy. Reuse verified REL-20261015-002 production settings and existing flags; new dashboard candidate build_args exactly equal previous candidate (three true flags). Formal deploy enforces live drift/backup/health; not executed in preparation."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Reuse verified production receipt/baseline: Provider v3.26.0 and Dashboard v0.21.0 exact digests/Image IDs. No DDL/destructive migration; previous code ignores optional concept fields/fact kinds. No database downgrade or routine rollback rehearsal."
+    }
+  }
+}

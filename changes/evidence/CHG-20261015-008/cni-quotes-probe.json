@@ -1,0 +1,273 @@
+{
+  "observed_at": "2026-10-15T14:06:40.561545+00:00",
+  "results": [
+    {
+      "requested": "970051",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=970051",
+      "code": 200,
+      "identity": {
+        "code": "970051",
+        "name": "深证算力"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": [
+        [
+          1792047600000,
+          12378.079268957392,
+          12709.001456435382,
+          12449.326547032755,
+          12213.773748400426,
+          0.0,
+          -576.8875310426083,
+          -0.04453022072141538,
+          "109432773086.26",
+          "1193899559.00",
+          null
+        ]
+      ]
+    },
+    {
+      "requested": "980017",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=980017",
+      "code": 200,
+      "identity": {
+        "code": "980017",
+        "name": "国证芯片"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": [
+        [
+          1792047600000,
+          13597.005132643853,
+          13681.240559638682,
+          13231.717297560746,
+          13209.35328466958,
+          0.0,
+          -218.57266735614576,
+          -0.01582074021950394,
+          "95775430597.73",
+          "713605687.00",
+          null
+        ]
+      ]
+    },
+    {
+      "requested": "970096",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=970096",
+      "code": 200,
+      "identity": {
+        "code": "970096",
+        "name": "创业板芯片"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": [
+        [
+          1792047600000,
+          3624.344889082627,
+          3675.0574755020657,
+          3616.194739394637,
+          3582.0151534775023,
+          0.0,
+          -135.39581091737273,
+          -0.03601200766780878,
+          "37341244517.37",
+          "648930556.00",
+          null
+        ]
+      ]
+    },
+    {
+      "requested": "980151",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=980151",
+      "code": 200,
+      "identity": {
+        "code": "980151",
+        "name": "半导体发展"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": [
+        [
+          1792047600000,
+          8811.822956838634,
+          8873.684326868246,
+          8576.986647039437,
+          8556.200803143718,
+          0.0,
+          -94.83714316136502,
+          -0.01064789069040201,
+          "106984501942.49",
+          "900229069.00",
+          null
+        ]
+      ]
+    },
+    {
+      "requested": "980087",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=980087",
+      "code": 200,
+      "identity": {
+        "code": "980087",
+        "name": "人工智能精选"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": []
+    },
+    {
+      "requested": "970070",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=970070",
+      "code": 200,
+      "identity": {
+        "code": "970070",
+        "name": "创业板人工智能"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": [
+        [
+          1792047600000,
+          6178.52611098835,
+          6369.683105670053,
+          6195.391348859358,
+          6123.621813423823,
+          0.0,
+          -266.8506890116496,
+          -0.04140187568423456,
+          "96093959699.07",
+          "1490064937.00",
+          null
+        ]
+      ]
+    },
+    {
+      "requested": "399281",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=399281",
+      "code": 200,
+      "identity": {
+        "code": "399281",
+        "name": "电子50"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": []
+    },
+    {
+      "requested": "980030",
+      "source": "https://hq.cnindex.com.cn/market/market/getIndexLatestRealTimeData?indexCode=980030",
+      "code": 200,
+      "identity": {
+        "code": "980030",
+        "name": "消费电子"
+      },
+      "fields": [
+        "timestamp",
+        "current",
+        "high",
+        "open",
+        "low",
+        "close",
+        "chg",
+        "percent",
+        "amount",
+        "volume",
+        "avg"
+      ],
+      "rows": [
+        [
+          1792047600000,
+          6967.474919312295,
+          7039.96190614996,
+          6946.396383109293,
+          6877.44806028514,
+          0.0,
+          -238.74738068770512,
+          -0.0331307265788491,
+          "77791753813.31",
+          "2559074949.00",
+          null
+        ]
+      ]
+    }
+  ]
+}

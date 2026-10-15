@@ -1,0 +1,116 @@
+[
+  {
+    "heading": "科技看板",
+    "overflow": 0,
+    "path": "/tech-board",
+    "rows": 0,
+    "tables": 0
+  },
+  {
+    "heading": "市场结构与ETF",
+    "overflow": 0,
+    "path": "/market-structure",
+    "rows": 7,
+    "tables": 1
+  },
+  {
+    "heading": "美股隔夜映射",
+    "overflow": 0,
+    "path": "/us-industries",
+    "rows": 24,
+    "tables": 3
+  },
+  {
+    "error": "数据暂时无法加载stock-analyzer URL or token is not configured重新加载",
+    "heading": "涨停天梯",
+    "overflow": 0,
+    "path": "/limit-up-ladder",
+    "rows": 0,
+    "tables": 0
+  },
+  {
+    "heading": "盘中资金流向",
+    "overflow": 0,
+    "path": "/capital-flow",
+    "rows": 11,
+    "tables": 2
+  },
+  {
+    "error": "数据暂时无法加载stock-analyzer URL or token is not configured重新加载",
+    "heading": "板块与题材",
+    "overflow": 0,
+    "path": "/sectors",
+    "rows": 0,
+    "tables": 0
+  },
+  {
+    "heading": "席位订阅与复盘",
+    "overflow": 0,
+    "path": "/seat-flow",
+    "rows": 14,
+    "tables": 2
+  },
+  {
+    "heading": "短线选股",
+    "overflow": 0,
+    "path": "/short-selection",
+    "rows": 7,
+    "tables": 1
+  },
+  {
+    "heading": "波段结构选股",
+    "overflow": 0,
+    "path": "/swing-selection",
+    "rows": 15,
+    "tables": 5
+  },
+  {
+    "heading": "自选股",
+    "overflow": 0,
+    "path": "/watchlist",
+    "rows": 0,
+    "tables": 0
+  },
+  {
+    "heading": "AI 决策中心",
+    "overflow": 0,
+    "path": "/decisions",
+    "rows": 1,
+    "tables": 2
+  },
+  {
+    "heading": "盘中事件",
+    "overflow": 0,
+    "path": "/events",
+    "rows": 0,
+    "tables": 0
+  },
+  {
+    "heading": "盘后复盘",
+    "overflow": 0,
+    "path": "/review",
+    "rows": 7,
+    "tables": 1
+  },
+  {
+    "heading": "投研信息库",
+    "overflow": 0,
+    "path": "/research",
+    "rows": 0,
+    "tables": 0
+  },
+  {
+    "heading": "数据与审计",
+    "overflow": 0,
+    "path": "/system",
+    "rows": 2,
+    "tables": 1
+  },
+  {
+    "heading": "账号与用户",
+    "overflow": 0,
+    "path": "/users",
+    "rows": 0,
+    "tables": 0
+  }
+]

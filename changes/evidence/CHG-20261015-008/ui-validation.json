@@ -1,0 +1,70 @@
+{
+  "observed_at": "2026-10-15T14:02:49.440912+00:00",
+  "dashboard_base": "492c580a1f4f4cfcef99987da29bce305bd02590",
+  "state": "local_uncommitted",
+  "tests": {
+    "command": "npm test -- src/App.spec.ts src/views/LoginView.spec.ts src/components/LoginImageCaptcha.spec.ts",
+    "files": 3,
+    "passed": 15,
+    "logout_paths": [
+      "confirm",
+      "cancel",
+      "close",
+      "503 failure retained page"
+    ]
+  },
+  "build": {
+    "command": "npm run build",
+    "status": "PASS",
+    "message_box_rules_present": true
+  },
+  "browser": {
+    "login_desktop": {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "frame": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "background": "rgb(238, 234, 226)",
+      "horizontal_overflow": false
+    },
+    "login_mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "illustration": "hidden",
+      "horizontal_overflow": false
+    },
+    "logout_dialog": {
+      "viewport": [
+        446,
+        853
+      ],
+      "rect": {
+        "x": 16,
+        "y": 362.5,
+        "width": 414,
+        "height": 128
+      },
+      "background": "rgb(255, 253, 249)",
+      "centred": true
+    }
+  },
+  "not_run": [
+    "Backend tests and migrations: no backend or schema changes",
+    "Production deployment",
+    "New tech data provider/consumer integration",
+    "NAS accessibility for newly researched sources"
+  ],
+  "screenshots_local_only": [
+    "/tmp/CHG-20261015-008-login-desktop.png",
+    "/tmp/CHG-20261015-008-login-mobile.png"
+  ],
+  "visual_status": "Historical warm-gray draft, superseded by implementation-validation.json purple gradient redesign"
+}

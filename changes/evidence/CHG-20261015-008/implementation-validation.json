@@ -1,0 +1,235 @@
+{
+  "observed_at": "2026-10-15T14:45:55.732712+00:00",
+  "state": "business_changes_merged_main_ci_candidates_pass_not_deployed",
+  "provider_base": "65982853406af8bb07105996d6e7447cc07b1718",
+  "dashboard_base": "492c580a1f4f4cfcef99987da29bce305bd02590",
+  "contract": {
+    "version": "investment-dashboard-tech-board-v1",
+    "original_mapping": "tech-board-sources-v1",
+    "optional_concept_mapping": "sina-tech-concepts-v1",
+    "frozen_v0_21_consumer_acceptance": "PASS",
+    "new_consumer_legacy_field_absence_retention": "PASS"
+  },
+  "live_local": {
+    "source": "Sina public directory and full paginated members; Tencent/Sina quote reuse",
+    "concepts": [
+      {
+        "name": "电子布",
+        "members": 11
+      },
+      {
+        "name": "铜箔",
+        "members": 42
+      },
+      {
+        "name": "覆铜板",
+        "members": 29
+      },
+      {
+        "name": "PCB概念",
+        "members": 237
+      },
+      {
+        "name": "CPO概念",
+        "members": 206
+      },
+      {
+        "name": "光芯片",
+        "members": 29
+      },
+      {
+        "name": "高速连接器",
+        "members": 48
+      },
+      {
+        "name": "AI芯片",
+        "members": 34
+      },
+      {
+        "name": "算力芯片",
+        "members": 66
+      },
+      {
+        "name": "存储概念",
+        "members": 216
+      },
+      {
+        "name": "HBM概念",
+        "members": 57
+      },
+      {
+        "name": "服务器",
+        "members": 98
+      },
+      {
+        "name": "交换机",
+        "members": 48
+      },
+      {
+        "name": "液冷概念",
+        "members": 271
+      },
+      {
+        "name": "IDC电源",
+        "members": 66
+      },
+      {
+        "name": "IDC概念（数据中心）",
+        "members": 687
+      },
+      {
+        "name": "先进封装",
+        "members": 197
+      }
+    ],
+    "unique_concept_securities": 1312,
+    "valid_concept_quotes_on_collection": 1312,
+    "original_indices": 4,
+    "cpo_endpoint_total": 206,
+    "mock": false,
+    "real_authenticated_provider_consumer_sync": "PASS",
+    "production_accessed": false
+  },
+  "tests": {
+    "provider_unittest": 12,
+    "consumer_pytest": 22,
+    "frontend_vitest": 20,
+    "frontend_build": "PASS",
+    "consumer_ruff": "PASS",
+    "provider_new_module_ruff": "PASS with existing dict style retained (C408 excluded)",
+    "compile": "PASS"
+  },
+  "runtime": {
+    "provider_port": 55464,
+    "dashboard_port": 55466,
+    "frontend_tech": "http://127.0.0.1:55468/tech-board",
+    "frontend_login": "http://127.0.0.1:55462/login",
+    "isolated_postgresql": true,
+    "preview_migration": "PASS on fresh dedicated preview database",
+    "setup_note": "Initial migration attempted after test fixture create_all and correctly stopped on duplicate table; separate fresh preview database created and migrated, existing test database preserved.",
+    "local_collector_running": true
+  },
+  "ui": {
+    "desktop_login": [
+      1600,
+      1000
+    ],
+    "phone_login": [
+      390,
+      844
+    ],
+    "phone_tech": [
+      390,
+      844
+    ],
+    "horizontal_overflow": false,
+    "cpo_independent": true,
+    "electronic_cloth_member_rows": 11,
+    "pending_silicon_photonics_no_fake_members": true,
+    "screenshots": [
+      "/tmp/CHG-20261015-008-login-purple.png",
+      "/tmp/CHG-20261015-008-login-purple-mobile.png",
+      "/tmp/CHG-20261015-008-tech-cpo.png",
+      "/tmp/CHG-20261015-008-tech-mobile.png"
+    ]
+  },
+  "limits": [
+    "Concept performance unavailable: no derived sector return or ranking",
+    "Membership observation time is not an effective date",
+    "Specific missing themes retain explicit gaps",
+    "No production/NAS validation or deployment in this request"
+  ],
+  "login_photo_revision": {
+    "date": "2026-10-15",
+    "asset": "src/assets/charlie-munger.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Charlie_Munger.jpg",
+    "author": "Nick J Webb",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "asset_sha256": "088a71d0fc0e973be0b1d89d4f4f2314d411d5134518da639e1c4c687507b636",
+    "display_changes": "CSS crop and grayscale; original file unchanged",
+    "attribution_visible": true,
+    "frontend_build": "PASS",
+    "login_tests": 4,
+    "viewport": [
+      1280,
+      720
+    ],
+    "horizontal_overflow": false,
+    "natural_image_width": 1457,
+    "screenshot": "/tmp/CHG-20261015-008-login-munger.png",
+    "state": "local_uncommitted_not_deployed",
+    "superseded_by": "login_quotes_revision"
+  },
+  "login_quotes_revision": {
+    "date": "2026-10-15",
+    "photo_removed": true,
+    "sources": [
+      "https://gould.usc.edu/news/300-graduate-from-usc-law/",
+      "https://www.slideshare.net/slideshow/jesse_livermore-how_to_trade_in_stocks_-1940_original-en-pdf/273332562"
+    ],
+    "translation": "Chinese paraphrase explicitly labelled",
+    "frontend_build": "PASS",
+    "login_tests": 4,
+    "desktop": [
+      1280,
+      720
+    ],
+    "narrow": [
+      446,
+      853
+    ],
+    "horizontal_overflow": false,
+    "screenshots": [
+      "/tmp/CHG-20261015-008-login-quotes.png",
+      "/tmp/CHG-20261015-008-login-quotes-narrow.png"
+    ],
+    "superseded_by": "selected_munger_quote"
+  },
+  "commits": {
+    "stock-analyzer": "25e9c82a8a948bec82c799a64c254dad6aa8487d",
+    "investment-research-dashboard": "31ad71d20cd13b97f9de24b69de9d6e080f94185"
+  },
+  "selected_munger_quote": {
+    "text": "极度的耐心，结合极度的果断。",
+    "source": "https://www.stripe.press/poor-charlies-almanack/chapter-three",
+    "displayed_quotes": 1,
+    "frontend_build": "PASS",
+    "horizontal_overflow": false,
+    "screenshot": "/tmp/CHG-20261015-008-login-patience.png",
+    "backend_and_authentication_unchanged": true,
+    "superseded_by": "selected_livermore_avatar"
+  },
+  "selected_livermore_avatar": {
+    "text": "市场永远不会错，错的往往是人的观点。",
+    "avatar": "user-supplied image; no historical authenticity claim",
+    "avatar_size": [
+      72,
+      72
+    ],
+    "frontend_build": "PASS",
+    "desktop": [
+      1280,
+      800
+    ],
+    "narrow": [
+      446,
+      853
+    ],
+    "horizontal_overflow": false,
+    "screenshot": "/tmp/CHG-20261015-008-login-livermore-avatar.png",
+    "image_natural_width": 1280
+  },
+  "merge_resolution": {
+    "dashboard_branch_commit": "ab787009d779b8a39186a56273862bb41cedc3dc",
+    "integrated_main": "6f876d00ff66e52e41394cc5870430e908eb110e",
+    "conflict": "CHANGELOG.md only; both entries retained",
+    "auto_merged": "src/App.spec.ts retains watchlist navigation assertion and logout regressions",
+    "targeted_frontend_tests": 21,
+    "build": "PASS"
+  },
+  "frozen_main": {
+    "stock-analyzer": "6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0",
+    "investment-research-dashboard": "d557b5fb504a031c59c255b740c224659d547853"
+  },
+  "release": "REL-20261015-003"
+}
