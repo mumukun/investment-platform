@@ -125,3 +125,7 @@ Manifest；禁止默认重新阅读完整源码，只有 gate 失败或证据不
 
 完成治理任务时报告修改文件、验证结果、涉及和排除的仓库、当前 Git 状态、未解决风险及下一步。
 没有明确授权时，不 Commit、Push、Merge、Tag、部署、启用 Feature Flag 或删除远程分支。
+
+## 11. Product design guidance
+
+Dashboard 的新增与修改界面统一遵循业务仓库 `docs/design/product-design-system.md`，覆盖配色语义、排版、组件、运行状态与异常行为。平台入口见 [产品设计指导](docs/product-design-guidance.md)。不以历史原型替代现行规范，不因此改变业务数据、契约或发布授权。

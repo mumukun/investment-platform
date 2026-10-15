@@ -1,0 +1,149 @@
+{
+  "observed_at": "2026-10-15T13:54:38.245512+00:00",
+  "results": [
+    {
+      "code": "931723",
+      "url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=931723&startDate=20261008&endDate=20261015",
+      "success": true,
+      "count": 6,
+      "last": {
+        "tradeDate": "20261015",
+        "indexCode": "931723",
+        "indexNameCnAll": "中证光通信主题指数",
+        "indexNameCn": "光通信",
+        "indexNameEnAll": "CSI Optical Communication Thematic Index",
+        "indexNameEn": "Optical Communication",
+        "open": null,
+        "high": null,
+        "low": null,
+        "close": 9469.63,
+        "change": -431.63,
+        "changePct": -4.36,
+        "tradingVol": 1464418490.0,
+        "tradingValue": 1018.71,
+        "consNumber": 50.0,
+        "peg": 38.77
+      }
+    },
+    {
+      "code": "931160",
+      "url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=931160&startDate=20261008&endDate=20261015",
+      "success": true,
+      "count": 6,
+      "last": {
+        "tradeDate": "20261015",
+        "indexCode": "931160",
+        "indexNameCnAll": "中证全指通信设备指数",
+        "indexNameCn": "通信设备",
+        "indexNameEnAll": "CSI All Share Communications Equipment Index",
+        "indexNameEn": "All Share Communications",
+        "open": 15819.77,
+        "high": 16135.0,
+        "low": 15510.55,
+        "close": 15693.1,
+        "change": -809.02,
+        "changePct": -4.9,
+        "tradingVol": 1218897691.0,
+        "tradingValue": 972.03,
+        "consNumber": 50.0,
+        "peg": 33.7
+      }
+    },
+    {
+      "code": "931271",
+      "url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=931271&startDate=20261008&endDate=20261015",
+      "success": true,
+      "count": 6,
+      "last": {
+        "tradeDate": "20261015",
+        "indexCode": "931271",
+        "indexNameCnAll": "中证通信设备主题指数",
+        "indexNameCn": "通信设备主题",
+        "indexNameEnAll": "CSI Communication Equipment Thematic Index",
+        "indexNameEn": "Communication Equipment",
+        "open": 3643.41,
+        "high": 3714.71,
+        "low": 3572.16,
+        "close": 3608.85,
+        "change": -183.6,
+        "changePct": -4.84,
+        "tradingVol": 1051523069.0,
+        "tradingValue": 882.27,
+        "consNumber": 50.0,
+        "peg": 49.14
+      }
+    },
+    {
+      "code": "931688",
+      "url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=931688&startDate=20261008&endDate=20261015",
+      "success": true,
+      "count": 6,
+      "last": {
+        "tradeDate": "20261015",
+        "indexCode": "931688",
+        "indexNameCnAll": "中证算力基础设施主题指数",
+        "indexNameCn": "中证算力",
+        "indexNameEnAll": "CSI Computing Infrastructure Thematic Index",
+        "indexNameEn": "CSI Computing Infrastructure",
+        "open": null,
+        "high": null,
+        "low": null,
+        "close": 3270.6,
+        "change": -143.91,
+        "changePct": -4.21,
+        "tradingVol": 1693561512.0,
+        "tradingValue": 1364.07,
+        "consNumber": 50.0,
+        "peg": 37.4
+      }
+    },
+    {
+      "code": "931469",
+      "url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=931469&startDate=20261008&endDate=20261015",
+      "success": true,
+      "count": 6,
+      "last": {
+        "tradeDate": "20261015",
+        "indexCode": "931469",
+        "indexNameCnAll": "中证云计算50指数",
+        "indexNameCn": "云计算50",
+        "indexNameEnAll": "CSI Cloud Computing 50 Index",
+        "indexNameEn": "Cloud Computing 50",
+        "open": 3312.6,
+        "high": 3388.15,
+        "low": 3285.44,
+        "close": 3309.25,
+        "change": -124.91,
+        "changePct": -3.64,
+        "tradingVol": 1094949282.0,
+        "tradingValue": 635.5,
+        "consNumber": 49.0,
+        "peg": 33.53
+      }
+    },
+    {
+      "code": "931743",
+      "url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=931743&startDate=20261008&endDate=20261015",
+      "success": true,
+      "count": 6,
+      "last": {
+        "tradeDate": "20261015",
+        "indexCode": "931743",
+        "indexNameCnAll": "中证半导体材料设备主题指数",
+        "indexNameCn": "半导体材料设备",
+        "indexNameEnAll": "CSI Semiconductor Material & Equipment Thematic Index",
+        "indexNameEn": "Semiconductor Material & Equipment",
+        "open": 7761.91,
+        "high": 8133.3,
+        "low": 7724.29,
+        "close": 8066.07,
+        "change": 4.69,
+        "changePct": 0.06,
+        "tradingVol": 597646399.0,
+        "tradingValue": 565.25,
+        "consNumber": 40.0,
+        "peg": 85.84
+      }
+    }
+  ]
+}

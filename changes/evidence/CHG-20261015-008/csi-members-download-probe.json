@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-15T13:57:06.887461+00:00",
+  "results": [
+    {
+      "code": "931723",
+      "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/931723cons.xls",
+      "status": 200,
+      "bytes": 14848,
+      "signature": "d0cf11e0a1b11ae1",
+      "sha256": "11d4e4d4638c3392ce5ab5a96b70efd3b3f08a7fef15f3b0555b489947a8123e",
+      "scope": "download and format signature only; constituent identities and effective dates not parsed"
+    },
+    {
+      "code": "931160",
+      "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/931160cons.xls",
+      "status": 200,
+      "bytes": 14848,
+      "signature": "d0cf11e0a1b11ae1",
+      "sha256": "214b2afc62ed23ca9f4e1d1c56462b94e026972b74b6dab2419374d458e35675",
+      "scope": "download and format signature only; constituent identities and effective dates not parsed"
+    },
+    {
+      "code": "931271",
+      "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/931271cons.xls",
+      "status": 200,
+      "bytes": 14848,
+      "signature": "d0cf11e0a1b11ae1",
+      "sha256": "934e3eeccf5f549eed27bb549ed9e606770ee4346a7f4beee8779ac8f95d5270",
+      "scope": "download and format signature only; constituent identities and effective dates not parsed"
+    },
+    {
+      "code": "931688",
+      "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/931688cons.xls",
+      "status": 200,
+      "bytes": 14848,
+      "signature": "d0cf11e0a1b11ae1",
+      "sha256": "93c91c582242773b39208c7d6e94ca190427b035283bfab7c97cbc28ed8649a2",
+      "scope": "download and format signature only; constituent identities and effective dates not parsed"
+    },
+    {
+      "code": "931469",
+      "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/931469cons.xls",
+      "status": 200,
+      "bytes": 14336,
+      "signature": "d0cf11e0a1b11ae1",
+      "sha256": "3a32b24245045d5a935c6a114526ad99d38845c9af507dc3b3fe2f9edc412ac0",
+      "scope": "download and format signature only; constituent identities and effective dates not parsed"
+    },
+    {
+      "code": "931743",
+      "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/931743cons.xls",
+      "status": 200,
+      "bytes": 12800,
+      "signature": "d0cf11e0a1b11ae1",
+      "sha256": "d6a6361da6873fedf93362b67a8c304f6a2d52f3ce223a497f5e5619c6d23ee1",
+      "scope": "download and format signature only; constituent identities and effective dates not parsed"
+    }
+  ]
+}

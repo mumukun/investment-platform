@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261015-003",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "release_target_seconds": 300,
+  "created_at": "2026-10-15T15:03:30.148802+00:00",
+  "changes": [
+    "CHG-20261015-008",
+    "CHG-20261015-009",
+    "CHG-20261015-010"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "3.26.0",
+      "new_version": "3.27.0",
+      "branch": "feat/CHG-20261015-008-sina-tech",
+      "commit_sha": "6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0",
+      "commit_state": "RELEASED_EXACT_TAG_AND_CI_ARTIFACT",
+      "planned_tag": "v3.27.0",
+      "tag_status": "CREATED_AND_PUSHED",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:16186591ac7dc848cf20d027c05ebb51d0562f6a49431024860c4a44719f8624"
+      },
+      "ci_candidate_status": "PASS",
+      "rollback_version": "3.26.0",
+      "rollback_tag": "v3.26.0",
+      "rollback_commit_sha": "65982853406af8bb07105996d6e7447cc07b1718",
+      "rollback_artifact_evidence": "PRODUCTION_BASELINE.yaml / stock-analyzer.production.artifact",
+      "baseline_evidence": "releases/REL-20261015-002.yaml",
+      "pr_url": "https://github.com/mumukun/stock-analyzer/pull/14",
+      "artifact_id": {
+        "app": "sha256:10e45d6a2de633449a0eb663dc534497859d1aa5a47d81304d70de6e41d168cc"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261015-003/stock-analyzer/candidate.json",
+      "main_ci_run_id": "38758509065",
+      "tag": "v3.27.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "candidate_run_id": "38758589824",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:1bcf7773e59d1c3a7f1cb18c0a1a883a6bd8348a74cdcf12468ba14c9144008c"
+      },
+      "deployment_receipt": "releases/evidence/REL-20261015-003/deployment.receipt.json",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261015-003/stock-analyzer.dump",
+        "sha256": "bdb93a36972a4dfdccedaca3a44ca023dacaeb35a799cd39dd8ccd39929910fb",
+        "size": 367561879
+      },
+      "runtime_image_ids": {
+        "stock-api": "sha256:10e45d6a2de633449a0eb663dc534497859d1aa5a47d81304d70de6e41d168cc",
+        "stock-watch": "sha256:10e45d6a2de633449a0eb663dc534497859d1aa5a47d81304d70de6e41d168cc"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "0.21.0",
+      "new_version": "0.22.0",
+      "branch": "feat/CHG-20261015-010-product-design-system",
+      "commit_sha": "53daf53d09a5a26ca492e8136a6621be6d875b7b",
+      "commit_state": "RELEASED_EXACT_TAG_AND_CI_ARTIFACT",
+      "planned_tag": "v0.22.0",
+      "tag_status": "CREATED_AND_PUSHED",
+      "ci_candidate_status": "PASS",
+      "rollback_version": "0.21.0",
+      "rollback_tag": "v0.21.0",
+      "rollback_commit_sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+      "rollback_artifact_evidence": "PRODUCTION_BASELINE.yaml / investment-research-dashboard.production.artifact",
+      "baseline_evidence": "releases/REL-20261015-002.yaml",
+      "pr_url": "https://github.com/mumukun/investment-research-dashboard/pull/20",
+      "tag": "v0.22.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10"
+      },
+      "main_ci_run_id": "38764709443",
+      "candidate_run_id": "38765070219",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4a269d3f8cdec34600b271a66a4714e7a5006a612da9a6708f8e5d42e684ce0e",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:314a2c0fa0fe78e3d08db650349e3dbd0f660b4e3597855d1cc770f2a81548f6"
+      },
+      "artifact_id": {
+        "api": "sha256:6de0111f8a69372eaf98451f3ad6d55b89ebf8241736c8666daed58d1db292cc",
+        "web": "sha256:e7fa7df58e5551205fa879097e3943ed50c50a5aefa4c9835a1bdda75c766955"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261015-003/investment-research-dashboard-final/candidate.json",
+      "deployment_receipt": "releases/evidence/REL-20261015-003/deployment.receipt.json",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261015-003/investment-research-dashboard.dump",
+        "sha256": "66254fa6cccde19888fe685db7292eba108ce34380c7d19fd2607f5280b7be2c",
+        "size": 16243128
+      },
+      "runtime_image_ids": {
+        "api": "sha256:6de0111f8a69372eaf98451f3ad6d55b89ebf8241736c8666daed58d1db292cc",
+        "web": "sha256:e7fa7df58e5551205fa879097e3943ed50c50a5aefa4c9835a1bdda75c766955"
+      }
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "dependencies": [
+    {
+      "provider": "stock-analyzer",
+      "consumer": "investment-research-dashboard",
+      "classification": "required",
+      "reason": "New consumer reads optional Sina concept extension"
+    }
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261015-003/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261015-003/stock-analyzer/candidate.json",
+    "releases/evidence/REL-20261015-003/investment-research-dashboard-final/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261015-003/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "production",
+    "status": "PASS",
+    "started_at": "2026-10-15T16:02:42.283560+00:00",
+    "completed_at": "2026-10-15T16:09:36.856619+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/CHG-20261015-008.md",
+      "changes/evidence/CHG-20261015-008/implementation-validation.json",
+      "changes/evidence/CHG-20261015-009/verification.md",
+      "changes/CHG-20261015-010.md"
+    ],
+    "known_limitations": [
+      "No reliable concept-level aggregate returns; no synthetic ranking.",
+      "14 unverified technology directions retain explicit gap entries.",
+      "Public-source per-security quote coverage can be partial; production sample had 11 members / 4 quotes, without mock fallback.",
+      "Contrast checks cover declared key combinations, not a full-site accessibility certification."
+    ],
+    "parallel_change": "CHG008/009/010 explicitly included; final PR20 main SHA contains PR18/19 and design-system changes",
+    "main_ci": {
+      "stock-analyzer": {
+        "status": "PASS",
+        "commit_sha": "6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0",
+        "run_id": "38758509065"
+      },
+      "investment-research-dashboard": {
+        "status": "PASS",
+        "commit_sha": "53daf53d09a5a26ca492e8136a6621be6d875b7b",
+        "run_id": "38764709443"
+      }
+    },
+    "plan_check": "PASS_LOCAL_STRUCTURAL_VALIDATION",
+    "production_smoke": "PASS: existing deploy health/version/authentication smoke for both repositories",
+    "production_tech_chain": "releases/evidence/REL-20261015-003/production-tech-chain.json"
+  },
+  "rollback": {
+    "status": "VERIFIED_BASELINE_REUSED_NO_REHEARSAL",
+    "evidence": [
+      "PRODUCTION_BASELINE.yaml",
+      "releases/REL-20261015-002.yaml"
+    ]
+  },
+  "notes": [
+    "正式生产授权来自本对话人工消息，取代历史准备阶段限制；本对话串行发布。",
+    "008/009原准备Dashboard候选已被PR20最终53daf53候选取代；Tag未重建镜像。",
+    "只发布stock-analyzer和Dashboard；marketNewsFeed与无关历史Change排除。",
+    "既有三个构建功能开关保持true；无新增数据库/契约/认证策略变化来自010。",
+    "原工作区无关未跟踪文件及他人工作树未改动；临时本地预览进程及自建模拟数据库已清理。",
+    "分支与工作树保留，未执行远程分支删除；后续清理不阻塞发布。"
+  ],
+  "authorization": {
+    "prepare": "AUTHORIZED",
+    "push_pr_merge": "AUTHORIZED by explicit user reply",
+    "formal_release": "AUTHORIZED: 用户明确要求完整之后将本次所有功能正式生产上线，随后要求继续工作；本对话为发布负责人。",
+    "combined_scope": "AUTHORIZED by user reply: 合并为同一批发布准备"
+  },
+  "preparation_checkpoint_at": "2026-10-15T15:12:48+00:00",
+  "updated_at": "2026-10-15T16:11:45.477435+00:00",
+  "timing": {
+    "first_business_commit_at": "2026-10-15T15:01:15+00:00",
+    "first_pr_ci_started_at": "2026-10-15T15:12:09+00:00",
+    "ready_at": "2026-10-15T15:26:29.287122+00:00",
+    "seconds_since_first_pr_ci": 860,
+    "initial_request_timestamp": "UNAVAILABLE",
+    "user_wait_not_separately_measured": true,
+    "final_ui_main_merged_at": "2026-10-15T15:56:20Z",
+    "final_candidate_ready_at": "2026-10-15T16:00:37.894612+00:00",
+    "development_included_in_user_wait": true,
+    "nas_first_stage_to_complete_seconds": 414.478,
+    "first_ui_pr_ci_started_at": "2026-10-15T15:51:01Z",
+    "ui_pr_ci_to_production_seconds": 1115.857,
+    "initial_formal_request_timestamp": "UNAVAILABLE: no timestamp in supplied human message; do not fabricate full elapsed time",
+    "includes_preceding_design_development": "Additional development and waiting preceded first PR CI; not included in the measured PR-CI-to-production interval",
+    "governance_closeout_started_at": "2026-10-15T16:11:45.477435+00:00"
+  }
+}
