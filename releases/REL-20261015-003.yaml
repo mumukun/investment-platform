@@ -1,0 +1,57 @@
+schema_version: "1.0"
+release_id: REL-20261015-003
+status: BLOCKED
+release_profile: routine
+authorization_mode: PREPARE_RELEASE
+created_at: "2026-10-15T14:45:18.275917+00:00"
+updated_at: "2026-10-15T14:45:18.275917+00:00"
+changes:
+  - CHG-20261015-009
+repositories:
+  - repository: investment-research-dashboard
+    branch: feat/CHG-20261015-009-watchlist-redesign
+    change_commit_sha: 7fe2154a2177fad81a253db3699fe5b5464ed02f
+    previous_version: v0.21.0
+    new_version: null
+    proposed_version: 0.22.0
+    commit_sha: null
+    tag: null
+    artifact: null
+    rollback_version: v0.21.0
+    rollback_commit_sha: 492c580a1f4f4cfcef99987da29bce305bd02590
+    rollback_artifacts:
+      api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d66d7b5c0a7ddf7518486a05f39cc229ada111de6efb88f2881676d98672fa3
+      web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:9c5af068d85f20e6ae3476d6c9b9c58478e31c6c4b5972609574acce19d77c10
+    baseline_evidence:
+      - PRODUCTION_BASELINE.yaml
+      - releases/REL-20261015-002.yaml
+      - releases/evidence/REL-20261015-002/deployment.receipt.json
+    development_evidence:
+      - changes/evidence/CHG-20261015-009/verification.md
+release_order:
+  - investment-research-dashboard
+dependencies: []
+deployment:
+  environment: production
+  status: NOT_STARTED
+verification:
+  status: BLOCKED
+  first_failed_gate: scope
+  blockers:
+    - Change is IN_PROGRESS; business commit is local only and has not merged into main.
+    - Application version remains 0.21.0; proposed 0.22.0 is not frozen.
+    - No merged-main SHA, successful main CI or matching candidate image exists for this Change.
+  reused_evidence:
+    - 18 targeted frontend tests and vue-tsc/Vite build passed for the committed implementation; not rerun.
+  known_limitations:
+    - No production probes, deployment or smoke performed; preparation authorization only.
+    - No API, schema, provider, deployment or configuration changes; no additional integration rehearsals scheduled.
+rollback:
+  status: VERIFIED_PREVIOUS_PRODUCTION_IDENTITY
+  evidence:
+    - PRODUCTION_BASELINE.yaml
+notes:
+  - Scope excludes stock-analyzer and marketNewsFeed.
+  - No formal tag created or pushed; no production writes or feature activation.
+  - Project instructions require explicit authorization for push, PR and merge; current request authorizes local commits and preparation.
+  - Resume after authorization to publish the business branch, create the business PR and merge into main; version belongs in that same business PR.
