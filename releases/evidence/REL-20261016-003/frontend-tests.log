@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.25.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/oct16-ui-release/investment-research-dashboard
+
+
+ Test Files  36 passed (36)
+      Tests  176 passed (176)
+   Start at  18:19:08
+   Duration  11.62s (transform 5.66s, setup 401ms, import 28.95s, tests 21.77s, environment 21.65s)
