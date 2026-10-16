@@ -1,0 +1,87 @@
+{
+  "change_id": "CHG-20261015-007",
+  "date": "2026-10-15",
+  "status": "local_uncommitted_not_deployed",
+  "base_commits": {
+    "investment-platform": "d5ed5bd8cc2d612b0cdb66e539ed705079b1c52c",
+    "stock-analyzer": "65982853406af8bb07105996d6e7447cc07b1718",
+    "investment-research-dashboard": "492c580a1f4f4cfcef99987da29bce305bd02590"
+  },
+  "versions": {
+    "provider": "3.27.0",
+    "consumer": "0.22.0",
+    "contract": "investment-dashboard-market-structure-v1",
+    "rules": "market-structure-rules-v1.3.0"
+  },
+  "checks": {
+    "provider_new_tests": 11,
+    "provider_market_structure_regressions": 34,
+    "consumer_backend_tests": 10,
+    "frontend_tests": 7,
+    "total_tests": 62,
+    "compileall": "PASS",
+    "affected_backend_ruff": "PASS",
+    "new_provider_F_E9_lint": "PASS",
+    "frontend_build": "PASS",
+    "diff_check": "PASS",
+    "operator_backfill_dry_run": {
+      "writes": false,
+      "network": false
+    }
+  },
+  "fixture_integration": {
+    "isolated_postgres": true,
+    "input": "99 generated weekday sessions, three fixture stocks, fixture benchmark; no production data",
+    "provider_statistics_facts_generation": "PASS",
+    "consumer_envelope_projection_history_read": "PASS",
+    "repeat_idempotency": "PASS",
+    "eod_over_later_intraday": "PASS",
+    "no_future_dates": "PASS"
+  },
+  "live_public_source_checks": {
+    "legu": {
+      "url": "https://legulegu.com/stockdata/market-activity",
+      "status": 403,
+      "retries": 0,
+      "enabled": false,
+      "official_sdk_reference": "https://raw.githubusercontent.com/akfamily/akshare/main/akshare/stock_feature/stock_market_legu.py"
+    },
+    "adjusted_history": {
+      "source": "Tencent",
+      "code": "600519",
+      "window_start": "2026-07-01",
+      "anchor": "2026-10-15",
+      "bar_count": 71,
+      "result": "PASS",
+      "persisted_to_user_database": false
+    }
+  },
+  "local_read_only_real_data": {
+    "trade_date": "2026-10-15",
+    "scope": "Shanghai/Shenzhen A share daily cached members, ST included; completeness unverified",
+    "pool_count": 5224,
+    "valid_return_count": 5213,
+    "rising_count": 399,
+    "falling_count": 4789,
+    "flat_count": 25,
+    "unknown_trade_status_count": 11,
+    "rising_ratio_pct": 7.653942067907154,
+    "median_return_pct": -3.002,
+    "ma20_eligible_count": 3190,
+    "above_ma20_pct": 12.63322884012539,
+    "ma60_eligible_count": 3176,
+    "above_ma60_pct": 19.77329974811083,
+    "new_high_low_eligible_count": 3190,
+    "new_high_close_20_count": 52,
+    "new_low_close_20_count": 2020,
+    "quality": "partial",
+    "writes": false
+  },
+  "limitations": [
+    "No independently verified complete daily exchange roster; whole-market coverage remains null and regime confirmation is gated.",
+    "Adjusted history incomplete; existing adjusted cache reused, full backfill not executed.",
+    "No production checks, commit, push, PR, merge, tag or deployment.",
+    "Pending average-price and microcap worktrees preserved; shared-file/version conflicts must be resolved before integration.",
+    "Browser screenshot/manual visual acceptance not performed; component tests and production build passed."
+  ]
+}

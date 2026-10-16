@@ -1,0 +1,20 @@
+{
+  "dates": 72,
+  "last_good_retained_dates": 0,
+  "history_fetched": 10,
+  "history_failed_codes": [],
+  "history_backfill_deferred": false,
+  "compute": {
+    "processed_generations": 121,
+    "new_generations": 71,
+    "start": "2026-04-17",
+    "end": "2026-10-16"
+  },
+  "latest": {
+    "valid_return_count": 5215,
+    "pool_count": 5225,
+    "ma20_eligible_count": 0,
+    "ma60_eligible_count": 0,
+    "universe_verified": false
+  }
+}

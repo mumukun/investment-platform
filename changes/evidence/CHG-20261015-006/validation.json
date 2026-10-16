@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-10-15T12:58:57.025018+00:00",
+  "evidence_kind": "offline fixtures and isolated local PostgreSQL; not production or real market data",
+  "provider": {
+    "base": "65982853406af8bb07105996d6e7447cc07b1718",
+    "application_version": "3.27.0",
+    "rules_version": "market-structure-rules-v1.3.0",
+    "command": "MARKET_STRUCTURE_TEST_DATABASE_URL=<isolated-test-db> python -m unittest discover -s tests -p 'test_market_structure*.py'",
+    "tests": 38,
+    "result": "PASS",
+    "checks": [
+      "exact publisher identity and raw units",
+      "invalid/duplicate/missing/out-of-window OHLC rejection",
+      "source failure does not remove history",
+      "ordinary Tencent/Sina precedence unchanged",
+      "microcap/average isolation",
+      "PostgreSQL intraday updates and EOD precedence",
+      "post-close revisions flagged without replacing first EOD",
+      "compileall",
+      "git diff --check"
+    ]
+  },
+  "consumer": {
+    "base": "492c580a1f4f4cfcef99987da29bce305bd02590",
+    "application_version": "0.22.0",
+    "contract_version": "investment-dashboard-market-structure-v1",
+    "backend_command": "DATABASE_URL=<isolated-test-db> SEED_DEMO_DATA=false uv run --frozen pytest backend/tests/test_market_structure.py -q",
+    "backend_tests": 11,
+    "frontend_command": "npm test -- src/types/marketStructure.spec.ts",
+    "frontend_tests": 4,
+    "build": "npm run build PASS",
+    "lint": "ruff affected backend files PASS",
+    "checks": [
+      "optional field absent on old snapshots",
+      "identity, units, positive finite OHLC, date and availability validation",
+      "projection preserves field",
+      "historical lookup does not use future data",
+      "gap bars remain null",
+      "existing average candle remains correct"
+    ]
+  },
+  "cross_repository": {
+    "result": "PASS",
+    "fixture_only": true,
+    "description": "Actual Provider adapter with mocked HTTP response -> isolated fact store -> compute and envelope -> Consumer Envelope validation -> isolated Snapshot projection -> historical read",
+    "dates": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-10-13"
+    ],
+    "microcap_closes": [
+      1010,
+      null,
+      1020
+    ],
+    "average_price_closes": [
+      null,
+      null,
+      null
+    ]
+  },
+  "limits": [
+    "source probe has no real bars; see source-probe.json",
+    "no production access, sync, backfill or deployment",
+    "no browser visual acceptance",
+    "only local changes; no commit, push, PR, merge or tags"
+  ]
+}

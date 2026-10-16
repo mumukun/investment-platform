@@ -1,0 +1,52 @@
+{
+  "version": "4.0.0",
+  "generations": [
+    {
+      "rules_version": "market-structure-rules-v1.3.0",
+      "latest": "2026-10-16",
+      "count": 149
+    },
+    {
+      "rules_version": "market-structure-rules-v1.2.0",
+      "latest": "2026-10-13",
+      "count": 242
+    },
+    {
+      "rules_version": "market-structure-rules-v1.2.2",
+      "latest": "2026-10-16",
+      "count": 385
+    },
+    {
+      "rules_version": "market-structure-rules-v1.2.1",
+      "latest": "2026-10-13",
+      "count": 121
+    }
+  ],
+  "new_facts": [
+    {
+      "kind": "breadth_history",
+      "latest": "2026-10-15",
+      "count": 10
+    },
+    {
+      "kind": "local_breadth",
+      "latest": "2026-10-16",
+      "count": 143
+    },
+    {
+      "kind": "microcap_index",
+      "latest": "2026-10-16",
+      "count": 17
+    }
+  ],
+  "latest": {
+    "date": "2026-10-16",
+    "phase": "intraday",
+    "valid_return_count": 5215,
+    "pool_count": 5225,
+    "ma20_eligible_count": 0,
+    "ma60_eligible_count": 0,
+    "universe_verified": false,
+    "microcap_close": 3633.32
+  }
+}

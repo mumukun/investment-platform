@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-15T12:58:01.431558+00:00",
+  "source": "东方财富微盘股板块",
+  "secid": "90.BK1158",
+  "endpoint": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+  "page": "https://quote.eastmoney.com/q/90.BK1158.html",
+  "scope": "public reads only; no production writes",
+  "attempts": [
+    {
+      "transport": "urllib existing environment",
+      "result": "RemoteDisconnected"
+    },
+    {
+      "transport": "actual adapter existing environment",
+      "result": "ProxyError"
+    },
+    {
+      "transport": "direct without environment proxy",
+      "result": "ConnectionError"
+    }
+  ],
+  "real_bars_obtained": false
+}

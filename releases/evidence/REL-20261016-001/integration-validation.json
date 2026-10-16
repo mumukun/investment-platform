@@ -1,0 +1,82 @@
+{
+  "release_id": "REL-20261016-001",
+  "scope": [
+    "CHG-20261015-001",
+    "CHG-20261015-006",
+    "CHG-20261015-007",
+    "CHG-20261014-002",
+    "CHG-20261014-003"
+  ],
+  "implementation_recovery": {
+    "stock-analyzer": {
+      "001": "f3540e6",
+      "006": "1ad9c13",
+      "007": "8709920",
+      "14-002": "14d64cc",
+      "14-003": "2a20623"
+    },
+    "dashboard": {
+      "006": "0c4399c",
+      "14-002": "dfbc408",
+      "14-003": "1999648",
+      "007": "existing market-breadth worktree diff"
+    }
+  },
+  "local_verification": {
+    "provider_affected_pytest": "66 PASS, 1 skipped, 20 subtests PASS",
+    "provider_standard_unittest": "340 PASS, 3 skipped",
+    "provider_microcap_isolated_postgresql": "4 PASS, 9 subtests PASS",
+    "consumer_affected_pytest": "38 PASS",
+    "consumer_extended_pytest": "185 PASS; 9 seat tracking cases rejected non-allowlisted test DB before execution; standard CI must execute",
+    "frontend_affected_vitest": "17 PASS",
+    "frontend_build": "PASS",
+    "consumer_ruff_check_and_format": "PASS",
+    "provider_compileall": "PASS"
+  },
+  "actual_source_read_only_nas": {
+    "microcap_BK1158": {
+      "status": "PASS",
+      "bars": 7,
+      "latest": "2026-10-16",
+      "window": "2026-10-01..2026-10-16",
+      "observation": "current day may be intraday"
+    },
+    "sina_flow": {
+      "status": "PASS",
+      "points": 16,
+      "latest": "2026-10-16 09:45"
+    },
+    "average_price": {
+      "status": "PASS_INTRADAY_REJECTION",
+      "message": "Average price quote requires an in-window post-close trading date",
+      "post_close_bar_verified_this_run": false
+    }
+  },
+  "limitations": [
+    "No historical market data fabricated; adjusted-history coverage can remain partial.",
+    "Sina current-day curve does not prove 2026-10-14/15 history can be recovered.",
+    "Average quote accumulation begins only with a valid post-close quote."
+  ],
+  "timestamp": "2026-10-16T01:50:41.795028+00:00",
+  "merged_fixture_chain": {
+    "status": "PASS",
+    "scope": "isolated synthetic fixture",
+    "days": 70,
+    "projected": 70,
+    "valid_returns": 3,
+    "ma60_eligible": 3,
+    "microcap_close": 1010,
+    "universe_verified": false
+  },
+  "ci_corrections": [
+    "Provider: obsolete unit-test mock removed after unused import cleanup; 340 tests re-passed.",
+    "Dashboard: existing calendar test froze Date.now but not new Date; Date-only fake clock now covers both; 5 targeted tests passed. No business behavior changed."
+  ],
+  "production_operator_notes": [
+    "Deployment receipt all stages PASS.",
+    "Initial provider activation SSH exceeded180s. Read-only verification proved121 new generations,72 local statistics facts,17 microcap facts; no remaining process. No repeated collection performed.",
+    "Stock-search live production module600519 PASS.",
+    "Consumer operator initially used base Python without app path and failed import before writes; corrected to /app/.venv/bin/python and /app/backend.",
+    "Bounded10-code adjusted-history initialization authorized only for this operator invocation; no permanent flag/config change."
+  ]
+}
