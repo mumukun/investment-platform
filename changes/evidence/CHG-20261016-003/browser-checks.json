@@ -1,0 +1,37 @@
+{
+  "activeNavigationBackground": "rgb(108, 94, 208)",
+  "documentWidth": 1280,
+  "states": [
+    {
+      "background": "rgb(243, 240, 233)",
+      "color": "rgb(98, 103, 94)",
+      "contrast": 5.1,
+      "label": "待更新"
+    },
+    {
+      "background": "rgb(243, 240, 233)",
+      "color": "rgb(98, 103, 94)",
+      "contrast": 5.1,
+      "label": "当日无公开记录"
+    },
+    {
+      "background": "rgb(251, 242, 229)",
+      "color": "rgb(149, 96, 28)",
+      "contrast": 4.77,
+      "label": "旧数据"
+    },
+    {
+      "background": "rgb(251, 236, 239)",
+      "color": "rgb(189, 64, 83)",
+      "contrast": 4.56,
+      "label": "获取失败"
+    },
+    {
+      "background": "rgb(237, 243, 251)",
+      "color": "rgb(54, 108, 175)",
+      "contrast": 4.8,
+      "label": "更新中"
+    }
+  ],
+  "viewport": 1280
+}

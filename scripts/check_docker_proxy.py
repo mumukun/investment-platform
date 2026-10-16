@@ -33,11 +33,25 @@ def probe(proxy):
     }
 
 
+def daemon_proxy_status(info, expected):
+    # Docker JSON keys are case-sensitive; missing keys are unknown, never false.
+    if not all(key in info for key in ("HttpProxy", "HttpsProxy")):
+        raise ValueError("Docker proxy fields unavailable; do not infer direct access")
+    return {
+        "daemon_http_proxy_configured": bool(info["HttpProxy"]),
+        "daemon_https_proxy_configured": bool(info["HttpsProxy"]),
+        "daemon_uses_expected_mihomo": all(
+            info[key] == expected for key in ("HttpProxy", "HttpsProxy")
+        ),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--proxy", required=True, help="Actual local mihomo HTTP/mixed proxy URL"
+        "--proxy", default="http://127.0.0.1:7890", help="NAS mihomo HTTP/mixed proxy URL"
     )
+    parser.add_argument("--compare-direct", action="store_true", help="Explicit diagnostic only")
     args = parser.parse_args()
     url = urlsplit(args.proxy)
     if (
@@ -54,9 +68,8 @@ def main():
         json.dumps(
             {
                 "docker_version": info.get("ServerVersion"),
-                "daemon_http_proxy_configured": bool(info.get("HttpProxy")),
-                "daemon_https_proxy_configured": bool(info.get("HttpsProxy")),
-                "direct_registry_connection": probe(None),
+                **daemon_proxy_status(info, args.proxy),
+                **({"direct_registry_connection": probe(None)} if args.compare_direct else {}),
                 "mihomo_registry_connection": probe(args.proxy),
                 "note": "connection timing only; measure private image pull throughput separately",
             },

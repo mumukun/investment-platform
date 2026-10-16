@@ -1,0 +1,96 @@
+{
+  "change_id": "CHG-20261016-004",
+  "status": "LOCAL_REVIEW_NOT_COMMITTED_NOT_DEPLOYED",
+  "scope": [
+    "stock-analyzer collector, scoped fallback, own fact selection, local statistics schedule",
+    "Dashboard optional collection_health contract validation and diagnostic UI",
+    "governance and documentation"
+  ],
+  "versions": {
+    "provider_base": "4.0.0 / 580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+    "dashboard_base": "0.23.0 / 46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+    "contract_version": "investment-dashboard-market-structure-v1",
+    "rules_version": "market-structure-rules-v1.3.0",
+    "release_versions": "not assigned; pending integration and separate release authorization"
+  },
+  "validation": {
+    "provider_market_structure": {
+      "tests": 52,
+      "passed": 52,
+      "skipped": 0,
+      "evidence": "provider-tests.log"
+    },
+    "provider_final_transport_targeted": {
+      "evidence": "provider-targeted-final.log",
+      "result": "PASS"
+    },
+    "local_breadth": {
+      "tests": 11,
+      "result": "PASS",
+      "evidence": "breadth-tests.log"
+    },
+    "scheduler": {
+      "tests": 14,
+      "result": "PASS",
+      "evidence": "scheduler-tests.log"
+    },
+    "backend": {
+      "tests": 15,
+      "result": "PASS",
+      "evidence": "backend-tests.log"
+    },
+    "frontend": {
+      "files": 31,
+      "tests": 138,
+      "result": "PASS",
+      "evidence": "frontend-tests.log"
+    },
+    "golden_chain": "PASS: synthetic collector -> compute -> Consumer validation -> isolated PostgreSQL -> projection and known cutoff; see collection-pipeline.json",
+    "build_ruff_compile_diff": "PASS",
+    "dry_run": "--local-only --dry-run reports writes=false/network=false"
+  },
+  "browser": {
+    "evidence": "public market cache replay plus simulated collection failure, not production failure evidence",
+    "desktop": {
+      "width": 1280,
+      "document_width": 1280
+    },
+    "mobile": {
+      "width": 320,
+      "document_width": 320
+    },
+    "details_expand": "PASS",
+    "console_errors": 0,
+    "screenshots": [
+      "collection-health-desktop.png",
+      "collection-health-mobile.png"
+    ]
+  },
+  "confirmed_defects": [
+    "exception categories were discarded",
+    "partial source failures returned process success",
+    "average-price quote disabled proxy environment even in the scoped fallback worker",
+    "existing intraday bars prevented later completion and were selected as earliest intraday facts",
+    "sync facts selected the earliest same-day attempt",
+    "intraday statistics had no cache-only refresh slots"
+  ],
+  "safeguards": [
+    "at most 2 attempts per source call",
+    "no retry or alternate route after 401/403/429; same source deferred for remainder of batch",
+    "3 consecutive transient failures defer same source for rest of batch",
+    "no overwrites of first confirmed EOD facts; source revisions retained",
+    "calendar-aware publication targets; NAV/share target previous session",
+    "verified cached mapping only",
+    "local-only jobs do not fetch third parties, LLM or history backfill",
+    "no external messages or production writes"
+  ],
+  "limits": [
+    "No live NAS third-party transport probe/deployment or production configuration changes in this phase",
+    "True original external connection failure cause remains unknown without structured logs from that time",
+    "External source availability and publication time cannot be guaranteed",
+    "new defaults require scheduler/container restart; explicit old full collection times must be updated during authorized release",
+    "historical MA qualification remains limited by available adjusted bars",
+    "no CI/Commit/Push/PR/Merge/Tag performed"
+  ],
+  "cleanup": "Owned preview, symlink, browser/viewport and isolated disposable test DB removed after validation; unrelated worktrees untouched"
+}

@@ -1,0 +1,59 @@
+{
+  "change_id": "CHG-20261016-002",
+  "final_implementation": "existing full Watchlist detail extracted into StockDetailPanel; Watchlist and all generic callers share this component, not a simplified panel",
+  "frontend_full_suite": {
+    "files": 31,
+    "tests": 140,
+    "result": "PASS"
+  },
+  "final_targeted_suite": {
+    "scope": "StockDetailDrawer and WatchlistView after final presentation adjustments",
+    "tests": 27,
+    "result": "PASS"
+  },
+  "build": {
+    "command": "npm run build",
+    "result": "PASS"
+  },
+  "browser": {
+    "fixtures": "explicit MOCK; actual TechConceptExplorer, WatchlistView, StockDetailDrawer and StockDetailPanel mounted together; no real production or maintenance/AI calls",
+    "both_entries": "technology member and watchlist stock name render same 7 tabs and original decision chain",
+    "tabs": [
+      "决策摘要",
+      "行情与 K 线",
+      "短线判断",
+      "波段判断",
+      "公司与行业",
+      "预警与状态",
+      "我的研究判断"
+    ],
+    "desktop": {
+      "viewport": 1280,
+      "drawer_x": 0,
+      "drawer_width": 860,
+      "document_width": 1280
+    },
+    "mobile": {
+      "viewport": 320,
+      "drawer_x": 0,
+      "drawer_width": 320,
+      "document_width": 320
+    },
+    "keyboard": "left/right tab navigation; Escape closes and returns focus to original stock name",
+    "console_errors": [],
+    "screenshots": [
+      "technology-full-panel.png",
+      "watchlist-full-panel.png",
+      "full-panel-chart.png",
+      "full-panel-mobile-320.png"
+    ]
+  },
+  "limits": [
+    "company card retains existing lazy generation but real AI call not exercised",
+    "personal edit/save covered by mocked test, not production mutation",
+    "no backend, DB or contract change; backend tests not rerun",
+    "earlier simplified screenshots retained as iteration history only"
+  ],
+  "git": "local uncommitted changes; no push, PR, merge, tag or production deployment",
+  "preserved": "CHG-20261016-001 separate worktrees unchanged"
+}

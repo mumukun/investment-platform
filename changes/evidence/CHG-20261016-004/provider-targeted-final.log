@@ -1,0 +1,9 @@
+Market structure collection degraded: failures=0 gaps=12 expected=2026-10-15
+.Market structure collection degraded: failures=1 gaps=15 expected=2026-10-15
+.Market structure collection degraded: failures=1 gaps=7 expected=2026-10-15
+Market structure collection degraded: failures=3 gaps=7 expected=2026-10-15
+............
+----------------------------------------------------------------------
+Ran 14 tests in 0.722s
+
+OK

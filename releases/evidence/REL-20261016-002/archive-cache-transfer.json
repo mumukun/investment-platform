@@ -1,0 +1,24 @@
+[
+  {
+    "repository": "stock-analyzer",
+    "archive_sha256": "ed658d5a8fdd32b30d808be22524b44091e3d879d600e1c34e22576ac3978acc",
+    "bytes": 140395008,
+    "OCI_digest_blobs_match": true,
+    "CI_config_IDs_match": true,
+    "NAS_load": "PASS exact config IDs returned by Docker load over SSH stdin",
+    "NAS_archive_file_staged": false,
+    "NAS_mode": "existing supported archive cached-image branch; enforces IDs/platform/labels; only loads archive path if exact cache missing",
+    "local_archive": "/tmp/oct16-release-002-bundle/provider.tar"
+  },
+  {
+    "repository": "investment-research-dashboard",
+    "archive_sha256": "37bf76e8be0d06e8c1ead823c50d87f12417eef98c7c5669fb243a5c6d052bc4",
+    "bytes": 123901952,
+    "OCI_digest_blobs_match": true,
+    "CI_config_IDs_match": true,
+    "NAS_load": "PASS exact config IDs returned by Docker load over SSH stdin",
+    "NAS_archive_file_staged": false,
+    "NAS_mode": "existing supported archive cached-image branch; enforces IDs/platform/labels; only loads archive path if exact cache missing",
+    "local_archive": "/tmp/oct16-release-002-bundle/dashboard.tar"
+  }
+]

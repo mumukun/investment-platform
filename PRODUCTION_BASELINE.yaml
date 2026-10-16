@@ -1,112 +1,154 @@
-baseline_version: 1
-verified_at: '2026-10-16T02:31:32.239435+00:00'
-status: verified_with_artifact_gaps
-artifact_model: MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD
-repositories:
-  marketNewsFeed:
-    production:
-      verified_at: '2026-10-14T14:39:01.096824+00:00'
-      application_version: 2.3.10
-      application_version_source: DERIVED_FROM_VERIFIED_TAG
-      tag: v2.3.10
-      commit_sha: 1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7
-      artifact_model: SOURCE_TAG_BUILD
-      artifact: sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea
-      artifact_id: sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea
-      artifact_digest: UNKNOWN
-      artifact_identity_status: IMAGE_ID_ONLY
-      containers:
-      - marketnewsfeed-market-news-feed-1
-      deployment_timestamp: '2026-10-14T14:11:30.170979394Z'
-      health: HEALTHY
-      rollback_baseline:
-        tag: v2.3.9
-        commit_sha: eefb786c7f370b34eac17365338b932370eb2683
-        image_id: sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872
-        status: VERIFIED_RETAINED_PRODUCTION
-        dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
-      confidence: HIGH
-      evidence:
-      - releases/REL-20261014-008.yaml
-      - releases/evidence/REL-20261014-008/deployment.receipt.json
-      - releases/evidence/REL-20261014-008/runtime-verification.json
-      - releases/evidence/REL-20261014-008/natural-collection.json
-  stock-analyzer:
-    production:
-      verified_at: '2026-10-16T02:31:32.239435+00:00'
-      application_version: 4.0.0
-      application_version_source: stock_analyzer/version.py::APP_VERSION
-      tag: v4.0.0
-      commit_sha: 580882d15a9898a9ea415ba0ce06e9c80b1489cd
-      artifact_model: CI_BUILD_ONCE
-      artifact: &id001
-        app: ghcr.io/mumukun/stock-analyzer@sha256:18dd5fecdea3430169e37ffbfe51427d543f9a66b6c1cdd4287532b382bc7ae0
-      artifact_id:
-        app: sha256:2d1502eeaaa50c6c7a47fd50c5097c9ba2ec8bcda61b07a25056750be7a6c34c
-      artifact_digest: *id001
-      artifact_identity_status: VERIFIED_REGISTRY_DIGEST_AND_CONFIG_ID
-      containers:
-      - stock-api
-      - stock-watch
-      deployment_timestamp: '2026-10-16T02:20:30.101592+00:00'
-      health: HEALTHY
-      rollback_baseline:
-        tag: v3.27.0
-        commit_sha: 6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0
-        version: 3.27.0
-        images:
-          app: ghcr.io/mumukun/stock-analyzer@sha256:16186591ac7dc848cf20d027c05ebb51d0562f6a49431024860c4a44719f8624
-        image_ids:
-          app: sha256:10e45d6a2de633449a0eb663dc534497859d1aa5a47d81304d70de6e41d168cc
-        status: VERIFIED_RETAINED_PRODUCTION
-        dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
-      confidence: HIGH
-      evidence:
-      - releases/REL-20261016-001.yaml
-      - releases/evidence/REL-20261016-001/deployment.receipt.json
-      - releases/evidence/REL-20261016-001/investment-research-dashboard-activation.json
-  investment-research-dashboard:
-    production:
-      verified_at: '2026-10-16T02:31:32.239435+00:00'
-      application_version: 0.23.0
-      application_version_source: VERSION
-      tag: v0.23.0
-      commit_sha: 46b2bec9bea7d1adf6889b2b2d01ae1bd1334684
-      artifact_model: CI_BUILD_ONCE
-      artifact: &id002
-        api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:2534efbd7610ceb1fe0f9052aae79d822a690e3992c586f039e39f09bb77941a
-        web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:3f4acd4aef76b773d9cbe6c2f82c92ee0a21f979769dc7294dd7f4c89fb8a751
-      artifact_id:
-        api: sha256:eec625314af0f74563516b6710da0e89938f98d0953be588801fd491cfe2501b
-        web: sha256:2c8d07628afc548fd51df270da585fbf7a7b425616b09f6cdba378a649aa6373
-      artifact_digest: *id002
-      artifact_identity_status: VERIFIED_REGISTRY_DIGEST_AND_CONFIG_ID
-      containers:
-      - investment-research-dashboard-nas-api-1
-      - investment-research-dashboard-nas-web-1
-      deployment_timestamp: '2026-10-16T02:20:30.101592+00:00'
-      health: HEALTHY
-      rollback_baseline:
-        tag: v0.22.0
-        commit_sha: 53daf53d09a5a26ca492e8136a6621be6d875b7b
-        version: 0.22.0
-        images:
-          api: ghcr.io/mumukun/investment-research-dashboard-api@sha256:4a269d3f8cdec34600b271a66a4714e7a5006a612da9a6708f8e5d42e684ce0e
-          web: ghcr.io/mumukun/investment-research-dashboard-web@sha256:314a2c0fa0fe78e3d08db650349e3dbd0f660b4e3597855d1cc770f2a81548f6
-        image_ids:
-          api: sha256:6de0111f8a69372eaf98451f3ad6d55b89ebf8241736c8666daed58d1db292cc
-          web: sha256:e7fa7df58e5551205fa879097e3943ed50c50a5aefa4c9835a1bdda75c766955
-        status: VERIFIED_RETAINED_PRODUCTION
-        dry_validation: NOT_RUN_ROUTINE_NO_REHEARSAL
-      confidence: HIGH
-      evidence:
-      - releases/REL-20261016-001.yaml
-      - releases/evidence/REL-20261016-001/deployment.receipt.json
-      - releases/evidence/REL-20261016-001/investment-research-dashboard-activation.json
-      build_time: '2026-10-16T01:58:15Z'
-      professional_kline_enabled: true
-      market_structure_enabled: true
-      dashboard_exact_sha_runtime: VERIFIED
-      global_board_enabled: true
-      tech_board_enabled: true
-      image_captcha_enabled: true
+{
+  "baseline_version": 1,
+  "verified_at": "2026-10-16T07:19:15.809357+00:00",
+  "status": "verified_with_artifact_gaps",
+  "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
+  "repositories": {
+    "marketNewsFeed": {
+      "production": {
+        "verified_at": "2026-10-14T14:39:01.096824+00:00",
+        "application_version": "2.3.10",
+        "application_version_source": "DERIVED_FROM_VERIFIED_TAG",
+        "tag": "v2.3.10",
+        "commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+        "artifact_model": "SOURCE_TAG_BUILD",
+        "artifact": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+        "artifact_id": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+        "artifact_digest": "UNKNOWN",
+        "artifact_identity_status": "IMAGE_ID_ONLY",
+        "containers": [
+          "marketnewsfeed-market-news-feed-1"
+        ],
+        "deployment_timestamp": "2026-10-14T14:11:30.170979394Z",
+        "health": "HEALTHY",
+        "rollback_baseline": {
+          "tag": "v2.3.9",
+          "commit_sha": "eefb786c7f370b34eac17365338b932370eb2683",
+          "image_id": "sha256:06f8891927cd9b176effc400e84437d1ee7a672a6f3d5a4505964bbcef03f872",
+          "status": "VERIFIED_RETAINED_PRODUCTION",
+          "dry_validation": "NOT_RUN_ROUTINE_NO_REHEARSAL"
+        },
+        "confidence": "HIGH",
+        "evidence": [
+          "releases/REL-20261014-008.yaml",
+          "releases/evidence/REL-20261014-008/deployment.receipt.json",
+          "releases/evidence/REL-20261014-008/runtime-verification.json",
+          "releases/evidence/REL-20261014-008/natural-collection.json"
+        ]
+      }
+    },
+    "stock-analyzer": {
+      "production": {
+        "verified_at": "2026-10-16T07:19:15.809357+00:00",
+        "application_version": "4.1.0",
+        "application_version_source": "stock_analyzer/version.py::APP_VERSION",
+        "tag": "v4.1.0",
+        "commit_sha": "be7192a3b0693806485d85be3595d1ae6d017bc0",
+        "artifact_model": "CI_BUILD_ONCE",
+        "artifact": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:2f25b391e5fc05b2bcc48dc2c2445edd799a3d9752da9bec8e0435e56c6bda94"
+        },
+        "artifact_id": {
+          "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+        },
+        "artifact_digest": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:2f25b391e5fc05b2bcc48dc2c2445edd799a3d9752da9bec8e0435e56c6bda94"
+        },
+        "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID_ARCHIVE_CACHE",
+        "containers": [
+          "stock-api",
+          "stock-watch"
+        ],
+        "deployment_timestamp": "2026-10-16T07:05:21.283623+00:00",
+        "health": "HEALTHY",
+        "rollback_baseline": {
+          "tag": "v4.0.0",
+          "commit_sha": "580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+          "version": "4.0.0",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:18dd5fecdea3430169e37ffbfe51427d543f9a66b6c1cdd4287532b382bc7ae0"
+          },
+          "image_ids": {
+            "app": "sha256:2d1502eeaaa50c6c7a47fd50c5097c9ba2ec8bcda61b07a25056750be7a6c34c"
+          },
+          "status": "VERIFIED_RETAINED_PRODUCTION",
+          "dry_validation": "NOT_RUN_ROUTINE_NO_REHEARSAL"
+        },
+        "next_release_rollback_images": {
+          "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+        },
+        "transport": "ARCHIVE_VERIFIED_CACHE",
+        "confidence": "HIGH",
+        "evidence": [
+          "releases/REL-20261016-002.yaml",
+          "releases/evidence/REL-20261016-002/deployment.receipt.json",
+          "releases/evidence/REL-20261016-002/archive-cache-transfer.json",
+          "releases/evidence/REL-20261016-002/final-data-check.json"
+        ]
+      }
+    },
+    "investment-research-dashboard": {
+      "production": {
+        "verified_at": "2026-10-16T07:19:15.809357+00:00",
+        "application_version": "0.24.0",
+        "application_version_source": "VERSION",
+        "tag": "v0.24.0",
+        "commit_sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+        "artifact_model": "CI_BUILD_ONCE",
+        "artifact": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b1140d5ff2dea9176295ba385dc0f60d86feadf2aacbfcf4e5cf31fb48cf4724",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:03492d065d3403ab3d3cf438e015ff68ef84b640074490107760b3ceb58fc0e0"
+        },
+        "artifact_id": {
+          "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+          "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+        },
+        "artifact_digest": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b1140d5ff2dea9176295ba385dc0f60d86feadf2aacbfcf4e5cf31fb48cf4724",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:03492d065d3403ab3d3cf438e015ff68ef84b640074490107760b3ceb58fc0e0"
+        },
+        "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID_ARCHIVE_CACHE",
+        "containers": [
+          "investment-research-dashboard-nas-api-1",
+          "investment-research-dashboard-nas-web-1"
+        ],
+        "deployment_timestamp": "2026-10-16T07:05:21.283623+00:00",
+        "health": "HEALTHY",
+        "rollback_baseline": {
+          "tag": "v0.23.0",
+          "commit_sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+          "version": "0.23.0",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2534efbd7610ceb1fe0f9052aae79d822a690e3992c586f039e39f09bb77941a",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3f4acd4aef76b773d9cbe6c2f82c92ee0a21f979769dc7294dd7f4c89fb8a751"
+          },
+          "image_ids": {
+            "api": "sha256:eec625314af0f74563516b6710da0e89938f98d0953be588801fd491cfe2501b",
+            "web": "sha256:2c8d07628afc548fd51df270da585fbf7a7b425616b09f6cdba378a649aa6373"
+          },
+          "status": "VERIFIED_RETAINED_PRODUCTION",
+          "dry_validation": "NOT_RUN_ROUTINE_NO_REHEARSAL"
+        },
+        "next_release_rollback_images": {
+          "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+          "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+        },
+        "transport": "ARCHIVE_VERIFIED_CACHE",
+        "confidence": "HIGH",
+        "evidence": [
+          "releases/REL-20261016-002.yaml",
+          "releases/evidence/REL-20261016-002/deployment.receipt.json",
+          "releases/evidence/REL-20261016-002/archive-cache-transfer.json",
+          "releases/evidence/REL-20261016-002/final-data-check.json"
+        ],
+        "build_time": "2026-10-16T06:39:45Z",
+        "professional_kline_enabled": true,
+        "market_structure_enabled": true,
+        "global_board_enabled": true,
+        "tech_board_enabled": true,
+        "image_captcha_enabled": true,
+        "dashboard_exact_sha_runtime": "VERIFIED"
+      }
+    }
+  }
+}

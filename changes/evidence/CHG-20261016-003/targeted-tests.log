@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.23.0 test
+> vitest run src/views/SeatTrackingWorkbench.spec.ts src/views/SeatFlowEntry.spec.ts src/views/SeatFlowView.spec.ts src/utils/seatTrackingPresentation.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/seat-ui-consistency/investment-research-dashboard
+
+
+ Test Files  4 passed (4)
+      Tests  15 passed (15)
+   Start at  13:31:44
+   Duration  2.90s (transform 459ms, setup 66ms, import 2.19s, tests 1.39s, environment 2.52s)

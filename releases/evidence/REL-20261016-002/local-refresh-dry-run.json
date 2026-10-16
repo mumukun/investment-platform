@@ -1,0 +1,1 @@
+{"dry_run": true, "end": "2026-10-16", "days": 1, "phase": "intraday", "stock_backfill": false, "local_only": true, "writes": false, "network": false}

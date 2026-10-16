@@ -129,3 +129,12 @@ Manifest；禁止默认重新阅读完整源码，只有 gate 失败或证据不
 ## 11. Product design guidance
 
 Dashboard 的新增与修改界面统一遵循业务仓库 `docs/design/product-design-system.md`，覆盖配色语义、排版、组件、运行状态与异常行为。平台入口见 [产品设计指导](docs/product-design-guidance.md)。不以历史原型替代现行规范，不因此改变业务数据、契约或发布授权。
+
+
+## 11. NAS 外网下载与代理默认（2026-10-16）
+
+- DS920plus 的外网 HTTP/HTTPS 下载默认使用现有 mihomo `http://127.0.0.1:7890`；包括 GHCR 镜像与同类依赖下载。先读 [NAS 代理指引](docs/nas-outbound-proxy.md)，不凭应用代理变量推断 Docker 拉取路径。
+- Docker daemon 的实际 JSON 字段为 **`HttpProxy` / `HttpsProxy` / `NoProxy`**，区分大小写；字段缺失记 UNKNOWN，不能解释为直连。优先复用 `scripts/check_docker_proxy.py`。本机现有 systemd drop-in 已生效，不为每次发布重复改配置/重启。
+- NAS 登录 shell 已加载 `$HOME/.config/investment-platform/proxy.sh`；非交互 SSH 的 HTTP/HTTPS 下载先显式 source 此文件。保留本地/内网直连与已有业务容器出口；SSH Git 仍走既有 SSH 配置，不把 HTTP 代理当作 SSH 代理。
+- 默认不做直连比较或静默绕过代理；明确排障才用 `--compare-direct`。EOF、代理可达、私有仓库鉴权和镜像传输分别判断，不把 GHCR `/v2/` 的未认证401当成断网。
+- GHCR 失败时保留冻结 SHA/Tag/CI Artifact，使用既有受限发布器支持的同一精确镜像传输/缓存校验，不改凭据、镜像身份、权限或发布门禁。其他对话必须沿用本默认。

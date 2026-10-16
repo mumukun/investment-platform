@@ -1,0 +1,27 @@
+.....{"repository": "stock-analyzer", "stage": "backup", "started_at": "2026-10-16T06:59:41.488365+00:00", "status": "FAILED", "elapsed_seconds": 0.001}
+.{"repository": "stock-analyzer", "stage": "start", "started_at": "2026-10-16T06:59:41.490059+00:00", "status": "FAILED", "elapsed_seconds": 0.0}
+......{"repository": "stock-analyzer", "stage": "resume_verify", "started_at": "2026-10-16T06:59:41.494961+00:00", "status": "PASS", "elapsed_seconds": 0.0}
+..{"repository": "investment-research-dashboard", "stage": "backup", "started_at": "2026-10-16T06:59:41.497722+00:00", "status": "PASS", "elapsed_seconds": 0.001}
+{"repository": "investment-research-dashboard", "stage": "checkout", "started_at": "2026-10-16T06:59:41.498836+00:00", "status": "PASS", "elapsed_seconds": 0.0}
+{"repository": "investment-research-dashboard", "stage": "start", "started_at": "2026-10-16T06:59:41.499513+00:00", "status": "PASS", "elapsed_seconds": 0.0}
+{"repository": "investment-research-dashboard", "stage": "verify", "started_at": "2026-10-16T06:59:41.500049+00:00", "status": "PASS", "elapsed_seconds": 0.0}
+..........................candidate stock database/auth contract PASS
+candidate dashboard restored-data smoke PASS
+dashboard-container to stock HTTP/auth contract PASS
+candidate Web serves application PASS
+old stock retained-image compatibility PASS
+old dashboard retained-image compatibility PASS
+old dashboard-container to stock HTTP/auth contract PASS
+old Web retained-image compatibility PASS
+candidate stock database/auth contract PASS
+..stock_analyzer: isolated restore PASS
+investment_dashboard: isolated restore PASS
+...stock_analyzer: isolated restore PASS
+investment_dashboard: isolated restore PASS
+.....receipt: /var/folders/3m/yshvtyb95z70_hkgt4f8c9kc0000gn/T/tmp_t5l0m47/restore-receipt-8ba7918b33fa4c8c8c8002a148e83b8b.json
+{"repository": "stock-analyzer", "stage": "verify", "started_at": "2026-10-16T06:59:42.322223+00:00", "status": "FAILED", "elapsed_seconds": 0.0}
+.
+----------------------------------------------------------------------
+Ran 51 tests in 0.925s
+
+OK
