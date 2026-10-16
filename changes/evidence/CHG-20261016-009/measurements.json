@@ -1,0 +1,73 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "fixture": "local synthetic quote facts, external requests disabled, actual view/chart components",
+  "before": {
+    "cardHeight": 386.296875,
+    "cardWidth": 237.25,
+    "columns": 4
+  },
+  "after": {
+    "cardWidth": 192.3984375,
+    "documentWidth": 1280,
+    "firstCardHeight": 150.3984375,
+    "firstCardText": "上证指数\n☆\n3,716.28\n+0.24%\n17:47\n延迟未核定",
+    "firstGroupColumns": "192.398px 192.398px 192.398px 192.398px 192.398px",
+    "height": 720,
+    "width": 1280
+  },
+  "contrast": [
+    {
+      "background": "rgb(255, 253, 249)",
+      "contrast": 17.41,
+      "fontSize": "14px",
+      "foreground": "rgb(23, 25, 22)",
+      "selector": ".quote-name"
+    },
+    {
+      "background": "rgb(255, 253, 249)",
+      "contrast": 5.41,
+      "fontSize": "12px",
+      "foreground": "rgb(188, 56, 80)",
+      "selector": ".quote-change.up"
+    },
+    {
+      "background": "rgb(255, 253, 249)",
+      "contrast": 5.33,
+      "fontSize": "12px",
+      "foreground": "rgb(28, 120, 89)",
+      "selector": ".quote-change.down"
+    },
+    {
+      "background": "rgb(255, 253, 249)",
+      "contrast": 5.71,
+      "fontSize": "12px",
+      "foreground": "rgb(98, 103, 94)",
+      "selector": ".quote-card footer"
+    }
+  ],
+  "mobile": [
+    {
+      "width": 320,
+      "height": 780,
+      "documentWidth": 320,
+      "cardOverflows": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "cardOverflows": 0
+    }
+  ],
+  "checks": [
+    "full source/code/unit/change/date in detail",
+    "original daily candle switch",
+    "favorite add/remove",
+    "visible 2px keyboard focus",
+    "old date / missing / closed / uncertain-delay labels",
+    "no browser errors or warnings"
+  ]
+}

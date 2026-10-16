@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.24.0 test
+> vitest run --run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/unified-stock-detail/investment-research-dashboard
+
+
+ Test Files  36 passed (36)
+      Tests  169 passed (169)
+   Start at  17:19:57
+   Duration  13.21s (transform 7.13s, setup 434ms, import 33.40s, tests 22.23s, environment 26.35s)

@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.24.0 test
+> vitest run --run src/views/GlobalBoardView.spec.ts src/utils/globalBoard.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/compact-global-board/investment-research-dashboard
+
+
+ Test Files  2 passed (2)
+      Tests  18 passed (18)
+   Start at  17:52:25
+   Duration  1.37s (transform 202ms, setup 35ms, import 612ms, tests 129ms, environment 1.08s)

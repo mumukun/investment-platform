@@ -1,0 +1,102 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261016-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "2026-10-16 用户：梳理下未上线的功能，正式上线。含本轮006/008/009提交、PR、合并、精确Tag与生产部署。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "4bd9be06519a0cb9ef65ebf172de9f40ec55f7e2",
+        "version": "0.25.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83747a75d9483c17099d52e13f2d149488e2086f1906e5a27fd44da8658a0177",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5e0bad071a9475bde989b55b1ba58c6a7104b32c0e43fbfef2c7eaf456e8937"
+        },
+        "image_ids": {
+          "api": "sha256:55f1d96e0ce403f3521770a0e7a223ec2dfc853451a03c7671bdaed2e508d978",
+          "web": "sha256:f511dcce13348aa4c01bd5f00ca76159e30f08622a301e7ea4b61223c4707333"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "4bd9be06519a0cb9ef65ebf172de9f40ec55f7e2",
+            "run_id": "38886837896"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83747a75d9483c17099d52e13f2d149488e2086f1906e5a27fd44da8658a0177",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5e0bad071a9475bde989b55b1ba58c6a7104b32c0e43fbfef2c7eaf456e8937"
+            }
+          },
+          "candidate_run_id": "38887067148"
+        }
+      },
+      "tag": "v0.25.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v0.24.0",
+        "commit_sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+        "image_ids": {
+          "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+          "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+        },
+        "build_time": "2026-10-16T06:39:45Z"
+      },
+      "rollback": {
+        "tag": "v0.24.0",
+        "commit_sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+        "version": "0.24.0",
+        "images": {
+          "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+          "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Three implemented Changes006/008/009 in merged PR23. 007 remains planned. See scope-audit.md. All three Change records READY after PR23/main CI; exact candidate38887067148 success; unchanged repositories excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Only frontend composition/layout and version metadata; provider APIs, authentication, database, scheduler, release mechanism and required configuration unchanged. No migration."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Merged tree identical to locally tested feature tree. Reuse changed frontend176 tests/build and CHG006/008/009 browser evidence; unchanged server/provider boundary reuses REL-20261016-002, not rerun as a new integration probe. main CI38886837896 and candidate38887067148 passed; candidate image smoke isolated-fixture, not production."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "No source/contract/trading-date algorithm changes. Reuse verified production REL-20261016-002 source/projection boundary evidence; local MOCK evidence verifies UI only, not third-party availability. Existing missing third-party sector percentages remain explicit."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Existing three frontend flags remain true; CI candidate must certify these values. Existing NAS Docker mihomo configuration and docs/nas-outbound-proxy.md apply; do not change daemon, keys or source configuration. Candidate certifies all three true; same deployed setting."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified retained v0.24.0 API/web config Image IDs from PRODUCTION_BASELINE.yaml. Use retained IDs because archive-loaded images need not retain RepoDigests. Existing deploy enforces live baseline, protected readable backup and actual health/smoke; no restore or rollback rehearsal."
+    }
+  }
+}
