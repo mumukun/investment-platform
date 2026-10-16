@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261016-002",
+  "status": "RELEASED",
+  "created_at": "2026-10-16T06:27:53Z",
+  "timing": {
+    "first_persisted_action_at": "2026-10-16T06:27:53Z",
+    "request_timestamp": "Exact user message timestamp unavailable; first tool action is lower-bound timing anchor.",
+    "production_switch_completed_at": "2026-10-16T07:05:21.283623+00:00",
+    "data_verified_at": "2026-10-16T07:19:15.809357+00:00",
+    "handling_seconds_to_data_verification": 3082,
+    "preparation_seconds": 904,
+    "formal_and_recovery_seconds": 1319,
+    "activation_seconds": 834,
+    "note": "Timing lower bound from first persisted action, not exact unavailable user message timestamp. Includes integration, CI/candidate wait, GHCR failures, transfer/recovery and first full source validation; governance closeout follows. No user approval wait.",
+    "bottlenecks": "Code integration/testing and PR/main CI candidates; NAS registry pull failure/recovery; backups180.2s, app starts173.6s; first full external collection plus projection."
+  },
+  "environment": "Production",
+  "authorization": {
+    "mode": "FORMAL",
+    "evidence": "用户2026-10-16：将所有未上线的需求和bug修复 上线 生产上线"
+  },
+  "changes": [
+    "CHG-20261016-001",
+    "CHG-20261016-002",
+    "CHG-20261016-003",
+    "CHG-20261016-004"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "scope_audit": {
+    "previous_release": "REL-20261016-001",
+    "all_business_worktrees_checked": true,
+    "only_uncommitted_business_changes": [
+      "CHG-20261016-001",
+      "CHG-20261016-002",
+      "CHG-20261016-003",
+      "CHG-20261016-004"
+    ],
+    "excluded": [
+      "CHG-20261013-001 NON_RELEASE_CHANGE manual (protected original files)",
+      "CHG-20261011-003 governance-only already merged",
+      "Historical stale drafts whose terminal evidence is RELEASED, including CHG-20261015-007"
+    ],
+    "marketNewsFeed": "No pending business code; untracked test_discord.py untouched",
+    "baseline_runtime_verified": "2026-10-16 runtime inspect: stock-api/watch v4.0.0 SHA580882d matching IDs; Dashboard v0.23.0 SHA46b2bec matching IDs",
+    "all_business_branches_patch_equivalent_to_main": true
+  },
+  "gates": {
+    "scope": "PASS",
+    "compatibility": "PASS",
+    "integration": "PASS",
+    "real_data": "PASS",
+    "configuration": "PASS",
+    "rollback": "PASS"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.1.0",
+      "previous_version": "4.0.0",
+      "commit_sha": "be7192a3b0693806485d85be3595d1ae6d017bc0",
+      "planned_tag": "v4.1.0",
+      "pr_url": "https://github.com/mumukun/stock-analyzer/pull/16",
+      "main_ci_run_id": "38862069823",
+      "candidate_run_id": "38862131641",
+      "tag": "v4.1.0",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:2f25b391e5fc05b2bcc48dc2c2445edd799a3d9752da9bec8e0435e56c6bda94"
+      },
+      "artifact_id": {
+        "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "rollback": {
+        "tag": "v4.0.0",
+        "commit_sha": "580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+        "version": "4.0.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:18dd5fecdea3430169e37ffbfe51427d543f9a66b6c1cdd4287532b382bc7ae0"
+        }
+      },
+      "candidate_evidence": "releases/evidence/REL-20261016-002/stock-analyzer/candidate.json",
+      "tag_status": "CREATED_AND_PUSHED",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261016-002/stock-analyzer.dump",
+        "sha256": "141a4cf41864d291ae4cbe0cb5be5991f528a8f3726b561ad057d299d4d32814",
+        "size": 441904591
+      },
+      "runtime_image_ids": {
+        "stock-api": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819",
+        "stock-watch": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+      },
+      "commit_state": "RELEASED_EXACT_TAG_AND_CI_ARTIFACT",
+      "deployment_receipt": "releases/evidence/REL-20261016-002/deployment.receipt.json",
+      "transport": "ARCHIVE_VERIFIED_CACHE",
+      "next_release_rollback_images": {
+        "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.24.0",
+      "previous_version": "0.23.0",
+      "commit_sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+      "planned_tag": "v0.24.0",
+      "pr_url": "https://github.com/mumukun/investment-research-dashboard/pull/22",
+      "main_ci_run_id": "38862238359",
+      "candidate_run_id": "38862463292",
+      "tag": "v0.24.0",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b1140d5ff2dea9176295ba385dc0f60d86feadf2aacbfcf4e5cf31fb48cf4724",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:03492d065d3403ab3d3cf438e015ff68ef84b640074490107760b3ceb58fc0e0"
+      },
+      "artifact_id": {
+        "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+        "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "rollback": {
+        "tag": "v0.23.0",
+        "commit_sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+        "version": "0.23.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2534efbd7610ceb1fe0f9052aae79d822a690e3992c586f039e39f09bb77941a",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3f4acd4aef76b773d9cbe6c2f82c92ee0a21f979769dc7294dd7f4c89fb8a751"
+        }
+      },
+      "candidate_evidence": "releases/evidence/REL-20261016-002/investment-research-dashboard/candidate.json",
+      "tag_status": "CREATED_AND_PUSHED",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261016-002/investment-research-dashboard.dump",
+        "sha256": "652721b92dd984dd67dde04110f245ccdd927acd64f0006cd56f634e819f7173",
+        "size": 18274837
+      },
+      "runtime_image_ids": {
+        "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+        "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+      },
+      "commit_state": "RELEASED_EXACT_TAG_AND_CI_ARTIFACT",
+      "deployment_receipt": "releases/evidence/REL-20261016-002/deployment.receipt.json",
+      "transport": "ARCHIVE_VERIFIED_CACHE",
+      "next_release_rollback_images": {
+        "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
+        "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+      }
+    }
+  ],
+  "integration_evidence": "releases/evidence/REL-20261016-002/collection-pipeline.json",
+  "configuration_evidence": {
+    "scheduler": "normal (swing-only/us-market-only unset)",
+    "market_structure_enabled": true,
+    "explicit_sync_times": null,
+    "explicit_local_times": null,
+    "result": "New source/local times default in deployed code; no config rewrite needed."
+  },
+  "tests": {
+    "frontend": 163,
+    "backend_targeted": 97,
+    "provider_targeted": 80,
+    "provider_store_supplement": {
+      "passed": 18,
+      "note": "includes rechecked subset; not added to unique count"
+    },
+    "build": "PASS",
+    "ruff": "PASS",
+    "integration": "synthetic collector -> generation -> Consumer strict contract -> isolated PostgreSQL -> projection and known-time rejection PASS",
+    "limitations": [
+      "Local fixture integration is not production recovery; real-source samples existing in CHG001 evidence reused.",
+      "Original external failure cause not proven. NAS source restoration requires post-switch targeted check."
+    ],
+    "governance_unittest": 51
+  },
+  "limitations": [
+    "Industry directory includes multiple levels; do not sum overlapping boards; production scan coverage to be recorded.",
+    "Same-day daily index/adjusted-history/official ETF values may remain pending or partial; do not invent them.",
+    "No reliable third-party change-percent source for Sina tech concepts: existing 暂不排名 preserved; this is source availability, not omitted code.",
+    "Archived CI images retain config IDs but NAS RepoDigests absent after Docker load; next release should use retained config IDs as rollback references, not assume local digest alias exists. Local SHA-verified OCI archives retained; no remote protected archive files staged because exact cache branch succeeded."
+  ],
+  "prepared_at": "2026-10-16T06:42:57.231024+00:00",
+  "plan": "releases/evidence/REL-20261016-002/image-release.plan.json",
+  "formal_started_at": "2026-10-16T06:43:21.348344+00:00",
+  "deployment_status": "PASS",
+  "deployment_receipt": "releases/evidence/REL-20261016-002/deployment.receipt.json",
+  "recovery": {
+    "reason": "Restricted registry pull failed twice before switch; raw root error hidden by release entry. Separate deploy-user diagnostic saw EOF once, then private-registry unauthorized. Daemon actually uses mihomo. Root transport cause not conclusively identified.",
+    "strategy": "Verified exact OCI archive/config -> SSH stdin docker load cache preload; original registry plan retained and runtime/registry identity checks still required",
+    "status": "RECOVERED_WITH_SUPPORTED_EXACT_ARCHIVE_CACHE",
+    "archive_export_tool_limitation": "Local Docker Desktop containerd reports manifest digest as image Id; standard exporter refused expected classic config ID. Raw saved archive configs and OCI blobs independently SHA256-verified against immutable candidate; no candidate/gate/identity changes.",
+    "archive_root_permission": "Protected fixed transfer directory not writable by deploy user; no permission bypass or root filesystem writes attempted.",
+    "docker_daemon_proxy": {
+      "HttpProxy": "http://127.0.0.1:7890",
+      "HttpsProxy": "http://127.0.0.1:7890",
+      "NoProxy": true,
+      "evidence": "Correct case-sensitive actual Docker info fields inspected. Earlier HTTPProxy/HTTPSProxy lookup was wrong and superseded; daemon already uses mihomo, no restart needed."
+    },
+    "manual_user_pull_limitation": "Deploy user Docker config has no private GHCR login; manual pull unauthorized is separate from original root release pull EOF. Do not copy/reconfigure credentials. Restricted deploy retains own approved registry identity.",
+    "evidence": "releases/evidence/REL-20261016-002/archive-cache-transfer.json",
+    "archive_limit": "NAS protected archive paths not staged; exact cache preloaded, existing runner validates config ID/platform/source labels and skips pull/load. Local verified archives retained if cache later lost; no root permissions changed.",
+    "registry_daemon_proxy_preexisting": true,
+    "post_cache_registry_resume": "FAILED before switch; same CI images recovered using official archive-cache transport. No registry credentials changed."
+  },
+  "supporting_governance_changes": [
+    "CHG-20261016-005"
+  ],
+  "cross_chat_preference": {
+    "saved": "/Users/mukun/.codex/AGENTS.md",
+    "scope": "Investment Platform NAS outbound proxy only",
+    "original_global_instructions_preserved": true,
+    "project_files": [
+      "AGENTS.md",
+      "docs/nas-outbound-proxy.md",
+      "docs/DS920plus-setup.md",
+      "docs/image-release.md"
+    ],
+    "nas_shell": "~/.config/investment-platform/proxy.sh sourced by .profile; noninteractive SSH source explicitly",
+    "daemon_changed": false,
+    "daemon_restart": false
+  },
+  "activation_status": "PASS",
+  "production_unchanged_at_first_failure": true,
+  "released_at": "2026-10-16T07:05:21.283623+00:00",
+  "production_data_evidence": [
+    "releases/evidence/REL-20261016-002/provider-live-check.json",
+    "releases/evidence/REL-20261016-002/consumer-live-check.json",
+    "releases/evidence/REL-20261016-002/local-refresh.json",
+    "releases/evidence/REL-20261016-002/collection-activation.json",
+    "releases/evidence/REL-20261016-002/projection-activation.json",
+    "releases/evidence/REL-20261016-002/final-data-check.json"
+  ],
+  "cleanup": "Owned local DB/container, preview processes/tab and dependency symlink removed; original source worktrees, prototypes, functional manual and other jobs retained.",
+  "verified_at": "2026-10-16T07:19:15.809357+00:00",
+  "production_results": {
+    "status": "PASS",
+    "sector_research": {
+      "as_of": "2026-10-15",
+      "quality": "healthy",
+      "collecting": false,
+      "processed": 496,
+      "coverage": 496,
+      "total": 496,
+      "failed": 0
+    },
+    "market_structure": {
+      "trade_date": "2026-10-16",
+      "collection_health": {
+        "status": "healthy",
+        "failure_count": 0,
+        "missing_count": 0,
+        "checked_at": "2026-10-16T07:13:53.033515Z",
+        "expected_trade_date": "2026-10-15",
+        "pending_current_close": true
+      },
+      "third_party_average_price": {
+        "id": "eastmoney:47.800005",
+        "trade_date": "2026-10-16",
+        "close": 24.73,
+        "observation_method": "quote_ohlc",
+        "data_time": "2026-10-16T15:09:18+08:00"
+      },
+      "last_eligible_ma": {
+        "trade_date": "2026-10-15",
+        "ma20": 3044,
+        "ma60": 3029
+      }
+    }
+  },
+  "governance_closeout": "This is the final batch closeout record. PR merge/check evidence is authoritative for governance completion; no separate READY PR."
+}

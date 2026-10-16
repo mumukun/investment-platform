@@ -1,0 +1,86 @@
+{
+  "change_id": "CHG-20261016-004",
+  "status": "LOCAL_REVIEW_NOT_COMMITTED_NOT_DEPLOYED",
+  "scope": [
+    "Dashboard market structure presentation",
+    "documentation and sanitized governance evidence"
+  ],
+  "tests": {
+    "frontend": {
+      "files": 31,
+      "tests": 137,
+      "result": "PASS",
+      "evidence": "frontend-tests.log"
+    },
+    "typecheck_vite_build": {
+      "result": "PASS",
+      "evidence": "frontend-build.log"
+    },
+    "git_diff_check": "PASS",
+    "backend_provider_ci": "NOT_RUN: no backend/provider/contract/DB code changes"
+  },
+  "browser": {
+    "data": "Read-only public production projection replay in local preview, no production API or writes",
+    "desktop_style_rows": 9,
+    "desktop_style_returns": "All 5/20/60-day rows and same-snapshot benchmark differences show actual 2026-10-15 date",
+    "viewports": [
+      {
+        "width": 1280,
+        "document_width": 1280
+      },
+      {
+        "width": 390,
+        "document_width": 390
+      },
+      {
+        "width": 320,
+        "document_width": 320
+      }
+    ],
+    "checks": [
+      "current observation shows 16th intraday and 15th closing references separately",
+      "ETF row click opens individual histories",
+      "historical observation selection switches to 15th",
+      "cache refresh preserves source dates",
+      "lag warning uses source cache time versus response time",
+      "chart gaps retained",
+      "console error entries: 0"
+    ],
+    "automated_failure_checks": [
+      "background hidden/historical reads skipped",
+      "no overlapping background calls",
+      "retains last result after read failure and recovers on next success",
+      "unmount clears listener/timer",
+      "zero versus null",
+      "no future-day reference",
+      "same-day NAV/share required",
+      "removed/regrouped ETF identities do not reappear"
+    ]
+  },
+  "production_observation": {
+    "provider": "4.0.0 / 580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+    "dashboard": "0.23.0 / 46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+    "latest_statistics_cache": "2026-10-16T10:16:27+08:00",
+    "consumer_last_sync": "2026-10-16T13:20:16.665563+08:00",
+    "intraday_valid_stocks": 5215,
+    "current_daily_index_count": 0,
+    "previous_day_daily_index_count": 11,
+    "previous_day_styles": 9,
+    "previous_day_etf_complete": 12,
+    "latest_ma_qualified_sample": {
+      "date": "2026-10-15",
+      "ma20": 3044,
+      "ma60": 3029
+    }
+  },
+  "limits": [
+    "This does not provide intraday index quotes or same-day unpublished official ETF facts",
+    "No production collection, backfill, config or deployment executed",
+    "No guarantee of uninterrupted external sources; data freshness remains tied to Provider jobs and source publication",
+    "Known-mode availability filter remains server responsibility and was not re-tested against DB",
+    "No integration of pending CHG-20261016-001/002/003"
+  ],
+  "cleanup": "Temporary localhost preview, tab, viewport override and owned dependency symlink removed after verification",
+  "stage": "first presentation-only stage",
+  "superseded_by": "collection-verification.json"
+}

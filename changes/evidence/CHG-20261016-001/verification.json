@@ -1,0 +1,76 @@
+{
+  "status": "LOCAL_IMPLEMENTED_AND_VALIDATED_NOT_COMMITTED_NOT_DEPLOYED",
+  "change": "CHG-20261016-001",
+  "branch": "feat/CHG-20261016-001-sector-fund-research",
+  "candidate_versions": {
+    "stock-analyzer": "4.1.0",
+    "investment-research-dashboard": "0.24.0"
+  },
+  "source_evidence": {
+    "mode": "public source reads via existing NAS Python; no production file/config/database changes",
+    "catalog_pages": 5,
+    "catalog_unique_records": 496,
+    "real_daily_history_samples": [
+      "BK1201",
+      "BK1036",
+      "BK0486",
+      "BK1033"
+    ],
+    "daily_flow_rows_per_sample": 90,
+    "completed_data_date": "2026-10-15",
+    "mock_missing_cases": 492,
+    "not_full_production_collection": true
+  },
+  "tests": {
+    "provider_targeted": {
+      "passed": 43
+    },
+    "provider_dedicated_postgres": {
+      "passed": 1
+    },
+    "dashboard_api_contract_projection": {
+      "passed": 82
+    },
+    "frontend": {
+      "files": 31,
+      "passed": 129,
+      "unhandled_errors": 0
+    },
+    "build": "PASS",
+    "dashboard_full_backend_ruff": "PASS",
+    "provider_ruff": {
+      "baseline_findings": 45,
+      "current_preexisting_findings": 42,
+      "new_findings": 0
+    },
+    "diff_check": "PASS"
+  },
+  "local_http_chain": "Provider PostgreSQL read -> Dashboard actual urllib client/contract validation -> independent Snapshot projection -> browser. Dummy localhost fixture token only.",
+  "browser": {
+    "desktop": "1280x900, 5-day switch, real OHLC/MA20/flow bars, search, drawer, main intraday before recent section",
+    "responsive": [
+      {
+        "width": 390,
+        "page_width": 390,
+        "sort_visible": true,
+        "internal_table_scroll": true
+      },
+      {
+        "width": 320,
+        "page_width": 320,
+        "sort_visible": true,
+        "internal_chart_scroll": true
+      }
+    ],
+    "screenshot": "recent-detail.jpg",
+    "console_errors": 0
+  },
+  "limitations": [
+    "Industry directory includes multiple levels; concepts excluded",
+    "Prediction thresholds not historically calibrated",
+    "No commit/push/PR/merge/tag/deploy in this task",
+    "Production scheduler mode and full live coverage remain release checks",
+    "No claim of full WCAG certification"
+  ],
+  "cleanup": "Temporary localhost preview processes and tab closed, viewport reset, preview HTML and own dependency symlink removed; dedicated local test databases retained for reproducibility. Other worktrees and production unchanged."
+}

@@ -1,0 +1,112 @@
+{
+  "change_id": "CHG-20261016-003",
+  "scope": [
+    "SeatFlowView header switch",
+    "SeatTrackingWorkbench layout/Element Plus buttons/status",
+    "SeatFlowQueryView header slot",
+    "UI documentation and tests"
+  ],
+  "repositories": [
+    "investment-research-dashboard",
+    "investment-platform"
+  ],
+  "base_sha": {
+    "investment-research-dashboard": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+    "investment-platform": "57f61e5b302f82a39404c07147c34cd18aab9f3d"
+  },
+  "frontend_full_suite": {
+    "files": 32,
+    "tests": 134,
+    "result": "PASS"
+  },
+  "final_targeted_tests": {
+    "files": 4,
+    "tests": 15,
+    "result": "PASS"
+  },
+  "production_build": {
+    "command": "npm run build",
+    "result": "PASS"
+  },
+  "browser": {
+    "data": "MOCK local harness using existing fixtures; no production/network mutation or AI execution",
+    "coverage": [
+      "daily with pending/no disclosure/stale/failed/refreshing",
+      "detail with real table/chart components using fixtures",
+      "subscription management and edit visibility",
+      "review filters and empty state",
+      "legacy report round trip"
+    ],
+    "responsive": [
+      {
+        "viewport": 1280,
+        "document_width": 1280
+      },
+      {
+        "viewport": 390,
+        "document_width": 390
+      },
+      {
+        "viewport": 320,
+        "document_width": 320
+      }
+    ],
+    "keyboard": {
+      "Tab": "visible 2px purple focus outline",
+      "focus_outline": "rgb(101,84,192) solid 2px",
+      "primary_hover_background": "rgb(100,84,204)"
+    },
+    "status_and_color_checks": {
+      "activeNavigationBackground": "rgb(108, 94, 208)",
+      "documentWidth": 1280,
+      "states": [
+        {
+          "background": "rgb(243, 240, 233)",
+          "color": "rgb(98, 103, 94)",
+          "contrast": 5.1,
+          "label": "待更新"
+        },
+        {
+          "background": "rgb(243, 240, 233)",
+          "color": "rgb(98, 103, 94)",
+          "contrast": 5.1,
+          "label": "当日无公开记录"
+        },
+        {
+          "background": "rgb(251, 242, 229)",
+          "color": "rgb(149, 96, 28)",
+          "contrast": 4.77,
+          "label": "旧数据"
+        },
+        {
+          "background": "rgb(251, 236, 239)",
+          "color": "rgb(189, 64, 83)",
+          "contrast": 4.56,
+          "label": "获取失败"
+        },
+        {
+          "background": "rgb(237, 243, 251)",
+          "color": "rgb(54, 108, 175)",
+          "contrast": 4.8,
+          "label": "更新中"
+        }
+      ],
+      "viewport": 1280
+    },
+    "empty_card_height": 227,
+    "report_card_height": 315,
+    "console_errors": [],
+    "screenshots": [
+      "desktop-daily.png",
+      "mobile-daily-390.png",
+      "mobile-subscriptions-320.png"
+    ]
+  },
+  "limitations": [
+    "checks cover named color pairs, not whole-site accessibility certification",
+    "subscriptions, AI and real refresh/writes were not exercised against production",
+    "no backend/contract/DB changes; backend checks not rerun"
+  ],
+  "git": "local uncommitted, no push/PR/merge/tag/deploy",
+  "integration": "CHG-20261016-001 and 002 worktrees retained; resolve known seat component/document overlaps when authorized to integrate"
+}

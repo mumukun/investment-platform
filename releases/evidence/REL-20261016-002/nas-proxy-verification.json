@@ -1,0 +1,12 @@
+{
+  "docker_version": "24.0.2",
+  "daemon_http_proxy_configured": true,
+  "daemon_https_proxy_configured": true,
+  "daemon_uses_expected_mihomo": true,
+  "mihomo_registry_connection": {
+    "reachable": true,
+    "http_status": 401,
+    "elapsed_seconds": 6.565
+  },
+  "note": "connection timing only; measure private image pull throughput separately"
+}

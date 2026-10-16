@@ -1,0 +1,13 @@
+
+> investment-research-dashboard@0.23.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/market-structure-availability/investment-research-dashboard
+
+
+ Test Files  31 passed (31)
+      Tests  138 passed (138)
+   Start at  14:13:42
+   Duration  8.99s (transform 6.90s, setup 450ms, import 23.07s, tests 14.82s, environment 16.91s)
+

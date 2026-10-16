@@ -123,7 +123,7 @@ root Docker 登录，因为实际拉取由 root 发布器执行：
 
 ## 4. Docker daemon 代理（单独维护窗口）
 
-已确认 mihomo-1 使用 host 网络，HTTP 端口 7890，代理连接 GHCR 可达；Docker daemon 尚未配置代理。
+历史安装记录：mihomo-1 使用 host 网络，HTTP端口7890。2026-10-16已重新核实Docker daemon的HttpProxy/HttpsProxy均指向本代理；不再使用“尚未配置”的旧结论。后续下载默认与排障见[NAS代理指引](nas-outbound-proxy.md)。
 ContainerManager 的现有配置位于 `/var/packages/ContainerManager/etc/dockerd.json`，普通账号无法读取。
 
 管理员先备份配置并记录所有运行容器。真实启动参数使用

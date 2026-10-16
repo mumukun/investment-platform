@@ -1,0 +1,15 @@
+{
+  "environment": "local MOCK/isolated DB; not production",
+  "checks": [
+    "Seat page integrated header action, purple tabs, filters and saved-report area PASS",
+    "Watchlist stock click opens full shared 7-tab decision panel PASS",
+    "Fund page sector chart before market reference and recent scan; unavailable recent source isolated PASS"
+  ],
+  "screenshots": [
+    "seat-integrated-local.png",
+    "stock-detail-integrated-local.png",
+    "funds-integrated-local.png"
+  ],
+  "dev_console_limitation": "One transient Vite dynamic-import failure on initial Watchlist navigation; subsequent navigation loaded same module and full panel. Production static build and main CI pass. No claim of zero console errors.",
+  "original_separate_browser_evidence": "changes/evidence/CHG-20261016-001 through 004; reused where unchanged"
+}

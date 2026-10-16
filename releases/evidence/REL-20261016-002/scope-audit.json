@@ -1,0 +1,26 @@
+{
+  "status": "PASS_PENDING_NEW_CHANGES_READY",
+  "business_worktrees_and_local_branches_checked": [
+    "stock-analyzer",
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "open_prs_before_integration": [],
+  "no_patch_unique_business_branch_against_main_after_merges": true,
+  "pending_released_in_this_batch": [
+    "CHG-20261016-001",
+    "CHG-20261016-002",
+    "CHG-20261016-003",
+    "CHG-20261016-004"
+  ],
+  "governance_only_excluded": [
+    "CHG-20261013-001 functional manual; original untracked files protected",
+    "CHG-20261011-003 release rules; merged governance, no app version"
+  ],
+  "historical_records": "Existing main Change terminal sections and Release Manifests cross-checked; CHG-20261015-007 already released in REL-20261016-001 despite stale opening IN_PROGRESS. No repeat code release.",
+  "untouched_untracked_business_files": [
+    "Dashboard two prototype PNGs",
+    "marketNewsFeed test_discord.py"
+  ],
+  "source_worktrees": "Only new isolated integration worktrees changed; original four dirty source worktrees retained as provenance, not additional unintegrated features."
+}

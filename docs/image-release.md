@@ -7,6 +7,8 @@ REL-20261011-002 完成 GitHub/NAS 实机正式验收。marketNewsFeed 既有源
 不再另开版本/READY/准备治理 PR、全量重审或填写重复证明文件。正式授权后调用一次 deploy；
 receipt 已有的运行身份、备份和检查结果直接引用。归档/清理放在上线后，普通功能随部署直接生效。
 
+NAS外网下载默认遵循 [mihomo代理指引](nas-outbound-proxy.md)，后续对话同样适用；Docker实际字段为HttpProxy/HttpsProxy，缺失不解释成直连。
+
 ## 1. 候选构建
 
 业务仓库 `CI` 只在 PR 和 main push 运行；候选 workflow 只接受本仓 main push 的成功 CI，不接受

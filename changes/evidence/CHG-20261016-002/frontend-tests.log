@@ -1,0 +1,13 @@
+
+> investment-research-dashboard@0.23.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/shared-stock-drawer/investment-research-dashboard
+
+
+ Test Files  31 passed (31)
+      Tests  140 passed (140)
+   Start at  13:11:59
+   Duration  12.07s (transform 7.51s, setup 586ms, import 30.24s, tests 22.84s, environment 21.73s)
+
