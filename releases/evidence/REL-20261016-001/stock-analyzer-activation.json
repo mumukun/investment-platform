@@ -1,0 +1,19 @@
+{
+  "status": "RECOVERED_BY_READ_ONLY_VERIFICATION",
+  "original_call": "SSH response timeout after180s; no remaining operator process; no duplicate collection executed",
+  "version": "4.0.0",
+  "rules_version": "market-structure-rules-v1.3.0",
+  "generations": 121,
+  "local_breadth_facts": 72,
+  "microcap_facts": 17,
+  "actual_trade_date": "2026-10-16",
+  "phase": "intraday",
+  "valid_return_count": 5215,
+  "pool_count": 5225,
+  "ma20_eligible_count": 0,
+  "ma60_eligible_count": 0,
+  "universe_verified": false,
+  "microcap_close": 3633.32,
+  "stock_search_evidence": "stock-search-smoke.json",
+  "observed_at": "2026-10-16T02:27:37.733900+00:00"
+}

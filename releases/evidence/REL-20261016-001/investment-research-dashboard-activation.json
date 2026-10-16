@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "runtime": {
+    "app_version": "0.23.0",
+    "git_commit": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+    "build_time": "2026-10-16T01:58:15Z",
+    "environment": "production",
+    "api_version": "v1"
+  },
+  "market_structure": {
+    "days": 121,
+    "inserted": 121,
+    "actual_trade_date": "2026-10-16",
+    "valid_return_count": 5215,
+    "pool_count": 5225,
+    "ma20_eligible_count": 0,
+    "ma60_eligible_count": 0,
+    "universe_verified": false,
+    "phase": "intraday"
+  },
+  "last_ma_history_coverage": {
+    "date": "2026-10-15",
+    "ma20_eligible_count": 3044,
+    "ma60_eligible_count": 3029
+  },
+  "last_average_price": {
+    "date": "2026-10-15",
+    "close": 24.79
+  },
+  "capital_flow": {
+    "contract_version": "investment-dashboard-capital-flow-v2",
+    "trade_date": "2026-10-16",
+    "quality": "partial",
+    "is_mock": false,
+    "timeline_points": 13
+  },
+  "review_availability": {
+    "has_day_statuses": false,
+    "keys": [
+      "availableDates",
+      "dates",
+      "latestAvailableDate",
+      "sourceDates",
+      "today"
+    ]
+  }
+}

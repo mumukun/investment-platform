@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261016-001",
+  "status": "RELEASED",
+  "created_at": "2026-10-16T01:50:41.795028+00:00",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261015-001",
+    "CHG-20261015-006",
+    "CHG-20261015-007",
+    "CHG-20261014-002",
+    "CHG-20261014-003"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "authorization": {
+    "mode": "FORMAL",
+    "evidence": "2026-10-16用户：将这些chg 上线；范围为审计明确的5项。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.0.0",
+      "previous_version": "3.27.0",
+      "planned_tag": "v4.0.0",
+      "rollback_tag": "v3.27.0",
+      "rollback_commit_sha": "6a4e8ef0b1870970e13c22a45fcd35a7194cdbc0",
+      "pr_url": "https://github.com/mumukun/stock-analyzer/pull/15",
+      "commit_state": "RELEASED_EXACT_TAG_AND_CI_ARTIFACT",
+      "commit_sha": "580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+      "main_ci_run_id": "38837530687",
+      "candidate_run_id": "38837591998",
+      "candidate_evidence": "releases/evidence/REL-20261016-001/stock-analyzer/candidate.json",
+      "ci_candidate_status": "PASS",
+      "tag": "v4.0.0",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:18dd5fecdea3430169e37ffbfe51427d543f9a66b6c1cdd4287532b382bc7ae0"
+      },
+      "artifact_id": {
+        "app": "sha256:2d1502eeaaa50c6c7a47fd50c5097c9ba2ec8bcda61b07a25056750be7a6c34c"
+      },
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:16186591ac7dc848cf20d027c05ebb51d0562f6a49431024860c4a44719f8624"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "tag_status": "CREATED_AND_PUSHED",
+      "deployment_receipt": "releases/evidence/REL-20261016-001/deployment.receipt.json",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261016-001/stock-analyzer.dump",
+        "sha256": "9d3e13d051ff2fc8d44697d786346697bf36920e39a4dfb34d8fb2f5efac324e",
+        "size": 380016257
+      },
+      "runtime_image_ids": {
+        "stock-api": "sha256:2d1502eeaaa50c6c7a47fd50c5097c9ba2ec8bcda61b07a25056750be7a6c34c",
+        "stock-watch": "sha256:2d1502eeaaa50c6c7a47fd50c5097c9ba2ec8bcda61b07a25056750be7a6c34c"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.23.0",
+      "previous_version": "0.22.0",
+      "planned_tag": "v0.23.0",
+      "rollback_tag": "v0.22.0",
+      "rollback_commit_sha": "53daf53d09a5a26ca492e8136a6621be6d875b7b",
+      "pr_url": "https://github.com/mumukun/investment-research-dashboard/pull/21",
+      "commit_state": "RELEASED_EXACT_TAG_AND_CI_ARTIFACT",
+      "commit_sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+      "main_ci_run_id": "38837776917",
+      "tag": "v0.23.0",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2534efbd7610ceb1fe0f9052aae79d822a690e3992c586f039e39f09bb77941a",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3f4acd4aef76b773d9cbe6c2f82c92ee0a21f979769dc7294dd7f4c89fb8a751"
+      },
+      "artifact_id": {
+        "api": "sha256:eec625314af0f74563516b6710da0e89938f98d0953be588801fd491cfe2501b",
+        "web": "sha256:2c8d07628afc548fd51df270da585fbf7a7b425616b09f6cdba378a649aa6373"
+      },
+      "candidate_run_id": "38837949869",
+      "candidate_evidence": "releases/evidence/REL-20261016-001/investment-research-dashboard/candidate.json",
+      "ci_candidate_status": "PASS",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4a269d3f8cdec34600b271a66a4714e7a5006a612da9a6708f8e5d42e684ce0e",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:314a2c0fa0fe78e3d08db650349e3dbd0f660b4e3597855d1cc770f2a81548f6"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "tag_status": "CREATED_AND_PUSHED",
+      "deployment_receipt": "releases/evidence/REL-20261016-001/deployment.receipt.json",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261016-001/investment-research-dashboard.dump",
+        "sha256": "15eff630c05d7170188a78687a102ce1bb53b0fb7d8bd686e9a79fb44fc88ec7",
+        "size": 17021955
+      },
+      "runtime_image_ids": {
+        "api": "sha256:eec625314af0f74563516b6710da0e89938f98d0953be588801fd491cfe2501b",
+        "web": "sha256:2c8d07628afc548fd51df270da585fbf7a7b425616b09f6cdba378a649aa6373"
+      }
+    }
+  ],
+  "evidence": "releases/evidence/REL-20261016-001/integration-validation.json",
+  "limitations": [
+    "Daily roster is not independently verified as full A-share universe; sample coverage and no nine-grid confirmation retained.",
+    "2026-10-16 is intraday: adjusted daily bars do not yet cover today, MA20/60 eligibility0 is explicit; 2026-10-15 eligible counts3044/3029, no full-history/completeness claim.",
+    "Sina source provides the current dated market curve only; missing14/15-day capital-flow archives are not fabricated. Board/sector/individual fund-flow scopes remain explicit partial/null."
+  ],
+  "development_gate": "Both frozen merged main CI and exact candidates PASS.",
+  "first_persisted_integration_action_at": "2026-10-16T09:42:30+08:00",
+  "prepared_at": "2026-10-16T02:00:42.931860+00:00",
+  "plan": "releases/evidence/REL-20261016-001/image-release.plan.json",
+  "gates": {
+    "scope": "PASS",
+    "compatibility": "PASS",
+    "integration": "PASS",
+    "real_data": "PASS",
+    "configuration": "PASS",
+    "rollback": "PASS"
+  },
+  "deployment_status": "PASS",
+  "activation_status": "PASS",
+  "released_at": "2026-10-16T02:20:30.101592+00:00",
+  "verified_at": "2026-10-16T02:31:32.239435+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261016-001/deployment.receipt.json",
+  "production_data_evidence": "releases/evidence/REL-20261016-001/investment-research-dashboard-activation.json",
+  "production_results": {
+    "market_structure": {
+      "days": 121,
+      "inserted": 121,
+      "actual_trade_date": "2026-10-16",
+      "valid_return_count": 5215,
+      "pool_count": 5225,
+      "ma20_eligible_count": 0,
+      "ma60_eligible_count": 0,
+      "universe_verified": false,
+      "phase": "intraday"
+    },
+    "last_ma_history_coverage": {
+      "date": "2026-10-15",
+      "ma20_eligible_count": 3044,
+      "ma60_eligible_count": 3029
+    },
+    "last_average_price": {
+      "date": "2026-10-15",
+      "close": 24.79
+    },
+    "capital_flow": {
+      "contract_version": "investment-dashboard-capital-flow-v2",
+      "trade_date": "2026-10-16",
+      "quality": "partial",
+      "is_mock": false,
+      "timeline_points": 13
+    },
+    "stock_search": "PASS600519"
+  },
+  "timing": {
+    "earliest_persisted_integration_action_at": "2026-10-16T09:42:30+08:00",
+    "production_switch_completed_at": "2026-10-16T02:20:30.101592+00:00",
+    "verified_at": "2026-10-16T02:31:32.239435+00:00",
+    "seconds_since_first_persisted_action": 2942,
+    "nas_deployment_seconds": 965.5,
+    "request_timestamp": "Not available; first persisted action is a lower-bound timing anchor, not total user wait.",
+    "major_delays": "Code integration/CI corrections; NAS dashboard pulls375.7s, starts200.5s, provider backup155.5s; provider activation response timeout recovered by read-only verification; bounded history and consumer projection followed."
+  }
+}

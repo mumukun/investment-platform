@@ -1,0 +1,1 @@
+{"diagnostic_only": true, "production_writes": false, "meta": {"contractVersion": "investment-dashboard-capital-flow-v2", "source": "新浪公开市场资金（stock-analyzer）", "tradeDate": "2026-10-14", "businessTime": "2026-10-14T15:00:00+08:00", "quality": "partial"}, "points": 50, "last": {"time": "15:00", "market": -348.95, "star": null, "chinext": null}}
