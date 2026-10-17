@@ -72,7 +72,8 @@
     "configuration": "Keep5.2;4.2.1 reads additive tables. Do not restore DB or erase new ledger."
   },
   "data_maintenance": {
-    "status": "IN_PROGRESS",
-    "note": "Source confirmed halt facts are repaired before price retries; final mandatory-input report remains separate."
+    "status": "COMPLETED_WITH_GAPS",
+    "evidence": "releases/evidence/REL-20261018-003/data-verification.json",
+    "result": "31 gaps /29 affected stocks after full batch. Followed by targeted rebase and CHG005 classification recovery."
   }
 }

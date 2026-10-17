@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-17T21:51:08.760474+00:00",
+  "verified_at": "2026-10-17T22:47:09.633636+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -39,48 +39,48 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-10-17T21:51:08.760474+00:00",
-        "application_version": "4.2.3",
+        "verified_at": "2026-10-17T22:47:09.633636+00:00",
+        "application_version": "4.2.5",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v4.2.3",
-        "commit_sha": "157b45005b03d1e1853de37705aadb1470f8781c",
+        "tag": "v4.2.5",
+        "commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:bfc46df480108562d344b300f4189d66d77a87872c29b413bdddc3a889e71f2e"
         },
         "artifact_id": {
-          "app": "sha256:1d2da16e373505774528e012a7e4de8792b515a5fec4b161736c5d8c4d1dad6e"
+          "app": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:bfc46df480108562d344b300f4189d66d77a87872c29b413bdddc3a889e71f2e"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "stock-api",
           "stock-watch"
         ],
-        "deployment_timestamp": "2026-10-17T21:51:08.760474+00:00",
+        "deployment_timestamp": "2026-10-17T22:47:09.633636+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v4.2.2",
-          "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
-          "version": "4.2.2",
+          "tag": "v4.2.4",
+          "commit_sha": "db417a6dbf2488c98a4c4ecba84a9c927185c07b",
+          "version": "4.2.4",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:feaf2d41cb4cf006a2d774fe4cb6c63b2b8eaba9039d89660d4150b0329d9fe1"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:ee8588664f583914037be9147e903585ab3b03ad89b55f9515ad1d82e5783329"
           },
           "image_ids": {
-            "app": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+            "app": "sha256:b58bfd54f547af8f3da1d3c8fd73d4fb6c0f4e02a0f834cb567bd2102f75bd82"
           },
           "status": "VERIFIED_RETAINED_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "app": "sha256:1d2da16e373505774528e012a7e4de8792b515a5fec4b161736c5d8c4d1dad6e"
+          "app": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
         },
         "evidence": [
-          "releases/REL-20261018-003.yaml",
-          "releases/evidence/REL-20261018-003/deployment.receipt.json",
-          "releases/evidence/REL-20261018-003/halt-source-after.json",
-          "releases/evidence/REL-20261018-003/boundary-deployed.json"
+          "releases/REL-20261018-005.yaml",
+          "releases/evidence/REL-20261018-005/deployment.receipt.json",
+          "releases/evidence/REL-20261018-005/boundary-final.json",
+          "releases/evidence/REL-20261018-005/data-verification.json"
         ]
       }
     },

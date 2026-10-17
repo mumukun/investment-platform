@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "release_id": "REL-20261018-004",
-  "status": "READY_FOR_FORMAL_RELEASE",
+  "status": "RELEASED",
   "release_profile": "routine_hotfix",
   "created_at": "2026-10-17T22:08:00.743672+00:00",
   "changes": [
@@ -47,16 +47,20 @@
   "candidate_evidence": [
     "releases/evidence/REL-20261018-004/stock-analyzer/candidate.json"
   ],
-  "deployment_receipts": [],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-004/deployment.receipt.json"
+  ],
   "deployment": {
     "environment": "Production",
-    "status": "PENDING"
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-17T22:18:53.787044+00:00"
   },
   "verification": {
-    "status": "PENDING",
+    "status": "PASS",
     "evidence": [
       "releases/evidence/REL-20261018-004/development-validation.md",
-      "releases/evidence/REL-20261018-004/ledger-scope-boundary.md"
+      "releases/evidence/REL-20261018-004/ledger-scope-boundary.md",
+      "releases/evidence/REL-20261018-004/boundary-deployed.json"
     ],
     "known_limitations": [
       "Data completeness remains a separate mandatory gate; exact residual gaps recorded after actual repair."
@@ -65,5 +69,9 @@
   "rollback": {
     "status": "VERIFIED_RETAINED_STABLE",
     "configuration": "Keep5.2;4.2.1 reads additive tables. Do not restore DB or erase new ledger."
+  },
+  "data_maintenance": {
+    "status": "BLOCKED",
+    "note": "Actual remaining input gaps preserved; follow-up latest classification and legitimate short-history recovery in CHG005."
   }
 }

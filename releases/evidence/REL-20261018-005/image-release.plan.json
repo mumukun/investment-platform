@@ -1,0 +1,93 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-005",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮开发完成直接上线授权；本修复是同一数据完整性验收的必要补丁。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
+        "version": "4.2.5",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:bfc46df480108562d344b300f4189d66d77a87872c29b413bdddc3a889e71f2e"
+        },
+        "image_ids": {
+          "app": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
+            "run_id": "39075915198"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:bfc46df480108562d344b300f4189d66d77a87872c29b413bdddc3a889e71f2e"
+            }
+          },
+          "candidate_run_id": "39075966322"
+        }
+      },
+      "tag": "v4.2.5",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.4",
+        "commit_sha": "db417a6dbf2488c98a4c4ecba84a9c927185c07b",
+        "image_ids": {
+          "stock-api": "sha256:b58bfd54f547af8f3da1d3c8fd73d4fb6c0f4e02a0f834cb567bd2102f75bd82",
+          "stock-watch": "sha256:b58bfd54f547af8f3da1d3c8fd73d4fb6c0f4e02a0f834cb567bd2102f75bd82"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.4",
+        "commit_sha": "db417a6dbf2488c98a4c4ecba84a9c927185c07b",
+        "version": "4.2.4",
+        "images": {
+          "app": "sha256:b58bfd54f547af8f3da1d3c8fd73d4fb6c0f4e02a0f834cb567bd2102f75bd82"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG005 minimal input recovery from verified4.2.4, PR23; only Provider, existing direct-production authorization. Dashboard0.26.0 and marketNewsFeed excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No DDL, contract, flags, price-return or strategy-threshold changes.120 valid bars unchanged. New listing with source-verified halts and complete available history is a legitimate exclusion; any true missing bar still blocks. Historical industry rows preserved."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "42 focused isolated-PG tests; full396 unittest with5 existing skips;23 specialist pytest, config/compile/diff pass. Tests canonical first-level current row, historical/unknown effective date preserved, source-empty/conflict not guessed, old date skipped, legitimate short complete history versus missing real day. Exact main CI and same candidate image smoke pass."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Actual F10 EM2016 returns13 complete primary/secondary levels;000099 aviation label was secondary, correct first level transport.301666 directory122 market sessions minus3 confirmed halts equals119 complete bars. Existing Sina expanded windows recover9 rebasing gaps. EM historical direct ConnectionError and existing NAS-proxy RemoteDisconnected remain real gaps; do not invent prices or claim all inputs passed."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Keep5.2 and existing download proxy; no new source, paid service, credentials, permissions, TLS bypass or flags. Classification uses existing F10 owner on latest verified date only, at most50 attempts; remaining gaps stay visible."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Actual4.2.4 runtime, digest and v3/v2 endpoints verified in REL004. Rollback equals baseline. Existing controller protects fresh DB backup and verifies exact artifact, health and smoke; no database restore or row deletion."
+    }
+  }
+}
