@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-16T10:31:52.046746+00:00",
+  "verified_at": "2026-10-17T21:51:08.760474+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -39,114 +39,102 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-10-16T07:19:15.809357+00:00",
-        "application_version": "4.1.0",
+        "verified_at": "2026-10-17T21:51:08.760474+00:00",
+        "application_version": "4.2.3",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v4.1.0",
-        "commit_sha": "be7192a3b0693806485d85be3595d1ae6d017bc0",
+        "tag": "v4.2.3",
+        "commit_sha": "157b45005b03d1e1853de37705aadb1470f8781c",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:2f25b391e5fc05b2bcc48dc2c2445edd799a3d9752da9bec8e0435e56c6bda94"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
         },
         "artifact_id": {
-          "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+          "app": "sha256:1d2da16e373505774528e012a7e4de8792b515a5fec4b161736c5d8c4d1dad6e"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:2f25b391e5fc05b2bcc48dc2c2445edd799a3d9752da9bec8e0435e56c6bda94"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
         },
-        "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID_ARCHIVE_CACHE",
+        "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "stock-api",
           "stock-watch"
         ],
-        "deployment_timestamp": "2026-10-16T07:05:21.283623+00:00",
+        "deployment_timestamp": "2026-10-17T21:51:08.760474+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v4.0.0",
-          "commit_sha": "580882d15a9898a9ea415ba0ce06e9c80b1489cd",
-          "version": "4.0.0",
+          "tag": "v4.2.2",
+          "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+          "version": "4.2.2",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:18dd5fecdea3430169e37ffbfe51427d543f9a66b6c1cdd4287532b382bc7ae0"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:feaf2d41cb4cf006a2d774fe4cb6c63b2b8eaba9039d89660d4150b0329d9fe1"
           },
           "image_ids": {
-            "app": "sha256:2d1502eeaaa50c6c7a47fd50c5097c9ba2ec8bcda61b07a25056750be7a6c34c"
+            "app": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
           },
-          "status": "VERIFIED_RETAINED_PRODUCTION",
-          "dry_validation": "NOT_RUN_ROUTINE_NO_REHEARSAL"
+          "status": "VERIFIED_RETAINED_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+          "app": "sha256:1d2da16e373505774528e012a7e4de8792b515a5fec4b161736c5d8c4d1dad6e"
         },
-        "transport": "ARCHIVE_VERIFIED_CACHE",
-        "confidence": "HIGH",
         "evidence": [
-          "releases/REL-20261016-002.yaml",
-          "releases/evidence/REL-20261016-002/deployment.receipt.json",
-          "releases/evidence/REL-20261016-002/archive-cache-transfer.json",
-          "releases/evidence/REL-20261016-002/final-data-check.json"
+          "releases/REL-20261018-003.yaml",
+          "releases/evidence/REL-20261018-003/deployment.receipt.json",
+          "releases/evidence/REL-20261018-003/halt-source-after.json",
+          "releases/evidence/REL-20261018-003/boundary-deployed.json"
         ]
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-10-16T10:31:52.046746+00:00",
-        "application_version": "0.25.0",
+        "verified_at": "2026-10-17T21:13:28.287137+00:00",
+        "application_version": "0.26.0",
         "application_version_source": "VERSION",
-        "tag": "v0.25.0",
-        "commit_sha": "4bd9be06519a0cb9ef65ebf172de9f40ec55f7e2",
+        "tag": "v0.26.0",
+        "commit_sha": "9b243f3bbfaeeb973494863d905eecc5f82a55d1",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83747a75d9483c17099d52e13f2d149488e2086f1906e5a27fd44da8658a0177",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5e0bad071a9475bde989b55b1ba58c6a7104b32c0e43fbfef2c7eaf456e8937"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:52b48eda80aabb32fd189f71159d74219a2330322cea7f678e725d7c97e2befb",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:803f12ea93c799bf7cb45979d2031eaf6432b23b3adab01943889605cd93dd5f"
         },
         "artifact_id": {
-          "api": "sha256:55f1d96e0ce403f3521770a0e7a223ec2dfc853451a03c7671bdaed2e508d978",
-          "web": "sha256:f511dcce13348aa4c01bd5f00ca76159e30f08622a301e7ea4b61223c4707333"
+          "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+          "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83747a75d9483c17099d52e13f2d149488e2086f1906e5a27fd44da8658a0177",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5e0bad071a9475bde989b55b1ba58c6a7104b32c0e43fbfef2c7eaf456e8937"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:52b48eda80aabb32fd189f71159d74219a2330322cea7f678e725d7c97e2befb",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:803f12ea93c799bf7cb45979d2031eaf6432b23b3adab01943889605cd93dd5f"
         },
-        "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID_REGISTRY",
+        "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "investment-research-dashboard-nas-api-1",
           "investment-research-dashboard-nas-web-1"
         ],
-        "deployment_timestamp": "2026-10-16T10:31:52.046746+00:00",
+        "deployment_timestamp": "2026-10-17T21:13:28.287137+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v0.24.0",
-          "commit_sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
-          "version": "0.24.0",
+          "tag": "v0.25.0",
+          "commit_sha": "4bd9be06519a0cb9ef65ebf172de9f40ec55f7e2",
+          "version": "0.25.0",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b1140d5ff2dea9176295ba385dc0f60d86feadf2aacbfcf4e5cf31fb48cf4724",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:03492d065d3403ab3d3cf438e015ff68ef84b640074490107760b3ceb58fc0e0"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83747a75d9483c17099d52e13f2d149488e2086f1906e5a27fd44da8658a0177",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5e0bad071a9475bde989b55b1ba58c6a7104b32c0e43fbfef2c7eaf456e8937"
           },
           "image_ids": {
-            "api": "sha256:9678d9bb6f518b96586b603b84659767e5b5c481f58e566b32498f81d802c33a",
-            "web": "sha256:45c1509cbf2b4b024d49e1322c5bc06c69a5e3f920d2df3b9ca307051591b243"
+            "api": "sha256:55f1d96e0ce403f3521770a0e7a223ec2dfc853451a03c7671bdaed2e508d978",
+            "web": "sha256:f511dcce13348aa4c01bd5f00ca76159e30f08622a301e7ea4b61223c4707333"
           },
-          "status": "VERIFIED_RETAINED_PRODUCTION",
-          "dry_validation": "NOT_RUN_ROUTINE_NO_REHEARSAL"
+          "status": "VERIFIED_RETAINED_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "api": "sha256:55f1d96e0ce403f3521770a0e7a223ec2dfc853451a03c7671bdaed2e508d978",
-          "web": "sha256:f511dcce13348aa4c01bd5f00ca76159e30f08622a301e7ea4b61223c4707333"
+          "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+          "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
         },
-        "transport": "registry",
-        "confidence": "HIGH",
         "evidence": [
-          "releases/REL-20261016-003.yaml",
-          "releases/evidence/REL-20261016-003/deployment.receipt.json",
-          "releases/evidence/REL-20261016-003/runtime-version.json"
+          "releases/REL-20261018-001.yaml",
+          "releases/evidence/REL-20261018-001/deployment.receipt.json",
+          "releases/evidence/REL-20261018-001/boundary-fixed.json"
         ],
-        "build_time": "2026-10-16T10:25:00Z",
-        "professional_kline_enabled": true,
-        "market_structure_enabled": true,
-        "global_board_enabled": true,
-        "tech_board_enabled": true,
-        "image_captcha_enabled": true,
-        "dashboard_exact_sha_runtime": "VERIFIED"
+        "build_time": "2026-10-17T19:51:06Z"
       }
     }
   }

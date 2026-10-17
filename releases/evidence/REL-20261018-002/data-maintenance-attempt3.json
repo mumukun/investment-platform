@@ -1,0 +1,1 @@
+{"exit": 0, "log": "/tmp/swing-maintenance.REL-20261018-002.attempt3.log", "summary": {"trade_date": "2026-10-16", "status": "blocked", "counts": {"market": 5577, "snapshots": 5577, "eligible": 2894, "excluded": 2683, "gap_count": 1980, "affected_stocks": 733}, "dry_run": false}}

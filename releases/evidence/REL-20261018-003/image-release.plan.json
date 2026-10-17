@@ -1,0 +1,93 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮开发完成直接上线授权；本修复是同一数据完整性验收的必要补丁。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "157b45005b03d1e1853de37705aadb1470f8781c",
+        "version": "4.2.3",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
+        },
+        "image_ids": {
+          "app": "sha256:1d2da16e373505774528e012a7e4de8792b515a5fec4b161736c5d8c4d1dad6e"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "157b45005b03d1e1853de37705aadb1470f8781c",
+            "run_id": "39072208492"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
+            }
+          },
+          "candidate_run_id": "39072257477"
+        }
+      },
+      "tag": "v4.2.3",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.2",
+        "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+        "image_ids": {
+          "stock-api": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09",
+          "stock-watch": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.2",
+        "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+        "version": "4.2.2",
+        "images": {
+          "app": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261018-003 minimal PATCH from actual verified v4.2.2, PR21. Only Provider; Dashboard0.26.0 and marketNewsFeed excluded. Original user development/direct-production authorization applies."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No DDL, contract, flags, thresholds or weights. Confirmed suspension dates excluded only by5.2 filters; legacy default readers and every old row remain. NaT parsing preserves its explicit marker. Actual valid source facts only; no missing field guessed. Existing checkpoint repair and ledger retained."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "37 focused isolated-PostgreSQL tests, 391 full unittest (5 existing skips), 23 specialist pytest. Real NaT parser, bounded halt verification, source-fact persistence, confirmed halt placeholder exclusion, old reader and scan-scope agreement covered. Exact merged-main CI and candidate fixture smoke verified."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Real source calls10/8,10/9,10/16 expose pandas.NaT ValueError; source-confirmed full-day suspension facts must be processed before retrying missing quotes.000582 legacy zero placeholders remain as facts; no prices manufactured. Verified5577 directory and aligned indices retained. Real residual gate checked after repair."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Keep existing5.2 rule configuration, no new env/credential/proxy/permission changes. Existing NAS mihomo handles artifact download. No paid service or notification. Reuse daily scheduler."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current4.2.1 verified by actual REL001 runtime receipt and successful v3 endpoints and actual140-session window, so stable rollback matches executable baseline. Protected backup, exact digest, image identity, health and smoke run once in existing deploy controller. Database and ledger retained."
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-000",
+  "status": "ROLLED_BACK",
+  "release_profile": "routine",
+  "created_at": "2026-10-17T19:47:46.328428+00:00",
+  "changes": [
+    "CHG-20261018-000"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "2026-10-18 用户明确要求开发完成后直接上线，睡醒验收；授权本需求的实现、提交、PR、合并、精确Tag和Production部署。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.1.0",
+      "new_version": "4.2.0",
+      "tag": "v4.2.0",
+      "commit_sha": "bb70dbaf07613a2ca055158657d2ba266093ecf7",
+      "rollback_version": "v4.1.0",
+      "previous_commit_sha": "be7192a3b0693806485d85be3595d1ae6d017bc0",
+      "rollback_images": {
+        "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+      },
+      "status": "CI_AND_CANDIDATE_PASS",
+      "quality_run_id": "39064893822",
+      "candidate_run_id": "39064929691",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:6d747218b5acaef3d413892332076210b45c000ef95eaaf988ba6bf970705692"
+      },
+      "image_ids": {
+        "app": "sha256:12df64cbd879f6900d68b4cf5108d8a8eff711877a9120a0309a58a7d1467bf5"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.25.0",
+      "new_version": "0.26.0",
+      "tag": "v0.26.0",
+      "commit_sha": "9b243f3bbfaeeb973494863d905eecc5f82a55d1",
+      "rollback_version": "v0.25.0",
+      "previous_commit_sha": "4bd9be06519a0cb9ef65ebf172de9f40ec55f7e2",
+      "rollback_images": {
+        "api": "sha256:55f1d96e0ce403f3521770a0e7a223ec2dfc853451a03c7671bdaed2e508d978",
+        "web": "sha256:f511dcce13348aa4c01bd5f00ca76159e30f08622a301e7ea4b61223c4707333"
+      },
+      "status": "CI_AND_CANDIDATE_PASS",
+      "quality_run_id": "39064009106",
+      "candidate_run_id": "39064215427",
+      "candidate": "releases/evidence/REL-20261018-000/investment-research-dashboard/candidate.json",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:52b48eda80aabb32fd189f71159d74219a2330322cea7f678e725d7c97e2befb",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:803f12ea93c799bf7cb45979d2031eaf6432b23b3adab01943889605cd93dd5f"
+      },
+      "image_ids": {
+        "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+        "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "marketNewsFeed"
+  ],
+  "dependencies": [
+    {
+      "provider": "stock-analyzer",
+      "consumer": "investment-research-dashboard",
+      "required": true,
+      "reason": "new history-v3/stats-v3 and data_health"
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-000/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-000/stock-analyzer/candidate.json",
+    "releases/evidence/REL-20261018-000/investment-research-dashboard/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-000/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "started_at": "2026-10-17T20:09:15.903653+00:00",
+    "completed_at": "2026-10-17T20:19:18.936203+00:00"
+  },
+  "verification": {
+    "status": "FAILED",
+    "evidence": [
+      "releases/evidence/REL-20261018-000/development-validation.md",
+      "releases/evidence/REL-20261018-000/image-release.plan.json",
+      "releases/evidence/REL-20261018-000/boundary-initial.json",
+      "releases/evidence/REL-20261018-000/rollback.receipt.json"
+    ],
+    "known_limitations": [
+      "New five-day win denominator starts separately from V5.1; old history remains queryable.",
+      "Data repair and a real mandatory-input gate must complete before publishing any new list; deployment alone does not prove full data."
+    ],
+    "incident": "stats-v3 HTTP500 from function-local local_db import. Actual image-only rollback restored stable4.1.0/0.25.0 without database restore. Fixed and re-promoted via REL-20261018-001; original failed boundary probe retained."
+  },
+  "rollback": {
+    "status": "PASS",
+    "receipt": "releases/evidence/REL-20261018-000/rollback.receipt.json",
+    "database_restore": false,
+    "committed_repair_data": "PRESERVED"
+  },
+  "timing": {
+    "first_recorded_development_clock": "2026-10-17T18:43:24Z",
+    "basis": "Earliest retained execution clock; earlier conversation time not precisely recorded. Development, CI waiting, release and repair included in subsequent elapsed report."
+  },
+  "updated_at": "2026-10-17T21:18:47.849644+00:00",
+  "resolution": {
+    "release_id": "REL-20261018-001",
+    "status": "DEPLOYED_AND_BOUNDARY_VERIFIED"
+  }
+}

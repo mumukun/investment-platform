@@ -1,0 +1,76 @@
+{
+  "release_id": "REL-20261018-002",
+  "plan_hash": "bb7f8b8ff7261ccdcbfad8778d59103ffce384b75a1734da4fd11a4ef33e9ce1",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261018-002/stock-analyzer.dump",
+        "sha256": "22a2db3b02cbbbc6e42701b5783f97cc286c190b9434931789567c76e885b46b",
+        "size": 465436074
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09",
+        "stock-watch": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-17T21:29:06.677857+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 22.698
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-17T21:31:07.395029+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.176
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-17T21:31:08.288521+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 151.186
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-17T21:33:40.069228+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.464
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-17T21:33:40.978912+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 23.426
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-17T21:34:04.467086+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 12.649
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v4.2.2",
+      "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:feaf2d41cb4cf006a2d774fe4cb6c63b2b8eaba9039d89660d4150b0329d9fe1"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-17T21:34:17.353222+00:00"
+}
