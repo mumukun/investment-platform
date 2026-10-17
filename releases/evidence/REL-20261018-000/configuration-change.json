@@ -1,0 +1,10 @@
+{
+  "setting": "SWING_ENGINE_RULES_VERSION",
+  "previous": "swing-rules-v5.1.0",
+  "new": "swing-rules-v5.2.0",
+  "backup": "/volume1/docker/stock-analyzer/.env.before-REL-20261018-000",
+  "backup_sha256": "aa902620422b01f9259e7228f9f82e6eb3aee17ed3b0e23ce0b103c5f05323f4",
+  "new_sha256": "6525b722ac73c69d39328d26ef842d5721f0bb4e7ba78cce3fd3de8c348ec98d",
+  "mode": "0600",
+  "verified": true
+}

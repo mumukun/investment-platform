@@ -1,0 +1,1 @@
+{"source":"Existing AkShare/Eastmoney stock_tfp_em, actual NAS calls","dates":[{"date":"2026-10-08","error":"ValueError"},{"date":"2026-10-09","error":"ValueError"},{"date":"2026-10-16","error":"ValueError"}],"cause":"pandas.NaT.strftime during full_day_suspension; source frame exists but undated resume/until raises","baseline":"v4.2.2"}

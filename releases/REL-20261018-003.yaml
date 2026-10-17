@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-003",
+  "status": "RELEASED",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-17T21:47:08.138193+00:00",
+  "changes": [
+    "CHG-20261018-003"
+  ],
+  "related_changes": [
+    "CHG-20261018-000"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮开发完成直接上线授权；本修复是同一数据完整性验收的必要补丁。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.2",
+      "new_version": "4.2.3",
+      "tag": "v4.2.3",
+      "commit_sha": "157b45005b03d1e1853de37705aadb1470f8781c",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:6c18e82d2c0b35d4298e364da4c574966bbc07d5c57ff9680011154447258c9b"
+      },
+      "image_ids": {
+        "app": "sha256:1d2da16e373505774528e012a7e4de8792b515a5fec4b161736c5d8c4d1dad6e"
+      },
+      "quality_run_id": "39072208492",
+      "candidate_run_id": "39072257477",
+      "rollback_version": "v4.2.2",
+      "rollback_commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+      "rollback_images": {
+        "app": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-003/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-003/stock-analyzer/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-003/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-17T21:51:08.760474+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261018-003/development-validation.md",
+      "releases/evidence/REL-20261018-003/halt-source-before.json",
+      "releases/evidence/REL-20261018-003/halt-source-after.json",
+      "releases/evidence/REL-20261018-003/boundary-deployed.json"
+    ],
+    "known_limitations": [
+      "Data completeness remains a separate mandatory gate; exact residual gaps recorded after actual repair."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_STABLE",
+    "configuration": "Keep5.2;4.2.1 reads additive tables. Do not restore DB or erase new ledger."
+  },
+  "data_maintenance": {
+    "status": "COMPLETED_WITH_GAPS",
+    "evidence": "releases/evidence/REL-20261018-003/data-verification.json",
+    "result": "31 gaps /29 affected stocks after full batch. Followed by targeted rebase and CHG005 classification recovery."
+  }
+}

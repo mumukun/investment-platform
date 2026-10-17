@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-002",
+  "status": "RELEASED",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-17T21:28:04.892675+00:00",
+  "changes": [
+    "CHG-20261018-002"
+  ],
+  "related_changes": [
+    "CHG-20261018-000"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮开发完成直接上线授权；本修复是同一数据完整性验收的必要补丁。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.1",
+      "new_version": "4.2.2",
+      "tag": "v4.2.2",
+      "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:feaf2d41cb4cf006a2d774fe4cb6c63b2b8eaba9039d89660d4150b0329d9fe1"
+      },
+      "image_ids": {
+        "app": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+      },
+      "quality_run_id": "39070913743",
+      "candidate_run_id": "39070953921",
+      "rollback_version": "v4.2.1",
+      "rollback_commit_sha": "9a6d7ab4f39e79f2b71106b99a5c019aa2565cdc",
+      "rollback_images": {
+        "app": "sha256:e106a0ac0127793ebdbfee9178d97b06c6e3d9bb622cb9f8cd81c31783825fce"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-002/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-002/stock-analyzer/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-002/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-17T21:34:17.353222+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261018-002/development-validation.md",
+      "releases/evidence/REL-20261018-002/session-window-before.json",
+      "releases/evidence/REL-20261018-002/session-window-after.json",
+      "releases/evidence/REL-20261018-002/boundary-deployed.json"
+    ],
+    "known_limitations": [
+      "Data completeness remains a separate mandatory gate; exact residual gaps recorded after actual repair."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_STABLE",
+    "configuration": "Keep5.2;4.2.1 reads additive tables. Do not restore DB or erase new ledger."
+  },
+  "data_maintenance": {
+    "status": "BLOCKED",
+    "evidence": "releases/evidence/REL-20261018-002/data-maintenance-attempt3.json",
+    "resolution": "NaT source-format compatibility repaired in CHG-20261018-003/REL-20261018-003; original data retained."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-001",
+  "status": "RELEASED",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-17T20:40:42.454831+00:00",
+  "changes": [
+    "CHG-20261018-001"
+  ],
+  "related_changes": [
+    "CHG-20261018-000"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "原用户明确要求开发完成直接上线；本次最小PATCH用于恢复同一已授权功能的新统计接口。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.1.0",
+      "new_version": "4.2.1",
+      "tag": "v4.2.1",
+      "commit_sha": "9a6d7ab4f39e79f2b71106b99a5c019aa2565cdc",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:a64174fb5c35e376682e9e803bf10b83c621f03b5a84cd89e57e5b3e53571f8c"
+      },
+      "image_ids": {
+        "app": "sha256:e106a0ac0127793ebdbfee9178d97b06c6e3d9bb622cb9f8cd81c31783825fce"
+      },
+      "code_changed": true,
+      "rollback_version": "v4.1.0",
+      "rollback_commit_sha": "be7192a3b0693806485d85be3595d1ae6d017bc0",
+      "rollback_images": {
+        "app": "sha256:e80b4a54c442fd2b31b9b5767fdbbb8b1b1d76a5f24f46250049b3fbe40d1819"
+      },
+      "quality_run_id": "39068142348",
+      "candidate_run_id": "39068186787"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.25.0",
+      "new_version": "0.26.0",
+      "tag": "v0.26.0",
+      "commit_sha": "9b243f3bbfaeeb973494863d905eecc5f82a55d1",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:52b48eda80aabb32fd189f71159d74219a2330322cea7f678e725d7c97e2befb",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:803f12ea93c799bf7cb45979d2031eaf6432b23b3adab01943889605cd93dd5f"
+      },
+      "image_ids": {
+        "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+        "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
+      },
+      "code_changed": false,
+      "rollback_version": "v0.25.0",
+      "rollback_commit_sha": "4bd9be06519a0cb9ef65ebf172de9f40ec55f7e2",
+      "rollback_images": {
+        "api": "sha256:55f1d96e0ce403f3521770a0e7a223ec2dfc853451a03c7671bdaed2e508d978",
+        "web": "sha256:f511dcce13348aa4c01bd5f00ca76159e30f08622a301e7ea4b61223c4707333"
+      },
+      "quality_run_id": "39064009106",
+      "candidate_run_id": "39064215427"
+    }
+  ],
+  "excluded_repositories": [
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "started_at": "2026-10-17T21:07:30.075071+00:00",
+    "completed_at": "2026-10-17T21:13:28.287137+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261018-001/development-validation.md",
+      "releases/evidence/REL-20261018-001/boundary-fixed.json"
+    ],
+    "known_limitations": [
+      "Actual data maintenance resumes from preserved checkpoints. API/application health PASS does not certify mandatory inputs; publication remains gated until actual report passes.",
+      "New ledger starts separately from unchanged V5.1 history. Five-day results accrue only when real sessions arrive."
+    ]
+  },
+  "image_execution_plan": "releases/evidence/REL-20261018-001/image-release.plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-001/deployment.receipt.json"
+  ],
+  "rollback": {
+    "status": "VERIFIED_RETAINED_STABLE",
+    "configuration": "Stable4.1.0 requires restoring rule5.1.0 from .env.before-REL-20261018-000. Preserve new tables/ledger; do not restore known-bad4.2.0 stats branch."
+  },
+  "updated_at": "2026-10-17T21:18:47.849644+00:00",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-001/stock-analyzer/candidate.json",
+    "releases/evidence/REL-20261018-000/investment-research-dashboard/candidate.json"
+  ],
+  "notes": [
+    "Original Dashboard0.26.0 artifact is re-promoted after actual stable image rollback; its Tag/SHA/digests are unchanged."
+  ]
+}

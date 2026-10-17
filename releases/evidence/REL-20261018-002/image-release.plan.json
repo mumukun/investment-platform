@@ -1,0 +1,93 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮开发完成直接上线授权；本修复是同一数据完整性验收的必要补丁。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+        "version": "4.2.2",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:feaf2d41cb4cf006a2d774fe4cb6c63b2b8eaba9039d89660d4150b0329d9fe1"
+        },
+        "image_ids": {
+          "app": "sha256:fd94b234618ba61af07a209ae3d26e7667825d803223375ce43ad29bdc6aaf09"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "5fa7f93e0281aca0a6db587d26242048aa3d2b21",
+            "run_id": "39070913743"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:feaf2d41cb4cf006a2d774fe4cb6c63b2b8eaba9039d89660d4150b0329d9fe1"
+            }
+          },
+          "candidate_run_id": "39070953921"
+        }
+      },
+      "tag": "v4.2.2",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.1",
+        "commit_sha": "9a6d7ab4f39e79f2b71106b99a5c019aa2565cdc",
+        "image_ids": {
+          "stock-api": "sha256:e106a0ac0127793ebdbfee9178d97b06c6e3d9bb622cb9f8cd81c31783825fce",
+          "stock-watch": "sha256:e106a0ac0127793ebdbfee9178d97b06c6e3d9bb622cb9f8cd81c31783825fce"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.1",
+        "commit_sha": "9a6d7ab4f39e79f2b71106b99a5c019aa2565cdc",
+        "version": "4.2.1",
+        "images": {
+          "app": "sha256:e106a0ac0127793ebdbfee9178d97b06c6e3d9bb622cb9f8cd81c31783825fce"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261018-002 minimal PATCH from actual verified v4.2.1, PR20. Only Provider; Dashboard0.26.0 and marketNewsFeed excluded. Original user development/direct-production authorization applies."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No DDL, contract, flags, thresholds or weights. Optional session-date filters only used by5.2; legacy default readers and every old row remain. Existing checkpoint repair and ledger retained."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "34 focused isolated-PostgreSQL tests, 388 full unittest (5 existing skips), 23 specialist pytest. New real-DB 140-session window covers holiday price exclusion, index agreement, old reader and all original rows preserved. Exact merged-main CI and candidate fixture smoke verified."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Actual production sample verifies refreshed3/20 exists while old9/25 non-session row crowds140-row window. True Sina calendar and fresh history do not have9/25; filter corrects input without inventing or deleting facts. Full-market repair remains separately gated; directory source transient retry now recovered5577."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Keep existing5.2 rule configuration, no new env/credential/proxy/permission changes. Existing NAS mihomo handles artifact download. No paid service or notification. Reuse daily scheduler."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current4.2.1 verified by actual REL001 runtime receipt and successful v3 endpoints, so stable rollback matches executable baseline. Protected backup, exact digest, image identity, health and smoke run once in existing deploy controller. Database and ledger retained."
+    }
+  }
+}

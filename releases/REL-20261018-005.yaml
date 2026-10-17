@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-005",
+  "status": "RELEASED",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-17T22:41:20.052577+00:00",
+  "changes": [
+    "CHG-20261018-005"
+  ],
+  "related_changes": [
+    "CHG-20261018-000"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮开发完成直接上线授权；本修复是同一数据完整性验收的必要补丁。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.4",
+      "new_version": "4.2.5",
+      "tag": "v4.2.5",
+      "commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:bfc46df480108562d344b300f4189d66d77a87872c29b413bdddc3a889e71f2e"
+      },
+      "image_ids": {
+        "app": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
+      },
+      "quality_run_id": "39075915198",
+      "candidate_run_id": "39075966322",
+      "rollback_version": "v4.2.4",
+      "rollback_commit_sha": "db417a6dbf2488c98a4c4ecba84a9c927185c07b",
+      "rollback_images": {
+        "app": "sha256:b58bfd54f547af8f3da1d3c8fd73d4fb6c0f4e02a0f834cb567bd2102f75bd82"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-005/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-005/stock-analyzer/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-005/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-17T22:47:09.633636+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261018-005/development-validation.md",
+      "releases/evidence/REL-20261018-005/input-recovery-boundary.md",
+      "releases/evidence/REL-20261018-005/input-recovery.json",
+      "releases/evidence/REL-20261018-005/boundary-final.json"
+    ],
+    "known_limitations": [
+      "Data completeness remains a separate mandatory gate; exact residual gaps recorded after actual repair."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_STABLE",
+    "configuration": "Keep5.2;4.2.1 reads additive tables. Do not restore DB or erase new ledger."
+  },
+  "updated_at": "2026-10-17T22:51:24.127037+00:00",
+  "data_maintenance": {
+    "status": "BLOCKED",
+    "evidence": "releases/evidence/REL-20261018-005/data-verification.json",
+    "counts": {
+      "market": 5577,
+      "eligible": 2880,
+      "excluded": 2697,
+      "gap_count": 8,
+      "snapshots": 5577,
+      "affected_stocks": 7
+    },
+    "gap_kinds": {
+      "daily_history": 7,
+      "daily_length": 1
+    },
+    "new_publication": "PAUSED_NO_NEW_SIMULATED_ENTRIES",
+    "existing_retries": "Existing Provider weekday15:30/17:30/20:30 maintenance; no new automation or service.",
+    "source_limitations": "Remaining unverified historical quotes and CDR are preserved as true gaps; no synthetic prices, TLS bypass or unapproved source changes."
+  },
+  "timing": {
+    "earliest_retained_task_clock": "2026-10-17T18:43:24Z",
+    "record_completed_at": "2026-10-17T22:51:24.127037+00:00",
+    "basis": "Earliest retained clock, not a precise measurement of initial discussion. Actual per-stage CI/deploy/backup/rollback timings in immutable receipts; user approval wait0. No restoration drill performed."
+  }
+}
