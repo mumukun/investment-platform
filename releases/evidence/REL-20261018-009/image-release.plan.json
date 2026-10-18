@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-009",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确“好的开发上线吧”“修改完成就上线吧”，确认短线模块；异步确认止盈采用3%作为第一版待验证参数。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "1f9ed1ad1ba3835981091af62c9bc76875bda3a7",
+        "version": "4.3.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:68f4238ccf6d1ae2b7a7ad1033add63f1b0771839706122e19420ce1ecbea706"
+        },
+        "image_ids": {
+          "app": "sha256:da4105a4525a8601e3b8d3f3fe20ab2a85d34e7526b43a93554cf053dca013fd"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "1f9ed1ad1ba3835981091af62c9bc76875bda3a7",
+            "run_id": "39102443797"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:68f4238ccf6d1ae2b7a7ad1033add63f1b0771839706122e19420ce1ecbea706"
+            }
+          },
+          "candidate_run_id": "39102478791"
+        }
+      },
+      "tag": "v4.3.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.8",
+        "commit_sha": "d723be3ccd7357b0589089c2b75c35ecf0686242",
+        "image_ids": {
+          "stock-api": "sha256:bd96f5b00c5b7df7c2ce244b0a697bb9354ea6f38e6c39ae94ad273bca786f9b",
+          "stock-watch": "sha256:bd96f5b00c5b7df7c2ce244b0a697bb9354ea6f38e6c39ae94ad273bca786f9b"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.8",
+        "commit_sha": "d723be3ccd7357b0589089c2b75c35ecf0686242",
+        "version": "4.2.8",
+        "images": {
+          "app": "sha256:bd96f5b00c5b7df7c2ce244b0a697bb9354ea6f38e6c39ae94ad273bca786f9b"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "6504c478f5c680fb8c77472fbc4afb001e088267",
+        "version": "0.27.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:fc9a4a9977e709b9b5b2f058da5ee77e1d3883e5cfccfad1f9a2e46302619099",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:21d6802731a72a1ade570b5559605e17034c448b8c682bbac6cd31ad74a1a1ad"
+        },
+        "image_ids": {
+          "api": "sha256:94ab79c83f1701b1752bd354be6df9a1bf4d14d40cdc6f52fe52a3715009b436",
+          "web": "sha256:54c2c84d784368790267cd5cd7347bcfc55f71272fa2635bd6ff0f0144c04127"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "6504c478f5c680fb8c77472fbc4afb001e088267",
+            "run_id": "39102563279"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:fc9a4a9977e709b9b5b2f058da5ee77e1d3883e5cfccfad1f9a2e46302619099",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:21d6802731a72a1ade570b5559605e17034c448b8c682bbac6cd31ad74a1a1ad"
+            }
+          },
+          "candidate_run_id": "39102709126"
+        }
+      },
+      "tag": "v0.27.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.26.1",
+        "commit_sha": "e70efe7b30443912e6677dbfbb96da1c9d4b8e40",
+        "image_ids": {
+          "api": "sha256:7c826498a7e07fbeae4addd428a24172488bf373888b39534d0245615273c1aa",
+          "web": "sha256:e23ec05e3c1b6efa89ba4d63f1436ff1876e77d58445a5df11a96921be16b16b"
+        },
+        "build_time": "2026-10-18T02:48:07Z"
+      },
+      "rollback": {
+        "tag": "v0.26.1",
+        "commit_sha": "e70efe7b30443912e6677dbfbb96da1c9d4b8e40",
+        "version": "0.26.1",
+        "images": {
+          "api": "sha256:7c826498a7e07fbeae4addd428a24172488bf373888b39534d0245615273c1aa",
+          "web": "sha256:e23ec05e3c1b6efa89ba4d63f1436ff1876e77d58445a5df11a96921be16b16b"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261018-007 only; Provider PR27 and Dashboard PR26 merged, checked exact-main candidates. Short next-session closing-entry tracking. marketNewsFeed excluded; swing and selection scoring unchanged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Additive short_simulated_trade/short_close_run and snapshot evidence JSONB. Existing short history and swing contracts retained. New unpublished v1 short tracking/stats contracts use short-nextday-tp-close-v1. No account, fees, destructive migration or configuration changes; single preset +3% daily upper barrier theoretical fill else next close."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "changes/evidence/CHG-20261018-007/verification.md and boundary.json:19 isolated-PG short tests,426 unittest with5 existing skips,211 consumer pytest excluding unrelated hardcoded local seat DB module,183 frontend tests,build,Ruff,Alembic PASS. Exact merged-main CI and same-digest candidate fixture smoke PASS. Synthetic integration is not live profitability."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Read-only live Friday source inspection:5577 raw close rows and latest persisted same-day close batch1 candidate/0 actionable. Noon actionable signals are not converted to closing purchases. No new external source: existing Sina qfq daily fetch/save and verified real calendar; single upper barrier requires daily high only, no invented minute sequence. New production Provider HTTP-to-Consumer tracking/stats/coverage boundary and close-only replay checked after deployment; legitimate zero samples remain visible."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No new credentials, env, flags, feeds or paid calls. Existing NAS mihomo127.0.0.1:7890 and proxy.sh for outbound downloads, internal APIs/DB direct. Existing three Dashboard build flags preserved. No broker orders."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified immutable Production4.2.8 and0.26.1 with retained exact image IDs/digests from baseline; standard controller checks real drift, protected readable backup, identity/health/smoke once. Image-only rollback retains additive ledger/archives; no DB restore/deletion."
+    }
+  }
+}
