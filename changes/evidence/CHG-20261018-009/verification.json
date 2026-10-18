@@ -1,0 +1,67 @@
+{
+  "change_id": "CHG-20261018-009",
+  "recorded_at": "2026-10-18T18:33:20.747670+08:00",
+  "scope": "Dashboard layout and design only; local commits with release deferred",
+  "checks": [
+    {
+      "command": "npm test -- src/views/LimitUpLadderView.spec.ts src/design/chartPalette.spec.ts",
+      "result": "PASS",
+      "tests": 13
+    },
+    {
+      "command": "npm test",
+      "result": "PASS",
+      "files": 37,
+      "tests": 183
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "includes": [
+        "vue-tsc",
+        "Vite production build"
+      ]
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "check": "Six application version declarations agree",
+      "result": "PASS",
+      "version": "0.27.1",
+      "state": "pending bundled release"
+    },
+    {
+      "check": "Local explicitly MOCK browser acceptance",
+      "result": "PASS",
+      "viewports": [
+        "1280x900",
+        "320x900"
+      ],
+      "evidence": "browser-verification.json"
+    }
+  ],
+  "not_run": [
+    "Backend and Provider suites (logic unchanged)",
+    "Production browser/live-source verification",
+    "Cross-browser full accessibility audit"
+  ],
+  "resources": "Local Vite preview stopped; temporary browser closed; viewport override reset",
+  "authorization": {
+    "local_commit": true,
+    "push": false,
+    "merge": false,
+    "tag": false,
+    "release": false,
+    "deploy": false
+  },
+  "git": {
+    "branch": "fix/CHG-20261018-009-limit-up-matrix",
+    "dashboard_commit": "4dff04ef65776f8f53ccdf2b89fbff42f446da63",
+    "pushed": false,
+    "merged": false,
+    "tagged": false,
+    "deployed": false
+  }
+}
