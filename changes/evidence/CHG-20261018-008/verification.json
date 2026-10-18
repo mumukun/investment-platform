@@ -1,0 +1,114 @@
+{
+  "change_id": "CHG-20261018-008",
+  "recorded_at": "2026-10-18T09:40:27.254979+00:00",
+  "scope": "Local implementation, public read-only source capture and isolated PostgreSQL tests; no production access",
+  "versions": {
+    "stock-analyzer": "4.4.0",
+    "investment-research-dashboard": "0.28.0",
+    "contract": "investment-dashboard-tech-board-v1",
+    "mapping": "tech-board-sources-v2"
+  },
+  "coverage": {
+    "indices": 15,
+    "memberships": 688,
+    "unique_securities": 477,
+    "hk_securities": 26,
+    "innovation_security_rows": 57,
+    "legacy_mapping_accepted": true
+  },
+  "checks": [
+    {
+      "repository": "stock-analyzer",
+      "command": "python -m unittest discover -s tests -p 'test_tech*.py'",
+      "environment": "Python 3.13; explicit isolated local PostgreSQL and regression schema",
+      "result": "PASS",
+      "tests": 14,
+      "skipped": 0
+    },
+    {
+      "repository": "stock-analyzer",
+      "command": "python -m unittest discover -s tests -p 'test_global_board.py'",
+      "result": "PASS",
+      "tests": 10
+    },
+    {
+      "repository": "stock-analyzer",
+      "command": "python scripts/tech_board_sync.py --dry-run",
+      "result": "PASS",
+      "network": false,
+      "writes": false,
+      "paid_sources": false
+    },
+    {
+      "repository": "stock-analyzer",
+      "command": "python -m compileall -q stock_analyzer scripts tests",
+      "result": "PASS"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "command": "python -m pytest backend/tests/test_tech_board.py -q",
+      "environment": "Python 3.13; isolated local PostgreSQL; SEED_DEMO_DATA=true",
+      "result": "PASS",
+      "tests": 25,
+      "warnings": [
+        "Existing Starlette/httpx TestClient deprecation"
+      ]
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "command": "ruff check backend",
+      "result": "PASS"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "command": "npm test",
+      "result": "PASS",
+      "files": 38,
+      "tests": 184
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "command": "npm test -- src/views/TechBoardView.spec.ts",
+      "result": "PASS",
+      "tests": 1,
+      "note": "Rerun after market group keys and two-digit ranking display adjustment"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "command": "npm run build",
+      "result": "PASS",
+      "note": "vue-tsc and Vite, rerun after final view changes"
+    },
+    {
+      "repository": "all affected",
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "not_run": [
+    "NAS source connectivity / persistent scheduled collection",
+    "Production browser or screenshot acceptance",
+    "Full backend/provider suites beyond affected modules",
+    "Live cross-repository HTTP end-to-end run",
+    "Push / PR / merge / tag / production release"
+  ],
+  "notes": [
+    "Public member and index source responses are real captures; member prices not collected in this capture are explicitly unavailable.",
+    "Provider-to-consumer contract verified using a provider-parsed isolated-database envelope and consumer persistence/API tests; UI test stubs API transport.",
+    "An initial provider database test encountered pre-existing capture data in its test schema; rerun in a separate regression schema passed without product changes.",
+    "No database schema, runtime dependency, production setting or paid source added.",
+    "User requested local commits and deferred release to combine with later requirements."
+  ],
+  "git": {
+    "branch": "feat/CHG-20261018-008-tech-index-reference",
+    "business_commits": {
+      "stock-analyzer": "6f36e8fb0ad03f4b67910962606223ea5fbdb929",
+      "investment-research-dashboard": "ac52f17453b7051621f49f28ccc0957e1f718134"
+    },
+    "pushed": false,
+    "merged": false,
+    "tagged": false,
+    "deployed": false
+  },
+  "local_resources": "Owned isolated PostgreSQL test container stopped after verification; retained for reproducibility. No production resource touched."
+}
