@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-006",
+  "status": "PARTIAL",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-18T02:50:02.932536+00:00",
+  "changes": [
+    "CHG-20261018-006"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户同一会话要求开发完成直接上线；当前明确要求修复7股阻断、周日显示周五及回推5交易日。此为该线上修复，延续提交/合并/正式上线授权。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.5",
+      "new_version": "4.2.6",
+      "tag": "v4.2.6",
+      "commit_sha": "afb9b529fd85d5c5e0a2cd81b8035c311c220897",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b7f18c90eab0464d0af6e82fbfdd0e91fc11e4a7ffe7feccc26c7bf9483240e6"
+      },
+      "image_ids": {
+        "app": "sha256:49d041e7fcbe90a994af54a57b503bb2e141bef026156d72cb367ccb87a8b03c"
+      },
+      "quality_run_id": "39091028241",
+      "candidate_run_id": "39091063992",
+      "rollback_version": "v4.2.5",
+      "rollback_commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
+      "rollback_images": {
+        "app": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.26.0",
+      "new_version": "0.26.1",
+      "tag": "v0.26.1",
+      "commit_sha": "e70efe7b30443912e6677dbfbb96da1c9d4b8e40",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:57efd7725826f1165d067d4a891c8be1539a98dd3dbc014d72ff62c998007dc9",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:11d62cac1e1752c71a3bd419d205154d6ed8db9562dcc2804589e70fa370ef99"
+      },
+      "image_ids": {
+        "api": "sha256:7c826498a7e07fbeae4addd428a24172488bf373888b39534d0245615273c1aa",
+        "web": "sha256:e23ec05e3c1b6efa89ba4d63f1436ff1876e77d58445a5df11a96921be16b16b"
+      },
+      "quality_run_id": "39091190708",
+      "candidate_run_id": "39091361249",
+      "rollback_version": "v0.26.0",
+      "rollback_commit_sha": "9b243f3bbfaeeb973494863d905eecc5f82a55d1",
+      "rollback_images": {
+        "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+        "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-006/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-006/stock-analyzer/candidate.json",
+    "releases/evidence/REL-20261018-006/investment-research-dashboard/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-006/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-18T02:56:47.675379+00:00"
+  },
+  "verification": {
+    "status": "DEGRADED_FIX_FORWARD",
+    "evidence": [
+      "changes/CHG-20261018-006.md"
+    ],
+    "known_limitations": [
+      "Deployment and existing smoke passed; live historical scan exposed an unbounded auxiliary minute COUNT DISTINCT lasting30s, exceeding Consumer20s. Fix-forward4.2.7 tracked inREL007; live replay continues and old179 records retained."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION",
+    "note": "Do not restore DB or delete old/new ledger."
+  },
+  "followup_release": "REL-20261018-007"
+}

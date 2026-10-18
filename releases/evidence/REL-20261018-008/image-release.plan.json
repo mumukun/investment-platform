@@ -1,0 +1,93 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-008",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户同轮要求解决数据缺口、周末/交易日正常展示及历史补算，延续开发后直接上线授权；本补丁防止下一交易日盘中再次误取日期产生空页。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "d723be3ccd7357b0589089c2b75c35ecf0686242",
+        "version": "4.2.8",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b7c0f824db4d55f0d4c287f1614f31b7d5d3fe96e6ce2986fd73d0f8ddbe4e30"
+        },
+        "image_ids": {
+          "app": "sha256:bd96f5b00c5b7df7c2ce244b0a697bb9354ea6f38e6c39ae94ad273bca786f9b"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "d723be3ccd7357b0589089c2b75c35ecf0686242",
+            "run_id": "39092532221"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:b7c0f824db4d55f0d4c287f1614f31b7d5d3fe96e6ce2986fd73d0f8ddbe4e30"
+            }
+          },
+          "candidate_run_id": "39092563501"
+        }
+      },
+      "tag": "v4.2.8",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.7",
+        "commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+        "image_ids": {
+          "stock-api": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a",
+          "stock-watch": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.7",
+        "commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+        "version": "4.2.7",
+        "images": {
+          "app": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Same CHG-20261018-006, Provider PR26 only. Bind existing close-result read to health_report.expected_trade_date. Dashboard0.26.1 and marketNewsFeed excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "One date argument, version and regression/docs change. No DDL, configuration, scoring/pricing/contract changes. Prevent newer intraday observations from replacing validated EOD session. Existing7-day replay and33 immutable simulated entries retained."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "408 unittest with5 existing skips,54 swing tests under owned isolatedPG; new default/weekend/next-session observation binding regression PASS. Config/compile/diff PASS. Main CI and candidate same-SHA fixture smoke PASS. Reuse unchanged consumer179Vitest/190backend/Ruff/build evidence fromREL006."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "REL006 completed real7-session replay:33 new entries,13 settled,7 quarantined stocks,2873 ready. REL007 optimized auxiliary query measured0.0551s using actual existing index and18 real dates. This patch only makes existing verified-session read explicit; final default/weekend/history API and retained179 legacy rows are verified after exact deployment."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No env, source, flags or credentials changes. Keep5.2, Dashboard3 true flags, existing NAS mihomo/proxy.sh downloads. No new network boundary."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Actual deployed4.2.7 exact SHA/digest/retained Image ID fromREL007 receipt. Image-only rollback; no DB restore or row removal. Existing deploy performs current protected backup, exact identity/health/smoke once. Known next-session date edge is fixed forward here."
+    }
+  }
+}

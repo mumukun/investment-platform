@@ -1,0 +1,69 @@
+{
+  "release_id": "REL-20261018-007",
+  "plan_hash": "1d1e9889065680e10739386d7ecb032bd2e644bd8813a8bf24a6bbbec7950191",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261018-007/stock-analyzer.dump",
+        "sha256": "ca24cfdecaa933be3c97908d4e47dbb462f31fc251a36d89b22b16f4bf9e8150",
+        "size": 470433089
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a",
+        "stock-watch": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-18T03:05:18.522780+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 17.146
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-18T03:05:36.638436+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 157.352
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-18T03:08:14.295985+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.34
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-18T03:08:14.892047+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 25.32
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-18T03:08:40.980741+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 14.584
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v4.2.7",
+      "commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:f09f0ad27742778320059a0877a2cf49ccc451c7195c73837af6762aad061ce9"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-18T03:08:56.211957+00:00"
+}

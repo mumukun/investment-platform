@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-007",
+  "status": "RELEASED",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-18T03:04:46.800503+00:00",
+  "changes": [
+    "CHG-20261018-006"
+  ],
+  "related_release": "REL-20261018-006",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户同轮明确要求解决波段页面正常运行并延续开发后直接上线授权；本补丁修复实际线上辅助查询30s导致20s超时的问题。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.6",
+      "new_version": "4.2.7",
+      "tag": "v4.2.7",
+      "commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:f09f0ad27742778320059a0877a2cf49ccc451c7195c73837af6762aad061ce9"
+      },
+      "image_ids": {
+        "app": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a"
+      },
+      "quality_run_id": "39092201881",
+      "candidate_run_id": "39092235376",
+      "rollback_version": "v4.2.6",
+      "rollback_commit_sha": "afb9b529fd85d5c5e0a2cd81b8035c311c220897",
+      "rollback_images": {
+        "app": "sha256:49d041e7fcbe90a994af54a57b503bb2e141bef026156d72cb367ccb87a8b03c"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-007/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-007/stock-analyzer/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-007/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-18T03:08:56.211957+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/CHG-20261018-006.md",
+      "releases/evidence/REL-20261018-007/query-latency.json",
+      "releases/evidence/REL-20261018-007/query-latency.json",
+      "releases/evidence/REL-20261018-007/selection-latency.json"
+    ],
+    "known_limitations": [
+      "Known quote gaps remain explicitly isolated; historical reconstruction labelled. Prior4.2.6 had slow auxiliary coverage query."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION_KNOWN_QUERY_LIMIT",
+    "note": "Image-only, no DB restore/deletion."
+  },
+  "followup_release": "REL-20261018-008"
+}
