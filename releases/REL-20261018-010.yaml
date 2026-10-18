@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-010",
+  "status": "RELEASED",
+  "created_at": "2026-10-18T12:19:26.623191+00:00",
+  "request_started_at_lower_bound": "2026-10-18T12:17:43+00:00",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261018-008",
+    "CHG-20261018-009",
+    "CHG-20261018-010"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确：提交代码吧 生产环境上线，包含已经提交代码未上线的其他功能。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.4.0",
+      "previous_version": "v4.3.0",
+      "rollback_version": "v4.3.0",
+      "commit_sha": "759c9c9bffe56d8848a86c676a227cedee91c72b",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/28",
+      "quality_run_id": "39126830233",
+      "candidate_run_id": "39126881883",
+      "tag": "v4.4.0",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:8b9cdcad4b3365ece74a20d58470860b6cb7c63fb1d80da5042e6273bc856e3f"
+      },
+      "image_ids": {
+        "app": "sha256:5fa413074af239e87d4f9b23ba88d87452400298aa4cf47f3166625d0a535783"
+      },
+      "rollback_commit_sha": "1f9ed1ad1ba3835981091af62c9bc76875bda3a7",
+      "rollback_images": {
+        "app": "sha256:da4105a4525a8601e3b8d3f3fe20ab2a85d34e7526b43a93554cf053dca013fd"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.28.0",
+      "previous_version": "v0.27.0",
+      "rollback_version": "v0.27.0",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/27",
+      "commit_sha": "122a79d6e970a302236600aa60d01c7aadbeb7bc",
+      "build_fix_pr": "https://github.com/mumukun/investment-research-dashboard/pull/28",
+      "quality_run_id": "39127506526",
+      "candidate_run_id": "39127733952",
+      "tag": "v0.28.0",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:427c46cb3f5b904e270a2baff08a2c965b78d19fe97809f53d8bccc5d0c0bf82",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b9444e80e74ed3b3c99e426967e9123ad538e5227fb89795aa69f2ef5fe30ab3"
+      },
+      "image_ids": {
+        "api": "sha256:36504a59806641a6cad6930fc72f55431e57ee8f717514344cadfb96126221da",
+        "web": "sha256:9d174f975529a360bc8251bdb255370d8e8cb63f16c7da137d6aec69ae13b821"
+      },
+      "rollback_commit_sha": "6504c478f5c680fb8c77472fbc4afb001e088267",
+      "rollback_images": {
+        "api": "sha256:94ab79c83f1701b1752bd354be6df9a1bf4d14d40cdc6f52fe52a3715009b436",
+        "web": "sha256:54c2c84d784368790267cd5cd7347bcfc55f71272fa2635bd6ff0f0144c04127"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-010/image-release.plan.json",
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/evidence/CHG-20261018-008/verification.json",
+      "changes/evidence/CHG-20261018-009/verification.json",
+      "changes/evidence/CHG-20261018-010/sina-live-verification.md"
+    ],
+    "combined_frontend": "192 PASS/39 files; type/build PASS; Ruff format/check PASS; documentation/version conflicts resolved retaining all changes",
+    "production_boundary": "releases/evidence/REL-20261018-010/production-boundary.json",
+    "technology_coverage": {
+      "indices": 15,
+      "quotes": 15,
+      "member_lists": 15,
+      "issues": 78,
+      "note": "Issues are retained, not all constituent fields guaranteed complete."
+    },
+    "sina_coverage": {
+      "asOf": "2026-10-16",
+      "total": 48,
+      "coverage": 48,
+      "quality": "healthy"
+    },
+    "sina_paper_members": {
+      "asOf": "2026-10-16",
+      "total": 22,
+      "sourceTotal": 24,
+      "excluded": 2,
+      "quality": "healthy",
+      "contract": "investment-dashboard-sina-members-v1"
+    },
+    "entry_http": {
+      "status": 200,
+      "url": "http://100.86.90.115:9360/",
+      "connection": "direct Tailscale (noproxy)",
+      "note": "Default local curl proxy returned502; direct internal path returned200. No production or local proxy configuration changed."
+    }
+  },
+  "known_limitations": [
+    "Sina industry minutes unavailable due consistency verification failure; industry daily funds and stock drilldown available.",
+    "Some individual stock fields missing; Sina legacy industry membership may be stale; no claims of exact index contributions.",
+    "No new production browser/keyboard visual pass; reuse verified matrix/stock UI checks and exact built artifact.",
+    "Technology source reports78 issues; all15 index quotes/member lists available, individual fields may be missing."
+  ],
+  "timing_note": "Earliest recorded execution clock; request and initial rule reads preceded it. Report elapsed lower bound including merge/CI/build/deploy.",
+  "integration_resolution": "Only appended docs/changelogs and same-package version metadata conflicted; retained all feature content, unified Dashboard 0.28.0 and Provider4.4.0. Combined frontend192 tests/build and formatting passed.",
+  "failed_candidate_runs": [
+    {
+      "run_id": "39127285036",
+      "commit_sha": "2463ad79fe2d17da2bc773815706c3416beca1f3",
+      "reason": "Web typecheck fixtures absent from Docker build context; API image passed; no candidate published."
+    }
+  ],
+  "freeze_revision": {
+    "failed_dashboard_sha": "2463ad79fe2d17da2bc773815706c3416beca1f3",
+    "fixed_dashboard_sha": "122a79d6e970a302236600aa60d01c7aadbeb7bc",
+    "reason": "Two JSON build fixture COPY lines; no business semantics, tests or runtime image content changes; no tags/deployment started. Reprepare same release before first NAS plan submission."
+  },
+  "build_fix_validation": "Fixed main CI39127506526 passed. Two added COPY lines preserve strict typecheck and dist-only runtime image. Failed candidate39127285036 retained in record; only new122a79d candidate may deploy.",
+  "deployment_started_at": "2026-10-18T12:36:21.513909+00:00",
+  "released_at": "2026-10-18T12:44:13.868333+00:00",
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "receipt": "releases/evidence/REL-20261018-010/deployment.receipt.json"
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION",
+    "note": "Previous4.3.0/0.27.0 images and protected readable backups retained. No automatic DB downgrade or drills."
+  },
+  "access_url": "http://100.86.90.115:9360/",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-010/deployment.receipt.json"
+  ],
+  "timing": {
+    "elapsed_seconds_lower_bound": 1591,
+    "deployment_seconds": 337.8,
+    "backup_seconds": 174.0,
+    "target_exceeded_reason": "Three unmerged features combined; two-repository PR/main CI and candidate builds, Web build-context fixture omission fixed and revalidated, then production pulls/readable backups/startup/smoke. Includes waiting; no user approval wait."
+  }
+}

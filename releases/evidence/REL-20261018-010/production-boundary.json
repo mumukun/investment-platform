@@ -1,0 +1,33 @@
+{
+  "environment": "Production",
+  "scope": "changed Sina/technology boundaries",
+  "industries": {
+    "asOf": "2026-10-16",
+    "total": 48,
+    "coverage": 48,
+    "quality": "healthy"
+  },
+  "paperMembers": {
+    "asOf": "2026-10-16",
+    "total": 22,
+    "sourceTotal": 24,
+    "excluded": 2,
+    "quality": "healthy",
+    "contract": "investment-dashboard-sina-members-v1"
+  },
+  "technology": {
+    "boards": 15,
+    "mapping": "tech-board-sources-v2",
+    "quotes": 15,
+    "memberLists": 15,
+    "issues": 78
+  },
+  "dashboardRuntime": {
+    "app_version": "0.28.0",
+    "git_commit": "122a79d6e970a302236600aa60d01c7aadbeb7bc",
+    "build_time": "2026-10-18T12:32:58Z",
+    "environment": "production",
+    "api_version": "v1"
+  },
+  "result": "PASS"
+}

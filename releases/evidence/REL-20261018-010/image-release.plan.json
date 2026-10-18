@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-010",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确“提交代码吧 生产环境上线，包含已经提交代码未上线的其他功能”"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "759c9c9bffe56d8848a86c676a227cedee91c72b",
+        "version": "4.4.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:8b9cdcad4b3365ece74a20d58470860b6cb7c63fb1d80da5042e6273bc856e3f"
+        },
+        "image_ids": {
+          "app": "sha256:5fa413074af239e87d4f9b23ba88d87452400298aa4cf47f3166625d0a535783"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "759c9c9bffe56d8848a86c676a227cedee91c72b",
+            "run_id": "39126830233"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:8b9cdcad4b3365ece74a20d58470860b6cb7c63fb1d80da5042e6273bc856e3f"
+            }
+          },
+          "candidate_run_id": "39126881883"
+        }
+      },
+      "tag": "v4.4.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.3.0",
+        "commit_sha": "1f9ed1ad1ba3835981091af62c9bc76875bda3a7",
+        "image_ids": {
+          "stock-api": "sha256:da4105a4525a8601e3b8d3f3fe20ab2a85d34e7526b43a93554cf053dca013fd",
+          "stock-watch": "sha256:da4105a4525a8601e3b8d3f3fe20ab2a85d34e7526b43a93554cf053dca013fd"
+        }
+      },
+      "rollback": {
+        "tag": "v4.3.0",
+        "commit_sha": "1f9ed1ad1ba3835981091af62c9bc76875bda3a7",
+        "version": "4.3.0",
+        "images": {
+          "app": "sha256:da4105a4525a8601e3b8d3f3fe20ab2a85d34e7526b43a93554cf053dca013fd"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "122a79d6e970a302236600aa60d01c7aadbeb7bc",
+        "version": "0.28.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:427c46cb3f5b904e270a2baff08a2c965b78d19fe97809f53d8bccc5d0c0bf82",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b9444e80e74ed3b3c99e426967e9123ad538e5227fb89795aa69f2ef5fe30ab3"
+        },
+        "image_ids": {
+          "api": "sha256:36504a59806641a6cad6930fc72f55431e57ee8f717514344cadfb96126221da",
+          "web": "sha256:9d174f975529a360bc8251bdb255370d8e8cb63f16c7da137d6aec69ae13b821"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "122a79d6e970a302236600aa60d01c7aadbeb7bc",
+            "run_id": "39127506526"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:427c46cb3f5b904e270a2baff08a2c965b78d19fe97809f53d8bccc5d0c0bf82",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b9444e80e74ed3b3c99e426967e9123ad538e5227fb89795aa69f2ef5fe30ab3"
+            }
+          },
+          "candidate_run_id": "39127733952"
+        }
+      },
+      "tag": "v0.28.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.27.0",
+        "commit_sha": "6504c478f5c680fb8c77472fbc4afb001e088267",
+        "image_ids": {
+          "api": "sha256:94ab79c83f1701b1752bd354be6df9a1bf4d14d40cdc6f52fe52a3715009b436",
+          "web": "sha256:54c2c84d784368790267cd5cd7347bcfc55f71272fa2635bd6ff0f0144c04127"
+        },
+        "build_time": "2026-10-18T06:04:05Z"
+      },
+      "rollback": {
+        "tag": "v0.27.0",
+        "commit_sha": "6504c478f5c680fb8c77472fbc4afb001e088267",
+        "version": "0.27.0",
+        "images": {
+          "api": "sha256:94ab79c83f1701b1752bd354be6df9a1bf4d14d40cdc6f52fe52a3715009b436",
+          "web": "sha256:54c2c84d784368790267cd5cd7347bcfc55f71272fa2635bd6ff0f0144c04127"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261018-008/009/010:15 technology index references and A/H constituents; ladder page-scroll/design fix; Sina industry daily funds and stock drilldown. Provider PR28 and Dashboard PR27 merged; no marketNewsFeed changes. Dashboard build-context fix PR28 merged to122a79d; main CI39127506526 and candidate39127733952 successful; Provider frozen759c9c9 unchanged. Previous failed candidate never deployed."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No new services, dependencies, destructive DDL or configuration. Sina independent source contracts/versions and snapshots preserve legacy archives. Technology mapping-v2 accepted alongside v1 by new consumer; old consumer retains last-good during upstream-first transition. No index OHLC or minute main-money amounts fabricated."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Reuse changes/evidence/CHG-20261018-008/verification.json,009/verification.json,010/sina-live-verification.md: isolated PG/contracts/UI verified; integrated192 frontend tests/type/build and Ruff format/check PASS. Exact-main CI/candidate required separately; no blanket restore/drill."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Change008 official CNI capture:15 references and688 membership relations. Change010 actual Sina48 industries, industry daily histories,2829 stock records,2593 retained/2457 complete-window flows; local real HTTP Provider->Consumer/PG verified. Partial stock gaps and legacy classification explicit; Sina minute consistency failed and scope unavailable. Production changed-boundary cache/API-client verification planned once after standard smoke."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Reuse verified current configuration from REL-20261018-009 and docs/nas-outbound-proxy.md; no new flags/credentials. Preserve current three Dashboard flags, NAS mihomo127.0.0.1:7890 for downloads; internal APIs/DB direct. Standard deploy checks actual build args/drift."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current verified Production4.3.0 and0.27.0 exact Tags/SHAs/retained image IDs from PRODUCTION_BASELINE.yaml. Standard deploy enforces real identity and one protected readable backup; rollback image-only, preserve facts, no automatic DB downgrade."
+    }
+  }
+}

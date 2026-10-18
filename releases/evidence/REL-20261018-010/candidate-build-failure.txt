@@ -1,0 +1,4 @@
+Dashboard Candidate images run39127285036 on2463ad79fe2d17da2bc773815706c3416beca1f3:
+API job success; Web job failed before image publication, no complete candidate, no tags/production switch.
+Web npm build failed with TS2307 for imports ../../backend/tests/fixtures/sector_fund_members.json and tech_board_expanded_envelope.json; resulting inferred-any errors in TechBoardView.spec.ts were secondary.
+Dockerfile only copied seat_tracking_v1.json, while local/CI checkout contained the two new fixtures. Fix uses existing COPY pattern for those two tracked files. Tests and strict type checking remain enabled; Nginx runtime still copies dist only.
