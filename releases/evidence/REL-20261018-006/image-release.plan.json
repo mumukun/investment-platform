@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-006",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户同一会话要求开发完成直接上线；当前明确要求修复7股阻断、周日显示周五及回推5交易日。此为该线上修复，延续提交/合并/正式上线授权。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "afb9b529fd85d5c5e0a2cd81b8035c311c220897",
+        "version": "4.2.6",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b7f18c90eab0464d0af6e82fbfdd0e91fc11e4a7ffe7feccc26c7bf9483240e6"
+        },
+        "image_ids": {
+          "app": "sha256:49d041e7fcbe90a994af54a57b503bb2e141bef026156d72cb367ccb87a8b03c"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "afb9b529fd85d5c5e0a2cd81b8035c311c220897",
+            "run_id": "39091028241"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:b7f18c90eab0464d0af6e82fbfdd0e91fc11e4a7ffe7feccc26c7bf9483240e6"
+            }
+          },
+          "candidate_run_id": "39091063992"
+        }
+      },
+      "tag": "v4.2.6",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.5",
+        "commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
+        "image_ids": {
+          "stock-api": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5",
+          "stock-watch": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.5",
+        "commit_sha": "e7c69ef618038d646ddfe4b823c129cdcdb6d426",
+        "version": "4.2.5",
+        "images": {
+          "app": "sha256:73a963b5432042866bb0a3b50b269f5b008e87ae254f3f14d592d90d6c3d5eb5"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "e70efe7b30443912e6677dbfbb96da1c9d4b8e40",
+        "version": "0.26.1",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:57efd7725826f1165d067d4a891c8be1539a98dd3dbc014d72ff62c998007dc9",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:11d62cac1e1752c71a3bd419d205154d6ed8db9562dcc2804589e70fa370ef99"
+        },
+        "image_ids": {
+          "api": "sha256:7c826498a7e07fbeae4addd428a24172488bf373888b39534d0245615273c1aa",
+          "web": "sha256:e23ec05e3c1b6efa89ba4d63f1436ff1876e77d58445a5df11a96921be16b16b"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "e70efe7b30443912e6677dbfbb96da1c9d4b8e40",
+            "run_id": "39091190708"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:57efd7725826f1165d067d4a891c8be1539a98dd3dbc014d72ff62c998007dc9",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:11d62cac1e1752c71a3bd419d205154d6ed8db9562dcc2804589e70fa370ef99"
+            }
+          },
+          "candidate_run_id": "39091361249"
+        }
+      },
+      "tag": "v0.26.1",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.26.0",
+        "commit_sha": "9b243f3bbfaeeb973494863d905eecc5f82a55d1",
+        "image_ids": {
+          "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+          "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
+        },
+        "build_time": "2026-10-17T19:51:06Z"
+      },
+      "rollback": {
+        "tag": "v0.26.0",
+        "commit_sha": "9b243f3bbfaeeb973494863d905eecc5f82a55d1",
+        "version": "0.26.0",
+        "images": {
+          "api": "sha256:e3b149cca585b99fbfad463be25e64e5cc9eff497a8d912c56ee16b6423b889e",
+          "web": "sha256:ffa0d8c947ecd8e08d0c8e4eab2e02008593b98503c2bd2d6fda5711c3fc8bf6"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261018-006 only: stock-analyzer PR24 and Dashboard PR25. Local-gap isolation, last real session display and recent chronological close-ledger replay. marketNewsFeed excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No DDL, credentials, config, strategy thresholds/weights, pricing or contract-version changes. Optional data_health fields, partial state and existing Provider observation-date query exposed to consumer. Full completeness remains passed=false for partial data; only affected stocks/sectors quarantined. Historical reads do not mutate scan facts. 120-vs140 scoring-feature equivalence tested."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Provider406 unittest with5 pre-existing skips, including52 isolated-PG quality/ledger tests;25 specialist pytest. Dashboard190 pytest on own fresh PG,17 affected swing API checks after archive guard,179 Vitest,Ruff and production build pass. Unrelated seat_tracking local tests require a hardcoded test port and were excluded locally; exact main CI covers supported fixture env. Same-SHA candidate fixture smoke passes, not claimed as live-data evidence."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Actual running4.2.5/0.26.0 identities verified. Production has5577 directory entries, actual Friday quotations and prior per-day archived inputs.7 known affected stocks/8 mandatory gaps are preserved, never fabricated. Replay uses actual calendar, same-batch prices bounded by decision day and earlier industry membership; incomplete inputs are explicitly quarantined. Changed live-data path is verified after protected backup/deployment and chronological replay; no claim of full market historical completeness."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No env or feature-flag change; retain existing three Dashboard build flags. Existing NAS mihomo127.0.0.1:7890 and proxy.sh used for external downloads. No daemon restart, credential/source/node changes or new paid services."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified retained Production v4.2.5 and v0.26.0 exact image IDs. Existing controller validates baseline, readable protected backups, exact artifacts, health and smoke once. Additive replay preserves old179 records; rollback is image-only, no DB restore/deletion."
+    }
+  }
+}

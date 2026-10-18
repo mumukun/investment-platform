@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-008",
+  "status": "RELEASED",
+  "release_profile": "routine_hotfix",
+  "created_at": "2026-10-18T03:09:56.761402+00:00",
+  "changes": [
+    "CHG-20261018-006"
+  ],
+  "related_release": "REL-20261018-007",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户同轮要求解决数据缺口、周末/交易日正常展示及历史补算，延续开发后直接上线授权；本补丁防止下一交易日盘中再次误取日期产生空页。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.7",
+      "new_version": "4.2.8",
+      "tag": "v4.2.8",
+      "commit_sha": "d723be3ccd7357b0589089c2b75c35ecf0686242",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b7c0f824db4d55f0d4c287f1614f31b7d5d3fe96e6ce2986fd73d0f8ddbe4e30"
+      },
+      "image_ids": {
+        "app": "sha256:bd96f5b00c5b7df7c2ce244b0a697bb9354ea6f38e6c39ae94ad273bca786f9b"
+      },
+      "quality_run_id": "39092532221",
+      "candidate_run_id": "39092563501",
+      "rollback_version": "v4.2.7",
+      "rollback_commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+      "rollback_images": {
+        "app": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-008/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261018-008/stock-analyzer/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-008/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOYED",
+    "completed_at": "2026-10-18T03:14:50.632129+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/CHG-20261018-006.md",
+      "releases/evidence/REL-20261018-008/boundary-final.json"
+    ],
+    "known_limitations": [
+      "Known quote gaps remain explicitly isolated; historical reconstruction labelled. No live next-weekday session exists on Sunday; next-session boundary uses fixture evidence."
+    ],
+    "summary": {
+      "actual_default_trade_date": "2026-10-16",
+      "candidates": 788,
+      "decisions": {
+        "可计划参与": 4,
+        "暂缓参与": 718,
+        "禁止追高": 65,
+        "不参与": 1
+      },
+      "new_simulated_entries": 33,
+      "settled": 13,
+      "legacy_retained": 179
+    }
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION_DATE_EDGE",
+    "note": "Image-only, retain completed replay and33 immutable entries; no DB restore/deletion."
+  },
+  "updated_at": "2026-10-18T03:15:40.834432+00:00",
+  "timing": {
+    "first_local_change_record_at": "2026-10-18T02:33:17.451939+00:00",
+    "completed_at": "2026-10-18T03:15:40.834432+00:00",
+    "seconds_since_first_record": 2543,
+    "user_approval_wait_seconds": 0,
+    "basis": "Lower bound from first local Change record; initial request/preflight before file creation not exactly timed. Includes development/CI/replay/deployment/fix-forward waits, not only deploy duration. Target300s exceeded; actual stage times remain in three receipts."
+  }
+}

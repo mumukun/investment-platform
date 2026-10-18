@@ -1,0 +1,7 @@
+# CHG-20261018-006 development validation
+
+- Provider full unittest: 406, PASS, 5 existing skips. Includes52 owned isolated PostgreSQL quality/ledger/sector tests. Fixture-only, no production credentials or external requests. Tests local-gap isolation, public-input blocking, ledger exclusion guard, real calendar, same-batch historical prices, earlier industry membership, and120/140 feature equivalence.
+- Provider specialist pytest:25 PASS; configuration, compileall and diff checks PASS.
+- Dashboard fresh owned PostgreSQL:190 pytest PASS (seat_tracking file excluded because its guard hardcodes another local port; no unrelated test modified).17 affected swing API checks PASS after archive-preservation guard.179 Vitest PASS; Ruff and production Vue/TypeScript build PASS.
+- Initial full local backend attempt:206 passed,9 unrelated hardcoded-port guards refused this owned test DB. A repeated test DB caused one unrelated reviews/latest seed fixture failure; a new owned DB passed190. Neither failure was hidden or tested against another task DB. Full main CI validates supported fixture environment.
+- Source and Dashboard contracts remain selection-v3/stats-v3/history-v3, old history-v2 preserved. New optional data_health fields distinguish completeness from publication. Actual live changed-path evidence follows exact artifact deployment and authorized chronological replay; these fixture results do not assert production success.

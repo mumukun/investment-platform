@@ -1,0 +1,1 @@
+{"elapsed_seconds": 0.0551, "days": 18, "nodes": [{"type": "Aggregate", "index": null}, {"type": "Nested Loop", "index": null}, {"type": "Function Scan", "index": null}, {"type": "Index Only Scan", "index": "idx_intraday_stock_bar_day_code_minute"}]}

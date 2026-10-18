@@ -1,0 +1,66 @@
+state rebuild 2026-10-08: pool=871 upgraded=871 regime=快速轮动
+state rebuild 2026-10-09: pool=944 upgraded=414 regime=健康轮动
+state rebuild 2026-10-12: pool=961 upgraded=355 regime=退潮
+state rebuild 2026-10-13: pool=983 upgraded=282 regime=健康轮动
+state rebuild 2026-10-14: pool=969 upgraded=258 regime=退潮
+state rebuild 2026-10-15: pool=921 upgraded=195 regime=退潮
+state rebuild 2026-10-16: pool=955 upgraded=179 regime=健康轮动
+{
+  "rules_version": "swing-rules-v5.2.0",
+  "through_date": "2026-10-16",
+  "dates": [
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16"
+  ],
+  "count": 7,
+  "dry_run": false,
+  "results": [
+    {
+      "trade_date": "2026-10-08",
+      "pool": 871,
+      "upgraded": 871,
+      "regime": "快速轮动"
+    },
+    {
+      "trade_date": "2026-10-09",
+      "pool": 944,
+      "upgraded": 414,
+      "regime": "健康轮动"
+    },
+    {
+      "trade_date": "2026-10-12",
+      "pool": 961,
+      "upgraded": 355,
+      "regime": "退潮"
+    },
+    {
+      "trade_date": "2026-10-13",
+      "pool": 983,
+      "upgraded": 282,
+      "regime": "健康轮动"
+    },
+    {
+      "trade_date": "2026-10-14",
+      "pool": 969,
+      "upgraded": 258,
+      "regime": "退潮"
+    },
+    {
+      "trade_date": "2026-10-15",
+      "pool": 921,
+      "upgraded": 195,
+      "regime": "退潮"
+    },
+    {
+      "trade_date": "2026-10-16",
+      "pool": 955,
+      "upgraded": 179,
+      "regime": "健康轮动"
+    }
+  ]
+}

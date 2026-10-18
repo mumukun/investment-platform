@@ -1,0 +1,93 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261018-007",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户同轮明确要求解决波段页面正常运行并延续开发后直接上线授权；本补丁修复实际线上辅助查询30s导致20s超时的问题。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+        "version": "4.2.7",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f09f0ad27742778320059a0877a2cf49ccc451c7195c73837af6762aad061ce9"
+        },
+        "image_ids": {
+          "app": "sha256:1fec90a2d5ec0ca0ec25a0950b831c507c1b4a977d48a46e9c72fe85ae36480a"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "68cf0acd38de081cf30633e9570fb1c0be4f754d",
+            "run_id": "39092201881"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:f09f0ad27742778320059a0877a2cf49ccc451c7195c73837af6762aad061ce9"
+            }
+          },
+          "candidate_run_id": "39092235376"
+        }
+      },
+      "tag": "v4.2.7",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.2.6",
+        "commit_sha": "afb9b529fd85d5c5e0a2cd81b8035c311c220897",
+        "image_ids": {
+          "stock-api": "sha256:49d041e7fcbe90a994af54a57b503bb2e141bef026156d72cb367ccb87a8b03c",
+          "stock-watch": "sha256:49d041e7fcbe90a994af54a57b503bb2e141bef026156d72cb367ccb87a8b03c"
+        }
+      },
+      "rollback": {
+        "tag": "v4.2.6",
+        "commit_sha": "afb9b529fd85d5c5e0a2cd81b8035c311c220897",
+        "version": "4.2.6",
+        "images": {
+          "app": "sha256:49d041e7fcbe90a994af54a57b503bb2e141bef026156d72cb367ccb87a8b03c"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Continue CHG-20261018-006 only; Provider PR25 from actual deployed4.2.6. Only minute coverage query changes. Dashboard0.26.1 and marketNewsFeed excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No DDL, config, scoring thresholds, pricing or contract change. New5.2 auxiliary history count uses existing indexed existence facts over20 prior real sessions; per-stock minute quality unchanged. Legacy5.1 count semantics untouched."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "407 full unittest with5 existing skips including53 swing tests under owned isolatedPG; configuration/compile/diff PASS. Exact main CI and candidate fixture smoke PASS. Existing consumer0.26.1 contract/UI evidence fromREL006 reused, not rerun."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Live4.2.6 replay produced871/944/961/983 candidates acrossOct8/9/12/13. Actual pg_stat_activity showed old full COUNT DISTINCT DataFileRead30s exceeding Consumer20s. New query measured0.0551s on live read-only data,18 actual prior sessions, Nested Loop plus existing idx_intraday_stock_bar_day_code_minute Index Only Scan (query-latency.json). Final API latency and Friday/history evidence follow exact deployment. No synthetic inputs or source/strategy change."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "ReuseREL006 unchanged5.2 settings, proxy, provider endpoint/auth and Dashboard3 true flags. NAS external downloads via existing mihomo/proxy.sh. No restart/credentials changes beyond exact app replacement."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified actual4.2.6 tag/SHA/image fromREL006 deployment. Retain image-only rollback with known slow auxiliary query; do not claim prior data path met latency, restore DB or erase new simulated entries. Standard controller enforces protected current backup, identity, health/smoke."
+    }
+  }
+}
