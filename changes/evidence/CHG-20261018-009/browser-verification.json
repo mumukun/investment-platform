@@ -1,0 +1,64 @@
+{
+  "desktop": {
+    "bodyClientHeight": 6047,
+    "bodyScrollHeight": 6047,
+    "bodyScrollTop": 0,
+    "headerTop": 68,
+    "pageY": 2860,
+    "topbarBottom": 68
+  },
+  "horizontal": {
+    "alignment": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "bodyLeft": 21,
+    "bodyLeftEdge": 213,
+    "headLeft": 21,
+    "industryLeft": 213,
+    "pageWidth": 1280
+  },
+  "bottom": {
+    "bodyScrollTop": 0,
+    "lastIndustry": "石油石化2 只 · 最高 3 板",
+    "lastRowBottom": 875,
+    "pageY": 5728.5,
+    "viewportHeight": 900
+  },
+  "mobile": {
+    "alignment": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "bodyHeight": 7646,
+    "bodyScrollHeight": 7646,
+    "bodyScrollTop": 0,
+    "contrast": {
+      "header": 15.54,
+      "industryNote": 5.1,
+      "neutralTag": 5.1,
+      "oneWordTag": 5.04,
+      "up": 5.41
+    },
+    "headerTop": 62,
+    "pageWidth": 320,
+    "pageY": 1123.5,
+    "topbarBottom": 62,
+    "truncatedFacts": 0,
+    "viewport": 320
+  },
+  "compact": {
+    "emptyCells": 0,
+    "headers": 0,
+    "pageWidth": 320,
+    "stocks": 59
+  },
+  "console": [],
+  "scope": "Local explicitly MOCK rendering of real App and LimitUpLadderView; no production or live backend"
+}
