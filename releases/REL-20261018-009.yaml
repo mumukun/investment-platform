@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261018-009",
+  "status": "RELEASED",
+  "release_profile": "routine_feature",
+  "created_at": "2026-10-18T06:05:32.240174+00:00",
+  "request_started_at_lower_bound": "2026-10-18T05:39:13+00:00",
+  "changes": [
+    "CHG-20261018-007"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确“好的开发上线吧”“修改完成就上线吧”，确认短线模块；异步确认止盈采用3%作为第一版待验证参数。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.2.8",
+      "new_version": "4.3.0",
+      "tag": "v4.3.0",
+      "commit_sha": "1f9ed1ad1ba3835981091af62c9bc76875bda3a7",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:68f4238ccf6d1ae2b7a7ad1033add63f1b0771839706122e19420ce1ecbea706"
+      },
+      "image_ids": {
+        "app": "sha256:da4105a4525a8601e3b8d3f3fe20ab2a85d34e7526b43a93554cf053dca013fd"
+      },
+      "quality_run_id": "39102443797",
+      "candidate_run_id": "39102478791",
+      "rollback_version": "v4.2.8",
+      "rollback_commit_sha": "d723be3ccd7357b0589089c2b75c35ecf0686242",
+      "rollback_images": {
+        "app": "sha256:bd96f5b00c5b7df7c2ce244b0a697bb9354ea6f38e6c39ae94ad273bca786f9b"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.26.1",
+      "new_version": "0.27.0",
+      "tag": "v0.27.0",
+      "commit_sha": "6504c478f5c680fb8c77472fbc4afb001e088267",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:fc9a4a9977e709b9b5b2f058da5ee77e1d3883e5cfccfad1f9a2e46302619099",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:21d6802731a72a1ade570b5559605e17034c448b8c682bbac6cd31ad74a1a1ad"
+      },
+      "image_ids": {
+        "api": "sha256:94ab79c83f1701b1752bd354be6df9a1bf4d14d40cdc6f52fe52a3715009b436",
+        "web": "sha256:54c2c84d784368790267cd5cd7347bcfc55f71272fa2635bd6ff0f0144c04127"
+      },
+      "quality_run_id": "39102563279",
+      "candidate_run_id": "39102709126",
+      "rollback_version": "v0.26.1",
+      "rollback_commit_sha": "e70efe7b30443912e6677dbfbb96da1c9d4b8e40",
+      "rollback_images": {
+        "api": "sha256:7c826498a7e07fbeae4addd428a24172488bf373888b39534d0245615273c1aa",
+        "web": "sha256:e23ec05e3c1b6efa89ba4d63f1436ff1876e77d58445a5df11a96921be16b16b"
+      }
+    }
+  ],
+  "excluded_repositories": [
+    "marketNewsFeed"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261018-009/image-release.plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261018-009/deployment.receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "receipt": "releases/evidence/REL-20261018-009/deployment.receipt.json"
+  },
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/evidence/CHG-20261018-007/verification.md",
+      "changes/evidence/CHG-20261018-007/boundary.json",
+      "releases/evidence/REL-20261018-009/short-business-verification.txt"
+    ],
+    "known_limitations": [
+      "Theoretical daily-high limit-touch fill does not guarantee real execution; before costs; exact intraday fill time unavailable.",
+      "Historical samples require stored same-day closing evidence; no invented buys from intraday or later recomputed signals.",
+      "No live trading day occurs on deployment Sunday;3% parameter not validated as optimal.",
+      "Production browser/mobile keyboard inspection not performed."
+    ]
+  },
+  "rollback": {
+    "status": "VERIFIED_RETAINED_PRODUCTION",
+    "note": "Image-only, additive tables retained; no DB restore/deletion."
+  },
+  "released_at": "2026-10-18T06:13:15.592661+00:00",
+  "timing": {
+    "start_basis": "earliest observed execution clock; includes development, local checks, commits/merges and CI/candidate waits; exact initial submit slightly earlier",
+    "elapsed_seconds_lower_bound": 2043,
+    "target_exceeded_reason": "Request required feature development, isolated database/contract/UI verification, two repositories CI/candidate builds and protected production backups; not only deployment."
+  }
+}

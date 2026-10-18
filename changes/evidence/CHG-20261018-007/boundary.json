@@ -1,0 +1,48 @@
+{
+  "kind": "isolated_synthetic_integration",
+  "production": false,
+  "generated_at": "2026-10-18T05:56:48.686988+00:00",
+  "chain": "PostgreSQL close snapshots -> Provider HTTP/auth -> Consumer HTTP/parser -> Dashboard read routes",
+  "replay": {
+    "inserted": 2,
+    "already_recorded": 0,
+    "open_position": 0,
+    "missing_close": 0,
+    "ineligible": 0,
+    "closed_batches": 2,
+    "dry_run": false
+  },
+  "count": 2,
+  "settled": 1,
+  "pending": 1,
+  "return_pct": 3.0,
+  "exit_price": 103.0,
+  "historical_no_future": true,
+  "reads_do_not_insert_trades": true,
+  "dry_run_does_not_insert_trades": true,
+  "dry_run_report": {
+    "entries": {
+      "inserted": 2,
+      "already_recorded": 0,
+      "open_position": 0,
+      "missing_close": 0,
+      "ineligible": 0,
+      "closed_batches": 2,
+      "dry_run": true
+    },
+    "prices": {
+      "requested": 0,
+      "refreshed": 0,
+      "failed_codes": [],
+      "dry_run": true
+    }
+  },
+  "unauthorized_status": 401,
+  "bad_range_status": 422,
+  "contracts": [
+    "investment-dashboard-short-tracking-v1",
+    "investment-dashboard-short-stats-v1"
+  ],
+  "tracking_version": "short-nextday-tp-close-v1",
+  "status": "PASS"
+}
