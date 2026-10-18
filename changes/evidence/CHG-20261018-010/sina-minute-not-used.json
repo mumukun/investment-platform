@@ -1,0 +1,66 @@
+{
+  "evidence": "ACTUAL_PUBLIC_SOURCE_NOT_ACCEPTED_FOR_CHART",
+  "industry": "new_zzhy",
+  "method": "MoneyFlow.ssx_bkzj_fszs",
+  "params": {
+    "page": 1,
+    "num": 300,
+    "sort": "time",
+    "bankuai": "new_zzhy"
+  },
+  "count": "241",
+  "minuteSample": [
+    {
+      "opendate": "2026-10-16",
+      "ticktime": "15:00:00",
+      "avg_price": "5.1462",
+      "avg_changeratio": "-0.00460775",
+      "inamount": "1379983411.0200",
+      "outamount": "1630348393.8200",
+      "netamount": "-250364982.8000",
+      "ratioamount": "-0.0818756",
+      "r0_ratio": "-0.0387256",
+      "r3_ratio": "-0.00187739"
+    },
+    {
+      "opendate": "2026-10-16",
+      "ticktime": "14:59:00",
+      "avg_price": "8.8245",
+      "avg_changeratio": "0.0111123",
+      "inamount": "39393451.0000",
+      "outamount": "28240111.0000",
+      "netamount": "11153340.0000",
+      "ratioamount": "0.164181",
+      "r0_ratio": "0.0158484",
+      "r3_ratio": "0.0367567"
+    },
+    {
+      "opendate": "2026-10-16",
+      "ticktime": "14:58:00",
+      "avg_price": "3.0281",
+      "avg_changeratio": "0.00489691",
+      "inamount": "398137951.9300",
+      "outamount": "434997916.2700",
+      "netamount": "-36859964.3400",
+      "ratioamount": "-0.0445471",
+      "r0_ratio": "0.0128946",
+      "r3_ratio": "-0.0222165"
+    }
+  ],
+  "dailyMethod": "MoneyFlow.ssl_bkzj_zjlrqs",
+  "dailySample": [
+    {
+      "opendate": "2026-10-16",
+      "avg_price": "5.0176",
+      "avg_changeratio": "-0.00192713",
+      "turnover": "276.208",
+      "netamount": "-261347013.8700",
+      "ratioamount": "-0.0600062",
+      "r0_net": "-23361328.0500",
+      "r0_ratio": "-0.00536385",
+      "r0x_ratio": "-109.762",
+      "cnt_r0x_ratio": "-2"
+    }
+  ],
+  "decision": "未核验分钟范围一致性；不将该响应绘图，不从ratio推造主力金额。"
+}

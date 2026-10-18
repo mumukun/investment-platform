@@ -1,0 +1,1813 @@
+{
+  "change": "CHG-20261018-010",
+  "evidence": "ACTUAL_PUBLIC_SINA_CAPTURE_AND_ISOLATED_LOCAL_HTTP",
+  "production": false,
+  "asOf": "2026-10-16",
+  "sourceUrl": "https://vip.stock.finance.sina.com.cn/moneyflow/",
+  "industryCount": 48,
+  "sourceRecords": 2829,
+  "displayRecords": 2593,
+  "uniqueDisplayStocks": 2589,
+  "excludedRecords": 236,
+  "validWindowFunds": {
+    "3": 2457,
+    "5": 2457,
+    "10": 2457
+  },
+  "captureSha256": "af9be3f6dac3893bc0b4f6860e8fc48267270f9042956e00a5e946b6636b2c8c",
+  "sourceResults": [
+    {
+      "code": "new_blhy",
+      "name": "玻璃行业",
+      "sourceTotal": 19,
+      "included": 19,
+      "excluded": 0,
+      "valid": {
+        "3": 19,
+        "5": 19,
+        "10": 19
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_cbzz",
+      "name": "船舶制造",
+      "sourceTotal": 8,
+      "included": 8,
+      "excluded": 0,
+      "valid": {
+        "3": 7,
+        "5": 7,
+        "10": 7
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_cmyl",
+      "name": "传媒娱乐",
+      "sourceTotal": 40,
+      "included": 36,
+      "excluded": 4,
+      "valid": {
+        "3": 36,
+        "5": 36,
+        "10": 36
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_dlhy",
+      "name": "电力行业",
+      "sourceTotal": 62,
+      "included": 60,
+      "excluded": 2,
+      "valid": {
+        "3": 60,
+        "5": 60,
+        "10": 60
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_dqhy",
+      "name": "电器行业",
+      "sourceTotal": 58,
+      "included": 56,
+      "excluded": 2,
+      "valid": {
+        "3": 54,
+        "5": 54,
+        "10": 54
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_dzqj",
+      "name": "电子器件",
+      "sourceTotal": 152,
+      "included": 148,
+      "excluded": 4,
+      "valid": {
+        "3": 141,
+        "5": 141,
+        "10": 141
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_dzxx",
+      "name": "电子信息",
+      "sourceTotal": 245,
+      "included": 229,
+      "excluded": 16,
+      "valid": {
+        "3": 217,
+        "5": 217,
+        "10": 217
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_fdc",
+      "name": "房地产",
+      "sourceTotal": 123,
+      "included": 114,
+      "excluded": 9,
+      "valid": {
+        "3": 98,
+        "5": 98,
+        "10": 98
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_fdsb",
+      "name": "发电设备",
+      "sourceTotal": 65,
+      "included": 60,
+      "excluded": 5,
+      "valid": {
+        "3": 59,
+        "5": 59,
+        "10": 59
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_fjzz",
+      "name": "飞机制造",
+      "sourceTotal": 14,
+      "included": 14,
+      "excluded": 0,
+      "valid": {
+        "3": 14,
+        "5": 14,
+        "10": 14
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_fzhy",
+      "name": "纺织行业",
+      "sourceTotal": 42,
+      "included": 38,
+      "excluded": 4,
+      "valid": {
+        "3": 34,
+        "5": 34,
+        "10": 34
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_fzjx",
+      "name": "纺织机械",
+      "sourceTotal": 8,
+      "included": 8,
+      "excluded": 0,
+      "valid": {
+        "3": 7,
+        "5": 7,
+        "10": 7
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_fzxl",
+      "name": "服装鞋类",
+      "sourceTotal": 49,
+      "included": 48,
+      "excluded": 1,
+      "valid": {
+        "3": 44,
+        "5": 44,
+        "10": 44
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_glql",
+      "name": "公路桥梁",
+      "sourceTotal": 20,
+      "included": 20,
+      "excluded": 0,
+      "valid": {
+        "3": 18,
+        "5": 18,
+        "10": 18
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_gsgq",
+      "name": "供水供气",
+      "sourceTotal": 25,
+      "included": 25,
+      "excluded": 0,
+      "valid": {
+        "3": 25,
+        "5": 25,
+        "10": 25
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_gthy",
+      "name": "钢铁行业",
+      "sourceTotal": 60,
+      "included": 57,
+      "excluded": 3,
+      "valid": {
+        "3": 50,
+        "5": 50,
+        "10": 50
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_hbhy",
+      "name": "环保行业",
+      "sourceTotal": 27,
+      "included": 26,
+      "excluded": 1,
+      "valid": {
+        "3": 25,
+        "5": 25,
+        "10": 25
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_hghy",
+      "name": "化工行业",
+      "sourceTotal": 150,
+      "included": 144,
+      "excluded": 6,
+      "valid": {
+        "3": 138,
+        "5": 138,
+        "10": 138
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_hqhy",
+      "name": "化纤行业",
+      "sourceTotal": 26,
+      "included": 24,
+      "excluded": 2,
+      "valid": {
+        "3": 23,
+        "5": 23,
+        "10": 23
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jdhy",
+      "name": "家电行业",
+      "sourceTotal": 37,
+      "included": 34,
+      "excluded": 3,
+      "valid": {
+        "3": 31,
+        "5": 31,
+        "10": 31
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jdly",
+      "name": "酒店旅游",
+      "sourceTotal": 35,
+      "included": 32,
+      "excluded": 3,
+      "valid": {
+        "3": 32,
+        "5": 32,
+        "10": 32
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jjhy",
+      "name": "家具行业",
+      "sourceTotal": 16,
+      "included": 15,
+      "excluded": 1,
+      "valid": {
+        "3": 13,
+        "5": 13,
+        "10": 13
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jrhy",
+      "name": "金融行业",
+      "sourceTotal": 51,
+      "included": 50,
+      "excluded": 1,
+      "valid": {
+        "3": 47,
+        "5": 47,
+        "10": 47
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jtys",
+      "name": "交通运输",
+      "sourceTotal": 87,
+      "included": 82,
+      "excluded": 5,
+      "valid": {
+        "3": 74,
+        "5": 74,
+        "10": 74
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jxhy",
+      "name": "机械行业",
+      "sourceTotal": 211,
+      "included": 198,
+      "excluded": 13,
+      "valid": {
+        "3": 192,
+        "5": 192,
+        "10": 192
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_jzjc",
+      "name": "建筑建材",
+      "sourceTotal": 91,
+      "included": 89,
+      "excluded": 2,
+      "valid": {
+        "3": 80,
+        "5": 80,
+        "10": 80
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_kfq",
+      "name": "开发区",
+      "sourceTotal": 10,
+      "included": 10,
+      "excluded": 0,
+      "valid": {
+        "3": 10,
+        "5": 10,
+        "10": 10
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_ljhy",
+      "name": "酿酒行业",
+      "sourceTotal": 33,
+      "included": 32,
+      "excluded": 1,
+      "valid": {
+        "3": 32,
+        "5": 32,
+        "10": 32
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_mtc",
+      "name": "摩托车",
+      "sourceTotal": 6,
+      "included": 6,
+      "excluded": 0,
+      "valid": {
+        "3": 6,
+        "5": 6,
+        "10": 6
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_mthy",
+      "name": "煤炭行业",
+      "sourceTotal": 41,
+      "included": 40,
+      "excluded": 1,
+      "valid": {
+        "3": 39,
+        "5": 39,
+        "10": 39
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_nlmy",
+      "name": "农林牧渔",
+      "sourceTotal": 64,
+      "included": 61,
+      "excluded": 3,
+      "valid": {
+        "3": 59,
+        "5": 59,
+        "10": 59
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_nyhf",
+      "name": "农药化肥",
+      "sourceTotal": 46,
+      "included": 45,
+      "excluded": 1,
+      "valid": {
+        "3": 42,
+        "5": 42,
+        "10": 42
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_qczz",
+      "name": "汽车制造",
+      "sourceTotal": 103,
+      "included": 100,
+      "excluded": 3,
+      "valid": {
+        "3": 95,
+        "5": 95,
+        "10": 95
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_qtxy",
+      "name": "其它行业",
+      "sourceTotal": 163,
+      "included": 56,
+      "excluded": 107,
+      "valid": {
+        "3": 52,
+        "5": 52,
+        "10": 52
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_slzp",
+      "name": "塑料制品",
+      "sourceTotal": 33,
+      "included": 30,
+      "excluded": 3,
+      "valid": {
+        "3": 29,
+        "5": 29,
+        "10": 29
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_snhy",
+      "name": "水泥行业",
+      "sourceTotal": 26,
+      "included": 26,
+      "excluded": 0,
+      "valid": {
+        "3": 24,
+        "5": 24,
+        "10": 24
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_sphy",
+      "name": "食品行业",
+      "sourceTotal": 58,
+      "included": 55,
+      "excluded": 3,
+      "valid": {
+        "3": 54,
+        "5": 54,
+        "10": 54
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_swzz",
+      "name": "生物制药",
+      "sourceTotal": 155,
+      "included": 149,
+      "excluded": 6,
+      "valid": {
+        "3": 145,
+        "5": 145,
+        "10": 145
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_sybh",
+      "name": "商业百货",
+      "sourceTotal": 93,
+      "included": 89,
+      "excluded": 4,
+      "valid": {
+        "3": 82,
+        "5": 82,
+        "10": 82
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_syhy",
+      "name": "石油行业",
+      "sourceTotal": 23,
+      "included": 21,
+      "excluded": 2,
+      "valid": {
+        "3": 21,
+        "5": 21,
+        "10": 21
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_tchy",
+      "name": "陶瓷行业",
+      "sourceTotal": 7,
+      "included": 5,
+      "excluded": 2,
+      "valid": {
+        "3": 5,
+        "5": 5,
+        "10": 5
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_wzwm",
+      "name": "物资外贸",
+      "sourceTotal": 21,
+      "included": 21,
+      "excluded": 0,
+      "valid": {
+        "3": 20,
+        "5": 20,
+        "10": 20
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_ylqx",
+      "name": "医疗器械",
+      "sourceTotal": 31,
+      "included": 29,
+      "excluded": 2,
+      "valid": {
+        "3": 27,
+        "5": 27,
+        "10": 27
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_yqyb",
+      "name": "仪器仪表",
+      "sourceTotal": 48,
+      "included": 48,
+      "excluded": 0,
+      "valid": {
+        "3": 48,
+        "5": 48,
+        "10": 48
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_ysbz",
+      "name": "印刷包装",
+      "sourceTotal": 20,
+      "included": 19,
+      "excluded": 1,
+      "valid": {
+        "3": 18,
+        "5": 18,
+        "10": 18
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_ysjs",
+      "name": "有色金属",
+      "sourceTotal": 70,
+      "included": 68,
+      "excluded": 2,
+      "valid": {
+        "3": 64,
+        "5": 64,
+        "10": 64
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_zhhy",
+      "name": "综合行业",
+      "sourceTotal": 33,
+      "included": 27,
+      "excluded": 6,
+      "valid": {
+        "3": 25,
+        "5": 25,
+        "10": 25
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    },
+    {
+      "code": "new_zzhy",
+      "name": "造纸行业",
+      "sourceTotal": 24,
+      "included": 22,
+      "excluded": 2,
+      "valid": {
+        "3": 22,
+        "5": 22,
+        "10": 22
+      },
+      "sourceDate": "2026-10-16",
+      "passed": true
+    }
+  ],
+  "consumerHttpResults": [
+    {
+      "code": "new_blhy",
+      "name": "玻璃行业",
+      "http": 200,
+      "quality": "healthy",
+      "total": 19,
+      "sourceTotal": 19,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_cbzz",
+      "name": "船舶制造",
+      "http": 200,
+      "quality": "partial",
+      "total": 8,
+      "sourceTotal": 8,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_cmyl",
+      "name": "传媒娱乐",
+      "http": 200,
+      "quality": "healthy",
+      "total": 36,
+      "sourceTotal": 40,
+      "excluded": 4,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_dlhy",
+      "name": "电力行业",
+      "http": 200,
+      "quality": "healthy",
+      "total": 60,
+      "sourceTotal": 62,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_dqhy",
+      "name": "电器行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 56,
+      "sourceTotal": 58,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_dzqj",
+      "name": "电子器件",
+      "http": 200,
+      "quality": "partial",
+      "total": 148,
+      "sourceTotal": 152,
+      "excluded": 4,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_dzxx",
+      "name": "电子信息",
+      "http": 200,
+      "quality": "partial",
+      "total": 229,
+      "sourceTotal": 245,
+      "excluded": 16,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_fdc",
+      "name": "房地产",
+      "http": 200,
+      "quality": "partial",
+      "total": 114,
+      "sourceTotal": 123,
+      "excluded": 9,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_fdsb",
+      "name": "发电设备",
+      "http": 200,
+      "quality": "partial",
+      "total": 60,
+      "sourceTotal": 65,
+      "excluded": 5,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_fjzz",
+      "name": "飞机制造",
+      "http": 200,
+      "quality": "healthy",
+      "total": 14,
+      "sourceTotal": 14,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_fzhy",
+      "name": "纺织行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 38,
+      "sourceTotal": 42,
+      "excluded": 4,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_fzjx",
+      "name": "纺织机械",
+      "http": 200,
+      "quality": "partial",
+      "total": 8,
+      "sourceTotal": 8,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_fzxl",
+      "name": "服装鞋类",
+      "http": 200,
+      "quality": "partial",
+      "total": 48,
+      "sourceTotal": 49,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_glql",
+      "name": "公路桥梁",
+      "http": 200,
+      "quality": "partial",
+      "total": 20,
+      "sourceTotal": 20,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_gsgq",
+      "name": "供水供气",
+      "http": 200,
+      "quality": "healthy",
+      "total": 25,
+      "sourceTotal": 25,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_gthy",
+      "name": "钢铁行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 57,
+      "sourceTotal": 60,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_hbhy",
+      "name": "环保行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 26,
+      "sourceTotal": 27,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_hghy",
+      "name": "化工行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 144,
+      "sourceTotal": 150,
+      "excluded": 6,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_hqhy",
+      "name": "化纤行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 24,
+      "sourceTotal": 26,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jdhy",
+      "name": "家电行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 34,
+      "sourceTotal": 37,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jdly",
+      "name": "酒店旅游",
+      "http": 200,
+      "quality": "healthy",
+      "total": 32,
+      "sourceTotal": 35,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jjhy",
+      "name": "家具行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 15,
+      "sourceTotal": 16,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jrhy",
+      "name": "金融行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 50,
+      "sourceTotal": 51,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jtys",
+      "name": "交通运输",
+      "http": 200,
+      "quality": "partial",
+      "total": 82,
+      "sourceTotal": 87,
+      "excluded": 5,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jxhy",
+      "name": "机械行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 198,
+      "sourceTotal": 211,
+      "excluded": 13,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_jzjc",
+      "name": "建筑建材",
+      "http": 200,
+      "quality": "partial",
+      "total": 89,
+      "sourceTotal": 91,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_kfq",
+      "name": "开发区",
+      "http": 200,
+      "quality": "healthy",
+      "total": 10,
+      "sourceTotal": 10,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_ljhy",
+      "name": "酿酒行业",
+      "http": 200,
+      "quality": "healthy",
+      "total": 32,
+      "sourceTotal": 33,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_mtc",
+      "name": "摩托车",
+      "http": 200,
+      "quality": "healthy",
+      "total": 6,
+      "sourceTotal": 6,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_mthy",
+      "name": "煤炭行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 40,
+      "sourceTotal": 41,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_nlmy",
+      "name": "农林牧渔",
+      "http": 200,
+      "quality": "partial",
+      "total": 61,
+      "sourceTotal": 64,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_nyhf",
+      "name": "农药化肥",
+      "http": 200,
+      "quality": "partial",
+      "total": 45,
+      "sourceTotal": 46,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_qczz",
+      "name": "汽车制造",
+      "http": 200,
+      "quality": "partial",
+      "total": 100,
+      "sourceTotal": 103,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_qtxy",
+      "name": "其它行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 56,
+      "sourceTotal": 163,
+      "excluded": 107,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_slzp",
+      "name": "塑料制品",
+      "http": 200,
+      "quality": "partial",
+      "total": 30,
+      "sourceTotal": 33,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_snhy",
+      "name": "水泥行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 26,
+      "sourceTotal": 26,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_sphy",
+      "name": "食品行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 55,
+      "sourceTotal": 58,
+      "excluded": 3,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_swzz",
+      "name": "生物制药",
+      "http": 200,
+      "quality": "partial",
+      "total": 149,
+      "sourceTotal": 155,
+      "excluded": 6,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_sybh",
+      "name": "商业百货",
+      "http": 200,
+      "quality": "partial",
+      "total": 89,
+      "sourceTotal": 93,
+      "excluded": 4,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_syhy",
+      "name": "石油行业",
+      "http": 200,
+      "quality": "healthy",
+      "total": 21,
+      "sourceTotal": 23,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_tchy",
+      "name": "陶瓷行业",
+      "http": 200,
+      "quality": "healthy",
+      "total": 5,
+      "sourceTotal": 7,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_wzwm",
+      "name": "物资外贸",
+      "http": 200,
+      "quality": "partial",
+      "total": 21,
+      "sourceTotal": 21,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_ylqx",
+      "name": "医疗器械",
+      "http": 200,
+      "quality": "partial",
+      "total": 29,
+      "sourceTotal": 31,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_yqyb",
+      "name": "仪器仪表",
+      "http": 200,
+      "quality": "healthy",
+      "total": 48,
+      "sourceTotal": 48,
+      "excluded": 0,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_ysbz",
+      "name": "印刷包装",
+      "http": 200,
+      "quality": "partial",
+      "total": 19,
+      "sourceTotal": 20,
+      "excluded": 1,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_ysjs",
+      "name": "有色金属",
+      "http": 200,
+      "quality": "partial",
+      "total": 68,
+      "sourceTotal": 70,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_zhhy",
+      "name": "综合行业",
+      "http": 200,
+      "quality": "partial",
+      "total": 27,
+      "sourceTotal": 33,
+      "excluded": 6,
+      "timePrecision": "trade-date"
+    },
+    {
+      "code": "new_zzhy",
+      "name": "造纸行业",
+      "http": 200,
+      "quality": "healthy",
+      "total": 22,
+      "sourceTotal": 24,
+      "excluded": 2,
+      "timePrecision": "trade-date"
+    }
+  ],
+  "industryDailyVerification": {
+    "asOf": "2026-10-16",
+    "contractVersion": "investment-dashboard-sina-sector-fund-v1",
+    "rulesVersion": "sina-sector-observation-v1",
+    "coverage": 48,
+    "total": 48,
+    "captureSha256": "8123fd60a984c54b795bb4039999f4901b8035d5b769e475c876287833101bb6",
+    "rows": [
+      {
+        "code": "new_blhy",
+        "name": "玻璃行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_cbzz",
+        "name": "船舶制造",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_cmyl",
+        "name": "传媒娱乐",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_dlhy",
+        "name": "电力行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_dqhy",
+        "name": "电器行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_dzqj",
+        "name": "电子器件",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_dzxx",
+        "name": "电子信息",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_fdc",
+        "name": "房地产",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_fdsb",
+        "name": "发电设备",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_fjzz",
+        "name": "飞机制造",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_fzhy",
+        "name": "纺织行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_fzjx",
+        "name": "纺织机械",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_fzxl",
+        "name": "服装鞋类",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_glql",
+        "name": "公路桥梁",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_gsgq",
+        "name": "供水供气",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_gthy",
+        "name": "钢铁行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_hbhy",
+        "name": "环保行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_hghy",
+        "name": "化工行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_hqhy",
+        "name": "化纤行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jdhy",
+        "name": "家电行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jdly",
+        "name": "酒店旅游",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jjhy",
+        "name": "家具行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jrhy",
+        "name": "金融行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jtys",
+        "name": "交通运输",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jxhy",
+        "name": "机械行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_jzjc",
+        "name": "建筑建材",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_kfq",
+        "name": "开发区",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_ljhy",
+        "name": "酿酒行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_mtc",
+        "name": "摩托车",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_mthy",
+        "name": "煤炭行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_nlmy",
+        "name": "农林牧渔",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_nyhf",
+        "name": "农药化肥",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_qczz",
+        "name": "汽车制造",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_qtxy",
+        "name": "其它行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_slzp",
+        "name": "塑料制品",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_snhy",
+        "name": "水泥行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_sphy",
+        "name": "食品行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_swzz",
+        "name": "生物制药",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_sybh",
+        "name": "商业百货",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_syhy",
+        "name": "石油行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_tchy",
+        "name": "陶瓷行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_wzwm",
+        "name": "物资外贸",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_ylqx",
+        "name": "医疗器械",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_yqyb",
+        "name": "仪器仪表",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_ysbz",
+        "name": "印刷包装",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_ysjs",
+        "name": "有色金属",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_zhhy",
+        "name": "综合行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      },
+      {
+        "code": "new_zzhy",
+        "name": "造纸行业",
+        "dataDate": "2026-10-16",
+        "quality": "healthy"
+      }
+    ]
+  },
+  "sameIndustryHttpVerification": [
+    {
+      "code": "new_blhy",
+      "name": "玻璃行业",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 19
+    },
+    {
+      "code": "new_cbzz",
+      "name": "船舶制造",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 8
+    },
+    {
+      "code": "new_cmyl",
+      "name": "传媒娱乐",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 36
+    },
+    {
+      "code": "new_dlhy",
+      "name": "电力行业",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 60
+    },
+    {
+      "code": "new_dqhy",
+      "name": "电器行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 56
+    },
+    {
+      "code": "new_dzqj",
+      "name": "电子器件",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 148
+    },
+    {
+      "code": "new_dzxx",
+      "name": "电子信息",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 229
+    },
+    {
+      "code": "new_fdc",
+      "name": "房地产",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 114
+    },
+    {
+      "code": "new_fdsb",
+      "name": "发电设备",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 60
+    },
+    {
+      "code": "new_fjzz",
+      "name": "飞机制造",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 14
+    },
+    {
+      "code": "new_fzhy",
+      "name": "纺织行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 38
+    },
+    {
+      "code": "new_fzjx",
+      "name": "纺织机械",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 8
+    },
+    {
+      "code": "new_fzxl",
+      "name": "服装鞋类",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 48
+    },
+    {
+      "code": "new_glql",
+      "name": "公路桥梁",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 20
+    },
+    {
+      "code": "new_gsgq",
+      "name": "供水供气",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 25
+    },
+    {
+      "code": "new_gthy",
+      "name": "钢铁行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 57
+    },
+    {
+      "code": "new_hbhy",
+      "name": "环保行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 26
+    },
+    {
+      "code": "new_hghy",
+      "name": "化工行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 144
+    },
+    {
+      "code": "new_hqhy",
+      "name": "化纤行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 24
+    },
+    {
+      "code": "new_jdhy",
+      "name": "家电行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 34
+    },
+    {
+      "code": "new_jdly",
+      "name": "酒店旅游",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 32
+    },
+    {
+      "code": "new_jjhy",
+      "name": "家具行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 15
+    },
+    {
+      "code": "new_jrhy",
+      "name": "金融行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 50
+    },
+    {
+      "code": "new_jtys",
+      "name": "交通运输",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 82
+    },
+    {
+      "code": "new_jxhy",
+      "name": "机械行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 198
+    },
+    {
+      "code": "new_jzjc",
+      "name": "建筑建材",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 89
+    },
+    {
+      "code": "new_kfq",
+      "name": "开发区",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 10
+    },
+    {
+      "code": "new_ljhy",
+      "name": "酿酒行业",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 32
+    },
+    {
+      "code": "new_mtc",
+      "name": "摩托车",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 6
+    },
+    {
+      "code": "new_mthy",
+      "name": "煤炭行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 40
+    },
+    {
+      "code": "new_nlmy",
+      "name": "农林牧渔",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 61
+    },
+    {
+      "code": "new_nyhf",
+      "name": "农药化肥",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 45
+    },
+    {
+      "code": "new_qczz",
+      "name": "汽车制造",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 100
+    },
+    {
+      "code": "new_qtxy",
+      "name": "其它行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 56
+    },
+    {
+      "code": "new_slzp",
+      "name": "塑料制品",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 30
+    },
+    {
+      "code": "new_snhy",
+      "name": "水泥行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 26
+    },
+    {
+      "code": "new_sphy",
+      "name": "食品行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 55
+    },
+    {
+      "code": "new_swzz",
+      "name": "生物制药",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 149
+    },
+    {
+      "code": "new_sybh",
+      "name": "商业百货",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 89
+    },
+    {
+      "code": "new_syhy",
+      "name": "石油行业",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 21
+    },
+    {
+      "code": "new_tchy",
+      "name": "陶瓷行业",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 5
+    },
+    {
+      "code": "new_wzwm",
+      "name": "物资外贸",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 21
+    },
+    {
+      "code": "new_ylqx",
+      "name": "医疗器械",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 29
+    },
+    {
+      "code": "new_yqyb",
+      "name": "仪器仪表",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 48
+    },
+    {
+      "code": "new_ysbz",
+      "name": "印刷包装",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 19
+    },
+    {
+      "code": "new_ysjs",
+      "name": "有色金属",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 68
+    },
+    {
+      "code": "new_zhhy",
+      "name": "综合行业",
+      "boardQuality": "healthy",
+      "membersQuality": "partial",
+      "total": 27
+    },
+    {
+      "code": "new_zzhy",
+      "name": "造纸行业",
+      "boardQuality": "healthy",
+      "membersQuality": "healthy",
+      "total": 22
+    }
+  ],
+  "marketContract": "investment-dashboard-capital-flow-sina-v1",
+  "industryMinuteQuality": "unavailable",
+  "nativeMemberRefreshStatus": 202
+}
