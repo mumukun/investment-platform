@@ -1,0 +1,334 @@
+{
+  "summary": {
+    "netInflow": -72.35,
+    "speed": 24.07,
+    "duration": 210,
+    "state": "流出收敛"
+  },
+  "levels": [
+    {
+      "level": "市场",
+      "name": "全市场",
+      "netInflow": -72.35,
+      "ratio": null,
+      "speed": 24.07,
+      "duration": 210,
+      "direction": "流出收敛"
+    }
+  ],
+  "timeline": [
+    {
+      "time": "09:30",
+      "market": -14.4,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "09:35",
+      "market": -44.22,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "09:40",
+      "market": -66.23,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "09:45",
+      "market": -79.95,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "09:50",
+      "market": -98.68,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "09:55",
+      "market": -115.09,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:00",
+      "market": -142.2,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:05",
+      "market": -156.57,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:10",
+      "market": -158.27,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:15",
+      "market": -172.63,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:20",
+      "market": -186.58,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:25",
+      "market": -193.28,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:30",
+      "market": -188.35,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:35",
+      "market": -189.04,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:40",
+      "market": -174.23,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:45",
+      "market": -157.63,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:50",
+      "market": -145.59,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "10:55",
+      "market": -133.24,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:00",
+      "market": -119.1,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:05",
+      "market": -113.26,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:10",
+      "market": -110.92,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:15",
+      "market": -111.02,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:20",
+      "market": -112.61,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:25",
+      "market": -113.07,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "11:30",
+      "market": -115.03,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:04",
+      "market": -120.13,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:09",
+      "market": -127.76,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:14",
+      "market": -131.91,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:19",
+      "market": -133.31,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:24",
+      "market": -138.88,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:29",
+      "market": -140.49,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:34",
+      "market": -138.66,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:39",
+      "market": -134.43,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:44",
+      "market": -130.41,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:49",
+      "market": -121.17,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:54",
+      "market": -104.01,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "13:59",
+      "market": -96.42,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "14:04",
+      "market": -89.85,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "14:09",
+      "market": -80.42,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "14:14",
+      "market": -76.26,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "14:19",
+      "market": -77.96,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "14:24",
+      "market": -74.7,
+      "star": null,
+      "chinext": null
+    },
+    {
+      "time": "14:29",
+      "market": -72.35,
+      "star": null,
+      "chinext": null
+    }
+  ],
+  "sectorTrend": {
+    "times": [
+      "14:24",
+      "14:25",
+      "14:26",
+      "14:27",
+      "14:28",
+      "14:29"
+    ],
+    "series": [
+      {
+        "code": "new_zzhy",
+        "name": "造纸行业",
+        "values": [
+          -0.437,
+          -0.437,
+          null,
+          -0.3765,
+          -0.437,
+          -0.3827
+        ]
+      }
+    ],
+    "focus": [],
+    "source": "新浪行业全部单净流入（实时快照采样）",
+    "tradeDate": "2026-10-19",
+    "updatedAt": "2026-10-19T14:29:47+08:00",
+    "quality": "partial",
+    "flowBasis": "all-orders-net",
+    "sampling": "observed-snapshots",
+    "reason": "全部单净流入（非主力）：新浪流入减流出，单位亿元；自14:24开始采样，缺失分钟断线；不与下方日主力资金或全市场主力额合计。",
+    "startedAt": "2026-10-19T14:24:03+08:00"
+  },
+  "sectorEvents": [],
+  "meta": {
+    "contractVersion": "investment-dashboard-capital-flow-sina-v2",
+    "serviceVersion": "4.4.1",
+    "source": "新浪公开市场资金（stock-analyzer）",
+    "businessTime": "2026-10-19T14:29:00+08:00",
+    "updatedAt": "2026-10-19T14:30:09+08:00",
+    "tradeDate": "2026-10-19",
+    "marketStatus": "盘中",
+    "quality": "partial",
+    "isMock": false,
+    "refreshSeconds": 30,
+    "delayLabel": "供应商公开数据，可能延迟；以实际源日期为准",
+    "calculation": "新浪净买入：特大单与大单净额之和，人民币元换算亿元；与旧来源不拼接",
+    "marketScope": "新浪官方大盘资金曲线；科创板、创业板资金暂无同口径来源",
+    "coverageNote": "均使用新浪：盘中行业曲线为全部单净流入的实时快照采样；全市场及下方日资金为各自主力口径，独立观察、不合计。",
+    "marketFlowAvailable": true,
+    "sourceUrl": "https://stock.sina.com.cn/stock/api/jsonp.php/callback/TouziService.getMinuteFlow"
+  },
+  "availableDates": [
+    "2026-10-19"
+  ]
+}

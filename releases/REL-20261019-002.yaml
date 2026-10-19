@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261019-002",
+  "status": "RELEASED",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261019-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：好的 本次开发和修复的这些功能进行生产环境上线吧"
+  },
+  "parent_release": "REL-20261019-001",
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "new_version": "2.3.12",
+      "tag": "v2.3.12",
+      "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+      "previous_version": "v2.3.11",
+      "previous_state": "FAILED_STARTUP",
+      "rollback_version": "v2.3.10",
+      "rollback_commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+      "rollback_image_id": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/9",
+      "artifact_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104"
+    }
+  ],
+  "source_execution_plan": "releases/evidence/REL-20261019-002/source-plan.json",
+  "completed_at": "2026-10-19T07:48:10.776955+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261019-002/deployment.receipt.json",
+  "verification": {
+    "status": "PASS",
+    "evidence": "Protected runner exact Tag/SHA/Image ID, offline packaged startup gate, readable backup, health and authenticated research API smoke PASS."
+  }
+}

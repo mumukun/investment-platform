@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261019-001",
+  "status": "RELEASED",
+  "environment": "Production",
+  "created_at": "2026-10-19T07:25:32Z",
+  "request_started_at_lower_bound": "2026-10-19T07:23:00Z",
+  "changes": [
+    "CHG-20261018-011",
+    "CHG-20261018-012",
+    "CHG-20261019-001"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确：好的 本次开发和修复的这些功能进行生产环境上线吧"
+  },
+  "release_order": [
+    "marketNewsFeed",
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "excluded": [
+    "历史数据删除/归档",
+    "PG参数调整",
+    "其他未关联工作树"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "new_version": "2.3.12",
+      "tag": "v2.3.12",
+      "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+      "previous_version": "v2.3.10",
+      "rollback_version": "v2.3.10",
+      "rollback_commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+      "rollback_image_id": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/8",
+      "quality": "103 local tests PASS; main tree identical; no Actions workflow",
+      "artifact_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104",
+      "recovery_pr": "https://github.com/mumukun/marketNewsFeed/pull/9",
+      "recovery_release": "REL-20261019-002"
+    },
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.4.1",
+      "tag": "v4.4.1",
+      "commit_sha": "77d12f545795662e1be7549a9f16e98e4b9b6fdd",
+      "previous_version": "v4.4.0",
+      "rollback_version": "v4.4.0",
+      "rollback_commit_sha": "759c9c9bffe56d8848a86c676a227cedee91c72b",
+      "rollback_images": {
+        "app": "sha256:5fa413074af239e87d4f9b23ba88d87452400298aa4cf47f3166625d0a535783"
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/29",
+      "quality_run_id": "39216424944",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:6058af089dfeeeb59d2c881bfb57a0bcd91c69c6d5943e4f26c7b2d0a77ca82a"
+      },
+      "image_ids": {
+        "app": "sha256:d790f5a8edcb1821cce7511cf79ffbc964308c6b06a4b607bff2b58af115d7e0"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.28.1",
+      "tag": "v0.28.1",
+      "commit_sha": "1f2dbe09d8fd911c796f344bb48afa46c8b02638",
+      "previous_version": "v0.28.0",
+      "rollback_version": "v0.28.0",
+      "rollback_commit_sha": "122a79d6e970a302236600aa60d01c7aadbeb7bc",
+      "rollback_images": {
+        "api": "sha256:36504a59806641a6cad6930fc72f55431e57ee8f717514344cadfb96126221da",
+        "web": "sha256:9d174f975529a360bc8251bdb255370d8e8cb63f16c7da137d6aec69ae13b821"
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/29",
+      "quality_run_id": "39216425438",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0ea3a35fad6e43754ed86a4f4ce7c11d83d550b8e1a1dcab82916df541e7af4e",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8f285fc29ce825031a2832422825e05acd79e29a5d943ea8c965d0112ef861ad"
+      },
+      "image_ids": {
+        "api": "sha256:0c3a4752cf5fa9b8c6793caba64f92344771e3df81937357ba98adcaab41cee4",
+        "web": "sha256:0f3053c59291308cf932fcc1ec56504c80c6cbd13f12b11da8d138b49a38bac2"
+      }
+    }
+  ],
+  "source_execution_plan": "releases/evidence/REL-20261019-001/source-plan.json",
+  "notes": [
+    "News/stock changed surfaces independent; unchanged optional stock lookup does not require stock deployment first. Dashboard new capital-flow-v2 requires stock before Dashboard.",
+    "No historical data purge. After-hours deployment: industry collector starts new samples next market session; old minute history not reconstructed."
+  ],
+  "incident": {
+    "repository": "marketNewsFeed",
+    "failed_tag": "v2.3.11",
+    "failed_sha": "8ef146efb8efc3403af8049aff0bdcd54cbe9924",
+    "image_id": "sha256:0a808dd891636cc90d3d100fd079a043446837db188b52fbc05ffdd12276c09e",
+    "reason": "Dockerfile did not COPY scripts/add_x_usage_index.py referenced by startup; new container exits before workers. Failure receipt saved, downstream not switched.",
+    "receipt": "releases/evidence/REL-20261019-001/news-deployment.receipt.json",
+    "recovery_release": "REL-20261019-002",
+    "stable_rollback_tag": "v2.3.10",
+    "stable_rollback_image": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+    "recovered_at": "2026-10-19T07:48:10.776955+00:00",
+    "recovery_status": "PASS",
+    "recovery_tag": "v2.3.12",
+    "recovery_image_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261019-001/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261019-001/stock-candidate/candidate.json",
+    "releases/evidence/REL-20261019-001/dashboard-candidate/candidate.json"
+  ],
+  "completed_at": "2026-10-19T08:02:50.004021+00:00",
+  "deployment_completed_at": "2026-10-19T08:00:54.844841+00:00",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261019-001/deployment.receipt.json",
+    "releases/evidence/REL-20261019-002/deployment.receipt.json"
+  ],
+  "production_boundary": "releases/evidence/REL-20261019-001/production-boundary.json",
+  "elapsed_seconds_lower_bound": 2390,
+  "verification": {
+    "identity_health_authenticated_smoke": "PASS",
+    "affected_http_and_runtime_index": "PASS",
+    "industry_curve": "After-hours: contract v2 verified; no stored industry samples yet, series empty/unavailable. First real samples next trading session; no earlier minutes fabricated.",
+    "news_incident": "15:36–15:48 CST startup interruption recovered with v2.3.12; historical data retained, real-time collection gap cannot be excluded."
+  }
+}

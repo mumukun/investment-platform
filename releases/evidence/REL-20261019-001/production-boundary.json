@@ -1,0 +1,39 @@
+{
+  "stock-analyzer": {
+    "tech-board": {
+      "contract": "investment-dashboard-tech-board-v1",
+      "http": 200
+    },
+    "global-board": {
+      "contract": "investment-dashboard-global-board-v1",
+      "http": 200
+    },
+    "capital-flow": {
+      "contract": "investment-dashboard-capital-flow-sina-v2",
+      "quality": "unavailable",
+      "series": 0,
+      "marketStatus": "已收盘"
+    }
+  },
+  "investment-research-dashboard": {
+    "capital-flow?source=sina": {
+      "contract": "investment-dashboard-capital-flow-sina-v2",
+      "series": 0,
+      "quality": "unavailable",
+      "marketStatus": "已收盘"
+    },
+    "global-board": {
+      "http": 200
+    },
+    "tech-board": {
+      "http": 200
+    }
+  },
+  "marketNewsFeed": {
+    "lookupIndexValid": true,
+    "legacyQueueRetained": true,
+    "startupScriptPackaged": true,
+    "workerCount": 6
+  },
+  "scope": "Affected read-only HTTP and runtime/index checks after deployment; no forced sampling, replay or historical deletion."
+}
