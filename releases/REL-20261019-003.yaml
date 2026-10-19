@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261019-003",
+  "status": "RELEASED",
+  "environment": "Production",
+  "created_at": "2026-10-19T10:23:43Z",
+  "request_started_at_lower_bound": "2026-10-19T10:23:00Z",
+  "changes": [
+    "CHG-20261019-003"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：修复后就尽快生产上线，授权提交、合并、Tag与精确生产部署"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "excluded": [
+    "marketNewsFeed",
+    "历史数据删除",
+    "PG参数调整",
+    "无关工作树"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.4.2",
+      "tag": "v4.4.2",
+      "commit_sha": "5b1a7ff0e1a01e27ebe149b5e1183e04f4f66b17",
+      "previous_version": "v4.4.1",
+      "rollback_version": "v4.4.1",
+      "rollback_commit_sha": "77d12f545795662e1be7549a9f16e98e4b9b6fdd",
+      "rollback_images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:6058af089dfeeeb59d2c881bfb57a0bcd91c69c6d5943e4f26c7b2d0a77ca82a"
+      },
+      "rollback_image_ids": {
+        "app": "sha256:d790f5a8edcb1821cce7511cf79ffbc964308c6b06a4b607bff2b58af115d7e0"
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/30",
+      "candidate_evidence": "releases/evidence/REL-20261019-003/stock-candidate/candidate.json",
+      "quality_run_id": "39237367254",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:16f88955bc43089da273fa40fe5625a4b3c4978f942e9f273bd968099e6ab22d"
+      },
+      "image_ids": {
+        "app": "sha256:81e0abc610ecb8e20cf5c62bfe4a80858669b469eb36bb1852e71eb51cbf9160"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.28.2",
+      "tag": "v0.28.2",
+      "commit_sha": "98b7e67e252bfd5a932aecb3f827e82d22bea40c",
+      "previous_version": "v0.28.1",
+      "rollback_version": "v0.28.1",
+      "rollback_commit_sha": "1f2dbe09d8fd911c796f344bb48afa46c8b02638",
+      "rollback_images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0ea3a35fad6e43754ed86a4f4ce7c11d83d550b8e1a1dcab82916df541e7af4e",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8f285fc29ce825031a2832422825e05acd79e29a5d943ea8c965d0112ef861ad"
+      },
+      "rollback_image_ids": {
+        "api": "sha256:0c3a4752cf5fa9b8c6793caba64f92344771e3df81937357ba98adcaab41cee4",
+        "web": "sha256:0f3053c59291308cf932fcc1ec56504c80c6cbd13f12b11da8d138b49a38bac2"
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/30",
+      "format_pr": "https://github.com/mumukun/investment-research-dashboard/pull/31",
+      "quality_run_id": "39237612672",
+      "candidate_evidence": "releases/evidence/REL-20261019-003/dashboard-candidate/candidate.json",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:04487c030ddfa4dc6048b52eb773648a2fd7f122e7c9ef89a5ccd4e4fbcd35a1",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c8b90403099ac0d4cf75b1834ac23a6bfc780827f2d300b930ddbaceff2f6929"
+      },
+      "image_ids": {
+        "api": "sha256:70f5e0bd11c9a8dcb616f42c63ac680b3345f64b4c15666afbf6a49e0f00f42f",
+        "web": "sha256:d869b8b46c75bf499e3e9f10ca2d6279d6cff76c06000a317a4216ec922e7938"
+      }
+    }
+  ],
+  "notes": [
+    "Only metadata bootstrap table added; existing backups and locks enforced by standard deployment.",
+    "Pre-deploy 18:25CST: previous maintenance incomplete at17:33, no held maintenance lock. Do not claim scan restored just because HTTP200.",
+    "External daily-source delay may still block current-day scan when no same-rules validated historical scan exists."
+  ],
+  "pre_deploy_gate_failure": {
+    "repository": "investment-research-dashboard",
+    "sha": "4bb7ce530c369bbb2e8bb2d50343593ff5e98496",
+    "run_id": "39237368091",
+    "reason": "ruff format --check backend; corrected formatting only, no Tag or deployment from failed SHA",
+    "fixed_main_sha": "98b7e67e252bfd5a932aecb3f827e82d22bea40c"
+  },
+  "rollback_context": "Retained v4.4.1/v0.28.1 restore prior deployed runtime but reintroduce the known swing incident; no automatic database downgrade. Metadata additions retained.",
+  "image_execution_plan": "releases/evidence/REL-20261019-003/image-release.plan.json",
+  "tags_pushed": true,
+  "completed_at": "2026-10-19T10:42:46.824988+00:00",
+  "deployment_completed_at": "2026-10-19T10:41:07.041042+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261019-003/deployment.receipt.json",
+  "production_boundary": "releases/evidence/REL-20261019-003/production-boundary.json",
+  "elapsed_seconds_lower_bound": 1187,
+  "functional_result": {
+    "api_contract": "PASS",
+    "schema_initialization_fingerprint": "PASS",
+    "recovery_schedule": "PASS",
+    "data_status": "blocked",
+    "publication_allowed": false,
+    "scan_completed": false,
+    "items": 788,
+    "display_trade_date": "2026-10-16",
+    "recovery": {
+      "reason": "当前数据尚未完成验收与扫描",
+      "requested_trade_date": "2026-10-19",
+      "display_trade_date": "2026-10-16",
+      "last_success_at": "2026-10-18T11:03:47+08:00"
+    },
+    "current_day_result": "NOT_YET_PUBLISHED; input readiness or background recovery remains pending, not a healthy empty scan",
+    "availability_mode": "HISTORICAL_REFERENCE_RESTORED; live current-day background repair active"
+  }
+}

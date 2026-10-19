@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-10-19T10:42:14.852461+00:00",
+  "stock-analyzer": {
+    "contract": "investment-dashboard-swing-selection-v3",
+    "rules": "swing-rules-v5.2.0",
+    "tradeDate": "2026-10-16",
+    "items": 788,
+    "health": {
+      "status": "blocked",
+      "publication_allowed": false,
+      "checked_at": "2026-10-19T17:33:45+08:00",
+      "counts": {
+        "ready": 12,
+        "market": 5575,
+        "eligible": 2883,
+        "excluded": 2691,
+        "gap_count": 4877,
+        "snapshots": 5574,
+        "affected_stocks": 2872
+      },
+      "scan_completed": false,
+      "maintenance": {
+        "as_of": "2026-10-19",
+        "total": 5575,
+        "failed": 0,
+        "status": "running",
+        "succeeded": 711
+      }
+    },
+    "recovery": {
+      "reason": "当前数据尚未完成验收与扫描",
+      "requested_trade_date": "2026-10-19",
+      "display_trade_date": "2026-10-16",
+      "last_success_at": "2026-10-18T11:03:47+08:00"
+    },
+    "schemaFingerprintValid": true,
+    "recoveryJobs": 25,
+    "maintenanceLockHeld": true
+  },
+  "investment-research-dashboard": {
+    "metadata": {
+      "app_version": "0.28.2",
+      "git_commit": "98b7e67e252bfd5a932aecb3f827e82d22bea40c",
+      "build_time": "2026-10-19T10:30:05Z",
+      "environment": "production",
+      "api_version": "v1"
+    },
+    "contract": "investment-dashboard-swing-selection-v3",
+    "rules": "swing-rules-v5.2.0",
+    "tradeDate": "2026-10-16",
+    "items": 788,
+    "health": {
+      "status": "blocked",
+      "publication_allowed": false,
+      "checked_at": "2026-10-19T17:33:45+08:00",
+      "counts": {
+        "ready": 12,
+        "market": 5575,
+        "eligible": 2883,
+        "excluded": 2691,
+        "gap_count": 4877,
+        "snapshots": 5574,
+        "affected_stocks": 2872
+      },
+      "scan_completed": false,
+      "maintenance": {
+        "as_of": "2026-10-19",
+        "total": 5575,
+        "failed": 0,
+        "status": "running",
+        "succeeded": 711
+      }
+    },
+    "recovery": {
+      "reason": "当前数据尚未完成验收与扫描",
+      "requested_trade_date": "2026-10-19",
+      "display_trade_date": "2026-10-16",
+      "last_success_at": "2026-10-18T11:03:47+08:00"
+    },
+    "notes": [
+      "使用最近完整收盘数据；盘中确认字段与盘后条件计划分开解释",
+      "V5 不设置固定候选数量；返回全部通过必要结构与硬性数据门槛的候选",
+      "V5 三路径：路径阶段独立；低位蓄势支持三类跨阶段确认；首次突破等待回踩；结构完成度只用于同板块同路径排序，不代表收益概率",
+      "V5 一只股票只返回一行；每条策略路径保留独立阶段、确认状态、证据与失效条件",
+      "首次突破和进入回踩区都不等于企稳确认；只有跨阶段确认路径可以进入可计划参与",
+      "高位回撤 / 二次方向选择保留观察并降权，不作为标准趋势通道参与信号",
+      "历史收盘结果，实际计算/查询时间2026-10-19T18:42:12+08:00；模拟买入详情保留原始生成时间。",
+      "已隔离7只数据不完整股票；其余股票正常选股，详见缺口明细。",
+      "当前展示2026-10-16已完成结果，仅供历史参考，不代表今日买入信号。"
+    ]
+  },
+  "scope": "Affected authenticated read-only V3 requests and persisted initialization fingerprint/recovery schedule; does not force sampling, rewrite history, simulate purchases or send messages."
+}
