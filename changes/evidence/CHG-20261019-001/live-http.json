@@ -1,0 +1,73 @@
+{
+  "type": "ACTUAL_PUBLIC_SINA_LOCAL_HTTP_AND_SEPARATE_POSTGRES",
+  "sourceTime": "2026-10-19T14:29:47+08:00",
+  "industryCount": 48,
+  "providerAuth401": true,
+  "invalidCode400": true,
+  "legacyV1UnavailablePreserved": true,
+  "results": [
+    {
+      "selection": null,
+      "http": 200,
+      "series": 12,
+      "times": [
+        "14:24",
+        "14:25",
+        "14:26",
+        "14:27",
+        "14:28",
+        "14:29"
+      ],
+      "updatedAt": "2026-10-19T14:29:47+08:00",
+      "quality": "partial"
+    },
+    {
+      "selection": "new_zzhy",
+      "http": 200,
+      "series": 1,
+      "times": [
+        "14:24",
+        "14:25",
+        "14:26",
+        "14:27",
+        "14:28",
+        "14:29"
+      ],
+      "updatedAt": "2026-10-19T14:29:47+08:00",
+      "quality": "partial"
+    },
+    {
+      "selection": "new_blhy",
+      "http": 200,
+      "series": 1,
+      "times": [
+        "14:24",
+        "14:25",
+        "14:26",
+        "14:27",
+        "14:28",
+        "14:29"
+      ],
+      "updatedAt": "2026-10-19T14:29:47+08:00",
+      "quality": "partial"
+    },
+    {
+      "selection": "new_dzqj",
+      "http": 200,
+      "series": 1,
+      "times": [
+        "14:24",
+        "14:25",
+        "14:26",
+        "14:27",
+        "14:28",
+        "14:29"
+      ],
+      "updatedAt": "2026-10-19T14:29:47+08:00",
+      "quality": "partial"
+    }
+  ],
+  "all48IndustriesViaConsumerHTTP": true,
+  "sourceReadDoesNotCollect": true,
+  "storedBatches": 5
+}

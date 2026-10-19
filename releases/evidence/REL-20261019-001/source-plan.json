@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261019-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.11",
+      "commit_sha": "8ef146efb8efc3403af8049aff0bdcd54cbe9924",
+      "expected_production": {
+        "tag": "v2.3.10",
+        "commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
+        "image_id": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "8ef146efb8efc3403af8049aff0bdcd54cbe9924",
+        "evidence": "PR8 merged tree matches tested5f0cb6e; 103 isolated-PG unittest/config/compile/diff PASS. No business Actions workflow."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-011 X lookup index and CHG-012 internal Base queue retirement only; PR8 merged, no history deletion."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Old queue/maps retained; no DROP or data rewrite; research-v1, IM/report API, IDs and sent-state semantics unchanged. New index is additive."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Reuse REL-20261014-008 for unchanged news→Dashboard/stock lookup boundary; not rerun live integration. Combined isolated-PG 103 tests pass, including queue/new-empty-schema/index/idempotency and failed-start gating."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Public news source/parser/proxy/frequency unchanged; reuse REL-20261014-008 natural-source evidence, no forced replay/LLM/notifications run."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Synthetic check_config PASS, compileall/diff PASS. Retired cron flags ignored. Existing proxy/profile/container configuration retained. Protected runner backup precedes new-container concurrent index preparation and workers."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified production v2.3.10 SHA 1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7 / sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea retained; protected runner backs up DB/env and verifies readability. Old queue table remains compatible."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：好的 本次开发和修复的这些功能进行生产环境上线吧"
+  }
+}

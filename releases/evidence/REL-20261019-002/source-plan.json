@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261019-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.3.12",
+      "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+      "expected_production": {
+        "tag": "v2.3.11",
+        "commit_sha": "8ef146efb8efc3403af8049aff0bdcd54cbe9924",
+        "image_id": "sha256:0a808dd891636cc90d3d100fd079a043446837db188b52fbc05ffdd12276c09e"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+        "evidence": "PR9 merged; tree identical to tested1cf841e. Docker COPY/startup AST regression1, bash -n/diff PASS, underlying103 business tests reused. New deploy performs actual offline image startup-entrypoint gate before compose down."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261019-002 packaging-only fix to recover failed v2.3.11; Dockerfile, offline artifact gate, static regression/changelog. Stock/Dashboard still paused."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Old queue/maps retained; no DROP or data rewrite; research-v1, IM/report API, IDs and sent-state semantics unchanged. New index is additive."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Business code unchanged from103 isolated-PG passing tests; new offline image gate imports supervisor without main/network and parses all service/scripts before switching. Actual image gate will execute during protected deployment, not claimed already successful."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Public news source/parser/proxy/frequency unchanged; reuse REL-20261014-008 natural-source evidence, no forced replay/LLM/notifications run."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Proxy/profile/env and protected runner unchanged. Exact failed Tag/SHA/Image ID established by REL-20261019-001 failed receipt; failure is explained, not overwritten. Docker config --images resolves the single built service image; tested with local Compose."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Last stable v2.3.10 /1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7 /sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea and readable REL-001 backup retained. Expected current is explicitly failed v2.3.11, not treated as stable rollback. No data migration/downgrade."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：好的 本次开发和修复的这些功能进行生产环境上线吧"
+  }
+}
