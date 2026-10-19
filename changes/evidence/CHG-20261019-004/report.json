@@ -1,0 +1,645 @@
+{
+  "results": [
+    {
+      "route": "global-board",
+      "width": 390,
+      "document": 390,
+      "title": "全球投资看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "tech-board",
+      "width": 390,
+      "document": 390,
+      "title": "科技看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "limit-up-ladder",
+      "width": 390,
+      "document": 390,
+      "title": "涨停天梯",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "market-structure",
+      "width": 390,
+      "document": 390,
+      "title": "市场结构与ETF",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "capital-flow",
+      "width": 390,
+      "document": 390,
+      "title": "板块资金与趋势",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "sectors",
+      "width": 390,
+      "document": 390,
+      "title": "板块与题材",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "seat-flow",
+      "width": 390,
+      "document": 390,
+      "title": "席位订阅与复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "short-selection",
+      "width": 390,
+      "document": 390,
+      "title": "短线选股",
+      "smallInputs": [],
+      "overflow": [
+        "",
+        "up",
+        "sector-flow",
+        "el-tag el-tag--primary el-tag--small el-tag--plain",
+        "el-tag__content"
+      ]
+    },
+    {
+      "route": "swing-selection",
+      "width": 390,
+      "document": 390,
+      "title": "波段结构选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "watchlist",
+      "width": 390,
+      "document": 390,
+      "title": "自选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "decisions",
+      "width": 390,
+      "document": 390,
+      "title": "AI 决策中心",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "events",
+      "width": 390,
+      "document": 390,
+      "title": "盘中事件",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "review",
+      "width": 390,
+      "document": 390,
+      "title": "盘后复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "research",
+      "width": 390,
+      "document": 390,
+      "title": "投研信息库",
+      "smallInputs": [],
+      "overflow": [
+        "el-select",
+        "el-select__wrapper el-tooltip__trigger el-tooltip__trigger",
+        "el-select__selection",
+        "el-select__selected-item el-select__input-wrapper is-hidden",
+        "el-select__input",
+        "el-select__selected-item el-select__placeholder is-transparent",
+        "",
+        "el-select__suffix"
+      ]
+    },
+    {
+      "route": "us-industries",
+      "width": 390,
+      "document": 390,
+      "title": "美股隔夜映射",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "system",
+      "width": 390,
+      "document": 390,
+      "title": "数据与审计",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "users",
+      "width": 390,
+      "document": 390,
+      "title": "账号与用户",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "login",
+      "width": 390,
+      "document": 390,
+      "title": "登录工作台",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "global-board",
+      "width": 320,
+      "document": 320,
+      "title": "全球投资看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "tech-board",
+      "width": 320,
+      "document": 320,
+      "title": "科技看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "limit-up-ladder",
+      "width": 320,
+      "document": 320,
+      "title": "涨停天梯",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "market-structure",
+      "width": 320,
+      "document": 320,
+      "title": "市场结构与ETF",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "capital-flow",
+      "width": 320,
+      "document": 320,
+      "title": "板块资金与趋势",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "sectors",
+      "width": 320,
+      "document": 320,
+      "title": "板块与题材",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "seat-flow",
+      "width": 320,
+      "document": 320,
+      "title": "席位订阅与复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "short-selection",
+      "width": 320,
+      "document": 320,
+      "title": "短线选股",
+      "smallInputs": [],
+      "overflow": [
+        "",
+        "sector-score",
+        "",
+        "el-progress el-progress--line el-progress--without-text",
+        "el-progress-bar",
+        "el-progress-bar__outer",
+        "el-progress-bar__inner",
+        "up"
+      ]
+    },
+    {
+      "route": "swing-selection",
+      "width": 320,
+      "document": 320,
+      "title": "波段结构选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "watchlist",
+      "width": 320,
+      "document": 320,
+      "title": "自选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "decisions",
+      "width": 320,
+      "document": 320,
+      "title": "AI 决策中心",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "events",
+      "width": 320,
+      "document": 320,
+      "title": "盘中事件",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "review",
+      "width": 320,
+      "document": 320,
+      "title": "盘后复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "research",
+      "width": 320,
+      "document": 320,
+      "title": "投研信息库",
+      "smallInputs": [],
+      "overflow": [
+        "el-select",
+        "el-select__wrapper el-tooltip__trigger el-tooltip__trigger",
+        "el-select",
+        "el-select__wrapper el-tooltip__trigger el-tooltip__trigger",
+        "el-select__selection",
+        "el-select__selected-item el-select__input-wrapper is-hidden",
+        "el-select__input",
+        "el-select__selected-item el-select__placeholder is-transparent"
+      ]
+    },
+    {
+      "route": "us-industries",
+      "width": 320,
+      "document": 320,
+      "title": "美股隔夜映射",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "system",
+      "width": 320,
+      "document": 320,
+      "title": "数据与审计",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "users",
+      "width": 320,
+      "document": 320,
+      "title": "账号与用户",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "login",
+      "width": 320,
+      "document": 320,
+      "title": "登录工作台",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "global-board",
+      "width": 768,
+      "document": 768,
+      "title": "全球投资看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "tech-board",
+      "width": 768,
+      "document": 768,
+      "title": "科技看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "limit-up-ladder",
+      "width": 768,
+      "document": 768,
+      "title": "涨停天梯",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "market-structure",
+      "width": 768,
+      "document": 768,
+      "title": "市场结构与ETF",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "capital-flow",
+      "width": 768,
+      "document": 768,
+      "title": "板块资金与趋势",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "sectors",
+      "width": 768,
+      "document": 768,
+      "title": "板块与题材",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "seat-flow",
+      "width": 768,
+      "document": 768,
+      "title": "席位订阅与复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "short-selection",
+      "width": 768,
+      "document": 768,
+      "title": "短线选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "swing-selection",
+      "width": 768,
+      "document": 768,
+      "title": "波段结构选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "watchlist",
+      "width": 768,
+      "document": 768,
+      "title": "自选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "decisions",
+      "width": 768,
+      "document": 768,
+      "title": "AI 决策中心",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "events",
+      "width": 768,
+      "document": 768,
+      "title": "盘中事件",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "review",
+      "width": 768,
+      "document": 768,
+      "title": "盘后复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "research",
+      "width": 768,
+      "document": 768,
+      "title": "投研信息库",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "us-industries",
+      "width": 768,
+      "document": 768,
+      "title": "美股隔夜映射",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "system",
+      "width": 768,
+      "document": 768,
+      "title": "数据与审计",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "users",
+      "width": 768,
+      "document": 768,
+      "title": "账号与用户",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "login",
+      "width": 768,
+      "document": 768,
+      "title": "登录工作台",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "global-board",
+      "width": 1280,
+      "document": 1280,
+      "title": "全球投资看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "tech-board",
+      "width": 1280,
+      "document": 1280,
+      "title": "科技看板",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "limit-up-ladder",
+      "width": 1280,
+      "document": 1280,
+      "title": "涨停天梯",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "market-structure",
+      "width": 1280,
+      "document": 1280,
+      "title": "市场结构与ETF",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "capital-flow",
+      "width": 1280,
+      "document": 1280,
+      "title": "板块资金与趋势",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "sectors",
+      "width": 1280,
+      "document": 1280,
+      "title": "板块与题材",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "seat-flow",
+      "width": 1280,
+      "document": 1280,
+      "title": "席位订阅与复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "short-selection",
+      "width": 1280,
+      "document": 1280,
+      "title": "短线选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "swing-selection",
+      "width": 1280,
+      "document": 1280,
+      "title": "波段结构选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "watchlist",
+      "width": 1280,
+      "document": 1280,
+      "title": "自选股",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "decisions",
+      "width": 1280,
+      "document": 1280,
+      "title": "AI 决策中心",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "events",
+      "width": 1280,
+      "document": 1280,
+      "title": "盘中事件",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "review",
+      "width": 1280,
+      "document": 1280,
+      "title": "盘后复盘",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "research",
+      "width": 1280,
+      "document": 1280,
+      "title": "投研信息库",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "us-industries",
+      "width": 1280,
+      "document": 1280,
+      "title": "美股隔夜映射",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "system",
+      "width": 1280,
+      "document": 1280,
+      "title": "数据与审计",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "users",
+      "width": 1280,
+      "document": 1280,
+      "title": "账号与用户",
+      "smallInputs": [],
+      "overflow": []
+    },
+    {
+      "route": "login",
+      "width": 1280,
+      "document": 1280,
+      "title": "登录工作台",
+      "smallInputs": [],
+      "overflow": []
+    }
+  ],
+  "errors": [],
+  "tabNames": [
+    "决策摘要",
+    "行情与 K 线",
+    "短线判断",
+    "波段判断",
+    "公司与行业",
+    "预警与状态",
+    "我的研究判断"
+  ],
+  "detailWidth": 390,
+  "failedDraft": "MOCK 保存失败后保留输入，重连不自动补交。",
+  "noReplay": true,
+  "researchSaved": true,
+  "retainedFacts": true,
+  "updateKeptDraft": "MOCK 未保存复盘必须保留",
+  "cancelledKeptDraft": "MOCK 未保存复盘必须保留",
+  "updatedAfterSave": "MOCK 未保存复盘必须保留",
+  "navigation": 17,
+  "navigationClosed": "false",
+  "draftPreserved": "MOCK 未保存复盘必须保留",
+  "offlineApi": true,
+  "apiCached": false,
+  "cacheEntries": 114,
+  "reset": {
+    "registrations": 0,
+    "caches": [
+      "unrelated-qa-cache"
+    ]
+  },
+  "reads": 514,
+  "writes": 11
+}
