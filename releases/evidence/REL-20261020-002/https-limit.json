@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-20T16:32:48.276820+00:00",
+  "url": "https://invest.freemumu.top:9527/manifest.webmanifest",
+  "direct_public": "curl exit35 TLS handshake failure from current network",
+  "hostname_to_lan_9527": "curl exit28 connect timeout",
+  "status": "NOT_VERIFIED",
+  "note": "No certificate validation bypass, router, proxy or credential changes; LAN HTTP assets PASS, public HTTPS is remaining acceptance."
+}

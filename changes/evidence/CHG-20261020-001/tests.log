@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.29.0 test
+> vitest run src/components/sectorCapitalFlowGeometry.spec.ts src/components/SectorCapitalFlowChart.spec.ts src/components/sectorCapitalFlowLabelLayout.spec.ts src/views/CapitalFlowView.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/mobile-h5-pwa/investment-research-dashboard
+
+
+ Test Files  4 passed (4)
+      Tests  11 passed (11)
+   Start at  13:25:20
+   Duration  2.84s (transform 793ms, setup 72ms, import 2.30s, tests 406ms, environment 3.99s)

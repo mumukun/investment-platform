@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261020-002",
+  "status": "RELEASED",
+  "environment": "Production",
+  "request_observed_at": "2026-10-20T09:56:13Z",
+  "hotfix_started_at": "2026-10-20T11:43:48.260178+00:00",
+  "changes": [
+    "CHG-20261020-004"
+  ],
+  "related_changes": [
+    "CHG-20261019-004"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户当前明确授权本次未上线功能一起生产发版；本补丁完成已授权PWA交付并修复REL001验收失败。"
+  },
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "excluded": [
+    "stock-analyzer (already v4.5.0; unchanged)",
+    "marketNewsFeed"
+  ],
+  "previous_release": "REL-20261020-001",
+  "previous_version": "v0.29.0",
+  "new_version": "0.29.1",
+  "rollback_note": "Immediate verified baseline v0.29.0 core healthy with known PWA omission; previous stable v0.28.2 retained. No database downgrade.",
+  "main_sha": "3e44833217d2b280a10baf58c082225d2028c07a",
+  "pr": "https://github.com/mumukun/investment-research-dashboard/pull/33",
+  "main_ci_run_id": "39417886271",
+  "frozen_at": "2026-10-20T13:47:02.849990+00:00",
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.29.1",
+      "commit_sha": "3e44833217d2b280a10baf58c082225d2028c07a",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0b11200caeec33c1f532885a06fef15a2a83c342d711dd3bb64bd34b2e48f9bb",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2ceb4a3fa20dc732c8ef514ab88864c2e547fab245687523d1d5730347d07159"
+      },
+      "image_ids": {
+        "api": "sha256:ae3c61a6cf418064e883c6e84a1d27c60831b1966cc6e383e8201aa92133f00a",
+        "web": "sha256:e7a49ac1856bd985fb91f3f7c94663ec60d5dd421e51d8d1211b57769acb0333"
+      },
+      "quality_run_id": "39417886271",
+      "candidate_run_id": "39418300009",
+      "rollback": {
+        "tag": "v0.29.0",
+        "commit_sha": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+        "version": "0.29.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5e5ae64ee94d67379839154846eb27e7569f6c67d05959bab2c3b3b66b2bc2ff",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9d0fb66b59d4dec519c4dd1f1879e841450e2b0b4f40e961947ed3cbc5226898"
+        }
+      },
+      "production_status": "DEPLOYED_VERIFIED",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261020-002/investment-research-dashboard.dump",
+        "sha256": "9e949ad1749fe447cdf6045bc10d7f24b764349696f4e123f2813d1705f8dbba",
+        "size": 24426612
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG-20261020-004; verified production v0.29.0 exact SHA baseline. One Dockerfile COPY, PWA asset image smoke/regression, docs and PATCH metadata. No provider/news changes."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Static packaging only; no API/schema/auth/source/flag changes. Same HTTPS origin and /sw-reset.js recovery URL."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Regression2/Ruff/diff PASS; exact PR/main full CI and published image smoke PASS. New smoke requests all manifest icons, SW, reset, Apple icon and favicon."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Reuse REL001 actual10/20 swing result with publication_allowed true,2861ready/8isolated gaps; Tencent/Sina/DIRECT/EMblocked proved. No new market data logic."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "All three existing build flags true retained; no NAS proxy, credentials, permissions or service changes."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current verified v0.29.0 SHA/digests/config IDs retained, known PWA omission recorded. Earlier v0.28.2 stable artifacts retained. No DB downgrade; deploy includes baseline drift, readable backup, exact image/version and auth smoke."
+    }
+  },
+  "completed_at": "2026-10-20T16:32:48.244415+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261020-002/deployment.receipt.json",
+  "production_boundary": "releases/evidence/REL-20261020-002/production-boundary.json",
+  "elapsed_seconds": 23795.244415,
+  "timing_note": "从首次观察到正式请求计时，包含整合、PR/main CI、镜像等待、备份及部署；不是只统计切换。约五分钟目标未达到。",
+  "remaining_acceptance": [
+    "真机PWA安装/触控/软键盘/后台恢复未验收",
+    "当前网络公网HTTPS握手失败、LAN直连9527超时；LAN HTTP9360全部PWA资产通过。未擅改网络/证书/代理。",
+    "真实缺档8只隔离，未伪造停牌/历史成分事实。"
+  ],
+  "pwa_http_assets": "releases/evidence/REL-20261020-002/pwa-http-assets.json",
+  "connection_recovery": "WAN/Tailscale SSH lost return path; verified LAN192.168.1.70 with same pinned host key. Protected journal shows original patch deploy15:21UTC PASS, resume_verify16:30UTC PASS without restart or new backup.",
+  "production_deployed_at": "2026-10-20T15:21:43.482356+00:00",
+  "https_acceptance": "NOT_VERIFIED from current network; protected image/runtime and LAN HTTP assets PASS"
+}

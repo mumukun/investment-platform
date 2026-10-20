@@ -1,0 +1,30 @@
+{
+  "evidence": "真实公共来源，本机直连，2026-10-20盘后；不写生产",
+  "proxy": "trust_env=False; no proxy fallback",
+  "samples": [
+    {
+      "code": "000001",
+      "sina_latest": "2026-10-19",
+      "sina_bars": 155,
+      "tencent_latest": "2026-10-20",
+      "tencent_bars": 156,
+      "adjusted_close": 11.44,
+      "amount_cny": 1429560000,
+      "volume_shares": 124509700,
+      "historical_amounts_match_sina": true
+    },
+    {
+      "code": "600519",
+      "sina_latest": "2026-10-19",
+      "sina_bars": 155,
+      "tencent_latest": "2026-10-20",
+      "tencent_bars": 156,
+      "adjusted_close": 1331.88,
+      "amount_cny": 4525400000,
+      "volume_shares": 3413600,
+      "historical_amounts_match_sina": true
+    }
+  ],
+  "boundary": "带日期范围查询在当前日仍返回前一日；当日改用最近窗口并自行过滤。历史查询使用下一自然日排他上界。",
+  "limitations": "两个样本不代表全市场或NAS出口通过；未运行生产维护。"
+}

@@ -1,0 +1,50 @@
+# 股票相关数据源核查与解耦
+
+CHG-20261020-003；2026-10-20；本地未发布实现。扫描三个业务仓库的生产源码、脚本、配置和实际AKShare 1.18.64函数，区分实际采集、条件分支、旧归档与来源链接。没有请求东财或新供应商验证接口。
+
+## 当前采用的边界
+
+国内通用报价、基本行情、个股日线、全市场快照通过stock-analyzer的`stock_data`中性数据层；业务不再直接选择厂商SDK。`CN_STOCK_DATA_PROVIDERS`默认`tencent,sina`，可改变顺序或只选其中之一。能力缺失、金额不全、复权或日期不符均拒绝或显式降级，最后健康历史保留。加入其他供应商需要用户授权、适配器和契约测试，不能仅修改一个名称就兼容未知数据。
+
+个股日线默认腾讯优先，新浪备源：实测腾讯新接口可提供当日及历史真实成交额，新浪完整日线在本次收盘后仍延迟一天。全市场目录、行业资金/成员、概念成员、五分钟历史当前由新浪提供相应能力；并非任一供应商都具备全部能力。快照目录与逐股报价分别核验，允许使用已配置来源按证券补齐，但整批复权价格不混源。交易所、指数发布方、具名第三方序列及海外来源保留独立适配和口径，不能当成可任意互换的普通个股行情。
+
+## stock-analyzer 来源清单
+
+| 来源 | 用途和入口 | 本次结论 |
+| --- | --- | --- |
+| 腾讯 | stock_data/swing_sources：个股报价、基本行情、新日线；global_board/tech_board：具名跨市场资产报价；market_structure_sources：指数/ETF价格 | 国内DIRECT；通用个股经能力路由，具名资产继续独立适配 |
+| 新浪 | stock_data：报价、完整日线、全A目录；swing_intraday_data：5分钟历史；sector_fund_sina*：行业资金/成员；security_classification：概念；global_board：期货/汇率；日历/指数 | 国内DIRECT；保留真实源日期、金额、分类和资金口径；不宣称所有股票均齐全 |
+| 东方财富（含AKShare隐含封装） | 旧sync报价、hotmap_data全A快照、sync_daily_stock与market_structure_sources个股历史、security_classification概念目录 | 普通行情已改腾讯/新浪；概念默认改新浪且保留分类来源，不拼接为东财分类 |
+| 东方财富专有数据 | add_stock F10/EM2016简介；seat_flow龙虎榜；hotmap封板事实；market_structure_sources平均股价800005/微盘BK1158、ETF净值/拆分/映射 | 尚无核验的同口径替代；SDK执行前或HTTP传输前拒绝，保留旧归档，未经具体同意不可恢复 |
+| 东方财富旧板块资金/成员 | capital_flow旧sector trend、sector_fund_research旧采集、sector_fund_members.collect_eastmoney | 默认资金研究/成员走新浪；旧档按原契约只读。旧采集路径仍受传输拦截，不删除可追溯历史 |
+| 同花顺 | market_structure_sources具名全A883421；旧sync_daily_sector概念历史兜底 | 具名已存在序列单独列账，不冒充东财平均股价；东财概念→同花顺自动替代退出。本轮未新增来源/未对其发探测请求 |
+| 申万宏源 | 官方行业分类XLS、index_hist_sw行业指数、申万分类文件 | 保留发布方定义；SDK国内直连，官方行业指数失效不再顶替为东财指数 |
+| 上交所/深交所/北交所 | 证券目录/上市规则；沪深ETF份额 | 官方参考来源，国内DIRECT；不属于新增行情数据商 |
+| 国证/CNI、中证/CSI | tech_board具名技术产业指数/成员；中证2000发布方932000历史 | 保留准确序列与发布方，不同名换源；国内DIRECT |
+| Yahoo Finance | 美股报价/搜索、海外市场与ETF：sync/add_stock/us_market_runtime | 已有海外范围保留，沿用海外代理政策；不作为国内备源 |
+| Alpha Vantage | us_market_runtime美股财报日历 | 仅已有key配置时启用；本轮未调用、未增加账户或授权 |
+| Fed/BEA等官方日历 | 既有海外宏观事件 | 非个股行情备用源；原用途保留 |
+
+未在已扫描的生产路径发现Tushare、Baostock、efinance、yfinance或Stooq接入；这不等于供应商永远不可新增，未来仍须用户同意及适配验证。
+
+## 其他仓库
+
+- investment-research-dashboard：通过stock-analyzer API消费股票数据，没有直接抓取第三方股价。原后端资金默认eastmoney、前端固定sina现改为自动能力选择，来源契约映射集中在集成层。行业成员关联、分类/价格/强度说明投影为中性字段，页面不按new_前缀识别能力、不固定供应商名。Sina/BK旧契约验证器和归档身份保留，避免误映射历史。席位新闻链接属于引用，不等于行情下载。
+- marketNewsFeed：趋势股票报告读取内部stock-analyzer `/api/stocks/{query}`；未发现直接个股行情供应商接入。本仓未修改。MKTNews、Nikkei、TrendForce、DIGITIMES、CTEE、Google、NVIDIA、AMD、Baiinfo等是既有新闻/资料来源，未冒充股票数据备源。
+- investment-platform：只管理规则、Change和审计，不承载业务行情抓取。
+
+## 不能等价替代的能力
+
+| 能力 | 原因 | 当前行为 |
+| --- | --- | --- |
+| F10/EM2016行业和简介 | 分类体系/事实字段不是新浪分类的别名 | 新事实缺失，已有资料保留；不改行业标签冒充等价 |
+| 龙虎榜/营业部/精确封板事实 | 通用报价不能还原具名席位、封板资金及次数 | 新采集显式不可用，既有归档可读；不以推算值补齐 |
+| 平均股价800005、微盘BK1158、旧概念指数 | 发布方和成员方法不同，换序列会改变历史含义 | 旧序列保留；不拼接同花顺/本地均值顶替 |
+| ETF净值、跟踪标的及拆分 | 行情价格不是净值，也不能证明拆分比例/跟踪关系 | 原事实缺失状态保留，官方份额与市场价格独立采集 |
+| 供应商缺少qfqday的证券（如早期688981样本） | day不能证明已前复权；允许另一源提供合格整批，17:41新浪已补齐该样本 | 双源不足时明确缺口；未通过完整性门槛不发布新结果 |
+
+## 网络与版本
+
+国内股票HTTP忽略HTTP_PROXY/HTTPS_PROXY/ALL_PROXY、Session及显式代理，不自动切换代理。AKShare选择模块绑定直连传输，`*_em`入口执行前拒绝，eastmoney.com/dfcfw.com含子域及重定向传输前拒绝。旧代理设置不能绕过用户约束。Yahoo与GitHub/GHCR/包管理下载保持各自既有出口，不全局清空代理、不改NAS/mihomo。
+
+本轮只本地实现、验证与Commit，不Push/PR/Merge/Tag/部署、不补生产数据。候选Provider4.5.0、Dashboard0.29.0，旧生产版本仍可能有遗留行为；必须未来正式发布后才能验证NAS实际恢复。本文件不能替代生产验收。

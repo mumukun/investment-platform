@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.29.0 test
+> vitest run --run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/swing-source-recovery/investment-research-dashboard
+
+
+ Test Files  39 passed (39)
+      Tests  196 passed (196)
+   Start at  17:40:27
+   Duration  13.43s (transform 6.24s, setup 659ms, import 32.18s, tests 27.73s, environment 24.23s)

@@ -1,0 +1,102 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261020-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户当前明确授权本次未上线功能一起生产发版；本补丁完成已授权PWA交付并修复REL001验收失败。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "3e44833217d2b280a10baf58c082225d2028c07a",
+        "version": "0.29.1",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0b11200caeec33c1f532885a06fef15a2a83c342d711dd3bb64bd34b2e48f9bb",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2ceb4a3fa20dc732c8ef514ab88864c2e547fab245687523d1d5730347d07159"
+        },
+        "image_ids": {
+          "api": "sha256:ae3c61a6cf418064e883c6e84a1d27c60831b1966cc6e383e8201aa92133f00a",
+          "web": "sha256:e7a49ac1856bd985fb91f3f7c94663ec60d5dd421e51d8d1211b57769acb0333"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "3e44833217d2b280a10baf58c082225d2028c07a",
+            "run_id": "39417886271"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0b11200caeec33c1f532885a06fef15a2a83c342d711dd3bb64bd34b2e48f9bb",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2ceb4a3fa20dc732c8ef514ab88864c2e547fab245687523d1d5730347d07159"
+            }
+          },
+          "candidate_run_id": "39418300009"
+        }
+      },
+      "tag": "v0.29.1",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v0.29.0",
+        "commit_sha": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+        "image_ids": {
+          "api": "sha256:8b7af3326548d860af3ad1a9e3e03e43999cfc64d45ca2597c498484862a9be3",
+          "web": "sha256:8ab337aa763b1aad89aa50bb528f4e35b6473ba6b0deecf3d8eac29e1946c30c"
+        },
+        "build_time": "2026-10-20T10:05:51Z"
+      },
+      "rollback": {
+        "tag": "v0.29.0",
+        "commit_sha": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+        "version": "0.29.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5e5ae64ee94d67379839154846eb27e7569f6c67d05959bab2c3b3b66b2bc2ff",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9d0fb66b59d4dec519c4dd1f1879e841450e2b0b4f40e961947ed3cbc5226898"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG-20261020-004; verified production v0.29.0 exact SHA baseline. One Dockerfile COPY, PWA asset image smoke/regression, docs and PATCH metadata. No provider/news changes."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Static packaging only; no API/schema/auth/source/flag changes. Same HTTPS origin and /sw-reset.js recovery URL."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Regression2/Ruff/diff PASS; exact PR/main full CI and published image smoke PASS. New smoke requests all manifest icons, SW, reset, Apple icon and favicon."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Reuse REL001 actual10/20 swing result with publication_allowed true,2861ready/8isolated gaps; Tencent/Sina/DIRECT/EMblocked proved. No new market data logic."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "All three existing build flags true retained; no NAS proxy, credentials, permissions or service changes."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current verified v0.29.0 SHA/digests/config IDs retained, known PWA omission recorded. Earlier v0.28.2 stable artifacts retained. No DB downgrade; deploy includes baseline drift, readable backup, exact image/version and auth smoke."
+    }
+  }
+}

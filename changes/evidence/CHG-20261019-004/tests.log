@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.29.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/mobile-h5-pwa/investment-research-dashboard
+
+
+ Test Files  43 passed (43)
+      Tests  206 passed (206)
+   Start at  00:44:34
+   Duration  14.55s (transform 7.93s, setup 527ms, import 35.60s, tests 29.30s, environment 25.93s)

@@ -1,0 +1,28 @@
+{
+  "issue": "Web image omitted COPY public ./public",
+  "observed": {
+    "/manifest.webmanifest": {
+      "status": 200,
+      "headers": {
+        "content-type": "application/manifest+json",
+        "cache-control": "no-cache"
+      }
+    },
+    "/sw.js": {
+      "status": 200,
+      "headers": {
+        "content-type": "application/javascript",
+        "cache-control": "no-store"
+      }
+    },
+    "/sw-reset.js": {
+      "status": 404,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-store"
+      }
+    }
+  },
+  "recovery_change": "CHG-20261020-004",
+  "recovery_release": "REL-20261020-002"
+}

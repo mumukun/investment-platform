@@ -1,0 +1,104 @@
+{
+  "observed_at": "2026-10-20T17:41:48.412656+08:00",
+  "transport": "DIRECT",
+  "quotes": [
+    {
+      "configured": "tencent",
+      "items": [
+        {
+          "code": "000001",
+          "date": "2026-10-20",
+          "source": "tencent",
+          "amount": 1429560000.0
+        },
+        {
+          "code": "688008",
+          "date": "2026-10-20",
+          "source": "tencent",
+          "amount": 4131690000.0
+        },
+        {
+          "code": "688981",
+          "date": "2026-10-20",
+          "source": "tencent",
+          "amount": 3005540000.0
+        },
+        {
+          "code": "920000",
+          "date": "2026-10-20",
+          "source": "tencent",
+          "amount": 7117400.0
+        }
+      ],
+      "errors": {}
+    },
+    {
+      "configured": "sina",
+      "items": [
+        {
+          "code": "000001",
+          "date": "2026-10-20",
+          "source": "sina",
+          "amount": 1429559866.96
+        },
+        {
+          "code": "688008",
+          "date": "2026-10-20",
+          "source": "sina",
+          "amount": 4131691739.0
+        },
+        {
+          "code": "688981",
+          "date": "2026-10-20",
+          "source": "sina",
+          "amount": 3005544991.0
+        },
+        {
+          "code": "920000",
+          "date": "2026-10-20",
+          "source": "sina",
+          "amount": 7117443.66
+        }
+      ],
+      "errors": {}
+    }
+  ],
+  "daily": [
+    {
+      "code": "000001",
+      "rows": 10,
+      "latest": "2026-10-20",
+      "amount": 1429559900.0,
+      "volume": 124509700.0,
+      "source": "tencent:qfq+kline:amount"
+    },
+    {
+      "code": "688008",
+      "rows": 10,
+      "latest": "2026-10-20",
+      "amount": 4131691700.0,
+      "volume": 24597313.0,
+      "source": "tencent:qfq+kline:amount"
+    },
+    {
+      "code": "688981",
+      "rows": 10,
+      "latest": "2026-10-20",
+      "amount": 3005544991.0,
+      "volume": 29936506.0,
+      "source": "sina:qfq"
+    }
+  ],
+  "snapshot": {
+    "elapsed_seconds": 26.19,
+    "accepted": 5574,
+    "unique": 5574,
+    "source_counts": {
+      "tencent": 5574
+    },
+    "actual_dates": [
+      "2026-10-20"
+    ],
+    "all_amount_finite_nonnegative": true
+  }
+}
