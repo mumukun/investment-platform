@@ -1,0 +1,10 @@
+{
+  "mode": "local MOCK, no production requests",
+  "opaqueSectorId": true,
+  "memberCapabilityFromBackend": true,
+  "sourceSelectionAbsentFromFrontend": true,
+  "adapterDescriptionsVisible": true,
+  "mobilePageOverflow": true,
+  "mobileDrawerOverflow": false,
+  "pageErrors": []
+}
