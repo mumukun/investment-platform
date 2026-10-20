@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261020-001",
+  "status": "RELEASED",
+  "environment": "Production",
+  "request_observed_at": "2026-10-20T09:56:13Z",
+  "changes": [
+    "CHG-20261019-004",
+    "CHG-20261020-001",
+    "CHG-20261020-003"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：提交代码吧，另外本次未上线的功能一起上线，现在上生产环境吧，生产环境发版"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "excluded": [
+    "marketNewsFeed",
+    "与本次对话无关的未发布需求",
+    "生产历史补造/删除",
+    "未授权东财采集"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.5.0",
+      "tag": "v4.5.0",
+      "previous_version": "v4.4.2",
+      "rollback_version": "v4.4.2",
+      "rollback_commit_sha": "5b1a7ff0e1a01e27ebe149b5e1183e04f4f66b17",
+      "rollback_images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:16f88955bc43089da273fa40fe5625a4b3c4978f942e9f273bd968099e6ab22d"
+      },
+      "rollback_image_ids": {
+        "app": "sha256:81e0abc610ecb8e20cf5c62bfe4a80858669b469eb36bb1852e71eb51cbf9160"
+      },
+      "commit_sha": "c0e30fce57ccc7a4b92bbc528e6763302b388a20",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ad8202d7b6cf1a6bb5777787123bd465d7641c4fda06bbc8eb9346cada3d6617"
+      },
+      "image_ids": {
+        "app": "sha256:cb255c779ffbcdee0bdfe1e0c2344152bf657cefcdb4568674e90a57866db8d0"
+      },
+      "candidate_run_id": "39404729089",
+      "quality_run_id": "39404649558",
+      "production_status": "DEPLOYED_VERIFIED",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261020-001/stock-analyzer.dump",
+        "sha256": "b1dd4015b9d2a4305f2d88f9bcf6fb96caa497fa45895a3eb1191230ec9ccc6d",
+        "size": 650467260
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.29.0",
+      "tag": "v0.29.0",
+      "previous_version": "v0.28.2",
+      "rollback_version": "v0.28.2",
+      "rollback_commit_sha": "98b7e67e252bfd5a932aecb3f827e82d22bea40c",
+      "rollback_images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:04487c030ddfa4dc6048b52eb773648a2fd7f122e7c9ef89a5ccd4e4fbcd35a1",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c8b90403099ac0d4cf75b1834ac23a6bfc780827f2d300b930ddbaceff2f6929"
+      },
+      "rollback_image_ids": {
+        "api": "sha256:70f5e0bd11c9a8dcb616f42c63ac680b3345f64b4c15666afbf6a49e0f00f42f",
+        "web": "sha256:d869b8b46c75bf499e3e9f10ca2d6279d6cff76c06000a317a4216ec922e7938"
+      },
+      "commit_sha": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5e5ae64ee94d67379839154846eb27e7569f6c67d05959bab2c3b3b66b2bc2ff",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9d0fb66b59d4dec519c4dd1f1879e841450e2b0b4f40e961947ed3cbc5226898"
+      },
+      "image_ids": {
+        "api": "sha256:8b7af3326548d860af3ad1a9e3e03e43999cfc64d45ca2597c498484862a9be3",
+        "web": "sha256:8ab337aa763b1aad89aa50bb528f4e35b6473ba6b0deecf3d8eac29e1946c30c"
+      },
+      "candidate_run_id": "39405461959",
+      "quality_run_id": "39405083399",
+      "production_status": "DEPLOYED_VERIFIED",
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261020-001/investment-research-dashboard.dump",
+        "sha256": "15a51eaab60a839626577a7ab0000c47d4b37d3823cf548686ef4ca123d6ca31",
+        "size": 24420370
+      }
+    }
+  ],
+  "notes": [
+    "Include mobile H5/PWA, sector curve display and approved-source swing recovery. Governance-only CHG-20261020-002 is persisted without its own tag.",
+    "Integrate and test conflicts only; reuse prior validation and main CI/candidates. No restore/rollback drills."
+  ],
+  "integration": {
+    "branch": "feat/CHG-20261020-003-release-integration",
+    "provider_pr": "https://github.com/mumukun/stock-analyzer/pull/31",
+    "provider_main_sha": "c0e30fce57ccc7a4b92bbc528e6763302b388a20",
+    "dashboard_pr": "https://github.com/mumukun/investment-research-dashboard/pull/32",
+    "dashboard_integration_sha": "2e4e580a28f99e934977f2554952d9a58fe369ae",
+    "validation": "Integrated frontend 45 files / 212 tests PASS; production build PASS; backend Ruff lint/format PASS. Provider exact-main CI and candidate PASS. Dashboard PR full backend/migration checks PASS, frontend checks running.",
+    "dashboard_main_sha": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+    "dashboard_pr_ci": "https://github.com/mumukun/investment-research-dashboard/actions/runs/39404700618",
+    "dashboard_main_ci": "https://github.com/mumukun/investment-research-dashboard/actions/runs/39405083399"
+  },
+  "remaining_acceptance": [
+    "真实iPhone/Samsung/PWA安装、键盘与后台恢复需用户目标设备验收；桌面模拟不替代真机。",
+    "波段数据状态按上线后真实门槛验收；不把HTTP成功等同全市场补齐。",
+    "历史行业成员资金缺档不按当前成分补造；没有授权的东财专有能力明确不可用。"
+  ],
+  "frozen_at": "2026-10-20T10:08:01.991720+00:00",
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Three selected Changes only; stock PR31 and Dashboard PR32 merged. News excluded. Original unrelated worktrees unchanged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Additive existing V3 recovery metadata and source adapter boundary. Existing persisted fields/classification/history and strict date/adjustment/amount gates retained; no database migration or business rules change."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Reuse changes/evidence/CHG-20261020-003/verification-source-decoupling.md and mobile/curves evidence. Integrated frontend212 PASS/build PASS/Ruff PASS; fresh PostgreSQL PR CI backend and migrations PASS. Exact merged-main CI and image smoke PASS."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Tencent/Sina DIRECT live 10/20 quotes and native daily amount; 5574 dated snapshot verification recorded. Do not claim entire5575 universe complete. No Eastmoney probe/permission. No historic constituent reconstruction."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Exact main CI/candidate artifacts bound to SHA/digest/config ID. Existing Dashboard three build flags alltrue retained. Default domestic providers Tencent,Sina and transport DIRECT; legacy Eastmoney blocked. NAS dependency download proxy unchanged."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Retained verified stock v4.4.2 and Dashboard v0.28.2 SHA/digest/config ID; no database downgrade. Standard deploy includes live drift and protected readable backup. PWA rollback must retain /sw-reset.js at same origin to remove app caches; reset asset retained in new web digest and repository. Real-device installation remains user acceptance."
+    }
+  },
+  "plan": "releases/evidence/REL-20261020-001/image-release.plan.json",
+  "deployment_interruptions": [
+    {
+      "at": "2026-10-20T10:43:15.235927+00:00",
+      "detail": "GitHub exact SHA/digest evidence verified. SSH to protected NAS deploy entry closed before receipt; production state not inferred. Inspect service status and resume same immutable plan under protected journal/lock."
+    }
+  ],
+  "completed_at": "2026-10-20T11:43:34.453509+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261020-001/deployment.receipt.json",
+  "production_boundary": "releases/evidence/REL-20261020-001/production-boundary.json",
+  "elapsed_seconds": 6441.453509,
+  "timing_note": "从首次观察到正式请求计时，包含整合、PR/main CI、镜像等待、备份及部署；不是只统计切换。约五分钟目标未达到。",
+  "acceptance_failure": {
+    "scope": "Dashboard PWA static assets",
+    "detail": "Web Dockerfile omitted public directory; manifest/sw work but icons and sw-reset.js404. Core services healthy, swing10/20scan complete/publication allowed,8 data gaps isolated.",
+    "recovery_change": "CHG-20261020-004",
+    "recovery_release": "REL-20261020-002",
+    "resolution": "Fixed and verified in production over LAN HTTP; public HTTPS recheck is pending by REL-20261020-002 / v0.29.1; v0.29.0 tag remains immutable. Initial PWA acceptance failure retained."
+  },
+  "followup_release": "REL-20261020-002"
+}

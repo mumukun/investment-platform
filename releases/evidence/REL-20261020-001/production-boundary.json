@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-10-20T11:42:04.797915+00:00",
+  "stock-analyzer": {
+    "ok": true,
+    "contract_version": "investment-dashboard-swing-selection-v3",
+    "rules_version": "swing-rules-v5.2.0",
+    "trade_date": "2026-10-20",
+    "data_health": {
+      "status": "partial",
+      "passed": false,
+      "publication_allowed": true,
+      "checked_at": "2026-10-20T19:40:44+08:00",
+      "counts": {
+        "ready": 2861,
+        "market": 5575,
+        "eligible": 2868,
+        "excluded": 2706,
+        "gap_count": 8,
+        "snapshots": 5574,
+        "affected_stocks": 8
+      },
+      "scan_completed": true
+    },
+    "recovery": null,
+    "items": 1,
+    "providers": [
+      "tencent",
+      "sina"
+    ],
+    "domestic_trust_env": false,
+    "eastmoney_blocked_before_network": true
+  },
+  "investment-research-dashboard": {
+    "recovery": null,
+    "metadata": {
+      "app_version": "0.29.0",
+      "git_commit": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+      "build_time": "2026-10-20T10:05:51Z",
+      "environment": "production",
+      "api_version": "v1"
+    },
+    "pwa_manifest": {
+      "name": "带头大哥 · 投研看板",
+      "start_url": "/global-board",
+      "scope": "/",
+      "display": "standalone"
+    },
+    "pwa_http_checks": [
+      {
+        "path": "/",
+        "status": 200,
+        "content_type": "text/html",
+        "cache_control": "no-cache",
+        "bytes": 2039
+      },
+      {
+        "path": "/sw.js",
+        "status": 200,
+        "content_type": "application/javascript",
+        "cache_control": "no-store",
+        "bytes": 6610
+      },
+      {
+        "path": "/sw-reset.js",
+        "status": 404,
+        "accepted": false
+      },
+      {
+        "path": "/manifest.webmanifest",
+        "status": 200,
+        "content_type": "application/manifest+json",
+        "cache_control": "no-cache",
+        "bytes": 487
+      },
+      {
+        "path": "/api/v1/health",
+        "status": 200,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "bytes": 39
+      }
+    ]
+  },
+  "scope": "Targeted authenticated read-only swing request, effective source policy and PWA assets. No history rewrite, forced collection or simulated buy."
+}

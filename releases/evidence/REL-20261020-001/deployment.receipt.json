@@ -1,0 +1,126 @@
+{
+  "release_id": "REL-20261020-001",
+  "plan_hash": "3b5070c26ec2315911f34dc74c286bcdbe69a909425d5672e3a1d32b30d52099",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261020-001/stock-analyzer.dump",
+        "sha256": "b1dd4015b9d2a4305f2d88f9bcf6fb96caa497fa45895a3eb1191230ec9ccc6d",
+        "size": 650467260
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:cb255c779ffbcdee0bdfe1e0c2344152bf657cefcdb4568674e90a57866db8d0",
+        "stock-watch": "sha256:cb255c779ffbcdee0bdfe1e0c2344152bf657cefcdb4568674e90a57866db8d0"
+      }
+    },
+    "investment-research-dashboard": {
+      "backup": {
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261020-001/investment-research-dashboard.dump",
+        "sha256": "15a51eaab60a839626577a7ab0000c47d4b37d3823cf548686ef4ca123d6ca31",
+        "size": 24420370
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "api": "sha256:8b7af3326548d860af3ad1a9e3e03e43999cfc64d45ca2597c498484862a9be3",
+        "web": "sha256:8ab337aa763b1aad89aa50bb528f4e35b6473ba6b0deecf3d8eac29e1946c30c"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-20T11:32:22.309450+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 17.045
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-20T11:32:42.496174+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 237.051
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-20T11:36:40.118098+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 1.493
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-20T11:36:42.617705+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 46.332
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-20T11:37:29.124133+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 8.732
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-20T11:37:40.419153+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 46.848
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-10-20T11:38:29.078009+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 17.92
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-10-20T11:38:50.837019+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 3.488
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-10-20T11:38:55.392645+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 106.009
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-10-20T11:40:41.510420+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 4.761
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v4.5.0",
+      "commit_sha": "c0e30fce57ccc7a4b92bbc528e6763302b388a20",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ad8202d7b6cf1a6bb5777787123bd465d7641c4fda06bbc8eb9346cada3d6617"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.29.0",
+      "commit_sha": "2dfc1e087a6f786ebe46b246d6012db66fbde5bb",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5e5ae64ee94d67379839154846eb27e7569f6c67d05959bab2c3b3b66b2bc2ff",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9d0fb66b59d4dec519c4dd1f1879e841450e2b0b4f40e961947ed3cbc5226898"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-20T11:40:47.094675+00:00"
+}

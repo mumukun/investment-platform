@@ -1,0 +1,80 @@
+[
+  {
+    "path": "/manifest.webmanifest",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "application/manifest+json",
+    "cache_control": "no-cache",
+    "sha256": "8aa8a3ca27234cc50fbcdcb9a2325ba5d940b78cd4d3c770a49a8b53100e8c85",
+    "manifest": {
+      "name": "带头大哥 · 投研看板",
+      "start_url": "/global-board",
+      "display": "standalone",
+      "scope": "/"
+    }
+  },
+  {
+    "path": "/sw.js",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "application/javascript",
+    "cache_control": "no-store",
+    "sha256": "b85a548fc73dda7493ab5f9bca444298e21221db84bb4a2f642fe3dbb6bcf2ec"
+  },
+  {
+    "path": "/sw-reset.js",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "application/javascript",
+    "cache_control": "no-store",
+    "sha256": "3cb17834f8f18387a385fd55953b729d90dc17cb586e05b0bc6406e82846975a"
+  },
+  {
+    "path": "/icons/icon-192.png",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "image/png",
+    "cache_control": "public, immutable",
+    "sha256": "5e6bcc9b4b5d761790048681e45bb3a2cba25f17167864925750b3bf2398a5e1"
+  },
+  {
+    "path": "/icons/icon-512.png",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "image/png",
+    "cache_control": "public, immutable",
+    "sha256": "f8646fc8647accc9325fd52c1c1608582724a76be428043cf2282e3e4dc3b2a8"
+  },
+  {
+    "path": "/icons/icon-maskable-512.png",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "image/png",
+    "cache_control": "public, immutable",
+    "sha256": "f8646fc8647accc9325fd52c1c1608582724a76be428043cf2282e3e4dc3b2a8"
+  },
+  {
+    "path": "/icons/apple-touch-icon.png",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "image/png",
+    "cache_control": "public, immutable",
+    "sha256": "f2f3f9d0cba7ff4798295c28177c43610fd9117d343e5a07eb100498ebbcc911"
+  },
+  {
+    "path": "/icons/icon.svg",
+    "status": 200,
+    "tls_verify": null,
+    "transport": "HTTP LAN; not HTTPS acceptance",
+    "content_type": "image/svg+xml",
+    "cache_control": "public, immutable",
+    "sha256": "6c3127225bb151bb3f8dad780528e75107eb3fbab8e66c1b0a0cca18a321a561"
+  }
+]
