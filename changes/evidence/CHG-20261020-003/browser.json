@@ -1,0 +1,11 @@
+{
+  "evidence": "local MOCK, no production requests",
+  "states": [
+    "incomplete",
+    "running"
+  ],
+  "historicalQuoteWarningAbsent": true,
+  "sourceReasonVisible": true,
+  "countsAccurate": true,
+  "pageErrors": []
+}
