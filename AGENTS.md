@@ -133,6 +133,8 @@ Dashboard 的新增与修改界面统一遵循业务仓库 `docs/design/product-
 
 ## 11. NAS 外网下载与代理默认（2026-10-16）
 
+- 用户2026-10-20明确要求：国内股票相关数据请求直接连接来源，不使用HTTP/HTTPS/SOCKS代理，不在失败后自动切换代理。腾讯、新浪等股票数据适配器应避免继承进程环境代理；既有模块的代理例外不得覆盖此要求。本条是实施约束，不表示所有现有入口已完成修复。
+- 下述mihomo默认仅用于GitHub、GHCR、包管理器等外网依赖下载，不用于国内股票数据采集。它不授权生产配置修改、重启或发布。
 - DS920plus 的外网 HTTP/HTTPS 下载默认使用现有 mihomo `http://127.0.0.1:7890`；包括 GHCR 镜像与同类依赖下载。先读 [NAS 代理指引](docs/nas-outbound-proxy.md)，不凭应用代理变量推断 Docker 拉取路径。
 - Docker daemon 的实际 JSON 字段为 **`HttpProxy` / `HttpsProxy` / `NoProxy`**，区分大小写；字段缺失记 UNKNOWN，不能解释为直连。优先复用 `scripts/check_docker_proxy.py`。本机现有 systemd drop-in 已生效，不为每次发布重复改配置/重启。
 - NAS 登录 shell 已加载 `$HOME/.config/investment-platform/proxy.sh`；非交互 SSH 的 HTTP/HTTPS 下载先显式 source 此文件。保留本地/内网直连与已有业务容器出口；SSH Git 仍走既有 SSH 配置，不把 HTTP 代理当作 SSH 代理。
