@@ -1,0 +1,38 @@
+{"settings": {"stock_analyzer_timeout_seconds": 60.0, "market_news_feed_timeout_seconds": 20.0, "watchlist_projection_sync_seconds": 60, "market_data_projection_sync_seconds": null}}
+{"path": "/api/v1/health", "status": 200, "seconds": 0.008, "ttfb_seconds": 0.008, "bytes": 39, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/readiness", "status": 200, "seconds": 0.012, "ttfb_seconds": 0.012, "bytes": 746, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/system/version", "status": 200, "seconds": 0.048, "ttfb_seconds": 0.047, "bytes": 3756, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/data-status", "status": 200, "seconds": 0.011, "ttfb_seconds": 0.011, "bytes": 7682, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/swing-selection", "status": 200, "seconds": 6.115, "ttfb_seconds": 6.013, "bytes": 3992947, "error": null, "quality": {"degraded": true, "trade_date": "2026-10-20", "data_time": "2026-10-20T22:18:19+08:00"}, "count": 862, "quote_refresh": {"requested": 862, "refreshed": 862, "failed": 0, "failure_codes": [], "status": "healthy", "data_time": "2026-10-21T11:10:14+08:00", "source": "已配置国内行情源", "decision_recomputed": false}}
+{"path": "/api/v1/swing-selection?trade_date=2026-10-20", "status": 200, "seconds": 4.503, "ttfb_seconds": 4.405, "bytes": 3934695, "error": null, "quality": {"degraded": true, "trade_date": "2026-10-20", "data_time": "2026-10-20T22:18:19+08:00"}, "count": 862, "quote_refresh": {"requested": 0, "refreshed": 0, "failed": 0, "failure_codes": [], "status": "historical", "data_time": null, "source": null, "decision_recomputed": false}}
+{"path": "/api/v1/swing-selection/stats", "status": 200, "seconds": 4.746, "ttfb_seconds": 4.746, "bytes": 5798, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/swing-selection/history", "status": 200, "seconds": 0.4, "ttfb_seconds": 0.392, "bytes": 429292, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/short-selection", "status": 200, "seconds": 6.324, "ttfb_seconds": 6.323, "bytes": 20381, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/short-selection/tracking", "status": 200, "seconds": 0.23, "ttfb_seconds": 0.23, "bytes": 1070, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/short-selection/stats", "status": 200, "seconds": 0.27, "ttfb_seconds": 0.27, "bytes": 2610, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/stocks/300188/bars", "status": 200, "seconds": 37.308, "ttfb_seconds": 37.308, "bytes": 10555, "error": null, "quality": {"trade_date": "2026-10-21"}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/stocks/300188/candles", "status": 200, "seconds": 4.904, "ttfb_seconds": 4.903, "bytes": 8780, "error": null, "quality": {"trade_date": "2026-10-21"}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/capital-flow?source=sina", "status": 200, "seconds": 0.973, "ttfb_seconds": 0.972, "bytes": 13136, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/capital-flow/research?source=sina", "status": 200, "seconds": 1.182, "ttfb_seconds": 1.18, "bytes": 74561, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/capital-flow/research/member-industries", "status": 200, "seconds": 1.963, "ttfb_seconds": 1.963, "bytes": 2230, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/sector-workbench", "status": 502, "seconds": 60.065, "ttfb_seconds": null, "bytes": 42, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/limit-up-ladder", "status": 200, "seconds": 17.958, "ttfb_seconds": 17.954, "bytes": 148736, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/watchlist", "status": 200, "seconds": 0.037, "ttfb_seconds": 0.033, "bytes": 259066, "error": null}
+{"path": "/api/v1/watchlist/monitor", "status": 200, "seconds": 0.961, "ttfb_seconds": 0.957, "bytes": 144679, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/watchlist/nextday-strategy", "status": 200, "seconds": 1.251, "ttfb_seconds": 1.251, "bytes": 10365, "error": null, "quality": {"trade_date": "2026-10-21"}, "count": 19, "quote_refresh": null}
+{"path": "/api/v1/watchlist/strategy-profiles", "status": 200, "seconds": 0.08, "ttfb_seconds": 0.076, "bytes": 181604, "error": null, "quality": {}, "count": 69, "quote_refresh": null}
+{"path": "/api/v1/dashboard/premarket", "status": 200, "seconds": 2.473, "ttfb_seconds": 2.473, "bytes": 7753, "error": null, "quality": {}, "count": 8, "quote_refresh": null}
+{"path": "/api/v1/dashboard/intraday", "status": 200, "seconds": 0.501, "ttfb_seconds": 0.501, "bytes": 4222, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/dashboard/postmarket", "status": 200, "seconds": 0.427, "ttfb_seconds": 0.427, "bytes": 4222, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/market-structure/overview", "status": 200, "seconds": 8.788, "ttfb_seconds": 8.599, "bytes": 5920100, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/global-board", "status": 200, "seconds": 0.327, "ttfb_seconds": 0.236, "bytes": 2305781, "error": null, "quality": {}, "count": 45, "quote_refresh": null}
+{"path": "/api/v1/tech-board", "status": 200, "seconds": 3.028, "ttfb_seconds": 2.957, "bytes": 1761695, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/tech-board/boards/cni-980115/members", "status": 200, "seconds": 1.756, "ttfb_seconds": 1.752, "bytes": 131908, "error": null, "quality": {}, "count": 40, "quote_refresh": null}
+{"path": "/api/v1/tech-board/boards/cni-980115/history", "status": 200, "seconds": 3.923, "ttfb_seconds": 3.921, "bytes": 26542, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/tech-board/concepts/sina-chgn_701159/members", "status": 200, "seconds": 0.913, "ttfb_seconds": 0.901, "bytes": 419694, "error": null, "quality": {}, "count": 206, "quote_refresh": null}
+{"path": "/api/v1/research", "status": 200, "seconds": 9.435, "ttfb_seconds": 9.41, "bytes": 1401977, "error": null}
+{"path": "/api/v1/reviews/availability", "status": 200, "seconds": 0.576, "ttfb_seconds": 0.575, "bytes": 4286, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/reviews/latest", "status": 200, "seconds": 1.756, "ttfb_seconds": 1.756, "bytes": 1328, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/us-industries/overnight", "status": 200, "seconds": 0.016, "ttfb_seconds": 0.014, "bytes": 51126, "error": null, "quality": {"trade_date": "2026-10-21"}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/us-industries/calendar", "status": 200, "seconds": 0.011, "ttfb_seconds": 0.01, "bytes": 3407, "error": null, "quality": {}, "count": 0, "quote_refresh": null}
+{"path": "/api/v1/us-industries/history", "status": 200, "seconds": 4.227, "ttfb_seconds": 4.185, "bytes": 1536328, "error": null, "quality": {}, "count": 30, "quote_refresh": null}

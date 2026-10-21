@@ -1,0 +1,11 @@
+{"service": "dashboard", "path": "/api/v1/sector-workbench", "status": 200, "bytes": 111814, "seconds": 0.051}
+{"service": "dashboard", "path": "/api/v1/swing-selection", "status": 200, "bytes": 3795049, "trade_date": "2026-10-21", "data_time": "2026-10-21T13:25:56+08:00", "freshness_status": "delayed", "selection_phase": "intraday", "daily_basis": "2026-10-20", "count": 833, "intraday_archive_unchanged": true, "seconds": 0.941}
+{"service": "dashboard", "path": "/api/v1/swing-selection/stats", "status": 200, "bytes": 5797, "seconds": 0.046}
+{"service": "dashboard", "path": "/api/v1/short-selection", "status": 200, "bytes": 20625, "seconds": 2.065}
+{"service": "dashboard", "path": "/api/v1/stocks/300188/bars", "status": 200, "bytes": 10541, "seconds": 0.171}
+{"service": "dashboard", "path": "/api/v1/research?summary=true&limit=500", "status": 200, "bytes": 712380, "seconds": 0.613}
+{"service": "dashboard", "path": "/api/v1/market-structure/overview?compact=true", "status": 200, "bytes": 4054313, "seconds": 0.897}
+{"service": "dashboard", "path": "/api/v1/tech-board", "status": 200, "bytes": 1758688, "seconds": 1.271}
+{"service": "news", "path": "/api/x-watch/users?limit=20", "status": 200, "bytes": 1445, "seconds": 0.036}
+{"service": "news", "path": "/api/x-watch/usage", "status": 200, "bytes": 4621, "seconds": 4.099}
+{"service": "news", "path": "/api/integrations/investment-dashboard/research?limit=100", "status": 200, "bytes": 177773, "seconds": 0.418}

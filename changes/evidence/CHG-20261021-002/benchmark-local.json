@@ -1,0 +1,136 @@
+{
+  "evidence_type": "local synthetic PostgreSQL 16; not production latency",
+  "observed_at": "2026-10-21T04:41:30.396232+00:00",
+  "sector_coverage_950000_rows": {
+    "before": {
+      "samples_ms": [
+        2080.435,
+        2045.534,
+        2443.312,
+        2224.282,
+        2127.318
+      ],
+      "median_ms": 2127.318,
+      "p95_ms": 2443.312
+    },
+    "after": {
+      "samples_ms": [
+        121.046,
+        111.941,
+        113.867,
+        149.015,
+        157.257
+      ],
+      "median_ms": 121.046,
+      "p95_ms": 157.257
+    },
+    "results_equal": true
+  },
+  "limit_dates_450000_rows": {
+    "before": {
+      "samples_ms": [
+        322.265,
+        299.741,
+        287.343,
+        266.346,
+        285.266
+      ],
+      "median_ms": 287.343,
+      "p95_ms": 322.265
+    },
+    "after": {
+      "samples_ms": [
+        6.384,
+        5.224,
+        4.329,
+        4.438,
+        5.345
+      ],
+      "median_ms": 5.224,
+      "p95_ms": 6.384
+    },
+    "results_equal": true
+  },
+  "published_read_862_items": {
+    "samples_ms": [
+      199.52,
+      368.703,
+      178.42,
+      132.877,
+      166.514,
+      230.682,
+      139.586,
+      143.485,
+      326.487,
+      124.52,
+      130.071,
+      289.238,
+      144.611,
+      152.765,
+      144.25,
+      280.828,
+      157.933,
+      131.161,
+      226.181,
+      163.77
+    ],
+    "median_ms": 160.8515,
+    "p95_ms": 326.487,
+    "bytes": 3953155,
+    "build_count": 1
+  },
+  "structure_121_days": {
+    "before": {
+      "samples_ms": [
+        262.676,
+        256.083,
+        352.786,
+        168.715,
+        383.831
+      ],
+      "median_ms": 262.676,
+      "p95_ms": 383.831
+    },
+    "warm_after": {
+      "samples_ms": [
+        19.329,
+        16.778,
+        16.757,
+        17.671,
+        16.016
+      ],
+      "median_ms": 16.778,
+      "p95_ms": 19.329
+    },
+    "full_bytes": 5364139,
+    "compact_bytes": 209083,
+    "all_dates_and_values_preserved": true
+  },
+  "research_500_items": {
+    "before": {
+      "samples_ms": [
+        292.633,
+        380.71,
+        199.888,
+        365.361,
+        177.154
+      ],
+      "median_ms": 292.633,
+      "p95_ms": 380.71
+    },
+    "after": {
+      "samples_ms": [
+        36.684,
+        51.052,
+        38.231,
+        53.768,
+        46.21
+      ],
+      "median_ms": 46.21,
+      "p95_ms": 53.768
+    },
+    "full_bytes": 7109890,
+    "summary_bytes": 309390,
+    "all_ids_preserved": true
+  }
+}

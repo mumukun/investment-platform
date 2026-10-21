@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261021-002",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "release_target_seconds": 300,
+  "created_at": "2026-10-21T05:09:25.343433+00:00",
+  "request_started_at": "2026-10-21T05:05:59+00:00",
+  "changes": [
+    "CHG-20261021-002"
+  ],
+  "environment": "Production",
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "new_version": "2.4.1",
+      "tag": "v2.4.1",
+      "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+      "previous_version": "v2.4.0",
+      "rollback_version": "v2.4.0",
+      "rollback_commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
+      "rollback_image_id": "sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25",
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/11",
+      "artifact_id": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571",
+      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE"
+    }
+  ],
+  "source_execution_plan": "releases/evidence/REL-20261021-002/source-plan.json",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：提交代码，连同开发的其他功能一起上线，生产发布。"
+  },
+  "verification": {
+    "status": "PASS",
+    "known_limitations": [
+      "SOURCE_TAG_BUILD records Image ID; application version remains verified tag-derived."
+    ]
+  },
+  "notes": [
+    "Same formal request also covers REL-20261021-003 stock/dashboard; separate existing execution models require distinct immutable runner plans."
+  ],
+  "completed_at": "2026-10-21T05:16:28.049513+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261021-002/deployment.receipt.json",
+  "deployment_duration_seconds": 307.367513,
+  "updated_at": "2026-10-21T05:33:21.582711+00:00",
+  "rollback": {
+    "status": "AVAILABLE",
+    "evidence": "Retained exact prior Tag/SHA/Artifact and readable protected backup in deployment receipt; no database downgrade."
+  }
+}

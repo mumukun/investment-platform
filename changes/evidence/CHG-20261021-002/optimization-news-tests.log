@@ -1,0 +1,37 @@
+test_limited_projection_keeps_original_order_filters_since_and_full_body (test_http_read_cost.ResearchBoundedProjectionTest.test_limited_projection_keeps_original_order_filters_since_and_full_body) ... ok
+test_failed_initialization_can_retry (test_http_read_cost.XInitializationTest.test_failed_initialization_can_retry) ... ok
+test_successful_initialization_is_not_repeated_by_reads (test_http_read_cost.XInitializationTest.test_successful_initialization_is_not_repeated_by_reads) ... ok
+test_returns_versioned_projection_with_separate_source_and_analysis (test_admin_research_api.DashboardResearchApiTest.test_returns_versioned_projection_with_separate_source_and_analysis) ... ok
+test_concurrent_new_failure_is_reported_as_conflict (test_ctee_resume_api.CteeResumeApiTest.test_concurrent_new_failure_is_reported_as_conflict) ... ok
+test_failed_or_empty_probe_keeps_pause (test_ctee_resume_api.CteeResumeApiTest.test_failed_or_empty_probe_keeps_pause) ... ok
+test_missing_state_does_not_report_recovery (test_ctee_resume_api.CteeResumeApiTest.test_missing_state_does_not_report_recovery) ... ok
+test_retry_after_is_not_overridden (test_ctee_resume_api.CteeResumeApiTest.test_retry_after_is_not_overridden) ... ok
+test_success_and_already_unblocked_are_idempotent (test_ctee_resume_api.CteeResumeApiTest.test_success_and_already_unblocked_are_idempotent) ... ok
+test_unauthorized_request_cannot_probe_or_clear_state (test_ctee_resume_api.CteeResumeApiTest.test_unauthorized_request_cannot_probe_or_clear_state) ... config check ok
+✅ 新闻数据库: PostgreSQL | 主库连接已建立
+✅ 新闻数据库: PostgreSQL | 主库连接已建立
+{"event": "http_request", "method": "POST", "path": "/api/research-feed/ctee/resume", "status": 401, "bytes": 38, "seconds": 0.0001}
+ok
+test_compare_and_swap_preserves_concurrent_new_pause (test_ctee_resume_api.CteeResumeStorageTest.test_compare_and_swap_preserves_concurrent_new_pause) ... ok
+test_release_does_not_forge_success_or_change_other_source (test_ctee_resume_api.CteeResumeStorageTest.test_release_does_not_forge_success_or_change_other_source) ... ok
+test_complete_schema_initializes_on_postgres (test_database_backend.DatabaseBackendTest.test_complete_schema_initializes_on_postgres) ... ok
+test_dsn_is_required (test_database_backend.DatabaseBackendTest.test_dsn_is_required) ... ok
+test_parameter_translation_preserves_quoted_question_marks (test_database_backend.DatabaseBackendTest.test_parameter_translation_preserves_quoted_question_marks) ... ok
+test_not_configured_is_noop (test_dashboard_webhook.NotifyDashboardResearchUpdatedTest.test_not_configured_is_noop) ... ok
+test_post_callback_omits_header_when_secret_missing (test_dashboard_webhook.NotifyDashboardResearchUpdatedTest.test_post_callback_omits_header_when_secret_missing) ... ok
+test_post_callback_sends_secret_header_without_business_data (test_dashboard_webhook.NotifyDashboardResearchUpdatedTest.test_post_callback_sends_secret_header_without_business_data) ... ok
+test_post_callback_swallows_http_and_network_failures (test_dashboard_webhook.NotifyDashboardResearchUpdatedTest.test_post_callback_swallows_http_and_network_failures) ... ✅ 新闻数据库: PostgreSQL | 主库连接已建立
+✅ 新闻数据库: PostgreSQL | 主库连接已建立
+⚠️  看板回调返回异常状态: HTTP 502
+⚠️  看板回调失败: Timeout
+ok
+test_schedules_callback_and_debounces_bursts (test_dashboard_webhook.NotifyDashboardResearchUpdatedTest.test_schedules_callback_and_debounces_bursts) ... ok
+test_fresh_database_defers_index_to_empty_schema_initialization (test_x_usage_index.XUsageIndexTest.test_fresh_database_defers_index_to_empty_schema_initialization) ... ok
+test_invalid_existing_index_stops_preparation_without_deleting_it (test_x_usage_index.XUsageIndexTest.test_invalid_existing_index_stops_preparation_without_deleting_it) ... ok
+test_latest_sync_uses_matching_index_and_preserves_timestamp (test_x_usage_index.XUsageIndexTest.test_latest_sync_uses_matching_index_and_preserves_timestamp) ... ok
+test_online_preparation_is_idempotent (test_x_usage_index.XUsageIndexTest.test_online_preparation_is_idempotent) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 27.117s
+
+OK

@@ -1,0 +1,6 @@
+{"path": "/api/v1/health", "seconds": 0.206, "ttfb_seconds": 0.206, "status": 200, "wire_bytes": 39, "encoding": null, "error": null}
+{"path": "/api/v1/swing-selection", "seconds": 6.952, "ttfb_seconds": 6.771, "status": 200, "wire_bytes": 255669, "encoding": "gzip", "error": null}
+{"path": "/api/v1/swing-selection?trade_date=2026-10-20", "seconds": 3.126, "ttfb_seconds": 2.827, "status": 200, "wire_bytes": 247092, "encoding": "gzip", "error": null}
+{"path": "/api/v1/swing-selection?limit=50", "seconds": 2.311, "ttfb_seconds": 2.226, "status": 200, "wire_bytes": 60851, "encoding": "gzip", "error": null}
+{"path": "/api/v1/short-selection", "seconds": 3.79, "ttfb_seconds": 3.789, "status": 200, "wire_bytes": 3511, "encoding": "gzip", "error": null}
+{"path": "/api/v1/stocks/300188/bars", "seconds": 4.867, "ttfb_seconds": 4.866, "status": 200, "wire_bytes": 2698, "encoding": "gzip", "error": null}

@@ -1,0 +1,26 @@
+{
+  "investment-platform": {
+    "branch": "fix/CHG-20261021-002-http-latency-audit",
+    "head": "ada2263acc6097906511b4f567100fdcc27337d8",
+    "status": "?? changes/CHG-20261021-002.md\n?? changes/evidence/CHG-20261021-002/\n?? docs/http-latency-audit-20261021.md\n?? docs/http-latency-optimization-20261021.md",
+    "diff_check": 0
+  },
+  "stock-analyzer": {
+    "branch": "fix/CHG-20261021-002-http-latency",
+    "head": "c0e30fce57ccc7a4b92bbc528e6763302b388a20",
+    "status": "M CHANGELOG.md\n M docs/hermes-api.md\n M stock_analyzer/api.py\n M stock_analyzer/candidate_history.py\n M stock_analyzer/local_db.py\n M stock_analyzer/sector_activity_contract.py\n M tests/test_stock_bars_contract.py\n M tests/test_swing_contract.py\n M tests/test_watchlist_live_quotes.py\n?? stock_analyzer/api_projection.py\n?? stock_analyzer/chart_projection.py\n?? tests/test_api_projection.py",
+    "diff_check": 0
+  },
+  "investment-research-dashboard": {
+    "branch": "fix/CHG-20261021-002-http-latency",
+    "head": "3e44833217d2b280a10baf58c082225d2028c07a",
+    "status": "M CHANGELOG.md\n M backend/app/api.py\n M backend/app/main.py\n M backend/app/market_data_projection.py\n M backend/app/market_structure.py\n M backend/app/tech_board.py\n M backend/tests/test_api.py\n M deploy/nginx.conf\n M docs/technical/api-contract.md\n M src/services/api.ts\n M src/types/api.ts\n M src/types/marketStructure.ts\n M src/views/ResearchLibraryView.vue\n M src/views/ShortSelectionView.spec.ts\n M src/views/ShortSelectionView.vue\n M src/views/SwingSelectionView.spec.ts\n M src/views/SwingSelectionView.vue\n?? backend/tests/test_http_read_cost.py\n?? src/views/ResearchLibraryView.spec.ts",
+    "diff_check": 0
+  },
+  "marketNewsFeed": {
+    "branch": "fix/CHG-20261021-002-http-latency",
+    "head": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
+    "status": "M README.md\n M docs/hermes-api.md\n M src/admin_api.py\n M src/research_feed/storage.py\n?? tests/test_http_read_cost.py",
+    "diff_check": 0
+  }
+}

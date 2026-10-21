@@ -1,0 +1,12 @@
+{"service": "stock", "path": "/api/integrations/investment-dashboard/watchlist?refresh_quotes=false&limit=1", "seconds": 2.203, "status": 200, "bytes": 2748, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/swing-selection?contract_version=investment-dashboard-swing-selection-v3&limit=50", "seconds": 6.034, "status": 200, "bytes": 597548, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/swing-selection/stats?contract_version=investment-dashboard-swing-stats-v3", "seconds": 6.961, "status": 200, "bytes": 5798, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/short-selection", "seconds": 14.424, "status": 200, "bytes": 114461, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/monitor", "seconds": 0.202, "status": 200, "bytes": 144929, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/market-structure", "seconds": 8.118, "status": 200, "bytes": 5548325, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/global-board", "seconds": 3.339, "status": 200, "bytes": 2305635, "error": null}
+{"service": "stock", "path": "/api/integrations/investment-dashboard/tech-board", "seconds": 20.958, "status": 200, "bytes": 4677050, "error": null}
+{"service": "news", "path": "/api/health", "seconds": 0.003, "status": 200, "bytes": 145, "error": null}
+{"service": "news", "path": "/api/integrations/investment-dashboard/research?limit=100", "seconds": 14.603, "status": 200, "bytes": 180006, "error": null}
+{"service": "news", "path": "/api/x-watch/users?limit=20", "seconds": 8.684, "status": 200, "bytes": 2112, "error": null}
+{"service": "news", "path": "/api/x-watch/usage", "seconds": 4.681, "status": 200, "bytes": 4607, "error": null}

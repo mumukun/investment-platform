@@ -1,0 +1,295 @@
+[
+  {
+    "section": "tables",
+    "rows": [
+      {
+        "relname": "a_share_snapshot",
+        "n_live_tup": 449275,
+        "n_dead_tup": 50175,
+        "seq_scan": 1371,
+        "seq_tup_read": 567398900,
+        "idx_scan": 3614463,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-21T10:29:35.313735+08:00"
+      },
+      {
+        "relname": "security_trade_rule",
+        "n_live_tup": 159661,
+        "n_dead_tup": 15914,
+        "seq_scan": 28794,
+        "seq_tup_read": 3733125363,
+        "idx_scan": 220218,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-20T08:35:49.829753+08:00"
+      },
+      {
+        "relname": "intraday_stock_bar",
+        "n_live_tup": 11817349,
+        "n_dead_tup": 11006,
+        "seq_scan": 7824,
+        "seq_tup_read": 25671883039,
+        "idx_scan": 15620156,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-19T12:47:26.608539+08:00"
+      },
+      {
+        "relname": "swing_daily_bar",
+        "n_live_tup": 948023,
+        "n_dead_tup": 164656,
+        "seq_scan": 286,
+        "seq_tup_read": 134402861,
+        "idx_scan": 2682377,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-20T18:19:13.032363+08:00"
+      },
+      {
+        "relname": "swing_state_event",
+        "n_live_tup": 97870,
+        "n_dead_tup": 0,
+        "seq_scan": 759,
+        "seq_tup_read": 28708746,
+        "idx_scan": 36633,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-20T14:23:17.749061+08:00"
+      },
+      {
+        "relname": "limit_up_snapshot_run",
+        "n_live_tup": 646,
+        "n_dead_tup": 0,
+        "seq_scan": 142,
+        "seq_tup_read": 47568,
+        "idx_scan": 649,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-20T11:46:51.716895+08:00"
+      },
+      {
+        "relname": "swing_simulated_trade",
+        "n_live_tup": 84,
+        "n_dead_tup": 0,
+        "seq_scan": 6995,
+        "seq_tup_read": 501643,
+        "idx_scan": 256,
+        "last_analyze": null,
+        "last_autoanalyze": "2026-10-20T22:19:17.570061+08:00"
+      }
+    ]
+  },
+  {
+    "section": "indexes",
+    "rows": [
+      {
+        "tablename": "a_share_snapshot",
+        "indexname": "a_share_snapshot_pkey",
+        "indexdef": "CREATE UNIQUE INDEX a_share_snapshot_pkey ON stock_analyzer.a_share_snapshot USING btree (trade_date, code)"
+      },
+      {
+        "tablename": "a_share_snapshot",
+        "indexname": "idx_a_share_snapshot_update",
+        "indexdef": "CREATE INDEX idx_a_share_snapshot_update ON stock_analyzer.a_share_snapshot USING btree (trade_date, update_time)"
+      },
+      {
+        "tablename": "a_share_snapshot",
+        "indexname": "idx_a_share_snapshot_code_date",
+        "indexdef": "CREATE INDEX idx_a_share_snapshot_code_date ON stock_analyzer.a_share_snapshot USING btree (code, trade_date DESC)"
+      },
+      {
+        "tablename": "limit_up_snapshot_run",
+        "indexname": "limit_up_snapshot_run_pkey",
+        "indexdef": "CREATE UNIQUE INDEX limit_up_snapshot_run_pkey ON stock_analyzer.limit_up_snapshot_run USING btree (trade_date, snapshot_time)"
+      },
+      {
+        "tablename": "limit_up_snapshot_run",
+        "indexname": "idx_limit_up_run_date_time",
+        "indexdef": "CREATE INDEX idx_limit_up_run_date_time ON stock_analyzer.limit_up_snapshot_run USING btree (trade_date DESC, snapshot_time DESC)"
+      },
+      {
+        "tablename": "swing_daily_bar",
+        "indexname": "swing_daily_bar_pkey",
+        "indexdef": "CREATE UNIQUE INDEX swing_daily_bar_pkey ON stock_analyzer.swing_daily_bar USING btree (trade_date, code)"
+      },
+      {
+        "tablename": "swing_daily_bar",
+        "indexname": "idx_swing_daily_bar_code_date",
+        "indexdef": "CREATE INDEX idx_swing_daily_bar_code_date ON stock_analyzer.swing_daily_bar USING btree (code, trade_date)"
+      },
+      {
+        "tablename": "swing_simulated_trade",
+        "indexname": "swing_simulated_trade_pkey",
+        "indexdef": "CREATE UNIQUE INDEX swing_simulated_trade_pkey ON stock_analyzer.swing_simulated_trade USING btree (trade_id)"
+      },
+      {
+        "tablename": "swing_simulated_trade",
+        "indexname": "swing_simulated_trade_rules_version_trade_date_code_key",
+        "indexdef": "CREATE UNIQUE INDEX swing_simulated_trade_rules_version_trade_date_code_key ON stock_analyzer.swing_simulated_trade USING btree (rules_version, trade_date, code)"
+      },
+      {
+        "tablename": "swing_simulated_trade",
+        "indexname": "idx_swing_simulated_code",
+        "indexdef": "CREATE INDEX idx_swing_simulated_code ON stock_analyzer.swing_simulated_trade USING btree (rules_version, code, trade_date)"
+      }
+    ]
+  },
+  [
+    {
+      "Plan": {
+        "Node Type": "Limit",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 686.52,
+        "Total Cost": 92023.42,
+        "Plan Rows": 120,
+        "Plan Width": 19,
+        "Plans": [
+          {
+            "Node Type": "Aggregate",
+            "Strategy": "Sorted",
+            "Partial Mode": "Simple",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 686.52,
+            "Total Cost": 162048.38,
+            "Plan Rows": 212,
+            "Plan Width": 19,
+            "Group Key": [
+              "trade_date"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Incremental Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 686.52,
+                "Total Cost": 157306.15,
+                "Plan Rows": 948023,
+                "Plan Width": 18,
+                "Sort Key": [
+                  "trade_date DESC",
+                  "code"
+                ],
+                "Presorted Key": [
+                  "trade_date"
+                ],
+                "Plans": [
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Backward",
+                    "Index Name": "swing_daily_bar_pkey",
+                    "Relation Name": "swing_daily_bar",
+                    "Alias": "swing_daily_bar",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 87969.94,
+                    "Plan Rows": 948023,
+                    "Plan Width": 18
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "Plan": {
+        "Node Type": "Limit",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 78151.02,
+        "Total Cost": 78151.05,
+        "Plan Rows": 10,
+        "Plan Width": 32,
+        "Plans": [
+          {
+            "Node Type": "Sort",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 78151.02,
+            "Total Cost": 79275.73,
+            "Plan Rows": 449882,
+            "Plan Width": 32,
+            "Sort Key": [
+              "limit_up_snapshot_run.trade_date DESC"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Unique",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 66179.82,
+                "Total Cost": 68429.23,
+                "Plan Rows": 449882,
+                "Plan Width": 32,
+                "Plans": [
+                  {
+                    "Node Type": "Sort",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Startup Cost": 66179.82,
+                    "Total Cost": 67304.53,
+                    "Plan Rows": 449882,
+                    "Plan Width": 32,
+                    "Sort Key": [
+                      "limit_up_snapshot_run.trade_date"
+                    ],
+                    "Plans": [
+                      {
+                        "Node Type": "Append",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Startup Cost": 0.0,
+                        "Total Cost": 13171.73,
+                        "Plan Rows": 449882,
+                        "Plan Width": 32,
+                        "Subplans Removed": 0,
+                        "Plans": [
+                          {
+                            "Node Type": "Seq Scan",
+                            "Parent Relationship": "Member",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Relation Name": "limit_up_snapshot_run",
+                            "Alias": "limit_up_snapshot_run",
+                            "Startup Cost": 0.0,
+                            "Total Cost": 19.59,
+                            "Plan Rows": 607,
+                            "Plan Width": 11,
+                            "Filter": "(trade_date <= '2026-10-21'::text)"
+                          },
+                          {
+                            "Node Type": "Index Only Scan",
+                            "Parent Relationship": "Member",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Scan Direction": "Forward",
+                            "Index Name": "idx_a_share_snapshot_update",
+                            "Relation Name": "a_share_snapshot",
+                            "Alias": "a_share_snapshot",
+                            "Startup Cost": 0.42,
+                            "Total Cost": 10902.74,
+                            "Plan Rows": 449275,
+                            "Plan Width": 11,
+                            "Index Cond": "(trade_date <= '2026-10-21'::text)"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+]

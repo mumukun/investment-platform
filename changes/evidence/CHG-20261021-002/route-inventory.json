@@ -1,0 +1,1116 @@
+[
+  {
+    "service": "dashboard",
+    "module": "global_board.py",
+    "line": 184,
+    "method": "GET",
+    "path": "/api/v1/global-board",
+    "function": "read"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 141,
+    "method": "GET",
+    "path": "/api/v1/seat-tracking/subscriptions",
+    "function": "subscriptions"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 158,
+    "method": "GET",
+    "path": "/api/v1/seat-tracking/directory",
+    "function": "directory"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 166,
+    "method": "POST",
+    "path": "/api/v1/seat-tracking/subscriptions",
+    "function": "subscribe"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 198,
+    "method": "PATCH",
+    "path": "/api/v1/seat-tracking/subscriptions/{subscription_id}",
+    "function": "update_subscription"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 231,
+    "method": "GET",
+    "path": "/api/v1/seat-tracking/reports",
+    "function": "reports"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 255,
+    "method": "POST",
+    "path": "/api/v1/seat-tracking/refresh",
+    "function": "refresh"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 270,
+    "method": "POST",
+    "path": "/api/v1/seat-tracking/cases",
+    "function": "create_case"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 314,
+    "method": "GET",
+    "path": "/api/v1/seat-tracking/reviews",
+    "function": "reviews"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 352,
+    "method": "PATCH",
+    "path": "/api/v1/seat-tracking/reviews/{review_id}",
+    "function": "update_review"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 369,
+    "method": "POST",
+    "path": "/api/v1/seat-tracking/analysis",
+    "function": "analysis"
+  },
+  {
+    "service": "dashboard",
+    "module": "seat_tracking_api.py",
+    "line": 446,
+    "method": "POST",
+    "path": "/api/v1/seat-tracking/reviews/{review_id}/outcomes",
+    "function": "outcomes"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 156,
+    "method": "GET",
+    "path": "/api/v1/health",
+    "function": "health"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 162,
+    "method": "GET",
+    "path": "/api/v1/readiness",
+    "function": "readiness"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 175,
+    "method": "GET",
+    "path": "/api/v1/system/version",
+    "function": "system_version"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 224,
+    "method": "GET",
+    "path": "/api/v1/data-status",
+    "function": "data_status"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 234,
+    "method": "GET",
+    "path": "/api/v1/dashboard/{session}",
+    "function": "dashboard"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 278,
+    "method": "GET",
+    "path": "/api/v1/capital-flow/research",
+    "function": "sector_fund_research"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 296,
+    "method": "GET",
+    "path": "/api/v1/capital-flow/research/member-industries",
+    "function": "sector_fund_member_industries"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 310,
+    "method": "GET",
+    "path": "/api/v1/capital-flow/research/members",
+    "function": "sector_fund_members"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 324,
+    "method": "POST",
+    "path": "/api/v1/capital-flow/research/members/refresh",
+    "function": "refresh_sector_fund_members"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 340,
+    "method": "GET",
+    "path": "/api/v1/capital-flow",
+    "function": "capital_flow"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 427,
+    "method": "GET",
+    "path": "/api/v1/sectors",
+    "function": "sectors"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 435,
+    "method": "GET",
+    "path": "/api/v1/sector-workbench",
+    "function": "sector_workbench"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 456,
+    "method": "POST",
+    "path": "/api/v1/company-profiles/{code}",
+    "function": "company_profile"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 479,
+    "method": "GET",
+    "path": "/api/v1/short-selection",
+    "function": "short_selection"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 525,
+    "method": "GET",
+    "path": "/api/v1/seat-flow",
+    "function": "seat_flow"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 607,
+    "method": "POST",
+    "path": "/api/v1/seat-flow/analysis",
+    "function": "seat_flow_analysis"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 686,
+    "method": "GET",
+    "path": "/api/v1/limit-up-ladder",
+    "function": "limit_up_ladder"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 772,
+    "method": "GET",
+    "path": "/api/v1/stocks/{code}/candles",
+    "function": "stock_candles"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 797,
+    "method": "GET",
+    "path": "/api/v1/stocks/{code}/bars",
+    "function": "stock_bars"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 825,
+    "method": "GET",
+    "path": "/api/v1/short-selection/tracking",
+    "function": "short_selection_tracking"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 841,
+    "method": "GET",
+    "path": "/api/v1/short-selection/stats",
+    "function": "short_selection_stats"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 856,
+    "method": "GET",
+    "path": "/api/v1/short-selection/{code}/candles",
+    "function": "short_selection_candles"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 881,
+    "method": "GET",
+    "path": "/api/v1/swing-selection",
+    "function": "swing_selection"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1122,
+    "method": "GET",
+    "path": "/api/v1/swing-selection/{code}/candles",
+    "function": "swing_selection_candles"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1167,
+    "method": "GET",
+    "path": "/api/v1/swing-selection/stats",
+    "function": "swing_selection_stats"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1190,
+    "method": "GET",
+    "path": "/api/v1/swing-selection/history",
+    "function": "swing_selection_history"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1223,
+    "method": "GET",
+    "path": "/api/v1/watchlist",
+    "function": "watchlist"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1268,
+    "method": "POST",
+    "path": "/api/v1/watchlist/search",
+    "function": "search_watchlist_candidates"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1307,
+    "method": "POST",
+    "path": "/api/v1/watchlist",
+    "function": "add_watchlist_item"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1359,
+    "method": "DELETE",
+    "path": "/api/v1/watchlist/{item_id}",
+    "function": "remove_watchlist_item"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1391,
+    "method": "POST",
+    "path": "/api/v1/watchlist/{item_id}/restore",
+    "function": "restore_watchlist_item"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1427,
+    "method": "POST",
+    "path": "/api/v1/watchlist/sync",
+    "function": "sync_watchlist_from_upstream"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1451,
+    "method": "GET",
+    "path": "/api/v1/watchlist/monitor",
+    "function": "watchlist_monitor"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1464,
+    "method": "GET",
+    "path": "/api/v1/watchlist/nextday-strategy",
+    "function": "watchlist_nextday_strategy"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1476,
+    "method": "GET",
+    "path": "/api/v1/watchlist/rule-profiles",
+    "function": "watchlist_rule_profiles"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1498,
+    "method": "GET",
+    "path": "/api/v1/watchlist/strategy-profiles",
+    "function": "watchlist_strategy_profiles"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1537,
+    "method": "PATCH",
+    "path": "/api/v1/watchlist/{item_id}",
+    "function": "update_watchlist"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1564,
+    "method": "GET",
+    "path": "/api/v1/decisions",
+    "function": "decisions"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1594,
+    "method": "POST",
+    "path": "/api/v1/decisions/generate",
+    "function": "generate_decisions"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1624,
+    "method": "POST",
+    "path": "/api/v1/decisions/{decision_id}/feedback",
+    "function": "decision_feedback"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1647,
+    "method": "GET",
+    "path": "/api/v1/events",
+    "function": "events"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1653,
+    "method": "PATCH",
+    "path": "/api/v1/events/{event_id}",
+    "function": "update_event"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1673,
+    "method": "GET",
+    "path": "/api/v1/research",
+    "function": "research"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1692,
+    "method": "POST",
+    "path": "/api/v1/research/sync",
+    "function": "sync_research_from_upstream"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1718,
+    "method": "POST",
+    "path": "/api/v1/research/webhook",
+    "function": "research_webhook"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1754,
+    "method": "GET",
+    "path": "/api/v1/research/stream",
+    "function": "research_stream"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1799,
+    "method": "POST",
+    "path": "/api/v1/research",
+    "function": "create_research"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1819,
+    "method": "GET",
+    "path": "/api/v1/reviews/availability",
+    "function": "postmarket_review_availability"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1824,
+    "method": "GET",
+    "path": "/api/v1/reviews/latest",
+    "function": "latest_review"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1835,
+    "method": "GET",
+    "path": "/api/v1/reviews/{observation_date}",
+    "function": "review"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1847,
+    "method": "PATCH",
+    "path": "/api/v1/reviews/{trading_date}",
+    "function": "update_review"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1935,
+    "method": "GET",
+    "path": "/api/v1/us-industries",
+    "function": "us_industries"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1936,
+    "method": "GET",
+    "path": "/api/v1/us-industries/overnight",
+    "function": "us_industries"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1955,
+    "method": "GET",
+    "path": "/api/v1/us-industries/calendar",
+    "function": "us_industry_calendar"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 1981,
+    "method": "GET",
+    "path": "/api/v1/us-industries/history",
+    "function": "us_industry_history"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 2001,
+    "method": "POST",
+    "path": "/api/v1/us-industries/sync",
+    "function": "sync_us_industries"
+  },
+  {
+    "service": "dashboard",
+    "module": "api.py",
+    "line": 2013,
+    "method": "GET",
+    "path": "/api/v1/audit",
+    "function": "audit"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 103,
+    "method": "GET",
+    "path": "/api/v1/auth/config",
+    "function": "auth_config"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 114,
+    "method": "GET",
+    "path": "/api/v1/auth/me",
+    "function": "auth_me"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 130,
+    "method": "GET",
+    "path": "/api/v1/auth/captcha",
+    "function": "captcha"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 143,
+    "method": "POST",
+    "path": "/api/v1/auth/captcha/verify",
+    "function": "captcha_verify"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 153,
+    "method": "GET",
+    "path": "/api/v1/auth/captcha/image",
+    "function": "image_captcha"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 162,
+    "method": "POST",
+    "path": "/api/v1/auth/captcha/image/verify",
+    "function": "image_captcha_verify"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 176,
+    "method": "POST",
+    "path": "/api/v1/auth/login",
+    "function": "login"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 211,
+    "method": "POST",
+    "path": "/api/v1/auth/change-password",
+    "function": "change_password"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 235,
+    "method": "GET",
+    "path": "/api/v1/auth/users",
+    "function": "list_users"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 241,
+    "method": "POST",
+    "path": "/api/v1/auth/users",
+    "function": "create_user"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 265,
+    "method": "PATCH",
+    "path": "/api/v1/auth/users/{user_id}",
+    "function": "update_user"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 301,
+    "method": "GET",
+    "path": "/api/v1/auth/feishu/login",
+    "function": "feishu_login"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 317,
+    "method": "GET",
+    "path": "/api/v1/auth/feishu/callback",
+    "function": "feishu_callback"
+  },
+  {
+    "service": "dashboard",
+    "module": "auth_api.py",
+    "line": 347,
+    "method": "POST",
+    "path": "/api/v1/auth/logout",
+    "function": "logout"
+  },
+  {
+    "service": "dashboard",
+    "module": "main.py",
+    "line": 189,
+    "method": "GET",
+    "path": "/",
+    "function": "root"
+  },
+  {
+    "service": "dashboard",
+    "module": "tech_board.py",
+    "line": 722,
+    "method": "GET",
+    "path": "/api/v1/tech-board/concepts/{concept_id}/members",
+    "function": "read_concept_members"
+  },
+  {
+    "service": "dashboard",
+    "module": "tech_board.py",
+    "line": 755,
+    "method": "GET",
+    "path": "/api/v1/tech-board",
+    "function": "read"
+  },
+  {
+    "service": "dashboard",
+    "module": "tech_board.py",
+    "line": 790,
+    "method": "GET",
+    "path": "/api/v1/tech-board/boards/{board_id}/members",
+    "function": "read_members"
+  },
+  {
+    "service": "dashboard",
+    "module": "tech_board.py",
+    "line": 818,
+    "method": "GET",
+    "path": "/api/v1/tech-board/boards/{board_id}/history",
+    "function": "read_history"
+  },
+  {
+    "service": "dashboard",
+    "module": "market_structure.py",
+    "line": 554,
+    "method": "GET",
+    "path": "/api/v1/market-structure/overview",
+    "function": "overview"
+  },
+  {
+    "service": "dashboard",
+    "module": "market_structure.py",
+    "line": 559,
+    "method": "GET",
+    "path": "/api/v1/market-structure/{section:path}",
+    "function": "section"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 393,
+    "method": "GET",
+    "path": "/api/health",
+    "function": "health"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 404,
+    "method": "POST",
+    "path": "/api/stocks/search",
+    "function": "search"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 411,
+    "method": "POST",
+    "path": "/api/stocks/add",
+    "function": "add"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 431,
+    "method": "GET",
+    "path": "/api/stocks",
+    "function": "list_stocks"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 447,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/watchlist",
+    "function": "investment_dashboard_watchlist"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 493,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/company-profile/{code}",
+    "function": "investment_dashboard_company_profile"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 519,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/nextday-watch",
+    "function": "investment_dashboard_nextday_watch"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 572,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/short-selection/candles",
+    "function": "investment_dashboard_short_selection_candles"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 582,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/stocks/{code}/candles",
+    "function": "investment_dashboard_stock_candles"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 595,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/seat-directory",
+    "function": "investment_dashboard_seat_directory"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 609,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/seat-case",
+    "function": "investment_dashboard_seat_case"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 621,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/seat-tracking",
+    "function": "investment_dashboard_seat_tracking"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 642,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/seat-flow",
+    "function": "investment_dashboard_seat_flow"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 662,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/stocks/{code}/bars",
+    "function": "investment_dashboard_stock_bars"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 692,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/limit-up-ladder",
+    "function": "investment_dashboard_limit_up_ladder"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 746,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/short-selection",
+    "function": "investment_dashboard_short_selection"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 768,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/watchlist/strategy-profiles",
+    "function": "investment_dashboard_watchlist_strategy_profiles"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 783,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/market-regime",
+    "function": "investment_dashboard_market_regime"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 803,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/short-selection/tracking",
+    "function": "investment_dashboard_short_tracking"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 826,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/short-selection/stats",
+    "function": "investment_dashboard_short_stats"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 838,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/short-selection/history",
+    "function": "investment_dashboard_short_selection_history"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 877,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/swing-selection",
+    "function": "investment_dashboard_swing_selection"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 957,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/swing-selection/candles",
+    "function": "investment_dashboard_swing_selection_candles"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 969,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/swing-selection/history",
+    "function": "investment_dashboard_swing_selection_history"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1010,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/swing-selection/stats",
+    "function": "investment_dashboard_swing_selection_stats"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1035,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/capital-flow",
+    "function": "investment_dashboard_capital_flow"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1084,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/capital-flow/research",
+    "function": "investment_dashboard_sector_fund_research"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1110,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/capital-flow/research/member-industries",
+    "function": "investment_dashboard_member_industries"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1116,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/capital-flow/research/members",
+    "function": "investment_dashboard_sector_members"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1130,
+    "method": "POST",
+    "path": "/api/integrations/investment-dashboard/capital-flow/research/members/refresh",
+    "function": "investment_dashboard_request_sector_members"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1147,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/sector-workbench",
+    "function": "investment_dashboard_sector_workbench"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1168,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/us-market/overnight",
+    "function": "investment_dashboard_us_market_overnight"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1196,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/us-market/calendar",
+    "function": "investment_dashboard_us_market_calendar"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1222,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/us-market/history",
+    "function": "investment_dashboard_us_market_history"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1251,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/monitor",
+    "function": "investment_dashboard_monitor"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1284,
+    "method": "GET",
+    "path": "/api/stocks/{query}",
+    "function": "get_stock"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1300,
+    "method": "POST",
+    "path": "/api/stocks/{query}/update",
+    "function": "update_stock"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1327,
+    "method": "POST",
+    "path": "/api/stocks/{query}/remove",
+    "function": "remove_stock"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1348,
+    "method": "GET",
+    "path": "/api/alerts/recent",
+    "function": "recent_alerts"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1354,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/market-structure",
+    "function": "investment_dashboard_market_structure"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1377,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/global-board",
+    "function": "investment_dashboard_global_board"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1387,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/tech-board",
+    "function": "investment_dashboard_tech_board"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1397,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/tech-board/boards/{board_id}/members",
+    "function": "investment_dashboard_tech_members"
+  },
+  {
+    "service": "stock-analyzer",
+    "module": "api.py",
+    "line": 1412,
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/tech-board/boards/{board_id}/history",
+    "function": "investment_dashboard_tech_history"
+  },
+  {
+    "service": "marketNewsFeed",
+    "module": "admin_api.py",
+    "method": "GET",
+    "path": "/api/health",
+    "function": "AdminHandler"
+  },
+  {
+    "service": "marketNewsFeed",
+    "module": "admin_api.py",
+    "method": "GET",
+    "path": "/api/x-watch/users",
+    "function": "AdminHandler"
+  },
+  {
+    "service": "marketNewsFeed",
+    "module": "admin_api.py",
+    "method": "GET",
+    "path": "/api/x-watch/usage",
+    "function": "AdminHandler"
+  },
+  {
+    "service": "marketNewsFeed",
+    "module": "admin_api.py",
+    "method": "GET",
+    "path": "/api/integrations/investment-dashboard/research",
+    "function": "AdminHandler"
+  },
+  {
+    "service": "marketNewsFeed",
+    "module": "admin_api.py",
+    "method": "POST",
+    "path": "/api/x-watch/sync-list",
+    "function": "AdminHandler"
+  },
+  {
+    "service": "marketNewsFeed",
+    "module": "admin_api.py",
+    "method": "POST",
+    "path": "/api/research-feed/ctee/resume",
+    "function": "AdminHandler"
+  }
+]
