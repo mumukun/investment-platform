@@ -8,7 +8,7 @@
     "CHG-20261021-009"
   ],
   "request_started_at": "2026-10-21T15:22:52+00:00",
-  "updated_at": "2026-10-21T16:20:31.712743+00:00",
+  "updated_at": "2026-10-21T16:24:44.190407+00:00",
   "authorization": {
     "status": "FORMAL",
     "evidence": "用户明确要求开发后验证板块恢复，问题继续恢复，没问题正式生产上线；其他未上线功能一并发布。"
@@ -71,8 +71,9 @@
         "head_sha": "aeb6bb8cf16ccc1be5932a437ff6e0a35ff7d37f"
       },
       "investment-research-dashboard": {
-        "status": "PENDING_CURRENT_HEAD",
-        "previous_pass_run_id": "39628810826"
+        "status": "PASS",
+        "run_id": "39633740140",
+        "head_sha": "e241dcf939b6c76a16df0ff935a4232b696ce4c1"
       }
     }
   },
