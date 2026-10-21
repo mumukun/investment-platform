@@ -1,0 +1,131 @@
+{
+  "evidence_kind": "local_isolated_postgresql_live_public_etf_sources",
+  "production_changed": false,
+  "trade_date": "2026-10-21",
+  "fund_count": 139,
+  "groups": {
+    "上证50": {
+      "members": 11,
+      "complete_1d": 11,
+      "complete_5d": 11,
+      "complete_20d": 11,
+      "subtotal_5d_cny": 11664306349.999996
+    },
+    "沪深300": {
+      "members": 25,
+      "complete_1d": 25,
+      "complete_5d": 25,
+      "complete_20d": 25,
+      "subtotal_5d_cny": 53360230480.0
+    },
+    "中证A500": {
+      "members": 32,
+      "complete_1d": 32,
+      "complete_5d": 32,
+      "complete_20d": 32,
+      "subtotal_5d_cny": 926807400.0
+    },
+    "中证500": {
+      "members": 22,
+      "complete_1d": 22,
+      "complete_5d": 22,
+      "complete_20d": 22,
+      "subtotal_5d_cny": 3950895240.0
+    },
+    "中证1000": {
+      "members": 7,
+      "complete_1d": 7,
+      "complete_5d": 7,
+      "complete_20d": 7,
+      "subtotal_5d_cny": 2220350800.0
+    },
+    "中证2000": {
+      "members": 10,
+      "complete_1d": 10,
+      "complete_5d": 10,
+      "complete_20d": 10,
+      "subtotal_5d_cny": 1975335900.0
+    },
+    "科创50": {
+      "members": 17,
+      "complete_1d": 17,
+      "complete_5d": 17,
+      "complete_20d": 17,
+      "subtotal_5d_cny": 15880602800.0
+    },
+    "创业板指": {
+      "members": 15,
+      "complete_1d": 15,
+      "complete_5d": 15,
+      "complete_20d": 15,
+      "subtotal_5d_cny": 19538918120.0
+    }
+  },
+  "etf_universe": {
+    "trade_date": "2026-10-21",
+    "listed_count": 1688,
+    "directory_dates": {
+      "sh": "2026-10-21",
+      "sz": "2026-10-21"
+    },
+    "mapping_version": "market-structure-etf-mapping-v2",
+    "universe_verified": true,
+    "pending_profile_count": 0
+  },
+  "collection_failures": [
+    {
+      "source": "fetch_tencent_price",
+      "entity": "sh563660",
+      "code": "HTTP_ERROR",
+      "http_status": 501
+    },
+    {
+      "source": "fetch_tencent_price",
+      "entity": "sh563860",
+      "code": "HTTP_ERROR",
+      "http_status": 501
+    },
+    {
+      "source": "fetch_tencent_price",
+      "entity": "sh510360",
+      "code": "HTTP_ERROR",
+      "http_status": 501
+    },
+    {
+      "source": "fetch_tencent_price",
+      "entity": "sh510510",
+      "code": "HTTP_ERROR",
+      "http_status": 501
+    },
+    {
+      "source": "fetch_tencent_price",
+      "entity": "sz159393",
+      "code": "HTTP_ERROR",
+      "http_status": 501
+    }
+  ],
+  "computed": {
+    "processed_generations": 121,
+    "new_generations": 121,
+    "start": "2026-04-22",
+    "end": "2026-10-21"
+  },
+  "calls": {
+    "tool_trade_date_hist_sina": 1,
+    "fetch_adjustments": 1,
+    "fetch_sse": 21,
+    "fetch_szse": 2,
+    "fetch_etf_profile": 4,
+    "fetch_nav": 127,
+    "fetch_tencent_price": 139,
+    "fetch_sina_price": 139
+  },
+  "elapsed_seconds": 173.08,
+  "scope_excluded": [
+    "average_price",
+    "microcap",
+    "stock_statistics_refresh"
+  ],
+  "collection_failure_count": 139,
+  "failure_detail_note": "139次腾讯主源HTTP501均由新浪补齐；ETF价格/份额/净值检查无缺失，仅列前5条主源诊断。平均股价/微盘未在ETF专项采集中执行，另有真实复查失败证据。"
+}

@@ -1,0 +1,17 @@
+{
+  "fetch_average_price": {
+    "ok": false,
+    "code": "CONNECTION_ERROR",
+    "http_status": null
+  },
+  "fetch_average_price_history": {
+    "ok": false,
+    "code": "CONNECTION_ERROR",
+    "http_status": null
+  },
+  "fetch_microcap_index": {
+    "ok": false,
+    "code": "HTTP_ERROR",
+    "http_status": 403
+  }
+}

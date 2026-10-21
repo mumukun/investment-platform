@@ -246,6 +246,18 @@ dependencies:
     status: verified
 
 contracts:
+  investment-dashboard-market-structure-v2:
+    provider: stock-analyzer
+    consumers:
+      - investment-research-dashboard
+    version_kind: contract_version
+    rules_version: market-structure-rules-v1.3.0
+    mapping_version: market-structure-etf-mapping-v2
+    interface: GET /api/integrations/investment-dashboard/market-structure?contract_version=investment-dashboard-market-structure-v2
+    compatibility: opt_in_dynamic_etf_universe_v1_sample_default_retained
+    status: needs_target_verification
+    evidence:
+      - changes/evidence/CHG-20261021-009/etf-expanded-contract-chain.json
   investment-dashboard-research-v1:
     provider: marketNewsFeed
     consumers:
