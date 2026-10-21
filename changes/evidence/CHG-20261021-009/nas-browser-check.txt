@@ -1,0 +1,2 @@
+{"source": "average", "error": "Error", "detail": "Page.goto: net::ERR_EMPTY_RESPONSE at https://push2.eastmoney.com/api/qt/stock/get?secid=47.800005&fields=f57,f58,f43,f44,f45,f46,f59,f86"}
+{"source": "microcap", "error": "Error", "detail": "Page.goto: net::ERR_EMPTY_RESPONSE at https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=90.BK1158&klt=101&fqt=0&beg=20261016&end=20261021&fields1=f1,f2,f3,f4,f5"}

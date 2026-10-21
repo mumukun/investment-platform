@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261021-006",
+  "status": "BLOCKED",
+  "environment": "Production",
+  "release_profile": "routine",
+  "changes": [
+    "CHG-20261021-009"
+  ],
+  "request_started_at": "2026-10-21T15:22:52+00:00",
+  "updated_at": "2026-10-21T15:52:54.353663+00:00",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确要求开发后验证板块恢复，问题继续恢复，没问题正式生产上线；其他未上线功能一并发布。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "4.5.4",
+      "development_commit_sha": "e30b94e6ff20fd0058373d98496d39d119cbb48a",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/35",
+      "previous_version": "v4.5.3",
+      "rollback_version": "v4.5.3",
+      "rollback_commit_sha": "c62036754442bb3cd23ec9fcb927464b7a920cc1",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:75ec9a1dd59399fc9b7a36e4363f64320f5a3dd2d9e32aa41b39e3c5f89f4215"
+      },
+      "note": "PR head，未合入main/未freeze正式Tag，无候选/生产切换。"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "0.30.1",
+      "development_commit_sha": "273efc32f845dbf69bad5f4d0f7773c5195e02c4",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/36",
+      "previous_version": "v0.30.0",
+      "rollback_version": "v0.30.0",
+      "rollback_commit_sha": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:79f337469d1b7931b510019398f98422098074e576bb9b7611ed82f197fe2593",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:260c69e6962f923b61123cba3f6ed9beb9e3997b26c69dbb4b932100c8926841"
+      },
+      "note": "PR head，未合入main/未freeze正式Tag，无候选/生产切换。"
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "verification": {
+    "status": "BLOCKED_REAL_DATA",
+    "evidence": [
+      "changes/evidence/CHG-20261021-009/source-check.json",
+      "changes/evidence/CHG-20261021-009/nas-source-check.json",
+      "changes/evidence/CHG-20261021-009/local-chain.json",
+      "changes/evidence/CHG-20261021-009/nas-browser-check.txt"
+    ],
+    "limitations": [
+      "十二只ETF的21日净值、份额和完整1/5/20日申赎窗口已在独立本地数据库/Consumer验证，非生产恢复。",
+      "800005/BK1158初期可取，之后本机与NAS连接提前关闭；公开网页对应价格为空，不能据fixture或代码CI称其恢复。",
+      "NAS普通Chrome/Xvfb/CDP在隔离临时容器中同样ERR_EMPTY_RESPONSE；未修改现有业务服务。"
+    ],
+    "ci": {
+      "stock-analyzer": {
+        "status": "PASS",
+        "run_id": "39628344711"
+      },
+      "investment-research-dashboard": {
+        "status": "PASS",
+        "run_id": "39628810826"
+      }
+    }
+  },
+  "deployment": {
+    "status": "NOT_STARTED",
+    "reason": "用户要求验证恢复后再生产；目前真实来源门禁未通过。不创建Tag或切换生产。"
+  },
+  "other_pending_scope": "近期运行时Changes已在REL20261019-001/002和REL20261021-001..005发布；独有历史源分支不重复吸收。性能规范CHG20261021-004为未提交NON_RELEASE_CHANGE草稿，无业务镜像部署。",
+  "timing": {
+    "request_started_at": "2026-10-21T15:22:52+00:00",
+    "reviewed_at": "2026-10-21T15:52:54.353663+00:00",
+    "elapsed_seconds": 1802,
+    "note": "开发、依赖安装、真实源/浏览器故障排查及PR CI均计入；未开始正式部署。"
+  }
+}
