@@ -1,42 +1,37 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-20T16:32:48.244415+00:00",
+  "verified_at": "2026-10-21T03:03:53.582695+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
     "marketNewsFeed": {
       "production": {
-        "verified_at": "2026-10-19T07:48:10.776955+00:00",
-        "application_version": "2.3.12",
+        "verified_at": "2026-10-21T03:03:53.582695+00:00",
+        "application_version": "2.4.0",
         "application_version_source": "DERIVED_FROM_VERIFIED_TAG",
-        "tag": "v2.3.12",
-        "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+        "tag": "v2.4.0",
+        "commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
         "artifact_model": "SOURCE_TAG_BUILD",
-        "artifact": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104",
-        "artifact_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104",
+        "artifact": "sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25",
+        "artifact_id": "sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25",
         "artifact_digest": "UNKNOWN",
         "artifact_identity_status": "IMAGE_ID_ONLY",
         "containers": [
           "marketnewsfeed-market-news-feed-1"
         ],
-        "deployment_timestamp": "2026-10-19T07:48:10.776955+00:00",
+        "deployment_timestamp": "2026-10-21T03:03:53.582695+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v2.3.10",
-          "commit_sha": "1a4d0a798ea0efbe3af8f7ec5a15b629f8bcd8d7",
-          "image_id": "sha256:f6883eb6be2de6720c5ecfd8961bc466aeed144571ae10cf7ff98d70090fc8ea",
+          "tag": "v2.3.12",
+          "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+          "image_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104",
           "status": "VERIFIED_RETAINED_PRODUCTION"
         },
         "confidence": "HIGH",
         "evidence": [
-          "releases/REL-20261019-002.yaml",
-          "releases/evidence/REL-20261019-002/deployment.receipt.json"
-        ],
-        "incident": {
-          "failed_tag": "v2.3.11",
-          "status": "RECOVERED_WITH_V2.3.12",
-          "evidence": "releases/REL-20261019-001.yaml"
-        }
+          "releases/REL-20261021-001.yaml",
+          "releases/evidence/REL-20261021-001/deployment.receipt.json"
+        ]
       }
     },
     "stock-analyzer": {
