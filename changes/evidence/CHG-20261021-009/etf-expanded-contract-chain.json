@@ -1,0 +1,35 @@
+{
+  "evidence_kind": "real_public_data_local_consumer_projection",
+  "production_changed": false,
+  "provider_contract": "investment-dashboard-market-structure-v2",
+  "legacy_contract": "investment-dashboard-market-structure-v1",
+  "saved_days": 121,
+  "fund_count": 139,
+  "legacy_fund_count": 12,
+  "directory": {
+    "trade_date": "2026-10-21",
+    "listed_count": 1688,
+    "directory_dates": {
+      "sh": "2026-10-21",
+      "sz": "2026-10-21"
+    },
+    "mapping_version": "market-structure-etf-mapping-v2",
+    "universe_verified": true,
+    "pending_profile_count": 0
+  },
+  "group_counts": {
+    "上证50": 11,
+    "沪深300": 25,
+    "中证A500": 32,
+    "中证500": 22,
+    "中证1000": 7,
+    "中证2000": 10,
+    "科创50": 17,
+    "创业板指": 15
+  },
+  "complete_window_counts": {
+    "1": 139,
+    "5": 139,
+    "20": 139
+  }
+}

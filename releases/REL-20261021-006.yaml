@@ -8,7 +8,7 @@
     "CHG-20261021-009"
   ],
   "request_started_at": "2026-10-21T15:22:52+00:00",
-  "updated_at": "2026-10-21T15:52:54.353663+00:00",
+  "updated_at": "2026-10-21T16:24:44.190407+00:00",
   "authorization": {
     "status": "FORMAL",
     "evidence": "用户明确要求开发后验证板块恢复，问题继续恢复，没问题正式生产上线；其他未上线功能一并发布。"
@@ -16,8 +16,8 @@
   "repositories": [
     {
       "repository": "stock-analyzer",
-      "planned_version": "4.5.4",
-      "development_commit_sha": "e30b94e6ff20fd0058373d98496d39d119cbb48a",
+      "planned_version": "4.6.0",
+      "development_commit_sha": "aeb6bb8cf16ccc1be5932a437ff6e0a35ff7d37f",
       "pr": "https://github.com/mumukun/stock-analyzer/pull/35",
       "previous_version": "v4.5.3",
       "rollback_version": "v4.5.3",
@@ -29,8 +29,8 @@
     },
     {
       "repository": "investment-research-dashboard",
-      "planned_version": "0.30.1",
-      "development_commit_sha": "273efc32f845dbf69bad5f4d0f7773c5195e02c4",
+      "planned_version": "0.31.0",
+      "development_commit_sha": "e241dcf939b6c76a16df0ff935a4232b696ce4c1",
       "pr": "https://github.com/mumukun/investment-research-dashboard/pull/36",
       "previous_version": "v0.30.0",
       "rollback_version": "v0.30.0",
@@ -52,21 +52,28 @@
       "changes/evidence/CHG-20261021-009/source-check.json",
       "changes/evidence/CHG-20261021-009/nas-source-check.json",
       "changes/evidence/CHG-20261021-009/local-chain.json",
-      "changes/evidence/CHG-20261021-009/nas-browser-check.txt"
+      "changes/evidence/CHG-20261021-009/nas-browser-check.txt",
+      "changes/evidence/CHG-20261021-009/etf-expanded-collection.json",
+      "changes/evidence/CHG-20261021-009/etf-expanded-contract-chain.json",
+      "changes/evidence/CHG-20261021-009/remaining-sources-20261022.json"
     ],
     "limitations": [
       "十二只ETF的21日净值、份额和完整1/5/20日申赎窗口已在独立本地数据库/Consumer验证，非生产恢复。",
       "800005/BK1158初期可取，之后本机与NAS连接提前关闭；公开网页对应价格为空，不能据fixture或代码CI称其恢复。",
-      "NAS普通Chrome/Xvfb/CDP在隔离临时容器中同样ERR_EMPTY_RESPONSE；未修改现有业务服务。"
+      "NAS普通Chrome/Xvfb/CDP在隔离临时容器中同样ERR_EMPTY_RESPONSE；未修改现有业务服务。",
+      "本轮动态目录核验1688只，纳入139只ETF，沪深30025只；所有139只1/5/20窗口通过本地真实源/Consumer验证。",
+      "800005报价/历史仍连接失败，BK1158最新403；原整体恢复验收未通过。"
     ],
     "ci": {
       "stock-analyzer": {
         "status": "PASS",
-        "run_id": "39628344711"
+        "run_id": "39633736763",
+        "head_sha": "aeb6bb8cf16ccc1be5932a437ff6e0a35ff7d37f"
       },
       "investment-research-dashboard": {
         "status": "PASS",
-        "run_id": "39628810826"
+        "run_id": "39633740140",
+        "head_sha": "e241dcf939b6c76a16df0ff935a4232b696ce4c1"
       }
     }
   },
@@ -79,6 +86,7 @@
     "request_started_at": "2026-10-21T15:22:52+00:00",
     "reviewed_at": "2026-10-21T15:52:54.353663+00:00",
     "elapsed_seconds": 1802,
-    "note": "开发、依赖安装、真实源/浏览器故障排查及PR CI均计入；未开始正式部署。"
+    "note": "开发、依赖安装、真实源/浏览器故障排查及PR CI均计入；未开始正式部署。",
+    "scope_extension_verified_at": "2026-10-21T16:21:27.872738+00:00"
   }
 }
