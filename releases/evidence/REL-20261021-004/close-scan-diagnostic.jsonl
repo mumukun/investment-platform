@@ -1,0 +1,3 @@
+{"health": {"expected_trade_date": "2026-10-21", "status": "partial", "passed": false, "publication_allowed": true, "counts": {"ready": 0, "market": 5576, "eligible": 0, "excluded": 352, "gap_count": 5224, "snapshots": 5575, "affected_stocks": 5224}, "scan_completed": true, "scan_pool_count": 0, "directory_basis": {"as_of": "2026-10-21", "source": "AkShare交易所证券列表", "historical_reconstruction": null}}}
+{"scans": [{"trade_date": "2026-10-21", "rules_version": "swing-rules-v5.2.0", "data_time": "2026-10-21T17:16:55+08:00", "pool_count": 0}, {"trade_date": "2026-10-20", "rules_version": "swing-rules-v5.2.0", "data_time": "2026-10-20T22:18:19+08:00", "pool_count": 1049}]}
+{"states": "query failed: UndefinedColumn"}

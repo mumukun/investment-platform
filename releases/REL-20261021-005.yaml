@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261021-005",
+  "status": "RELEASED",
+  "environment": "Production",
+  "release_profile": "routine_hotfix",
+  "changes": [
+    "CHG-20261021-008"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.5.3",
+      "tag": "v4.5.3",
+      "previous_version": "v4.5.2",
+      "rollback_version": "v4.5.2",
+      "rollback_commit_sha": "e219cd2f8541eba307518f172ba8e0c7cbd2c746",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:01c3e1a9760046054d935a2dd6bebcf551a587f059b890edf5d6ecc9b2f69096"
+      },
+      "rollback_image_ids": {
+        "app": "sha256:cc8a0f8e67915cae14ee78a9bab7d797d059ba496105a7738b91f106be1d7496"
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/34",
+      "commit_sha": "c62036754442bb3cd23ec9fcb927464b7a920cc1",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:75ec9a1dd59399fc9b7a36e4363f64320f5a3dd2d9e32aa41b39e3c5f89f4215"
+      },
+      "artifact_id": {
+        "app": "sha256:9326d5a9ba8ba91e83ca00d04faa53d6cded0b1a61abd9fbea07803109b11a48"
+      },
+      "quality_run_id": "39579469758",
+      "candidate_evidence": "releases/evidence/REL-20261021-005/provider/candidate.json"
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "当前用户明确未发版功能统一生产上线，并再次强调保障当天数据可用、筛选符合条件股票；本PATCH只恢复同一功能的规则导入、前置顺序及缺数保护。"
+  },
+  "verification": {
+    "status": "PASS_WITH_RECORDED_DATA_GAPS",
+    "evidence": [
+      "changes/evidence/CHG-20261021-008/tests.log",
+      "changes/evidence/CHG-20261021-008/unittest.log",
+      "changes/evidence/CHG-20261021-008/order-final.log",
+      "changes/evidence/CHG-20261021-008/rules-dry-run.log",
+      "releases/evidence/REL-20261021-005/recovery-observation.json",
+      "releases/evidence/REL-20261021-005/consumer-recovery-smoke.json"
+    ],
+    "known_limitations": [
+      "150只规则事实、8只日线及1只快照缺口明确隔离，不降低原条件。",
+      "股票服务与看板均返回真实21日收盘清单；上线时已收盘，下一交易时段盘中分钟更新未在本轮实盘验证。",
+      "涨停天梯真实21日50只，但报价限制/连板/规则元数据等仍标partial，未伪造未知事实。",
+      "保留4.5.2镜像以供程序退避，但会重新引入原导入缺陷，优先fix-forward；事实不删除、数据库不降级。"
+    ],
+    "actual": {
+      "rules_21": 5074,
+      "eligible": 2872,
+      "ready": 2864,
+      "candidates": 894,
+      "actionable": 15,
+      "all_candidate_state_dates": "2026-10-21",
+      "bar_end_date": "2026-10-21"
+    }
+  },
+  "related_release": "REL-20261021-004",
+  "image_execution_plan": "releases/evidence/REL-20261021-005/image-release.plan.json",
+  "started_at": "2026-10-21T09:50:54.448619+00:00",
+  "completed_at": "2026-10-21T10:03:07.764203+00:00",
+  "updated_at": "2026-10-21T10:05:47.884356+00:00",
+  "deployment": {
+    "status": "PASS",
+    "completed_at": "2026-10-21T09:56:45.506347+00:00"
+  },
+  "deployment_receipts": [
+    "releases/evidence/REL-20261021-005/deployment.receipt.json"
+  ],
+  "rollback": {
+    "status": "RETAINED_EXACT_ARTIFACTS",
+    "limitations": "不自动降级数据库；4.5.2回退会重新引入规则导入缺陷，不能作为该事故恢复方案。保留真实规则事实。"
+  },
+  "timing": {
+    "first_recorded_at": "2026-10-21T08:16:43+00:00",
+    "production_business_verified_at": "2026-10-21T10:03:07.764203+00:00",
+    "recorded_request_to_business_seconds": 6384.764,
+    "this_deployment_seconds": 338.83,
+    "note": "从正式请求后首次时钟采样计，实际请求略早；包含四项功能整合、PR/main CI与候选、两次部署备份及规则事故补修，不隐藏等待，超过五分钟目标。收尾归档另计。"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261021-005",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "当前用户明确未发版功能统一生产上线，并再次强调保障当天数据可用、筛选符合条件股票；本PATCH只恢复同一功能的规则导入、前置顺序及缺数保护。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "c62036754442bb3cd23ec9fcb927464b7a920cc1",
+        "version": "4.5.3",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:75ec9a1dd59399fc9b7a36e4363f64320f5a3dd2d9e32aa41b39e3c5f89f4215"
+        },
+        "image_ids": {
+          "app": "sha256:9326d5a9ba8ba91e83ca00d04faa53d6cded0b1a61abd9fbea07803109b11a48"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "c62036754442bb3cd23ec9fcb927464b7a920cc1",
+            "run_id": "39579469758"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:75ec9a1dd59399fc9b7a36e4363f64320f5a3dd2d9e32aa41b39e3c5f89f4215"
+            }
+          },
+          "candidate_run_id": "39579550131"
+        }
+      },
+      "tag": "v4.5.3",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.5.2",
+        "commit_sha": "e219cd2f8541eba307518f172ba8e0c7cbd2c746",
+        "image_ids": {
+          "stock-api": "sha256:cc8a0f8e67915cae14ee78a9bab7d797d059ba496105a7738b91f106be1d7496",
+          "stock-watch": "sha256:cc8a0f8e67915cae14ee78a9bab7d797d059ba496105a7738b91f106be1d7496"
+        }
+      },
+      "rollback": {
+        "tag": "v4.5.2",
+        "commit_sha": "e219cd2f8541eba307518f172ba8e0c7cbd2c746",
+        "version": "4.5.2",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:01c3e1a9760046054d935a2dd6bebcf551a587f059b890edf5d6ecc9b2f69096"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG008 incident on verified deployed stockv4.5.2/e219; PR34 merged c620, exact-main CI39579469758 and candidate39579550131 PASS. Dashboard0.30.0 and news unchanged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No schema change, source addition or threshold change. Actual same-day limit facts replace stale-close estimates in existing rule table; unknown facts isolated. Additive health gap kind and false-empty protection are accepted by current Consumer; valid empty candidate output preserved."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "425 local pytest+23 subtests and521 unittest PASS, final24 scheduler/import tests PASS; exact-main CI/candidate fixture smoke PASS. Both normal and swing-only boot import prerequisites before scan, once. No synthetic test claimed as actual source."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Actual NAS Tencent/Sina direct dry-run verifies5074 same-day rule facts,150 excluded for missing/invalid facts. Read-only predictive assessment using those actual facts and real stored daily inputs yields2872 eligible/2864 ready,8 daily gaps+1 snapshot gap; no DB writes. Post-deploy normal import and actual21st scan/candidate contract must be verified; no lowering rules or historical quote reuse."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No env/credentials change; existing SWING enabledv5.2, current normal scheduler defaults and approved domestic adapters retained. Rule imports after open09:31/midday13:01/close15:05; cold boot order corrected. NAS GHCR downloads continue existing mihomo; no Eastmoney/Redis/paid calls."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified runtime baseline from REL004 exact tag4.5.2/e219 and CI digest/config ID retained; deploy enforces live drift/readable fresh backup. v4.5.2 rollback only restores binary identity, not original missing-rule defect; retain restored facts and no DB downgrade. No restore/rollback drills."
+    }
+  }
+}

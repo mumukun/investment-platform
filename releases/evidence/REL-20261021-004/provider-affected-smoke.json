@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "kind": "swing",
+      "http": 200,
+      "seconds": 0.158,
+      "contract_version": "investment-dashboard-swing-selection-v3",
+      "trade_date": "2026-10-21",
+      "data_time": "2026-10-21T17:09:24+08:00",
+      "freshness_status": "healthy",
+      "count": 0,
+      "summary": {
+        "limit": 20000,
+        "cursor": 0,
+        "by_path": {},
+        "by_board": {},
+        "returned": 0,
+        "by_decision": {},
+        "total_count": 0
+      },
+      "source_status": null,
+      "coverage": {
+        "selection_phase": "close",
+        "intraday_discovery": {},
+        "max_data_age_seconds": 1800,
+        "confirmation_dates_available": true
+      },
+      "phase": "close",
+      "health_date": "2026-10-21"
+    },
+    {
+      "kind": "ladder",
+      "http": 200,
+      "seconds": 0.519,
+      "contract_version": "investment-dashboard-limit-up-ladder-v2",
+      "trade_date": null,
+      "data_time": null,
+      "freshness_status": null,
+      "count": 0,
+      "summary": null,
+      "source_status": {
+        "status": "partial",
+        "source": "domestic_quote_limits",
+        "is_mock": false,
+        "last_success_at": "2026-10-21T16:15:00+08:00",
+        "issues": [
+          "limit_pool_extended_fields_unavailable",
+          "quote_limits_missing:353",
+          "security_trade_rule_missing:50"
+        ]
+      },
+      "coverage": null,
+      "phase": null,
+      "health_date": null
+    },
+    {
+      "kind": "star_quote_unit",
+      "code": "688099",
+      "source": "tencent",
+      "quote_time": "2026-10-21T16:14:56+08:00",
+      "volume": 15424387.0,
+      "amount": 1504560000.0,
+      "vwap": 97.54423303824002,
+      "low": 95.08,
+      "high": 99.72,
+      "range_check": "PASS"
+    }
+  ]
+}

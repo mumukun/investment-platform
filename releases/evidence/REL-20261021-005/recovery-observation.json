@@ -1,0 +1,88 @@
+{
+  "version": "4.5.3",
+  "rules_21": 5074,
+  "health": {
+    "status": "partial",
+    "publication_allowed": true,
+    "expected_trade_date": "2026-10-21",
+    "counts": {
+      "ready": 2864,
+      "market": 5576,
+      "eligible": 2872,
+      "excluded": 2553,
+      "gap_count": 159,
+      "snapshots": 5575,
+      "affected_stocks": 159
+    },
+    "scan_completed": true,
+    "scan_pool_count": 1101
+  },
+  "stored_setups": [
+    {
+      "trade_date": "2026-10-20",
+      "n": 1049,
+      "stocks": 862
+    },
+    {
+      "trade_date": "2026-10-21",
+      "n": 1101,
+      "stocks": 894
+    }
+  ],
+  "startup_jobs": [
+    {
+      "job_name": "startup_swing_scan_daily",
+      "status": "success",
+      "started_at": "2026-10-21T17:57:19.943158+08:00",
+      "finished_at": "2026-10-21T17:57:23.233666+08:00"
+    },
+    {
+      "job_name": "startup_import_trade_rules",
+      "status": "success",
+      "started_at": "2026-10-21T17:56:47.631957+08:00",
+      "finished_at": "2026-10-21T17:57:18.157420+08:00"
+    },
+    {
+      "job_name": "startup_import_trade_rules",
+      "status": "failed",
+      "started_at": "2026-10-21T17:10:33.307985+08:00",
+      "finished_at": "2026-10-21T17:10:33.890888+08:00"
+    },
+    {
+      "job_name": "startup_swing_scan_daily",
+      "status": "success",
+      "started_at": "2026-10-21T17:03:57.302080+08:00",
+      "finished_at": "2026-10-21T17:06:08.539333+08:00"
+    },
+    {
+      "job_name": "startup_import_trade_rules",
+      "status": "failed",
+      "started_at": "2026-10-21T13:33:00.090852+08:00",
+      "finished_at": "2026-10-21T13:33:00.211693+08:00"
+    }
+  ],
+  "api": {
+    "http": 200,
+    "seconds": 0.937,
+    "contract_version": "investment-dashboard-swing-selection-v3",
+    "trade_date": "2026-10-21",
+    "data_time": "2026-10-21T17:59:35+08:00",
+    "freshness_status": "healthy",
+    "degraded": true,
+    "count": 894,
+    "phase": "close",
+    "bar_end_date": "2026-10-21",
+    "state_date_counts": {
+      "2026-10-20": 0,
+      "2026-10-21": 894
+    },
+    "by_decision": {
+      "不参与": 1,
+      "暂缓参与": 826,
+      "禁止追高": 52,
+      "可计划参与": 15
+    }
+  },
+  "ready": true,
+  "observed_at": "2026-10-21T10:03:07.764203+00:00"
+}

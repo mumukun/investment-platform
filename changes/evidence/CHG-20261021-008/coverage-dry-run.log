@@ -1,0 +1,4 @@
+{"predictive_dry_run": true, "persisted": false, "rules": 5074, "warnings": ["150只缺少同日有效报价或核验后的涨跌停事实，保持缺口隔离"], "counts": {"market": 5576, "snapshots": 5575, "eligible": 2872, "excluded": 2553, "gap_count": 159, "affected_stocks": 159, "ready": 2864}, "gap_kinds": {"security_rule": 150, "daily_history": 8, "snapshot": 1}}
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html

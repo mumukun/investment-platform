@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.29.3 test
+> vitest run --run src/views/LimitUpLadderView.spec.ts src/components/StockDetailDrawer.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/limit-up-recovery/investment-research-dashboard
+
+
+ Test Files  2 passed (2)
+      Tests  20 passed (20)
+   Start at  13:55:11
+   Duration  4.56s (transform 929ms, setup 63ms, import 3.18s, tests 2.55s, environment 1.64s)

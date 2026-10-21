@@ -1,0 +1,13 @@
+{
+  "environment": "local isolated PostgreSQL16 / synthetic facts; contract build+JSON, excludes HTTP and production network",
+  "universe_per_day": 5575,
+  "days": 5,
+  "confirmed_per_day": 58,
+  "samples": 100,
+  "concurrency": 3,
+  "cold_ms": 48.257,
+  "p50_ms": 80.092,
+  "p95_ms": 230.511,
+  "max_ms": 272.229,
+  "json_bytes": 262041
+}

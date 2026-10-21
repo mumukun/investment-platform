@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "chain": "synthetic dated quote → producer PostgreSQL → real producer v2 builder → consumer HTTP decoder/model/contract validation",
+  "contract": "investment-dashboard-limit-up-ladder-v2",
+  "items": 1,
+  "null_streak_preserved": true,
+  "null_one_word_preserved": true,
+  "production_write": false
+}
