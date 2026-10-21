@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261021-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.4.1",
+      "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+      "expected_production": {
+        "tag": "v2.4.0",
+        "commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
+        "image_id": "sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+        "evidence": "PR11 merge tree from tested672d232; 24 affected tests/config/compileall passed; no configured CI. See changes/evidence/CHG-20261021-002/optimization-news-tests.log."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261021-002 news HTTP changes only; prior reminders remain in base v2.4.0. PR11 merged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Same research-v1 fields, limits, source timestamps; bounded ID-first query, init once and logs. No schema/config/source/LLM/notification changes."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "24 affected local tests including research, PG, usage and webhook passed with source/notification mocks. Existing deployed research boundary evidence from REL001 retained; deploy runs current authenticated research smoke."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Reuse real NAS audit70 GET samples and verified existing source behavior; source collection and facts are unchanged, no new or paid probe."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No new env vars, providers or recipients. Existing NAS proxy and private config unchanged; source build uses protected existing runner."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified v2.4.0 / 99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd / sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25 retained; protected deploy baseline/backup gate; no DB migration."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：提交代码，连同开发的其他功能一起上线，生产发布。"
+  }
+}

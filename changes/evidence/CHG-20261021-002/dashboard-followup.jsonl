@@ -1,0 +1,15 @@
+{"path": "/api/v1/health", "seconds": 0.008, "status": 200, "bytes": 39, "error": null}
+{"path": "/api/v1/sectors", "seconds": 0.191, "status": 200, "bytes": 2, "error": null}
+{"path": "/api/v1/events", "seconds": 2.339, "status": 200, "bytes": 552755, "error": null}
+{"path": "/api/v1/decisions", "seconds": 0.321, "status": 200, "bytes": 2, "error": null}
+{"path": "/api/v1/audit", "seconds": 1.073, "status": 200, "bytes": 20220, "error": null}
+{"path": "/api/v1/seat-tracking/subscriptions", "seconds": 1.42, "status": 200, "bytes": 1302, "error": null}
+{"path": "/api/v1/seat-tracking/reports", "seconds": 0.133, "status": 200, "bytes": 711, "error": null}
+{"path": "/api/v1/seat-tracking/reviews", "seconds": 0.163, "status": 200, "bytes": 1418, "error": null}
+{"path": "/api/v1/research?limit=50", "seconds": 0.153, "status": 200, "bytes": 131728, "error": null}
+{"path": "/api/v1/us-industries/history?limit=5", "seconds": 0.034, "status": 200, "bytes": 256337, "error": null}
+{"path": "/api/v1/market-structure/overview?lookback=5", "seconds": 0.284, "status": 200, "bytes": 584848, "error": null}
+{"path": "/api/v1/swing-selection", "seconds": 10.773, "status": 200, "bytes": 3992883, "error": null}
+{"path": "/api/v1/swing-selection/stats", "seconds": 0.564, "status": 200, "bytes": 5798, "error": null}
+{"path": "/api/v1/swing-selection?limit=50", "seconds": 8.808, "status": 200, "bytes": 597861, "error": null}
+{"path": "/api/v1/health", "seconds": 0.006, "status": 200, "bytes": 39, "error": null}

@@ -1,0 +1,241 @@
+{
+  "observed_at": "2026-10-21T03:14:31.895466+00:00",
+  "source": "docker nginx logs --since 12h --tail 10000",
+  "first_access_timestamp": "20/Oct/2026:15:48:22 +0000",
+  "last_access_timestamp": "21/Oct/2026:03:14:14 +0000",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/swing-selection",
+      "status": 401,
+      "count": 317
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/swing-selection",
+      "status": 200,
+      "count": 94
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me",
+      "status": 200,
+      "count": 84
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/stocks/{code}/bars",
+      "status": 200,
+      "count": 35
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watchlist/strategy-profiles",
+      "status": 404,
+      "count": 21
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/stocks/{code}/candles",
+      "status": 200,
+      "count": 21
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watchlist",
+      "status": 200,
+      "count": 17
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watchlist/monitor",
+      "status": 200,
+      "count": 17
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/swing-selection/stats",
+      "status": 200,
+      "count": 14
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/swing-selection/history",
+      "status": 200,
+      "count": 11
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/market-structure/overview",
+      "status": 200,
+      "count": 10
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/data-status",
+      "status": 200,
+      "count": 9
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/system/version",
+      "status": 200,
+      "count": 9
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/short-selection",
+      "status": 200,
+      "count": 9
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/global-board",
+      "status": 200,
+      "count": 8
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/stocks/{code}/bars",
+      "status": 499,
+      "count": 6
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/short-selection/tracking",
+      "status": 200,
+      "count": 5
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/short-selection/stats",
+      "status": 200,
+      "count": 5
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/health",
+      "status": 200,
+      "count": 3
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/data-status",
+      "status": 401,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/system/version",
+      "status": 401,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/config",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/captcha/image",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/captcha/image/verify",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/login",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/us-industries/calendar",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/us-industries/overnight",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/short-selection",
+      "status": 504,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/swing-selection",
+      "status": 499,
+      "count": 2
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tech-board",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tech-board/boards/cni-980115/members",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tech-board/concepts/sina-chgn_701159/members",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tech-board/boards/cni-980115/history",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/us-industries/sync",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/limit-up-ladder",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/capital-flow/research",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/capital-flow",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/swing-selection/stats",
+      "status": 499,
+      "count": 1
+    }
+  ],
+  "upstream_timeouts": {
+    "/api/v1/short-selection": 2
+  },
+  "latency_fields_available": false,
+  "note": "Includes this audit’s probes; counts are not independent user traffic. Query strings and client identities excluded."
+}

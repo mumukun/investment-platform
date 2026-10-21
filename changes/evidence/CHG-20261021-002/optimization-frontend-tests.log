@@ -1,0 +1,13 @@
+
+> investment-research-dashboard@0.29.1 test
+> vitest run --run
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/http-latency-audit/investment-research-dashboard
+
+
+ Test Files  46 passed (46)
+      Tests  214 passed (214)
+   Start at  12:39:26
+   Duration  34.27s (transform 12.45s, setup 1.10s, import 74.49s, tests 64.06s, environment 63.95s)
+

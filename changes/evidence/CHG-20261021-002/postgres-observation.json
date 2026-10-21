@@ -1,0 +1,185 @@
+[
+  {
+    "section": "activity",
+    "rows": [
+      {
+        "datname": "investment_dashboard",
+        "state": "idle",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "connections": 3,
+        "oldest_query_seconds": 16.19
+      },
+      {
+        "datname": "market_news",
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "connections": 1,
+        "oldest_query_seconds": 0.27
+      },
+      {
+        "datname": "postgres",
+        "state": "active",
+        "wait_event_type": null,
+        "wait_event": null,
+        "connections": 1,
+        "oldest_query_seconds": 0.0
+      },
+      {
+        "datname": "stock_analyzer",
+        "state": "active",
+        "wait_event_type": "IO",
+        "wait_event": "DataFileRead",
+        "connections": 2,
+        "oldest_query_seconds": 63.77
+      },
+      {
+        "datname": "stock_analyzer",
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "connections": 2,
+        "oldest_query_seconds": 0.47
+      }
+    ]
+  },
+  {
+    "section": "stock_active_sql",
+    "rows": [
+      {
+        "state": "active",
+        "wait_event_type": "IO",
+        "wait_event": "DataFileRead",
+        "elapsed_seconds": 63.77,
+        "normalized_sql": "SELECT trade_date, COUNT(DISTINCT code) AS code_count\n           FROM swing_daily_bar\n           GROUP BY trade_date\n           ORDER BY trade_date DESC\n           LIMIT 120"
+      },
+      {
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "elapsed_seconds": 0.47,
+        "normalized_sql": "SELECT code,trade_date FROM security_trade_rule WHERE code=ANY($1) AND trade_date BETWEEN $2 AND $3 AND is_suspended UNION SELECT code,trade_date FROM swing_suspension WHERE code=ANY($4) AND trade_date BETWEEN $5 AND $6"
+      },
+      {
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "elapsed_seconds": 0.47,
+        "normalized_sql": "SELECT code,trade_date FROM security_trade_rule WHERE code=ANY($1) AND trade_date BETWEEN $2 AND $3 AND is_suspended UNION SELECT code,trade_date FROM swing_suspension WHERE code=ANY($4) AND trade_date BETWEEN $5 AND $6"
+      },
+      {
+        "state": "active",
+        "wait_event_type": "IO",
+        "wait_event": "DataFileRead",
+        "elapsed_seconds": 3.46,
+        "normalized_sql": "SELECT trade_date FROM (\n                 SELECT trade_date FROM limit_up_snapshot_run WHERE trade_date <= $1\n                 UNION\n                 SELECT trade_date FROM a_share_snapshot\n                   WHERE trade_date <= $2\n               ) available\n               ORDER BY trade_date DESC LIMIT $3"
+      },
+      {
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "elapsed_seconds": 0.38,
+        "normalized_sql": "INSERT INTO a_share_snapshot (trade_date, update_time, code, name, close, change_pct, amount,\n          turnover_pct, pe_ttm, open, high, low, industry, subindustry, limit_pct, is_limit_up, is_20cm, is_30cm,\n          is_st, limit_streak, first_limit_time, is_one_word_limit)\n        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)\n        ON CONFLICT (trade_date, code) DO UPDATE SET\n          update_time=EXCLUDED.update_time, name=EXCLUDED.name, close=EXCLUDED.close, change_pct=EXCLUDED.change_pct,\n          amount=EXCLUDED.amount, turnover_pct=EXCLUDED.turnover_pct, pe_ttm=EXCLUDED.pe_ttm, open=EXCLUDED.open,\n          high=EXCLUDED.high,\n          low=EXCLUDED.low, industry=EXCLUDED.industry, subindustry=EXCLUDED.subindustry, limit_pct=EXCLUDED.limit_pct,\n          is_limit_up=EXCLUDED.is_limit_up, is_20cm=EXCLUDED.is_20cm, is_30cm=EXCLUDED.is_30cm, is_st=EXCLUDED.is_st,\n          limit_streak=EXCLUDED.limit_streak, first_limit_time=EXCLUDED.first"
+      },
+      {
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "elapsed_seconds": 0.47,
+        "normalized_sql": "SELECT code,trade_date FROM security_trade_rule WHERE code=ANY($1) AND trade_date BETWEEN $2 AND $3 AND is_suspended UNION SELECT code,trade_date FROM swing_suspension WHERE code=ANY($4) AND trade_date BETWEEN $5 AND $6"
+      },
+      {
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "elapsed_seconds": 0.68,
+        "normalized_sql": "autovacuum: ANALYZE stock_analyzer.watchlist_item"
+      }
+    ]
+  },
+  {
+    "section": "database",
+    "rows": [
+      {
+        "datname": "market_news",
+        "numbackends": 1,
+        "temp_files": 23,
+        "temp_bytes": 201474048,
+        "deadlocks": 0,
+        "blk_read_time": 0,
+        "blk_write_time": 0,
+        "stats_reset": null
+      },
+      {
+        "datname": "stock_analyzer",
+        "numbackends": 7,
+        "temp_files": 43580,
+        "temp_bytes": 527216345088,
+        "deadlocks": 2,
+        "blk_read_time": 0,
+        "blk_write_time": 0,
+        "stats_reset": null
+      },
+      {
+        "datname": "investment_dashboard",
+        "numbackends": 4,
+        "temp_files": 0,
+        "temp_bytes": 0,
+        "deadlocks": 0,
+        "blk_read_time": 0,
+        "blk_write_time": 0,
+        "stats_reset": null
+      }
+    ]
+  },
+  {
+    "section": "settings",
+    "rows": [
+      {
+        "name": "max_connections",
+        "setting": "100",
+        "unit": null,
+        "reset_val": "100"
+      },
+      {
+        "name": "shared_buffers",
+        "setting": "16384",
+        "unit": "8kB",
+        "reset_val": "16384"
+      },
+      {
+        "name": "shared_preload_libraries",
+        "setting": "",
+        "unit": null,
+        "reset_val": ""
+      },
+      {
+        "name": "statement_timeout",
+        "setting": "5000",
+        "unit": "ms",
+        "reset_val": "0"
+      },
+      {
+        "name": "track_io_timing",
+        "setting": "off",
+        "unit": null,
+        "reset_val": "off"
+      },
+      {
+        "name": "work_mem",
+        "setting": "4096",
+        "unit": "kB",
+        "reset_val": "4096"
+      }
+    ]
+  },
+  {
+    "section": "extensions",
+    "rows": [
+      {
+        "extname": "plpgsql"
+      }
+    ]
+  }
+]

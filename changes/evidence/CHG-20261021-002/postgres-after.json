@@ -1,0 +1,150 @@
+[
+  {
+    "section": "activity",
+    "rows": [
+      {
+        "datname": "investment_dashboard",
+        "state": "idle",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "connections": 4,
+        "oldest_query_seconds": 9.23
+      },
+      {
+        "datname": "market_news",
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "connections": 1,
+        "oldest_query_seconds": 0.04
+      },
+      {
+        "datname": "postgres",
+        "state": "active",
+        "wait_event_type": null,
+        "wait_event": null,
+        "connections": 1,
+        "oldest_query_seconds": 0.0
+      },
+      {
+        "datname": "stock_analyzer",
+        "state": "active",
+        "wait_event_type": null,
+        "wait_event": null,
+        "connections": 1,
+        "oldest_query_seconds": 0.13
+      },
+      {
+        "datname": "stock_analyzer",
+        "state": "idle in transaction",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "connections": 1,
+        "oldest_query_seconds": 22.02
+      }
+    ]
+  },
+  {
+    "section": "stock_active_sql",
+    "rows": [
+      {
+        "state": "active",
+        "wait_event_type": null,
+        "wait_event": null,
+        "elapsed_seconds": 0.13,
+        "normalized_sql": "SELECT * FROM (\n          SELECT DISTINCT ON (trade_date) payload,trade_date,first_available_at\n          FROM market_structure_generation WHERE trade_date <= $1 AND rules_version=$2 \n          ORDER BY trade_date DESC,first_available_at DESC) daily\n          ORDER BY trade_date DESC LIMIT $3"
+      },
+      {
+        "state": "idle in transaction",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "elapsed_seconds": 22.02,
+        "normalized_sql": "SELECT pg_try_advisory_lock(hashtext(?)) AS locked"
+      }
+    ]
+  },
+  {
+    "section": "database",
+    "rows": [
+      {
+        "datname": "market_news",
+        "numbackends": 1,
+        "temp_files": 23,
+        "temp_bytes": 201474048,
+        "deadlocks": 0,
+        "blk_read_time": 0,
+        "blk_write_time": 0,
+        "stats_reset": null
+      },
+      {
+        "datname": "stock_analyzer",
+        "numbackends": 2,
+        "temp_files": 43594,
+        "temp_bytes": 527617630208,
+        "deadlocks": 2,
+        "blk_read_time": 0,
+        "blk_write_time": 0,
+        "stats_reset": null
+      },
+      {
+        "datname": "investment_dashboard",
+        "numbackends": 5,
+        "temp_files": 0,
+        "temp_bytes": 0,
+        "deadlocks": 0,
+        "blk_read_time": 0,
+        "blk_write_time": 0,
+        "stats_reset": null
+      }
+    ]
+  },
+  {
+    "section": "settings",
+    "rows": [
+      {
+        "name": "max_connections",
+        "setting": "100",
+        "unit": null,
+        "reset_val": "100"
+      },
+      {
+        "name": "shared_buffers",
+        "setting": "16384",
+        "unit": "8kB",
+        "reset_val": "16384"
+      },
+      {
+        "name": "shared_preload_libraries",
+        "setting": "",
+        "unit": null,
+        "reset_val": ""
+      },
+      {
+        "name": "statement_timeout",
+        "setting": "5000",
+        "unit": "ms",
+        "reset_val": "0"
+      },
+      {
+        "name": "track_io_timing",
+        "setting": "off",
+        "unit": null,
+        "reset_val": "off"
+      },
+      {
+        "name": "work_mem",
+        "setting": "4096",
+        "unit": "kB",
+        "reset_val": "4096"
+      }
+    ]
+  },
+  {
+    "section": "extensions",
+    "rows": [
+      {
+        "extname": "plpgsql"
+      }
+    ]
+  }
+]

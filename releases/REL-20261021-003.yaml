@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261021-003",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "request_started_at": "2026-10-21T05:05:59+00:00",
+  "changes": [
+    "CHG-20261021-002",
+    "CHG-20261021-003"
+  ],
+  "environment": "Production",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.5.1",
+      "tag": "v4.5.1",
+      "commit_sha": "31f42130f5481ead0b7718b982d44c2f861ffbd5",
+      "previous_version": "v4.5.0",
+      "rollback_version": "v4.5.0",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/32",
+      "quality_run_id": "39547999775",
+      "candidate_evidence": "releases/evidence/REL-20261021-003/provider/candidate.json",
+      "rollback_commit_sha": "c0e30fce57ccc7a4b92bbc528e6763302b388a20",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:ad8202d7b6cf1a6bb5777787123bd465d7641c4fda06bbc8eb9346cada3d6617"
+      },
+      "rollback_image_ids": {
+        "app": "sha256:cb255c779ffbcdee0bdfe1e0c2344152bf657cefcdb4568674e90a57866db8d0"
+      },
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:da5860791a5eb81494a1721995bf49465f1ea44f49f001e72bf8d0fd0863266a"
+      },
+      "artifact_id": {
+        "app": "sha256:b1660104436e94c2b8aa478666b80254f8806d5d670cc509cc5afcbcfbae4e57"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.29.2",
+      "tag": "v0.29.2",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/34",
+      "previous_version": "v0.29.1",
+      "rollback_version": "v0.29.1",
+      "commit_sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d",
+      "quality_run_id": "39548196374",
+      "rollback_commit_sha": "3e44833217d2b280a10baf58c082225d2028c07a",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:0b11200caeec33c1f532885a06fef15a2a83c342d711dd3bb64bd34b2e48f9bb",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2ceb4a3fa20dc732c8ef514ab88864c2e547fab245687523d1d5730347d07159"
+      },
+      "rollback_image_ids": {
+        "api": "sha256:ae3c61a6cf418064e883c6e84a1d27c60831b1966cc6e383e8201aa92133f00a",
+        "web": "sha256:e7a49ac1856bd985fb91f3f7c94663ec60d5dd421e51d8d1211b57769acb0333"
+      },
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f13621eb6508b3f4ffb44d0d5716ae4096efb558a736ae4a0a3fe0ee4030c5bd",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:72c00c2b0a235b0d355d883f43feea016cee39c949788290f74d662c6fd4d34d"
+      },
+      "artifact_id": {
+        "api": "sha256:ad8bba72ba0d77a29737e6c06e82c73ec82852733749cf55431a5a2c118767fd",
+        "web": "sha256:468b6901fee18eba6d531f1bcc252c5405ad4ea846c1c210665b19923611646a"
+      }
+    }
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261021-003/image-release.plan.json",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：提交代码，连同开发的其他功能一起上线，生产发布。"
+  },
+  "verification": {
+    "status": "PASS",
+    "local_integration_evidence": [
+      "changes/evidence/CHG-20261021-002/release-integration-stock.log",
+      "changes/evidence/CHG-20261021-002/release-integration-dashboard.log",
+      "changes/evidence/CHG-20261021-002/release-integration-frontend.log",
+      "changes/evidence/CHG-20261021-002/release-integration-build.log"
+    ],
+    "known_limitations": [
+      "Brief post-switch observations are not full-day p95; X usage remains4.099s and needs follow-up query profiling.",
+      "Full swing response is3.8MB; compact structure still4.05MB. No Redis introduced.",
+      "Existing synthetic benchmarks are not production measurements."
+    ],
+    "evidence": [
+      "releases/evidence/REL-20261021-003/http-after.jsonl",
+      "releases/evidence/REL-20261021-003/http-public-after.json"
+    ]
+  },
+  "notes": [
+    "Prior reminder feature CHG001 already released v2.4.0; news HTTP performance ships in REL002 through its existing SOURCE_TAG_BUILD model. Await exact-main CI and digest candidates.",
+    "Actual order: news2.4.1 (REL002), stock4.5.1 then Dashboard0.29.2. Each backup and standard deploy ran once."
+  ],
+  "updated_at": "2026-10-21T05:33:21.583521+00:00",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261021-003/provider/candidate.json",
+    "releases/evidence/REL-20261021-003/dashboard/candidate.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "completed_at": "2026-10-21T05:30:41.132454+00:00"
+  },
+  "completed_at": "2026-10-21T05:30:41.132454+00:00",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261021-003/deployment.receipt.json"
+  ],
+  "timing": {
+    "request_started_at": "2026-10-21T05:05:59+00:00",
+    "production_available_at": "2026-10-21T05:30:41.132454+00:00",
+    "request_to_production_seconds": 1482.132,
+    "image_deploy_stage_seconds": 748.627,
+    "note": "Total includes commits, integration checks, PR/main CI, image builds, prior news deployment, downloads and backups; governance closeout is later. Five-minute target not met."
+  },
+  "rollback": {
+    "status": "AVAILABLE",
+    "evidence": "Retained exact prior Tag/SHA/Artifact and readable protected backup in deployment receipt; no database downgrade."
+  }
+}

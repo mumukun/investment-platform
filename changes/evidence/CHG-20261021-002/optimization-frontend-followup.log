@@ -1,0 +1,13 @@
+
+> investment-research-dashboard@0.29.1 test
+> vitest run --run src/views/ShortSelectionView.spec.ts src/views/SwingSelectionView.spec.ts src/views/ResearchLibraryView.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/http-latency-audit/investment-research-dashboard
+
+
+ Test Files  3 passed (3)
+      Tests  20 passed (20)
+   Start at  12:42:56
+   Duration  15.74s (transform 2.54s, setup 106ms, import 6.96s, tests 15.62s, environment 3.07s)
+

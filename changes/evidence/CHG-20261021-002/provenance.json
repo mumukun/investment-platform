@@ -1,0 +1,21 @@
+{
+  "audit_date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "prepared_at": "2026-10-21T03:17:34.301339+00:00",
+  "request_count": 70,
+  "dashboard_in_container": 52,
+  "upstream_services": 12,
+  "public_https": 6,
+  "baseline_commits": {
+    "investment-platform": "ada2263acc6097906511b4f567100fdcc27337d8",
+    "investment-research-dashboard": "3e44833217d2b280a10baf58c082225d2028c07a",
+    "stock-analyzer": "c0e30fce57ccc7a4b92bbc528e6763302b388a20",
+    "marketNewsFeed_checkout": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd"
+  },
+  "marketNewsFeed_image_provenance": "No version/revision OCI labels; only the four recorded runtime source files were hash-matched to checkout.",
+  "method": "Low-rate sequential GET queues, at most two overlapping queues; readonly database observations and EXPLAIN without ANALYZE. No load test.",
+  "business_payloads_saved": false,
+  "credential_material_saved": false,
+  "percentiles_available": false,
+  "static_inventory_note": "140 decorator/dispatcher route declarations (102 GET) from production-matching source, including auth/write/SSE routes. Declaration inventory is not proof of runtime coverage or latency."
+}
