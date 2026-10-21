@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.30.0 test
+> vitest run --run src/views/SwingSelectionView.spec.ts src/utils/swingSelection.spec.ts src/views/LimitUpLadderView.spec.ts src/components/LimitUpStockAnalysis.spec.ts src/components/SectorCapitalFlowChart.spec.ts src/components/sectorCapitalFlowGeometry.spec.ts src/components/sectorCapitalFlowLabelLayout.spec.ts src/views/CapitalFlowView.spec.ts src/views/MarketStructureView.spec.ts src/utils/marketStructureAvailability.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/oct21-pending-release/investment-research-dashboard
+
+
+ Test Files  9 passed (9)
+      Tests  62 passed (62)
+   Start at  16:31:17
+   Duration  12.87s (transform 4.94s, setup 206ms, import 12.61s, tests 12.30s, environment 9.19s)

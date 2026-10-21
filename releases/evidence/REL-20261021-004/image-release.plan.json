@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261021-004",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：好的，未发版的功能一起上线吧，生产上线。覆盖四项待发布业务功能必要集成、PR/main、Tag和精确镜像生产部署；排除治理文档与已发布业务。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "e219cd2f8541eba307518f172ba8e0c7cbd2c746",
+        "version": "4.5.2",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:01c3e1a9760046054d935a2dd6bebcf551a587f059b890edf5d6ecc9b2f69096"
+        },
+        "image_ids": {
+          "app": "sha256:cc8a0f8e67915cae14ee78a9bab7d797d059ba496105a7738b91f106be1d7496"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "e219cd2f8541eba307518f172ba8e0c7cbd2c746",
+            "run_id": "39571345452"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:01c3e1a9760046054d935a2dd6bebcf551a587f059b890edf5d6ecc9b2f69096"
+            }
+          },
+          "candidate_run_id": "39571424664"
+        }
+      },
+      "tag": "v4.5.2",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.5.1",
+        "commit_sha": "31f42130f5481ead0b7718b982d44c2f861ffbd5",
+        "image_ids": {
+          "stock-api": "sha256:b1660104436e94c2b8aa478666b80254f8806d5d670cc509cc5afcbcfbae4e57",
+          "stock-watch": "sha256:b1660104436e94c2b8aa478666b80254f8806d5d670cc509cc5afcbcfbae4e57"
+        }
+      },
+      "rollback": {
+        "tag": "v4.5.1",
+        "commit_sha": "31f42130f5481ead0b7718b982d44c2f861ffbd5",
+        "version": "4.5.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:da5860791a5eb81494a1721995bf49465f1ea44f49f001e72bf8d0fd0863266a"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+        "version": "0.30.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:79f337469d1b7931b510019398f98422098074e576bb9b7611ed82f197fe2593",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:260c69e6962f923b61123cba3f6ed9beb9e3997b26c69dbb4b932100c8926841"
+        },
+        "image_ids": {
+          "api": "sha256:074751673eecfa609acee23a8e983c1c4500603cc4c98a5f612717bab4eb566b",
+          "web": "sha256:dc573c6514775f33b82be3ad174a2c27b9b612ca924736d086f14bcc9270bb27"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+            "run_id": "39571608286"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:79f337469d1b7931b510019398f98422098074e576bb9b7611ed82f197fe2593",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:260c69e6962f923b61123cba3f6ed9beb9e3997b26c69dbb4b932100c8926841"
+            }
+          },
+          "candidate_run_id": "39571945385"
+        }
+      },
+      "tag": "v0.30.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.29.2",
+        "commit_sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d",
+        "image_ids": {
+          "api": "sha256:ad8bba72ba0d77a29737e6c06e82c73ec82852733749cf55431a5a2c118767fd",
+          "web": "sha256:468b6901fee18eba6d531f1bcc252c5405ad4ea846c1c210665b19923611646a"
+        },
+        "build_time": "2026-10-21T05:14:41Z"
+      },
+      "rollback": {
+        "tag": "v0.29.2",
+        "commit_sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d",
+        "version": "0.29.2",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f13621eb6508b3f4ffb44d0d5716ae4096efb558a736ae4a0a3fe0ee4030c5bd",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:72c00c2b0a235b0d355d883f43feea016cee39c949788290f74d662c6fd4d34d"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG003/005/006/007; business PR33/35 merged, exact-main CI and candidates passed. marketNewsFeed and governance-only CHG004 excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "CHG003 optional confirmation/current-discovery metadata; same swing thresholds/weights and independent intraday features. CHG005 opt-in v2 nullable quote facts, default v1 retained. Additive independent PG table; no old data rewrite or destructive migration. UI changes preserve source identity/raw values."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Reuse Change development evidence; combined provider382+23 subtests, consumer82 and frontend62/build PASS, plus exact-main CI/candidate fixture smoke. Synthetic tests are not production source measurements."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Reuse CHG003 read-only actual21st quote/state/20th baseline audit and verified688 quote unit evidence; CHG005 NAS dated actual Tencent quotes/limit prices and actual database gap diagnosis. Same approved Tencent/Sina direct adapters and stored historical facts, no new vendor or proxy route. Existing actual-source fields verified; new intraday discovery remains next-session acceptance because release is after close. Targeted affected API smoke after deployment checks real current payload without forced intraday/backfill or paid calls."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "NAS read-only verified SWING_ENGINE_ENABLED=true and rulesv5.2.0, no SWING_CYCLE time overrides; code defaults cover09:30-15:00 continuous sessions. No new config secrets, Redis or flags. Three candidate UI build flags equal verified production true. NAS download mihomo unchanged; domestic data direct."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified latest PRODUCTION_BASELINE: stockv4.5.1/31f4213 and Dashboardv0.29.2/5961d61 with retained exact images. Deployer independently enforces live drift/readable backups before switching. Keep additive table on rollback, no database downgrade; no drills."
+    }
+  }
+}

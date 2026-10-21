@@ -1,0 +1,23 @@
+{
+  "http_status": 200,
+  "elapsed_seconds": 0.072,
+  "contract": "investment-dashboard-limit-up-ladder-v1",
+  "source_status": "partial",
+  "source": "legacy_a_share_snapshot",
+  "trade_date": "2026-10-21",
+  "snapshot_time": "2026-10-21T15:00:00+08:00",
+  "market_status": "已收盘",
+  "summary": {
+    "limit_up_count": 0,
+    "max_streak": 0,
+    "one_word_count": 0,
+    "industry_count": 0,
+    "by_streak": {},
+    "by_board": {},
+    "by_limit_pct": {}
+  },
+  "item_count": 0,
+  "issues": [
+    "legacy_snapshot_missing_extended_fields"
+  ]
+}

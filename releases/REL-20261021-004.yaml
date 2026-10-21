@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261021-004",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "environment": "Production",
+  "changes": [
+    "CHG-20261021-003",
+    "CHG-20261021-005",
+    "CHG-20261021-006",
+    "CHG-20261021-007"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "new_version": "4.5.2",
+      "tag": "v4.5.2",
+      "previous_version": "v4.5.1",
+      "rollback_version": "v4.5.1",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/33",
+      "rollback_commit_sha": "31f42130f5481ead0b7718b982d44c2f861ffbd5",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:da5860791a5eb81494a1721995bf49465f1ea44f49f001e72bf8d0fd0863266a"
+      },
+      "rollback_image_ids": {
+        "app": "sha256:b1660104436e94c2b8aa478666b80254f8806d5d670cc509cc5afcbcfbae4e57"
+      },
+      "commit_sha": "e219cd2f8541eba307518f172ba8e0c7cbd2c746",
+      "quality_run_id": "39571345452",
+      "candidate_evidence": "releases/evidence/REL-20261021-004/provider/candidate.json",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:01c3e1a9760046054d935a2dd6bebcf551a587f059b890edf5d6ecc9b2f69096"
+      },
+      "artifact_id": {
+        "app": "sha256:cc8a0f8e67915cae14ee78a9bab7d797d059ba496105a7738b91f106be1d7496"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "new_version": "0.30.0",
+      "tag": "v0.30.0",
+      "previous_version": "v0.29.2",
+      "rollback_version": "v0.29.2",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/35",
+      "rollback_commit_sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f13621eb6508b3f4ffb44d0d5716ae4096efb558a736ae4a0a3fe0ee4030c5bd",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:72c00c2b0a235b0d355d883f43feea016cee39c949788290f74d662c6fd4d34d"
+      },
+      "rollback_image_ids": {
+        "api": "sha256:ad8bba72ba0d77a29737e6c06e82c73ec82852733749cf55431a5a2c118767fd",
+        "web": "sha256:468b6901fee18eba6d531f1bcc252c5405ad4ea846c1c210665b19923611646a"
+      },
+      "commit_sha": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+      "quality_run_id": "39571608286",
+      "candidate_evidence": "releases/evidence/REL-20261021-004/dashboard/candidate.json",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:79f337469d1b7931b510019398f98422098074e576bb9b7611ed82f197fe2593",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:260c69e6962f923b61123cba3f6ed9beb9e3997b26c69dbb4b932100c8926841"
+      },
+      "artifact_id": {
+        "api": "sha256:074751673eecfa609acee23a8e983c1c4500603cc4c98a5f612717bab4eb566b",
+        "web": "sha256:dc573c6514775f33b82be3ad174a2c27b9b612ca924736d086f14bcc9270bb27"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：好的，未发版的功能一起上线吧，生产上线。覆盖四项待发布业务功能必要集成、PR/main、Tag和精确镜像生产部署；排除治理文档与已发布业务。"
+  },
+  "verification": {
+    "status": "PASS_AFTER_LINKED_HOTFIX",
+    "evidence": [
+      "releases/evidence/REL-20261021-004/provider-integration.log",
+      "releases/evidence/REL-20261021-004/backend-integration.log",
+      "releases/evidence/REL-20261021-004/frontend-integration.log",
+      "releases/evidence/REL-20261021-004/build-integration.log",
+      "releases/evidence/REL-20261021-005/consumer-recovery-smoke.json"
+    ],
+    "local_results": {
+      "provider": "382 passed, 23 subtests passed; one explicit performance case skipped",
+      "consumer": "82 passed",
+      "frontend": "62 passed",
+      "build": "PASS; vue-tsc/Vite/PWA",
+      "lint": "consumer Ruff/format and uv lock PASS"
+    },
+    "known_limitations": [
+      "Local synthetic PG and browser fixtures are not production source/latency measurements.",
+      "Release after continuous session; next-session intraday discovery cannot be certified through a post-close forced scan.",
+      "New limit-up data preserves nullable streak/order facts; no production backfill or source expansion."
+    ],
+    "original_business_acceptance": "BLOCKED:21日规则0行、全部隔离误报健康零候选。原失败诊断保留。",
+    "resolution_release": "REL-20261021-005"
+  },
+  "timing": {
+    "first_recorded_at": "2026-10-21T08:16:43+00:00",
+    "basis": "First clock sample after formal request; actual request and initial review occurred slightly earlier. Includes integration, PR/main CI, image build and deployment.",
+    "deploy_invoked_at": "2026-10-21T08:57:06.296374+00:00",
+    "production_business_verified_at": "2026-10-21T10:03:07.764203+00:00",
+    "recorded_request_to_business_seconds": 6384.764,
+    "this_deployment_seconds": 581.834,
+    "note": "从正式请求后首次时钟采样计，实际请求略早；包含四项功能整合、PR/main CI与候选、两次部署备份及规则事故补修，不隐藏等待，超过五分钟目标。收尾归档另计。"
+  },
+  "notes": [
+    "marketNewsFeed unchanged and excluded. CHG004 performance governance and original unrelated work remain in their worktrees.",
+    "Original feature worktrees retained; CHG005/006 copied as scoped diffs into isolated integration branches, never reset or commit original user work."
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261021-004/image-release.plan.json",
+  "deployment": {
+    "status": "PASS",
+    "completed_at": "2026-10-21T09:07:08.110534+00:00"
+  },
+  "deployment_receipts": [
+    "releases/evidence/REL-20261021-004/deployment.receipt.json"
+  ],
+  "completed_at": "2026-10-21T10:03:07.764203+00:00",
+  "updated_at": "2026-10-21T10:05:47.883349+00:00",
+  "rollback": {
+    "status": "RETAINED_EXACT_ARTIFACTS",
+    "limitations": "不自动降级数据库；4.5.2回退会重新引入规则导入缺陷，不能作为该事故恢复方案。保留真实规则事实。"
+  }
+}

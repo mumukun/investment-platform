@@ -1,0 +1,57 @@
+{
+  "version": {
+    "app_version": "0.30.0",
+    "git_commit": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+    "build_time": "2026-10-21T08:47:39Z",
+    "environment": "production",
+    "api_version": "v1"
+  },
+  "checks": [
+    {
+      "path": "/api/v1/swing-selection",
+      "http": 200,
+      "seconds": 1.085,
+      "contract_version": "investment-dashboard-swing-selection-v3",
+      "trade_date": "2026-10-21",
+      "data_time": "2026-10-21T17:59:35+08:00",
+      "count": 894,
+      "freshness_status": "healthy",
+      "degraded": true,
+      "by_decision": {
+        "不参与": 1,
+        "暂缓参与": 826,
+        "禁止追高": 52,
+        "可计划参与": 15
+      },
+      "source_status": null,
+      "bar_end_date": "2026-10-21",
+      "all_state_dates_today": true
+    },
+    {
+      "path": "/api/v1/limit-up-ladder",
+      "http": 200,
+      "seconds": 1.977,
+      "contract_version": "investment-dashboard-limit-up-ladder-v2",
+      "trade_date": "2026-10-21",
+      "data_time": "2026-10-21T16:15:00+08:00",
+      "count": 50,
+      "freshness_status": null,
+      "degraded": null,
+      "by_decision": null,
+      "source_status": {
+        "status": "partial",
+        "source": "domestic_quote_limits",
+        "is_mock": false,
+        "last_success_at": "2026-10-21T16:15:00+08:00",
+        "issues": [
+          "limit_pool_extended_fields_unavailable",
+          "quote_limits_missing:353",
+          "security_trade_rule_missing:50"
+        ]
+      },
+      "bar_end_date": null
+    }
+  ],
+  "result": "PASS",
+  "observed_at": "2026-10-21T10:03:07.764203+00:00"
+}

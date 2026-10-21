@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@0.29.3 test
+> vitest run --run src/components/SectorCapitalFlowChart.spec.ts src/components/sectorCapitalFlowGeometry.spec.ts src/components/sectorCapitalFlowLabelLayout.spec.ts src/views/CapitalFlowView.spec.ts
+
+
+ RUN  v4.1.11 /Users/mukun/.codex/worktrees/sector-flow-chart-recovery/investment-research-dashboard
+
+
+ Test Files  4 passed (4)
+      Tests  13 passed (13)
+   Start at  14:04:03
+   Duration  3.80s (transform 1.13s, setup 100ms, import 2.83s, tests 415ms, environment 6.14s)

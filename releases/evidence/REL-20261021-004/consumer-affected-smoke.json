@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "version": "0.30.0",
+  "checks": [
+    {
+      "path": "/api/v1/swing-selection",
+      "http": 200,
+      "seconds": 0.863,
+      "contract_version": "investment-dashboard-swing-selection-v3",
+      "trade_date": "2026-10-21",
+      "data_time": "2026-10-21T17:09:24+08:00",
+      "freshness_status": "healthy",
+      "source_status": null,
+      "count": 0,
+      "phase": "close",
+      "confirmation_dates_available": true
+    },
+    {
+      "path": "/api/v1/limit-up-ladder",
+      "http": 200,
+      "seconds": 0.606,
+      "contract_version": "investment-dashboard-limit-up-ladder-v2",
+      "trade_date": "2026-10-21",
+      "data_time": "2026-10-21T16:15:00+08:00",
+      "freshness_status": null,
+      "source_status": {
+        "status": "partial",
+        "source": "domestic_quote_limits",
+        "is_mock": false,
+        "last_success_at": "2026-10-21T16:15:00+08:00",
+        "issues": [
+          "limit_pool_extended_fields_unavailable",
+          "quote_limits_missing:353",
+          "security_trade_rule_missing:50"
+        ]
+      },
+      "count": 50,
+      "phase": null,
+      "confirmation_dates_available": null
+    }
+  ]
+}

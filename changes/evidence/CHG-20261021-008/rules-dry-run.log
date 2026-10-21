@@ -1,0 +1,6 @@
+{'date': '2026-10-21', 'rules': 5074, 'warnings': 1}
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+2026-10-21 17:35:19,726 INFO 导入提示: 150只缺少同日有效报价或核验后的涨跌停事实，保持缺口隔离
+2026-10-21 17:35:19,726 INFO 证券主数据构建完成：5074 条。

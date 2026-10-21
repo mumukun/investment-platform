@@ -1,0 +1,45 @@
+{
+  "production_identity": "verified from running OCI labels and image IDs; matches REL-20261021-003",
+  "stock_analyzer": {
+    "version": "4.5.1",
+    "sha": "31f42130f5481ead0b7718b982d44c2f861ffbd5"
+  },
+  "dashboard": {
+    "version": "0.29.2",
+    "sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d"
+  },
+  "diagnosis": {
+    "date": "2026-10-21",
+    "snapshot_stocks": 5575,
+    "legacy_threshold_flags": 58,
+    "daily_trade_rules": 0,
+    "retained_by_old_join": 0,
+    "actual_snapshot_time": "2026-10-21T13:41:19+08:00",
+    "latest_dedicated_ladder_date": "2026-10-20",
+    "latest_dedicated_ladder_count": 52,
+    "import_jobs_failed": [
+      "2026-10-21 08:35",
+      "2026-10-21 13:33 startup"
+    ]
+  },
+  "allowed_source_read_only_check": {
+    "source": "tencent",
+    "quote_date": "2026-10-21",
+    "sample_count": 3,
+    "valid_dated_quotes_and_actual_limits": 3,
+    "at_limit_when_sampled": 2,
+    "not_at_limit_when_sampled": 1,
+    "failed_count": 0
+  },
+  "local_reproduction": {
+    "command": "python scripts/import_trade_rules.py --help",
+    "baseline_result": "ModuleNotFoundError before sys.path bootstrap",
+    "scope": "not repaired/restarted in this Change; ladder no longer depends on this legacy exchange-list job"
+  },
+  "limits": [
+    "No production database writes or backfill",
+    "No Eastmoney calls",
+    "No production load test",
+    "Local code is not deployed"
+  ]
+}

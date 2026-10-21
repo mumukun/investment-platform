@@ -269,6 +269,16 @@ contracts:
       - stock-analyzer/stock_analyzer/limit_up_contract.py
       - investment-research-dashboard/backend/app/integrations/stock_analyzer.py
     status: verified
+  investment-dashboard-limit-up-ladder-v2:
+    provider: stock-analyzer
+    consumers:
+      - investment-research-dashboard
+    version_kind: contract_version
+    rules_version: limit-up-ladder-rules-v1
+    interface: GET /api/integrations/investment-dashboard/limit-up-ladder?contract_version=investment-dashboard-limit-up-ladder-v2
+    compatibility: opt_in_nullable_quote_facts_v1_default_retained
+    status: verified
+    evidence: releases/evidence/REL-20261021-005/consumer-recovery-smoke.json
   investment-dashboard-seat-flow-v1:
     provider: stock-analyzer
     consumers:
