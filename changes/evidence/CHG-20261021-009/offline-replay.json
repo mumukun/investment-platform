@@ -1,0 +1,17 @@
+{
+  "evidence": "previously captured public market payload replayed offline into an isolated local PostgreSQL",
+  "inserted_days": 3,
+  "date": "2026-10-21",
+  "valid_return_count": 5214,
+  "ma20_eligible_count": 5208,
+  "ma60_eligible_count": 5189,
+  "failure_codes": [
+    "CAPABILITY_UNAVAILABLE"
+  ],
+  "collection_failure_count": 27,
+  "quality": "partial",
+  "funds": 12,
+  "fund_flows_missing": 12,
+  "etf_share_reference_date": "2026-10-20",
+  "latest_complete_flow_date": "2026-10-19"
+}

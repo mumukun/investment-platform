@@ -1,0 +1,95 @@
+{
+  "average_price_index": {
+    "error": "ConnectionError"
+  },
+  "microcap_index": {
+    "error": "ConnectionError"
+  },
+  "adjustment_check": {
+    "complete": true
+  },
+  "nav:510050": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:510050": {
+    "tracking_index_name": "上证50指数"
+  },
+  "nav:510300": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:510300": {
+    "tracking_index_name": "沪深300指数"
+  },
+  "nav:510310": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:510310": {
+    "tracking_index_name": "沪深300指数"
+  },
+  "nav:510330": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:510330": {
+    "tracking_index_name": "沪深300指数"
+  },
+  "nav:159919": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:159919": {
+    "tracking_index_name": "沪深300指数"
+  },
+  "nav:159338": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:159338": {
+    "tracking_index_name": "中证A500指数"
+  },
+  "nav:510500": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:510500": {
+    "tracking_index_name": "中证500指数"
+  },
+  "nav:512100": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:512100": {
+    "tracking_index_name": "中证1000指数"
+  },
+  "nav:159531": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:159531": {
+    "tracking_index_name": "中证2000指数"
+  },
+  "nav:588000": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:588000": {
+    "tracking_index_name": "上证科创板50成份指数"
+  },
+  "nav:588080": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:588080": {
+    "tracking_index_name": "上证科创板50成份指数"
+  },
+  "nav:159915": {
+    "count": 4,
+    "latest": "2026-10-21"
+  },
+  "mapping:159915": {
+    "tracking_index_name": "创业板指数(价格)"
+  }
+}

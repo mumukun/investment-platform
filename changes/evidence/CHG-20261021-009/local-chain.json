@@ -1,0 +1,34 @@
+{
+  "environment": "local isolated PostgreSQL, public history and live source facts",
+  "inserted_days": 121,
+  "market_date": "2026-10-21",
+  "valid_return_count": 5214,
+  "fund_count": 12,
+  "complete_flow_windows": {
+    "1": 12,
+    "5": 12,
+    "20": 12
+  },
+  "average_price": "unavailable",
+  "microcap": "unavailable",
+  "source_failures": [
+    {
+      "code": "CONNECTION_ERROR",
+      "entity": "",
+      "source": "fetch_average_price",
+      "http_status": null
+    },
+    {
+      "code": "CONNECTION_ERROR",
+      "entity": "",
+      "source": "fetch_average_price_history",
+      "http_status": null
+    },
+    {
+      "code": "CONNECTION_ERROR",
+      "entity": "",
+      "source": "fetch_microcap_index",
+      "http_status": null
+    }
+  ]
+}

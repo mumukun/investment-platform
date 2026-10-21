@@ -1,0 +1,410 @@
+{
+  "collection_health": {
+    "checked_at": "2026-10-21T15:32:27.316888+00:00",
+    "expected_trade_date": "2026-10-21",
+    "status": "partial",
+    "failure_count": 3,
+    "missing_count": 2,
+    "pending_current_close": false,
+    "failures": [
+      {
+        "source": "fetch_average_price",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      },
+      {
+        "source": "fetch_average_price_history",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      },
+      {
+        "source": "fetch_microcap_index",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      }
+    ],
+    "price_gaps": [],
+    "checks": [
+      {
+        "kind": "index",
+        "entity": "sh000001",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000016",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000985",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000905",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000852",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "csi932000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000688",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sz399006",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "csi000510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "ths883421",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "average_price_index",
+        "entity": "eastmoney:47.800005",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": null,
+        "status": "missing"
+      },
+      {
+        "kind": "microcap_index",
+        "entity": "eastmoney:90.BK1158",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": null,
+        "status": "missing"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510050",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510050",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510300",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510300",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510310",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510310",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510330",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510330",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159919",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159919",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159919",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159338",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159338",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159338",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510500",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510500",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512100",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512100",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159531",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159531",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159531",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588000",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588000",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588080",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588080",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159915",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159915",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159915",
+        "expected_trade_date": "2026-10-20",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      }
+    ],
+    "deferred_sources": []
+  },
+  "counts": {
+    "sh000001": 70,
+    "sh000016": 70,
+    "sh000300": 70,
+    "sh000985": 70,
+    "sh000905": 70,
+    "sh000852": 70,
+    "csi932000": 70,
+    "sh000688": 70,
+    "sz399006": 70,
+    "csi000510": 70,
+    "ths883421": 70,
+    "sse": 16,
+    "szse": 24,
+    "510050": 70,
+    "159531": 70,
+    "588000": 70,
+    "510310": 70,
+    "159915": 70,
+    "510300": 70,
+    "159919": 70,
+    "510330": 70,
+    "510500": 70,
+    "159338": 70,
+    "512100": 70,
+    "588080": 70
+  },
+  "compute": {
+    "processed_generations": 121,
+    "new_generations": 121,
+    "start": "2026-04-22",
+    "end": "2026-10-21"
+  }
+}
