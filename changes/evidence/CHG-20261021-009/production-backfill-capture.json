@@ -1,0 +1,30 @@
+{
+  "evidence_kind": "real_public_raw_capture_validated_for_authorized_production_backfill",
+  "trade_date": "2026-10-21",
+  "preceding_sessions": 21,
+  "fund_count": 139,
+  "profile_count": 1688,
+  "directory_count": 1688,
+  "fact_counts": {
+    "etf_roster": 2,
+    "etf_profile": 1688,
+    "mapping": 139,
+    "share": 2919,
+    "etf_price": 11808,
+    "nav": 2919
+  },
+  "groups": {
+    "E008": 15,
+    "E003": 32,
+    "E002": 25,
+    "E004": 22,
+    "E006": 10,
+    "E005": 7,
+    "E001": 11,
+    "E007": 17
+  },
+  "complete_1_5_20_windows": 139,
+  "capture_sha256": "52ca0d02b152361cf6706a3848efb44852c9879ce40e6141fbd3368aa9cd95f1",
+  "source_failures": [],
+  "note": "Official exchange shares and published same-day unit NAV, direct network. Computed money is validated here but never imported as raw facts; production recomputes independently."
+}

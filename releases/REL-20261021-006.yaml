@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0",
   "release_id": "REL-20261021-006",
-  "status": "BLOCKED",
+  "status": "RELEASED",
   "environment": "Production",
   "release_profile": "routine",
   "changes": [
     "CHG-20261021-009"
   ],
   "request_started_at": "2026-10-21T15:22:52+00:00",
-  "updated_at": "2026-10-21T16:24:44.190407+00:00",
+  "updated_at": "2026-10-21T17:51:14.880781+00:00",
   "authorization": {
     "status": "FORMAL",
-    "evidence": "用户明确要求开发后验证板块恢复，问题继续恢复，没问题正式生产上线；其他未上线功能一并发布。"
+    "evidence": "2026-10-22当前用户授权：专业选择ETF，恢复平均股价/微盘采集；部分数据异常时板块仍可用且提示；解决后提交代码并将本次整体功能生产上线。允许在明确局部降级下发布，不再要求全部外部源同时成功。"
   },
   "repositories": [
     {
       "repository": "stock-analyzer",
       "planned_version": "4.6.0",
-      "development_commit_sha": "aeb6bb8cf16ccc1be5932a437ff6e0a35ff7d37f",
+      "development_commit_sha": "635917c5cc1126fde74d35e2d999a945cbf1836b",
       "pr": "https://github.com/mumukun/stock-analyzer/pull/35",
       "previous_version": "v4.5.3",
       "rollback_version": "v4.5.3",
@@ -25,12 +25,21 @@
       "rollback_artifact": {
         "app": "ghcr.io/mumukun/stock-analyzer@sha256:75ec9a1dd59399fc9b7a36e4363f64320f5a3dd2d9e32aa41b39e3c5f89f4215"
       },
-      "note": "PR head，未合入main/未freeze正式Tag，无候选/生产切换。"
+      "note": "精确main CI镜像经不可变Tag部署，生产身份/健康/smoke及受影响链路通过。",
+      "commit_sha": "e43727f69d64b22ca63c89be98a08341b90604cc",
+      "tag": "v4.6.0",
+      "main_ci_run_id": "39643876421",
+      "candidate_run_id": "39643970194",
+      "candidate": "releases/evidence/REL-20261021-006/provider/candidate.json",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:c69f226bc5d31a736f2a61c4df8cf6c5b3a4536a225a1a9361e5179e7c91214f"
+      },
+      "status": "RELEASED"
     },
     {
       "repository": "investment-research-dashboard",
       "planned_version": "0.31.0",
-      "development_commit_sha": "e241dcf939b6c76a16df0ff935a4232b696ce4c1",
+      "development_commit_sha": "9cb92275dfc020996400561e2fd8d035d5957e47",
       "pr": "https://github.com/mumukun/investment-research-dashboard/pull/36",
       "previous_version": "v0.30.0",
       "rollback_version": "v0.30.0",
@@ -39,7 +48,17 @@
         "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:79f337469d1b7931b510019398f98422098074e576bb9b7611ed82f197fe2593",
         "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:260c69e6962f923b61123cba3f6ed9beb9e3997b26c69dbb4b932100c8926841"
       },
-      "note": "PR head，未合入main/未freeze正式Tag，无候选/生产切换。"
+      "note": "精确main CI镜像经不可变Tag部署，生产身份/健康/smoke及受影响链路通过。",
+      "commit_sha": "0ff64b7ce30f100e040cdfa46b157839db17f52f",
+      "tag": "v0.31.0",
+      "main_ci_run_id": "39643999770",
+      "candidate_run_id": "39644443936",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff37b8ce372fd334c2ab2badba4d3a217722127bb069ace5ab152cc60b983f37",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e62380103881e3e7db072c92614124143ccab0054825e2195d6e60e6ab782d1c"
+      },
+      "candidate": "releases/evidence/REL-20261021-006/dashboard/candidate.json",
+      "status": "RELEASED"
     }
   ],
   "release_order": [
@@ -47,7 +66,7 @@
     "investment-research-dashboard"
   ],
   "verification": {
-    "status": "BLOCKED_REAL_DATA",
+    "status": "PASS_WITH_DECLARED_SOURCE_DEGRADATION",
     "evidence": [
       "changes/evidence/CHG-20261021-009/source-check.json",
       "changes/evidence/CHG-20261021-009/nas-source-check.json",
@@ -55,38 +74,48 @@
       "changes/evidence/CHG-20261021-009/nas-browser-check.txt",
       "changes/evidence/CHG-20261021-009/etf-expanded-collection.json",
       "changes/evidence/CHG-20261021-009/etf-expanded-contract-chain.json",
-      "changes/evidence/CHG-20261021-009/remaining-sources-20261022.json"
+      "changes/evidence/CHG-20261021-009/remaining-sources-20261022.json",
+      "changes/evidence/CHG-20261021-009/production-backfill-capture.json"
     ],
     "limitations": [
-      "十二只ETF的21日净值、份额和完整1/5/20日申赎窗口已在独立本地数据库/Consumer验证，非生产恢复。",
-      "800005/BK1158初期可取，之后本机与NAS连接提前关闭；公开网页对应价格为空，不能据fixture或代码CI称其恢复。",
-      "NAS普通Chrome/Xvfb/CDP在隔离临时容器中同样ERR_EMPTY_RESPONSE；未修改现有业务服务。",
-      "本轮动态目录核验1688只，纳入139只ETF，沪深30025只；所有139只1/5/20窗口通过本地真实源/Consumer验证。",
-      "800005报价/历史仍连接失败，BK1158最新403；原整体恢复验收未通过。"
+      "139只普通宽基ETF、沪深30025只，真实本地1/5/20交易日窗口已验证；尚待生产回填与同步。",
+      "东财47.800005与90.BK1158最新请求仍有连接失败/403；保留原始身份、真实日期与缺口，启用正常直连/延迟报价/浏览器/缺日补采，不宣称新行情已恢复。"
     ],
     "ci": {
       "stock-analyzer": {
         "status": "PASS",
-        "run_id": "39633736763",
-        "head_sha": "aeb6bb8cf16ccc1be5932a437ff6e0a35ff7d37f"
+        "run_id": "39643876421",
+        "head_sha": "e43727f69d64b22ca63c89be98a08341b90604cc"
       },
       "investment-research-dashboard": {
         "status": "PASS",
-        "run_id": "39633740140",
-        "head_sha": "e241dcf939b6c76a16df0ff935a4232b696ce4c1"
+        "run_id": "39643999770",
+        "head_sha": "0ff64b7ce30f100e040cdfa46b157839db17f52f"
       }
+    },
+    "production": {
+      "provider": "releases/evidence/REL-20261021-006/provider-feature-smoke.json",
+      "consumer": "releases/evidence/REL-20261021-006/dashboard-feature-smoke.json",
+      "raw_backfill": "releases/evidence/REL-20261021-006/raw-backfill.receipt.json",
+      "collection": "releases/evidence/REL-20261021-006/production-collection.json",
+      "runtime_version": "releases/evidence/REL-20261021-006/dashboard-runtime-version.json",
+      "result": "139只ETF全1/5/20窗口可算，沪深30025只，5214只有效收益，121日投影；原800005/BK1158仍缺最新，保留16日历史与局部提示。"
     }
   },
   "deployment": {
-    "status": "NOT_STARTED",
-    "reason": "用户要求验证恢复后再生产；目前真实来源门禁未通过。不创建Tag或切换生产。"
+    "status": "PASS",
+    "plan": "releases/evidence/REL-20261021-006/image-release.plan.json",
+    "receipt": "releases/evidence/REL-20261021-006/deployment.receipt.json",
+    "completed_at": "2026-10-21T17:44:07.539303+00:00"
   },
   "other_pending_scope": "近期运行时Changes已在REL20261019-001/002和REL20261021-001..005发布；独有历史源分支不重复吸收。性能规范CHG20261021-004为未提交NON_RELEASE_CHANGE草稿，无业务镜像部署。",
   "timing": {
     "request_started_at": "2026-10-21T15:22:52+00:00",
-    "reviewed_at": "2026-10-21T15:52:54.353663+00:00",
-    "elapsed_seconds": 1802,
-    "note": "开发、依赖安装、真实源/浏览器故障排查及PR CI均计入；未开始正式部署。",
-    "scope_extension_verified_at": "2026-10-21T16:21:27.872738+00:00"
-  }
+    "closed_at": "2026-10-21T17:51:14.880781+00:00",
+    "handling_elapsed_seconds": 8903,
+    "deployment_elapsed_seconds": 577,
+    "deployment_and_feature_verification_seconds": 1004,
+    "note": "从原正式请求计，包含多轮新增ETF扩容要求、来源排障、代码测试/CI/镜像等待及生产补数；不是纯部署耗时。用户等待/睡眠不是权限等待；没有重复审批、恢复或回滚演练。"
+  },
+  "branch_cleanup": "业务分支/worktree仍附着且用于本次记录，安全保留；不阻塞已发布。治理收尾一次提交/PR。"
 }

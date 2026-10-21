@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261021-006",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "2026-10-22当前用户授权：专业选择ETF，恢复平均股价/微盘采集；部分数据异常时板块仍可用且提示；解决后提交代码并将本次整体功能生产上线。允许在明确局部降级下发布，不再要求全部外部源同时成功。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "e43727f69d64b22ca63c89be98a08341b90604cc",
+        "version": "4.6.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c69f226bc5d31a736f2a61c4df8cf6c5b3a4536a225a1a9361e5179e7c91214f"
+        },
+        "image_ids": {
+          "app": "sha256:91af4452eca14c73e58b522a29f568f52df431848483b337d092331f9af0fea9"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "e43727f69d64b22ca63c89be98a08341b90604cc",
+            "run_id": "39643876421"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:c69f226bc5d31a736f2a61c4df8cf6c5b3a4536a225a1a9361e5179e7c91214f"
+            }
+          },
+          "candidate_run_id": "39643970194"
+        }
+      },
+      "tag": "v4.6.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.5.3",
+        "commit_sha": "c62036754442bb3cd23ec9fcb927464b7a920cc1",
+        "image_ids": {
+          "stock-api": "sha256:9326d5a9ba8ba91e83ca00d04faa53d6cded0b1a61abd9fbea07803109b11a48",
+          "stock-watch": "sha256:9326d5a9ba8ba91e83ca00d04faa53d6cded0b1a61abd9fbea07803109b11a48"
+        }
+      },
+      "rollback": {
+        "tag": "v4.5.3",
+        "commit_sha": "c62036754442bb3cd23ec9fcb927464b7a920cc1",
+        "version": "4.5.3",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:75ec9a1dd59399fc9b7a36e4363f64320f5a3dd2d9e32aa41b39e3c5f89f4215"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "0ff64b7ce30f100e040cdfa46b157839db17f52f",
+        "version": "0.31.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff37b8ce372fd334c2ab2badba4d3a217722127bb069ace5ab152cc60b983f37",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e62380103881e3e7db072c92614124143ccab0054825e2195d6e60e6ab782d1c"
+        },
+        "image_ids": {
+          "api": "sha256:1bd09fee73cd74079611c249cc9f889214715346f154a47bf76f737bf26267a1",
+          "web": "sha256:d5f397d4c47672d7568b489c83aa6bb449a5fe1b848e094a12cb72adaff32646"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "0ff64b7ce30f100e040cdfa46b157839db17f52f",
+            "run_id": "39643999770"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff37b8ce372fd334c2ab2badba4d3a217722127bb069ace5ab152cc60b983f37",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e62380103881e3e7db072c92614124143ccab0054825e2195d6e60e6ab782d1c"
+            }
+          },
+          "candidate_run_id": "39644443936"
+        }
+      },
+      "tag": "v0.31.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.30.0",
+        "commit_sha": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+        "image_ids": {
+          "api": "sha256:074751673eecfa609acee23a8e983c1c4500603cc4c98a5f612717bab4eb566b",
+          "web": "sha256:dc573c6514775f33b82be3ad174a2c27b9b612ca924736d086f14bcc9270bb27"
+        },
+        "build_time": "2026-10-21T08:47:39Z"
+      },
+      "rollback": {
+        "tag": "v0.30.0",
+        "commit_sha": "26c98bde12f55acbf50858759fbebcdca7ed0cb5",
+        "version": "0.30.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:79f337469d1b7931b510019398f98422098074e576bb9b7611ed82f197fe2593",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:260c69e6962f923b61123cba3f6ed9beb9e3997b26c69dbb4b932100c8926841"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG009 READY. PR35/e43727f and PR36/0ff64b7 merged with successful exact-main CI/candidate. Only stock-analyzer4.6.0 and Dashboard0.31.0; no marketNewsFeed or unrelated branch."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Opt-in v2 supports dynamic ETF diagnostic counts; default v1 preserves12 sample. New Consumer accepts both, immutable history coexists. No DDL. Existing scope/auth/core financial validation remains strict; invalid known optional sources are quarantined with explicit notices."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Final544 unittest73 skips, targeted73 including isolated PostgreSQL; Consumer22, frontend28, build/type/Ruff PASS. Real139 ETF121-day Provider/Consumer chain plus defaultv1 projection verified. Exact-main CI and exact-digest fixture smoke PASS; Chromium launched in actual candidate."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Actual exchange directory1688 classified;139 plain broad-index ETFs incl CSI30025. All139 have1/5/20 windows verified using official exchange shares and same-day published unit NAV. Fresh public raw capture revalidated139x21 share/NAV,1688 profiles. Original800005/BK1158 still connection failure/403; user current acceptance explicitly permits local failure warnings while valid sections remain usable. No false fresh index claim; only missing raw ETF facts will append/recompute after verified backup, scoped production smoke required."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No env/credentials/proxy-node change. Domestic data direct; Eastmoney only exact market structure/ETF capabilities. Browser and public delayed quote bounded; denials terminal. Candidate dashboard flags must match existing NAS config, enforced by deployer. GHCR downloads continue existing mihomo."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Retained verified v4.5.3/c620 and v0.30.0/26c98bd digest/config IDs from latest production baseline. Existing deployer checks actual drift and fresh readable backup once. Raw facts append-only; no deletion/downgrade. Unchanged release mechanism reused, no restore/rollback drill."
+    }
+  }
+}
