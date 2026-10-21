@@ -1,0 +1,5747 @@
+{
+  "tested_at": "2026-10-21T17:48:23.353380+00:00",
+  "collection_health": {
+    "checked_at": "2026-10-21T17:48:23.353380+00:00",
+    "expected_trade_date": "2026-10-21",
+    "status": "partial",
+    "failure_count": 5,
+    "missing_count": 2,
+    "pending_current_close": false,
+    "failures": [
+      {
+        "source": "fetch_average_price",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      },
+      {
+        "source": "fetch_average_price_history",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      },
+      {
+        "source": "fetch_microcap_index",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      },
+      {
+        "source": "fetch_microcap_history",
+        "entity": "",
+        "code": "CONNECTION_ERROR",
+        "http_status": null
+      },
+      {
+        "source": "fetch_tencent_price",
+        "entity": "sh589360",
+        "code": "HTTP_ERROR",
+        "http_status": 501
+      }
+    ],
+    "price_gaps": [
+      {
+        "entity": "sh:589360",
+        "missing_count": 7,
+        "latest_missing_date": "2026-06-25"
+      }
+    ],
+    "checks": [
+      {
+        "kind": "index",
+        "entity": "sh000001",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000016",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000985",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000905",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000852",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "csi932000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sh000688",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "sz399006",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "csi000510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "index",
+        "entity": "ths883421",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "average_price_index",
+        "entity": "eastmoney:47.800005",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-16",
+        "status": "missing"
+      },
+      {
+        "kind": "microcap_index",
+        "entity": "eastmoney:90.BK1158",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-16",
+        "status": "missing"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159205",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159205",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159205",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159215",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159215",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159215",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159247",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159247",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159247",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159337",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159337",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159337",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159338",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159338",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159338",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159339",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159339",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159339",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159351",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159351",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159351",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159352",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159352",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159352",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159353",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159353",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159353",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159356",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159356",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159356",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159357",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159357",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159357",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159358",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159358",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159358",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159359",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159359",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159359",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159361",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159361",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159361",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159362",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159362",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159362",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159376",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159376",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159376",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159379",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159379",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159379",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159386",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159386",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159386",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159393",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159393",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159393",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159531",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159531",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159531",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159532",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159532",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159532",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159533",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159533",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159533",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159535",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159535",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159535",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159536",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159536",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159536",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159629",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159629",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159629",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159633",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159633",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159633",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159673",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159673",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159673",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159808",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159808",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159808",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159810",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159810",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159810",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159820",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159820",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159820",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159821",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159821",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159821",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159845",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159845",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159845",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159908",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159908",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159908",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159915",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159915",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159915",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159919",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159919",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159919",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159922",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159922",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159922",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159925",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159925",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159925",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159935",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159935",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159935",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159948",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159948",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159948",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159952",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159952",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159952",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159956",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159956",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159956",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159957",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159957",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159957",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159958",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159958",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159958",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159964",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159964",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159964",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159968",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159968",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159968",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159971",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159971",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159971",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159977",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159977",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159977",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sz:159982",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sz:159982",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sz:159982",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510190",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510190",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510190",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510320",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510320",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510320",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510370",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510370",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510370",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510390",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510390",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510390",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510550",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510550",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510550",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510560",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510560",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510560",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510570",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510570",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510570",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510580",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510580",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510580",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510590",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510590",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510590",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510600",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510600",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510600",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510680",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510680",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510680",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510710",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510710",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510710",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510800",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510800",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510800",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510850",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510850",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510850",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:510950",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:510950",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:510950",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512020",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512020",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512020",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512100",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:512510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:512510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:512510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515130",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515130",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515130",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515190",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515190",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515190",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515310",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515330",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515380",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515390",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515390",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515390",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515550",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515550",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515550",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:515660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:515660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:515660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:516300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:516300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:516300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:530000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:530000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:530000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:530050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:530050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:530050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560010",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560010",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560010",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560110",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560110",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560110",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560220",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560220",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560220",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560510",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560530",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560610",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560610",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560610",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:560750",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:560750",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:560750",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:561350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:561350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:561350",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:561370",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:561370",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:561370",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:561930",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:561930",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:561930",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:562660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:562660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:562660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563200",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563200",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563200",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563220",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563220",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563220",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563300",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563500",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563520",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563520",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563520",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563650",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563650",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563650",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563660",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563750",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563750",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563750",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563800",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563800",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563800",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563860",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563860",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563860",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:563880",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:563880",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:563880",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588000",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588040",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588040",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588040",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588050",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588060",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588060",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588060",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588080",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588090",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588090",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588090",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588150",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588150",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588150",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588180",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588180",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588180",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588280",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588280",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588280",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588720",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588720",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588720",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588840",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588840",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588840",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588870",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588870",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588870",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588940",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588940",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588940",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:588950",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:588950",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:588950",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:589150",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:589150",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:589150",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:589360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:589360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:589360",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "etf_price",
+        "entity": "sh:589850",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "share",
+        "entity": "sh:589850",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      },
+      {
+        "kind": "nav",
+        "entity": "sh:589850",
+        "expected_trade_date": "2026-10-21",
+        "actual_trade_date": "2026-10-21",
+        "status": "healthy"
+      }
+    ],
+    "deferred_sources": []
+  },
+  "start": "2026-06-16",
+  "end": "2026-10-21",
+  "counts": {
+    "csi932000": 0,
+    "ths883421": 0,
+    "szse": 1113
+  },
+  "errors": [
+    "fetch_average_price: public source unavailable [CONNECTION_ERROR]",
+    "fetch_average_price_history: public source unavailable [CONNECTION_ERROR]",
+    "fetch_microcap_index: public source unavailable [CONNECTION_ERROR]",
+    "fetch_microcap_history: public source unavailable [CONNECTION_ERROR]",
+    "fetch_tencent_price: public source unavailable [HTTP_ERROR]",
+    "sh589360: fetch_sina_price missing 7 required trading dates"
+  ],
+  "calendar_count": 8797,
+  "stock_statistics_enabled": true,
+  "local_breadth": {
+    "dates": 75,
+    "last_good_retained_dates": 0,
+    "history_fetched": 0,
+    "history_failed_codes": [],
+    "history_backfill_deferred": false
+  },
+  "verified_mappings": [
+    {
+      "code": "510050",
+      "name": "上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510050",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:51.217082+00:00",
+      "effective_to": null,
+      "directory_name": "50ETF",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510050.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510100",
+      "name": "易方达上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510100",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:51.731007+00:00",
+      "effective_to": null,
+      "directory_name": "SZ50ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510100.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510190",
+      "name": "华安上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510190",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.672426+00:00",
+      "effective_to": null,
+      "directory_name": "上证50基",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510190.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510300",
+      "name": "华泰柏瑞沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510300",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:53.389450+00:00",
+      "effective_to": null,
+      "directory_name": "300ETF",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510300.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510310",
+      "name": "易方达沪深300交易型开放式指数发起式证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510310",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:53.376850+00:00",
+      "effective_to": null,
+      "directory_name": "HS300ETF",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510310.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510320",
+      "name": "中金沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510320",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:53.939128+00:00",
+      "effective_to": null,
+      "directory_name": "300中金",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510320.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510330",
+      "name": "华夏沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510330",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:27.600666+00:00",
+      "effective_to": null,
+      "directory_name": "华夏300",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510330.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510350",
+      "name": "工银瑞信沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510350",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:27.580629+00:00",
+      "effective_to": null,
+      "directory_name": "工银300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510350.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510360",
+      "name": "广发沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510360",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:53.914758+00:00",
+      "effective_to": null,
+      "directory_name": "广发300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510360.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510370",
+      "name": "兴业沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510370",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:54.444496+00:00",
+      "effective_to": null,
+      "directory_name": "兴业300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510370.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510380",
+      "name": "国寿安保沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510380",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:54.434248+00:00",
+      "effective_to": null,
+      "directory_name": "国寿300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510380.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510390",
+      "name": "平安沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "510390",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:54.453341+00:00",
+      "effective_to": null,
+      "directory_name": "平安300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510390.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "510500",
+      "name": "中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510500",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.036971+00:00",
+      "effective_to": null,
+      "directory_name": "500ETF",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510500.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510510",
+      "name": "广发中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510510",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.011871+00:00",
+      "effective_to": null,
+      "directory_name": "广发500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510510.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510530",
+      "name": "工银瑞信中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510530",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.038807+00:00",
+      "effective_to": null,
+      "directory_name": "工银500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510530.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510550",
+      "name": "方正富邦中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510550",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.027160+00:00",
+      "effective_to": null,
+      "directory_name": "方正500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510550.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510560",
+      "name": "国寿安保中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510560",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.520214+00:00",
+      "effective_to": null,
+      "directory_name": "国寿500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510560.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510570",
+      "name": "兴业中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510570",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.544841+00:00",
+      "effective_to": null,
+      "directory_name": "兴业500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510570.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510580",
+      "name": "易方达中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510580",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.569359+00:00",
+      "effective_to": null,
+      "directory_name": "ZZ500ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510580.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510590",
+      "name": "平安中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "510590",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:55.591852+00:00",
+      "effective_to": null,
+      "directory_name": "平安500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510590.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "510600",
+      "name": "申万菱信上证50交易型开放式指数发起式证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510600",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:56.122233+00:00",
+      "effective_to": null,
+      "directory_name": "沪50ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510600.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510680",
+      "name": "万家上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510680",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:56.669246+00:00",
+      "effective_to": null,
+      "directory_name": "万家50",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510680.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510710",
+      "name": "博时上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510710",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:56.679120+00:00",
+      "effective_to": null,
+      "directory_name": "上50ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510710.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510800",
+      "name": "建信上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510800",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.709219+00:00",
+      "effective_to": null,
+      "directory_name": "上证50",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510800.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510850",
+      "name": "工银瑞信上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510850",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:57.230196+00:00",
+      "effective_to": null,
+      "directory_name": "工银上50",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510850.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "510950",
+      "name": "广发上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "510950",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:08:57.798856+00:00",
+      "effective_to": null,
+      "directory_name": "上证广发",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_510950.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "512020",
+      "name": "鹏华中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "512020",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:01.902484+00:00",
+      "effective_to": null,
+      "directory_name": "A500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512020.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "512050",
+      "name": "华夏中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "512050",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:02.455651+00:00",
+      "effective_to": null,
+      "directory_name": "A500E",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512050.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "512080",
+      "name": "中金中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "512080",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:02.981496+00:00",
+      "effective_to": null,
+      "directory_name": "A500中金",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512080.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "512100",
+      "name": "南方中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E005",
+      "entity_id": "512100",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:02.961088+00:00",
+      "effective_to": null,
+      "directory_name": "1000ETF",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512100.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "512500",
+      "name": "华夏中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "512500",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.259591+00:00",
+      "effective_to": null,
+      "directory_name": "中证500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512500.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "512510",
+      "name": "华泰柏瑞中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "512510",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:06.901887+00:00",
+      "effective_to": null,
+      "directory_name": "ETF500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_512510.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "515130",
+      "name": "博时沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515130",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:24.133493+00:00",
+      "effective_to": null,
+      "directory_name": "HS300E",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515130.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515190",
+      "name": "中银证券中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "515190",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:25.238565+00:00",
+      "effective_to": null,
+      "directory_name": "BOCI500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515190.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "515310",
+      "name": "汇添富沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515310",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:26.314900+00:00",
+      "effective_to": null,
+      "directory_name": "添富300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515310.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515330",
+      "name": "天弘沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515330",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:26.323673+00:00",
+      "effective_to": null,
+      "directory_name": "天弘300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515330.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515350",
+      "name": "民生加银沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515350",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:26.845569+00:00",
+      "effective_to": null,
+      "directory_name": "民生300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515350.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515360",
+      "name": "方正富邦沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515360",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:26.833519+00:00",
+      "effective_to": null,
+      "directory_name": "方正300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515360.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515380",
+      "name": "泰康沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515380",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:26.897179+00:00",
+      "effective_to": null,
+      "directory_name": "泰康300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515380.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515390",
+      "name": "华安沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515390",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:27.445298+00:00",
+      "effective_to": null,
+      "directory_name": "HS300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515390.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "515530",
+      "name": "泰康中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "515530",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:27.965081+00:00",
+      "effective_to": null,
+      "directory_name": "泰康500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515530.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "515550",
+      "name": "国联中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "515550",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:28.520348+00:00",
+      "effective_to": null,
+      "directory_name": "国联500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515550.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "515660",
+      "name": "国联安沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "515660",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.305232+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300E",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_515660.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "516300",
+      "name": "华泰柏瑞中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E005",
+      "entity_id": "516300",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.271488+00:00",
+      "effective_to": null,
+      "directory_name": "中证1000",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_516300.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "530000",
+      "name": "天弘上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "530000",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:57.100069+00:00",
+      "effective_to": null,
+      "directory_name": "50ETF基",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_530000.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "530050",
+      "name": "东财上证50交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E001",
+      "entity_id": "530050",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:09:57.115844+00:00",
+      "effective_to": null,
+      "directory_name": "SH50ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_530050.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000016",
+      "tracking_index_name": "上证50指数"
+    },
+    {
+      "code": "560010",
+      "name": "广发中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E005",
+      "entity_id": "560010",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:01.022807+00:00",
+      "effective_to": null,
+      "directory_name": "1000基金",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560010.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "560110",
+      "name": "汇添富中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E005",
+      "entity_id": "560110",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:02.202339+00:00",
+      "effective_to": null,
+      "directory_name": "ZZ1000",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560110.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "560220",
+      "name": "广发中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E006",
+      "entity_id": "560220",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:03.356922+00:00",
+      "effective_to": null,
+      "directory_name": "2000基金",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560220.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "560510",
+      "name": "泰康中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "560510",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.281631+00:00",
+      "effective_to": null,
+      "directory_name": "中证A500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560510.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "560530",
+      "name": "摩根中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "560530",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:07.445990+00:00",
+      "effective_to": null,
+      "directory_name": "XDA500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560530.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "560610",
+      "name": "招商中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "560610",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:08.031985+00:00",
+      "effective_to": null,
+      "directory_name": "A500指数",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560610.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "560750",
+      "name": "申万菱信中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "560750",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:09.734246+00:00",
+      "effective_to": null,
+      "directory_name": "A500申万",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_560750.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "561350",
+      "name": "国泰中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "561350",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:15.865366+00:00",
+      "effective_to": null,
+      "directory_name": "国泰500",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_561350.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "561370",
+      "name": "国泰中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E006",
+      "entity_id": "561370",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:16.443483+00:00",
+      "effective_to": null,
+      "directory_name": "2000ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_561370.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "561930",
+      "name": "招商沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "561930",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:22.478158+00:00",
+      "effective_to": null,
+      "directory_name": "招商300",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_561930.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "562660",
+      "name": "华夏中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E006",
+      "entity_id": "562660",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:27.519337+00:00",
+      "effective_to": null,
+      "directory_name": "ZZ2000",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_562660.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "563200",
+      "name": "富国中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E006",
+      "entity_id": "563200",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:31.402159+00:00",
+      "effective_to": null,
+      "directory_name": "2000指数",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563200.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "563220",
+      "name": "富国中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563220",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:31.950463+00:00",
+      "effective_to": null,
+      "directory_name": "A500富国",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563220.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563300",
+      "name": "华泰柏瑞中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E006",
+      "entity_id": "563300",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.841530+00:00",
+      "effective_to": null,
+      "directory_name": "中证2000",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563300.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "563360",
+      "name": "华泰柏瑞中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563360",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:32.497165+00:00",
+      "effective_to": null,
+      "directory_name": "A500基金",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563360.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563500",
+      "name": "华宝中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563500",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:33.132213+00:00",
+      "effective_to": null,
+      "directory_name": "A500华宝",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563500.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563520",
+      "name": "永赢沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E002",
+      "entity_id": "563520",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:33.662885+00:00",
+      "effective_to": null,
+      "directory_name": "300永赢",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563520.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "563650",
+      "name": "兴业中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563650",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:34.748139+00:00",
+      "effective_to": null,
+      "directory_name": "A500中证",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563650.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563660",
+      "name": "银河中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563660",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:34.786461+00:00",
+      "effective_to": null,
+      "directory_name": "A500银河",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563660.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563750",
+      "name": "汇添富中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E004",
+      "entity_id": "563750",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:35.839716+00:00",
+      "effective_to": null,
+      "directory_name": "500添富",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563750.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "563800",
+      "name": "广发中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563800",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T17:25:46.473169+00:00",
+      "effective_to": null,
+      "directory_name": "A500龙头",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563800.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563860",
+      "name": "海富通中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563860",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:29.835398+00:00",
+      "effective_to": null,
+      "directory_name": "A500海富",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563860.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "563880",
+      "name": "汇添富中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E003",
+      "entity_id": "563880",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:36.936628+00:00",
+      "effective_to": null,
+      "directory_name": "A500添富",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_563880.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "588000",
+      "name": "华夏上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588000",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.831940+00:00",
+      "effective_to": null,
+      "directory_name": "科创50",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588000.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588040",
+      "name": "鹏华上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588040",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:38.055729+00:00",
+      "effective_to": null,
+      "directory_name": "科创板指",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588040.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588050",
+      "name": "工银瑞信上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588050",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:38.590038+00:00",
+      "effective_to": null,
+      "directory_name": "科创ETF",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588050.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588060",
+      "name": "广发上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588060",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:38.573647+00:00",
+      "effective_to": null,
+      "directory_name": "上证科创",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588060.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588080",
+      "name": "易方达上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588080",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:38.631742+00:00",
+      "effective_to": null,
+      "directory_name": "科创板50",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588080.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588090",
+      "name": "华泰柏瑞上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588090",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:39.206009+00:00",
+      "effective_to": null,
+      "directory_name": "科创板",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588090.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588150",
+      "name": "南方上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588150",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:39.745583+00:00",
+      "effective_to": null,
+      "directory_name": "科创龙头",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588150.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588180",
+      "name": "国联安上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588180",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:07.803721+00:00",
+      "effective_to": null,
+      "directory_name": "科创50基",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588180.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588280",
+      "name": "华安上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588280",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:41.370528+00:00",
+      "effective_to": null,
+      "directory_name": "科创五零",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588280.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588720",
+      "name": "中银上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588720",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:30.506677+00:00",
+      "effective_to": null,
+      "directory_name": "中银科创",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588720.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588840",
+      "name": "万家上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588840",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:47.131314+00:00",
+      "effective_to": null,
+      "directory_name": "50科创",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588840.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588870",
+      "name": "汇添富上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588870",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:08.387869+00:00",
+      "effective_to": null,
+      "directory_name": "科创50指",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588870.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588940",
+      "name": "富国上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588940",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:48.250777+00:00",
+      "effective_to": null,
+      "directory_name": "科创富国",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588940.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "588950",
+      "name": "景顺长城上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "588950",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:48.795250+00:00",
+      "effective_to": null,
+      "directory_name": "景顺科创",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_588950.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "589150",
+      "name": "平安上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "589150",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:51.057868+00:00",
+      "effective_to": null,
+      "directory_name": "科创平安",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_589150.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "589360",
+      "name": "国泰上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "589360",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:08.440519+00:00",
+      "effective_to": null,
+      "directory_name": "科创50GT",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_589360.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "589850",
+      "name": "东财上证科创板50成份交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sh",
+      "group_id": "E007",
+      "entity_id": "589850",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:10:57.113757+00:00",
+      "effective_to": null,
+      "directory_name": "科创东财",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_589850.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000688",
+      "tracking_index_name": "上证科创板50成份指数"
+    },
+    {
+      "code": "159205",
+      "name": "东财创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159205",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:23.176742+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF东财",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159205.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159215",
+      "name": "平安中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159215",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:40.733611+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF平安",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159215.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159247",
+      "name": "汇添富创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159247",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:23.733425+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF汇添富",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159247.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159300",
+      "name": "富国沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E002",
+      "entity_id": "159300",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:56.599113+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300ETF富国",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159300.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "159330",
+      "name": "东财沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E002",
+      "entity_id": "159330",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:56.612101+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300ETF东财",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159330.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "159337",
+      "name": "东财中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159337",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:56.849735+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF东财",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159337.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "159338",
+      "name": "国泰中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159338",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:56.833927+00:00",
+      "effective_to": null,
+      "directory_name": "中证A500ETF国泰",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159338.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159339",
+      "name": "银华中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159339",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:55.284877+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF银华",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159339.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159351",
+      "name": "嘉实中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159351",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:55.256580+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF嘉实",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159351.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159352",
+      "name": "南方中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159352",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:55.287619+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF南方",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159352.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159353",
+      "name": "景顺长城中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159353",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:56.812626+00:00",
+      "effective_to": null,
+      "directory_name": "中证A500ETF景顺",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159353.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159356",
+      "name": "万家中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159356",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:55.825207+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF万家",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159356.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159357",
+      "name": "博时中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159357",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:55.839114+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF博时",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159357.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159358",
+      "name": "大成中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159358",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:56.852515+00:00",
+      "effective_to": null,
+      "directory_name": "中证A500ETF大成",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159358.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159359",
+      "name": "华安中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159359",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:55.824407+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF华安",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159359.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159360",
+      "name": "天弘中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159360",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:56.369098+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF天弘",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159360.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159361",
+      "name": "易方达中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159361",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:56.414681+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF易方达",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159361.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159362",
+      "name": "工银瑞信中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159362",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:56.383842+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF工银",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159362.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159376",
+      "name": "浦银中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159376",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:58.033034+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF浦银",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159376.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159379",
+      "name": "融通中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159379",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:58.624841+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF融通",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159379.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159380",
+      "name": "东财中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159380",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:58.607913+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF东财",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159380.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159386",
+      "name": "永赢中证A500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E003",
+      "entity_id": "159386",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:59.141132+00:00",
+      "effective_to": null,
+      "directory_name": "A500ETF永赢",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159386.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi000510",
+      "tracking_index_name": "中证A500指数"
+    },
+    {
+      "code": "159393",
+      "name": "万家沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E002",
+      "entity_id": "159393",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:57.052261+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300ETF万家",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159393.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "159500",
+      "name": "富国中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159500",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:57.034638+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF富国",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159500.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "159531",
+      "name": "南方中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E006",
+      "entity_id": "159531",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:03.192173+00:00",
+      "effective_to": null,
+      "directory_name": "中证2000ETF南方",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159531.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "159532",
+      "name": "易方达中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E006",
+      "entity_id": "159532",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:57.287282+00:00",
+      "effective_to": null,
+      "directory_name": "中证2000ETF易方达",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159532.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "159533",
+      "name": "博时中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E006",
+      "entity_id": "159533",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:57.276505+00:00",
+      "effective_to": null,
+      "directory_name": "中证2000ETF博时",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159533.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "159535",
+      "name": "嘉实中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E006",
+      "entity_id": "159535",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:05:57.260303+00:00",
+      "effective_to": null,
+      "directory_name": "中证2000ETF嘉实",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159535.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "159536",
+      "name": "汇添富中证2000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E006",
+      "entity_id": "159536",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:03.255470+00:00",
+      "effective_to": null,
+      "directory_name": "中证2000ETF汇添富",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159536.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "csi932000",
+      "tracking_index_name": "中证2000指数"
+    },
+    {
+      "code": "159629",
+      "name": "富国中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E005",
+      "entity_id": "159629",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:04.411189+00:00",
+      "effective_to": null,
+      "directory_name": "中证1000ETF富国",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159629.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "159633",
+      "name": "易方达中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E005",
+      "entity_id": "159633",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:04.995276+00:00",
+      "effective_to": null,
+      "directory_name": "中证1000ETF易方达",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159633.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "159673",
+      "name": "鹏华沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E002",
+      "entity_id": "159673",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:04.965946+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300ETF鹏华",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159673.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "159808",
+      "name": "融通创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159808",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:25.368524+00:00",
+      "effective_to": null,
+      "directory_name": "创100ETF融通",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159808.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159810",
+      "name": "浦银创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159810",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:25.378175+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF浦银",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159810.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159820",
+      "name": "天弘中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159820",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:05.541413+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF天弘",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159820.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "159821",
+      "name": "中银证券创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159821",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:25.358248+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF中银证券",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159821.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159845",
+      "name": "华夏中证1000交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E005",
+      "entity_id": "159845",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:05.493622+00:00",
+      "effective_to": null,
+      "directory_name": "中证1000ETF华夏",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159845.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000852",
+      "tracking_index_name": "中证1000指数"
+    },
+    {
+      "code": "159908",
+      "name": "博时创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159908",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:25.343936+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF博时",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159908.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159915",
+      "name": "易方达创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159915",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:25.935338+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF易方达",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159915.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159919",
+      "name": "嘉实沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E002",
+      "entity_id": "159919",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.120043+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300ETF嘉实",
+      "effective_from": "2026-07-08",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159919.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "159922",
+      "name": "嘉实中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159922",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.138765+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF嘉实",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159922.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "159925",
+      "name": "南方沪深300交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E002",
+      "entity_id": "159925",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.173641+00:00",
+      "effective_to": null,
+      "directory_name": "沪深300ETF南方",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159925.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000300",
+      "tracking_index_name": "沪深300指数"
+    },
+    {
+      "code": "159935",
+      "name": "景顺长城中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159935",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.150477+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF景顺",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159935.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "159948",
+      "name": "南方创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159948",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:25.967675+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF南方",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159948.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159952",
+      "name": "广发创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159952",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:26.492555+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF广发",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159952.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159956",
+      "name": "建信创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159956",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:26.507490+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF建信",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159956.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159957",
+      "name": "华夏创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159957",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T17:25:46.611128+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF华夏",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159957.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159958",
+      "name": "工银瑞信创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159958",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:26.530172+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF工银",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159958.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159964",
+      "name": "平安创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159964",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:27.074567+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF平安",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159964.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159968",
+      "name": "博时中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159968",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.747538+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF博时",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159968.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    },
+    {
+      "code": "159971",
+      "name": "富国创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159971",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:27.044686+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF富国",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159971.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159977",
+      "name": "天弘创业板交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E008",
+      "entity_id": "159977",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:12:27.065467+00:00",
+      "effective_to": null,
+      "directory_name": "创业板ETF天弘",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159977.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sz399006",
+      "tracking_index_name": "创业板指数(价格)"
+    },
+    {
+      "code": "159982",
+      "name": "鹏华中证500交易型开放式指数证券投资基金",
+      "eligible": true,
+      "exchange": "sz",
+      "group_id": "E004",
+      "entity_id": "159982",
+      "trade_date": "2026-10-21",
+      "source_name": "东方财富基金档案明确跟踪标的",
+      "verified_at": "2026-10-21T16:07:06.718583+00:00",
+      "effective_to": null,
+      "directory_name": "中证500ETF鹏华",
+      "effective_from": "2026-10-21",
+      "mapping_version": "market-structure-etf-mapping-v2",
+      "source_endpoint": "https://fundf10.eastmoney.com/jbgk_159982.html",
+      "exclusion_reason": null,
+      "tracking_index_id": "sh000905",
+      "tracking_index_name": "中证500指数"
+    }
+  ],
+  "etf_universe": {
+    "trade_date": "2026-10-21",
+    "directory_dates": {
+      "sh": "2026-10-21",
+      "sz": "2026-10-21"
+    },
+    "listed_count": 1688,
+    "pending_profile_count": 0,
+    "universe_verified": true,
+    "mapping_version": "market-structure-etf-mapping-v2"
+  },
+  "compute": {
+    "processed_generations": 121,
+    "new_generations": 121,
+    "start": "2026-04-22",
+    "end": "2026-10-21"
+  }
+}

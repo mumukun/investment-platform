@@ -1,0 +1,14 @@
+{
+  "app_version": "0.31.0",
+  "git_commit": "0ff64b7ce30f100e040cdfa46b157839db17f52f",
+  "build_time": "2026-10-21T17:30:53Z",
+  "environment": "production",
+  "api_version": "v1",
+  "market_structure_sync": {
+    "name": "market-structure",
+    "status": "正常",
+    "service_version": null,
+    "contract_version": "investment-dashboard-market-structure-v2",
+    "last_success_at": "2026-10-22T01:50:09.202483+08:00"
+  }
+}
