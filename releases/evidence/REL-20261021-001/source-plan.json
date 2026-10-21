@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261021-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.4.0",
+      "commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
+      "expected_production": {
+        "tag": "v2.3.12",
+        "commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+        "image_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
+        "evidence": "PR10 merged; merge tree matches tested a1240b9. 10 notification tests, 2 delivery regressions, config/compileall/diff PASS. No configured GitHub checks/workflows (0 check runs); local evidence reused. Prior authorized Feishu/Discord tests recognized correct recipients; neutral display fields asserted in payload tests."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG-20261021-001 and marketNewsFeed; PR10 merged; neutral titles and targeted mentions."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Optional env vars; blank preserves no directed mention; no DB/API/contract/source collection change."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Prior authorized live sends confirmed recipients; 12 affected mocked/dedicated-PG tests PASS; neutral payload assertions PASS. Existing research API boundary unchanged; reuse REL-20261019-002 smoke evidence until protected deploy runs current smoke."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "External source collection/LLM unchanged; reuse existing released source evidence; no replay, forced LLM or new notification tests during release."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "New private mention values staged with user-owned env backup; only intended keys changed, existing chat/webhook target hashes checked. Compose env_file already supports both. NAS downloader keeps existing mihomo/proxy.sh; SSH unchanged."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified v2.3.12 Tag/SHA and Image ID from PRODUCTION_BASELINE plus REL-20261019-002 receipt. Protected runner retains image and readable PG backup; private pre-change env backup retained. No data migration."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：现在发版本吧（当前通知改动）"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261021-001",
+  "status": "RELEASED",
+  "environment": "Production",
+  "created_at": "2026-10-21T02:57:27.928618+00:00",
+  "changes": [
+    "CHG-20261021-001"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：现在发版本吧（当前通知改动）"
+  },
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "new_version": "2.4.0",
+      "tag": "v2.4.0",
+      "commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
+      "previous_version": "v2.3.12",
+      "rollback_version": "v2.3.12",
+      "rollback_commit_sha": "3285957df3bfc19886f578278bb2a9943d4a36ae",
+      "rollback_image_id": "sha256:1042a107f62cc1dc11c5d9ab2aa7e3f68d1d7bb04dca82ee7c4c55cd68192104",
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/10",
+      "artifact_id": "sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25",
+      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE"
+    }
+  ],
+  "source_execution_plan": "releases/evidence/REL-20261021-001/source-plan.json",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "verification": {
+    "status": "PASS",
+    "known_limitations": [
+      "Feishu application/group names and client body preview controlled externally; application version source remains tag-derived; source build records Image ID only."
+    ],
+    "evidence": "Protected runner exact Tag/SHA/Image ID, readable backup, health and authenticated research API smoke PASS. Reminder config keys staged after destination hash checks; display and mention payload behavior covered by local tests and prior authorized sends."
+  },
+  "private_config_backup": "/volume1/docker/marketNewsFeed/.env.REL-20261021-001.before",
+  "completed_at": "2026-10-21T03:03:53.582695+00:00",
+  "deployment_receipt": "releases/evidence/REL-20261021-001/deployment.receipt.json",
+  "deployment_duration_seconds": 334.73,
+  "timing_note": "Deployment duration is measured by receipt. Preparation also included skill/state review, commit/push/PR/merge, SSH port/path resolution and private config staging; exact user-request start was not separately timestamped, so full handling total is unavailable."
+}
