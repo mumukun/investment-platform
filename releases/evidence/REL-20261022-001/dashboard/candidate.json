@@ -1,0 +1,36 @@
+{
+  "schema_version": "candidate-v1",
+  "repository": "investment-research-dashboard",
+  "commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+  "version": "0.32.0",
+  "platform": "linux/amd64",
+  "images": {
+    "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:243ec87c232c3dc5f9c404dae8a3822172492d6dcae8c0d72d1dc8edffbd35fa",
+    "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2d794ad52787879f368a90626c11eac1e3cce50191e46bf11b2a21bf1f7d9d79"
+  },
+  "image_ids": {
+    "api": "sha256:50d4ac41cb526e1f9d5169acd9660c7caaa8eefe0b8ccb5305d96b06aec03b95",
+    "web": "sha256:6e2e38c03ec01f7a22d9ac3d8eaf9f603c58dbcc4a2362bfe55a6bd479d98107"
+  },
+  "build_args": {
+    "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+    "VITE_PRO_KLINE_ENABLED": "true",
+    "VITE_MARKET_STRUCTURE_ENABLED": "true"
+  },
+  "evidence": {
+    "quality": {
+      "status": "PASS",
+      "commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+      "run_id": "39708524034"
+    },
+    "image_smoke": {
+      "status": "PASS",
+      "scope": "isolated-fixture",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:243ec87c232c3dc5f9c404dae8a3822172492d6dcae8c0d72d1dc8edffbd35fa",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2d794ad52787879f368a90626c11eac1e3cce50191e46bf11b2a21bf1f7d9d79"
+      }
+    },
+    "candidate_run_id": "39708861697"
+  }
+}

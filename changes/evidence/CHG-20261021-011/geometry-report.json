@@ -1,0 +1,77 @@
+{
+  "rows": [
+    {
+      "name": "电子信息",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "农林牧渔",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "机械行业",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "生物制药",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "有色金属",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "电子器件",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "家电行业",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "其它行业",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "金融行业",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "化工行业",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "酿酒行业",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    },
+    {
+      "name": "汽车制造",
+      "originalSamples": 191,
+      "trendPoints": 53,
+      "preservedActualTimesAndAmounts": true
+    }
+  ],
+  "networkRequests": 0
+}

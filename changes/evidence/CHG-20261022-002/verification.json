@@ -1,0 +1,52 @@
+{
+  "source_permission": "User explicitly authorized Eastmoney for seat subscriptions/reviews only on 2026-10-22",
+  "local_live_source": {
+    "direct": true,
+    "history_rows": 1136,
+    "window_rows_from_20260824": 101,
+    "latest_disclosure": "2026-10-21",
+    "directory_unique_seats": 2343,
+    "seat_code": "10026937",
+    "data_unit": "CNY yuan",
+    "max_page_size": 500,
+    "fully_paginated": true
+  },
+  "nas_live_source": {
+    "mode": "temporary isolated Python process in existing stock-api container; candidate adapter evaluated in memory only",
+    "direct": true,
+    "history_rows": 1136,
+    "latest_disclosure": "2026-10-21",
+    "server_files_or_configuration_changed": false,
+    "production_db_written": false
+  },
+  "local_integration": {
+    "evidence": "LIVE public data -> Provider calculation -> Consumer authenticated HTTP/strict contract -> isolated PostgreSQL snapshot",
+    "database": "localhost:55493/seat_test",
+    "observation_date": "2026-10-22",
+    "actual_trade_date": "2026-10-22",
+    "latest_disclosure": "2026-10-21",
+    "window": 20,
+    "disclosures": 20,
+    "comparable_disclosures": 17,
+    "first_status": "pending",
+    "failed_refresh_status": "stale",
+    "failed_refresh_message": "公开席位源刷新失败：东方财富龙虎榜请求超时，请稍后重试；已有健康历史已保留",
+    "snapshot_preserved": true,
+    "classification_note": "isolated Provider PG has no classification history; quality explicitly partial",
+    "production_written": false,
+    "ai_called": false
+  },
+  "automated_checks": {
+    "provider": "65 passed, 8 subtests; scope, pagination, identity, retries, seat rules and generic source restriction",
+    "consumer": "26 passed, isolated localhost:55493/seat_test PostgreSQL",
+    "frontend": "10 passed, SeatTrackingWorkbench.spec.ts",
+    "lint": "affected Consumer and new source files PASS",
+    "build": "vue-tsc / Vite / PWA PASS"
+  },
+  "limitations": [
+    "Local Provider classification PG has no industry/concept history; contract correctly marks partial. Unchanged production classification path was not revalidated.",
+    "AI, paid models and external notifications were not invoked.",
+    "No production release, restart, source deployment or production data backfill performed.",
+    "2026-10-22 report remains pending before public after-close disclosure; latest actual disclosure is 2026-10-21."
+  ]
+}
