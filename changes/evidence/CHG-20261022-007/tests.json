@@ -1,0 +1,19 @@
+{
+  "command": "python3 -m unittest discover -s tests -v",
+  "result": "PASS",
+  "tests": 64,
+  "python": "3.14.3",
+  "additional_checks": [
+    "compileall scripts/tests",
+    "Python 3.8 syntax parsing for changed runner modules",
+    "shell syntax",
+    "JSON syntax",
+    "git diff --check"
+  ],
+  "not_run": [
+    "remote CI",
+    "NAS runner installation",
+    "production deploy",
+    "database restore drill"
+  ]
+}

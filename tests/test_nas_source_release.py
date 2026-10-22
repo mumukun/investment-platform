@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
+from test_image_release import backup_policy
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import nas_source_release as source
@@ -25,6 +26,14 @@ def plan():
 
 
 class SourcePlanTest(unittest.TestCase):
+    def test_source_uses_the_same_reviewed_backup_policy_validation(self):
+        p = plan()
+        p['repositories'][0]['database_backup'] = backup_policy()
+        controller.validate_plan(p, formal=True)
+        p['repositories'][0]['database_backup']['data_impact'] = 'destructive'
+        with self.assertRaisesRegex(ValueError, 'skip requires'):
+            controller.validate_plan(p, formal=True)
+
     def test_existing_controller_accepts_source_plan_without_fabricated_ci_candidate(self):
         controller.validate_plan(plan(), formal=True)
 
@@ -65,13 +74,17 @@ class SourcePlanTest(unittest.TestCase):
 
 
 class SourceDeployTest(unittest.TestCase):
-    def execute(self, mode='deploy', fail=None, drift=False):
+    def execute(self, mode='deploy', fail=None, drift=False, policy=None):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         root = Path(self.temporary.name)
         root.chmod(0o700)
         config = {'state_root': str(root), 'deploy_user': 'freemumu', 'git_bin': 'git',
                   'source_repositories': {'marketNewsFeed': {'backup_command': ['backup'], 'verify_backup_command': ['readable', '{backup}'], 'health_command': ['health'], 'smoke_command': ['smoke']}}}
+        config['source_repositories']['marketNewsFeed']['table_backup_command'] = ['backup', '{tables}']
+        release_plan = plan()
+        if policy is not None:
+            release_plan['repositories'][0]['database_backup'] = policy
         switched = False
         calls = []
         real_stat = Path.stat
@@ -94,7 +107,7 @@ class SourceDeployTest(unittest.TestCase):
             if command[:2] == ['docker', 'inspect']: return 'sha256:' + ('3' if switched else '9' if drift else '2') * 64
             return ''
         with mock.patch.object(Path, 'stat', stat), mock.patch.object(source, 'run', side_effect=run), mock.patch.object(Path, 'read_bytes', return_value=b'private-env'), mock.patch('builtins.print'):
-            try: source.execute_source(plan(), config, mode)
+            try: source.execute_source(release_plan, config, mode)
             except (RuntimeError, ValueError):
                 self.calls = calls
                 self.root = root
@@ -118,6 +131,23 @@ class SourceDeployTest(unittest.TestCase):
         self.assertLess(before, deploy)
         self.assertIn('PATH=/usr/local/bin:/usr/bin:/bin', self.calls[deploy])
         self.assertEqual((self.root / plan()['release_id'] / 'runtime.env').stat().st_mode & 0o777, 0o600)
+
+    def test_skip_deploys_without_dump_and_retains_honest_skip_receipt(self):
+        receipt = self.execute(policy=backup_policy())
+        self.assertEqual(receipt['status'], 'PASS')
+        self.assertEqual(receipt['backup']['status'], 'SKIPPED')
+        self.assertNotIn('path', receipt['backup'])
+        self.assertFalse(any(c[0] in {'backup', 'readable'} for c in self.calls))
+        self.assertTrue(any('/bin/bash' in c for c in self.calls))
+        self.assertFalse((self.root / plan()['release_id'] / 'market_news.dump').exists())
+
+    def test_table_backup_filters_reach_trusted_command_before_deploy(self):
+        receipt = self.execute(policy=backup_policy('tables', 'destructive'))
+        self.assertEqual(receipt['backup']['status'], 'PASS')
+        self.assertEqual(next(c for c in self.calls if c[0] == 'backup'),
+                         ['backup', '--strict-names', '--table=public.swing_setup_snapshot', '--table=public.swing_state_event'])
+        self.assertLess(next(i for i,c in enumerate(self.calls) if c[0] == 'readable'),
+                        next(i for i,c in enumerate(self.calls) if '/bin/bash' in c))
 
     def test_baseline_drift_cannot_start_backup_or_build(self):
         with self.assertRaisesRegex(ValueError, 'image drift'): self.execute(drift=True)

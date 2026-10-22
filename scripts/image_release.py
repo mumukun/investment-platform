@@ -26,6 +26,36 @@ def require(condition, message):
         raise ValueError(message)
 
 
+def database_backup_policy(entry):
+    # Historical frozen plans retain their original full-backup behavior.
+    if "database_backup" not in entry:
+        return {"mode": "full"}
+    policy = entry["database_backup"]
+    require(isinstance(policy, dict), "database_backup must be an object")
+    require(set(policy) <= {"mode", "data_impact", "rollback_compatible", "reason", "evidence", "tables"},
+            "unknown database backup policy field")
+    mode, impact = policy.get("mode"), policy.get("data_impact")
+    require(isinstance(mode, str) and mode in {"skip", "tables", "full"}, "invalid database backup mode")
+    require(isinstance(impact, str) and impact in {"none", "additive", "destructive", "unknown"},
+            "database data impact review required")
+    require(isinstance(policy.get("rollback_compatible"), bool), "database rollback compatibility review required")
+    for key in ("reason", "evidence"):
+        require(isinstance(policy.get(key), str) and bool(policy[key].strip()), "database backup " + key + " required")
+    tables = policy.get("tables", [])
+    require(isinstance(tables, list), "backup tables must be a list")
+    if mode == "skip":
+        require(impact in {"none", "additive"} and policy["rollback_compatible"],
+                "skip requires reviewed non-destructive changes and compatible code rollback")
+    if mode == "tables":
+        require(impact != "unknown" and bool(tables), "table backup requires a known scope")
+        require(all(isinstance(table, str) and re.fullmatch(r"[a-z_][a-z0-9_]*\.[a-z_][a-z0-9_]*", table)
+                    for table in tables), "exact schema-qualified backup table names required")
+        require(len(tables) == len(set(tables)), "duplicate backup table")
+    else:
+        require(not tables, "tables only apply to table backup mode")
+    return dict(policy)
+
+
 def image_pattern(repository, component):
     suffix = "" if repository == "stock-analyzer" else "-" + component
     return rf"ghcr\.io/mumukun/{repository}{suffix}@sha256:[0-9a-f]{{64}}"
@@ -122,6 +152,7 @@ def validate_plan(plan, formal=False, preparation=False):
         "repository list must match explicit release order",
     )
     for entry in entries:
+        database_backup_policy(entry)
         candidate = entry["candidate"]
         validate_candidate(candidate)
         repo = candidate["repository"]

@@ -5,8 +5,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from image_release import IMAGE_ID, SHA, VERSION, require, file_hash
-from nas_image_release import atomic_json, release_lock, run
+from image_release import IMAGE_ID, SHA, VERSION, require, file_hash, database_backup_policy
+from nas_image_release import atomic_json, backup_command, release_lock, run
 
 REPOSITORY = 'marketNewsFeed'
 SERVICE = 'market-news-feed'
@@ -24,6 +24,7 @@ def validate_source_plan(plan, formal=False, preparation=False):
     require(len(entries) == 1 and entries[0].get('repository') == REPOSITORY, 'source scope is marketNewsFeed only')
     require(plan.get('release_order') == [REPOSITORY], 'explicit source order required')
     entry = entries[0]
+    database_backup_policy(entry)
     for identity in (entry, entry.get('expected_production', {})):
         require(re.fullmatch('v' + VERSION.pattern, identity.get('tag', '')), 'immutable semver Tag required')
         require(SHA.fullmatch(identity.get('commit_sha', '')), 'exact Commit required')
@@ -77,13 +78,18 @@ def execute_source(plan, config, mode):
         state = {'release_id': plan['release_id'], 'repository': REPOSITORY, 'artifact_model': 'SOURCE_TAG_BUILD', 'tag': entry['tag'], 'commit_sha': entry['commit_sha'], 'status': 'IN_PROGRESS', 'stage': 'backup', 'previous': entry['expected_production'], 'started_at': datetime.now(timezone.utc).isoformat()}
         atomic_json(state_file, state)
         try:
-            backup = directory / 'market_news.dump'
-            with backup.open('wb') as handle:
-                backup.chmod(0o600)
-                run(item['backup_command'], output=handle, timeout=600)
-            require(backup.stat().st_size > 0, 'empty source database backup')
-            run([arg.replace('{backup}', str(backup)) for arg in item['verify_backup_command']])
-            state['backup'] = {'path': str(backup), 'sha256': file_hash(backup), 'size': backup.stat().st_size, 'readability': 'PASS'}
+            policy = database_backup_policy(entry)
+            if policy['mode'] == 'skip':
+                state['backup'] = {'status': 'SKIPPED', 'policy': policy}
+            else:
+                command = backup_command(item, policy)
+                backup = directory / 'market_news.dump'
+                with backup.open('wb') as handle:
+                    backup.chmod(0o600)
+                    run(command, output=handle, timeout=600)
+                require(backup.stat().st_size > 0, 'empty source database backup')
+                run([arg.replace('{backup}', str(backup)) for arg in item['verify_backup_command']])
+                state['backup'] = {'status': 'PASS', 'policy': policy, 'path': str(backup), 'sha256': file_hash(backup), 'size': backup.stat().st_size, 'readability': 'PASS'}
             # Retain the verified old image and config; never automatically downgrade the DB.
             previous = entry['expected_production']
             run(['docker', 'image', 'tag', previous['image_id'], 'marketnewsfeed-market-news-feed:rollback-' + previous['tag']])

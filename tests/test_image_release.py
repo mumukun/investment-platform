@@ -1,5 +1,7 @@
 import io
 import json
+import os
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -444,6 +446,176 @@ class DeploymentTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 self.deployer.deploy(value)
             git.assert_not_called()
+
+
+def backup_policy(mode="skip", impact="none", compatible=True):
+    value = {"mode": mode, "data_impact": impact, "rollback_compatible": compatible,
+             "reason": "Reviewed startup, jobs and migration writes", "evidence": "change review"}
+    if mode == "tables":
+        value["tables"] = ["public.swing_setup_snapshot", "public.swing_state_event"]
+    return value
+
+
+class BackupPolicyTests(unittest.TestCase):
+    def setUp(self):
+        DeploymentTests.setUp(self)
+
+    def test_legacy_plans_keep_full_backup_and_new_decisions_are_validated(self):
+        self.assertEqual(release.database_backup_policy(entry()), {"mode": "full"})
+        for mode, impact in (("skip", "none"), ("skip", "additive"), ("tables", "destructive"), ("full", "unknown")):
+            value = plan()
+            value["repositories"][0]["database_backup"] = backup_policy(mode, impact)
+            release.validate_plan(value)
+        for change in (
+            {"mode": "incremental"}, {"mode": []}, {"data_impact": "unknown"},
+            {"data_impact": "destructive"}, {"rollback_compatible": False},
+            {"reason": " "}, {"evidence": ""}, {"tables": ["public.foo"]},
+            {"typo": True},
+        ):
+            value = plan()
+            value["repositories"][0]["database_backup"] = dict(backup_policy(), **change)
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                release.validate_plan(value)
+
+    def test_table_scope_rejects_globs_options_injection_duplicates_and_unknown_impact(self):
+        for tables in ([], ["foo"], ["public.*"], ["--file=/tmp/out"], ["public.foo;drop"],
+                       ["public.foo", "public.foo"], [{}], "public.foo"):
+            value = entry()
+            value["database_backup"] = dict(backup_policy("tables"), tables=tables)
+            with self.subTest(tables=tables), self.assertRaises(ValueError):
+                release.database_backup_policy(value)
+        value["database_backup"] = backup_policy("tables", "unknown")
+        with self.assertRaises(ValueError):
+            release.database_backup_policy(value)
+
+    def test_skip_records_honest_receipt_and_never_runs_dump_or_readability(self):
+        value = entry()
+        value["database_backup"] = backup_policy()
+        with patch.object(nas, "run") as run:
+            self.deployer.step("stock-analyzer", "backup", lambda: self.deployer.backup(value))
+            run.assert_not_called()
+        state = json.loads(self.path.read_text())
+        self.assertEqual(state["events"][-1]["status"], "SKIPPED")
+        saved = state["repositories"]["stock-analyzer"]["backup"]
+        self.assertEqual(saved["status"], "SKIPPED")
+        self.assertNotIn("path", saved)
+        self.assertFalse((self.path.parent / "stock-analyzer.dump").exists())
+        self.deployer.state["repositories"]["stock-analyzer"]["deployment_started"] = True
+        with patch.object(nas, "run") as run:
+            self.deployer.backup(value)
+            run.assert_not_called()
+        self.deployer.state["repositories"]["stock-analyzer"]["backup"]["policy"]["reason"] = "tampered"
+        with self.assertRaisesRegex(ValueError, "decision missing or changed"):
+            self.deployer.backup(value)
+
+    def test_selected_tables_are_separate_strict_arguments_and_restore_point_survives_resume(self):
+        value = entry()
+        value["database_backup"] = backup_policy("tables", "destructive")
+        item = self.config["repositories"]["stock-analyzer"]
+        item["table_backup_command"] = [sys.executable, "-c",
+            "import sys; assert sys.argv[1:]==['--strict-names','--table=public.swing_setup_snapshot','--table=public.swing_state_event']; sys.stdout.buffer.write(b'backup')", "{tables}"]
+        self.deployer.backup(value)
+        record = self.deployer.state["repositories"]["stock-analyzer"]
+        self.assertEqual(record["backup"]["policy"]["tables"], value["database_backup"]["tables"])
+        record["deployment_started"] = True
+        item["table_backup_command"] = ["must-not-run", "{tables}"]
+        self.deployer.backup(value)
+        Path(record["backup"]["path"]).write_bytes(b"changed")
+        with self.assertRaises(ValueError):
+            self.deployer.backup(value)
+
+    def test_missing_table_command_cannot_fall_back_to_full_backup(self):
+        value = entry()
+        value["database_backup"] = backup_policy("tables")
+        with patch.object(nas, "run") as run, self.assertRaisesRegex(ValueError, "table_backup_command"):
+            self.deployer.backup(value)
+        run.assert_not_called()
+        self.assertFalse((self.path.parent / "stock-analyzer.dump").exists())
+
+    def test_ds920plus_shell_commands_forward_all_table_filters_to_pg_dump(self):
+        config = json.loads((Path(__file__).parents[1] / "deploy/nas-config.DS920plus.json").read_text())
+        fake = self.path.parent / "pg_dump"
+        fake.write_text("#!/bin/sh\nprintf '%s\\n' \"$@\"\n")
+        fake.chmod(0o700)
+        env = dict(os.environ, PATH=str(fake.parent) + os.pathsep + os.environ.get("PATH", ""), POSTGRES_USER="fixture")
+        for item in list(config["repositories"].values()) + list(config["source_repositories"].values()):
+            command = nas.backup_command(item, backup_policy("tables"))
+            result = subprocess.check_output(command[3:], env=env, text=True).splitlines()
+            self.assertEqual(result[-3:], ["--strict-names", "--table=public.swing_setup_snapshot", "--table=public.swing_state_event"])
+
+    def test_skip_decision_is_frozen_with_plan_identity(self):
+        value = plan()
+        value["repositories"][0]["database_backup"] = backup_policy()
+        deployer = nas.Deployer(value, self.config, self.path)
+        deployer.save()
+        value["repositories"][0]["database_backup"] = backup_policy("full")
+        with self.assertRaisesRegex(ValueError, "different frozen plan"):
+            nas.Deployer(value, self.config, self.path)
+
+    def test_skip_deploy_and_resume_preserve_identity_health_and_no_restart_on_resume(self):
+        value = plan()
+        target = value["repositories"][0]
+        target["database_backup"] = backup_policy()
+        deployer = nas.Deployer(value, self.config, self.path)
+        old = target["expected_production"]["image_ids"]
+        new = {key: "target" for key in old}
+        with ExitStack() as stack:
+            stack.enter_context(patch.object(deployer, "tag_check"))
+            stack.enter_context(patch.object(deployer, "current_images", return_value=old))
+            stack.enter_context(patch.object(deployer, "inspect_images", return_value=new))
+            stack.enter_context(patch.object(deployer, "git", return_value=target["expected_production"]["commit_sha"]))
+            stack.enter_context(patch.object(deployer, "overlay"))
+            run = stack.enter_context(patch.object(nas, "run", return_value="3.22.0"))
+            compose = stack.enter_context(patch.object(deployer, "compose"))
+            verify = stack.enter_context(patch.object(deployer, "verify"))
+            deployer.deploy(target)
+            run.assert_called_once_with(self.config["repositories"]["stock-analyzer"]["version_command"], timeout=10)
+            compose.assert_called_once()
+            verify.assert_called_once()
+        resumed = nas.Deployer(value, self.config, self.path)
+        with ExitStack() as stack:
+            stack.enter_context(patch.object(resumed, "tag_check"))
+            stack.enter_context(patch.object(resumed, "current_images", return_value=new))
+            stack.enter_context(patch.object(resumed, "inspect_images", return_value=new))
+            compose = stack.enter_context(patch.object(resumed, "compose"))
+            verify = stack.enter_context(patch.object(resumed, "verify"))
+            run = stack.enter_context(patch.object(nas, "run"))
+            resumed.deploy(target)
+            compose.assert_not_called()
+            run.assert_not_called()
+            verify.assert_called_once()
+        self.assertEqual(resumed.state["repositories"]["stock-analyzer"]["backup"]["status"], "SKIPPED")
+
+    def test_compatible_code_rollback_works_without_a_dump(self):
+        value = entry()
+        value["database_backup"] = backup_policy()
+        self.deployer.backup(value)
+        self.deployer.state["repositories"]["stock-analyzer"]["deployment_started"] = True
+        with ExitStack() as stack:
+            for name in ("inspect_images", "tag_check", "git", "overlay", "verify"):
+                stack.enter_context(patch.object(self.deployer, name))
+            stack.enter_context(patch.object(self.deployer, "current_images", return_value=value["expected_production"]["image_ids"]))
+            compose = stack.enter_context(patch.object(self.deployer, "compose"))
+            run = stack.enter_context(patch.object(nas, "run"))
+            self.deployer.rollback(value)
+            run.assert_not_called()
+            compose.assert_called_once()
+        self.assertTrue(self.deployer.state["repositories"]["stock-analyzer"]["rolled_back"])
+        self.assertFalse((self.path.parent / "stock-analyzer.dump").exists())
+
+    def test_missing_skip_receipt_and_incompatible_database_block_rollback_before_switch(self):
+        value = entry()
+        value["database_backup"] = backup_policy()
+        self.deployer.state["repositories"]["stock-analyzer"] = {"deployment_started": True}
+        with patch.object(self.deployer, "inspect_images"), patch.object(self.deployer, "compose") as compose:
+            with self.assertRaisesRegex(ValueError, "decision missing"):
+                self.deployer.rollback(value)
+            compose.assert_not_called()
+        value["database_backup"] = backup_policy("full", "destructive", False)
+        with patch.object(self.deployer, "inspect_images") as inspect:
+            with self.assertRaisesRegex(ValueError, "incompatible with code rollback"):
+                self.deployer.rollback(value)
+            inspect.assert_not_called()
 
 
 class MarketStructureBuildIdentityTests(unittest.TestCase):

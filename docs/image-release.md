@@ -44,7 +44,7 @@ REL-20261011-002 的NAS切换实测约211秒，包含两库约104秒备份；此
 python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas> --key <key-path> --receipt <deployment-receipt.json>
 ```
 
-这个 deploy 已包含 CI/镜像/基线检查、一次备份、切换、版本/健康与生产 smoke，不再另跑 verify。
+这个 deploy 已包含 CI/镜像/基线检查、按风险执行或跳过备份、切换、版本/健康与生产 smoke，不再另跑 verify。
 正式 Tag/main 仍先由部署用户精确 fetch；不使用浮动 main/latest、不在 NAS 重建。
 执行计划 gates 可引用已经验证且边界未变的证据，明确“复用、未重跑”；不把审核通过冒充新测试。
 结果/失败 receipt 和 Manifest 集中收尾，不为每个阶段开 PR；分支清理不阻塞切换。
@@ -60,6 +60,43 @@ python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas> --k
 - rollback 的 tag/commit_sha/version，以及每组件 digest 或已保留的本地 Image ID，必须匹配 baseline；
 - scope、compatibility、integration、real_data、configuration、rollback 的 PASS 与可核对证据；
 - authorization 在准备阶段为 NOT_AUTHORIZED；正式发布时改为 FORMAL 并记录用户明确授权证据。
+
+### 发布前数据库备份决策
+
+新计划在每个仓库条目内显式记录 `database_backup`；镜像与 SOURCE_TAG_BUILD 共用校验。
+普通无数据影响发布采用以下形式（证据和理由必须替换为实际审查结果）：
+
+```json
+{
+  "mode": "skip",
+  "data_impact": "none",
+  "rollback_compatible": true,
+  "reason": "已核对迁移、启动、后台任务与重算，无覆盖或删除已有数据，旧代码可兼容运行",
+  "evidence": "changes/本次Change.md及受影响测试"
+}
+```
+
+`data_impact` 为 `none/additive/destructive/unknown`。只有 `none/additive` 且
+`rollback_compatible=true` 可用 `skip`。回执为 `backup.status=SKIPPED`，无dump路径、哈希或虚构可读性；
+镜像发布阶段也标记 `SKIPPED`。续跑核对同一冻结决策，允许兼容代码回退，无需dump。
+`rollback_compatible=false` 的显式计划拒绝自动代码回退，不代表可自动恢复数据库。
+
+有数据风险且范围明确时用 `mode=tables`，增加非空 `tables`，例如
+`["stock_analyzer.swing_setup_snapshot", "stock_analyzer.swing_state_event"]`。
+只接受精确的小写 schema.table 名，不接受通配符、重复项或命令片段；`unknown` 不能按表备份。
+Change应说明关联对象、序列与恢复顺序，按表备份不保证能独立重建整个数据库。
+范围不明或跨表复杂时用 `mode=full`；实际备份保留路径、大小、SHA256和可读性校验，失败在切换前停止。
+旧冻结计划缺少该字段仍全库备份，历史记录不修改。
+
+按表执行需要管理员配置额外的 `table_backup_command` 数组，唯一的独立参数 `{tables}` 展开成
+`--strict-names` 和各项 `--table=schema.table`。命令来自受保护配置，不从发布计划接收；模板见
+`deploy/nas-config.DS920plus.json`，shell入口通过 `"$@"` 传参，不拼接表名到shell代码。
+缺少该配置拒绝按表发布，不能静默改成全库或跳过。原全库命令与校验命令仍保留。
+
+这是发布器升级，需要经授权更新NAS安装代码；按表模式另需合并管理员实际配置中的新命令，
+保留原有仓库与私密设置，不能用示例整份覆盖。旧NAS发布器忽略新字段仍全库导出，不能声称已生效。
+部署前从核对过的旧安装保留机制回退文件，沿用既有安装入口，不重启业务/数据库、不改sudoers。
+独立日常备份、增量链与WAL归档另行落地；当前未确认的定时备份不得视作已有保护。
 
 不得将 fixture smoke 直接填入 real_data/integration。没有正式授权不生成正式 Tag、不启动生产、不
 迁移、不启用功能。版本更新优先纳入业务 PR；Release 收集期间如有并行 Change 仍须重新核对 SemVer。
