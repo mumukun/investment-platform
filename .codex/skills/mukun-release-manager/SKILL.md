@@ -21,7 +21,10 @@ evidence. Do not repeat full restore, old-image compatibility, runner recovery/r
 or a second verify for every release. Drills are disabled by default, including ordinary additive migrations
 and deployment changes. Prefer focused local tests; explain a concrete unresolved data-loss risk before
 considering a minimal extra validation. Do not automatically run clone/restore/old-image/rollback tools.
-Use the existing deploy entry once; it includes baseline, backup, identity, health and smoke.
+Use the existing deploy entry once; it includes baseline, the reviewed backup decision, identity, health and smoke.
+New plans use per-repository database_backup per RELEASE_RULES: skip reviewed non-destructive,
+rollback-compatible changes; table/full backup for data risk. Record SKIPPED honestly. Legacy plans without
+the field retain full backup. Independent scheduled backup coverage must not be assumed.
 Start elapsed timing at the user’s submit/merge/prepare request, or formal request when direct; target about
 five minutes for routine handling. Include commits/merges/CI waiting/assistant preparation, not only deployment.
 For separate prepare/formal authorization report both phases and actual handling total; label user approval

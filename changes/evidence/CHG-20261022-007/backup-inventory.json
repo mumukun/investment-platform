@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-10-22",
+  "mode": "read_only",
+  "postgres_version_verified_in_prior_check": "16.14",
+  "postgres_archive": {
+    "archive_mode": "off",
+    "wal_level": "replica",
+    "archive_timeout": "0",
+    "archived_count": 0,
+    "failed_count": 0,
+    "last_archived_time": null
+  },
+  "readable_system_crontab": {
+    "backup_keyword_lines": 0,
+    "limitation": "Keyword scan cannot exclude indirectly invoked backup scripts."
+  },
+  "dsm_scheduler_database": "EXISTS_BUT_NOT_READABLE_BY_DEPLOYMENT_USER",
+  "user_crontab_file": "NOT_FOUND",
+  "crontab_binary_in_ssh_path": false,
+  "backup_related_running_containers": ["shared-postgres: postgres:16-alpine"],
+  "independent_scheduled_backup_status": "UNCONFIRMED",
+  "production_changes": false
+}

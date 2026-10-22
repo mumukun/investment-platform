@@ -58,7 +58,7 @@ does not authorize including unrelated changes.
 For routine releases, these are review gates, not twelve fresh test runs. Reuse successful frozen-main CI
 and verified unchanged-boundary evidence with its source/reason/limitations. Existing PASS in image-release-v1
 may represent evidence review; do not describe skipped execution as a newly run test. Live baseline, readable
-backup, image identity, health and smoke remain enforced by deploy. Apply RELEASE_RULES.md's risk table for
+backup decision (and readability when required), image identity, health and smoke remain enforced by deploy. Apply RELEASE_RULES.md's risk table for
 changed boundaries; no blanket restore/rollback/browser rerun or separate production-baseline refresh.
 
 Use `dashboard-contract-check` when a Dashboard/upstream contract change needs specialized

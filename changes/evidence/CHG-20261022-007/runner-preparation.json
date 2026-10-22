@@ -1,0 +1,38 @@
+{
+  "change_id": "CHG-20261022-007",
+  "known_base_commit": "117a3fb22675d50d3274e37773ccbbfbbe2fcaab",
+  "mode": "PREPARE_ONLY",
+  "production_changed": false,
+  "runtime_files": {
+    "scripts/image_release.py": {
+      "installed_sha256": "b62867f1244d6e81c9ecad976800a91679898ad47da5e4608235b14ab90f0506",
+      "matches_base_commit": true,
+      "prepared_sha256": "754d156abe966ce7a8897c4e8c7fdb4a7d1fcc6ae683b6453ed500fde388fe57"
+    },
+    "scripts/nas_image_release.py": {
+      "installed_sha256": "88ee69b448df5f44a0645fb943d801c80cbbc64e45a1d49539b5a876e2f3aa9f",
+      "matches_base_commit": true,
+      "prepared_sha256": "602ff2092ef91cd132733f818b221862d71e2c0bc9fdb48e7a2adb16f721880f"
+    },
+    "scripts/nas_source_release.py": {
+      "installed_sha256": "945586d6fa4e81289e6499825b364e9fe251477b300d118dbfd4495c722c1c09",
+      "matches_base_commit": true,
+      "prepared_sha256": "fbf7856c90e6b139e598dc2d93154d0a9f22f76ebd9d50b64d197477fdb2895d"
+    },
+    "scripts/nas_checks.py": {
+      "installed_sha256": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993",
+      "matches_base_commit": true,
+      "prepared_sha256": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993"
+    },
+    "deploy/nas-image-release": {
+      "installed_sha256": "8861c055d0d4f9212b2e66b2e2106b23e2ac3d9aff980a52c169ed99c648d52d",
+      "matches_base_commit": true,
+      "prepared_sha256": "8861c055d0d4f9212b2e66b2e2106b23e2ac3d9aff980a52c169ed99c648d52d"
+    }
+  },
+  "remaining_gates": [
+    "push/PR/main merge not authorized by local commit request",
+    "independent scheduled backup or accepted data loss boundary still unconfirmed",
+    "administrator-reviewed live configuration merge and runner install require production authorization"
+  ]
+}

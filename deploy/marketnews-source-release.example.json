@@ -21,6 +21,13 @@
         "status": "PASS",
         "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "evidence": "affected tests"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Replace with review of migrations, startup, jobs and data rewrites",
+        "evidence": "Replace with Change and affected test evidence"
       }
     }
   ],
@@ -51,7 +58,7 @@
     }
   },
   "authorization": {
-    "status": "FORMAL",
-    "evidence": "Replace with actual user formal-release authorization"
+    "status": "NOT_AUTHORIZED",
+    "evidence": ""
   }
 }

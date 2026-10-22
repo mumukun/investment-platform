@@ -10,7 +10,7 @@ prepare-release.md in the same turn. Follow RELEASE_RULES.md's personal-use rout
 2. Create/push immutable Tags at those SHAs. Fetch precise Tags/main as the NAS deploy user. Select the same
    CI artifacts; Tags do not rebuild. Never include unrelated repositories or a newer floating main.
 3. Call image_release.py deploy once. It already verifies CI, cached/pinned images, live baseline, protected
-   readable backup, exact checkout, dependency order, running identity, health/version and production smoke.
+   reviewed backup decision/readability when required, exact checkout, dependency order, running identity, health/version and production smoke.
    Do not routinely prepend preflight/prefetch or append verify, a full production acceptance script, clone
    restore, runner rollback drill or browser suite. A targeted extra check is required only for an affected
    boundary not covered by existing smoke; use the risk table, not a blanket test list.

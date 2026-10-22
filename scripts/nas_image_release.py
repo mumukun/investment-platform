@@ -15,7 +15,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
-from image_release import COMPONENTS, file_hash, require, validate_plan
+from image_release import COMPONENTS, database_backup_policy, file_hash, require, validate_plan
 
 CONFIG = Path("/usr/local/etc/investment-platform-deploy.json")
 
@@ -46,6 +46,20 @@ def atomic_json(path, value):
         handle.flush()
         os.fsync(handle.fileno())
     os.replace(temporary, path)
+
+
+def backup_command(item, policy):
+    if policy["mode"] != "tables":
+        return item["backup_command"]
+    command = item.get("table_backup_command", [])
+    require(isinstance(command, list) and command.count("{tables}") == 1
+            and all(isinstance(arg, str) for arg in command),
+            "administrator table_backup_command with {tables} required")
+    result = []
+    for arg in command:
+        result.extend(["--strict-names"] + ["--table=" + table for table in policy["tables"]]
+                      if arg == "{tables}" else [arg])
+    return result
 
 
 @contextmanager
@@ -102,12 +116,16 @@ def load_config(path=CONFIG):
             "{backup}" in item["verify_backup_command"],
             "backup readability command required",
         )
+        if "table_backup_command" in item:
+            backup_command(item, {"mode": "tables", "tables": ["public.fixture"]})
     for repo, item in config.get("source_repositories", {}).items():
         require(repo == "marketNewsFeed" and item.get("path") == "/volume1/docker/marketNewsFeed", "source repository path must be fixed")
         require(item.get("compose_file") == "docker-compose.yml", "source Compose entrypoint must be fixed")
         for key in ("backup_command", "verify_backup_command", "health_command", "smoke_command"):
             require(isinstance(item.get(key), list) and item[key] and all(isinstance(arg, str) for arg in item[key]), "source administrator command missing: " + key)
         require("{backup}" in item["verify_backup_command"], "source backup readability required")
+        if "table_backup_command" in item:
+            backup_command(item, {"mode": "tables", "tables": ["public.fixture"]})
     return config
 
 
@@ -162,7 +180,7 @@ class Deployer:
         self.save()
         try:
             result = operation()
-            event["status"] = "PASS"
+            event["status"] = "SKIPPED" if isinstance(result, dict) and result.get("status") == "SKIPPED" else "PASS"
             return result
         except Exception:
             event["status"] = "FAILED"
@@ -325,7 +343,16 @@ class Deployer:
         repo = entry["candidate"]["repository"]
         record = self.state["repositories"].setdefault(repo, {})
         item = self.item(entry)
+        policy = database_backup_policy(entry)
         if record.get("deployment_started"):
+            previous = record.get("backup", {})
+            require(previous.get("policy") == policy or (
+                "database_backup" not in entry and previous and "policy" not in previous),
+                "original backup decision missing or changed")
+            if policy["mode"] == "skip":
+                require(previous.get("status") == "SKIPPED" and "path" not in previous,
+                        "original skipped backup receipt required")
+                return previous
             # A retry must never replace the pre-migration restore point with a post-migration dump.
             backup = Path(record["backup"]["path"])
             require(
@@ -338,12 +365,17 @@ class Deployer:
                     for arg in item["verify_backup_command"]
                 ]
             )
-            return
+            return record["backup"]
+        if policy["mode"] == "skip":
+            record["backup"] = {"status": "SKIPPED", "policy": policy}
+            self.save()
+            return record["backup"]
+        command = backup_command(item, policy)
         backup = self.state_path.parent / (repo + ".dump")
         temporary = backup.with_suffix(".dump.tmp")
         with temporary.open("wb") as handle:
             os.chmod(temporary, 0o600)
-            run(item["backup_command"], output=handle, timeout=600)
+            run(command, output=handle, timeout=600)
         require(temporary.stat().st_size > 0, "empty database backup")
         run(
             [
@@ -353,11 +385,14 @@ class Deployer:
         )
         os.replace(temporary, backup)
         record["backup"] = {
+            "status": "PASS",
+            "policy": policy,
             "path": str(backup),
             "sha256": file_hash(backup),
             "size": backup.stat().st_size,
         }
         self.save()
+        return record["backup"]
 
     def image_refs(self, entry, rollback=False):
         if rollback:
@@ -499,7 +534,8 @@ class Deployer:
             record.get("deployment_started"),
             "repository was never deployed by this plan",
         )
-        require(record.get("backup"), "pre-deployment restore point missing")
+        require(database_backup_policy(entry).get("rollback_compatible", True),
+                "database changes are incompatible with code rollback; use reviewed fix-forward or data recovery")
         self.inspect_images(entry, rollback=True)
         self.backup(
             entry
