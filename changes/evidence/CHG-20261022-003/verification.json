@@ -1,0 +1,86 @@
+{
+  "change_id": "CHG-20261022-003",
+  "verified_at": "2026-10-22T11:04:12.847396+08:00",
+  "status": "LOCAL_COMMITTED_WAITING_RELEASE",
+  "production_modified": false,
+  "commits": {
+    "stock-analyzer": "a706e26c3d7dd65b3c6043c21f2833946302b416",
+    "investment-research-dashboard": "41eaa8f59b3acbc736c4f32e612a4b7c882d0301"
+  },
+  "baselines": {
+    "stock-analyzer": "v4.6.1/7f031161b3de4126b4c8356577d91739695fd2f7",
+    "investment-research-dashboard": "v0.32.0/3a303095a5a06486693d7d7353afbe8d3b8b77c5"
+  },
+  "production_read_only_diagnosis": {
+    "date": "2026-10-22",
+    "daily_baseline": "2026-10-21",
+    "publication_allowed": true,
+    "ready_stocks": 2864,
+    "intraday_scanned": 2862,
+    "intraday_missing_quotes": 2,
+    "observed_success_at": "2026-10-22T10:53:33+08:00",
+    "slow_collection_seconds": 173.5,
+    "following_swing_seconds": 54.8,
+    "root_cause": "foreground collection delayed minute jobs; projection read rewrote input health on stale results"
+  },
+  "checks": [
+    {
+      "command": "pytest -q tests/test_swing_scheduler.py tests/test_api_projection.py tests/test_swing_intraday_discovery.py tests/test_swing_close_tracking.py tests/test_swing_runtime.py",
+      "environment": "local PostgreSQL 127.0.0.1:58635, owned fixture database and per-test isolated schemas",
+      "result": "117 passed"
+    },
+    {
+      "command": "pytest -q tests/test_api_projection.py tests/test_swing_scheduler.py",
+      "environment": "same isolated PostgreSQL; final source including added public-input-failure regression",
+      "result": "31 passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests -p 'test_*.py'",
+      "result": "544 tests, OK, 73 conditional skips; isolated PostgreSQL-dependent critical paths executed in focused pytest above"
+    },
+    {
+      "command": "pytest -q backend/tests/test_api.py -k 'swing or version_manifests'",
+      "environment": "fresh dashboard_swing_refresh_chg003 on local fixture PostgreSQL; alembic upgrade head before tests",
+      "result": "31 passed, 42 unrelated deselected"
+    },
+    {
+      "command": "npm test -- src/views/SwingSelectionView.spec.ts",
+      "result": "19 passed, final source"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS: vue-tsc, Vite, PWA, final source"
+    },
+    {
+      "command": "provider check_config.py, compileall, affected F lint; consumer ruff check backend; uv lock --check; git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "covered_cases": [
+    "slow collection does not block swing worker",
+    "same-kind startup/minute collision does not start overlapping process",
+    "worker exception releases lane",
+    "180-second result freshness remains effective",
+    "same-day stale list survives over 5 minutes with original timestamp",
+    "read preserves persisted input-health report",
+    "refresh recovery clears stale marker",
+    "actual public-input failure remains blocked",
+    "cross-midnight reuse rejected",
+    "non-swing projection TTL unchanged",
+    "consumer preserves optional refresh metadata and skips stale close archive",
+    "view distinguishes partial/stale/blocked and keeps candidates visible"
+  ],
+  "initial_setup_issues_resolved": [
+    "root virtual environments lacked current test dependencies; reused existing compatible runtimes without dependency edits",
+    "fresh consumer fixture database required normal Alembic initialization",
+    "one regression assertion compared raw fixture to normalized model; corrected to validated payload"
+  ],
+  "warnings": [
+    "existing Starlette TestClient httpx deprecation"
+  ],
+  "limits": [
+    "no push, PR, merge, tag or production deployment",
+    "no production write, network collection or external notification during tests",
+    "NAS intraday performance and browser/manual visual acceptance await release; local concurrency fixtures establish scheduling behavior"
+  ]
+}

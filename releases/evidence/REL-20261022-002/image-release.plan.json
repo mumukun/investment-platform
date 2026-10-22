@@ -1,0 +1,154 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261022-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "2026-10-22用户明确：这次有几个需求，一起上线吧；此前已批准004整体方案并授权开发。范围003刷新修复+004波段优化。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "5646ce7f210ecba99f2b6486eb789a61744ae58b",
+        "version": "4.7.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+        },
+        "image_ids": {
+          "app": "sha256:f786811e8a1c3d7ee1fcfb327bee6572b74d106ece5ba8000c2226754332a241"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "5646ce7f210ecba99f2b6486eb789a61744ae58b",
+            "run_id": "39726595419"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+            }
+          },
+          "candidate_run_id": "39726655495"
+        }
+      },
+      "tag": "v4.7.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.6.1",
+        "commit_sha": "7f031161b3de4126b4c8356577d91739695fd2f7",
+        "image_ids": {
+          "stock-api": "sha256:17823a8b8eb932219a6a65a60e8ee811539ce1385c713171ceed37dc0fde0d52",
+          "stock-watch": "sha256:17823a8b8eb932219a6a65a60e8ee811539ce1385c713171ceed37dc0fde0d52"
+        }
+      },
+      "rollback": {
+        "tag": "v4.6.1",
+        "commit_sha": "7f031161b3de4126b4c8356577d91739695fd2f7",
+        "version": "4.6.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:cbb559a9a01f1f6d2232973c7312becd8bbd1508f5712e83ebee7b033ac3d036"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "868f871148174a2e84f3d38be48c53d3d7087249",
+        "version": "0.33.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+        },
+        "image_ids": {
+          "api": "sha256:b956976367d19d51a02c72b9bff5a13ed749adccce1d092d70dcf656f9c91da8",
+          "web": "sha256:b3cf7432c5a7990321118445f0d7c32835fb0baec79e5a5ad453d4d5cb19fe8a"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "868f871148174a2e84f3d38be48c53d3d7087249",
+            "run_id": "39731209649"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+            }
+          },
+          "candidate_run_id": "39731469414"
+        }
+      },
+      "tag": "v0.33.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.32.0",
+        "commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+        "image_ids": {
+          "api": "sha256:50d4ac41cb526e1f9d5169acd9660c7caaa8eefe0b8ccb5305d96b06aec03b95",
+          "web": "sha256:6e2e38c03ec01f7a22d9ac3d8eaf9f603c58dbcc4a2362bfe55a6bd479d98107"
+        },
+        "build_time": "2026-10-22T01:59:50Z"
+      },
+      "rollback": {
+        "tag": "v0.32.0",
+        "commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+        "version": "0.32.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:243ec87c232c3dc5f9c404dae8a3822172492d6dcae8c0d72d1dc8edffbd35fa",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2d794ad52787879f368a90626c11eac1e3cce50191e46bf11b2a21bf1f7d9d79"
+        }
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG-20261022-003/004, merged Provider PR37 and Dashboard PR38; exact main/candidate SHAs frozen. marketNewsFeed excluded. V6 remains inactive candidate, V5 default unchanged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "V3 optional context/tier and refresh metadata preserve old responses and four participation decisions. Nullable setup/event columns verified with isolated PostgreSQL pipeline; no historical backfill or destructive downgrade. Provider output accepted by Consumer Pydantic."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Exact-main CI and exact-digest isolated-fixture candidate smoke PASS. Reuse development full/swing tests; after merge conflicts: PG projection13, Consumer API37/frontend29/build/ruff PASS. CI detected timezone display bug, fixed with explicit Shanghai timezone and UTC page19 tests; new PR/main CI authoritative."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Market source/access boundary unchanged: reuse REL-20261022-001 source evidence, not rerun. CHG003 actual NAS diagnostic captured21Oct accepted2864 inputs/22Oct scan2862; local fixture tests establish refresh semantics only. One authenticated live swing Provider-to-Consumer check follows deploy. No claim of V6 historical efficacy or full-market capacity."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "No new source, credential, notification or proxy configuration. NAS downloads use existing mihomo127.0.0.1:7890; domestic data remains direct. Preserve existing true Vite flags via exact candidate build_args/deployer checks. No V6 activation."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified previous production v4.6.1/7f031161 and v0.32.0/3a303095 with retained exact digests/config IDs. Deployer checks drift and protected readable backups once. Keep nullable columns; no database downgrade or restore drill."
+    }
+  }
+}
