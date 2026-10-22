@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261022-003",
+  "status": "DRAFT",
+  "environment": "Production",
+  "release_profile": "routine",
+  "request_started_at": "2026-10-22T15:46:30+00:00",
+  "changes": [
+    "CHG-20261022-006"
+  ],
+  "runner_change": "CHG-20261022-007",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户授权全部待发Change生产上线；明确接受007跳过发布备份的恢复边界"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "marketNewsFeed",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "4.7.1",
+      "tag": "v4.7.1",
+      "previous_version": "v4.7.0",
+      "rollback_version": "v4.7.0",
+      "rollback_commit_sha": "5646ce7f210ecba99f2b6486eb789a61744ae58b",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/38",
+      "status": "PENDING_CI"
+    },
+    {
+      "repository": "marketNewsFeed",
+      "planned_version": "2.4.2",
+      "tag": "v2.4.2",
+      "previous_version": "v2.4.1",
+      "rollback_version": "v2.4.1",
+      "rollback_commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+      "rollback_artifact": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571",
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/12",
+      "status": "PENDING_CI"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "0.33.1",
+      "tag": "v0.33.1",
+      "previous_version": "v0.33.0",
+      "rollback_version": "v0.33.0",
+      "rollback_commit_sha": "868f871148174a2e84f3d38be48c53d3d7087249",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/39",
+      "status": "PENDING_CI"
+    }
+  ],
+  "verification": {
+    "status": "PENDING_CI",
+    "evidence": [
+      "changes/evidence/CHG-20261022-006/performance-verification.md",
+      "changes/evidence/CHG-20261022-007/tests.json"
+    ]
+  },
+  "notes": [
+    "CHG-20261021-004治理规范不产生业务版本；CHG-20261022-005备份清理已执行，无应用发布。",
+    "007为治理运行器维护，单独记录精确提交/安装，不产生业务Tag。",
+    "生产基线五个容器Image ID与已发布记录一致。",
+    "未重跑恢复、克隆、回滚演练。"
+  ]
+}
