@@ -1,0 +1,21 @@
+{
+  "scope": "synthetic mocked acquisition; no production capacity claim",
+  "results": {
+    "swing-rules-v5.2.0": {
+      "securities": 2,
+      "pool": 4,
+      "runtime_seconds": 0.5263,
+      "python_peak_mb": 0.631,
+      "get_p95_ms": 382.21,
+      "connection_execute_calls": 27
+    },
+    "swing-rules-v6.0.0": {
+      "securities": 2,
+      "pool": 4,
+      "runtime_seconds": 0.5931,
+      "python_peak_mb": 0.503,
+      "get_p95_ms": 463.3,
+      "connection_execute_calls": 29
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261022-002",
+  "status": "RELEASED",
+  "environment": "Production",
+  "release_profile": "routine",
+  "request_started_at_approx": "2026-10-22T05:04:00+00:00",
+  "timing_note": "Approximate start inferred from initial release work; first explicit clock05:07:47UTC. Includes integration/commit/CI/build/deploy.",
+  "changes": [
+    "CHG-20261022-003",
+    "CHG-20261022-004"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "2026-10-22用户明确：这次有几个需求，一起上线吧；此前已批准004整体方案并授权开发。范围003刷新修复+004波段优化。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "4.7.0",
+      "previous_version": "v4.6.1",
+      "rollback_version": "v4.6.1",
+      "rollback_commit_sha": "7f031161b3de4126b4c8356577d91739695fd2f7",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:cbb559a9a01f1f6d2232973c7312becd8bbd1508f5712e83ebee7b033ac3d036"
+      },
+      "status": "RELEASED",
+      "commit_sha": "5646ce7f210ecba99f2b6486eb789a61744ae58b",
+      "tag": "v4.7.0",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/37",
+      "candidate": "releases/evidence/REL-20261022-002/provider/candidate.json",
+      "main_ci_run_id": "39726595419",
+      "candidate_run_id": "39726655495",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "0.33.0",
+      "previous_version": "v0.32.0",
+      "rollback_version": "v0.32.0",
+      "rollback_commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:243ec87c232c3dc5f9c404dae8a3822172492d6dcae8c0d72d1dc8edffbd35fa",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2d794ad52787879f368a90626c11eac1e3cce50191e46bf11b2a21bf1f7d9d79"
+      },
+      "status": "RELEASED",
+      "tag": "v0.33.0",
+      "commit_sha": "868f871148174a2e84f3d38be48c53d3d7087249",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/38",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+      },
+      "candidate": "releases/evidence/REL-20261022-002/dashboard/candidate.json",
+      "main_ci_run_id": "39731209649",
+      "candidate_run_id": "39731469414"
+    }
+  ],
+  "notes": [
+    "marketNewsFeed排除；矩阵/ETF等已发布成果不重复作为待发布Change。",
+    "默认V5不变；V6独立候选、历史效果及全市场容量待验证，不在本次激活。",
+    "完整浏览器与小屏人工验收待做；必要组件/页面测试及构建已通过。"
+  ],
+  "prepared_at": "2026-10-22T06:04:48.783134+00:00",
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/CHG-20261022-003.md",
+      "changes/CHG-20261022-004.md"
+    ],
+    "scope": "Default V5 functionality and refresh fix; candidate V6 not adopted. Exact main CI and image smoke passed; prior local evidence reused.",
+    "production": "releases/evidence/REL-20261022-002/feature-smoke.json",
+    "result": "Deployer exact identity, readable backups, health and existing production smoke PASS; authenticated live swing Provider HTTP -> Consumer Pydantic PASS. Default V5 verified; V6 inactive."
+  },
+  "deployment_started_at": "2026-10-22T06:06:27.583196+00:00",
+  "updated_at": "2026-10-22T06:22:57.197353+00:00",
+  "deployment": {
+    "status": "PASS",
+    "plan": "releases/evidence/REL-20261022-002/image-release.plan.json",
+    "receipt": "releases/evidence/REL-20261022-002/deployment.receipt.json",
+    "completed_at": "2026-10-22T06:19:17.926651+00:00"
+  },
+  "timing": {
+    "handling_elapsed_seconds_approx": 4737,
+    "deployment_and_feature_verification_seconds": 990,
+    "deployment_stage_seconds": 728.289,
+    "note": "Approximate request start; total includes assistant preparation, integration, CI timezone correction, queue/build wait, tags, NAS transfer/backup/switch and scoped smoke. No approval wait or drills."
+  },
+  "branch_cleanup": "Integration branches/worktrees retained; unrelated worktrees untouched."
+}

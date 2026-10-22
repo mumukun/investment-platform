@@ -1,0 +1,645 @@
+{
+  "status": "待验证",
+  "activation_allowed": false,
+  "reasons": [
+    "最终留出不足60个交易日所需的完整时间跨度",
+    "缺少固定基线或一因素消融输出，不能从试验中挑选最好结果",
+    "缺少时间点输入与参数预注册证据；需人工核查来源",
+    "缺少含时区的参数冻结/留出评估时间，或评估未晚于冻结",
+    "留出集未查看声明与可核查证据不足",
+    "低位蓄势最终留出跨度或新增/提前可交易已结算样本不足",
+    "低位蓄势 30bps/5日块的5日净收益95%下界未大于0",
+    "低位蓄势 30bps/10日块的5日净收益95%下界未大于0",
+    "低位蓄势 50bps/5日块的5日净收益95%下界未大于0",
+    "低位蓄势 50bps/10日块的5日净收益95%下界未大于0",
+    "趋势通道最终留出跨度或新增/提前可交易已结算样本不足",
+    "趋势通道 30bps/5日块的5日净收益95%下界未大于0",
+    "趋势通道 30bps/10日块的5日净收益95%下界未大于0",
+    "趋势通道 50bps/5日块的5日净收益95%下界未大于0",
+    "趋势通道 50bps/10日块的5日净收益95%下界未大于0",
+    "突破回踩最终留出跨度或新增/提前可交易已结算样本不足",
+    "突破回踩 30bps/5日块的5日净收益95%下界未大于0",
+    "突破回踩 30bps/10日块的5日净收益95%下界未大于0",
+    "突破回踩 50bps/5日块的5日净收益95%下界未大于0",
+    "突破回踩 50bps/10日块的5日净收益95%下界未大于0",
+    "低位蓄势及后续路径未通过Holm多重比较"
+  ],
+  "splits": {
+    "development": [],
+    "validation": [],
+    "holdout": [],
+    "purge_sessions": 10
+  },
+  "profiles": {
+    "baseline": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    },
+    "discovery": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    },
+    "price": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    },
+    "direction_low": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    },
+    "volume_close": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    },
+    "entry_cycles": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    },
+    "full": {
+      "signals": 0,
+      "tradable_settled": 0,
+      "untradable": 0,
+      "unsettled": 0,
+      "mean_next_open_5d": null,
+      "mean_next_open_10d": null,
+      "mean_close_theoretical_5d": null,
+      "mae5_p10": null,
+      "mfe5_median": null,
+      "first_minus_1r_rate": null
+    }
+  },
+  "validation_periods": [
+    {
+      "baseline": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "discovery": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "price": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "direction_low": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "volume_close": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "entry_cycles": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "full": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      }
+    },
+    {
+      "baseline": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "discovery": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "price": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "direction_low": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "volume_close": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "entry_cycles": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "full": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      }
+    },
+    {
+      "baseline": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "discovery": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "price": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "direction_low": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "volume_close": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "entry_cycles": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      },
+      "full": {
+        "signals": 0,
+        "tradable_settled": 0,
+        "untradable": 0,
+        "unsettled": 0,
+        "mean_next_open_5d": null,
+        "mean_next_open_10d": null,
+        "mean_close_theoretical_5d": null,
+        "mae5_p10": null,
+        "mfe5_median": null,
+        "first_minus_1r_rate": null
+      }
+    }
+  ],
+  "paths": {
+    "低位蓄势": {
+      "groups": {
+        "common": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "added": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "earlier": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "later": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "baseline_only": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        }
+      },
+      "incremental_samples": 0,
+      "scenarios": {
+        "30bps_block5": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "30bps_block10": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "50bps_block5": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "50bps_block10": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        }
+      },
+      "risk_by_regime": {}
+    },
+    "趋势通道": {
+      "groups": {
+        "common": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "added": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "earlier": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "later": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "baseline_only": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        }
+      },
+      "incremental_samples": 0,
+      "scenarios": {
+        "30bps_block5": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "30bps_block10": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "50bps_block5": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "50bps_block10": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        }
+      },
+      "risk_by_regime": {}
+    },
+    "突破回踩": {
+      "groups": {
+        "common": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "added": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "earlier": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "later": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        },
+        "baseline_only": {
+          "signals": 0,
+          "tradable_settled": 0,
+          "untradable": 0,
+          "unsettled": 0,
+          "mean_next_open_5d": null,
+          "mean_next_open_10d": null,
+          "mean_close_theoretical_5d": null,
+          "mae5_p10": null,
+          "mfe5_median": null,
+          "first_minus_1r_rate": null
+        }
+      },
+      "incremental_samples": 0,
+      "scenarios": {
+        "30bps_block5": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "30bps_block10": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "50bps_block5": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        },
+        "50bps_block10": {
+          "mean": null,
+          "ci95": null,
+          "p_one_sided": null
+        }
+      },
+      "risk_by_regime": {}
+    }
+  }
+}
