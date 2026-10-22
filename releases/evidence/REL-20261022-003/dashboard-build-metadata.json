@@ -1,0 +1,7 @@
+{
+  "app_version": "0.33.1",
+  "git_commit": "bd2f2f646796ff41e434b157013011515e320755",
+  "build_time": "2026-10-22T16:00:49Z",
+  "environment": "production",
+  "api_version": "v1"
+}

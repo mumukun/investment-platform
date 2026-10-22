@@ -1,0 +1,64 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261022-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.4.2",
+      "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+      "expected_production": {
+        "tag": "v2.4.1",
+        "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+        "image_id": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+        "evidence": "PR12 merged from 95402e6; 6 affected local tests passed, including isolated PostgreSQL and concurrent X totals. No configured remote CI; no source/schema/config/notification changes."
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Only read aggregate cache, no schema/migration/startup/write/recompute change; old application reads the same tables. User accepted no confirmed independent scheduled backup.",
+        "evidence": "CHG006 six News tests and code diff; unchanged deployed research boundary from REL-20261021-002; CHG007 runner installed 717e20a exact hashes."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only CHG006 X usage read cache; PR12 merged; 007 runner installation verified separately."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Existing response fields/count/cost semantics retained, append invalidation and 60s maintenance expiry; no schema/config/source change."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "6 affected tests passed including isolated PG original research reads and X init; unchanged research-v1 integration reused from REL-20261021-002, not re-run. Deployer will perform authenticated health/smoke."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "No new source or collection behavior; reuse verified production research data boundary from REL-20261021-002. This is not a new vendor/LLM/notification probe."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Existing root configuration preserved, only reviewed table backup commands added by CHG007. Existing NAS download proxy unchanged."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified previous v2.4.1 / 97343dc / sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571 retained. Code/data remain compatible; source runner has no automatic rollback mode."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户正式授权全部待发Change上线，并接受007普通发版跳过备份及暂无独立定时备份确认的恢复边界。"
+  }
+}

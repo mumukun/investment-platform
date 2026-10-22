@@ -1,0 +1,26 @@
+{
+  "governance_commit": "717e20a7f1efb921c95280198d5a0bf8a629e498",
+  "files": {
+    "scripts/image_release.py": "754d156abe966ce7a8897c4e8c7fdb4a7d1fcc6ae683b6453ed500fde388fe57",
+    "scripts/nas_image_release.py": "602ff2092ef91cd132733f818b221862d71e2c0bc9fdb48e7a2adb16f721880f",
+    "scripts/nas_source_release.py": "fbf7856c90e6b139e598dc2d93154d0a9f22f76ebd9d50b64d197477fdb2895d",
+    "scripts/nas_checks.py": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993",
+    "deploy/nas-image-release": "8861c055d0d4f9212b2e66b2e2106b23e2ac3d9aff980a52c169ed99c648d52d",
+    "deploy/install-nas-image-release.sh": "cfb1bddef5823cf89e49e8a0e41037f1e424111778989eeda87264a7e368f41e",
+    "deploy/nas-config.DS920plus.json": "04681c65d2e3e89adc97865b6d52e5ad02905c816f516e439ec70958c84a241b"
+  },
+  "runtime_targets": {
+    "scripts/image_release.py": "/usr/local/lib/investment-platform/image_release.py",
+    "scripts/nas_image_release.py": "/usr/local/lib/investment-platform/nas_image_release.py",
+    "scripts/nas_source_release.py": "/usr/local/lib/investment-platform/nas_source_release.py",
+    "scripts/nas_checks.py": "/usr/local/lib/investment-platform/nas_checks.py",
+    "deploy/nas-image-release": "/usr/local/sbin/nas-image-release"
+  },
+  "expected_installed": {
+    "/usr/local/lib/investment-platform/image_release.py": "b62867f1244d6e81c9ecad976800a91679898ad47da5e4608235b14ab90f0506",
+    "/usr/local/lib/investment-platform/nas_image_release.py": "88ee69b448df5f44a0645fb943d801c80cbbc64e45a1d49539b5a876e2f3aa9f",
+    "/usr/local/lib/investment-platform/nas_source_release.py": "945586d6fa4e81289e6499825b364e9fe251477b300d118dbfd4495c722c1c09",
+    "/usr/local/lib/investment-platform/nas_checks.py": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993",
+    "/usr/local/sbin/nas-image-release": "8861c055d0d4f9212b2e66b2e2106b23e2ac3d9aff980a52c169ed99c648d52d"
+  }
+}

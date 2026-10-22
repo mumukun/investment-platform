@@ -1,0 +1,21 @@
+{
+  "change_id": "CHG-20261022-007",
+  "status": "INSTALLED",
+  "governance_commit": "717e20a7f1efb921c95280198d5a0bf8a629e498",
+  "installed_hashes": {
+    "/usr/local/lib/investment-platform/image_release.py": "754d156abe966ce7a8897c4e8c7fdb4a7d1fcc6ae683b6453ed500fde388fe57",
+    "/usr/local/lib/investment-platform/nas_image_release.py": "602ff2092ef91cd132733f818b221862d71e2c0bc9fdb48e7a2adb16f721880f",
+    "/usr/local/lib/investment-platform/nas_source_release.py": "fbf7856c90e6b139e598dc2d93154d0a9f22f76ebd9d50b64d197477fdb2895d",
+    "/usr/local/lib/investment-platform/nas_checks.py": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993",
+    "/usr/local/sbin/nas-image-release": "8861c055d0d4f9212b2e66b2e2106b23e2ac3d9aff980a52c169ed99c648d52d"
+  },
+  "mechanism_rollback_directory": "/volume1/docker/.investment-platform-releases/runner-CHG-20261022-007-20261022T155755Z",
+  "table_commands_updated": [
+    "stock-analyzer",
+    "investment-research-dashboard",
+    "marketNewsFeed"
+  ],
+  "apps_restarted": false,
+  "database_touched": false,
+  "completed_at": "2026-10-22T15:57:55.350840+00:00"
+}
