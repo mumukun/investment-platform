@@ -1,0 +1,25 @@
+{
+  "mode": "LOCAL HISTORICAL REPLAY, NOT PRODUCTION",
+  "data_date": "2026-10-21",
+  "screens": [
+    {
+      "width": 1280,
+      "overflow": false,
+      "chart_canvas": 1,
+      "panel_text": "全市场走势 · 同花顺全A（沪深）883421\n\n用全A指数观察市场整体走势，替代原平均股价的主展示。单位为指数点，原平均股价历史在下方独立保留。\n\n实际交易日 2026-10-21 · 所选日参考 · 厂商日线\n\n收盘点位\n1,306.44\n该交易日涨跌幅\n-0.17%\n20日收益\n-3.38%\n60日收益\n4.29%\n\n来源：同花顺行情中心 · 仅展示原始收盘点位，不与800005平均股价拼接，不以收盘点位生成日K。"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "chart_canvas": 1,
+      "panel_text": "全市场走势 · 同花顺全A（沪深）883421\n\n用全A指数观察市场整体走势，替代原平均股价的主展示。单位为指数点，原平均股价历史在下方独立保留。\n\n实际交易日 2026-10-21 · 所选日参考 · 厂商日线\n\n收盘点位\n1,306.44\n该交易日涨跌幅\n-0.17%\n20日收益\n-3.38%\n60日收益\n4.29%\n\n来源：同花顺行情中心 · 仅展示原始收盘点位，不与800005平均股价拼接，不以收盘点位生成日K。"
+    }
+  ],
+  "historical_charts": 0,
+  "page_errors": [],
+  "window_errors": [
+    "ResizeObserver loop completed with undelivered notifications."
+  ],
+  "runtime": "local production preview",
+  "resize_warning_note": "Viewport resize emitted an Element Plus scrollbar ResizeObserver warning; the all-A chart remains rendered. Diagnostic observed el-scrollbar__view/wrap callbacks. No pageerror event or page overflow; the global error event is recorded in window_errors."
+}

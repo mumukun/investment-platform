@@ -1,0 +1,60 @@
+{
+  "fixture_sha256": "9eea1eda1dbd4cd070302e2a91abe41332f1f6e89ad9aeb825234d885c65a20f",
+  "stored_samples": 191,
+  "timeline_minutes": 241,
+  "missing_minutes": 50,
+  "warning_minutes": 91,
+  "warning_examples": [
+    {
+      "minute": "09:48",
+      "reason": "batch-replay",
+      "previousMinute": "09:42",
+      "basis": "net-values"
+    },
+    {
+      "minute": "09:49",
+      "reason": "batch-replay",
+      "previousMinute": "09:42",
+      "basis": "net-values"
+    },
+    {
+      "minute": "09:57",
+      "reason": "batch-replay",
+      "previousMinute": "09:52",
+      "basis": "net-values"
+    },
+    {
+      "minute": "09:58",
+      "reason": "batch-replay",
+      "previousMinute": "09:52",
+      "basis": "net-values"
+    },
+    {
+      "minute": "09:59",
+      "reason": "batch-replay",
+      "previousMinute": "09:56",
+      "basis": "net-values"
+    },
+    {
+      "minute": "10:01",
+      "reason": "batch-replay",
+      "previousMinute": "09:56",
+      "basis": "net-values"
+    },
+    {
+      "minute": "10:02",
+      "reason": "batch-replay",
+      "previousMinute": "09:56",
+      "basis": "net-values"
+    },
+    {
+      "minute": "10:03",
+      "reason": "batch-replay",
+      "previousMinute": "09:56",
+      "basis": "net-values"
+    }
+  ],
+  "raw_values_unchanged": true,
+  "network_requests": 0,
+  "scope": "Public archived industry values, read-only exported earlier; replay uses mocked local storage, no production calls."
+}

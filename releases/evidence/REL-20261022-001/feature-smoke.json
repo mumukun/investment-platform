@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "runtime_version": {
+    "app_version": "0.32.0",
+    "git_commit": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+    "build_time": "2026-10-22T01:59:50Z",
+    "environment": "production",
+    "api_version": "v1"
+  },
+  "seat": {
+    "status": "pending",
+    "observation_date": "2026-10-22",
+    "actual_trade_date": "2026-10-22",
+    "latest_disclosure": "2026-10-21",
+    "disclosures": 20,
+    "comparable_disclosures": 17,
+    "saved_snapshot_readback": true,
+    "directory_lookup": true,
+    "historical_20261020_readback": true,
+    "source_quality": "partial",
+    "stored_reviews_count": 1
+  },
+  "market_structure": {
+    "trade_date": "2026-10-21",
+    "all_a_close": 1306.436,
+    "fund_count": 139
+  },
+  "capital_flow": {
+    "source": null,
+    "quality": null,
+    "status": null,
+    "keys": [
+      "summary",
+      "levels",
+      "timeline",
+      "sectorTrend",
+      "sectorEvents",
+      "meta",
+      "availableDates"
+    ]
+  },
+  "scope": "one subscribed seat refresh plus saved reports/reviews and cached market/flow read; no AI or notification"
+}

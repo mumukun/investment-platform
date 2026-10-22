@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261022-001",
+  "status": "RELEASED",
+  "environment": "Production",
+  "release_profile": "routine",
+  "request_started_at": "2026-10-22T01:49:00+00:00",
+  "changes": [
+    "CHG-20261021-010",
+    "CHG-20261021-011",
+    "CHG-20261022-001",
+    "CHG-20261022-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "2026-10-22用户明确：修改完之后提交代码，连同其他chg一起上线，生产环境发布。范围为刚确认的四项已完成业务Change。"
+  },
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "4.6.1",
+      "previous_version": "v4.6.0",
+      "rollback_version": "v4.6.0",
+      "rollback_commit_sha": "e43727f69d64b22ca63c89be98a08341b90604cc",
+      "rollback_artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:c69f226bc5d31a736f2a61c4df8cf6c5b3a4536a225a1a9361e5179e7c91214f"
+      },
+      "status": "RELEASED",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/36",
+      "development_commit_sha": "1722dd7ba092460262cd2a7ec2df0f30da0f835e",
+      "commit_sha": "7f031161b3de4126b4c8356577d91739695fd2f7",
+      "tag": "v4.6.1",
+      "main_ci_run_id": "39708337169",
+      "candidate_run_id": "39708422642",
+      "candidate": "releases/evidence/REL-20261022-001/provider/candidate.json",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:cbb559a9a01f1f6d2232973c7312becd8bbd1508f5712e83ebee7b033ac3d036"
+      },
+      "note": "Exact main candidate digest deployed; runtime identity, health/smoke and scoped feature checks PASS."
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "0.32.0",
+      "previous_version": "v0.31.0",
+      "rollback_version": "v0.31.0",
+      "rollback_commit_sha": "0ff64b7ce30f100e040cdfa46b157839db17f52f",
+      "rollback_artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff37b8ce372fd334c2ab2badba4d3a217722127bb069ace5ab152cc60b983f37",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e62380103881e3e7db072c92614124143ccab0054825e2195d6e60e6ab782d1c"
+      },
+      "status": "RELEASED",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/37",
+      "development_commit_sha": "b8fb979b5aa5707abca00d8de2f5916d609d1219",
+      "commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
+      "tag": "v0.32.0",
+      "main_ci_run_id": "39708524034",
+      "candidate_run_id": "39708861697",
+      "candidate": "releases/evidence/REL-20261022-001/dashboard/candidate.json",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:243ec87c232c3dc5f9c404dae8a3822172492d6dcae8c0d72d1dc8edffbd35fa",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2d794ad52787879f368a90626c11eac1e3cce50191e46bf11b2a21bf1f7d9d79"
+      },
+      "note": "Exact main candidate digest deployed; runtime identity, health/smoke and scoped feature checks PASS."
+    }
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "deployment": {
+    "status": "PASS",
+    "plan": "releases/evidence/REL-20261022-001/image-release.plan.json",
+    "receipt": "releases/evidence/REL-20261022-001/deployment.receipt.json",
+    "completed_at": "2026-10-22T02:15:15.717314+00:00"
+  },
+  "verification": {
+    "status": "PASS_WITH_DECLARED_SOURCE_GAPS",
+    "evidence": [
+      "changes/CHG-20261021-010.md",
+      "changes/CHG-20261021-011.md",
+      "changes/CHG-20261022-001.md",
+      "changes/CHG-20261022-002.md"
+    ],
+    "integration_after_merge": "8 frontend files,62 tests PASS; type/Vite/PWA build PASS. Only docs/version conflicts; existing backend/source evidence reused, main CI authoritative.",
+    "ci": {
+      "stock-analyzer": {
+        "status": "PASS",
+        "run_id": "39708337169",
+        "head_sha": "7f031161b3de4126b4c8356577d91739695fd2f7"
+      },
+      "investment-research-dashboard": {
+        "status": "PASS",
+        "run_id": "39708524034",
+        "head_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5"
+      }
+    },
+    "production": "releases/evidence/REL-20261022-001/feature-smoke.json",
+    "result": "Subscribed seat refreshed with genuine disclosures; saved report readback and retained reviews PASS. THS all-A and139-ETF projection readable. Existing800005/BK1158 source gaps remain explicit; no false recovery claim."
+  },
+  "notes": [
+    "marketNewsFeed不涉及；不吸收其他未完成或治理草稿。",
+    "无DDL；复用来源/契约/界面与本地PG证据，仅补验文档/版本合并后受影响前端与main CI。"
+  ],
+  "timing_note": "Request start estimated to the minute from initial work; first explicit clock was 2026-10-22 01:49:59 UTC. Final handling duration will be approximate and include integration/CI/build/deployment.",
+  "updated_at": "2026-10-22T02:16:37.408467+00:00",
+  "timing": {
+    "request_started_at": "2026-10-22T01:49:00+00:00",
+    "closed_at": "2026-10-22T02:16:37.408467+00:00",
+    "handling_elapsed_seconds_approx": 1657,
+    "deployment_elapsed_seconds": 747,
+    "deployment_and_feature_verification_seconds": 829,
+    "note": "Approximate request start rounded to minute; total includes integration conflicts, commits/PR merges, main CI/candidate wait, NAS exact-image pulls/backups/deployment and scoped feature checks. No approval wait or drills. Governance archival CI follows."
+  },
+  "branch_cleanup": "Owned integration branches and worktrees retained; unrelated worktrees untouched."
+}
