@@ -1,79 +1,92 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-22T06:22:57.197353+00:00",
+  "verified_at": "2026-10-22T16:16:04.867508+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
     "marketNewsFeed": {
       "production": {
-        "verified_at": "2026-10-21T05:16:28.049513+00:00",
-        "application_version": "2.4.1",
+        "verified_at": "2026-10-22T16:02:16.793572+00:00",
+        "application_version": "2.4.2",
         "application_version_source": "DERIVED_FROM_VERIFIED_TAG",
-        "tag": "v2.4.1",
-        "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+        "tag": "v2.4.2",
+        "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
         "artifact_model": "SOURCE_TAG_BUILD",
-        "artifact": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571",
-        "artifact_id": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571",
+        "artifact": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b",
+        "artifact_id": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b",
         "artifact_digest": "UNKNOWN",
         "artifact_identity_status": "IMAGE_ID_ONLY",
         "containers": [
           "marketnewsfeed-market-news-feed-1"
         ],
-        "deployment_timestamp": "2026-10-21T05:16:28.049513+00:00",
+        "deployment_timestamp": "2026-10-22T16:02:16.793572+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v2.4.0",
-          "commit_sha": "99c71ec4417a4e7feda35ac5a4f9a5f9c0ff66bd",
-          "image_id": "sha256:0400749e403879bcaef29efd4e28b271c9847748db8d8bcaf3fd9189b0053b25",
-          "status": "VERIFIED_RETAINED_PRODUCTION"
+          "tag": "v2.4.1",
+          "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+          "image_id": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571",
+          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "confidence": "HIGH",
         "evidence": [
-          "releases/REL-20261021-002.yaml",
-          "releases/evidence/REL-20261021-002/deployment.receipt.json"
-        ]
+          "releases/REL-20261022-003.yaml",
+          "releases/evidence/REL-20261022-003/news-deployment.receipt.json"
+        ],
+        "database_backup": {
+          "status": "SKIPPED",
+          "policy": {
+            "mode": "skip",
+            "data_impact": "none",
+            "rollback_compatible": true,
+            "reason": "Only read aggregate cache, no schema/migration/startup/write/recompute change; old application reads the same tables. User accepted no confirmed independent scheduled backup.",
+            "evidence": "CHG006 six News tests and code diff; unchanged deployed research boundary from REL-20261021-002; CHG007 runner installed 717e20a exact hashes."
+          }
+        }
       }
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-10-22T06:19:17.926651+00:00",
-        "application_version": "4.7.0",
+        "verified_at": "2026-10-22T16:16:04.867508+00:00",
+        "application_version": "4.7.1",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v4.7.0",
-        "commit_sha": "5646ce7f210ecba99f2b6486eb789a61744ae58b",
+        "tag": "v4.7.1",
+        "commit_sha": "0658c16bcc24d8a65c6e57f2493ef8d05b67623b",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5a5b4fefbde216018a3da4195b8a5d1ebf0b4ad9e3178cae0025d5bf9e94d29f"
         },
         "artifact_id": {
-          "app": "sha256:f786811e8a1c3d7ee1fcfb327bee6572b74d106ece5ba8000c2226754332a241"
+          "app": "sha256:c4f67509e2c065a789f94c67b109a222cf686bfa4226bc5e7681917b2c61af6e"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5a5b4fefbde216018a3da4195b8a5d1ebf0b4ad9e3178cae0025d5bf9e94d29f"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "stock-api",
           "stock-watch"
         ],
-        "deployment_timestamp": "2026-10-22T06:19:17.926651+00:00",
+        "deployment_timestamp": "2026-10-22T16:10:48.860634+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v4.6.1",
-          "commit_sha": "7f031161b3de4126b4c8356577d91739695fd2f7",
-          "version": "4.6.1",
+          "tag": "v4.7.0",
+          "commit_sha": "5646ce7f210ecba99f2b6486eb789a61744ae58b",
+          "version": "4.7.0",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:cbb559a9a01f1f6d2232973c7312becd8bbd1508f5712e83ebee7b033ac3d036"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
+          },
+          "image_ids": {
+            "app": "sha256:f786811e8a1c3d7ee1fcfb327bee6572b74d106ece5ba8000c2226754332a241"
           },
           "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "app": "sha256:f786811e8a1c3d7ee1fcfb327bee6572b74d106ece5ba8000c2226754332a241"
+          "app": "sha256:c4f67509e2c065a789f94c67b109a222cf686bfa4226bc5e7681917b2c61af6e"
         },
         "evidence": [
-          "releases/REL-20261022-002.yaml",
-          "releases/evidence/REL-20261022-002/deployment.receipt.json",
-          "releases/evidence/REL-20261022-002/feature-smoke.json"
+          "releases/REL-20261022-003.yaml",
+          "releases/evidence/REL-20261022-003/deployment.receipt.json",
+          "releases/evidence/REL-20261022-003/affected-readback.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -93,6 +106,13 @@
             "source": "ths883421",
             "trade_date": "2026-10-21",
             "close": 1306.436
+          },
+          "current_readback": {
+            "at": "2026-10-23T00:14:52.310943+08:00",
+            "quality": "stale",
+            "days": 121,
+            "etag_304": true,
+            "prior_source_detail": "Other fields retain REL-20261022-002 dated source observations, not remeasured."
           }
         },
         "seat_tracking": {
@@ -104,62 +124,72 @@
         "swing_selection": {
           "rules_version": "swing-rules-v5.2.0",
           "candidate_v6_activated": false,
-          "freshness_status": "delayed",
-          "data_time": "2026-10-22T14:21:20+08:00",
-          "result_refresh": {
-            "status": "healthy",
-            "reason": "",
-            "last_success_at": "2026-10-22T14:22:07.904886+08:00",
-            "checked_at": "2026-10-22T14:22:07.904886+08:00"
+          "freshness_status": "healthy",
+          "input_status": "partial",
+          "items": 845,
+          "readback_at": "2026-10-23T00:14:52.310943+08:00"
+        },
+        "database_backup": {
+          "status": "SKIPPED",
+          "policy": {
+            "mode": "skip",
+            "data_impact": "additive",
+            "rollback_compatible": true,
+            "reason": "No DDL, destructive migration or business data rewrite. Provider adds disposable cache/revision rows under new keys; feature values and rules are unchanged. Consumer archives the original complete compatible response. Old code ignores new cache keys and reads existing tables. User accepts no confirmed independent scheduled backup.",
+            "evidence": "CHG006 diff, 154 Provider tests with isolated PG/value equality, 39 Consumer tests and 37 original swing checks; main CI and candidates; CHG007 installed frozen 717e20a."
           }
         }
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-10-22T06:19:17.926651+00:00",
-        "application_version": "0.33.0",
+        "verified_at": "2026-10-22T16:16:04.867508+00:00",
+        "application_version": "0.33.1",
         "application_version_source": "VERSION",
-        "tag": "v0.33.0",
-        "commit_sha": "868f871148174a2e84f3d38be48c53d3d7087249",
+        "tag": "v0.33.1",
+        "commit_sha": "bd2f2f646796ff41e434b157013011515e320755",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6eaa575b1f616cede7874fd999b9b464f2ee32727cf6e54f80188335988c50db",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e4c7008647cf814b1aec5f0c42fadd59da7148800946a00466839bb24d1d3110"
         },
         "artifact_id": {
-          "api": "sha256:b956976367d19d51a02c72b9bff5a13ed749adccce1d092d70dcf656f9c91da8",
-          "web": "sha256:b3cf7432c5a7990321118445f0d7c32835fb0baec79e5a5ad453d4d5cb19fe8a"
+          "api": "sha256:1c7123f562213e4f333e48c917a371f434c9d4fd233ab0d86c6758170c28add0",
+          "web": "sha256:f892e33121888a27b61a41e2953f2fae09ed10068724b1786b60402f43f28946"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6eaa575b1f616cede7874fd999b9b464f2ee32727cf6e54f80188335988c50db",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e4c7008647cf814b1aec5f0c42fadd59da7148800946a00466839bb24d1d3110"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "investment-research-dashboard-nas-api-1",
           "investment-research-dashboard-nas-web-1"
         ],
-        "deployment_timestamp": "2026-10-22T06:19:17.926651+00:00",
+        "deployment_timestamp": "2026-10-22T16:10:48.860634+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v0.32.0",
-          "commit_sha": "3a303095a5a06486693d7d7353afbe8d3b8b77c5",
-          "version": "0.32.0",
+          "tag": "v0.33.0",
+          "commit_sha": "868f871148174a2e84f3d38be48c53d3d7087249",
+          "version": "0.33.0",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:243ec87c232c3dc5f9c404dae8a3822172492d6dcae8c0d72d1dc8edffbd35fa",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:2d794ad52787879f368a90626c11eac1e3cce50191e46bf11b2a21bf1f7d9d79"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:34be5d6110ce8f40168dd6bfb37ac2ac9dea02db5231e6893ee06f0fabdd46a2",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
+          },
+          "image_ids": {
+            "api": "sha256:b956976367d19d51a02c72b9bff5a13ed749adccce1d092d70dcf656f9c91da8",
+            "web": "sha256:b3cf7432c5a7990321118445f0d7c32835fb0baec79e5a5ad453d4d5cb19fe8a"
           },
           "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "api": "sha256:b956976367d19d51a02c72b9bff5a13ed749adccce1d092d70dcf656f9c91da8",
-          "web": "sha256:b3cf7432c5a7990321118445f0d7c32835fb0baec79e5a5ad453d4d5cb19fe8a"
+          "api": "sha256:1c7123f562213e4f333e48c917a371f434c9d4fd233ab0d86c6758170c28add0",
+          "web": "sha256:f892e33121888a27b61a41e2953f2fae09ed10068724b1786b60402f43f28946"
         },
         "evidence": [
-          "releases/REL-20261022-002.yaml",
-          "releases/evidence/REL-20261022-002/deployment.receipt.json",
-          "releases/evidence/REL-20261022-002/feature-smoke.json"
+          "releases/REL-20261022-003.yaml",
+          "releases/evidence/REL-20261022-003/deployment.receipt.json",
+          "releases/evidence/REL-20261022-003/affected-readback.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -179,9 +209,16 @@
             "source": "ths883421",
             "trade_date": "2026-10-21",
             "close": 1306.436
+          },
+          "current_readback": {
+            "at": "2026-10-23T00:14:52.310943+08:00",
+            "quality": "stale",
+            "days": 121,
+            "etag_304": true,
+            "prior_source_detail": "Other fields retain REL-20261022-002 dated source observations, not remeasured."
           }
         },
-        "build_time": "2026-10-22T06:02:25Z",
+        "build_time": "2026-10-22T16:00:49Z",
         "seat_tracking": {
           "status": "RECOVERED",
           "latest_disclosure": "2026-10-21",
@@ -191,13 +228,19 @@
         "swing_selection": {
           "rules_version": "swing-rules-v5.2.0",
           "candidate_v6_activated": false,
-          "freshness_status": "delayed",
-          "data_time": "2026-10-22T14:21:20+08:00",
-          "result_refresh": {
-            "status": "healthy",
-            "reason": "",
-            "last_success_at": "2026-10-22T14:22:07.904886+08:00",
-            "checked_at": "2026-10-22T14:22:07.904886+08:00"
+          "freshness_status": "healthy",
+          "input_status": "partial",
+          "items": 845,
+          "readback_at": "2026-10-23T00:14:52.310943+08:00"
+        },
+        "database_backup": {
+          "status": "SKIPPED",
+          "policy": {
+            "mode": "skip",
+            "data_impact": "none",
+            "rollback_compatible": true,
+            "reason": "No DDL, destructive migration or business data rewrite. Provider adds disposable cache/revision rows under new keys; feature values and rules are unchanged. Consumer archives the original complete compatible response. Old code ignores new cache keys and reads existing tables. User accepts no confirmed independent scheduled backup.",
+            "evidence": "CHG006 diff, 154 Provider tests with isolated PG/value equality, 39 Consumer tests and 37 original swing checks; main CI and candidates; CHG007 installed frozen 717e20a."
           }
         }
       }

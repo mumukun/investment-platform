@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "release_id": "REL-20261022-003",
-  "status": "DRAFT",
+  "status": "RELEASED",
   "environment": "Production",
   "release_profile": "routine",
   "request_started_at": "2026-10-22T15:46:30+00:00",
@@ -14,8 +14,8 @@
     "evidence": "用户授权全部待发Change生产上线；明确接受007跳过发布备份的恢复边界"
   },
   "release_order": [
-    "stock-analyzer",
     "marketNewsFeed",
+    "stock-analyzer",
     "investment-research-dashboard"
   ],
   "repositories": [
@@ -30,7 +30,13 @@
         "app": "ghcr.io/mumukun/stock-analyzer@sha256:268451f96fe77723d8e21d568d9b06782ddf6986612f2f879b7f6ff007d9371d"
       },
       "pr": "https://github.com/mumukun/stock-analyzer/pull/38",
-      "status": "PENDING_CI"
+      "status": "RELEASED",
+      "commit_sha": "0658c16bcc24d8a65c6e57f2493ef8d05b67623b",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:5a5b4fefbde216018a3da4195b8a5d1ebf0b4ad9e3178cae0025d5bf9e94d29f"
+      },
+      "candidate_run_id": "39809312657",
+      "deployment_receipt": "releases/evidence/REL-20261022-003/deployment.receipt.json"
     },
     {
       "repository": "marketNewsFeed",
@@ -41,7 +47,11 @@
       "rollback_commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
       "rollback_artifact": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571",
       "pr": "https://github.com/mumukun/marketNewsFeed/pull/12",
-      "status": "PENDING_CI"
+      "status": "RELEASED",
+      "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+      "artifact": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b",
+      "artifact_digest": "ARTIFACT_DIGEST_UNAVAILABLE",
+      "deployment_receipt": "releases/evidence/REL-20261022-003/news-deployment.receipt.json"
     },
     {
       "repository": "investment-research-dashboard",
@@ -55,20 +65,67 @@
         "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:214613c0979c61fc48fa307e7c78d6f81f0feaee88515b3f9723ae6cac56bb3c"
       },
       "pr": "https://github.com/mumukun/investment-research-dashboard/pull/39",
-      "status": "PENDING_CI"
+      "status": "RELEASED",
+      "commit_sha": "bd2f2f646796ff41e434b157013011515e320755",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6eaa575b1f616cede7874fd999b9b464f2ee32727cf6e54f80188335988c50db",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e4c7008647cf814b1aec5f0c42fadd59da7148800946a00466839bb24d1d3110"
+      },
+      "candidate_run_id": "39810167121",
+      "deployment_receipt": "releases/evidence/REL-20261022-003/deployment.receipt.json"
     }
   ],
   "verification": {
-    "status": "PENDING_CI",
+    "status": "PASS_WITH_DECLARED_SOURCE_LIMITS",
     "evidence": [
       "changes/evidence/CHG-20261022-006/performance-verification.md",
-      "changes/evidence/CHG-20261022-007/tests.json"
+      "changes/evidence/CHG-20261022-007/tests.json",
+      "releases/evidence/REL-20261022-003/affected-readback.json",
+      "releases/evidence/REL-20261022-003/news-deployment.receipt.json",
+      "releases/evidence/REL-20261022-003/deployment.receipt.json"
+    ],
+    "production": "Exact tag/SHA/digest/config IDs, version/health and authenticated existing smoke passed. Affected readback confirms both screenshot stocks have same-actual-date rich basics, full/list/detail equality, real 304 and gzip decode equality.",
+    "limits": [
+      "Market-structure quality remains stale and swing inputs partial as declared by upstream; result freshness is healthy.",
+      "No open-market minute-cycle timing measured after this deployment; local benchmark figures are not production timing.",
+      "No historical backfill; facts never retained for a historical date remain unavailable.",
+      "Independent scheduled backups remain UNCONFIRMED; user explicitly accepted skips. No database restore/clone/fault drills run.",
+      "News retains SOURCE_TAG_BUILD and Image ID only; no registry digest."
     ]
   },
   "notes": [
     "CHG-20261021-004治理规范不产生业务版本；CHG-20261022-005备份清理已执行，无应用发布。",
     "007为治理运行器维护，单独记录精确提交/安装，不产生业务Tag。",
     "生产基线五个容器Image ID与已发布记录一致。",
-    "未重跑恢复、克隆、回滚演练。"
-  ]
+    "未重跑恢复、克隆、回滚演练。",
+    "Active owned worktrees/branches retained; unrelated checkout changes were not included. No app redeploy for closeout."
+  ],
+  "runner_install_receipt": "releases/evidence/REL-20261022-003/runner-install.receipt.json",
+  "main_ci": {
+    "stock-analyzer": 39809193447,
+    "investment-research-dashboard": 39809565609,
+    "investment-platform": 39809214582,
+    "marketNewsFeed": "No configured CI; six affected tests passed, tested merge tree verified"
+  },
+  "deployment": {
+    "status": "PASS",
+    "news": "PASS",
+    "images": "PASS"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261022-003/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261022-003/provider/candidate.json",
+    "releases/evidence/REL-20261022-003/dashboard/candidate.json"
+  ],
+  "deployed_at": "2026-10-22T16:10:48.860634+00:00",
+  "verified_at": "2026-10-22T16:16:04.867508+00:00",
+  "elapsed": {
+    "request_to_applications_available_seconds": 1458.9,
+    "request_to_functional_closeout_seconds": 1774.9,
+    "scope": "Includes assistant preparation, business PR/merge/CI/candidate waiting, installer interaction and NAS deployment. Governance archive PR follows deployment; actual overall closeout completion is its merge timestamp. Request start is the recorded approximate request timestamp.",
+    "installer_interaction_seconds_approx": 65,
+    "nas_news_deploy_seconds": 118.4,
+    "nas_images_pull_start_verify_seconds": 284.7,
+    "limitation": "About-five-minute target exceeded. Main elapsed includes CI/candidate waiting and assistant handling; do not interpret NAS-only duration as total."
+  }
 }

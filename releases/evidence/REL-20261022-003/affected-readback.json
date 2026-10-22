@@ -1,0 +1,66 @@
+{
+  "time": "2026-10-23T00:14:52.310943+08:00",
+  "swing": {
+    "contract": "investment-dashboard-swing-selection-v3",
+    "rules_version": "swing-rules-v5.2.0",
+    "items": 845,
+    "freshness": "healthy",
+    "input_status": "partial",
+    "complete_detail_equal": true,
+    "full_json_bytes": 9464398,
+    "summary_json_bytes": 5022734
+  },
+  "basics": {
+    "300188": {
+      "actual_date": "2026-10-22",
+      "bar_count": 60,
+      "attempts": 3,
+      "basic": {
+        "quote_date": "2026-10-22",
+        "source": "tencent",
+        "total_market_cap_yi": 90.85,
+        "circulating_market_cap_yi": 90.43,
+        "pe_ttm": -10.96,
+        "pb": 3.82,
+        "amplitude_pct": 5.35,
+        "volume_ratio": 1.09,
+        "refresh_pending": null
+      }
+    },
+    "301291": {
+      "actual_date": "2026-10-22",
+      "bar_count": 60,
+      "attempts": 3,
+      "basic": {
+        "quote_date": "2026-10-22",
+        "source": "tencent",
+        "total_market_cap_yi": 117.64,
+        "circulating_market_cap_yi": 62.2,
+        "pe_ttm": 31.88,
+        "pb": 2.31,
+        "amplitude_pct": 2.96,
+        "volume_ratio": 0.99,
+        "refresh_pending": null
+      }
+    }
+  },
+  "market_structure": {
+    "days": 121,
+    "etag_304": true,
+    "quality": "stale"
+  },
+  "static_assets": [
+    {
+      "path": "/assets/index-CX6yUWH1.js",
+      "bytes": 186629,
+      "gzip_bytes": 64500,
+      "decoded_equal": true
+    },
+    {
+      "path": "/assets/api-DqEpRzLy.js",
+      "bytes": 75183,
+      "gzip_bytes": 28461,
+      "decoded_equal": true
+    }
+  ]
+}

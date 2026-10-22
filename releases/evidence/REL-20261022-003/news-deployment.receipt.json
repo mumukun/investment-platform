@@ -1,0 +1,27 @@
+{
+  "release_id": "REL-20261022-003",
+  "repository": "marketNewsFeed",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "tag": "v2.4.2",
+  "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+  "status": "PASS",
+  "stage": "verify",
+  "previous": {
+    "tag": "v2.4.1",
+    "commit_sha": "97343dc81a5652eb6019192185f8523489f30757",
+    "image_id": "sha256:4aa8d9f3237068afd8cca4a28579fbabdde73dc9e3b57739eda455d521d79571"
+  },
+  "started_at": "2026-10-22T16:00:18.363708+00:00",
+  "backup": {
+    "status": "SKIPPED",
+    "policy": {
+      "mode": "skip",
+      "data_impact": "none",
+      "rollback_compatible": true,
+      "reason": "Only read aggregate cache, no schema/migration/startup/write/recompute change; old application reads the same tables. User accepted no confirmed independent scheduled backup.",
+      "evidence": "CHG006 six News tests and code diff; unchanged deployed research boundary from REL-20261021-002; CHG007 runner installed 717e20a exact hashes."
+    }
+  },
+  "image_id": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b",
+  "completed_at": "2026-10-22T16:02:16.793572+00:00"
+}
