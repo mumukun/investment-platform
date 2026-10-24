@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-24T23:32:45.411139+08:00",
+  "verified_at": "2026-10-24T18:30:44.894440+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -161,53 +161,53 @@
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-10-24T23:32:45.411139+08:00",
-        "application_version": "0.34.0",
+        "verified_at": "2026-10-24T18:30:44.894440+00:00",
+        "application_version": "0.35.0",
         "application_version_source": "VERSION",
-        "tag": "v0.34.0",
-        "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+        "tag": "v0.35.0",
+        "commit_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83bde18e065f7217c766d75d3c24638b009cafaccd7b094fb8607d6722e3bea7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c427dc165f0c37616d4a488e9eee963e1d9c9446bc9b79e8f8af2b33f30080a2"
         },
         "artifact_id": {
-          "api": "sha256:038fb65cf2b706f769a00d534e694fc66218a58b31f33ea0463a89679045a428",
-          "web": "sha256:55f1db5e5353936868961d1d43df830372b9358daadb6ecab20681bfc70502e9"
+          "api": "sha256:e8e47251e56b02956fd88bc95cd41a62204dfa234275a4c5b60d668c1d88198c",
+          "web": "sha256:b2fae4e67e7ad1d214b945981810b27da478272f8775598b2b956cd4f4b18577"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83bde18e065f7217c766d75d3c24638b009cafaccd7b094fb8607d6722e3bea7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c427dc165f0c37616d4a488e9eee963e1d9c9446bc9b79e8f8af2b33f30080a2"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "investment-research-dashboard-nas-api-1",
           "investment-research-dashboard-nas-web-1"
         ],
-        "deployment_timestamp": "2026-10-24T15:31:10.032166+00:00",
+        "deployment_timestamp": "2026-10-24T18:28:26.856257+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v0.33.1",
-          "commit_sha": "bd2f2f646796ff41e434b157013011515e320755",
-          "version": "0.33.1",
+          "tag": "v0.34.0",
+          "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+          "version": "0.34.0",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6eaa575b1f616cede7874fd999b9b464f2ee32727cf6e54f80188335988c50db",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e4c7008647cf814b1aec5f0c42fadd59da7148800946a00466839bb24d1d3110"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
           },
           "image_ids": {
-            "api": "sha256:1c7123f562213e4f333e48c917a371f434c9d4fd233ab0d86c6758170c28add0",
-            "web": "sha256:f892e33121888a27b61a41e2953f2fae09ed10068724b1786b60402f43f28946"
+            "api": "sha256:038fb65cf2b706f769a00d534e694fc66218a58b31f33ea0463a89679045a428",
+            "web": "sha256:55f1db5e5353936868961d1d43df830372b9358daadb6ecab20681bfc70502e9"
           },
+          "build_time": "2026-10-24T15:13:34Z",
           "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "api": "sha256:038fb65cf2b706f769a00d534e694fc66218a58b31f33ea0463a89679045a428",
-          "web": "sha256:55f1db5e5353936868961d1d43df830372b9358daadb6ecab20681bfc70502e9"
+          "api": "sha256:e8e47251e56b02956fd88bc95cd41a62204dfa234275a4c5b60d668c1d88198c",
+          "web": "sha256:b2fae4e67e7ad1d214b945981810b27da478272f8775598b2b956cd4f4b18577"
         },
         "evidence": [
-          "releases/REL-20261024-001.yaml",
-          "releases/evidence/REL-20261024-001/deployment.receipt.json",
-          "releases/evidence/REL-20261024-001/affected-readback.json"
+          "releases/REL-20261025-001.yaml",
+          "releases/evidence/REL-20261025-001/deployment.receipt.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -236,7 +236,7 @@
             "prior_source_detail": "Other fields retain REL-20261022-002 dated source observations, not remeasured."
           }
         },
-        "build_time": "2026-10-24T15:13:34Z",
+        "build_time": "2026-10-24T18:23:32Z",
         "seat_tracking": {
           "status": "RECOVERED",
           "latest_disclosure": "2026-10-21",
@@ -255,10 +255,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "additive",
+            "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "Provider adds independent tail run/observation tables and version-isolated trade rows; Consumer writes only a new Snapshot domain. No old ledger replacement, table/column removal, destructive migration or database downgrade. Old code ignores the new tables and keys. Routine policy permits additive compatible changes without a release dump; independent scheduled backup remains unconfirmed.",
-            "evidence": "CHG-20261024-001; isolated PostgreSQL DDL idempotence and frozen/all-row tests; exact-main CI; previous deployed baseline and runtime ImageIDs read-only matched."
+            "reason": "Frontend-only presentation and existing read-API consumers; no migration, schema, startup task, write path, recomputation or existing ledger replacement. Previous code remains compatible with the same data.",
+            "evidence": "CHG-20261025-001; PR42 diff and main CI40120204861 (362 backend/271 frontend PASS), unchanged API/database boundary."
           }
         },
         "short_tail": {
@@ -279,9 +279,10 @@
           "consumer_routes_match": true
         },
         "component_build_times": {
-          "api": "2026-10-24T15:13:34Z",
-          "web": "2026-10-24T15:13:36Z"
-        }
+          "api": "2026-10-24T18:23:32Z",
+          "web": "2026-10-24T18:23:34Z"
+        },
+        "data_observations_status": "Retained dated observations from REL-20261024-001; source/strategy boundaries unchanged and not remeasured in this frontend release."
       }
     }
   }
