@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-24T22:59:13.049919+08:00",
+  "mode": "read_only_existing_native_boundary",
+  "directory": {
+    "as_of": "2026-10-23",
+    "complete": true,
+    "count": 5577
+  },
+  "rules": {
+    "trade_date": "2026-10-23",
+    "count": 5076
+  },
+  "industry_profiles": {
+    "legacy_taxonomy_unmarked": 5576,
+    "EM2016": 13
+  },
+  "history": {
+    "codes": [
+      "300750",
+      "600000"
+    ],
+    "rows_each_since_2026_09_01": 34,
+    "latest_trade_date": "2026-10-23",
+    "adjustment_vintage": "2026-10-23",
+    "single_vintage": true
+  },
+  "quotes": {
+    "source": "tencent",
+    "codes": [
+      "300750",
+      "600000"
+    ],
+    "actual_quote_date": "2026-10-23",
+    "source_clock_tz": "Asia/Shanghai",
+    "positive_previous_price_amount_high_low": true,
+    "raw_amount_unit": "yuan",
+    "missing": []
+  },
+  "limitations": [
+    "Weekend check cannot prove live tail publication latency or strategy returns",
+    "Legacy taxonomy explicitly unverified; no extra classification source called"
+  ],
+  "production_identity_matches_previous_baseline": true
+}

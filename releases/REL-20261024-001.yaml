@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261024-001",
+  "environment": "Production",
+  "release_profile": "routine",
+  "status": "RELEASED",
+  "request_started_at": "2026-10-24T14:16:00Z",
+  "changes": [
+    "CHG-20261024-001",
+    "CHG-20261024-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：好的 开发吧，开发完成之后，结合其他未上线的chg一起，发布生产环境"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "excluded_repositories": [
+    "marketNewsFeed"
+  ],
+  "verification": {
+    "development": "Provider final affected 88 PASS; unittest 571 OK/80 SKIP; Consumer short 28 PASS; all frontend 252 PASS; final affected frontend 16 PASS; build/Ruff PASS",
+    "real_data": "releases/evidence/REL-20261024-001/real-boundary.json",
+    "ci": {
+      "stock-analyzer": {
+        "run_id": 40105815860,
+        "status": "PASS",
+        "commit_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409"
+      },
+      "investment-research-dashboard": {
+        "run_id": 40105803110,
+        "status": "PASS",
+        "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5"
+      }
+    },
+    "status": "PASS_WITH_EMPTY_NEW_STRATEGY_HISTORY",
+    "completed_at": "2026-10-24T23:32:45.411139+08:00",
+    "affected_readback": "releases/evidence/REL-20261024-001/affected-readback.json",
+    "production": "Both exact versions/SHAs/image IDs, health and smoke PASS. New authenticated HTTP contracts, Consumer route serialization, separate research tracking and deployed per-stock page bundle PASS. New history empty, win/loss rates null as required."
+  },
+  "limitations": [
+    "No claimed profitability or retroactive tail samples",
+    "Legacy industry taxonomy unverified and explicitly labeled",
+    "First live T/T+1 sample only forms on subsequent sessions"
+  ],
+  "rollback": {
+    "status": "AVAILABLE",
+    "versions": {
+      "stock-analyzer": "v4.7.1",
+      "investment-research-dashboard": "v0.33.1"
+    },
+    "evidence": "releases/evidence/REL-20261024-001/image-release.plan.json",
+    "database": "Additive records retained, no database downgrade; release backups SKIPPED under compatible routine policy; independent scheduled backup remains unconfirmed."
+  },
+  "time_basis": "Request timestamp unavailable; request_started_at is an approximate first development-preflight time. Exact CI and deployment timestamps come from run metadata and receipt.",
+  "prepared_at": "2026-10-24T15:19:55.153721+00:00",
+  "image_execution_plan": "releases/evidence/REL-20261024-001/image-release.plan.json",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "4.8.0",
+      "tag": "v4.8.0",
+      "commit_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/39",
+      "candidate_evidence": "releases/evidence/REL-20261024-001/provider-candidate/candidate.json",
+      "status": "RELEASED",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:07f019f72eaf05f7a4b26efdc64c343816be225e18f6802a1f62bc01a7393ab0"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "0.34.0",
+      "tag": "v0.34.0",
+      "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/41",
+      "candidate_evidence": "releases/evidence/REL-20261024-001/dashboard-candidate/candidate.json",
+      "status": "RELEASED",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+      }
+    }
+  ],
+  "formal_started_at": "2026-10-24T15:21:08.874163+00:00",
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "receipt": "releases/evidence/REL-20261024-001/deployment.receipt.json",
+    "failed_receipt": "releases/evidence/REL-20261024-001/deployment-attempt1.receipt.json",
+    "started_at": "2026-10-24T15:21:40.969501+00:00",
+    "completed_at": "2026-10-24T15:31:10.249762+00:00",
+    "resume": "Same unchanged plan after Dashboard pull failed before checkout; retry succeeded. Original failure receipt retained; no credential/proxy/runner changes."
+  },
+  "updated_at": "2026-10-24T15:34:29.044412+00:00",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261024-001/deployment-attempt1.receipt.json",
+    "releases/evidence/REL-20261024-001/deployment.receipt.json"
+  ],
+  "timing": {
+    "request_start_is_approximate": true,
+    "development_prepare_ci_seconds_approx": 3835,
+    "prepared_to_production_readback_seconds": 770,
+    "nas_deploy_wall_seconds_including_failed_attempt_and_diagnosis": 569,
+    "total_to_production_readback_seconds_approx": 4605,
+    "target_exceeded": true,
+    "reason": "Development, CI/candidate build, GHCR pull failure and same-plan retry are included; NAS-only timing is not total user wait."
+  }
+}

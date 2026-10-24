@@ -1,0 +1,48 @@
+{
+  "provider": {
+    "commit": "5a946dbac107d59fc4145f8f9f58331abc57c702",
+    "final_affected": {
+      "passed": 88,
+      "command": "SHORT_TEST_DATABASE_URL=<isolated_local_pg> .venv/bin/python -m pytest tests/test_short_tail.py tests/test_short_engine.py tests/test_short_tracking.py tests/test_swing_scheduler.py tests/test_hotmap_data.py -q"
+    },
+    "standard_unittest": {
+      "ran": 571,
+      "skipped": 80,
+      "result": "OK"
+    },
+    "configuration": "PASS",
+    "compileall": "PASS",
+    "new_database": "PostgreSQL16 container chg-20261024-001-short-tail-pg, unique schemas; stopped after tests",
+    "test_environment": "Independent Python3.13 venv; httpx2 installed because current Starlette test client requires it"
+  },
+  "dashboard": {
+    "commit": "0b5bf8e",
+    "short_contract_tests": {
+      "passed": 28,
+      "fixture_provenance": "Provider runtime generated on isolated PostgreSQL synthetic facts; JSON minified without semantic edits"
+    },
+    "frontend_all": {
+      "files": 48,
+      "passed": 252
+    },
+    "final_affected_frontend": {
+      "files": 6,
+      "passed": 16
+    },
+    "build": "vue-tsc, Vite, PWA PASS at0.34.0",
+    "ruff": "89 files format/check PASS",
+    "local_backend_standard": {
+      "passed": 353,
+      "skipped": 3,
+      "protected_seat_tests_not_run": 9,
+      "reason": "Existing whitelist only permits seat_test:55441/55493 or actual GitHub Actions DB. No bypass. Final exact-main CI covers those tests."
+    }
+  },
+  "real_data_evidence": "real-boundary.json",
+  "no_claims": [
+    "profitability",
+    "historical tail backtest",
+    "weekday live latency",
+    "real broker fills"
+  ]
+}

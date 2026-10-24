@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-24T23:32:45.411139+08:00",
+  "scope": "new-tail-provider-consumer-boundary",
+  "unauthenticated_status": 401,
+  "tail": {
+    "selection_contract": "investment-dashboard-short-tail-selection-v1",
+    "tracking_contract": "investment-dashboard-short-tail-tracking-v1",
+    "stats_contract": "investment-dashboard-short-tail-stats-v1",
+    "rules_version": "short-tail-rules-v1",
+    "trade_date": "2026-10-23",
+    "phase": "preview",
+    "quality": "unavailable",
+    "signals": 0,
+    "entries": 0,
+    "settled": 0,
+    "win_rate": null,
+    "issues": [
+      "尚无本策略真实快照"
+    ],
+    "consumer_routes_match": true
+  },
+  "separate_research_tracking": true,
+  "deployed_tail_page_bundle": "ShortSelectionView-BCtjf_8K.js"
+}
