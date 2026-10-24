@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261025-001",
+  "environment": "Production",
+  "release_profile": "routine",
+  "status": "RELEASED",
+  "request_started_at": "2026-10-24T18:05:00Z",
+  "time_basis": "Approximate direct formal user request start; CI/deploy timestamps exact from receipts. Includes assistant/commit/PR/CI wait.",
+  "created_at": "2026-10-24T18:10:24.670311+00:00",
+  "changes": [
+    "CHG-20261025-001"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：修改完成之后就先发生产环境吧，我先休息了；明天我再看"
+  },
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "excluded_repositories": [
+    "stock-analyzer",
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.34.0",
+      "planned_version": "0.35.0",
+      "tag": "v0.35.0",
+      "commit_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/42",
+      "rollback": {
+        "tag": "v0.34.0",
+        "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+        },
+        "image_ids": {
+          "api": "sha256:038fb65cf2b706f769a00d534e694fc66218a58b31f33ea0463a89679045a428",
+          "web": "sha256:55f1db5e5353936868961d1d43df830372b9358daadb6ecab20681bfc70502e9"
+        }
+      },
+      "status": "RELEASED",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83bde18e065f7217c766d75d3c24638b009cafaccd7b094fb8607d6722e3bea7",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c427dc165f0c37616d4a488e9eee963e1d9c9446bc9b79e8f8af2b33f30080a2"
+      },
+      "artifact_id": {
+        "api": "sha256:e8e47251e56b02956fd88bc95cd41a62204dfa234275a4c5b60d668c1d88198c",
+        "web": "sha256:b2fae4e67e7ad1d214b945981810b27da478272f8775598b2b956cd4f4b18577"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261025-001/dashboard-candidate/candidate.json",
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Frontend-only presentation and existing read-API consumers; no migration, schema, startup task, write path, recomputation or existing ledger replacement. Previous code remains compatible with the same data.",
+        "evidence": "CHG-20261025-001; PR42 diff and main CI40120204861 (362 backend/271 frontend PASS), unchanged API/database boundary."
+      },
+      "runtime_metadata": {
+        "api": {
+          "app_version": "0.35.0",
+          "git_commit": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+          "build_time": "2026-10-24T18:23:32Z",
+          "environment": "production",
+          "api_version": "v1"
+        },
+        "web_build_time": "2026-10-24T18:23:34Z"
+      }
+    }
+  ],
+  "verification": {
+    "development": "Affected 64 Vitest + final Watchlist20 recheck; later short entry/legacy/tail/ledger18 PASS; vue-tsc/Vite/PWA PASS. Reuse completed development evidence.",
+    "compatibility": "Frontend only, existing read API semantics and data/strategy/provider unchanged; mock isolated from production entry.",
+    "status": "PASS",
+    "pr_ci": {
+      "run_id": 40119864152,
+      "status": "PASS",
+      "evidence": "https://github.com/mumukun/investment-research-dashboard/actions/runs/40119864152"
+    },
+    "main_ci": {
+      "run_id": 40120204861,
+      "status": "PASS",
+      "commit_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+      "evidence": "https://github.com/mumukun/investment-research-dashboard/actions/runs/40120204861"
+    },
+    "ci_results": "Main CI: backend362 PASS/3 SKIP, frontend271 PASS, both standard/pro Kline builds PASS; candidate isolated API/Web smokes PASS.",
+    "reused_boundaries": "Existing Provider/Consumer boundary unchanged; reuse REL-20261024-001 authenticated contract/readback evidence, not rerun. New read-only page compositions covered in local affected tests and main CI; candidate fixture smokes are isolated evidence only. Sources/contracts/calculations unchanged; reuse REL-20261024-001 real-boundary.json and affected-readback.json, not rerun. Mock fixtures are development-only and not profitability evidence; new live tail history still forms on subsequent sessions.",
+    "production": "PASS; deploy verify stage includes current health/version and smoke, no second smoke run. Build metadata read-only captured for next release baseline."
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "receipt": "releases/evidence/REL-20261025-001/deployment.receipt.json",
+    "started_at": "2026-10-24T18:27:06.385677+00:00",
+    "completed_at": "2026-10-24T18:28:26.856257+00:00",
+    "checks": "Exact tag/SHA and API/Web config IDs, health, runtime version and existing production smoke PASS."
+  },
+  "rollback": {
+    "status": "AVAILABLE",
+    "evidence": "PRODUCTION_BASELINE.yaml and releases/evidence/REL-20261024-001/deployment.receipt.json"
+  },
+  "limitations": [
+    "Local mock shows synthetic scenarios, not strategy performance; first live tail history depends on actual subsequent sessions."
+  ],
+  "prepared_at": "2026-10-24T18:26:05.005834+00:00",
+  "image_execution_plan": "releases/evidence/REL-20261025-001/image-release.plan.json",
+  "formal_started_at": "2026-10-24T18:26:22.955565+00:00",
+  "updated_at": "2026-10-24T18:30:44.894440+00:00",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261025-001/deployment.receipt.json"
+  ],
+  "timing": {
+    "request_start_is_approximate": true,
+    "request_to_ready_seconds_approx": 1265,
+    "ready_to_deploy_success_seconds": 142,
+    "nas_deploy_seconds": 80.471,
+    "total_to_production_success_seconds_approx": 1407,
+    "target_exceeded": true,
+    "reason": "Includes assistant preparation, commits/PR, first failed frontend timer assertion, focused test fix/UTC verification, repeated PR CI, main CI/candidate and NAS deployment. User authorization waiting=0."
+  },
+  "notes": [
+    "NAS noninteractive PATH omitted git; exact fetch retried using documented /usr/local/bin/git before deployment. No production mutation in initial failed fetch.",
+    "Only Dashboard deployed. Provider/News remain unchanged; no new feature flags or production mock data.",
+    "Task worktrees retained for ongoing user review/local demo; no branch/worktree deletion."
+  ]
+}

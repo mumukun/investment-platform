@@ -1,0 +1,75 @@
+{
+  "release_id": "REL-20261025-001",
+  "plan_hash": "1d7d2e2a6fe40689d4c94c94d91bd29244bfbfe060651fdaf713e8bff383a25d",
+  "repositories": {
+    "investment-research-dashboard": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "Frontend-only presentation and existing read-API consumers; no migration, schema, startup task, write path, recomputation or existing ledger replacement. Previous code remains compatible with the same data.",
+          "evidence": "CHG-20261025-001; PR42 diff and main CI40120204861 (362 backend/271 frontend PASS), unchanged API/database boundary."
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "api": "sha256:e8e47251e56b02956fd88bc95cd41a62204dfa234275a4c5b60d668c1d88198c",
+        "web": "sha256:b2fae4e67e7ad1d214b945981810b27da478272f8775598b2b956cd4f4b18577"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-24T18:27:06.385677+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 29.0
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-10-24T18:27:37.597295+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.154
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-10-24T18:27:38.046283+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.376
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-10-24T18:27:38.909938+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 44.167
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-10-24T18:28:23.261197+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 3.403
+    }
+  ],
+  "identity": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.35.0",
+      "commit_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83bde18e065f7217c766d75d3c24638b009cafaccd7b094fb8607d6722e3bea7",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c427dc165f0c37616d4a488e9eee963e1d9c9446bc9b79e8f8af2b33f30080a2"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-24T18:28:26.856257+00:00"
+}
