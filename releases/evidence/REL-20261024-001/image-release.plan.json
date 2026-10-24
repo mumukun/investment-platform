@@ -1,0 +1,168 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261024-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确授权开发完成后结合其他未上线CHG一起发布生产环境。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+        "version": "4.8.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:07f019f72eaf05f7a4b26efdc64c343816be225e18f6802a1f62bc01a7393ab0"
+        },
+        "image_ids": {
+          "app": "sha256:7b5fc6fb1310a844a6893bdb0eb6ce8fe19cef59272a74428f6e74fc049e3295"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+            "run_id": "40105815860"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:07f019f72eaf05f7a4b26efdc64c343816be225e18f6802a1f62bc01a7393ab0"
+            }
+          },
+          "candidate_run_id": "40105879406"
+        }
+      },
+      "tag": "v4.8.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.7.1",
+        "commit_sha": "0658c16bcc24d8a65c6e57f2493ef8d05b67623b",
+        "image_ids": {
+          "stock-api": "sha256:c4f67509e2c065a789f94c67b109a222cf686bfa4226bc5e7681917b2c61af6e",
+          "stock-watch": "sha256:c4f67509e2c065a789f94c67b109a222cf686bfa4226bc5e7681917b2c61af6e"
+        }
+      },
+      "rollback": {
+        "tag": "v4.7.1",
+        "commit_sha": "0658c16bcc24d8a65c6e57f2493ef8d05b67623b",
+        "version": "4.7.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5a5b4fefbde216018a3da4195b8a5d1ebf0b4ad9e3178cae0025d5bf9e94d29f"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Provider adds independent tail run/observation tables and version-isolated trade rows; Consumer writes only a new Snapshot domain. No old ledger replacement, table/column removal, destructive migration or database downgrade. Old code ignores the new tables and keys. Routine policy permits additive compatible changes without a release dump; independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG-20261024-001; isolated PostgreSQL DDL idempotence and frozen/all-row tests; exact-main CI; previous deployed baseline and runtime ImageIDs read-only matched."
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+        "version": "0.34.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+        },
+        "image_ids": {
+          "api": "sha256:038fb65cf2b706f769a00d534e694fc66218a58b31f33ea0463a89679045a428",
+          "web": "sha256:55f1db5e5353936868961d1d43df830372b9358daadb6ecab20681bfc70502e9"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+            "run_id": "40105803110"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+            }
+          },
+          "candidate_run_id": "40105987354"
+        }
+      },
+      "tag": "v0.34.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.33.1",
+        "commit_sha": "bd2f2f646796ff41e434b157013011515e320755",
+        "image_ids": {
+          "api": "sha256:1c7123f562213e4f333e48c917a371f434c9d4fd233ab0d86c6758170c28add0",
+          "web": "sha256:f892e33121888a27b61a41e2953f2fae09ed10068724b1786b60402f43f28946"
+        },
+        "build_time": "2026-10-22T16:00:49Z"
+      },
+      "rollback": {
+        "tag": "v0.33.1",
+        "commit_sha": "bd2f2f646796ff41e434b157013011515e320755",
+        "version": "0.33.1",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6eaa575b1f616cede7874fd999b9b464f2ee32727cf6e54f80188335988c50db",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e4c7008647cf814b1aec5f0c42fadd59da7148800946a00466839bb24d1d3110"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Provider adds independent tail run/observation tables and version-isolated trade rows; Consumer writes only a new Snapshot domain. No old ledger replacement, table/column removal, destructive migration or database downgrade. Old code ignores the new tables and keys. Routine policy permits additive compatible changes without a release dump; independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG-20261024-001; isolated PostgreSQL DDL idempotence and frozen/all-row tests; exact-main CI; previous deployed baseline and runtime ImageIDs read-only matched."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG-20261024-001 plus completed CHG-20261024-002 only. News excluded; previously released Changes not duplicated."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "New tail contract family and rules/pricing/model identities; old close ledger/API retained. Additive tables and Snapshot domain, no breaking migration."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Final Provider affected88 PASS including16 new SQL/auth/scheduler tests; Consumer actual Provider synthetic fixture28 PASS; final affected UI16 PASS/build/Ruff. Both exact merged-main complete CI and same-SHA candidate fixture smokes PASS."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "real-boundary.json: production directory/rules/adjusted-history and Tencent two-stock clocks/amount checked read-only. Unknown legacy industry taxonomy explicitly labeled and isolated, no new source. Weekend cannot prove live tail timing or profitability. One new authenticated Provider/Consumer boundary readback follows deployment."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Existing provider token, domestic direct adapters and short-engine switch retained. Dashboard candidate preserves all three current frontend build flags. No new recipients, sources, account or credentials."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current v4.7.1/0.33.1 exact tag/SHA/config IDs match live production. Retain those digest images; additive data compatible with old code, no database downgrade. Existing verified release runner and NAS proxy unchanged."
+    }
+  }
+}

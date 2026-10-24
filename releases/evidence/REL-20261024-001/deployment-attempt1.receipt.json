@@ -1,0 +1,90 @@
+{
+  "release_id": "REL-20261024-001",
+  "plan_hash": "e6d76a47c4400c2c7d502b17eb891764170f8bd8ad76d64ba0e5c634a6822f35",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "additive",
+          "rollback_compatible": true,
+          "reason": "Provider adds independent tail run/observation tables and version-isolated trade rows; Consumer writes only a new Snapshot domain. No old ledger replacement, table/column removal, destructive migration or database downgrade. Old code ignores the new tables and keys. Routine policy permits additive compatible changes without a release dump; independent scheduled backup remains unconfirmed.",
+          "evidence": "CHG-20261024-001; isolated PostgreSQL DDL idempotence and frozen/all-row tests; exact-main CI; previous deployed baseline and runtime ImageIDs read-only matched."
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:7b5fc6fb1310a844a6893bdb0eb6ce8fe19cef59272a74428f6e74fc049e3295",
+        "stock-watch": "sha256:7b5fc6fb1310a844a6893bdb0eb6ce8fe19cef59272a74428f6e74fc049e3295"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-24T15:21:40.969501+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 109.341
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-24T15:23:33.552168+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.218
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-24T15:23:34.109524+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 1.187
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-24T15:23:35.957308+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 51.324
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-24T15:24:28.241227+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 20.879
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-24T15:24:50.404893+00:00",
+      "status": "FAILED",
+      "elapsed_seconds": 62.664
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v4.8.0",
+      "commit_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:07f019f72eaf05f7a4b26efdc64c343816be225e18f6802a1f62bc01a7393ab0"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v0.34.0",
+      "commit_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:6f7fd22368b68f4104a6a6606e176c5478efe4ae87c53e6a82ff358422794981",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1bad479672354939c8315e95293f2bf6cd433ee9f033b8bd1201d320b7698d06"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "FAILED",
+  "last_operation_at": "2026-10-24T15:25:54.177376+00:00"
+}
