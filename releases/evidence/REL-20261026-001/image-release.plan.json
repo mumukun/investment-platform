@@ -1,0 +1,169 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261026-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：修改完成之后 验证没有问题就正式发版本；我先睡觉了明天再看"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "stock-analyzer",
+        "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+        "version": "4.10.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+        },
+        "image_ids": {
+          "app": "sha256:4b6ea3a8552da51246b6c7263b2b6902ef348b28f51098de1c25b45a11476289"
+        },
+        "build_args": {},
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+            "run_id": "40213452804"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+            }
+          },
+          "candidate_run_id": "40213561509"
+        }
+      },
+      "tag": "v4.10.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.9.0",
+        "commit_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+        "image_ids": {
+          "stock-api": "sha256:b04b3e2477d79abd17d95880dc4ce29cb7e2f6f045952cb111c80dbedd2da0e3",
+          "stock-watch": "sha256:b04b3e2477d79abd17d95880dc4ce29cb7e2f6f045952cb111c80dbedd2da0e3"
+        },
+        "build_time": "2026-10-25T14:24:40Z"
+      },
+      "rollback": {
+        "tag": "v4.9.0",
+        "commit_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+        "version": "4.9.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b32ce5fad07c0935fc1c390c7c66c5511f9991db4c996163343ddebd2ace35c1"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "No new schema migration or destructive rewrite. Existing quote/cache keys add original facts; calendar background cache and new version decision/audit rows use existing tables. Formal ledger/history is preserved; old application ignores new fields and keys. No historical backfill or database downgrade. Independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG-20261025-006 and CHG-20261026-001 isolated PostgreSQL, joint regression and exact-main CI; migrations unchanged."
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+        "version": "0.37.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+        },
+        "image_ids": {
+          "api": "sha256:573ed116b703ddcabce72df76da8d83ec8f286450dc0972e9b5409cbe6785e34",
+          "web": "sha256:ba41a82a919a1a25b05ab1325646f69c82acb0f77dc202d1f9eaefb815c32a45"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+            "run_id": "40213883268"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+            }
+          },
+          "candidate_run_id": "40214196140"
+        }
+      },
+      "tag": "v0.37.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.36.0",
+        "commit_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+        "image_ids": {
+          "api": "sha256:e47151204e9cff3691ecd365d00cd3a1145dfe4a53047f0597034914e05ab5db",
+          "web": "sha256:b4c019f4841261f63da30fb45b029cb2b3c51d82655531f94bb4bc6cce15a745"
+        },
+        "build_time": "2026-10-25T14:32:29Z"
+      },
+      "rollback": {
+        "tag": "v0.36.0",
+        "commit_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+        "version": "0.36.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5173bc5f1242cced576c9f415a520e9265dc3d49f31b1a2297a7e6424c69a1e2",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e40d18d74446154c27ab67d3ad12443923336d0a8f4aed41ec726b64e25bb92f"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "No new schema migration or destructive rewrite. Existing quote/cache keys add original facts; calendar background cache and new version decision/audit rows use existing tables. Formal ledger/history is preserved; old application ignores new fields and keys. No historical backfill or database downgrade. Independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG-20261025-006 and CHG-20261026-001 isolated PostgreSQL, joint regression and exact-main CI; migrations unchanged."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Both selected Changes merged and required exact-main quality CI/candidate pass; News excluded. No unrelated dirty changes included."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Rotation v1 optional securities and valid missing-field semantics retained; new decision context v1 reads existing snapshots. No migration or formal rule/ledger change. Isolated PG and contract regressions pass."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "Joint local frontend274/backend54 plus regression395 (9 seat tests rejected local DB by existing safeguard, run in CI); exact-main full CI/candidate. Existing deployed provider-calendar and rotation HTTP boundary reused from REL-20261025-002; optional quote shape proven local Provider PG→strict Consumer. Targeted new boundaries read after switch."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Local public Fed/BEA/Census56 events and exact Sina directory nodes verified; BLS403 declared degraded, no complete-member claim for pending directories. Existing real industry/calendar evidence reused from REL-20261025-002. Production mock stays disabled; missing history not synthesized."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Existing credentials/env/three VITE flags retained; no external model, paid subscription, notification or trade. NAS downloads existing mihomo, domestic sources direct. Deployer validates candidate build args."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified stockv4.9.0/dashboardv0.36.0 SHA and CI digests retained in PRODUCTION_BASELINE; compatible additive cache/audit data. Deployer checks real baseline before switch."
+    }
+  }
+}

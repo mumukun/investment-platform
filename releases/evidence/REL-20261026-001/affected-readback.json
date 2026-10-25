@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "at": "2026-10-26T01:09:41.708265+08:00",
+  "is_mock": false,
+  "runtime_metadata": {
+    "app_version": "0.37.0",
+    "git_commit": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+    "build_time": "2026-10-25T16:58:22Z",
+    "environment": "production",
+    "api_version": "v1"
+  },
+  "decisions": [
+    {
+      "strategy_type": "intraday",
+      "reference_trade_date": "2026-10-23",
+      "target_trade_date": "2026-10-26",
+      "session_state": "pre_open",
+      "quality": "partial",
+      "universe": "全市场策略候选；不读取自选名单或个人关注级别",
+      "candidate_count": 997,
+      "market_fact_count": 3,
+      "sources": [
+        {
+          "id": "tail",
+          "name": "全市场尾盘短线",
+          "count": 0,
+          "status": "unavailable",
+          "trade_date": "2026-10-26"
+        },
+        {
+          "id": "swing",
+          "name": "全市场波段结构",
+          "count": 900,
+          "status": "stale",
+          "trade_date": "2026-10-23"
+        },
+        {
+          "id": "legacy",
+          "name": "全市场综合短线（旧策略）",
+          "count": 97,
+          "status": "healthy",
+          "trade_date": "2026-10-23"
+        },
+        {
+          "id": "capital",
+          "name": "全市场资金流",
+          "count": 0,
+          "status": "stale",
+          "trade_date": "2026-10-23"
+        }
+      ]
+    },
+    {
+      "strategy_type": "next_day",
+      "reference_trade_date": "2026-10-23",
+      "target_trade_date": "2026-10-26",
+      "session_state": "pre_open",
+      "quality": "partial",
+      "universe": "全市场策略候选；不读取自选名单或个人关注级别",
+      "candidate_count": 997,
+      "market_fact_count": 3,
+      "sources": [
+        {
+          "id": "tail",
+          "name": "全市场尾盘短线",
+          "count": 0,
+          "status": "unavailable",
+          "trade_date": "2026-10-26"
+        },
+        {
+          "id": "swing",
+          "name": "全市场波段结构",
+          "count": 900,
+          "status": "stale",
+          "trade_date": "2026-10-23"
+        },
+        {
+          "id": "legacy",
+          "name": "全市场综合短线（旧策略）",
+          "count": 97,
+          "status": "healthy",
+          "trade_date": "2026-10-23"
+        },
+        {
+          "id": "capital",
+          "name": "全市场资金流",
+          "count": 0,
+          "status": "stale",
+          "trade_date": "2026-10-23"
+        }
+      ]
+    }
+  ],
+  "rotation": {
+    "boards": 13,
+    "bank_members": 30,
+    "bank_quotes": 30,
+    "projection_stale": false
+  },
+  "short_tail": {
+    "trade_date": "2026-10-26",
+    "observation_date": "2026-10-26",
+    "quality": "unavailable",
+    "calendar_state": "trading_day",
+    "fallback_reason": null,
+    "issues": [
+      "尚无本策略真实快照"
+    ]
+  },
+  "calendar": {
+    "events": 25,
+    "source_status": {
+      "status": "degraded",
+      "coverage": 0.75,
+      "is_mock": false,
+      "last_success_at": "2026-10-26T01:06:58+08:00",
+      "issues": [
+        "BLS 日历不可用：HTTPError"
+      ]
+    },
+    "consumer_events": 25,
+    "consumer_census_events": 17,
+    "consumer_source_status": {
+      "issues": [
+        "BLS 日历不可用：HTTPError"
+      ],
+      "status": "degraded",
+      "is_mock": false,
+      "coverage": 0.75,
+      "last_success_at": "2026-10-26T01:06:58+08:00"
+    }
+  },
+  "component_build_times": {
+    "stock": "2026-10-25T16:50:06Z",
+    "api": "2026-10-25T16:58:22Z",
+    "web": "2026-10-25T16:58:25Z"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "scope": "local-validation-only-not-production",
+  "change_id": "CHG-20261025-006",
+  "git_state": "uncommitted-local-only",
+  "affected": [
+    "stock-analyzer",
+    "investment-research-dashboard",
+    "investment-platform"
+  ],
+  "excluded": [
+    "marketNewsFeed"
+  ],
+  "tests": {
+    "provider_suite": {
+      "passed": 64,
+      "subtests_passed": 19,
+      "skipped": 1,
+      "skip_reason": "explicit performance benchmark not requested"
+    },
+    "provider_calendar_after_host_guard": {
+      "passed": 16
+    },
+    "consumer": {
+      "passed": 25
+    },
+    "ui": {
+      "passed": 43,
+      "files": 9
+    },
+    "typescript_vite_pwa_build": "PASS",
+    "consumer_ruff_format": "PASS",
+    "provider_compile": "PASS",
+    "git_diff_check": "PASS",
+    "synthetic_provider_consumer_rotation_contract": "PASS"
+  },
+  "public_calendar_check": {
+    "status": "DEGRADED",
+    "scope": "local-real-public-calendars-not-production",
+    "events": 56,
+    "source_counts": {
+      "Federal Reserve": 2,
+      "U.S. Bureau of Economic Analysis": 13,
+      "U.S. Census Bureau": 41
+    },
+    "issues": [
+      "BLS 日历不可用：HTTPError"
+    ]
+  },
+  "tech_directory_candidates_only": [
+    [
+      "人脑工程（脑机接口）",
+      "chgn_701198"
+    ],
+    [
+      "信创概念",
+      "chgn_700900"
+    ],
+    [
+      "半导体材料",
+      "chgn_701383"
+    ],
+    [
+      "半导体设备",
+      "chgn_701279"
+    ],
+    [
+      "操作系统",
+      "chgn_700735"
+    ],
+    [
+      "消费电子",
+      "chgn_701218"
+    ],
+    [
+      "端侧AI",
+      "chgn_701356"
+    ],
+    [
+      "网络安全",
+      "chgn_700135"
+    ],
+    [
+      "量子技术",
+      "chgn_700225"
+    ]
+  ],
+  "local_mock_preview": "http://127.0.0.1:5180/rotation-board",
+  "production_browser": "Blocked by Browser Use URL policy; not bypassed; user screenshots plus code and local fixtures used",
+  "production_tests": "NOT_RUN",
+  "limitations": [
+    "BLS HTTP 403",
+    "earnings requires configured optional source",
+    "historical unknown streaks unchanged",
+    "unrecorded historical tail strategy runs cannot be invented"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "PASS_WITH_DECLARED_LOCAL_LIMITATION",
+  "frontend": {
+    "tests": 274,
+    "files": 51,
+    "build": "vue-tsc/Vite/PWA PASS",
+    "logs": "/tmp/rel20261026-ui.log; /tmp/rel20261026-build.log"
+  },
+  "backend_targeted": {
+    "passed": 54
+  },
+  "backend_regression": {
+    "passed": 395,
+    "skipped": 3,
+    "not_run": 9,
+    "reason": "Existing seat tests reject local decision_test database by port/name safety guard; keep safeguard intact and require full GitHub CI.",
+    "seat_ci_verified": true
+  },
+  "ci_recovery": {
+    "failed_run": 40213355615,
+    "causes": [
+      "Python pyproject/uv version missing 0.37.0",
+      "Test fixtures unintentionally included other seeded legacy/capital snapshots"
+    ],
+    "fix_commit": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+    "production_mutation_during_failure": false
+  },
+  "approval_review": {
+    "rejected": "Combined CI wait and merge command could continue after failed wait",
+    "executed": false,
+    "resolution": "Separate CI wait, inspect successful result, then issue merge alone; no approval bypass."
+  },
+  "exact_main_ci": {
+    "stock-analyzer": {
+      "run_id": 40213452804,
+      "sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+      "status": "PASS",
+      "tests": "819 passed,172 skipped,73 subtests"
+    },
+    "investment-research-dashboard": {
+      "run_id": 40213883268,
+      "sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+      "status": "PASS",
+      "scope": "full backend, migration/lint, frontend, normal and professional builds",
+      "tests": "404 passed,3 skipped; frontend274/51 files"
+    }
+  }
+}
