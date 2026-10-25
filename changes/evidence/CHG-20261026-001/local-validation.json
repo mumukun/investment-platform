@@ -1,0 +1,49 @@
+{
+  "scope": "local-only-not-production",
+  "state": "uncommitted",
+  "affected": [
+    "investment-research-dashboard",
+    "investment-platform"
+  ],
+  "excluded": [
+    "stock-analyzer",
+    "marketNewsFeed"
+  ],
+  "branch": "fix/CHG-20261026-001-market-decision-scope",
+  "dashboard_base": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+  "governance_base": "22c9d6dae025ef04e7e426582fe9a75f6a18998f",
+  "checks": {
+    "backend_affected_before_final_cutoff_guard": {
+      "passed": 32
+    },
+    "backend_context_after_final_guard": {
+      "passed": 21
+    },
+    "frontend": {
+      "files": 4,
+      "passed": 44
+    },
+    "ruff": "PASS",
+    "format": "PASS",
+    "vue_tsc_vite_pwa": "PASS",
+    "git_diff_check": "PASS",
+    "existing_migrations_in_dedicated_test_db": "PASS"
+  },
+  "test_database": "127.0.0.1:55496/decision_test (isolated local only)",
+  "preview": "http://127.0.0.1:5181/decisions",
+  "browser_checks": [
+    "18 synthetic non-watchlist main-board observations",
+    "missing tail source leaves wave and capital facts visible",
+    "reference and target dates separate",
+    "explicit save creates synthetic audit history",
+    "shared candidate drawer preserves source and hides personal tabs"
+  ],
+  "browser_note": "Initial Vite dependency optimization produced temporary import failures; final local reload and candidate-detail checks passed. No production browser read was attempted.",
+  "production_verification": "NOT_RUN",
+  "commits_push_pr_merge_tags_deploy": "NOT_PERFORMED",
+  "remaining": [
+    "user visual acceptance",
+    "actual production source completeness not verified",
+    "external AI model remains unconnected by design"
+  ]
+}

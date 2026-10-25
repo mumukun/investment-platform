@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261026-001",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "created_at": "2026-10-25T16:47:58.311771+00:00",
+  "request_observed_at": "2026-10-25T16:45:22Z",
+  "request_start_is_approximate": true,
+  "authorization": "用户：修改完成之后 验证没有问题就正式发版本；我先睡觉了明天再看",
+  "changes": [
+    "CHG-20261025-006",
+    "CHG-20261026-001"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.9.0",
+      "planned_version": "4.10.0",
+      "tag": "v4.10.0",
+      "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/41",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+      },
+      "artifact_id": {
+        "app": "sha256:4b6ea3a8552da51246b6c7263b2b6902ef348b28f51098de1c25b45a11476289"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261026-001/stock-candidate/candidate.json",
+      "rollback": {
+        "tag": "v4.9.0",
+        "commit_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+        "version": "4.9.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b32ce5fad07c0935fc1c390c7c66c5511f9991db4c996163343ddebd2ace35c1"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "No new schema migration or destructive rewrite. Existing quote/cache keys add original facts; calendar background cache and new version decision/audit rows use existing tables. Formal ledger/history is preserved; old application ignores new fields and keys. No historical backfill or database downgrade. Independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG-20261025-006 and CHG-20261026-001 isolated PostgreSQL, joint regression and exact-main CI; migrations unchanged."
+      },
+      "ci": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+          "run_id": "40213452804"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+          }
+        },
+        "candidate_run_id": "40213561509"
+      },
+      "status": "RELEASED",
+      "deployed_at": "2026-10-25T17:05:23.332534+00:00"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.36.0",
+      "planned_version": "0.37.0",
+      "tag": "v0.37.0",
+      "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/44",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+      },
+      "artifact_id": {
+        "api": "sha256:573ed116b703ddcabce72df76da8d83ec8f286450dc0972e9b5409cbe6785e34",
+        "web": "sha256:ba41a82a919a1a25b05ab1325646f69c82acb0f77dc202d1f9eaefb815c32a45"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261026-001/dashboard-candidate/candidate.json",
+      "rollback": {
+        "tag": "v0.36.0",
+        "commit_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+        "version": "0.36.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5173bc5f1242cced576c9f415a520e9265dc3d49f31b1a2297a7e6424c69a1e2",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e40d18d74446154c27ab67d3ad12443923336d0a8f4aed41ec726b64e25bb92f"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "No new schema migration or destructive rewrite. Existing quote/cache keys add original facts; calendar background cache and new version decision/audit rows use existing tables. Formal ledger/history is preserved; old application ignores new fields and keys. No historical backfill or database downgrade. Independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG-20261025-006 and CHG-20261026-001 isolated PostgreSQL, joint regression and exact-main CI; migrations unchanged."
+      },
+      "ci": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+          "run_id": "40213883268"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+          }
+        },
+        "candidate_run_id": "40214196140"
+      },
+      "status": "RELEASED",
+      "deployed_at": "2026-10-25T17:05:23.332534+00:00"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "changes/evidence/CHG-20261025-006/local-validation.json",
+      "changes/evidence/CHG-20261026-001/local-validation.json",
+      "releases/evidence/REL-20261026-001/joint-validation.json",
+      "releases/evidence/REL-20261026-001/deployment.receipt.json",
+      "releases/evidence/REL-20261026-001/affected-readback.json",
+      "releases/evidence/REL-20261026-001/calendar-refresh.json",
+      "releases/evidence/REL-20261026-001/calendar-consumer-refresh.json"
+    ],
+    "known_limitations": [
+      "BLS公共源403降级；旧连板与未冻结策略历史不补造；科技新增目录待完整成员核验。"
+    ],
+    "results": "Exact immutable main CI artifacts deployed; live baseline/identity/health/auth smoke PASS. Decision context997 original source rows, actual session calendar; industry13/bank30 original quotes. Source gaps explicitly retained; no production mock."
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "started_at": "2026-10-25T17:01:34.236159+00:00",
+    "completed_at": "2026-10-25T17:05:23.332534+00:00",
+    "order": [
+      "stock-analyzer",
+      "investment-research-dashboard"
+    ]
+  },
+  "notes": [
+    "本次授权仅两项Change；News和其他未完成Change排除。两轮工作树保留供本地预览。",
+    "无新增迁移；已有缓存键/可选行情字段/原表新增版本决策记录保持兼容。",
+    "Business PRs merged: stock#41 2e281d4, dashboard#44 3021483; dashboard initial CI failure corrected and PR CI passed. Waiting frozen-main CI/candidate.",
+    "Initial NAS tag fetch did not mutate production: noninteractive PATH lacked git. Retried configured /usr/local/bin/git; no config or permissions changed.",
+    "Calendar-only refresh56 official events; initial Consumer read still used startup cache, preserved affected-readback-failure.txt. Existing scheduled projection refreshed once; final Consumer25 events includes17 Census, BLSHTTPError degraded. No timer/config/code changes or duplicate deployment."
+  ],
+  "updated_at": "2026-10-25T17:10:15.050807+00:00",
+  "prepared_at": "2026-10-25T17:00:43.886281+00:00",
+  "image_execution_plan": "releases/evidence/REL-20261026-001/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261026-001/stock-candidate/candidate.json",
+    "releases/evidence/REL-20261026-001/dashboard-candidate/candidate.json"
+  ],
+  "completed_at": "2026-10-26T01:09:41.708265+08:00",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261026-001/deployment.receipt.json"
+  ],
+  "rollback": {
+    "status": "AVAILABLE",
+    "evidence": "Per-repository exact previous stable CI digests/SHA retained; compatible code rollback, no database downgrade. Published tags remain immutable."
+  },
+  "timing": {
+    "request_start_is_approximate": true,
+    "request_to_production_verified_seconds": 1459.7,
+    "preparation_seconds": 921.9,
+    "formal_and_affected_verification_seconds": 537.8,
+    "user_authorization_wait_seconds": 0,
+    "target_seconds": 300,
+    "target_exceeded": true,
+    "reason": "Includes joint integration tests/commits, initial CI version/test-isolation correction, PR/main quality and candidate builds, NAS exact-tag fetch path recovery, image pull/container startup and affected data refresh."
+  },
+  "limitations": [
+    "BLS403/transport source degradation remains explicitly shown; calendar does not claim complete corporate earnings coverage.",
+    "Existing unknown streak heights and unrecorded formal tail-strategy history are not fabricated. Current tail has no real snapshot; no historical profit or buy-eligibility claim.",
+    "Nine technology directory nodes remain pending complete-member verification.",
+    "Local previews/worktrees retained; no cleanup of unrelated work. Production page browser inspection was policy-blocked previously; release health and affected authenticated APIs verified without bypassing the page block.",
+    "Independent scheduled database backups remain unconfirmed; reviewed additive compatible release backup mode SKIPPED."
+  ]
+}
