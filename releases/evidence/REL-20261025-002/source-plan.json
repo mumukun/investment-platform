@@ -1,0 +1,64 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261025-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.5.0",
+      "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+      "expected_production": {
+        "tag": "v2.4.2",
+        "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+        "image_id": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+        "evidence": "125 offline unit tests plus compile/config passed; merged main tree equals tested branch (git diff --quiet). No configured remote CI."
+      },
+      "database_backup": {
+        "mode": "full",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "New durable jobs/evidence/version tables and topic idempotence write path; preserve complete News DB before switch. No delete/backfill/downgrade; old application ignores new tables.",
+        "evidence": "CHG005 offline transaction/lease/retry/dedup tests; protected NAS deployer pg_dump + archive readability."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "CHG005 News PR13 merged at exact main; version2.5.0 tag freezes that tree."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "CREATE IF NOT EXISTS additive tables; existing signal projection and old fields retained, nullable research evidence. Code rollback preserves new tables/jobs."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "125 offline tests include atomic queue/evidence writes, independent retries and child supervision; Consumer optional fields tested. Existing production health/smoke runs at switch."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "No new news source/vendor/prompt investment rule; reuse verified existing research source boundary; new optional provenance explicitly legacy-unknown for old records. Queue behavior validated offline; no extra LLM/message probe."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Existing credentials/source intervals retained; bounded three workers; proxy path unchanged. No new production mock or feature flags."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current v2.4.2 / 50034871 and image20fe1e748b10 retained; compatible additive DB with full protected backup before switch. Source runner has no automatic rollback mode."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：提交代码 部署生产环境 ，带上其他 chg 一起"
+  }
+}

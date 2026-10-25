@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "at": "2026-10-25T14:45:08.686004+00:00",
+  "is_mock": false,
+  "calendar": {
+    "contract": "investment-dashboard-trading-calendar-v1",
+    "coverage_start": "1990-12-19",
+    "coverage_end": "2026-12-31"
+  },
+  "provider_rotation": {
+    "contract": "investment-dashboard-rotation-board-v1",
+    "boards": 13
+  },
+  "consumer_rotation": {
+    "boards": 13,
+    "quotes": 13,
+    "projection_stale": false,
+    "last_sync_at": "2026-10-25T22:44:47.133077+08:00"
+  },
+  "swing_pagination": {
+    "returned": 10,
+    "pagination": {
+      "page": 1,
+      "page_size": 10,
+      "total": 900,
+      "scope": "all"
+    }
+  },
+  "app_url": "http://s.freemumu.top:9360",
+  "runtime_metadata": {
+    "app_version": "0.36.0",
+    "git_commit": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+    "build_time": "2026-10-25T14:32:29Z",
+    "environment": "production",
+    "api_version": "v1"
+  }
+}

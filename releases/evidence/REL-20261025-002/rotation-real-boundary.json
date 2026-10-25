@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "local-real-provider-to-consumer-projection",
+  "contract": "investment-dashboard-rotation-board-v1",
+  "indices": 13,
+  "quotes": 13,
+  "daily_series": 13,
+  "complete_members": 10,
+  "is_mock": false,
+  "transaction_rolled_back": true
+}
