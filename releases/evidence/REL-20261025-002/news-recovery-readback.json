@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "at": "2026-10-25T14:30:32.266226+00:00",
+  "tag": "v2.5.0",
+  "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+  "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+  "checks": [
+    "same health",
+    "same authenticated research smoke",
+    "new authenticated pipeline GET",
+    "exact tag/SHA/image",
+    "clean tracked checkout"
+  ],
+  "original_receipt": "news-deployment.receipt.json",
+  "original_verify_failure_retained": true,
+  "redeployed": false,
+  "limitation": "Initial verify failed during startup; subsequent same-version checks pass. Original exact exception unavailable from protected runner output."
+}

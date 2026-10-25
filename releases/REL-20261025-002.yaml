@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261025-002",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "release_target_seconds": 300,
+  "request_started_at": "2026-10-25T14:06:36+00:00",
+  "created_at": "2026-10-25T14:24:57.135876+00:00",
+  "changes": [
+    "CHG-20261025-002",
+    "CHG-20261025-003",
+    "CHG-20261025-004",
+    "CHG-20261025-005"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户：提交代码 部署生产环境 ，带上其他 chg 一起"
+  },
+  "release_order": [
+    "marketNewsFeed",
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "previous_version": "v2.4.2",
+      "planned_version": "2.5.0",
+      "tag": "v2.5.0",
+      "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/13",
+      "rollback": {
+        "tag": "v2.4.2",
+        "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+        "artifact": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b",
+        "artifact_id": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b"
+      },
+      "status": "RELEASED",
+      "artifact_model": "SOURCE_TAG_BUILD",
+      "artifact_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+      "artifact_digest": "UNKNOWN",
+      "artifact": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+      "database_backup": {
+        "status": "PASS",
+        "policy": {
+          "mode": "full",
+          "data_impact": "additive",
+          "rollback_compatible": true,
+          "reason": "New durable jobs/evidence/version tables and topic idempotence write path; preserve complete News DB before switch. No delete/backfill/downgrade; old application ignores new tables.",
+          "evidence": "CHG005 offline transaction/lease/retry/dedup tests; protected NAS deployer pg_dump + archive readability."
+        },
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261025-002/market_news.dump",
+        "sha256": "e8cfc4980a7e562935a09b4422c770392be094236e2055366c2e749d23dc7820",
+        "size": 72856457,
+        "readability": "PASS"
+      },
+      "rollback_version": "v2.4.2",
+      "deployed_at": "2026-10-25T14:30:32.266226+00:00"
+    },
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.8.0",
+      "planned_version": "4.9.0",
+      "tag": "v4.9.0",
+      "commit_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/40",
+      "rollback": {
+        "tag": "v4.8.0",
+        "commit_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+        "artifact": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:07f019f72eaf05f7a4b26efdc64c343816be225e18f6802a1f62bc01a7393ab0"
+        },
+        "artifact_id": {
+          "app": "sha256:7b5fc6fb1310a844a6893bdb0eb6ce8fe19cef59272a74428f6e74fc049e3295"
+        }
+      },
+      "status": "RELEASED",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b32ce5fad07c0935fc1c390c7c66c5511f9991db4c996163343ddebd2ace35c1"
+      },
+      "artifact_id": {
+        "app": "sha256:b04b3e2477d79abd17d95880dc4ce29cb7e2f6f045952cb111c80dbedd2da0e3"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261025-002/stock-candidate/candidate.json",
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "New rotation facts/snapshot keys and compatible optional provenance/calendar/query changes. Existing tables, ledger rows and formal strategy remain; no destructive migration, backfill or downgrade. Old code ignores added keys/fields. Independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG004/005 isolated PG transactions and contract tests; exact main quality CI and image candidate PASS. Dashboard Alembic unchanged; Provider additive cache keys only."
+      },
+      "ci": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+          "run_id": "40201979489"
+        },
+        "candidate_run_id": "40202084289"
+      },
+      "rollback_version": "v4.8.0",
+      "deployed_at": "2026-10-25T14:38:58.281656+00:00"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.35.0",
+      "planned_version": "0.36.0",
+      "tag": "v0.36.0",
+      "commit_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/43",
+      "rollback": {
+        "tag": "v0.35.0",
+        "commit_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+        "artifact": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:83bde18e065f7217c766d75d3c24638b009cafaccd7b094fb8607d6722e3bea7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c427dc165f0c37616d4a488e9eee963e1d9c9446bc9b79e8f8af2b33f30080a2"
+        },
+        "artifact_id": {
+          "api": "sha256:e8e47251e56b02956fd88bc95cd41a62204dfa234275a4c5b60d668c1d88198c",
+          "web": "sha256:b2fae4e67e7ad1d214b945981810b27da478272f8775598b2b956cd4f4b18577"
+        }
+      },
+      "status": "RELEASED",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5173bc5f1242cced576c9f415a520e9265dc3d49f31b1a2297a7e6424c69a1e2",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e40d18d74446154c27ab67d3ad12443923336d0a8f4aed41ec726b64e25bb92f"
+      },
+      "artifact_id": {
+        "api": "sha256:e47151204e9cff3691ecd365d00cd3a1145dfe4a53047f0597034914e05ab5db",
+        "web": "sha256:b4c019f4841261f63da30fb45b029cb2b3c51d82655531f94bb4bc6cce15a745"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261025-002/dashboard-candidate/candidate.json",
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "New rotation facts/snapshot keys and compatible optional provenance/calendar/query changes. Existing tables, ledger rows and formal strategy remain; no destructive migration, backfill or downgrade. Old code ignores added keys/fields. Independent scheduled backup remains unconfirmed.",
+        "evidence": "CHG004/005 isolated PG transactions and contract tests; exact main quality CI and image candidate PASS. Dashboard Alembic unchanged; Provider additive cache keys only."
+      },
+      "ci": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+          "run_id": "40202439940"
+        },
+        "candidate_run_id": "40202708053"
+      },
+      "rollback_version": "v0.35.0",
+      "deployed_at": "2026-10-25T14:38:58.281656+00:00"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "evidence": [
+      "releases/evidence/REL-20261025-002/rotation-real-boundary.json",
+      "releases/evidence/REL-20261025-002/news-recovery-readback.json",
+      "releases/evidence/REL-20261025-002/deployment.receipt.json",
+      "releases/evidence/REL-20261025-002/affected-readback.json"
+    ],
+    "main_ci_results": {
+      "stock-analyzer": "812 passed,171 skipped,73 subtests; CI40201979489",
+      "investment-research-dashboard": "backend + migration/lint, frontend272/50 files, normal+pro builds PASS; CI40202439940"
+    },
+    "results": "Exact main quality CI and candidate image smokes pass. Production original health/version/smoke pass; affected real calendar,13 rotation quotes and pagination readback pass; mock disabled."
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "started_at": "2026-10-25T14:25:37.296383+00:00",
+    "completed_at": "2026-10-25T14:45:08.686004+00:00",
+    "order": [
+      "marketNewsFeed",
+      "stock-analyzer",
+      "investment-research-dashboard"
+    ],
+    "recovery": "News original verify FAILED preserved; same immutable runtime later passed original health/smoke plus new pipeline and identity. Images first stopped before switch because NAS tags were not fetched; same frozen plan resumed after exact fetch."
+  },
+  "notes": [
+    "CHG001 already released and excluded. Production mocks stay off. Independent scheduled backup tool remains uninstalled; no schedule/retention/remote replica activation.",
+    "Initial industry snapshot had13 index descriptors/0 quotes while collector waited behind technology full startup refresh. Saved diagnostic; bootstrap new rotation domain from exact deployed image without transactions/LLM/notifications, then verify Consumer sync."
+  ],
+  "updated_at": "2026-10-25T14:45:08.954162+00:00",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261025-002/news-deployment.receipt.json",
+    "releases/evidence/REL-20261025-002/news-recovery-readback.json",
+    "releases/evidence/REL-20261025-002/deployment-before-tag-fetch.receipt.json",
+    "releases/evidence/REL-20261025-002/deployment.receipt.json"
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261025-002/image-release.plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261025-002/stock-candidate/candidate.json",
+    "releases/evidence/REL-20261025-002/dashboard-candidate/candidate.json"
+  ],
+  "prepared_at": "2026-10-25T14:34:38.807636+00:00",
+  "completed_at": "2026-10-25T14:45:08.686004+00:00",
+  "rollback": {
+    "status": "AVAILABLE",
+    "evidence": "Exact previous Production identities in each repository entry, retained images and protected News dump; no database downgrade."
+  },
+  "limitations": [
+    "No claim of strategy profitability or statistically complete historical replay; research remains unactivated.",
+    "CSI three complete constituent lists unavailable; gold only close points, no fabricated OHLC.",
+    "Independent scheduled backups/retention/offsite copy not installed; News pre-switch full dump passed readability/checksum.",
+    "News initial verify failed during startup; exact initial exception unavailable from protected runner; original failure and successful same-identity readback both retained. News source build certifies Image ID, registry digest unavailable."
+  ],
+  "timing": {
+    "request_start_is_approximate": false,
+    "request_to_production_verified_seconds": 2312.7,
+    "user_authorization_wait_seconds": 0,
+    "target_seconds": 300,
+    "target_exceeded": true,
+    "reason": "Includes restoring lost color worktree changes, joint integration/navigation-test correction, commit/PR/main CI/candidates, News initial verification recovery, NAS tag fetch omission and same-plan resume, then affected production reads.",
+    "nas_source_seconds": 142.8
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "release_id": "REL-20261025-002",
+  "repository": "marketNewsFeed",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "tag": "v2.5.0",
+  "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+  "status": "FAILED",
+  "stage": "verify",
+  "previous": {
+    "tag": "v2.4.2",
+    "commit_sha": "50034871eefcfd07f472117c126bdcb6327bf015",
+    "image_id": "sha256:20fe1e748b10b4e3561275dcddbb7d78227ec204407cc5aad3b6e088ab14485b"
+  },
+  "started_at": "2026-10-25T14:25:37.296383+00:00",
+  "backup": {
+    "status": "PASS",
+    "policy": {
+      "mode": "full",
+      "data_impact": "additive",
+      "rollback_compatible": true,
+      "reason": "New durable jobs/evidence/version tables and topic idempotence write path; preserve complete News DB before switch. No delete/backfill/downgrade; old application ignores new tables.",
+      "evidence": "CHG005 offline transaction/lease/retry/dedup tests; protected NAS deployer pg_dump + archive readability."
+    },
+    "path": "/volume1/docker/.investment-platform-releases/REL-20261025-002/market_news.dump",
+    "sha256": "e8cfc4980a7e562935a09b4422c770392be094236e2055366c2e749d23dc7820",
+    "size": 72856457,
+    "readability": "PASS"
+  },
+  "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+  "observed": {
+    "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+    "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6"
+  },
+  "completed_at": "2026-10-25T14:28:00.059210+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "stock-api": {
+    "created": "2026-10-25T14:24:40Z",
+    "revision": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+    "version": "4.9.0"
+  },
+  "investment-research-dashboard-nas-api-1": {
+    "created": "2026-10-25T14:32:29Z",
+    "revision": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+    "version": "0.36.0"
+  },
+  "investment-research-dashboard-nas-web-1": {
+    "created": "2026-10-25T14:32:29Z",
+    "revision": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+    "version": "0.36.0"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "status": "DIAGNOSTIC",
+  "at": "2026-10-25T14:39:45.895513+00:00",
+  "is_mock": false,
+  "calendar": {
+    "contract": "investment-dashboard-trading-calendar-v1",
+    "coverage_start": "1990-12-19",
+    "coverage_end": "2026-12-31"
+  },
+  "provider_rotation": {
+    "contract": "investment-dashboard-rotation-board-v1",
+    "boards": [
+      {
+        "id": "cni-399431",
+        "quote": false
+      },
+      {
+        "id": "cni-399438",
+        "quote": false
+      },
+      {
+        "id": "cni-399436",
+        "quote": false
+      },
+      {
+        "id": "csi-399997",
+        "quote": false
+      },
+      {
+        "id": "cni-980028",
+        "quote": false
+      },
+      {
+        "id": "cni-399437",
+        "quote": false
+      },
+      {
+        "id": "csi-399809",
+        "quote": false
+      },
+      {
+        "id": "cni-399395",
+        "quote": false
+      },
+      {
+        "id": "csi-932265",
+        "quote": false
+      },
+      {
+        "id": "cni-399439",
+        "quote": false
+      },
+      {
+        "id": "cni-399394",
+        "quote": false
+      },
+      {
+        "id": "cni-399393",
+        "quote": false
+      },
+      {
+        "id": "cni-399321",
+        "quote": false
+      }
+    ]
+  },
+  "consumer_rotation": {
+    "boards": 13,
+    "quotes": 0,
+    "projection_stale": false,
+    "last_sync_at": "2026-10-25T22:38:45.541683+08:00"
+  },
+  "swing_pagination": {
+    "returned": 10,
+    "pagination": {
+      "page": 1,
+      "page_size": 10,
+      "total": 900,
+      "scope": "all"
+    }
+  },
+  "app_url": "http://s.freemumu.top:9360",
+  "runtime_metadata": {
+    "app_version": "0.36.0",
+    "git_commit": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+    "build_time": "2026-10-25T14:32:29Z",
+    "environment": "production",
+    "api_version": "v1"
+  }
+}

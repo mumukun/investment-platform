@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-25T14:44:00.447983+00:00",
+  "operation": "new rotation domain first collection using deployed artifact",
+  "source_mode": "real",
+  "result": {
+    "valid_quotes": 13,
+    "issues": []
+  }
+}
