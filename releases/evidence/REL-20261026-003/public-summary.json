@@ -1,0 +1,195 @@
+{
+  "release_id": "REL-20261026-003",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261026-006",
+    "CHG-20261026-007"
+  ],
+  "deployment_completed_at": "2026-10-26T15:43:08.076477+00:00",
+  "order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "version": "4.12.0",
+      "tag": "v4.12.0",
+      "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+      },
+      "image_ids": {
+        "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+      },
+      "rollback_tag": "v4.11.0",
+      "backup_status": "SKIPPED",
+      "quality_run_id": "40348811937",
+      "candidate_run_id": "40349054540"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "version": "0.39.0",
+      "tag": "v0.39.0",
+      "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+      },
+      "image_ids": {
+        "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+        "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+      },
+      "rollback_tag": "v0.38.0",
+      "backup_status": "SKIPPED",
+      "quality_run_id": "40349414750",
+      "candidate_run_id": "40349863206"
+    }
+  ],
+  "deployment_stages": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-26T15:39:08.127274+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 20.939
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-26T15:39:31.173492+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.294
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-26T15:39:31.832417+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.304
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-26T15:39:32.956700+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 45.75
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-26T15:40:19.201798+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 23.862
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-26T15:40:43.379808+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 59.381
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-10-26T15:41:45.084250+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.461
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-10-26T15:41:46.112863+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.871
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-10-26T15:41:47.694251+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 75.962
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-10-26T15:43:03.763017+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 3.672
+    }
+  ],
+  "affected_readback": {
+    "runtime": {
+      "app_version": "0.39.0",
+      "git_commit": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+      "build_time": "2026-10-26T15:29:57Z",
+      "environment": "production",
+      "api_version": "v1"
+    },
+    "release_id": "REL-20261026-003",
+    "checks": {
+      "swing": {
+        "contract": "investment-dashboard-swing-selection-v4",
+        "trade_date": "2026-10-26",
+        "rows_returned": 2,
+        "current_rows": 887,
+        "quality": "partial",
+        "source_time": "2026-10-26T23:44:29+08:00",
+        "display_basis": "latest_available",
+        "fallback": false,
+        "detail_same_generation": true,
+        "provider_contract_validated": true
+      },
+      "tail": {
+        "contract": "investment-dashboard-short-tail-selection-v1",
+        "trade_date": "2026-10-26",
+        "rows_returned": 0,
+        "current_rows": 0,
+        "quality": "stale",
+        "source_time": "2026-10-26T14:55:53.083278+08:00",
+        "display_basis": "legacy_last_available",
+        "fallback": true,
+        "provider_contract_validated": true
+      },
+      "watch": {
+        "contract": "investment-dashboard-watchlist-strategy-v3",
+        "trade_date": "2026-10-26",
+        "quality": "healthy",
+        "source_time": "2026-10-26T23:56:26+08:00",
+        "display_basis": null,
+        "fallback": false,
+        "provider_contract_validated": true
+      },
+      "margin": {
+        "actual_trade_date": "2026-10-23",
+        "rows_returned": 2,
+        "quality": "fresh",
+        "issues_count": 3,
+        "coverage_start": "2026-09-10"
+      }
+    },
+    "limitations": [
+      "Current session is closed; next trading-session collection and refresh have not been observed.",
+      "Tail current is unavailable in this closed-session readback; explicit legacy fallback remains visible.",
+      "Margin historical gaps remain; latest-day freshness does not certify full selected-range coverage."
+    ],
+    "status": "PASS"
+  },
+  "limitations": [
+    "Actual next trading-session continuous refresh not yet verified; current session is closed.",
+    "120 seconds is an optimization reference, not a display or acceptance cutoff.",
+    "Tail current snapshot has not been generated in the closed session; the page explicitly serves the existing dated legacy fallback. No formal tail result was reconstructed.",
+    "Margin default range is three months; actual history coverage remains incomplete and existing issues are exposed while bounded background collection continues."
+  ],
+  "timing": {
+    "request_started_at": "2026-10-26T15:02:29+00:00",
+    "preparation_seconds": 1879.0,
+    "user_authorization_wait_seconds": 0,
+    "target_seconds": 300,
+    "request_to_deployment_verified_seconds": 2439.1,
+    "pre_deployment_seconds": 2185.7,
+    "deploy_seconds": 253.4,
+    "target_exceeded": true,
+    "request_to_affected_verification_seconds": 3498.6
+  }
+}

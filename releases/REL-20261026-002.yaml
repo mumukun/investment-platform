@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261026-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261026-002",
+    "CHG-20261026-003",
+    "CHG-20261026-004",
+    "CHG-20261026-005"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.10.0",
+      "planned_version": "4.11.0",
+      "tag": "v4.11.0",
+      "commit_sha": "e85c12cbe7c93aaad79034ea452bf73258c1c4b7",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:4c3c41c13ade7634f181812ac9d4a5271a0e8ac5d233a644386250e989284f87"
+      },
+      "artifact_id": {
+        "app": "sha256:58862eb45fc9108d59e43d320e552e98c07f1185a3cc42a26817d22de02a3413"
+      },
+      "rollback": {
+        "tag": "v4.10.0",
+        "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+        "version": "4.10.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+        }
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/42"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.37.0",
+      "planned_version": "0.38.0",
+      "tag": "v0.38.0",
+      "commit_sha": "fcdd402a32560b247205f77fbeeebef4f0d3043d",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:378a4a9279db7fcea8f2c8b23eed2907ea8be8dc4a08ff48abd89f4ae8a77901",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:19121b55d2d9f69d4d70e57b0a554b64b70ff21bfd5dabcb80598450cab1ed36"
+      },
+      "artifact_id": {
+        "api": "sha256:e522239a74be256d411cf6ae406bd8fd390c605722fc8cd8eb0d062c0df7a53d",
+        "web": "sha256:a2f7afe8548badc2ff0d313603a5ce12363c978853897c4978b58ecda9025cc0"
+      },
+      "rollback": {
+        "tag": "v0.37.0",
+        "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+        "version": "0.37.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+        }
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/45"
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "completed_at": "2026-10-26T08:04:47.019634+00:00"
+  },
+  "verification": {
+    "status": "PASS_WITH_DECLARED_DATA_GAPS",
+    "summary": "Frozen main CI and exact CI candidate images passed. Deployment artifact/version/health checks passed. New margin and ladder chains were verified. Current-day wave and short formal inputs remain incomplete; deployment is not evidence that source inputs recovered.",
+    "public_evidence": "releases/evidence/REL-20261026-002/public-summary.json",
+    "private_evidence": "Original execution plan, protected deployment receipt, API readbacks and operation diagnostics are retained privately under this Release ID; excluded from public Git."
+  },
+  "rollback": {
+    "status": "AVAILABLE",
+    "summary": "Per-repository prior immutable versions and pinned artifacts retained; compatible code rollback, no database downgrade."
+  },
+  "notes": [
+    "Only completed unshipped CHG-20261026-002/003/004/005 included; marketNewsFeed and planned/governance-only work excluded.",
+    "No production API payloads, runtime diagnostics, internal addresses, deployment paths, screenshots, source records or raw logs are published in this closeout.",
+    "Detailed source task records remain private; source worktrees were preserved.",
+    "Selection data gaps remain explicitly declared; the current formal short history was not reconstructed after cutoff."
+  ],
+  "timing": {
+    "request_to_deployment_verified_seconds": 2245.0,
+    "preparation_seconds": 1460.8,
+    "formal_deploy_and_transport_seconds": 784.2,
+    "target_seconds": 300,
+    "target_exceeded": true,
+    "user_authorization_wait_seconds": 0
+  }
+}

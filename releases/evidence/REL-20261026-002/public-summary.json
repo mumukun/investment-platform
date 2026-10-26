@@ -1,0 +1,39 @@
+{
+  "release_id": "REL-20261026-002",
+  "classification": "PUBLIC_SANITIZED_RELEASE_METADATA_ONLY",
+  "source": "Approved business commits and CI candidate metadata; raw production payloads are excluded",
+  "business_prs": {
+    "stock-analyzer": "https://github.com/mumukun/stock-analyzer/pull/42",
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/45"
+  },
+  "ci": {
+    "stock-analyzer": {
+      "quality_run_id": "40287321521",
+      "candidate_run_id": "40287510074",
+      "commit_sha": "e85c12cbe7c93aaad79034ea452bf73258c1c4b7"
+    },
+    "investment-research-dashboard": {
+      "quality_run_id": "40287536871",
+      "candidate_run_id": "40287987002",
+      "commit_sha": "fcdd402a32560b247205f77fbeeebef4f0d3043d"
+    }
+  },
+  "development_validation": {
+    "provider_tests_passed": 183,
+    "provider_subtests_passed": 8,
+    "optional_performance_benchmark_skipped": 1,
+    "consumer_tests_passed": 59,
+    "margin_pg_targeted_tests_passed": 13,
+    "frontend_tests_passed": 104,
+    "shared_detail_tests_passed": 23,
+    "frontend_build": "PASS",
+    "ruff_and_format": "PASS"
+  },
+  "deployment_checks": "PASS",
+  "data_limitations": [
+    "Current wave source inputs remain gated during scheduled maintenance.",
+    "Missing pre-cutoff short formal input/history is not invented.",
+    "Margin history expands incrementally; full requested history is not yet claimed."
+  ],
+  "raw_records": "Retained in protected operational records; not part of public payload."
+}

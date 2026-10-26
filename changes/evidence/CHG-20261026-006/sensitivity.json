@@ -1,0 +1,110 @@
+{
+  "kind": "synthetic_sensitivity_analysis_not_market_backtest",
+  "source_sha": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+  "python": "3.13.0",
+  "rules": {
+    "swing": "swing-rules-v5.2.0",
+    "short_tail": "short-tail-rules-v1"
+  },
+  "short_liquidity": [
+    {
+      "case": "both_pass",
+      "history_average": 200000000.0,
+      "current_amount": 200000000.0,
+      "original_eligible": 10,
+      "history_gate_eligible": 10,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "case": "newly_active_stock",
+      "history_average": 80000000.0,
+      "current_amount": 200000000.0,
+      "original_eligible": 10,
+      "history_gate_eligible": 0,
+      "removed": 10,
+      "added": 0
+    },
+    {
+      "case": "early_session",
+      "history_average": 200000000.0,
+      "current_amount": 20000000.0,
+      "original_eligible": 0,
+      "history_gate_eligible": 10,
+      "removed": 0,
+      "added": 10
+    }
+  ],
+  "missing_amount": {
+    "current_amount": null,
+    "original_items": 0,
+    "original_coverage": 0.0,
+    "usable_price_history_structures": 20
+  },
+  "short_ranking": {
+    "original_eligible_count": 10,
+    "changed_positions": 10
+  },
+  "swing_feature_substitution": {
+    "historical_ma": {
+      "comparisons": 780,
+      "decision_changes": 3,
+      "numerical_changes": 454,
+      "example": {
+        "shape": "falling",
+        "current_change_bp": 75,
+        "pattern": "突破回踩",
+        "before": {
+          "observation_ok": true,
+          "state": "平台前蓄力",
+          "participation_decision": "暂缓参与",
+          "structure_completion": 66.7,
+          "key_level": 12.8,
+          "stop_reference": 12.6525,
+          "risk_distance_atr": 0.26
+        },
+        "after": {
+          "observation_ok": false,
+          "state": "失效",
+          "participation_decision": "不参与",
+          "structure_completion": 50.0,
+          "key_level": 12.8,
+          "stop_reference": 12.6525,
+          "risk_distance_atr": 0.26
+        }
+      }
+    },
+    "historical_atr": {
+      "comparisons": 780,
+      "decision_changes": 11,
+      "numerical_changes": 678,
+      "example": {
+        "shape": "rising",
+        "current_change_bp": 150,
+        "pattern": "突破回踩",
+        "before": {
+          "observation_ok": false,
+          "state": "失效",
+          "participation_decision": "不参与",
+          "structure_completion": 83.3,
+          "key_level": 12.78,
+          "stop_reference": 12.6288,
+          "risk_distance_atr": 1.7
+        },
+        "after": {
+          "observation_ok": true,
+          "state": "突破待回踩",
+          "participation_decision": "暂缓参与",
+          "structure_completion": 100.0,
+          "key_level": 12.78,
+          "stop_reference": 12.63,
+          "risk_distance_atr": 1.71
+        }
+      }
+    }
+  },
+  "limits": [
+    "Synthetic boundary cases do not estimate market-wide change rate or returns.",
+    "Original functions only; revised implementation and end-to-end parity are not tested."
+  ]
+}
