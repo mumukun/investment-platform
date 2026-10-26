@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261026-003",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "created_at": "2026-10-26T15:11:19.045856+00:00",
+  "authorization": "用户2026-10-26：没有问题的话发版本吧，连同其他未上线的 chg 一起生产上线",
+  "changes": [
+    "CHG-20261026-006",
+    "CHG-20261026-007"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.11.0",
+      "planned_version": "4.12.0",
+      "tag": "v4.12.0",
+      "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+      },
+      "artifact_id": {
+        "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+      },
+      "rollback": {
+        "tag": "v4.11.0",
+        "commit_sha": "e85c12cbe7c93aaad79034ea452bf73258c1c4b7",
+        "version": "4.11.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:4c3c41c13ade7634f181812ac9d4a5271a0e8ac5d233a644386250e989284f87"
+        }
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/43",
+      "quality_run_id": "40348811937",
+      "candidate_run_id": "40349054540",
+      "additional_prs": [
+        "https://github.com/mumukun/stock-analyzer/pull/44"
+      ],
+      "database_backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "additive",
+          "rollback_compatible": true,
+          "reason": "No new migrations or destructive history rewrite. New current domains and private encoded keys are ignored by old code; pruning is restricted to the new swing-current-evidence domain. Existing formal/close facts and rule identities remain. Margin uses existing validated append/revision collection with bounded batches. Independent scheduled backup coverage remains unconfirmed, not assumed.",
+          "evidence": "CHG-20261026-006 local-validation; CHG-20261026-007 verification; merged-main CI/candidate and joint regression logs."
+        }
+      },
+      "production_build_times": {
+        "app": "2026-10-26T15:25:02Z"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.38.0",
+      "planned_version": "0.39.0",
+      "tag": "v0.39.0",
+      "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+      },
+      "artifact_id": {
+        "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+        "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+      },
+      "rollback": {
+        "tag": "v0.38.0",
+        "commit_sha": "fcdd402a32560b247205f77fbeeebef4f0d3043d",
+        "version": "0.38.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:378a4a9279db7fcea8f2c8b23eed2907ea8be8dc4a08ff48abd89f4ae8a77901",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:19121b55d2d9f69d4d70e57b0a554b64b70ff21bfd5dabcb80598450cab1ed36"
+        }
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/46",
+      "quality_run_id": "40349414750",
+      "candidate_run_id": "40349863206",
+      "additional_prs": [
+        "https://github.com/mumukun/investment-research-dashboard/pull/47"
+      ],
+      "database_backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "additive",
+          "rollback_compatible": true,
+          "reason": "No new migrations or destructive history rewrite. New current domains and private encoded keys are ignored by old code; pruning is restricted to the new swing-current-evidence domain. Existing formal/close facts and rule identities remain. Margin uses existing validated append/revision collection with bounded batches. Independent scheduled backup coverage remains unconfirmed, not assumed.",
+          "evidence": "CHG-20261026-006 local-validation; CHG-20261026-007 verification; merged-main CI/candidate and joint regression logs."
+        }
+      },
+      "production_build_times": {
+        "api": "2026-10-26T15:29:57Z",
+        "web": "2026-10-26T15:29:54Z"
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PASS",
+    "started_at": "2026-10-26T15:38:54.653165+00:00",
+    "completed_at": "2026-10-26T15:43:08.076477+00:00"
+  },
+  "verification": {
+    "status": "PASS_WITH_DECLARED_SESSION_LIMITATION",
+    "evidence": [
+      "changes/evidence/CHG-20261026-006/local-validation.md",
+      "changes/evidence/CHG-20261026-007/verification.json"
+    ],
+    "known_limitations": [
+      "Actual next trading-session continuous refresh not yet verified; current session is closed.",
+      "120 seconds is an optimization reference, not a display or acceptance cutoff.",
+      "Tail current snapshot has not been generated in the closed session; the page explicitly serves the existing dated legacy fallback. No formal tail result was reconstructed.",
+      "Margin default range is three months; actual history coverage remains incomplete and existing issues are exposed while bounded background collection continues."
+    ],
+    "summary": "Exact CI images, live baseline, immutable Tags, versions, health and deployment smoke passed. Authenticated current wave/tail/watchlist and margin readbacks passed; actual dates and legacy fallback remain explicit. Closed-session result availability does not certify next-session live refresh.",
+    "public_evidence": "releases/evidence/REL-20261026-003/public-summary.json",
+    "private_evidence": "Original executable plan, protected deployment receipt, current readbacks and logs retained privately under REL-20261026-003.",
+    "completed_at": "2026-10-26T16:00:47.628207+00:00"
+  },
+  "notes": [
+    "Only completed unshipped CHG006/007 selected; planned CHG-20261016-007, governance-only and previously released Changes excluded. marketNewsFeed unchanged.",
+    "Joint Provider tests41 passed/9 skipped, missing margin-specific DSN then supplemented24 passed with isolated PG; Consumer48 passed/1 skipped, supplemented18 passed with isolated PG; UI82 passed; build and Ruff passed. Counts are overlapping, not summed.",
+    "Initial Dashboard formatting CI failure corrected with identical AST; subsequent exact-main CI and original candidate evidence passed.",
+    "Initial candidate commits were superseded before Tags/deployment by PR44/47 date-edge corrections. Focused PG9/UI14 plus final CI passed; only final-shas.json identities are deployable.",
+    "Existing NAS LAN route with the same recorded SSH host key used after two external-route timeouts; no proxy/credentials/permissions changed.",
+    "User confirmed home-router NAT loopback prevents external-domain access on home network. Release used the existing key-verified LAN route. No routing/proxy/SSH configuration changed."
+  ],
+  "started_at": "2026-10-26T15:02:29+00:00",
+  "prepared_at": "2026-10-26T15:33:48.021467+00:00",
+  "timing": {
+    "request_started_at": "2026-10-26T15:02:29+00:00",
+    "preparation_seconds": 1879.0,
+    "user_authorization_wait_seconds": 0,
+    "target_seconds": 300,
+    "request_to_deployment_verified_seconds": 2439.1,
+    "pre_deployment_seconds": 2185.7,
+    "deploy_seconds": 253.4,
+    "target_exceeded": true,
+    "request_to_affected_verification_seconds": 3498.6
+  },
+  "rollback": {
+    "status": "AVAILABLE",
+    "summary": "Retained previous immutable v4.11.0 / v0.38.0 artifacts and compatible database; no database downgrade."
+  }
+}
