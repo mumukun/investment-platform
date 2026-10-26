@@ -1,0 +1,55 @@
+{
+  "change_id": "CHG-20261026-007",
+  "status": "LOCAL_VERIFIED_NOT_RELEASED",
+  "evidence_type": "synthetic fixtures and isolated local PostgreSQL",
+  "tests": {
+    "provider_margin_and_scheduler": {
+      "passed": 42
+    },
+    "consumer_margin_and_limit_up_compatibility": {
+      "passed": 28
+    },
+    "frontend_margin_view_and_chart": {
+      "passed": 12
+    },
+    "total_passed": 82
+  },
+  "checks": {
+    "provider_compile": "PASS",
+    "consumer_backend_ruff": "PASS",
+    "frontend_typecheck_and_production_build": "PASS",
+    "git_diff_whitespace": "PASS",
+    "strict_v1_provider_to_consumer": "PASS",
+    "one_three_six_twelve_months": "PASS",
+    "historical_query_no_future_points": "PASS",
+    "read_does_not_collect": "PASS",
+    "bounded_continuing_collection_and_dry_run_no_write": "PASS"
+  },
+  "ui": {
+    "data": "synthetic MOCK, not a production calendar",
+    "desktop": "PASS",
+    "390px_iframe_viewport": "PASS by visual inspection",
+    "long_range_switch": "65 synthetic disclosed weekdays in three-month sample to 20 in one-month sample; chart and replay updated",
+    "sparse_range": "actual four-day coverage shown separately from selected range",
+    "failure": "last successful chart and range retained in unit tests"
+  },
+  "scope": [
+    "stock-analyzer",
+    "investment-research-dashboard",
+    "investment-platform"
+  ],
+  "excluded": [
+    "marketNewsFeed"
+  ],
+  "limitations": [
+    "No production writes, backfill, deployment or smoke performed.",
+    "No push, PR, merge or tag authorized.",
+    "Remote fetch did not complete and was interrupted; verified local release SHAs used.",
+    "Existing dependency deprecation warnings only; no dependency changes.",
+    "History becomes available only as official batches are successfully collected after a future authorized deployment."
+  ],
+  "commits": {
+    "stock-analyzer": "87250c20ee0602245e735b0b80fe424873628759",
+    "investment-research-dashboard": "0f1ff1cbf12d3270a513dfc636aa482348da6b04"
+  }
+}
