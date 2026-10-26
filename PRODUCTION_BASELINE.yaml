@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-26T01:09:41.708265+08:00",
+  "verified_at": "2026-10-26T08:04:47.019634+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -51,47 +51,47 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-10-26T01:09:41.708265+08:00",
-        "application_version": "4.10.0",
+        "verified_at": "2026-10-26T08:04:47.019634+00:00",
+        "application_version": "4.11.0",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v4.10.0",
-        "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+        "tag": "v4.11.0",
+        "commit_sha": "e85c12cbe7c93aaad79034ea452bf73258c1c4b7",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:4c3c41c13ade7634f181812ac9d4a5271a0e8ac5d233a644386250e989284f87"
         },
         "artifact_id": {
-          "app": "sha256:4b6ea3a8552da51246b6c7263b2b6902ef348b28f51098de1c25b45a11476289"
+          "app": "sha256:58862eb45fc9108d59e43d320e552e98c07f1185a3cc42a26817d22de02a3413"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:4c3c41c13ade7634f181812ac9d4a5271a0e8ac5d233a644386250e989284f87"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "stock-api",
           "stock-watch"
         ],
-        "deployment_timestamp": "2026-10-25T17:05:23.332534+00:00",
+        "deployment_timestamp": "2026-10-26T08:04:47.019634+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v4.9.0",
-          "commit_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+          "tag": "v4.10.0",
+          "commit_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+          "build_time": "2026-10-25T16:50:06Z",
           "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION",
-          "version": "4.9.0",
+          "version": "4.10.0",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b32ce5fad07c0935fc1c390c7c66c5511f9991db4c996163343ddebd2ace35c1"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b0d26a00e133c60f229c4576738a0364537cd2a95ff5a81398551abaf64df306"
           },
           "image_ids": {
-            "app": "sha256:b04b3e2477d79abd17d95880dc4ce29cb7e2f6f045952cb111c80dbedd2da0e3"
+            "app": "sha256:4b6ea3a8552da51246b6c7263b2b6902ef348b28f51098de1c25b45a11476289"
           }
         },
         "next_release_rollback_images": {
-          "app": "sha256:4b6ea3a8552da51246b6c7263b2b6902ef348b28f51098de1c25b45a11476289"
+          "app": "sha256:58862eb45fc9108d59e43d320e552e98c07f1185a3cc42a26817d22de02a3413"
         },
         "evidence": [
-          "releases/REL-20261026-001.yaml",
-          "releases/evidence/REL-20261026-001/deployment.receipt.json",
-          "releases/evidence/REL-20261026-001/affected-readback.json"
+          "releases/REL-20261026-002.yaml",
+          "releases/evidence/REL-20261026-002/public-summary.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -140,8 +140,7 @@
             "mode": "skip",
             "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "No new schema migration or destructive rewrite. Existing quote/cache keys add original facts; calendar background cache and new version decision/audit rows use existing tables. Formal ledger/history is preserved; old application ignores new fields and keys. No historical backfill or database downgrade. Independent scheduled backup remains unconfirmed.",
-            "evidence": "CHG-20261025-006 and CHG-20261026-001 isolated PostgreSQL, joint regression and exact-main CI; migrations unchanged."
+            "reason": "Reviewed compatible additive tables/cache domains; no destructive history rewrite or downgrade. Raw review evidence retained privately."
           }
         },
         "short_tail": {
@@ -154,7 +153,7 @@
             "尚无本策略真实快照"
           ]
         },
-        "build_time": "2026-10-25T16:50:06Z",
+        "build_time": "2026-10-26T07:43:16Z",
         "data_observations_status": "Only affected boundaries remeasured; prior unrelated domain observations remain in previous baseline/history.",
         "rotation": {
           "boards": 13,
@@ -184,58 +183,59 @@
             "coverage": 0.75,
             "last_success_at": "2026-10-26T01:06:58+08:00"
           }
-        }
+        },
+        "retained_domain_observation_note": "Domain observations not explicitly replaced retain their original dated evidence; deployment does not certify recovery of current-day selection inputs."
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-10-26T01:09:41.708265+08:00",
-        "application_version": "0.37.0",
+        "verified_at": "2026-10-26T08:04:47.019634+00:00",
+        "application_version": "0.38.0",
         "application_version_source": "VERSION",
-        "tag": "v0.37.0",
-        "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+        "tag": "v0.38.0",
+        "commit_sha": "fcdd402a32560b247205f77fbeeebef4f0d3043d",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:378a4a9279db7fcea8f2c8b23eed2907ea8be8dc4a08ff48abd89f4ae8a77901",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:19121b55d2d9f69d4d70e57b0a554b64b70ff21bfd5dabcb80598450cab1ed36"
         },
         "artifact_id": {
-          "api": "sha256:573ed116b703ddcabce72df76da8d83ec8f286450dc0972e9b5409cbe6785e34",
-          "web": "sha256:ba41a82a919a1a25b05ab1325646f69c82acb0f77dc202d1f9eaefb815c32a45"
+          "api": "sha256:e522239a74be256d411cf6ae406bd8fd390c605722fc8cd8eb0d062c0df7a53d",
+          "web": "sha256:a2f7afe8548badc2ff0d313603a5ce12363c978853897c4978b58ecda9025cc0"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:378a4a9279db7fcea8f2c8b23eed2907ea8be8dc4a08ff48abd89f4ae8a77901",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:19121b55d2d9f69d4d70e57b0a554b64b70ff21bfd5dabcb80598450cab1ed36"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "investment-research-dashboard-nas-api-1",
           "investment-research-dashboard-nas-web-1"
         ],
-        "deployment_timestamp": "2026-10-25T17:05:23.332534+00:00",
+        "deployment_timestamp": "2026-10-26T08:04:47.019634+00:00",
         "health": "HEALTHY",
         "rollback_baseline": {
-          "tag": "v0.36.0",
-          "commit_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+          "tag": "v0.37.0",
+          "commit_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+          "build_time": "2026-10-25T16:58:22Z",
           "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION",
-          "version": "0.36.0",
+          "version": "0.37.0",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5173bc5f1242cced576c9f415a520e9265dc3d49f31b1a2297a7e6424c69a1e2",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e40d18d74446154c27ab67d3ad12443923336d0a8f4aed41ec726b64e25bb92f"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:59fca7b711f09a6537f6d074a5a936290d7b893df62b345652204f586c6e8eac",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:827282cc927415fda1def562be746a082c228d4f3ac416a528fc7022357bdcd8"
           },
           "image_ids": {
-            "api": "sha256:e47151204e9cff3691ecd365d00cd3a1145dfe4a53047f0597034914e05ab5db",
-            "web": "sha256:b4c019f4841261f63da30fb45b029cb2b3c51d82655531f94bb4bc6cce15a745"
+            "api": "sha256:573ed116b703ddcabce72df76da8d83ec8f286450dc0972e9b5409cbe6785e34",
+            "web": "sha256:ba41a82a919a1a25b05ab1325646f69c82acb0f77dc202d1f9eaefb815c32a45"
           }
         },
         "next_release_rollback_images": {
-          "api": "sha256:573ed116b703ddcabce72df76da8d83ec8f286450dc0972e9b5409cbe6785e34",
-          "web": "sha256:ba41a82a919a1a25b05ab1325646f69c82acb0f77dc202d1f9eaefb815c32a45"
+          "api": "sha256:e522239a74be256d411cf6ae406bd8fd390c605722fc8cd8eb0d062c0df7a53d",
+          "web": "sha256:a2f7afe8548badc2ff0d313603a5ce12363c978853897c4978b58ecda9025cc0"
         },
         "evidence": [
-          "releases/REL-20261026-001.yaml",
-          "releases/evidence/REL-20261026-001/deployment.receipt.json",
-          "releases/evidence/REL-20261026-001/affected-readback.json"
+          "releases/REL-20261026-002.yaml",
+          "releases/evidence/REL-20261026-002/public-summary.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -264,7 +264,7 @@
             "prior_source_detail": "Other fields retain REL-20261022-002 dated source observations, not remeasured."
           }
         },
-        "build_time": "2026-10-25T16:58:22Z",
+        "build_time": "2026-10-26T07:47:54Z",
         "seat_tracking": {
           "status": "RECOVERED",
           "latest_disclosure": "2026-10-21",
@@ -285,8 +285,7 @@
             "mode": "skip",
             "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "No new schema migration or destructive rewrite. Existing quote/cache keys add original facts; calendar background cache and new version decision/audit rows use existing tables. Formal ledger/history is preserved; old application ignores new fields and keys. No historical backfill or database downgrade. Independent scheduled backup remains unconfirmed.",
-            "evidence": "CHG-20261025-006 and CHG-20261026-001 isolated PostgreSQL, joint regression and exact-main CI; migrations unchanged."
+            "reason": "Reviewed compatible additive tables/cache domains; no destructive history rewrite or downgrade. Raw review evidence retained privately."
           }
         },
         "short_tail": {
@@ -414,7 +413,8 @@
             "coverage": 0.75,
             "last_success_at": "2026-10-26T01:06:58+08:00"
           }
-        }
+        },
+        "retained_domain_observation_note": "Domain observations not explicitly replaced retain their original dated evidence; deployment does not certify recovery of current-day selection inputs."
       }
     }
   }
