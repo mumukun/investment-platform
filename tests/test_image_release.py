@@ -456,6 +456,80 @@ def backup_policy(mode="skip", impact="none", compatible=True):
     return value
 
 
+class RuntimeServiceExpansionTests(unittest.TestCase):
+    setUp = DeploymentTests.setUp
+
+    def expanded(self):
+        value = plan()
+        target = value["repositories"][0]
+        target["candidate"]["schema_version"] = "candidate-v2"
+        target["candidate"]["runtime_services"] = {"app": ["stock-api", "stock-watch", "stock-data"]}
+        release.validate_plan(value)
+        return value, target
+
+    def test_old_manifest_membership_is_immutable_and_only_known_extension_allowed(self):
+        old = candidate()
+        self.assertEqual(release.service_components("stock-analyzer", old)["app"], ("stock-api", "stock-watch"))
+        new, target = self.expanded()
+        self.assertIn("stock-data", release.service_components("stock-analyzer", target["candidate"])["app"])
+        target["candidate"]["schema_version"] = "candidate-v1"
+        with self.assertRaisesRegex(ValueError, "requires candidate-v2"):
+            release.validate_candidate(target["candidate"])
+        target["candidate"]["schema_version"] = "candidate-v2"
+        target["candidate"]["runtime_services"]["app"].append("unrelated-container")
+        with self.assertRaisesRegex(ValueError, "membership"):
+            release.validate_plan(new)
+
+    def test_old_compose_can_report_absent_new_service_without_querying_unknown_service(self):
+        value, target = self.expanded()
+        deployer = nas.Deployer(value, self.config, self.path)
+        def compose(_entry, _overlay, *arguments):
+            if arguments == ("config", "--services"):
+                return "stock-api\nstock-watch"
+            self.assertNotIn("stock-data", arguments)
+            return "fixture-container"
+        def run(arguments, **kwargs):
+            return "" if arguments[:3] == ["docker", "ps", "-aq"] else "sha256:"+"2"*64
+        with patch.object(deployer, "compose", side_effect=compose), patch.object(nas, "run", side_effect=run):
+            observed = deployer.current_images(target, allow_missing=True)
+        self.assertEqual(observed, {**target["expected_production"]["image_ids"], "stock-data": None})
+
+    def test_first_expansion_stops_legacy_collectors_before_start(self):
+        value, target = self.expanded()
+        deployer = nas.Deployer(value, self.config, self.path)
+        old = target["expected_production"]["image_ids"]
+        new = {service: "sha256:"+"1"*64 for service in ("stock-api", "stock-watch", "stock-data")}
+        with ExitStack() as stack:
+            for name in ("tag_check", "backup", "overlay", "verify"):
+                stack.enter_context(patch.object(deployer, name))
+            stack.enter_context(patch.object(deployer, "git", return_value=target["expected_production"]["commit_sha"]))
+            stack.enter_context(patch.object(deployer, "current_images", return_value={**old, "stock-data": None}))
+            stack.enter_context(patch.object(deployer, "inspect_images", return_value=new))
+            stack.enter_context(patch.object(nas, "run", return_value=target["expected_production"]["tag"][1:]))
+            compose = stack.enter_context(patch.object(deployer, "compose"))
+            deployer.deploy(target)
+            actions = [call.args[2:] for call in compose.call_args_list]
+            self.assertEqual(actions[0], ("stop", "stock-api", "stock-watch"))
+            self.assertEqual(actions[1][0], "up")
+
+    def test_rollback_removes_only_the_added_collector_before_old_start(self):
+        value, target = self.expanded()
+        deployer = nas.Deployer(value, self.config, self.path)
+        deployer.state["repositories"]["stock-analyzer"] = {"deployment_started": True}
+        old = target["expected_production"]["image_ids"]
+        new = {service: "sha256:"+"1"*64 for service in ("stock-api", "stock-watch", "stock-data")}
+        with ExitStack() as stack:
+            for name in ("tag_check", "backup", "git", "overlay", "verify"):
+                stack.enter_context(patch.object(deployer, name))
+            stack.enter_context(patch.object(deployer, "inspect_images", side_effect=lambda _, rollback=False: old if rollback else new))
+            stack.enter_context(patch.object(deployer, "current_images", return_value=new))
+            compose = stack.enter_context(patch.object(deployer, "compose"))
+            deployer.rollback(target)
+            actions = [call.args[2:] for call in compose.call_args_list]
+            self.assertEqual(actions[:2], [("stop", "stock-data"), ("rm", "-f", "stock-data")])
+            self.assertEqual(actions[2][0], "up")
+
+
 class BackupPolicyTests(unittest.TestCase):
     def setUp(self):
         DeploymentTests.setUp(self)

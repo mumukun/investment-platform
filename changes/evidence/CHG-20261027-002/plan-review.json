@@ -1,0 +1,94 @@
+{
+  "schema_version": 2,
+  "checked_at": "2026-10-28T03:13:30.716101+08:00",
+  "scope": "approved plan and local implementation governance",
+  "result": "PASS",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "7b6a1a251211bd713503c482a89008721116d40eb97b963efbdb961f7775e9d6"
+    },
+    {
+      "path": "SYSTEM_MAP.yaml",
+      "sha256": "7c00bbc04138c022603e6431b88df35f903bc146d570f77f6d9efed8217329a2"
+    },
+    {
+      "path": "changes/CHG-20261027-002.md",
+      "sha256": "30723308ed055485fbc8d522042c05dc706f5f215267b28582f0893658766859"
+    },
+    {
+      "path": "docs/plans/CHG-20261027-002-shared-market-data.md",
+      "sha256": "24b22f9c6cfb0026cf488537e245e42d403cf7293a555db343a8eca7454119ef"
+    },
+    {
+      "path": "docs/plans/CHG-20261027-002-data-ownership-inventory.md",
+      "sha256": "3367a15adc82c590cc70024e2b6f9238c16318f587a0c822a93a76259563a7da"
+    }
+  ],
+  "checks": {
+    "relative_links": [
+      {
+        "file": "AGENTS.md",
+        "target": "docs/product-design-guidance.md",
+        "exists": true
+      },
+      {
+        "file": "AGENTS.md",
+        "target": "docs/nas-outbound-proxy.md",
+        "exists": true
+      },
+      {
+        "file": "AGENTS.md",
+        "target": "docs/stock-data-sources.md#2026-10-22-同花顺东方财富统一授权边界",
+        "exists": true
+      },
+      {
+        "file": "AGENTS.md",
+        "target": "docs/stock-data-sources.md",
+        "exists": true
+      },
+      {
+        "file": "changes/CHG-20261027-002.md",
+        "target": "evidence/CHG-20261027-002/architecture-verification.json",
+        "exists": true
+      },
+      {
+        "file": "changes/CHG-20261027-002.md",
+        "target": "evidence/CHG-20261027-002/plan-review.json",
+        "exists": true
+      },
+      {
+        "file": "changes/CHG-20261027-002.md",
+        "target": "evidence/CHG-20261027-002/verification.json",
+        "exists": true
+      },
+      {
+        "file": "changes/CHG-20261027-002.md",
+        "target": "evidence/CHG-20261027-002/benchmark.json",
+        "exists": true
+      },
+      {
+        "file": "changes/CHG-20261027-002.md",
+        "target": "../docs/plans/CHG-20261027-002-shared-market-data.md",
+        "exists": true
+      },
+      {
+        "file": "changes/CHG-20261027-002.md",
+        "target": "../docs/plans/CHG-20261027-002-data-ownership-inventory.md",
+        "exists": true
+      },
+      {
+        "file": "docs/plans/CHG-20261027-002-shared-market-data.md",
+        "target": "CHG-20261027-002-data-ownership-inventory.md",
+        "exists": true
+      },
+      {
+        "file": "docs/plans/CHG-20261027-002-data-ownership-inventory.md",
+        "target": "CHG-20261027-002-shared-market-data.md",
+        "exists": true
+      }
+    ],
+    "git_diff_check": "PASS",
+    "production_state": "not_modified"
+  }
+}

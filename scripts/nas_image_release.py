@@ -15,7 +15,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
-from image_release import COMPONENTS, database_backup_policy, file_hash, require, validate_plan
+from image_release import COMPONENTS, database_backup_policy, file_hash, require, service_components, validate_plan
 
 CONFIG = Path("/usr/local/etc/investment-platform-deploy.json")
 
@@ -236,14 +236,24 @@ class Deployer:
             command += ["-f", str(overlay)]
         return run([*command, *args])
 
-    def current_images(self, entry, allow_missing=False):
+    def current_images(self, entry, allow_missing=False, rollback=False):
+        target = entry["rollback"] if rollback else entry["candidate"]
         services = {
             service
-            for group in COMPONENTS[entry["candidate"]["repository"]].values()
+            for group in service_components(entry["candidate"]["repository"], target).values()
             for service in group
         }
         result = {}
         for service in sorted(services):
+            if allow_missing and service not in entry["expected_production"]["image_ids"]:
+                defined = set(self.compose(entry, None, "config", "--services").splitlines())
+                if service not in defined:
+                    # Old frozen Compose does not know a newly added service.
+                    # Refuse an orphan/name collision rather than overlooking it.
+                    require(not run(["docker", "ps", "-aq", "--filter", "name=^/stock-data$"]),
+                            "unexpected data collector exists outside the verified baseline")
+                    result[service] = None
+                    continue
             container = self.compose(entry, None, "ps", "-q", service)
             require(
                 (bool(container) or allow_missing) and "\n" not in container,
@@ -303,13 +313,13 @@ class Deployer:
                         "local image does not prove registry digest",
                     )
             else:
-                for service in COMPONENTS[candidate["repository"]][component]:
+                for service in service_components(candidate["repository"], entry["rollback"] if rollback else candidate)[component]:
                     require(
                         info["Id"]
                         == entry["expected_production"]["image_ids"][service],
                         "rollback image differs from verified baseline",
                     )
-            for service in COMPONENTS[candidate["repository"]][component]:
+            for service in service_components(candidate["repository"], entry["rollback"] if rollback else candidate)[component]:
                 ids[service] = info["Id"]
         return ids
 
@@ -406,7 +416,7 @@ class Deployer:
         target = entry["rollback"] if rollback else entry["candidate"]
         overlay = {"services": {}}
         for component, ref in self.image_refs(entry, rollback).items():
-            for service in COMPONENTS[repo][component]:
+            for service in service_components(repo, target)[component]:
                 service_config = {"image": ref, "pull_policy": "never"}
                 if repo == "investment-research-dashboard" and component == "api":
                     info = json.loads(run(["docker", "image", "inspect", ref]))[0]
@@ -430,13 +440,17 @@ class Deployer:
     def verify(self, entry, rollback=False):
         target = entry["rollback"] if rollback else entry["candidate"]
         require(
-            self.current_images(entry) == self.inspect_images(entry, rollback=rollback),
+            self.current_images(entry, rollback=rollback) == self.inspect_images(entry, rollback=rollback),
             "running image identity mismatch",
         )
         item = self.item(entry)
         for _ in range(60):
             try:
                 run(item["health_command"], timeout=10)
+                if entry["candidate"]["repository"] == "stock-analyzer" and "stock-data" in service_components("stock-analyzer", target)["app"]:
+                    container = self.compose(entry, None, "ps", "-q", "stock-data")
+                    require(bool(container) and "\n" not in container, "one data collector required")
+                    run(["docker", "exec", container, "python", "scripts/market_data_worker.py", "--health"], timeout=10)
                 version = run(item["version_command"], timeout=10)
                 require(
                     version == target["version"], "runtime application version mismatch"
@@ -454,9 +468,9 @@ class Deployer:
         if record.get("rolled_back"):
             raise RuntimeError("this release was rolled back; prepare a new Release ID")
         self.tag_check(entry)
-        current = self.current_images(
-            entry, allow_missing=bool(record.get("deployment_started"))
-        )
+        added_services = {service for group in service_components(repo, entry["candidate"]).values()
+                          for service in group} - set(entry["expected_production"]["image_ids"])
+        current = self.current_images(entry, allow_missing=bool(record.get("deployment_started")) or bool(added_services))
         expected = self.inspect_images(entry)
         if record.get("deployment_started") and current == expected:
             self.backup(entry)
@@ -464,7 +478,7 @@ class Deployer:
             record["completed"] = True
             self.save()
             return
-        baseline = entry["expected_production"]["image_ids"]
+        baseline = {service: entry["expected_production"]["image_ids"].get(service) for service in expected}
         # Allow partial recreation only when this exact plan started deployment.
         require(
             current == baseline
@@ -494,6 +508,10 @@ class Deployer:
         )
         record["deployment_started"] = True
         self.save()
+        added = set(expected)-set(entry["expected_production"]["image_ids"])
+        if added:
+            self.step(repo, "stop_legacy_collectors", lambda: self.compose(
+                entry, None, "stop", *sorted(entry["expected_production"]["image_ids"])))
         self.step(
             repo,
             "checkout",
@@ -544,10 +562,14 @@ class Deployer:
         old = entry["expected_production"]["image_ids"]
         new = self.inspect_images(entry)
         require(
-            all(value in {old[key], new[key], None} for key, value in current.items()),
+            all(value in {old.get(key), new.get(key), None} for key, value in current.items()),
             "unrelated production drift blocks rollback",
         )
         self.tag_check(entry, rollback=True)
+        removed = sorted(set(new)-set(old))
+        if removed:
+            self.step(repo, "stop_added_collectors", lambda: self.compose(entry, None, "stop", *removed))
+            self.step(repo, "remove_added_collectors", lambda: self.compose(entry, None, "rm", "-f", *removed))
         self.step(
             repo,
             "rollback_checkout",

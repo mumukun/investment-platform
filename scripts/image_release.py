@@ -26,6 +26,22 @@ def require(condition, message):
         raise ValueError(message)
 
 
+def service_components(repository, metadata):
+    """Freeze runtime membership per artifact; old manifests retain two stock services."""
+    default = COMPONENTS[repository]
+    selected = metadata.get("runtime_services", default)
+    require(isinstance(selected, dict) and set(selected) == set(default), "invalid runtime service components")
+    result = {}
+    for component, required in default.items():
+        values = selected[component]
+        allowed = set(required) | ({"stock-data"} if repository == "stock-analyzer" else set())
+        require(isinstance(values, (list, tuple)) and all(isinstance(v, str) for v in values)
+                and len(values) == len(set(values))
+                and set(required) <= set(values) <= allowed, "invalid runtime service membership")
+        result[component] = tuple(values)
+    return result
+
+
 def database_backup_policy(entry):
     # Historical frozen plans retain their original full-backup behavior.
     if "database_backup" not in entry:
@@ -64,10 +80,14 @@ def image_pattern(repository, component):
 def validate_candidate(candidate):
     repo = candidate.get("repository")
     require(
-        candidate.get("schema_version") == "candidate-v1",
+        candidate.get("schema_version") in {"candidate-v1", "candidate-v2"},
         "unsupported candidate schema",
     )
     require(repo in COMPONENTS, "unsupported repository")
+    if candidate["schema_version"] == "candidate-v2":
+        require("runtime_services" in candidate, "candidate-v2 requires frozen runtime services")
+    else:
+        require("runtime_services" not in candidate, "runtime membership requires candidate-v2")
     require(
         bool(SHA.fullmatch(candidate.get("commit_sha", ""))), "full source SHA required"
     )
@@ -75,6 +95,7 @@ def validate_candidate(candidate):
     require(
         candidate.get("platform") == "linux/amd64", "NAS platform must be linux/amd64"
     )
+    service_components(repo, candidate)
     images = candidate.get("images", {})
     require(set(images) == set(COMPONENTS[repo]), "all repository images are required")
     for component, ref in images.items():
@@ -166,7 +187,10 @@ def validate_plan(plan, formal=False, preparation=False):
             bool(re.fullmatch(r"v" + VERSION.pattern, baseline.get("tag", ""))),
             "verified baseline Tag required",
         )
-        services = {service for group in COMPONENTS[repo].values() for service in group}
+        rollback = entry.get("rollback", {})
+        services = {service for group in service_components(repo, rollback).values() for service in group}
+        target_services = {service for group in service_components(repo, candidate).values() for service in group}
+        require(services <= target_services, "runtime service removal requires the explicit rollback flow")
         require(
             set(baseline.get("image_ids", {})) == services,
             "all baseline service Image IDs required",
@@ -196,7 +220,7 @@ def validate_plan(plan, formal=False, preparation=False):
                 ),
                 "rollback must use pinned digest or retained local Image ID",
             )
-            for service in COMPONENTS[repo][component]:
+            for service in service_components(repo, rollback)[component]:
                 if IMAGE_ID.fullmatch(ref):
                     require(
                         ref == baseline["image_ids"][service],
