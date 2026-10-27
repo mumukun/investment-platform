@@ -1,0 +1,826 @@
+{
+  "change_id": "CHG-20261027-002",
+  "checked_at": "2026-10-28T03:13:30.716101+08:00",
+  "result": "PASS_LOCAL_REVIEW",
+  "scope": "approved data/business separation and permanent project rules; no production activation",
+  "runtime": {
+    "python": "3.13.0",
+    "node": "22.22.0",
+    "database": "isolated PostgreSQL 16 tmpfs"
+  },
+  "tests": {
+    "stock_full": {
+      "command": "python -m pytest -q -rs --tb=short",
+      "passed": 1101,
+      "skipped": 1,
+      "subtests_passed": 73,
+      "seconds": 73.59,
+      "skip_reason": "explicit isolated benchmark only",
+      "warning": "existing Starlette/AnyIO deprecation",
+      "log": "architecture-stock-tests.txt",
+      "log_sha256": "426f476c60d26ba2fd41ba417cfdac040dd5fe6da79ed4259fe7f3b112e2bb0a"
+    },
+    "foundation_role_guards": {
+      "passed": 57,
+      "subtests_passed": 19,
+      "seconds": 7.47,
+      "overlap_with_full": true
+    },
+    "data_configuration_and_read_contracts": {
+      "passed": 22,
+      "seconds": 0.63,
+      "overlap_with_full": true
+    },
+    "dashboard_backend": {
+      "command": "python -m pytest -q backend/tests/test_sector_fund_members.py backend/tests/test_sector_fund_sina.py",
+      "passed": 35,
+      "skipped": 0,
+      "seconds": 0.28,
+      "warning": "existing Starlette/httpx deprecation"
+    },
+    "dashboard_component": {
+      "command": "npm test -- src/components/SectorFundMembers.spec.ts",
+      "passed": 9
+    },
+    "dashboard_build": {
+      "command": "npm run build",
+      "type_check": "PASS",
+      "vite": "PASS",
+      "pwa": "PASS"
+    },
+    "governance": {
+      "command": "python3 -m unittest discover -s tests",
+      "passed": 70,
+      "log": "architecture-governance-tests.txt",
+      "log_sha256": "3525a961268845c81855506179eae7581ad47fdf674e924cba621a6874d4e8b4"
+    },
+    "industry_raw_fact_migration": {
+      "passed": 52,
+      "seconds": 3.32,
+      "overlap_with_full": true,
+      "checks": [
+        "new raw batches never write business table",
+        "legacy read compatibility",
+        "read-only trend",
+        "source/check time separation"
+      ]
+    }
+  },
+  "checks": {
+    "new_market_data_full_ruff": "PASS",
+    "changed_python_critical_errors": "PASS",
+    "dashboard_changed_backend_ruff": "PASS",
+    "compileall": "PASS",
+    "check_config": "PASS",
+    "git_diff_check": "PASS",
+    "system_map_yaml_and_data_owner": "PASS (Ruby YAML parser)",
+    "compose_config": {
+      "stock-data": "data + worker + healthcheck",
+      "stock-watch": "business + scheduler",
+      "stock-api": "api + read contracts"
+    },
+    "dry_run": {
+      "writes": 0,
+      "network_requests": 0
+    }
+  },
+  "resource_cleanup": {
+    "containers": [
+      {
+        "container_id": "92bf5a00e27c1d8d28a6ea409208cc725de17d8ef9fb32bd25792a4a4a4a05bc",
+        "label": "codex.change=CHG-20261027-002",
+        "tmpfs_verified": true,
+        "removed": true
+      },
+      {
+        "container_id": "39184f8b584118bd110e48f443086577e64a0bb1b646e94cd95d4837a130b8e2",
+        "label": "codex.change=CHG-20261027-002",
+        "tmpfs_verified": true,
+        "removed": true
+      }
+    ],
+    "other_containers_or_images_removed": false,
+    "worktrees_and_review_evidence_preserved": true
+  },
+  "boundaries": {
+    "business_requests_do_not_collect": true,
+    "missing_data_does_not_queue_repairs": true,
+    "data_catalog_independent_of_business_pools_and_flags": true,
+    "data_config_does_not_validate_strategy_parameters": true,
+    "business_states_separate_from_foundation": true,
+    "source_and_check_clocks_distinct": true,
+    "single_owner_and_fenced_publication": true,
+    "source_authorization_not_expanded": true,
+    "industry_raw_facts_separate_from_business_table": true,
+    "market_and_industry_collection_failures_isolated": true
+  },
+  "compatibility": {
+    "maintenance_contract": "market-data-maintenance-v2",
+    "query_contract": "stock-query-v2",
+    "candidate_schema": "candidate-v2",
+    "legacy_candidate_v1_preserved": true,
+    "breaking_semantics_require_major_release_review": true
+  },
+  "not_executed": [
+    "commit",
+    "push",
+    "pull request",
+    "merge",
+    "tag",
+    "NAS runner installation",
+    "production deployment",
+    "production/vendor diagnostic probes",
+    "large production index creation",
+    "historical data cleanup",
+    "live all-market throughput/capacity verification"
+  ],
+  "known_limits": [
+    "application-level role ownership is not separate PostgreSQL account isolation",
+    "full adjusted window fetch remains required without independent supplier sequence-version evidence",
+    "repository-wide pre-existing style lint was not expanded into this refactor"
+  ],
+  "repositories": {
+    "stock-analyzer": {
+      "head": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+      "branch": "fix/CHG-20261027-002-daily-data-reuse",
+      "upstream": "origin/main",
+      "tracked_diff_sha256": "4b7f74879f9c90d3f099677d998a97d168d112235ab26a2376693e477e30e139",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "bef8bde85f343111b302eac3a2e1210a712b998882fd9cfff9edd4519d62bdf6"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "3c06b8be0ceb43d8cc0707e46cef6f7a51003e60ac1fe3538aa486afe0f60763"
+        },
+        {
+          "path": "GLOSSARY.md",
+          "sha256": "abc8aa12167ce0a4537026fd6c89034ce053fef40463142c7d588c8ef34d5b5a"
+        },
+        {
+          "path": "deploy.sh",
+          "sha256": "6b9709bfedfff8dd286871e4a53a93ab5f98cb24ba37113d7de339e0aedddec5"
+        },
+        {
+          "path": "docker-compose.yml",
+          "sha256": "fb7607633d97ebcdd8321fad310d869f1d2a9eee38bf269673b6aabbb8c82444"
+        },
+        {
+          "path": "docs/adr/0003-independent-foundation-data.md",
+          "sha256": "1a90cdcb32c0dc1b5fffea2cad23d4f4673045708a296d38e33fbdab6cc5b037"
+        },
+        {
+          "path": "docs/daily-data-ingestion.md",
+          "sha256": "30de42c0fff28b5d650c2633b446f369b3a2b4024bd40a1d1357e8d56cc22bb3"
+        },
+        {
+          "path": "docs/deploy.md",
+          "sha256": "1465c81c851d5e4eca471fab9e62a47d339258220fb2014792b0183f1acf360d"
+        },
+        {
+          "path": "docs/hermes-api.md",
+          "sha256": "b54e71065740bd90667bf521bd70cde4ebcecd7173b8292cd5ea108c1ec9af2c"
+        },
+        {
+          "path": "docs/shared-market-data.md",
+          "sha256": "55dd6d6e210747661f3773a86f5a8795c18e9b2aacdbe92f80cebfcc8c711171"
+        },
+        {
+          "path": "docs/stock-data.md",
+          "sha256": "1db068fede165b1ecc3d868b793a1a253b493913785ebf444c414c7ab70b73e4"
+        },
+        {
+          "path": "scripts/add_performance_indexes.py",
+          "sha256": "eef807c8b00a035165395c31381d821971e626206a11cc428f63a81b7efb53ae"
+        },
+        {
+          "path": "scripts/api.py",
+          "sha256": "0ba50bd0533a68a81e0d1fd3e0e8a92b81a16c04149206b716acb6dca17f1482"
+        },
+        {
+          "path": "scripts/backfill_swing_daily.py",
+          "sha256": "41498dbfc0bcc12783b9c4288b646be484f10e45077d9273af1ba422fc82c31e"
+        },
+        {
+          "path": "scripts/backfill_swing_intraday.py",
+          "sha256": "3be4c6cfd57fabf52a21d36efdde3275c5ad8bb9ddd0f027e9b4136bd9c208c4"
+        },
+        {
+          "path": "scripts/collect_margin.py",
+          "sha256": "4758f983ca1355cd199b8f7184322486c677543c468d3142b831ba3ef8ddfd92"
+        },
+        {
+          "path": "scripts/image_candidate.py",
+          "sha256": "1d574b6a85214a9aafa3e432b1ffa42d2b8c4509b9c0c35c6a0ab6c6b294cef3"
+        },
+        {
+          "path": "scripts/import_trade_rules.py",
+          "sha256": "a3423de7c41d0e834c3df9e05966fc1f5007c9f25b88dabd90cf215b150d4d70"
+        },
+        {
+          "path": "scripts/market_data_worker.py",
+          "sha256": "6b97b8b071f03c1db20b6cc1281eee271741f35f0e4d2247a5a9aa3b2cf791c2"
+        },
+        {
+          "path": "scripts/market_structure_stock_backfill.py",
+          "sha256": "d485af1558b126ce7dcc9c7e0725d9eb9bb3f27ed1517b50322e202ca3999783"
+        },
+        {
+          "path": "scripts/market_structure_sync.py",
+          "sha256": "be62f89f4e0ff1d423f6c925344f1017f1770f501be1450f4f59d4fd47407071"
+        },
+        {
+          "path": "scripts/refresh_business_data.py",
+          "sha256": "8d5484f29a13d06664ded318a0d2ed8ca2608139e072c510d4acf7a7d9b84662"
+        },
+        {
+          "path": "scripts/refresh_security_classifications.py",
+          "sha256": "1e431d402d74a324abebc4787a94ba07d0c423a6363ed6060ff4209583825829"
+        },
+        {
+          "path": "scripts/scheduler.py",
+          "sha256": "c77d0d7a9bace06fc0cc2f1331c4603f9eb57431e8b915a20070bfb7a7c6cb22"
+        },
+        {
+          "path": "scripts/swing_data_maintenance.py",
+          "sha256": "f2de7ab038c985bc3a0aa6acfd93c048768cb3e7922702b33427da64f970ec42"
+        },
+        {
+          "path": "scripts/sync_daily_sector.py",
+          "sha256": "604b1b1839d4bc4c1439d19feab18b74f879d32c7d348bb6da4b317673877790"
+        },
+        {
+          "path": "scripts/sync_daily_stock.py",
+          "sha256": "8b7e171b45c9239791bc17c67e0be0d57db4e1d33b69d76378fef7a367d73651"
+        },
+        {
+          "path": "scripts/us_market_cycle.py",
+          "sha256": "044351f8801ceb59158b2465ff02b8aecaadde3e99ee5a218437434d235ed0b5"
+        },
+        {
+          "path": "scripts/watch.py",
+          "sha256": "d5512735c7c915b5f81b81e16aa2e82a05ec2a52985b6272f5df511f8cdce16d"
+        },
+        {
+          "path": "stock_analyzer/add_stock.py",
+          "sha256": "0e45357d3283b88cafe1e981c4ae61224f9d0b4b58d3265e75bd231ec9474d11"
+        },
+        {
+          "path": "stock_analyzer/api.py",
+          "sha256": "349f91d3593a0de380eaf63390f861335e9ba5f86ecedc01044fb9b0f34eeedf"
+        },
+        {
+          "path": "stock_analyzer/api_projection.py",
+          "sha256": "6a8a73c5f1601cf8423647c366a59d48e1d3ecba9dc59468c092f43e4c5b05af"
+        },
+        {
+          "path": "stock_analyzer/candidate_history.py",
+          "sha256": "c86fd6cb9abfaf2653a3ccfaeaf4aa7bdff7c65a5f019cc7d5bdfefce32deffe"
+        },
+        {
+          "path": "stock_analyzer/capital_flow.py",
+          "sha256": "5595535f56d7b101abd65a7570b81259d1724c09064461b4a11d3fbc83f45940"
+        },
+        {
+          "path": "stock_analyzer/chart_projection.py",
+          "sha256": "0373ca19dafe9bd31a0a3b573f3c160628ee7eddd1c6992f775444de7316845a"
+        },
+        {
+          "path": "stock_analyzer/global_board.py",
+          "sha256": "37630e12c71d57565efbcc7bad796a6bc7908d80e942550206a796afeddda889"
+        },
+        {
+          "path": "stock_analyzer/hotmap.py",
+          "sha256": "de62e777fcce74105e5b1e4e89410a0a48bf6b2bbac10b83ca092e50592fe8f9"
+        },
+        {
+          "path": "stock_analyzer/hotmap_cache.py",
+          "sha256": "2b8c307e0e89fcdcc69df719af31ced9d781edb20b1207bd2ff2e6323b73f968"
+        },
+        {
+          "path": "stock_analyzer/hotmap_data.py",
+          "sha256": "b4886aa07b0f23208538cf569681d099d933053b68b4e0a721c8729d1ed1b04c"
+        },
+        {
+          "path": "stock_analyzer/local_db.py",
+          "sha256": "92c7431098179a1bf841d4b2cc7f81a93367b41fd8302027fc1ee2f3a3c143e4"
+        },
+        {
+          "path": "stock_analyzer/margin_observation.py",
+          "sha256": "8423da5fda5a86b4f3adda9379d76fdc4ca51c75c70a290d411e6fd81d22d9ad"
+        },
+        {
+          "path": "stock_analyzer/market_data/__init__.py",
+          "sha256": "ceec99a8c47e9e9f9dbc5e4847bbe74d9d086ba161b1829f2c47ea5937eda96d"
+        },
+        {
+          "path": "stock_analyzer/market_data/board_sources.py",
+          "sha256": "b2437763796d7376653b504637d1113c563755d9dc2cdae0a177987e21095f26"
+        },
+        {
+          "path": "stock_analyzer/market_data/catalog.py",
+          "sha256": "8d28a984e315849db4c239c4875788a7e1bba3c9eebf8e6570201718643f512a"
+        },
+        {
+          "path": "stock_analyzer/market_data/concept_sources.py",
+          "sha256": "132e5b3473ec2d4085b970e1a22392b1c459ab7302510b0c85c7fd4e53dd133d"
+        },
+        {
+          "path": "stock_analyzer/market_data/config.py",
+          "sha256": "e52ea0da5d39103cdae9e657525dc17d374c3c6d20a79fd35d5fb2b8e40f4fd5"
+        },
+        {
+          "path": "stock_analyzer/market_data/daily_sources.py",
+          "sha256": "e60557936da5b346c3d3b61ba19ba75e4f4133d8bc532c6afb86c6e10dd8bb9c"
+        },
+        {
+          "path": "stock_analyzer/market_data/domain_jobs.py",
+          "sha256": "fcd038b482d694d07c51daff6fb883ad8bb9d20793b7f4b68358152e2bb10489"
+        },
+        {
+          "path": "stock_analyzer/market_data/fund_jobs.py",
+          "sha256": "81e0b3da9a8e4a067a1328eb593236ffd2f246449ae4b4dc9324f297788c20a1"
+        },
+        {
+          "path": "stock_analyzer/market_data/fund_sources.py",
+          "sha256": "d365420c142d3f3720e6808e7861ea0dceb171663958226bf10be6583f34250c"
+        },
+        {
+          "path": "stock_analyzer/market_data/global_sources.py",
+          "sha256": "e0784cc746ff3512633df6c1d445d49c347c4dcc47733ede38ae6da80db343a1"
+        },
+        {
+          "path": "stock_analyzer/market_data/industry_intraday_sources.py",
+          "sha256": "1d987b6fa62098b92da27d27fb79c9c527f7388d429f0c307348007e121c39ca"
+        },
+        {
+          "path": "stock_analyzer/market_data/intraday_sources.py",
+          "sha256": "ef01a88ab59f8c11daa813215f7d72e20391d074755215c58ced40157c8ccc82"
+        },
+        {
+          "path": "stock_analyzer/market_data/legacy_cli.py",
+          "sha256": "8c0c4b961a663f330c86fa4bca7015f12a7f7b5f49f75b984f51e34fb92f1bea"
+        },
+        {
+          "path": "stock_analyzer/market_data/maintenance_jobs.py",
+          "sha256": "20caaeeeedcedfa3742155ee899e8850ac379d8d4c5eedd0bed5a079d3b86961"
+        },
+        {
+          "path": "stock_analyzer/market_data/margin_facts.py",
+          "sha256": "025defc176dcb4a59668d07df14e32c71df80a27b8076d0f6a4df91c20db7af1"
+        },
+        {
+          "path": "stock_analyzer/market_data/models.py",
+          "sha256": "04af399a54bb7c6c40bb59fbe773e592826f40efacca2f7fac6b87912e3d54fc"
+        },
+        {
+          "path": "stock_analyzer/market_data/profile_sources.py",
+          "sha256": "b92dbee9378169d49dcd2a37d7fb9b0b845c86b2239f42d1cbb3209dbc0ee16f"
+        },
+        {
+          "path": "stock_analyzer/market_data/reader.py",
+          "sha256": "2568922bbd9be94b84c5a5b905dfbbfa7598a41e75d1d3597ee223a29655ca32"
+        },
+        {
+          "path": "stock_analyzer/market_data/reference_sources.py",
+          "sha256": "411baee970e5427b74f4b85617eca6cf95dc8981dbd32b26eb1fbb9d90c3ad99"
+        },
+        {
+          "path": "stock_analyzer/market_data/rotation_sources.py",
+          "sha256": "0f44ba1d339585af4afbe76763ffeab68ef8be98fef739c2bc98d756a0081fc7"
+        },
+        {
+          "path": "stock_analyzer/market_data/runtime.py",
+          "sha256": "5c03d8427860aa5052112c49e60dcb6b5665a0b38b55b931ffab19f8a938cb57"
+        },
+        {
+          "path": "stock_analyzer/market_data/schema.py",
+          "sha256": "e2a042a2be1357c44557d46e3565cfc347150d3925976b98e663d9674927a4fc"
+        },
+        {
+          "path": "stock_analyzer/market_data/search_sources.py",
+          "sha256": "1468513a1421127ea428d86983b905234dfcd80a49dcbed297ed540ecc210ca4"
+        },
+        {
+          "path": "stock_analyzer/market_data/seat_facts.py",
+          "sha256": "85067bde644d3c3a63f512ebdf01a13a839d8c4d1d5e93da332bcc4cb8f04019"
+        },
+        {
+          "path": "stock_analyzer/market_data/seat_jobs.py",
+          "sha256": "01314eb5c835713c0a0185974405d5671765dd98ad9f46499a34e8e462613394"
+        },
+        {
+          "path": "stock_analyzer/market_data/shared_quotes.py",
+          "sha256": "cd5c3eaadd6ab1d3d185fd1a544a5b8979d11021ca4406e2ba9aae4577580a1e"
+        },
+        {
+          "path": "stock_analyzer/market_data/sources.py",
+          "sha256": "cb28919ba07a1ba97d7d0bd4bb54a147e3879bd97f74ea4246ab91b5b28b7fbb"
+        },
+        {
+          "path": "stock_analyzer/market_data/store.py",
+          "sha256": "71c37ea1cdd81f28e8bf2588feac317d37ba3d0388eb0a7b8b27dcb3329024dd"
+        },
+        {
+          "path": "stock_analyzer/market_data/suspension_rules.py",
+          "sha256": "7304f102b645c1d1b32c391f8dc316bdd40e14a3a70828582be0cce1631677e6"
+        },
+        {
+          "path": "stock_analyzer/market_data/trade_rules.py",
+          "sha256": "2f78b80f5ce0b0bf9caf6e84f72a3128acfe5cdabe854608fafb8647df3e0408"
+        },
+        {
+          "path": "stock_analyzer/market_data/us_catalog.py",
+          "sha256": "d47e6054f26480d4f0098d3be99d180d0c81c95d500ab68756986db0cff6dcd2"
+        },
+        {
+          "path": "stock_analyzer/market_data/us_sources.py",
+          "sha256": "4bc96b093524da483be1e0b6bde086912f8656c2b24cc82ff415269dcbac3d54"
+        },
+        {
+          "path": "stock_analyzer/market_data/worker.py",
+          "sha256": "d708c736aaea0bbe3bc64fccf86c6ceae85211a4dbce5886297275fa93153c70"
+        },
+        {
+          "path": "stock_analyzer/market_structure_browser.py",
+          "sha256": "62162a3f130f7b97316c8b4994a24024240b8830fce44ceccab784de5b79155d"
+        },
+        {
+          "path": "stock_analyzer/market_structure_store.py",
+          "sha256": "85ec0032f39462f5a023afc836edad972715a6c669d776e4ba4830132aff0406"
+        },
+        {
+          "path": "stock_analyzer/rotation_board.py",
+          "sha256": "23bc1c4f0f196bc51c5d4669a1f9a7bb55fa506d0096879417cb1c5e190c54bd"
+        },
+        {
+          "path": "stock_analyzer/scheduler.py",
+          "sha256": "755e42aea6bed19ecee253875eea3584c470acb7b3dde0a91040037aab7109ff"
+        },
+        {
+          "path": "stock_analyzer/seat_flow.py",
+          "sha256": "4a0bcbd775ad3cb440e13c9aa55808ae3c1dad3c201f4b60dfe7a4a09b091ced"
+        },
+        {
+          "path": "stock_analyzer/seat_sources.py",
+          "sha256": "88f94b9276b4b46b19d8bab1863a0eb1c05bdb6503a923c98b848b00d0fba9f7"
+        },
+        {
+          "path": "stock_analyzer/seat_tracking.py",
+          "sha256": "d73a6dbb9594dc84ec41d8dfc42d7b013322cbbd5e53825163722d5e6fd2e22c"
+        },
+        {
+          "path": "stock_analyzer/sector_activity_contract.py",
+          "sha256": "39ba4ee35fded32739e2ad7c7d8499ba4e7444d93dc3ef2833bd1c5e6349cc29"
+        },
+        {
+          "path": "stock_analyzer/sector_fund_members.py",
+          "sha256": "dd84ee7b148c9553cc3e11d8a4c4929465b220c8a6910cc2732fc983a8da530c"
+        },
+        {
+          "path": "stock_analyzer/sector_fund_sina.py",
+          "sha256": "944e4d2cb6758cc011da957aff930ee05a7c66284e15e7d1275bf64b5b8d5e2c"
+        },
+        {
+          "path": "stock_analyzer/sector_fund_sina_intraday.py",
+          "sha256": "d23ea37b6b26f3ecde13f4bb0bc8f1f1c79b4cd14773614e8944d967fcff8356"
+        },
+        {
+          "path": "stock_analyzer/sector_fund_sina_research.py",
+          "sha256": "11e52395b0f83925976c9e661dea20b1a4df5ee0f973cb0236300701db2387cd"
+        },
+        {
+          "path": "stock_analyzer/security_classification.py",
+          "sha256": "785ddd3eaa8892e750cee7d517e818be2ca9d8c27eb9ac5c5c9f432244bb771d"
+        },
+        {
+          "path": "stock_analyzer/short_engine_runtime.py",
+          "sha256": "ea5bd34ccb8657b21fd306849fda1ae04962c1ef3511417c6170d34fb5745785"
+        },
+        {
+          "path": "stock_analyzer/short_engine_store.py",
+          "sha256": "a430a600307c241a3b63a26551eacef349c4a7af7b4fa072260e23efaf2d689f"
+        },
+        {
+          "path": "stock_analyzer/short_tail.py",
+          "sha256": "2f9515034a82c8edf210cd7f6290ac654cb22941d793e8f0d9a1800987917463"
+        },
+        {
+          "path": "stock_analyzer/short_tail_refresh.py",
+          "sha256": "12831e0034160e4795e429a87dff5507af99f2edb49b98c864e5f10c557e5061"
+        },
+        {
+          "path": "stock_analyzer/short_tracking.py",
+          "sha256": "bdc9d1f76b5ec528460365a4282871aee73663c4f8f0a85f81aa32980ddf23b0"
+        },
+        {
+          "path": "stock_analyzer/stock_data.py",
+          "sha256": "2b00814e72ba0e14f06e884da7b7b690a8e533a63019530b788b23bf38ed22fa"
+        },
+        {
+          "path": "stock_analyzer/swing_daily_data.py",
+          "sha256": "c68cb5ee11a17deba513d90ba547e2f25da051858a4939b474c04e038df7cdd4"
+        },
+        {
+          "path": "stock_analyzer/swing_daily_ingestion.py",
+          "sha256": "79f2c5c20afafa88c106cc3ec890fe90cf49e727d3ad258751e55312f24c6c86"
+        },
+        {
+          "path": "stock_analyzer/swing_data_health.py",
+          "sha256": "e99629addfcdc0a282ef412955d3cf678674c64b830458a36fb6466b6ca82cfc"
+        },
+        {
+          "path": "stock_analyzer/swing_intraday_data.py",
+          "sha256": "8f88635bd86a56bce1744f1e01375cf24c9ee3fd9d6cd1d0b6c4d5114b0470f6"
+        },
+        {
+          "path": "stock_analyzer/swing_intraday_discovery.py",
+          "sha256": "2664088339123a9f43ce2e78464ba1ecaac99de26b4a97f550b625cd4725729b"
+        },
+        {
+          "path": "stock_analyzer/swing_maintenance.py",
+          "sha256": "32342e8ad8d63cad25830dd60ee980f921278a5bca5c441a65d482325d5cbe28"
+        },
+        {
+          "path": "stock_analyzer/swing_runtime.py",
+          "sha256": "d7fa4cd47a7921d0c25071a9827338fa8f3800301a7a7da204177ae524a740f3"
+        },
+        {
+          "path": "stock_analyzer/swing_sources.py",
+          "sha256": "f453180f9bfd32717a9165cd123668ef9aa0ce3bb47482441e2bdde57951af4b"
+        },
+        {
+          "path": "stock_analyzer/swing_store.py",
+          "sha256": "b86b626625e53b7ba0b021eb8b9b700e8f91d04c901398663c901e65acffec60"
+        },
+        {
+          "path": "stock_analyzer/sync.py",
+          "sha256": "66d6c581bf1e0ee0303d418a29c1f4bc2df5ac855c9430e864702f6f13e6f695"
+        },
+        {
+          "path": "stock_analyzer/tech_board.py",
+          "sha256": "bf8d804a8e582c1e727b7fe43642e11262f426fb3b93c6065672510b76dc4c0d"
+        },
+        {
+          "path": "stock_analyzer/tech_concepts.py",
+          "sha256": "97a7403ccf8ca955a47c71939ca830fb2a3d7d0127582630dd65f70ce026d237"
+        },
+        {
+          "path": "stock_analyzer/trading_calendar_contract.py",
+          "sha256": "8f86277a7c0103d3fe0822a74a3f34ef8edba940c027a03e8107ab0565aa4a10"
+        },
+        {
+          "path": "stock_analyzer/us_market_calendar.py",
+          "sha256": "a1faba58cb342864a6893f86206161539886c585074fabf060d79201038fcc46"
+        },
+        {
+          "path": "stock_analyzer/us_market_runtime.py",
+          "sha256": "77388b30ba09c4213427a75b1652700652f6957b5d235644eaa2e89b5991906b"
+        },
+        {
+          "path": "stock_analyzer/us_market_store.py",
+          "sha256": "b636ee246d8d91b1a855497c1fe5211ad18a808b0a4380b0cf59c3526a497e17"
+        },
+        {
+          "path": "stock_analyzer/watch.py",
+          "sha256": "8357aabcfdfa93c3a97b7aa3930e5eed22882af3d5e33fcf6d0b86daa7155dfc"
+        },
+        {
+          "path": "tests/test_api_projection.py",
+          "sha256": "7596f06cb7ab514bcf4b3951f581a454d24e7c875cba7953a37741e8f6e7dadd"
+        },
+        {
+          "path": "tests/test_capital_flow.py",
+          "sha256": "69af6e46111e23cb238cbc4ea35c5d9d1e9b5af69ac3fd1cee5f1d74d36fa6ed"
+        },
+        {
+          "path": "tests/test_hotmap_data.py",
+          "sha256": "1d1ed77f0f86f9a7dc45b44864f96e01da34ac3bb1d217e5328f2255e910ed7b"
+        },
+        {
+          "path": "tests/test_limit_up_quotes.py",
+          "sha256": "c639d31a07ef937eae0c955537830f044efb73dd9928b09d93a816b59c9617de"
+        },
+        {
+          "path": "tests/test_margin_observation.py",
+          "sha256": "0e57608d9108d54964594f0fec8ab0ee84f660180c614f3c200a5771825cada2"
+        },
+        {
+          "path": "tests/test_market_data_boundaries.py",
+          "sha256": "2bfcbff9b83080361e62adfc160d64d802911a504ce71d5c3f81df6aa1d74fd3"
+        },
+        {
+          "path": "tests/test_market_data_store.py",
+          "sha256": "c16ec5d2eae1a02578aa4671a4a727322a14e2ee4de7c58d075475ea3c5551ca"
+        },
+        {
+          "path": "tests/test_market_data_worker.py",
+          "sha256": "c1f115baa116fa796bec94210555d8ca7b3ea962aaf990a64ad24e22593b44dc"
+        },
+        {
+          "path": "tests/test_market_structure_availability.py",
+          "sha256": "88db4dfb3805de44f396f10f54db05b90bf19e65c685bbf481392d0092386e63"
+        },
+        {
+          "path": "tests/test_pg_application_queries.py",
+          "sha256": "15c9227a67efe44c7f8080eb1997e0fe062a8d26d092308537ffe7dd1fad50d2"
+        },
+        {
+          "path": "tests/test_rotation_board.py",
+          "sha256": "42696f48b1a4c8f5351b84aac47aa63f7b0d3abd5cfb5312fa261e9a1639e6b1"
+        },
+        {
+          "path": "tests/test_seat_flow.py",
+          "sha256": "8898edbe8046034567480d7d9743599abf0ed974015c881b1586ae5103f48e88"
+        },
+        {
+          "path": "tests/test_seat_tracking.py",
+          "sha256": "644fd30b4f91ec25162052c93c12f8d02aacc4814cb20d5cd02b29643b49f208"
+        },
+        {
+          "path": "tests/test_sector_activity_contract.py",
+          "sha256": "5e9f308b4777515a6563edd6c413bdd5a41add5c679bda7ed53e8c970d3a8060"
+        },
+        {
+          "path": "tests/test_sector_fund_members.py",
+          "sha256": "1478a041a4126d1f729273b02cd0d427827bb419b53a550e8415eac6a98f4928"
+        },
+        {
+          "path": "tests/test_sector_fund_sina.py",
+          "sha256": "c45992eb53f1d1cbf607344a5b49a8259598f2a30b8899a7417f6f0c96a35014"
+        },
+        {
+          "path": "tests/test_sector_fund_sina_research.py",
+          "sha256": "4ee13af5902f5ff0e8fbd1be96b4fa99415f0f5eb8d803b4f8b907a3d5c4b0ad"
+        },
+        {
+          "path": "tests/test_short_tail_refresh.py",
+          "sha256": "d7e2e516f82b444f00fe49bf31574843626edc39d27db34fcd5f5989df49d9e6"
+        },
+        {
+          "path": "tests/test_short_tracking.py",
+          "sha256": "b31e23ebcce1b83d20b4e167e9881951f70e30be71686a0fd806c40a20571e29"
+        },
+        {
+          "path": "tests/test_sina_intraday.py",
+          "sha256": "61a55b9ddae614ae04051a10c273047f6b8abcdfe334bd5e9ff269beaf1c2ac0"
+        },
+        {
+          "path": "tests/test_stock_bars_contract.py",
+          "sha256": "f93e9fc4b992679205e1af71de5cd1d084334b1f5c548022db191d38d4b73dea"
+        },
+        {
+          "path": "tests/test_stock_search_sources.py",
+          "sha256": "5e3bda948dfdb56a550cdb5188c5e2b3e944780f24a8a740dcf4b012e0764d9a"
+        },
+        {
+          "path": "tests/test_swing_availability.py",
+          "sha256": "d40ae5114e7a5954a72597d2a86086b240ea33bcb63d1cce6f72a6cfe31da8d3"
+        },
+        {
+          "path": "tests/test_swing_close_tracking.py",
+          "sha256": "6693dd3c19d255c49d546e3111d481f584f260d2a76262826f33b2f53a55c5db"
+        },
+        {
+          "path": "tests/test_swing_daily_data.py",
+          "sha256": "d013ee78b42b3780f4ef07319b6c5b7097544c6aca57753df32ab1d368bc4fd6"
+        },
+        {
+          "path": "tests/test_swing_daily_ingestion.py",
+          "sha256": "b17ec79ab21b8250e509ce43190a8200246a1b38a0c5f8941dc7b74cf3a0bdc8"
+        },
+        {
+          "path": "tests/test_swing_runtime.py",
+          "sha256": "d05cddc31594ffbce2985387f0ddb7f176d1e041458641bb2202cf3b029728ce"
+        },
+        {
+          "path": "tests/test_swing_scheduler.py",
+          "sha256": "d2621a5de81d2cc6a908346257a421f871af0e63dcf48ccd49fa307b5912b06f"
+        },
+        {
+          "path": "tests/test_swing_source_pipeline.py",
+          "sha256": "06ef3389cc830154c345f93a400d0bab4b0d2058bad9cecac7c84b200d17b50a"
+        },
+        {
+          "path": "tests/test_swing_sources.py",
+          "sha256": "09a156b01c5fc519338406044d2695891c254e3b84ccb0bf5757afc23cf96508"
+        },
+        {
+          "path": "tests/test_tech_board.py",
+          "sha256": "167fcb5185af38c5f18ab0b356a92ae59e2a565929974ff85d97434e5c12fee6"
+        },
+        {
+          "path": "tests/test_tech_concepts.py",
+          "sha256": "fd677e75bac2be6bab3613d5cc51340a57dd6abb6e43ad3d115e2e712620d6d2"
+        },
+        {
+          "path": "tests/test_trade_rule_import.py",
+          "sha256": "ed6a17ab62f8a736d719700ff811b86cfe4610f62be173747f32cfc98efc71f8"
+        },
+        {
+          "path": "tests/test_trading_calendar_contract.py",
+          "sha256": "e2495684d4677c1ef92ec543ebad4c416eb28d386cf895b501018539fc327f74"
+        },
+        {
+          "path": "tests/test_watchlist_live_quotes.py",
+          "sha256": "4bf6ada220226c3253a06a52d8cfc2636d2468bf7323b5973ca49e84b95f587d"
+        }
+      ],
+      "operation_in_progress": [],
+      "stage": "local_uncommitted"
+    },
+    "investment-research-dashboard": {
+      "head": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+      "branch": "fix/CHG-20261027-002-daily-data-reuse",
+      "upstream": "origin/main",
+      "tracked_diff_sha256": "471e0f545ee7f0e36af4884a956f20d12a9558b1d2b2bb401efe57e5b81288ba",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "ca01526b237ac2805f3ef73bc856ee58eaf39c4f2755bf6a9716568479ac99f1"
+        },
+        {
+          "path": "backend/app/api.py",
+          "sha256": "72a4e8d1e6fe22c7c96aa07578180998f6f0189c94df173a5a8f9d33c11da86d"
+        },
+        {
+          "path": "backend/app/integrations/stock_analyzer.py",
+          "sha256": "63ceadf82d03b8084d547b3286c687df3411e8b921edec2b9cdcffb1d97bcc4b"
+        },
+        {
+          "path": "backend/tests/test_sector_fund_members.py",
+          "sha256": "12f6965508685451579eb4b069440e8dd395933bb17e801bd4abf346f7f57daa"
+        },
+        {
+          "path": "docs/design/interface-audit.md",
+          "sha256": "6483b735687cba768d1b954568ad447c2d7e7bf087798e71e2b9151a971918b3"
+        },
+        {
+          "path": "docs/technical/shared-data-boundary.md",
+          "sha256": "c74bee3f48a8618ce86170fe26fa6c7a694fc2dab482e97265e3a67822427ff5"
+        },
+        {
+          "path": "src/components/SectorFundMembers.spec.ts",
+          "sha256": "4a46bcf32282713cda63e0454aab677ecb2b7ec0415ae9aae2ab6dce9ecf3593"
+        },
+        {
+          "path": "src/components/SectorFundMembers.vue",
+          "sha256": "71b4b725db59617d34bbfd0a7f3780f8525b7c7bd495cac442b807f6c2b4d03e"
+        },
+        {
+          "path": "src/services/api.ts",
+          "sha256": "c999e74dfac7c8fa881d6d655e8e2aa48d66052e0a66f236fc806cb0cec9fdd0"
+        }
+      ],
+      "operation_in_progress": [],
+      "stage": "local_uncommitted"
+    },
+    "investment-platform": {
+      "head": "217c091f9b9acf88980107bcadff88d16e88fcc7",
+      "branch": "fix/CHG-20261027-002-daily-data-reuse",
+      "upstream": "origin/main",
+      "tracked_diff_sha256": "07e3beb1f19ccd942f60c9707b6f84c86d42e66ce85bd26c938823a97d88b2cf",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "7b6a1a251211bd713503c482a89008721116d40eb97b963efbdb961f7775e9d6"
+        },
+        {
+          "path": "SYSTEM_MAP.yaml",
+          "sha256": "7c00bbc04138c022603e6431b88df35f903bc146d570f77f6d9efed8217329a2"
+        },
+        {
+          "path": "changes/CHG-20261027-002.md",
+          "sha256": "e80183e8bba7c3336c3cf86c7196226bf9b413aca12fd53e0b83494618eb4f39"
+        },
+        {
+          "path": "docs/image-release.md",
+          "sha256": "9a292015f3ab7a03885f122afa18e5230cc00f25245f6691a0a67d27a2b43635"
+        },
+        {
+          "path": "docs/plans/CHG-20261027-002-data-ownership-inventory.md",
+          "sha256": "3367a15adc82c590cc70024e2b6f9238c16318f587a0c822a93a76259563a7da"
+        },
+        {
+          "path": "docs/plans/CHG-20261027-002-shared-market-data.md",
+          "sha256": "24b22f9c6cfb0026cf488537e245e42d403cf7293a555db343a8eca7454119ef"
+        },
+        {
+          "path": "scripts/image_release.py",
+          "sha256": "15756426834725122285d839a0400b1b8f72cb29631975a0c44a50ee26bdd054"
+        },
+        {
+          "path": "scripts/nas_image_release.py",
+          "sha256": "54076d64b8fdab6d8a3d5f535a72221ecdbd2e5effc9a244ea5a52021673ad8a"
+        },
+        {
+          "path": "tests/test_image_release.py",
+          "sha256": "35e977bb284ff0703c14864a8e565987af91945085cf0c322597987cfd67f52e"
+        }
+      ],
+      "operation_in_progress": [],
+      "stage": "local_uncommitted"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "change_id": "CHG-20261027-002",
+  "fixture": {"stocks": 100, "existing_sessions": 140, "returned_sessions": 141},
+  "environment": "synthetic, isolated local PostgreSQL 16; no third-party latency included",
+  "baseline_commit": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+  "method": "Extract and execute original save_swing_daily_bars from baseline AST; compare against save_refresh_batch in batches of 50, on separate unique synthetic schemas. Compare all saved factual columns except the deliberately separated adjustment_as_of stamp. Drop only the two task-owned schemas afterward.",
+  "original": {"written_rows": 14100, "elapsed_seconds": 2.4239, "fact_digest": "8501d1b84206a44acf97ecf58807af79"},
+  "differential": {"written_rows": 100, "elapsed_seconds": 0.5619, "fact_digest": "8501d1b84206a44acf97ecf58807af79"},
+  "facts_equal": true,
+  "interpretation": "Confirms fewer database writes with unchanged facts on this fixture. Timing is an illustrative local measurement, not a production latency guarantee or network benchmark."
+}

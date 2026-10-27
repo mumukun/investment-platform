@@ -275,3 +275,9 @@ NAS 管理员一次执行 `sudo bash deploy/enable-marketnews-source-release.sh`
 后续得到正式发版授权后将 mode 改为 deploy 并提供 --receipt；常规发布不再重复 preflight/verify。
 计划示例为 `deploy/marketnews-source-release.example.json`，其中占位 SHA/Image ID 必须替换为
 当前真实身份，不作为可直接部署的生产计划。
+
+## CHG-20261027-002 股票运行单元扩展（本地未发布）
+
+新版stock-analyzer 使用 candidate-v2 及必需的 runtime_services.app 冻结 stock-api、stock-watch、stock-data；既有 candidate-v1 Manifest 保持原两进程，不静默套用新拓扑。新schema使未升级的NAS runner拒绝Candidate，防止旧工具忽略新增服务后使用浮动镜像。正式发布前必须安装本Change经过验证的runner；本地改动不表示已安装。仅允许该仓库增加已知stock-data，禁止任意服务名或遗漏旧核心服务。生产基线及rollback各自按被冻结的运行单元验证Image ID，普通部署不删除运行单元；减少服务走明确rollback流程。
+
+首次扩展先验证旧基线/备份，再停旧API与业务采集者，才启动新增数据持有者；新数据心跳纳入验证。回退先验证所有在场容器没有无关漂移，按精确服务名停/移除仅新版本的数据容器，再切精确旧checkout/镜像。不会remove-orphans或删除数据卷。此变更仅更新本地发布工具，尚未安装NAS runner、打Tag或执行生产操作。

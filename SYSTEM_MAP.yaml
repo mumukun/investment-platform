@@ -95,6 +95,13 @@ repositories:
       engine: PostgreSQL
       boundary: independent_database_and_schema
       external_shared_storage: optional Feishu Base co-tenancy with marketNewsFeed using separate tables
+    data_runtime:
+      service: stock-data
+      entry: scripts/market_data_worker.py
+      ownership: independent_catalog_schedule_and_foundation_writes
+      consumers: read_only_foundation_and_owned_business_results
+      status: needs_verification
+      evidence: changes/CHG-20261027-002.md
     production_baseline_status: verified
     status: verified
 
