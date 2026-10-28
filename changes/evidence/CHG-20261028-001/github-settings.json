@@ -1,0 +1,23 @@
+{
+  "change_id": "CHG-20261028-001",
+  "observed_at": "2026-10-28T15:36:15.990318+00:00",
+  "repositories": {
+    "investment-platform": {
+      "default_branch": "main",
+      "delete_branch_on_merge": true
+    },
+    "stock-analyzer": {
+      "default_branch": "main",
+      "delete_branch_on_merge": true
+    },
+    "investment-research-dashboard": {
+      "default_branch": "main",
+      "delete_branch_on_merge": true
+    },
+    "marketNewsFeed": {
+      "default_branch": "main",
+      "delete_branch_on_merge": true
+    }
+  },
+  "other_settings_changed": false
+}

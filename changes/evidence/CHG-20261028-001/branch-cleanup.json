@@ -1,0 +1,2005 @@
+{
+  "change_id": "CHG-20261028-001",
+  "completed_at": "2026-10-28T15:36:15.989483+00:00",
+  "historical_local_deleted": 65,
+  "historical_remote_deleted": 65,
+  "repositories": [
+    {
+      "repository": "investment-platform",
+      "verified_main": "31e698e02e9316a6ff2fc3b940e3944ccea19a26",
+      "deleted": [
+        {
+          "branch": "docs/CHG-20261014-001-source-release-closeout",
+          "commit_sha": "d37ebf72fd90990f1856f83173683742227e31ae",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/47",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261011-004-sidebar-order",
+          "commit_sha": "420db39db72bae7cb9eb04405887a894d91d4dcd",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/37",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-002-global-investment-board",
+          "commit_sha": "babf3d0d84dd268013ad7aa980b25d7bf3549a51",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/50",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-005-tech-board-plan",
+          "commit_sha": "86da3c0565f6b881011f08f8fc21685826e95ee8",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/51",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-supplement-release",
+          "commit_sha": "aac2d25414d642de44a8c33d7c7f2790edabff1a",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/53",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-010-product-design-system",
+          "commit_sha": "c9b44057e3e0f26297a66d48fab3cf26979499a1",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/52",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-000-swing-close-entry",
+          "commit_sha": "ca35efb6c6b93f2ca84955540d2469f325d01931",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/56",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-007-short-close-tracking",
+          "commit_sha": "09be04461931cb4413b796065f77b3e179666935",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/58",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-010-sector-fund-members",
+          "commit_sha": "734270703a5b57fa85e218d9bee40985cab8e74d",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/59",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261019-001-release-integration",
+          "commit_sha": "b23a1acd0d6c803252bce81ccfd65a3a76dbf241",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/60",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261020-003-release-integration",
+          "commit_sha": "1faad395c3ef4f3202340f29f81b42bb127da5cf",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/62",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-001-x-feishu-mention",
+          "commit_sha": "4db923787c7888ea326a6bc8b686aff981cb5b86",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/63",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "commit_sha": "e3109e4b23da1f6d5c700efbb11fc278a8a36a60",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/70",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-browser-session",
+          "commit_sha": "2ae257f099bde53aab63c81c730e775a1651e30b",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/48",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-request-throttle",
+          "commit_sha": "9142fea34c57f682b205741373e6249e3f03840a",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/42",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-resume",
+          "commit_sha": "d31289411bf8fb0a0d180a840081f82491083dd7",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/44",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-release-verification",
+          "commit_sha": "42b41a467b20f530682924f133f40e4e957474a4",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/43",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-001-installer-inputs",
+          "commit_sha": "5a46b34602df844ead5d64bbfbbcb07debb9882c",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/46",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-001-marketnews-release-access",
+          "commit_sha": "1b4328ae89d16272950854031f0983aa0b47c45a",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/45",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-002-http-latency-audit",
+          "commit_sha": "c6e14a84d98270300347fce63b747a2a6ae26142",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/64",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-009-market-structure-sync",
+          "commit_sha": "afb7c0a3be43c8988d43653c5e0059f9a6d31310",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/68",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-006-intraday-candidates",
+          "commit_sha": "15a2c51158353b44aa9df0384fef5af93f7feafc",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/77",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-006-swing-partial-recovery",
+          "commit_sha": "88abe0e909c5b7ff41592fb17ec205480ce335f0",
+          "merged_pr": "https://github.com/mumukun/investment-platform/pull/57",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        }
+      ],
+      "retained_local": [
+        {
+          "branch": "feat/CHG-20261013-001-system-functional-manual",
+          "reasons": [
+            "detached-worktree-at-same-commit",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261013-002-market-structure-etf",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-001-eastmoney-retirement",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-004-green-login",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-006-microcap-daily",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-market-breadth",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-001-sector-fund-research",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-002-shared-stock-drawer",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-006-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-006-unified-stock-detail",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-008-tech-board-layout",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-009-compact-global-board",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-008-tech-index-reference",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261019-004-mobile-h5-pwa",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261020-002-domestic-stock-direct",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-004-performance-policy",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-007-market-observation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-001-all-a-reference",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-007-release-backup-policy",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261024-001-short-selection",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-004-sector-rotation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-005-system-hardening",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261026-004-margin-observation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261028-001-development-release-flow",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-002-average-price-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-003-postmarket-review",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261015-003-board-intraday",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261015-008-auth-layout",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-003-seat-ui-consistency",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-004-market-availability",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-009-limit-up-matrix",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-011-postgres-query-cost",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-012-retire-feishu-queue",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261020-001-sector-flow-curves",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-006-sector-flow-chart",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-010-matrix-density",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-011-flow-stability",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-003-swing-refresh",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-005-nas-backup-cleanup",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-006-swing-stock-detail",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261024-002-tech-reference-first",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-001-short-ui",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-002-status-colors",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-003-tech-density",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-001-market-decision-scope",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-002-capital-flow-continuity",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-003-ladder-streak-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-market-environment-ui",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-short-preview",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-swing-live-projection",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-007-margin-history",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-001-data-status-copy",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-daily-data-reuse",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-publication-recovery",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-wave-throughput",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261014-002-eastmoney-collection",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261014-002-market-style-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-001-sina-intraday",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261020-003-swing-approved-sources",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-current-signals",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-swing-intraday",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-005-limit-up-ladder",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261022-002-seat-source",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "main",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "non-task/protected-name",
+            "workflow-or-automation-reference"
+          ]
+        }
+      ],
+      "phase_end_local_count": 72,
+      "phase_end_remote_count": 18
+    },
+    {
+      "repository": "stock-analyzer",
+      "verified_main": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+      "deleted": [
+        {
+          "branch": "feat/CHG-20261015-002-global-investment-board",
+          "commit_sha": "9074c6dc2248126f33994e8bd2525ed5883d82f7",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/12",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-breadth-integration",
+          "commit_sha": "84d65db821078f45bb1ec8afd652cb6b49d8cfbc",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/15",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-000-swing-close-entry",
+          "commit_sha": "3500a535e4e57e4b3c9da7131cc538f2605c3933",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/18",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-007-short-close-tracking",
+          "commit_sha": "f3022cd898707f9d89fa787ab229e76ea44bcf24",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/27",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-010-sector-fund-members",
+          "commit_sha": "53080f21952edecca1854111f59c747cb28ab7cb",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/28",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261019-001-release-integration",
+          "commit_sha": "08193e9ac3e442ec5db3f57a8f8ad029c34f13c2",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/29",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261020-003-release-integration",
+          "commit_sha": "223c35ee7ddded032d5239afcaec8e5f7ec7f2f1",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/31",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-006-swing-observation-date",
+          "commit_sha": "1509285f445d77fc805048fb2e2a1e14db04ee4c",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/26",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-002-http-latency",
+          "commit_sha": "a8d7936fbe2e7f479f87b07907df385adb70c330",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/32",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-009-market-structure-sync",
+          "commit_sha": "635917c5cc1126fde74d35e2d999a945cbf1836b",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/35",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-006-swing-stock-detail",
+          "commit_sha": "5070746124650677a315be0a0e158341571a0066",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/38",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-001-swing-stats",
+          "commit_sha": "56c1ac8556b9d1e6d9c4e6df492ac828401dd21f",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/19",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-002-swing-session-window",
+          "commit_sha": "1f8f579a598998f3e6ed11f8eaab5b368880dd7f",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/20",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-003-swing-halt-facts",
+          "commit_sha": "ec2b615249307680600b51ee4708e40a869ce76a",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/21",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-004-swing-full-ledger",
+          "commit_sha": "3a403090397f8252a25b4e4fd6e555d9a50b9b49",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/22",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-005-swing-input-recovery",
+          "commit_sha": "1a67b8eada04c059ae558154631099fc30655e22",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/23",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-006-swing-coverage-query",
+          "commit_sha": "d5cf2519f74b5260e11fb06600bd5bc8e718fc9b",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/25",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-006-swing-partial-recovery",
+          "commit_sha": "95c005f8683ed3518ec854c6fba4315bf8d795fd",
+          "merged_pr": "https://github.com/mumukun/stock-analyzer/pull/24",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        }
+      ],
+      "retained_local": [
+        {
+          "branch": "feat/CHG-20261013-002-market-structure-etf",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-001-eastmoney-retirement",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-005-tech-board",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-006-microcap-daily",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-market-breadth",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-008-sina-tech",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-001-sector-fund-research",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-008-tech-index-reference",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261024-001-short-selection",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-004-sector-rotation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-005-system-hardening",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261026-004-margin-observation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261011-004-swing-history",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-002-average-price-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-003-postmarket-review",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-004-market-availability",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-011-postgres-query-cost",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-011-flow-stability",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-003-swing-refresh",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-003-ladder-streak-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-swing-live-projection",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-006-intraday-candidates",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-007-margin-history",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-bounded-history-queries",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-bounded-profile-reads",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-business-throughput",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-collector-heartbeat",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-daily-data-reuse",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-durable-publication",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-projection-json",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-publication-recovery",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-tail-batch-reuse",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-wave-throughput",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261014-002-eastmoney-collection",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261014-002-market-style-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-001-sina-intraday",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261020-003-swing-approved-sources",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-current-signals",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-swing-intraday",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-005-limit-up-ladder",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-008-swing-rule-facts",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261022-002-seat-source",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "main",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "non-task/protected-name",
+            "workflow-or-automation-reference",
+            "worktree-in-use"
+          ]
+        }
+      ],
+      "phase_end_local_count": 50,
+      "phase_end_remote_count": 26
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "verified_main": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "deleted": [
+        {
+          "branch": "feat/CHG-20261015-002-global-investment-board",
+          "commit_sha": "d801db4a66d50be448bcdb89b0cf358a7bcf3f24",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/16",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-supplement-release",
+          "commit_sha": "1c19ab9d92bc6236383a4f0465c0f9bbb01f4b4c",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/21",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-010-product-design-system",
+          "commit_sha": "4cdf312b2c348858ba20b63088ed0da4649267be",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/20",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-000-swing-close-entry",
+          "commit_sha": "359912676b103280a6839d9d8b0bc733bf86e35a",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/24",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-007-short-close-tracking",
+          "commit_sha": "959c0e590cd83337d9eca31574854ff891ee2bec",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/26",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-010-sector-fund-members",
+          "commit_sha": "3d8404e66baef5be6bbdfe439faa3c4210af762b",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/28",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261019-001-release-integration",
+          "commit_sha": "981b94e543c139b1922f2901a43045959107fd96",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/29",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261020-003-release-integration",
+          "commit_sha": "2e4e580a28f99e934977f2554952d9a58fe369ae",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/32",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-002-http-latency",
+          "commit_sha": "fb74c456a043548ff50bafd54e831bd481a835ac",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/34",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-009-market-structure-sync",
+          "commit_sha": "9cb92275dfc020996400561e2fd8d035d5957e47",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/36",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-006-swing-stock-detail",
+          "commit_sha": "9edace4e2fbf441f071b44d6c959fa9470315b39",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/39",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-006-intraday-candidates",
+          "commit_sha": "aa9a4841fe6877d68a3eb451f2f9762aa3050975",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/47",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261018-006-swing-partial-recovery",
+          "commit_sha": "77a4e9304906e1de09f6a8fd0b41628128454d7e",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/25",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261020-004-pwa-image-assets",
+          "commit_sha": "8e57f42f4d46e37ab700960612d1e574abc0c1de",
+          "merged_pr": "https://github.com/mumukun/investment-research-dashboard/pull/33",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        }
+      ],
+      "retained_local": [
+        {
+          "branch": "feat/CHG-20261011-004-sidebar-order",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261013-002-market-structure-etf",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-004-green-login",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-005-tech-board",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-006-microcap-daily",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-breadth-integration",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-007-market-breadth",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-001-sector-fund-research",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-002-shared-stock-drawer",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-006-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-006-unified-stock-detail",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-008-tech-board-layout",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-009-compact-global-board",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-008-tech-index-reference",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261019-004-mobile-h5-pwa",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-007-market-observation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-001-all-a-reference",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261024-001-short-selection",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-004-sector-rotation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-005-system-hardening",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261026-004-margin-observation",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-002-average-price-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261014-003-postmarket-review",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261015-003-board-intraday",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261015-008-auth-layout",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-003-seat-ui-consistency",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-004-market-availability",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-009-limit-up-matrix",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-011-postgres-query-cost",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261020-001-sector-flow-curves",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-006-sector-flow-chart",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-010-matrix-density",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-011-flow-stability",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-003-swing-refresh",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261024-002-tech-reference-first",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-001-short-ui",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-002-status-colors",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-003-tech-density",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-001-market-decision-scope",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-002-capital-flow-continuity",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-003-ladder-streak-recovery",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-market-environment-ui",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-short-preview",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-swing-live-projection",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-007-margin-history",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-001-data-status-copy",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-daily-data-reuse",
+          "reasons": [
+            "local-ahead-of-upstream",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-001-sina-intraday",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261020-003-swing-approved-sources",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-current-signals",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-swing-intraday",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-005-limit-up-ladder",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261022-002-seat-source",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "main",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "non-task/protected-name",
+            "workflow-or-automation-reference",
+            "worktree-in-use"
+          ]
+        }
+      ],
+      "phase_end_local_count": 62,
+      "phase_end_remote_count": 19
+    },
+    {
+      "repository": "marketNewsFeed",
+      "verified_main": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf",
+      "deleted": [
+        {
+          "branch": "feat/CHG-20261019-001-release-integration",
+          "commit_sha": "5f0cb6ecfb7fc4a72a2a29deb709a8bae176dedf",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/8",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-001-x-feishu-mention",
+          "commit_sha": "a1240b92041c64562faf4d7689ef3f145a39c034",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/10",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-browser-session",
+          "commit_sha": "43952495ba6c7c25eaf7f831dea8d1ed0630814c",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/4",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-browser-startup",
+          "commit_sha": "6549cdfa458292e925dac2ed5a347bedb28e51dc",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/6",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-html-primary",
+          "commit_sha": "3d138ccd948201a9fefaac23648a6cd07baafcac",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/3",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-request-throttle",
+          "commit_sha": "2d9ba51e155cea035c826f8190df7bd09dcdd33d",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/1",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-resume",
+          "commit_sha": "543b80041c52b45e01ae212c66a226ce7b6fb681",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/2",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-runtime-permissions",
+          "commit_sha": "65b70ab073d02f73f1abf2e1952ea5d3f8bb7209",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/5",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-002-http-latency",
+          "commit_sha": "672d23228b9d804c590b9ec8c8246804c21d2de8",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/11",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261022-006-swing-stock-detail",
+          "commit_sha": "95402e682ae24f8b0d878dc39f7b49067e7d9420",
+          "merged_pr": "https://github.com/mumukun/marketNewsFeed/pull/12",
+          "deleted_from": [
+            "local",
+            "origin"
+          ]
+        }
+      ],
+      "retained_local": [
+        {
+          "branch": "feat/CHG-20261025-005-system-hardening",
+          "reasons": [
+            "commits-not-in-main",
+            "local-unique-commits"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261028-001-development-release-flow",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-011-postgres-query-cost",
+          "reasons": [
+            "no-exact-merged-PR-proof"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-012-retire-feishu-queue",
+          "reasons": [
+            "commits-not-in-main",
+            "local-ahead-of-upstream",
+            "local-unique-commits",
+            "no-exact-merged-PR-proof",
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-002-news-index-artifact",
+          "reasons": [
+            "worktree-in-use"
+          ]
+        },
+        {
+          "branch": "main",
+          "reasons": [
+            "no-exact-merged-PR-proof",
+            "non-task/protected-name",
+            "workflow-or-automation-reference"
+          ]
+        }
+      ],
+      "phase_end_local_count": 7,
+      "phase_end_remote_count": 4
+    }
+  ],
+  "worktree_policy": "Existing other-task worktrees retained; only self-created temporary cleanup checkouts removed.",
+  "own_news_cleanup": {
+    "implementation_commit": "31bf4070ac2d77e2a46182e506a47062843efffb",
+    "merged_main": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf",
+    "local_branch_deleted": true,
+    "own_temporary_worktree_removed": true
+  }
+}

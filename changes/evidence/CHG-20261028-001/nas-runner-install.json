@@ -1,0 +1,19 @@
+{
+  "change_id": "CHG-20261028-001",
+  "status": "INSTALLED",
+  "governance_commit": "d62e6b26289abb9dbecd66052749fb27fcb8ff28",
+  "installed_hashes": {
+    "/usr/local/lib/investment-platform/image_release.py": "f910619e8ebdcd39d526f29b2160cac34674be7de2caacbaa784400fc6124ec2",
+    "/usr/local/lib/investment-platform/nas_image_release.py": "b6a274da6105acc830e6ade823f16dc603c6a6e0b9f35aa8c1cc1b6648a4e005",
+    "/usr/local/lib/investment-platform/nas_source_release.py": "08b1680ddc99648f3effa72e5a75b7e00bf621f7c0359136ecb0e23d3984fe2f",
+    "/usr/local/lib/investment-platform/nas_checks.py": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993",
+    "/usr/local/sbin/nas-image-release": "8861c055d0d4f9212b2e66b2e2106b23e2ac3d9aff980a52c169ed99c648d52d"
+  },
+  "mechanism_rollback_directory": "/volume1/docker/.investment-platform-releases/runner-CHG-20261028-001-20261028T152536Z",
+  "configuration_unchanged": true,
+  "plan_without_manual_gates": "PASS",
+  "running_container_identities_unchanged": true,
+  "apps_restarted": false,
+  "database_touched": false,
+  "completed_at": "2026-10-28T15:25:38.983864+00:00"
+}
