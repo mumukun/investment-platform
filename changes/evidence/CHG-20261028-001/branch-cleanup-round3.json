@@ -1,0 +1,2239 @@
+{
+  "change_id": "CHG-20261028-001",
+  "round": 3,
+  "date": "2026-10-29",
+  "scope": "Git branch references only; no business release",
+  "directories_removed": 0,
+  "repositories": [
+    {
+      "repository": "investment-platform",
+      "verified_main": "52614607e577fa05f75cbb6da787e7e747de134f",
+      "detached_worktrees": [
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct16-all-release/investment-platform",
+          "previous_branch": "feat/CHG-20261016-001-release-integration",
+          "head": "75eb89ad33a163a5845920ca70eb439924c53785",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct16-ui-release/investment-platform",
+          "previous_branch": "feat/CHG-20261016-006-release-integration",
+          "head": "62422b5ef01c1ad2007c31029e416f32acc132a2",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/work/workspace/stock/investment-platform-ctee-recovery",
+          "previous_branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "head": "06beca345340dfab2bc09eae6382cc1cd27e75f9",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct21-pending-release/investment-platform",
+          "previous_branch": "fix/CHG-20261021-003-release-integration",
+          "head": "3314c51ba9a7a3aa038a83b04fc1789a115e8a49",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/seat-source-recovery/investment-platform",
+          "previous_branch": "fix/CHG-20261022-002-release-integration",
+          "head": "066d0dce0930779fb36994d4ced772e38eddc832",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/swing-refresh/investment-platform",
+          "previous_branch": "fix/CHG-20261022-003-swing-refresh",
+          "head": "d957a43c50531877863af1f773cad7ff86941e7b",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/decision-market-scope/investment-platform",
+          "previous_branch": "fix/CHG-20261026-001-market-decision-scope",
+          "head": "afd705b5d3fc5a934a9ca4df11fba98a29bdf326",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct26-pending-release/investment-platform",
+          "previous_branch": "fix/CHG-20261026-005-pending-integration",
+          "head": "4911f77b189301b5c191c339ac20b4554a3df455",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/sina-intraday/investment-platform",
+          "previous_branch": "hotfix/CHG-20261019-003-swing-availability",
+          "head": "84f93ba3e184ddb86442e76dd38bdd3f0c8c015b",
+          "tracked_index_and_ignored_inventory_preserved": true
+        }
+      ],
+      "deleted_local": [
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "sha": "75eb89ad33a163a5845920ca70eb439924c53785",
+          "upstream": "origin/feat/CHG-20261016-001-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct16-all-release/investment-platform",
+            "head": "75eb89ad33a163a5845920ca70eb439924c53785",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-006-release-integration",
+          "sha": "62422b5ef01c1ad2007c31029e416f32acc132a2",
+          "upstream": "origin/feat/CHG-20261016-006-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct16-ui-release/investment-platform",
+            "head": "62422b5ef01c1ad2007c31029e416f32acc132a2",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "sha": "06beca345340dfab2bc09eae6382cc1cd27e75f9",
+          "upstream": "origin/fix/CHG-20261013-003-ctee-profile-recovery",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/work/workspace/stock/investment-platform-ctee-recovery",
+            "head": "06beca345340dfab2bc09eae6382cc1cd27e75f9",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "sha": "3314c51ba9a7a3aa038a83b04fc1789a115e8a49",
+          "upstream": "origin/fix/CHG-20261021-003-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct21-pending-release/investment-platform",
+            "head": "3314c51ba9a7a3aa038a83b04fc1789a115e8a49",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "sha": "066d0dce0930779fb36994d4ced772e38eddc832",
+          "upstream": "origin/fix/CHG-20261022-002-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/seat-source-recovery/investment-platform",
+            "head": "066d0dce0930779fb36994d4ced772e38eddc832",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-003-swing-refresh",
+          "sha": "d957a43c50531877863af1f773cad7ff86941e7b",
+          "upstream": "origin/main",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/swing-refresh/investment-platform",
+            "head": "d957a43c50531877863af1f773cad7ff86941e7b",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-001-market-decision-scope",
+          "sha": "afd705b5d3fc5a934a9ca4df11fba98a29bdf326",
+          "upstream": "origin/fix/CHG-20261026-001-market-decision-scope",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/investment-platform/pull/76",
+            "head_sha": "afd705b5d3fc5a934a9ca4df11fba98a29bdf326",
+            "merge_sha": "ab581df167bcec93e335586c7a677eb8386b6e01",
+            "verified_tree": "034744499122d289e894298ce757cef920bfd91c"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/decision-market-scope/investment-platform",
+            "head": "afd705b5d3fc5a934a9ca4df11fba98a29bdf326",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "sha": "4911f77b189301b5c191c339ac20b4554a3df455",
+          "upstream": "",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct26-pending-release/investment-platform",
+            "head": "4911f77b189301b5c191c339ac20b4554a3df455",
+            "locked": false
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "sha": "84f93ba3e184ddb86442e76dd38bdd3f0c8c015b",
+          "upstream": "origin/hotfix/CHG-20261019-003-swing-availability",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/sina-intraday/investment-platform",
+            "head": "84f93ba3e184ddb86442e76dd38bdd3f0c8c015b",
+            "locked": false
+          }
+        }
+      ],
+      "deleted_remote": [
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "sha": "75eb89ad33a163a5845920ca70eb439924c53785",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-006-release-integration",
+          "sha": "62422b5ef01c1ad2007c31029e416f32acc132a2",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "sha": "06beca345340dfab2bc09eae6382cc1cd27e75f9",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "sha": "3314c51ba9a7a3aa038a83b04fc1789a115e8a49",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "sha": "066d0dce0930779fb36994d4ced772e38eddc832",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-001-market-decision-scope",
+          "sha": "afd705b5d3fc5a934a9ca4df11fba98a29bdf326",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/investment-platform/pull/76",
+            "head_sha": "afd705b5d3fc5a934a9ca4df11fba98a29bdf326",
+            "merge_sha": "ab581df167bcec93e335586c7a677eb8386b6e01",
+            "verified_tree": "034744499122d289e894298ce757cef920bfd91c"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "sha": "4911f77b189301b5c191c339ac20b4554a3df455",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "sha": "84f93ba3e184ddb86442e76dd38bdd3f0c8c015b",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "52614607e577fa05f75cbb6da787e7e747de134f"
+          }
+        }
+      ],
+      "retained": [],
+      "directories_removed": 0,
+      "status": "COMPLETE",
+      "after_local": 35,
+      "after_remote": 3,
+      "remaining": [
+        {
+          "branch": "feat/CHG-20261013-001-system-functional-manual",
+          "sha": "1652fa9262ec856db94b324c8cc25040ca628b24",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree",
+            "process-uses-worktree",
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-004-green-login",
+          "sha": "babf3d0d84dd268013ad7aa980b25d7bf3549a51",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "sha": "21b0d70c52f8e9d6c44f55e951eeaf901e71fb48",
+          "upstream": "origin/feat/CHG-20261015-009-watchlist-redesign",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-002-shared-stock-drawer",
+          "sha": "57f61e5b302f82a39404c07147c34cd18aab9f3d",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-006-unified-stock-detail",
+          "sha": "f06b628d934d5ccf8c52567e352f58cebaae921e",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-008-tech-board-layout",
+          "sha": "f06b628d934d5ccf8c52567e352f58cebaae921e",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-009-compact-global-board",
+          "sha": "f06b628d934d5ccf8c52567e352f58cebaae921e",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-008-tech-index-reference",
+          "sha": "f9d1c0119755b1fc54b0037b5e72ddd36d0e12e3",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-007-market-observation",
+          "sha": "e5041f6511cb363c61d6b9cd3ee3ac0c541a8221",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261022-001-all-a-reference",
+          "sha": "4b12751789c4fc3758f30a2f9d312e58100accf3",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-004-sector-rotation",
+          "sha": "c34ea34807dd453418d223beb621feaae38424a1",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261026-004-margin-observation",
+          "sha": "104335db8f5db1abfc43829bb8eb94b6f2dd6946",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261015-008-auth-layout",
+          "sha": "1f197c8885c4c285fd606425dcecf70ff6951641",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-003-seat-ui-consistency",
+          "sha": "57f61e5b302f82a39404c07147c34cd18aab9f3d",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-004-market-availability",
+          "sha": "57f61e5b302f82a39404c07147c34cd18aab9f3d",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-009-limit-up-matrix",
+          "sha": "207f28e773bb4e6676481824d44d2c1213e32fd4",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-011-postgres-query-cost",
+          "sha": "c996f97239da03c3671daa2834eed8b017a3915b",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-012-retire-feishu-queue",
+          "sha": "c996f97239da03c3671daa2834eed8b017a3915b",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-006-sector-flow-chart",
+          "sha": "2650356571c1ad48bedff97680f898b6e8bdc79e",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-010-matrix-density",
+          "sha": "dbd2f03624c01d3b4d5825df1ba944388eb17c80",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-011-flow-stability",
+          "sha": "5ccdd52c2ecd0a3a7b2967da85b73b7dd52fc44c",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261024-002-tech-reference-first",
+          "sha": "6a4ff172f4d45430bb8f57da182450708580d1ae",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-003-tech-density",
+          "sha": "d2476f2487ad06551b3b02e2496ff060b7e56df0",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "sha": "22c9d6dae025ef04e7e426582fe9a75f6a18998f",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-002-capital-flow-continuity",
+          "sha": "ab581df167bcec93e335586c7a677eb8386b6e01",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-003-ladder-streak-recovery",
+          "sha": "ab581df167bcec93e335586c7a677eb8386b6e01",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-market-environment-ui",
+          "sha": "9c7950402cfe09561f0c2a02592812dbb6029591",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-short-preview",
+          "sha": "0663fd2383b2fccbc5361d2adc4f67784d46dbb8",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-007-margin-history",
+          "sha": "4b9e9d0e77492c74cd282e64025a679c44f509ff",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-wave-throughput",
+          "sha": "66d284ce0a44c92d7f62ae1af6a47b81b0de94ae",
+          "upstream": "origin/fix/CHG-20261027-002-wave-throughput",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261028-002-swing-diagnosis",
+          "sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree",
+            "uncommitted-or-untracked-content",
+            "recent-or-active-change"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261014-002-market-style-recovery",
+          "sha": "c2a80f366edd3020aaf1ba3e425c27f49a0a6848",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-swing-intraday",
+          "sha": "157e1dda6401497b1948bfd36d6a2991f59d26b5",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-005-limit-up-ladder",
+          "sha": "2650356571c1ad48bedff97680f898b6e8bdc79e",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "f2c969bda20dbb10ba9c43e6500607219197953b",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "protected-or-unknown-name",
+            "workflow-or-automation-reference"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "sha": "21b0d70c52f8e9d6c44f55e951eeaf901e71fb48",
+          "scope": "origin",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-wave-throughput",
+          "sha": "66d284ce0a44c92d7f62ae1af6a47b81b0de94ae",
+          "scope": "origin",
+          "reasons": [
+            "primary-current-or-active-task-worktree"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "52614607e577fa05f75cbb6da787e7e747de134f",
+          "scope": "origin",
+          "reasons": [
+            "protected-or-unknown-name",
+            "workflow-or-automation-reference"
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "stock-analyzer",
+      "verified_main": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+      "detached_worktrees": [
+        {
+          "path": "/Users/mukun/.codex/worktrees/tech-board/stock-analyzer",
+          "previous_branch": "feat/CHG-20261015-005-tech-board",
+          "head": "a42e3ddc615f98bb60cc21f45c0b58b50a4003db",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/auth-layout/stock-analyzer",
+          "previous_branch": "feat/CHG-20261015-008-sina-tech",
+          "head": "25e9c82a8a948bec82c799a64c254dad6aa8487d",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct16-all-release/stock-analyzer",
+          "previous_branch": "feat/CHG-20261016-001-release-integration",
+          "head": "a362b7ca95b78d4e6198f1edca24029ddff929ce",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/swing-selection-optimization/stock-analyzer",
+          "previous_branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "head": "af23778089e38b4a5ac039d1f513dd30575506f0",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/work/workspace/stock/stock-analyzer-chg-20261011-004",
+          "previous_branch": "fix/CHG-20261011-004-swing-history",
+          "head": "2f2fedf8fa5a23df2f2f681e5090a61ae85416d3",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct21-pending-release/stock-analyzer",
+          "previous_branch": "fix/CHG-20261021-003-release-integration",
+          "head": "afc6ef7139a4b7a0da43bd1825c0d24a65fb9071",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/flow-stability/stock-analyzer",
+          "previous_branch": "fix/CHG-20261021-011-flow-stability",
+          "head": "3bda305bbae46a36d38ffbd524bfb35ce1bc77cf",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/seat-source-recovery/stock-analyzer",
+          "previous_branch": "fix/CHG-20261022-002-release-integration",
+          "head": "1722dd7ba092460262cd2a7ec2df0f30da0f835e",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/swing-refresh/stock-analyzer",
+          "previous_branch": "fix/CHG-20261022-003-swing-refresh",
+          "head": "a706e26c3d7dd65b3c6043c21f2833946302b416",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/market-view-recovery/stock-analyzer",
+          "previous_branch": "fix/CHG-20261025-006-market-view-recovery",
+          "head": "7570ab825ad977808e084c1b6d466c29b09d62ce",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct26-pending-release/stock-analyzer",
+          "previous_branch": "fix/CHG-20261026-005-pending-integration",
+          "head": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/private/tmp/CHG-20261026-006/stock-analyzer",
+          "previous_branch": "fix/CHG-20261026-006-intraday-candidates",
+          "head": "33a53edbe3b72b141c3695d0516916a296536bce",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/market-style-recovery/stock-analyzer",
+          "previous_branch": "hotfix/CHG-20261014-002-market-style-recovery",
+          "head": "a47e453220f0f6b14505984a5cb36cad14619416",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/postgres-query-cost/stock-analyzer",
+          "previous_branch": "hotfix/CHG-20261019-003-swing-availability",
+          "head": "68ec28cbe7c0d64aa86cd1f3d494fa362caf5f4d",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct21-rule-hotfix/stock-analyzer",
+          "previous_branch": "hotfix/CHG-20261021-008-swing-rule-facts",
+          "head": "0324dbb2500c122b355a4cbb4af68d71cb356cc9",
+          "tracked_index_and_ignored_inventory_preserved": true
+        }
+      ],
+      "deleted_local": [
+        {
+          "branch": "feat/CHG-20261015-005-tech-board",
+          "sha": "a42e3ddc615f98bb60cc21f45c0b58b50a4003db",
+          "upstream": "origin/feat/CHG-20261015-005-tech-board",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/tech-board/stock-analyzer",
+            "head": "a42e3ddc615f98bb60cc21f45c0b58b50a4003db",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-008-sina-tech",
+          "sha": "25e9c82a8a948bec82c799a64c254dad6aa8487d",
+          "upstream": "origin/feat/CHG-20261015-008-sina-tech",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/auth-layout/stock-analyzer",
+            "head": "25e9c82a8a948bec82c799a64c254dad6aa8487d",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "sha": "a362b7ca95b78d4e6198f1edca24029ddff929ce",
+          "upstream": "origin/feat/CHG-20261016-001-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct16-all-release/stock-analyzer",
+            "head": "a362b7ca95b78d4e6198f1edca24029ddff929ce",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "sha": "af23778089e38b4a5ac039d1f513dd30575506f0",
+          "upstream": "origin/feat/CHG-20261022-004-swing-selection-optimization",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/swing-selection-optimization/stock-analyzer",
+            "head": "af23778089e38b4a5ac039d1f513dd30575506f0",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261011-004-swing-history",
+          "sha": "2f2fedf8fa5a23df2f2f681e5090a61ae85416d3",
+          "upstream": "origin/fix/CHG-20261011-004-swing-history",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/work/workspace/stock/stock-analyzer-chg-20261011-004",
+            "head": "2f2fedf8fa5a23df2f2f681e5090a61ae85416d3",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "sha": "afc6ef7139a4b7a0da43bd1825c0d24a65fb9071",
+          "upstream": "origin/fix/CHG-20261021-003-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct21-pending-release/stock-analyzer",
+            "head": "afc6ef7139a4b7a0da43bd1825c0d24a65fb9071",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-011-flow-stability",
+          "sha": "3bda305bbae46a36d38ffbd524bfb35ce1bc77cf",
+          "upstream": "origin/main",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/flow-stability/stock-analyzer",
+            "head": "3bda305bbae46a36d38ffbd524bfb35ce1bc77cf",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "sha": "1722dd7ba092460262cd2a7ec2df0f30da0f835e",
+          "upstream": "origin/fix/CHG-20261022-002-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/seat-source-recovery/stock-analyzer",
+            "head": "1722dd7ba092460262cd2a7ec2df0f30da0f835e",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-003-swing-refresh",
+          "sha": "a706e26c3d7dd65b3c6043c21f2833946302b416",
+          "upstream": "",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/swing-refresh/stock-analyzer",
+            "head": "a706e26c3d7dd65b3c6043c21f2833946302b416",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "sha": "7570ab825ad977808e084c1b6d466c29b09d62ce",
+          "upstream": "origin/fix/CHG-20261025-006-market-view-recovery",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/stock-analyzer/pull/41",
+            "head_sha": "7570ab825ad977808e084c1b6d466c29b09d62ce",
+            "merge_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+            "verified_tree": "029687721529732d8aa4b7cf0022c5e2f5e9b489"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/market-view-recovery/stock-analyzer",
+            "head": "7570ab825ad977808e084c1b6d466c29b09d62ce",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "sha": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+          "upstream": "origin/fix/CHG-20261026-005-pending-integration",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/stock-analyzer/pull/42",
+            "head_sha": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+            "merge_sha": "e85c12cbe7c93aaad79034ea452bf73258c1c4b7",
+            "verified_tree": "c725109e5af27623463b43d85ebed141efd11849"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct26-pending-release/stock-analyzer",
+            "head": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-006-intraday-candidates",
+          "sha": "33a53edbe3b72b141c3695d0516916a296536bce",
+          "upstream": "origin/fix/CHG-20261026-006-intraday-candidates",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/private/tmp/CHG-20261026-006/stock-analyzer",
+            "head": "33a53edbe3b72b141c3695d0516916a296536bce",
+            "locked": false
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261014-002-market-style-recovery",
+          "sha": "a47e453220f0f6b14505984a5cb36cad14619416",
+          "upstream": "",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/market-style-recovery/stock-analyzer",
+            "head": "a47e453220f0f6b14505984a5cb36cad14619416",
+            "locked": false
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "sha": "68ec28cbe7c0d64aa86cd1f3d494fa362caf5f4d",
+          "upstream": "origin/hotfix/CHG-20261019-003-swing-availability",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/postgres-query-cost/stock-analyzer",
+            "head": "68ec28cbe7c0d64aa86cd1f3d494fa362caf5f4d",
+            "locked": false
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261021-008-swing-rule-facts",
+          "sha": "0324dbb2500c122b355a4cbb4af68d71cb356cc9",
+          "upstream": "origin/hotfix/CHG-20261021-008-swing-rule-facts",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct21-rule-hotfix/stock-analyzer",
+            "head": "0324dbb2500c122b355a4cbb4af68d71cb356cc9",
+            "locked": false
+          }
+        }
+      ],
+      "deleted_remote": [
+        {
+          "branch": "feat/CHG-20261015-005-tech-board",
+          "sha": "a42e3ddc615f98bb60cc21f45c0b58b50a4003db",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-008-sina-tech",
+          "sha": "25e9c82a8a948bec82c799a64c254dad6aa8487d",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "sha": "a362b7ca95b78d4e6198f1edca24029ddff929ce",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "sha": "af23778089e38b4a5ac039d1f513dd30575506f0",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261011-004-swing-history",
+          "sha": "2f2fedf8fa5a23df2f2f681e5090a61ae85416d3",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "sha": "afc6ef7139a4b7a0da43bd1825c0d24a65fb9071",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "sha": "1722dd7ba092460262cd2a7ec2df0f30da0f835e",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "sha": "7570ab825ad977808e084c1b6d466c29b09d62ce",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/stock-analyzer/pull/41",
+            "head_sha": "7570ab825ad977808e084c1b6d466c29b09d62ce",
+            "merge_sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+            "verified_tree": "029687721529732d8aa4b7cf0022c5e2f5e9b489"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "sha": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/stock-analyzer/pull/42",
+            "head_sha": "ca8b267ef2b0fc75666ff2335916b9e1f17dc7c0",
+            "merge_sha": "e85c12cbe7c93aaad79034ea452bf73258c1c4b7",
+            "verified_tree": "c725109e5af27623463b43d85ebed141efd11849"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-006-intraday-candidates",
+          "sha": "33a53edbe3b72b141c3695d0516916a296536bce",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "sha": "68ec28cbe7c0d64aa86cd1f3d494fa362caf5f4d",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261021-008-swing-rule-facts",
+          "sha": "0324dbb2500c122b355a4cbb4af68d71cb356cc9",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+          }
+        }
+      ],
+      "retained": [],
+      "directories_removed": 0,
+      "status": "COMPLETE",
+      "after_local": 13,
+      "after_remote": 2,
+      "remaining": [
+        {
+          "branch": "feat/CHG-20261018-008-tech-index-reference",
+          "sha": "6f36e8fb0ad03f4b67910962606223ea5fbdb929",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-004-sector-rotation",
+          "sha": "8865c96c9d7eba42998a51235e7e441b172b3272",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261026-004-margin-observation",
+          "sha": "96738b406e56656796d59c63e1df6726d126c7cf",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-004-market-availability",
+          "sha": "580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-003-ladder-streak-recovery",
+          "sha": "2e281d4effd0971ab85232f102428f1ff63076e1",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-swing-live-projection",
+          "sha": "103380c489aff720ca96735423195b0a74b7c0dc",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-007-margin-history",
+          "sha": "87250c20ee0602245e735b0b80fe424873628759",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-projection-json",
+          "sha": "6150be6ba55ddf6fe40927ea00acb6ba8bb67a7a",
+          "upstream": "origin/fix/CHG-20261027-002-projection-json",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261028-002-swing-diagnosis",
+          "sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree",
+            "uncommitted-or-untracked-content",
+            "recent-or-active-change"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-001-sina-intraday",
+          "sha": "2ec0975790fd0b6e21793861bef23768386079d8",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-swing-intraday",
+          "sha": "de24ae71fa2b16dcd4a7f0af624c0372c9caf468",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-005-limit-up-ladder",
+          "sha": "31f42130f5481ead0b7718b982d44c2f861ffbd5",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "0626c1704569550cc6381b1ff3079df250f30865",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "protected-or-unknown-name",
+            "primary-current-or-active-task-worktree",
+            "workflow-or-automation-reference"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-projection-json",
+          "sha": "6150be6ba55ddf6fe40927ea00acb6ba8bb67a7a",
+          "scope": "origin",
+          "reasons": [
+            "primary-current-or-active-task-worktree"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+          "scope": "origin",
+          "reasons": [
+            "protected-or-unknown-name",
+            "primary-current-or-active-task-worktree",
+            "workflow-or-automation-reference"
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "verified_main": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "detached_worktrees": [
+        {
+          "path": "/Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20261011-004",
+          "previous_branch": "feat/CHG-20261011-004-sidebar-order",
+          "head": "291af4600549d4aaf82513dd000e67bfb7c4228c",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/green-login/investment-research-dashboard",
+          "previous_branch": "feat/CHG-20261015-004-green-login",
+          "head": "5bb50f6af23fb42bd612480a105055ca1f0c54c4",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/tech-board/investment-research-dashboard",
+          "previous_branch": "feat/CHG-20261015-005-tech-board",
+          "head": "3a18fda3bafbfbfba65fd7dfae09908019b844d7",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/work/workspace/stock/investment-research-dashboard-watchlist-redesign",
+          "previous_branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "head": "968b0bbc4031e38a5b26a8c7fde4d68589494227",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct16-all-release/investment-research-dashboard",
+          "previous_branch": "feat/CHG-20261016-001-release-integration",
+          "head": "0613fcb53d1b12551adcb3976eddadb4463f7d5c",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct16-ui-release/investment-research-dashboard",
+          "previous_branch": "feat/CHG-20261016-006-release-integration",
+          "head": "f444bd360f34135bf3504aaae3365007af35044e",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/swing-selection-optimization/investment-research-dashboard",
+          "previous_branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "head": "ee99289db97083627bcc082cc6b19ed7dc3531af",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/auth-layout/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261015-008-auth-layout",
+          "head": "ab787009d779b8a39186a56273862bb41cedc3dc",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct21-pending-release/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261021-003-release-integration",
+          "head": "65a2b61929b3729b1595dfad57469b6160f5dff6",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/matrix-density/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261021-010-matrix-density",
+          "head": "6b82051e8317972219affc40f79adb7a7cbac145",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/flow-stability/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261021-011-flow-stability",
+          "head": "22094affae3d63ff85cbbda24b8d745edc855bfc",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/seat-source-recovery/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261022-002-release-integration",
+          "head": "b8fb979b5aa5707abca00d8de2f5916d609d1219",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/swing-refresh/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261022-003-swing-refresh",
+          "head": "41eaa8f59b3acbc736c4f32e612a4b7c882d0301",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/decision-market-scope/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261026-001-market-decision-scope",
+          "head": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/oct26-pending-release/investment-research-dashboard",
+          "previous_branch": "fix/CHG-20261026-005-pending-integration",
+          "head": "eb9788430ee2e06c5006ef19a9c647543daa90df",
+          "tracked_index_and_ignored_inventory_preserved": true
+        },
+        {
+          "path": "/Users/mukun/.codex/worktrees/postgres-query-cost/investment-research-dashboard",
+          "previous_branch": "hotfix/CHG-20261019-003-swing-availability",
+          "head": "41473089168660881601ecb3e5616ca77bf8ae72",
+          "tracked_index_and_ignored_inventory_preserved": true
+        }
+      ],
+      "deleted_local": [
+        {
+          "branch": "feat/CHG-20261011-004-sidebar-order",
+          "sha": "291af4600549d4aaf82513dd000e67bfb7c4228c",
+          "upstream": "origin/feat/CHG-20261011-004-sidebar-order",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/work/workspace/stock/investment-research-dashboard-chg-20261011-004",
+            "head": "291af4600549d4aaf82513dd000e67bfb7c4228c",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-004-green-login",
+          "sha": "5bb50f6af23fb42bd612480a105055ca1f0c54c4",
+          "upstream": "",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/green-login/investment-research-dashboard",
+            "head": "5bb50f6af23fb42bd612480a105055ca1f0c54c4",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-005-tech-board",
+          "sha": "3a18fda3bafbfbfba65fd7dfae09908019b844d7",
+          "upstream": "origin/feat/CHG-20261015-005-tech-board",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/tech-board/investment-research-dashboard",
+            "head": "3a18fda3bafbfbfba65fd7dfae09908019b844d7",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "sha": "968b0bbc4031e38a5b26a8c7fde4d68589494227",
+          "upstream": "origin/feat/CHG-20261015-009-watchlist-redesign",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/work/workspace/stock/investment-research-dashboard-watchlist-redesign",
+            "head": "968b0bbc4031e38a5b26a8c7fde4d68589494227",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "sha": "0613fcb53d1b12551adcb3976eddadb4463f7d5c",
+          "upstream": "origin/feat/CHG-20261016-001-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct16-all-release/investment-research-dashboard",
+            "head": "0613fcb53d1b12551adcb3976eddadb4463f7d5c",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-006-release-integration",
+          "sha": "f444bd360f34135bf3504aaae3365007af35044e",
+          "upstream": "origin/feat/CHG-20261016-006-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct16-ui-release/investment-research-dashboard",
+            "head": "f444bd360f34135bf3504aaae3365007af35044e",
+            "locked": false
+          }
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "sha": "ee99289db97083627bcc082cc6b19ed7dc3531af",
+          "upstream": "origin/feat/CHG-20261022-004-swing-selection-optimization",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/swing-selection-optimization/investment-research-dashboard",
+            "head": "ee99289db97083627bcc082cc6b19ed7dc3531af",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261015-008-auth-layout",
+          "sha": "ab787009d779b8a39186a56273862bb41cedc3dc",
+          "upstream": "origin/fix/CHG-20261015-008-auth-layout",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/auth-layout/investment-research-dashboard",
+            "head": "ab787009d779b8a39186a56273862bb41cedc3dc",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "sha": "65a2b61929b3729b1595dfad57469b6160f5dff6",
+          "upstream": "origin/fix/CHG-20261021-003-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct21-pending-release/investment-research-dashboard",
+            "head": "65a2b61929b3729b1595dfad57469b6160f5dff6",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-010-matrix-density",
+          "sha": "6b82051e8317972219affc40f79adb7a7cbac145",
+          "upstream": "origin/main",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/matrix-density/investment-research-dashboard",
+            "head": "6b82051e8317972219affc40f79adb7a7cbac145",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-011-flow-stability",
+          "sha": "22094affae3d63ff85cbbda24b8d745edc855bfc",
+          "upstream": "origin/main",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/flow-stability/investment-research-dashboard",
+            "head": "22094affae3d63ff85cbbda24b8d745edc855bfc",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "sha": "b8fb979b5aa5707abca00d8de2f5916d609d1219",
+          "upstream": "origin/fix/CHG-20261022-002-release-integration",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/seat-source-recovery/investment-research-dashboard",
+            "head": "b8fb979b5aa5707abca00d8de2f5916d609d1219",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-003-swing-refresh",
+          "sha": "41eaa8f59b3acbc736c4f32e612a4b7c882d0301",
+          "upstream": "",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/swing-refresh/investment-research-dashboard",
+            "head": "41eaa8f59b3acbc736c4f32e612a4b7c882d0301",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-001-market-decision-scope",
+          "sha": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+          "upstream": "origin/fix/CHG-20261026-001-market-decision-scope",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/investment-research-dashboard/pull/44",
+            "head_sha": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+            "merge_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+            "verified_tree": "ee792331d9f3857080ddda4084afdd9ef2db9778"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/decision-market-scope/investment-research-dashboard",
+            "head": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+            "locked": false
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "sha": "eb9788430ee2e06c5006ef19a9c647543daa90df",
+          "upstream": "origin/fix/CHG-20261026-005-pending-integration",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/investment-research-dashboard/pull/45",
+            "head_sha": "eb9788430ee2e06c5006ef19a9c647543daa90df",
+            "merge_sha": "fcdd402a32560b247205f77fbeeebef4f0d3043d",
+            "verified_tree": "a6c202eb102e8cc258887bbf99160b6d5cedb01e"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/oct26-pending-release/investment-research-dashboard",
+            "head": "eb9788430ee2e06c5006ef19a9c647543daa90df",
+            "locked": false
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "sha": "41473089168660881601ecb3e5616ca77bf8ae72",
+          "upstream": "origin/hotfix/CHG-20261019-003-swing-availability",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/postgres-query-cost/investment-research-dashboard",
+            "head": "41473089168660881601ecb3e5616ca77bf8ae72",
+            "locked": false
+          }
+        }
+      ],
+      "deleted_remote": [
+        {
+          "branch": "feat/CHG-20261011-004-sidebar-order",
+          "sha": "291af4600549d4aaf82513dd000e67bfb7c4228c",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-005-tech-board",
+          "sha": "3a18fda3bafbfbfba65fd7dfae09908019b844d7",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261015-009-watchlist-redesign",
+          "sha": "968b0bbc4031e38a5b26a8c7fde4d68589494227",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-001-release-integration",
+          "sha": "0613fcb53d1b12551adcb3976eddadb4463f7d5c",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261016-006-release-integration",
+          "sha": "f444bd360f34135bf3504aaae3365007af35044e",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "feat/CHG-20261022-004-swing-selection-optimization",
+          "sha": "ee99289db97083627bcc082cc6b19ed7dc3531af",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261015-008-auth-layout",
+          "sha": "ab787009d779b8a39186a56273862bb41cedc3dc",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261021-003-release-integration",
+          "sha": "65a2b61929b3729b1595dfad57469b6160f5dff6",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261022-002-release-integration",
+          "sha": "b8fb979b5aa5707abca00d8de2f5916d609d1219",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-001-market-decision-scope",
+          "sha": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/investment-research-dashboard/pull/44",
+            "head_sha": "b2675f05c2f7a24fd0be9904991a6fb62369438e",
+            "merge_sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+            "verified_tree": "ee792331d9f3857080ddda4084afdd9ef2db9778"
+          }
+        },
+        {
+          "branch": "fix/CHG-20261026-005-pending-integration",
+          "sha": "eb9788430ee2e06c5006ef19a9c647543daa90df",
+          "proof": {
+            "kind": "merged-PR-with-identical-merge-tree",
+            "pr": "https://github.com/mumukun/investment-research-dashboard/pull/45",
+            "head_sha": "eb9788430ee2e06c5006ef19a9c647543daa90df",
+            "merge_sha": "fcdd402a32560b247205f77fbeeebef4f0d3043d",
+            "verified_tree": "a6c202eb102e8cc258887bbf99160b6d5cedb01e"
+          }
+        },
+        {
+          "branch": "hotfix/CHG-20261019-003-swing-availability",
+          "sha": "41473089168660881601ecb3e5616ca77bf8ae72",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+          }
+        }
+      ],
+      "retained": [],
+      "directories_removed": 0,
+      "status": "COMPLETE",
+      "after_local": 26,
+      "after_remote": 2,
+      "remaining": [
+        {
+          "branch": "feat/CHG-20261016-002-shared-stock-drawer",
+          "sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-006-unified-stock-detail",
+          "sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-008-tech-board-layout",
+          "sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261016-009-compact-global-board",
+          "sha": "eed62d429c01ca32dacb5318c1f2ef3bc1d281cb",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261018-008-tech-index-reference",
+          "sha": "ac52f17453b7051621f49f28ccc0957e1f718134",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261021-007-market-observation",
+          "sha": "80f8c58436385980e6ecccaa623258d6cbbdc6aa",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261025-004-sector-rotation",
+          "sha": "3c5da36a2aa859d07352417332e4dac40e9a06c4",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "feat/CHG-20261026-004-margin-observation",
+          "sha": "7886ca5e0c61f081e28805f3a24e9ed359e51054",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-003-seat-ui-consistency",
+          "sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261016-004-market-availability",
+          "sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-009-limit-up-matrix",
+          "sha": "4dff04ef65776f8f53ccdf2b89fbff42f446da63",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261021-006-sector-flow-chart",
+          "sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-002-status-colors",
+          "sha": "d46df06a2324b165d701ba3e2381fdd652420154",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-003-tech-density",
+          "sha": "baca3509807f279d0bc769cd4c55079d4f84ce61",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261025-006-market-view-recovery",
+          "sha": "41711a9947143c35605570b5ca336ba1d7a73a95",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-002-capital-flow-continuity",
+          "sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-003-ladder-streak-recovery",
+          "sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-market-environment-ui",
+          "sha": "b65e4f5b497f3530e1577a76917576690985d6a8",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-005-short-preview",
+          "sha": "e8280978fb32263facd4e09c339d577af093c501",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261026-007-margin-history",
+          "sha": "0f1ff1cbf12d3270a513dfc636aa482348da6b04",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-001-data-status-copy",
+          "sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-daily-data-reuse",
+          "sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+          "upstream": "origin/fix/CHG-20261027-002-daily-data-reuse",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261019-001-sina-intraday",
+          "sha": "86a38be87fdfadab570054f950bcc70021d8b6df",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-003-swing-intraday",
+          "sha": "250a940a6db30c6838aaa72dcbf94409bd90e167",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "hotfix/CHG-20261021-005-limit-up-ladder",
+          "sha": "5961d61d44187fe2a2bfbe54f3bb7cd0e151ee8d",
+          "upstream": "",
+          "scope": "local",
+          "reasons": [
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "b7e005c2613c3e9e23fe154327cb5e608caa1a40",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "protected-or-unknown-name",
+            "primary-current-or-active-task-worktree",
+            "uncommitted-or-untracked-content",
+            "workflow-or-automation-reference"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261027-002-daily-data-reuse",
+          "sha": "56f04418e2642c6a83177acb5fad67a2ca4be58b",
+          "scope": "origin",
+          "reasons": [
+            "primary-current-or-active-task-worktree"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+          "scope": "origin",
+          "reasons": [
+            "protected-or-unknown-name",
+            "primary-current-or-active-task-worktree",
+            "uncommitted-or-untracked-content",
+            "workflow-or-automation-reference"
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "marketNewsFeed",
+      "verified_main": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf",
+      "detached_worktrees": [
+        {
+          "path": "/Users/mukun/.codex/worktrees/postgres-query-cost/marketNewsFeed",
+          "previous_branch": "hotfix/CHG-20261019-002-news-index-artifact",
+          "head": "1cf841e4dafab2a897b58b599a718f54ee84c787",
+          "tracked_index_and_ignored_inventory_preserved": true
+        }
+      ],
+      "deleted_local": [
+        {
+          "branch": "hotfix/CHG-20261019-002-news-index-artifact",
+          "sha": "1cf841e4dafab2a897b58b599a718f54ee84c787",
+          "upstream": "origin/hotfix/CHG-20261019-002-news-index-artifact",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf"
+          },
+          "worktree": {
+            "path": "/Users/mukun/.codex/worktrees/postgres-query-cost/marketNewsFeed",
+            "head": "1cf841e4dafab2a897b58b599a718f54ee84c787",
+            "locked": false
+          }
+        }
+      ],
+      "deleted_remote": [
+        {
+          "branch": "hotfix/CHG-20261019-002-news-index-artifact",
+          "sha": "1cf841e4dafab2a897b58b599a718f54ee84c787",
+          "proof": {
+            "kind": "reachable-from-origin-main",
+            "main_sha": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf"
+          }
+        }
+      ],
+      "retained": [],
+      "directories_removed": 0,
+      "status": "COMPLETE",
+      "after_local": 3,
+      "after_remote": 2,
+      "remaining": [
+        {
+          "branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "sha": "4427fbbfdb00acd99619e8b3d87a1cc1cbf53f7e",
+          "upstream": "origin/fix/CHG-20261013-003-ctee-profile-recovery",
+          "scope": "local",
+          "reasons": [
+            "primary-current-or-active-task-worktree",
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261018-012-retire-feishu-queue",
+          "sha": "ca4796bd2471ccc0ae3d53660ae6e4dc75dbb114",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "not-proven-integrated-at-current-tip"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "138ea7cbebfa17df0b27f52b7b15e2907a8eec65",
+          "upstream": "origin/main",
+          "scope": "local",
+          "reasons": [
+            "protected-or-unknown-name",
+            "workflow-or-automation-reference"
+          ]
+        },
+        {
+          "branch": "fix/CHG-20261013-003-ctee-profile-recovery",
+          "sha": "4427fbbfdb00acd99619e8b3d87a1cc1cbf53f7e",
+          "scope": "origin",
+          "reasons": [
+            "primary-current-or-active-task-worktree",
+            "uncommitted-or-untracked-content"
+          ]
+        },
+        {
+          "branch": "main",
+          "sha": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf",
+          "scope": "origin",
+          "reasons": [
+            "protected-or-unknown-name",
+            "workflow-or-automation-reference"
+          ]
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "deleted_local": 41,
+    "deleted_remote": 33,
+    "detached_worktrees": 41,
+    "remaining_local": 77,
+    "remaining_remote": 9
+  },
+  "additional_merge_checks": [
+    {
+      "repo": "investment-platform",
+      "branch": "feat/CHG-20261015-009-watchlist-redesign",
+      "sha": "21b0d70c52f8e9d6c44f55e951eeaf901e71fb48",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "feat/CHG-20261018-008-tech-index-reference",
+      "sha": "f9d1c0119755b1fc54b0037b5e72ddd36d0e12e3",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "feat/CHG-20261021-007-market-observation",
+      "sha": "e5041f6511cb363c61d6b9cd3ee3ac0c541a8221",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "feat/CHG-20261022-001-all-a-reference",
+      "sha": "4b12751789c4fc3758f30a2f9d312e58100accf3",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "feat/CHG-20261025-004-sector-rotation",
+      "sha": "c34ea34807dd453418d223beb621feaae38424a1",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "feat/CHG-20261026-004-margin-observation",
+      "sha": "104335db8f5db1abfc43829bb8eb94b6f2dd6946",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261015-008-auth-layout",
+      "sha": "1f197c8885c4c285fd606425dcecf70ff6951641",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261018-009-limit-up-matrix",
+      "sha": "207f28e773bb4e6676481824d44d2c1213e32fd4",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261021-010-matrix-density",
+      "sha": "dbd2f03624c01d3b4d5825df1ba944388eb17c80",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261021-011-flow-stability",
+      "sha": "5ccdd52c2ecd0a3a7b2967da85b73b7dd52fc44c",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261024-002-tech-reference-first",
+      "sha": "6a4ff172f4d45430bb8f57da182450708580d1ae",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261026-005-market-environment-ui",
+      "sha": "9c7950402cfe09561f0c2a02592812dbb6029591",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261026-005-short-preview",
+      "sha": "0663fd2383b2fccbc5361d2adc4f67784d46dbb8",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "fix/CHG-20261026-007-margin-history",
+      "sha": "4b9e9d0e77492c74cd282e64025a679c44f509ff",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-platform",
+      "branch": "hotfix/CHG-20261021-003-swing-intraday",
+      "sha": "157e1dda6401497b1948bfd36d6a2991f59d26b5",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "feat/CHG-20261018-008-tech-index-reference",
+      "sha": "6f36e8fb0ad03f4b67910962606223ea5fbdb929",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "feat/CHG-20261025-004-sector-rotation",
+      "sha": "8865c96c9d7eba42998a51235e7e441b172b3272",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "feat/CHG-20261026-004-margin-observation",
+      "sha": "96738b406e56656796d59c63e1df6726d126c7cf",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "fix/CHG-20261026-005-swing-live-projection",
+      "sha": "103380c489aff720ca96735423195b0a74b7c0dc",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "fix/CHG-20261026-007-margin-history",
+      "sha": "87250c20ee0602245e735b0b80fe424873628759",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "hotfix/CHG-20261019-001-sina-intraday",
+      "sha": "2ec0975790fd0b6e21793861bef23768386079d8",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "stock-analyzer",
+      "branch": "hotfix/CHG-20261021-003-swing-intraday",
+      "sha": "de24ae71fa2b16dcd4a7f0af624c0372c9caf468",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "feat/CHG-20261018-008-tech-index-reference",
+      "sha": "ac52f17453b7051621f49f28ccc0957e1f718134",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "feat/CHG-20261021-007-market-observation",
+      "sha": "80f8c58436385980e6ecccaa623258d6cbbdc6aa",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "feat/CHG-20261025-004-sector-rotation",
+      "sha": "3c5da36a2aa859d07352417332e4dac40e9a06c4",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "feat/CHG-20261026-004-margin-observation",
+      "sha": "7886ca5e0c61f081e28805f3a24e9ed359e51054",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261018-009-limit-up-matrix",
+      "sha": "4dff04ef65776f8f53ccdf2b89fbff42f446da63",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261025-002-status-colors",
+      "sha": "d46df06a2324b165d701ba3e2381fdd652420154",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261025-003-tech-density",
+      "sha": "baca3509807f279d0bc769cd4c55079d4f84ce61",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261025-006-market-view-recovery",
+      "sha": "41711a9947143c35605570b5ca336ba1d7a73a95",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261026-005-market-environment-ui",
+      "sha": "b65e4f5b497f3530e1577a76917576690985d6a8",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261026-005-short-preview",
+      "sha": "e8280978fb32263facd4e09c339d577af093c501",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "fix/CHG-20261026-007-margin-history",
+      "sha": "0f1ff1cbf12d3270a513dfc636aa482348da6b04",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "hotfix/CHG-20261019-001-sina-intraday",
+      "sha": "86a38be87fdfadab570054f950bcc70021d8b6df",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "investment-research-dashboard",
+      "branch": "hotfix/CHG-20261021-003-swing-intraday",
+      "sha": "250a940a6db30c6838aaa72dcbf94409bd90e167",
+      "no_op_merge": false,
+      "exit": 1
+    },
+    {
+      "repo": "marketNewsFeed",
+      "branch": "fix/CHG-20261018-012-retire-feishu-queue",
+      "sha": "ca4796bd2471ccc0ae3d53660ae6e4dc75dbb114",
+      "no_op_merge": false,
+      "exit": 1
+    }
+  ]
+}
