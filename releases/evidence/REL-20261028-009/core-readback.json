@@ -1,0 +1,145 @@
+{
+  "read_at": "2026-10-28T22:31:28.526977+08:00",
+  "final_provider_generated_at": "2026-10-28T22:33:59+08:00",
+  "ok": true,
+  "scope": "POST_CLOSE_READ_CONTRACT_AND_NATURAL_PROJECTION_PERSISTENCE; NOT_INTRADAY_FRESHNESS_ACCEPTANCE",
+  "checks": [
+    {
+      "path": "/api/v1/short-selection",
+      "status": "PASS_READ_CONTRACT",
+      "seconds": 1.756,
+      "meta": {
+        "updated_at": "2026-10-28T22:29:27+08:00",
+        "quality": "healthy"
+      },
+      "current": {},
+      "page_items": 0
+    },
+    {
+      "path": "/api/v1/watchlist",
+      "status": "PASS_READ_CONTRACT",
+      "seconds": 0.03,
+      "items": 69
+    },
+    {
+      "path": "/api/v1/watchlist/strategy-profiles?contract_version=investment-dashboard-watchlist-strategy-v3",
+      "status": "PASS_READ_CONTRACT",
+      "seconds": 0.035,
+      "meta": {
+        "trade_date": "2026-10-28",
+        "updated_at": "2026-10-28T22:09:44+08:00",
+        "quality": "stale",
+        "freshness_status": "stale"
+      },
+      "current": {},
+      "page_items": 69
+    },
+    {
+      "path": "/api/v1/short-selection/tail?contract_version=investment-dashboard-short-tail-selection-v2",
+      "status": "PASS_READ_CONTRACT",
+      "seconds": 0.656,
+      "trade_date": "2026-10-28",
+      "generated_at": "2026-10-28T14:56:20.566172+08:00",
+      "quality": "healthy",
+      "meta": {},
+      "current": {
+        "evaluated_at": "2026-10-28T15:01:09.710735+08:00",
+        "last_progress_at": "2026-10-28T15:01:09.710735+08:00",
+        "generation_id": "4d1b0e2ad8e7b697713e7e88c9ae07cc1758fb7ff42792856c4e916fa62d2612",
+        "quality": "healthy",
+        "coverage": {
+          "received_count": 5569,
+          "candidate_count": 46,
+          "evaluable_count": 184,
+          "fresh_quote_count": 5515,
+          "observation_count": 32,
+          "universe_complete": true,
+          "feature_ready_count": 5179,
+          "history_ready_count": 4987,
+          "expected_quote_count": 5524,
+          "known_universe_count": 5576,
+          "history_checked_count": 5013,
+          "history_missing_count": 26,
+          "original_qualified_count": 14
+        }
+      },
+      "page_items": 183
+    },
+    {
+      "path": "/api/v1/swing-selection/list?page=1&page_size=2&scope=all&contract_version=investment-dashboard-swing-selection-v4",
+      "status": "PASS_READ_CONTRACT",
+      "seconds": 1.89,
+      "trade_date": "2026-10-28",
+      "data_time": "2026-10-28T14:59:04+08:00",
+      "generated_at": "2026-10-28T15:07:26+08:00",
+      "freshness_status": "healthy",
+      "meta": {},
+      "current": {
+        "evaluated_at": "2026-10-28T15:07:26+08:00",
+        "last_progress_at": "2026-10-28T14:59:04+08:00",
+        "generation_id": "b4cdcc54ad2df51f609958a8704bbe5e04c85bb860de745730d60b545e41e193",
+        "quality": "partial",
+        "coverage": {
+          "received_count": 600,
+          "candidate_count": 807,
+          "evaluable_count": 4839,
+          "universe_complete": true,
+          "known_universe_count": 5576
+        }
+      },
+      "page_items": 2,
+      "provider": {
+        "trade_date": "2026-10-28",
+        "data_time": "2026-10-28T14:59:04+08:00",
+        "generated_at": "2026-10-28T15:07:26+08:00",
+        "freshness_status": "delayed",
+        "current": {
+          "evaluated_at": "2026-10-28T15:07:26+08:00",
+          "last_progress_at": "2026-10-28T14:59:04+08:00",
+          "generation_id": "b4cdcc54ad2df51f609958a8704bbe5e04c85bb860de745730d60b545e41e193",
+          "quality": "partial"
+        }
+      },
+      "same_generation": true
+    },
+    {
+      "path": "/api/v1/sector-workbench",
+      "status": "PASS_READ_CONTRACT",
+      "seconds": 0.047,
+      "meta": {
+        "quality": "healthy",
+        "businessDate": "2026-10-28",
+        "latestSnapshotDate": "2026-10-28"
+      },
+      "current": {},
+      "page_items": 0,
+      "summaries": 193
+    },
+    {
+      "path": "provider:/tech-board",
+      "status": "PASS_PROVIDER_READ_CONTRACT",
+      "seconds": 0.615,
+      "boards": 15,
+      "securities": 477,
+      "generated_at": "2026-10-28T14:30:37.314927+00:00",
+      "last_collection_at": "2026-10-28T22:29:26.120000+08:00"
+    },
+    {
+      "path": "provider:/short-selection",
+      "status": "PASS_PROVIDER_READ_CONTRACT",
+      "seconds": 0.138,
+      "trade_date": "2026-10-28",
+      "data_time": "2026-10-28T16:04:58.348036+08:00",
+      "generated_at": "2026-10-28T22:33:59+08:00",
+      "degraded": false,
+      "candidates": 102,
+      "excluded": 40
+    }
+  ],
+  "evidence": [
+    "core-readback.jsonl",
+    "general-short-targeted-readback.json",
+    "projection-state-initial.json"
+  ],
+  "note": "Initial provider inspection fetched a valid typed response but then accessed freshness_status, which is not exposed by the consumer model. Corrected to degraded and retried only that provider GET. Consumer comprehensive-short GET has its existing business snapshot archive side effect; it is not a strictly read-only handler. No manual refresh, foundation write, history cleanup or development test against production was invoked."
+}

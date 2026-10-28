@@ -1,0 +1,118 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261028-009",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+        "version": "5.0.8",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+        },
+        "image_ids": {
+          "app": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+            "run_id": "40704491277"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+            }
+          },
+          "candidate_run_id": "40704997621"
+        }
+      },
+      "tag": "v5.0.8",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.0.7",
+        "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+        "image_ids": {
+          "stock-api": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177",
+          "stock-watch": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177",
+          "stock-data": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177"
+        }
+      },
+      "rollback": {
+        "tag": "v5.0.7",
+        "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+        "version": "5.0.7",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+        },
+        "image_ids": {
+          "app": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Only explicit ISO serialization of nested dates at existing API projection JSONB persistence. No schema, foundation writes, deletion, backfill, rule or public wire model change. Old5.0.7 reads same ISO values; independent backup coverage is not assumed.",
+        "evidence": "32 targeted API/watch tests;12 separate business PG tests with overlapping counts not added; PR CI40703920096 and frozen main CI40704491277 PASS; exact candidate40704997621 smoke PASS. Real readonly datetime diagnostic retained in REL008. Current5.0.7 image retained with declared comprehensive-short limitation."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only stock5.0.8, PR54 merged9061b86b; exact mainCI40704491277 and candidate40704997621 PASS. Dashboard/News unchanged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Same API fields, ISO clocks/offsets and rules. Existing explicit serializer reused only at JSONB boundary; unknown/nonfinite data rejects and preserves last result. No schema or foundation writes."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "32 local API/watch tests plus12 business PG tests with overlapping counts not added; exact PR/main CI and candidate smoke PASS. Nested dates, offsets, failure retention and recovery verified in isolated PostgreSQL."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "REL008 post-close core6 reads passed after targeted cold-start retry; readonly reproduction proved datetime failure. Reuse unchanged dated source/core evidence; verify comprehensive-short publication and affected core reads after deployment. No claim of intraday freshness."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Same3 services, owners/fences, sources, configuration, credentials, NAS proxy and runner. Native deployment checks live identity drift and health."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Current verified5.0.7 c39e86fb/digest3d36094e/config32634026 retained; same result structures and ISO dates. Rollback baseline has explicitly declared comprehensive-short projection failure; no DB downgrade/history deletion/restore drill."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested re-release after changes and authorized further performance/bug fixes in the same unfinished Change; preserve original release authorization."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

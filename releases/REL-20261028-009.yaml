@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261028-009",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "release_target_seconds": 300,
+  "assistant_review_target_seconds": 60,
+  "created_at": "2026-10-28T14:14:53.522456+00:00",
+  "updated_at": "2026-10-28T14:36:54.916446+00:00",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "authorization": "Continue original explicit release-after-fix authorization for the same unfinished Change; fix-forward of confirmed API projection serialization failure.",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v5.0.7",
+      "planned_version": "5.0.8",
+      "tag": "v5.0.8",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/54",
+      "quality_status": "PASS",
+      "development_commit": "6150be6ba55ddf6fe40927ea00acb6ba8bb67a7a",
+      "rollback_note": "Retain verified5.0.7 exact image; declared comprehensive-short projection failure remains in rollback version.",
+      "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+      "pr_quality_run_id": "40703920096",
+      "quality_run_id": "40704491277",
+      "candidate_run_id": "40704997621",
+      "candidate_evidence": "releases/evidence/REL-20261028-009/stock/candidate.json",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+      },
+      "artifact_id": {
+        "app": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "rollback": {
+        "tag": "v5.0.7",
+        "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+        "version": "5.0.7",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+        },
+        "image_ids": {
+          "app": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Only explicit ISO serialization of nested dates at existing API projection JSONB persistence. No schema, foundation writes, deletion, backfill, rule or public wire model change. Old5.0.7 reads same ISO values; independent backup coverage is not assumed.",
+        "evidence": "32 targeted API/watch tests;12 separate business PG tests with overlapping counts not added; PR CI40703920096 and frozen main CI40704491277 PASS; exact candidate40704997621 smoke PASS. Real readonly datetime diagnostic retained in REL008. Current5.0.7 image retained with declared comprehensive-short limitation."
+      },
+      "build_time": "2026-10-28T14:20:51Z"
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T14:25:31.065652+00:00",
+    "completed_at": "2026-10-28T14:29:32.223998+00:00"
+  },
+  "verification": {
+    "status": "PASS_CORE_READ_AND_NATURAL_API_PROJECTION_PUBLICATION_WITH_DECLARED_DATA_GAPS",
+    "local_evidence": [
+      "changes/evidence/CHG-20261027-002/projection-json-tests.txt",
+      "changes/evidence/CHG-20261027-002/projection-json-business-tests.txt"
+    ],
+    "production_diagnosis": "releases/evidence/REL-20261028-008/short-projection-diagnostic.txt",
+    "scope": "Only explicit dated JSON serialization at API projection persistence. No foundation writes, schema, source, rule or public model changes.",
+    "known_limitations": [
+      "Reuse unchanged5.0.7 dated core/source evidence; post-close read and natural projection publication cannot certify intraday computation latency.",
+      "NAS sector cold build173.970s remains slow during concurrent startup; source/history and minute-sample gaps remain explicit.",
+      "Comprehensive short projection generated22:33:59, but its underlying assessment/source clock16:04:58 is retained. After-close healthy is original contract semantics, not an intraday-live claim.",
+      "Wave v4 consumer/provider generation matches but retains15:07:26 assessment/current partial. Provider delayed versus consumer healthy is an existing dated presentation discrepancy; no new intraday cycle was forced.",
+      "Tail current retains15:01:09 evaluation and26 history gaps; watch strategy retains22:09:44 assessment with stale input quality. No claim that every business result was recomputed after5.0.8.",
+      "Normal new-version startup daily swing scan failed110.358s; inner maintenance succeeded103.357s. Failure is not counted as scan acceptance. Foundation readiness gaps remain separately declared; no speculative source recovery claim.",
+      "Initial direct-provider verification failed because the harness accessed a field absent from its Pydantic model. Corrected and targeted retry passed0.138s. Automatic approval review initially mistook this targeted provider call for the archiving Dashboard route; call-chain evidence and a hard8808-only guard proved the safer provider GET, which was then approved."
+    ],
+    "core_evidence": "releases/evidence/REL-20261028-009/core-readback.json",
+    "projection_evidence": "releases/evidence/REL-20261028-009/projection-state-initial.json",
+    "natural_jobs": "releases/evidence/REL-20261028-009/startup-jobs.json",
+    "runtime_clocks": "releases/evidence/REL-20261028-009/runtime-clock-metadata.json",
+    "governance_record_checks": "PASS: JSON parse, added evidence paths, Python check-script compilation, diff whitespace and unchanged Dashboard/News baselines. No governance runtime code change; mandatory PR CI remains at closeout."
+  },
+  "timing": {
+    "release_handling_started_at": "2026-10-28T14:14:53.522456+00:00",
+    "note": "Original follow-up request timestamp unavailable; diagnostic timestamp is a lower bound only. Full earlier optimization/release timing is retained in REL008; never report deploy-only time as total.",
+    "diagnostic_read_started_at": "2026-10-28T14:09:56.815850+00:00",
+    "core_verified_at": "2026-10-28T14:36:54.916446+00:00",
+    "release_handling_elapsed_seconds": 1321.394,
+    "since_first_diagnostic_seconds": 1618.101,
+    "deployment_to_native_pass_seconds": 241.158,
+    "elapsed_measurement_ends_at": "core_verified_at; subsequent governance closeout CI/merge is additional handling time, reported separately in final"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261028-009/image-release-plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-009/deployment-receipt.json"
+  ],
+  "notes": [
+    "No changes to frozen plan after first invocation. NAS exact tag/main references and clean tracked checkout verified before switch. Backup honestly SKIPPED per reviewed no-data-impact policy; retained5.0.7 rollback includes its declared comprehensive-short limitation.",
+    "Core combined evidence is8 successful reads; initial harness failure retained, only failed provider inspection retried. GET consumer archive behavior is declared rather than misrepresented as zero business writes.",
+    "No extra restoration/rollback drills, source collection, networking/sudoers changes or history cleanup. Production after-close reads do not certify next-session latency."
+  ]
+}
