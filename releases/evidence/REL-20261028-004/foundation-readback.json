@@ -1,0 +1,138 @@
+{
+  "read_at": "2026-10-28T11:25:39.030073+08:00",
+  "runtime_role": "api",
+  "quotes": [
+    {
+      "market": "CN",
+      "rows": 5577,
+      "instruments": 5577,
+      "today_instruments": 5577,
+      "recently_observed_instruments": 0,
+      "trade_date": "2026-10-28",
+      "source_time": "2026-10-28 10:41:45+08:00",
+      "received_at": "2026-10-28 10:41:46.840563+08:00"
+    },
+    {
+      "market": "US",
+      "rows": 103,
+      "instruments": 103,
+      "today_instruments": 0,
+      "recently_observed_instruments": 0,
+      "trade_date": "2026-10-27",
+      "source_time": "2026-10-28 10:30:11+08:00",
+      "received_at": "2026-10-28 10:44:56.729657+08:00"
+    }
+  ],
+  "states": [
+    {
+      "dataset": "cn-market-flow",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 114,
+      "data_date": "2026-10-28",
+      "data_time": "2026-10-28 11:23:00+08:00",
+      "checked_at": "2026-10-28 11:24:41.439318+08:00",
+      "last_success_at": "2026-10-28 11:24:41.439318+08:00"
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 5576,
+      "ready_count": 5576,
+      "data_date": "2026-10-28",
+      "data_time": "2026-10-28 10:40:32+08:00",
+      "checked_at": "2026-10-28 11:03:13.753863+08:00",
+      "last_success_at": "2026-10-28 11:03:13.753863+08:00"
+    },
+    {
+      "dataset": "cn-snapshot",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 5576,
+      "data_date": null,
+      "data_time": "2026-10-28 10:41:45+08:00",
+      "checked_at": "2026-10-28 11:24:48.854068+08:00",
+      "last_success_at": "2026-10-28 11:24:48.854068+08:00"
+    },
+    {
+      "dataset": "industry-fund-history",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 48,
+      "ready_count": 48,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 10:53:09.212731+08:00",
+      "last_success_at": "2026-10-28 10:53:09.212731+08:00"
+    },
+    {
+      "dataset": "industry-intraday",
+      "scope_key": "all",
+      "status": "unavailable",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 10:20:55.246601+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "seat-trades",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 100,
+      "ready_count": 100,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 09:02:20.072311+08:00",
+      "last_success_at": "2026-10-28 09:02:20.072311+08:00"
+    },
+    {
+      "dataset": "sina-industry-catalog",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 10:44:43.791089+08:00",
+      "last_success_at": "2026-10-28 10:44:43.791089+08:00"
+    },
+    {
+      "dataset": "system",
+      "scope_key": "collector",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": "2026-10-28 11:24:44.347545+08:00",
+      "checked_at": "2026-10-28 11:25:20.599323+08:00",
+      "last_success_at": "2026-10-28 11:25:20.599323+08:00"
+    },
+    {
+      "dataset": "us-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 1,
+      "data_date": null,
+      "data_time": "2026-10-28 10:30:11+08:00",
+      "checked_at": "2026-10-28 11:24:42.633527+08:00",
+      "last_success_at": "2026-10-28 11:24:42.633527+08:00"
+    }
+  ],
+  "reference": {
+    "directory_complete": true,
+    "directory_rows": 5576,
+    "calendar_rows": 8797
+  },
+  "named_rule_index": [
+    {
+      "indisvalid": true,
+      "indisready": true
+    }
+  ]
+}

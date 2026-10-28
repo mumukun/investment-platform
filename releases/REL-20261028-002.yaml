@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_profile": "routine",
+  "authorization": "用户2026-10-28：修改完成之后就重新发版本，尤其验证短线、波段、自选及其他常用功能",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "governance_pr": "https://github.com/mumukun/investment-platform/pull/78",
+  "release_id": "REL-20261028-002",
+  "status": "ROLLED_BACK",
+  "corrects_release": "REL-20261028-001",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.12.0",
+      "rollback": {
+        "tag": "v4.12.0",
+        "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+        "version": "4.12.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+        },
+        "image_ids": {
+          "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+        }
+      },
+      "planned_version": "5.0.1",
+      "tag": "v5.0.1",
+      "commit_sha": "886392c60fabbdec353223fc0cff9a1aa51d3f13",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:e663cba64816ce7c041b4b1ac2e46caf3de756292d1acd6073b0e92f1efe112e"
+      },
+      "artifact_id": {
+        "app": "sha256:6d52440054392b04b6e374d0b63279e02ae386847621f3e38333932a42db0331"
+      },
+      "candidate_evidence": "evidence/REL-20261028-002/stock/candidate.json",
+      "quality_run_id": "40617306824",
+      "candidate_run_id": "40617470856",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/46",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Additive schema from prior attempt retained; actual old-code rollback/health/smoke passed. Correction changes scheduling, batching, diagnostics and a pure read connection; no destructive migration or fact format change. Original full backup retained, not claimed as a new backup.",
+        "evidence": "REL-20261028-001 rollback receipt; CHG-20261027-002 corrective 66-test isolated regression, final main CI/candidate and retained previous exact artifacts."
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.39.0",
+      "rollback": {
+        "tag": "v0.39.0",
+        "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+        "version": "0.39.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+        },
+        "image_ids": {
+          "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+          "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+        }
+      },
+      "planned_version": "1.0.0",
+      "tag": "v1.0.0",
+      "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+      },
+      "artifact_id": {
+        "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+        "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+      },
+      "candidate_evidence": "evidence/REL-20261028-001/dashboard/candidate.json",
+      "quality_run_id": "40568886293",
+      "candidate_run_id": "40569553203",
+      "existing_tag_evidence": "Same immutable v1.0.0 and CI artifact from rolled-back REL-20261028-001; no re-tag or rebuild.",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Additive schema from prior attempt retained; actual old-code rollback/health/smoke passed. Correction changes scheduling, batching, diagnostics and a pure read connection; no destructive migration or fact format change. Original full backup retained, not claimed as a new backup.",
+        "evidence": "REL-20261028-001 rollback receipt; CHG-20261027-002 corrective 66-test isolated regression, final main CI/candidate and retained previous exact artifacts."
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "ROLLED_BACK",
+    "started_at": "2026-10-28T02:00:03.477233+00:00"
+  },
+  "verification": {
+    "status": "FAILED_CORE_WATCHLIST_LATENCY",
+    "evidence": [
+      "changes/evidence/CHG-20261027-002/corrective-tests.txt",
+      "releases/evidence/REL-20261028-001/core-readback.json"
+    ],
+    "known_limitations": [
+      "First attempt rolled back after sustained collector health failure and margin timeout; re-run affected real acceptance after corrective deployment."
+    ],
+    "corrective_tests": {
+      "passed": 66,
+      "seconds": 11.12,
+      "warning": "existing Starlette/AnyIO deprecation",
+      "log": "changes/evidence/CHG-20261027-002/corrective-tests.txt"
+    },
+    "correction_pr": "https://github.com/mumukun/stock-analyzer/pull/46",
+    "correction_head": "7f65a391ffd05a7760846f79bc82c506bd41e1b1",
+    "pr_ci": "https://github.com/mumukun/stock-analyzer/actions/runs/40616988913",
+    "test_container_cleanup": {
+      "container_id": "ccf574b10cd01d5cebc67bc8d466ba37f615b77821edd440c056ba17b4ee7da0",
+      "label_verified": true,
+      "tmpfs_verified": true,
+      "removed": true
+    },
+    "failure_detail": "Fixed authenticated watchlist smoke exceeded original 5s timeout. Read-only stage profiling: watchlist 1.130s, all 5589 profiles 8.984s, concept classification 0.038s. Collector heartbeat remained healthy. SSH interruption delayed diagnosis; no downstream deployment."
+  },
+  "rollback": {
+    "status": "ROLLBACK_PASS",
+    "receipt": "releases/evidence/REL-20261028-002/rollback-receipt.json",
+    "completed_at": "2026-10-28T02:26:40.569311+00:00",
+    "actual_identity": {
+      "stock-analyzer": "v4.12.0",
+      "investment-research-dashboard": "v0.39.0"
+    },
+    "database_restore": false,
+    "detail": "Stopped/removed only added collector; exact stable stock image/checkout restored and health/version/smoke passed. Dashboard was never advanced in this attempt."
+  },
+  "created_at": "2026-10-28T01:51:30.654075+00:00",
+  "updated_at": "2026-10-28T02:26:40.569311+00:00",
+  "database_review": {
+    "decision": "skip second full backup",
+    "reason": "First attempt already applied additive schema and retained all data; actual old-code rollback and smoke passed. Correction changes publication scheduling/batching, coverage metadata and read-only margin queries; no destructive migration or fact format change. Original protected full backup remains available; not represented as a new backup.",
+    "existing_backup_receipt": "releases/evidence/REL-20261028-001/deployment-receipt.json"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261028-002/image-release-plan.json",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-002/deployment-receipt.json"
+  ]
+}

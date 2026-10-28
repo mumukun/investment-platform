@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_profile": "routine",
+  "authorization": "用户2026-10-28：修改完成之后就重新发版本，尤其验证短线、波段、自选及其他常用功能",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "governance_pr": "https://github.com/mumukun/investment-platform/pull/78",
+  "release_id": "REL-20261028-003",
+  "status": "ROLLED_BACK",
+  "corrects_release": "REL-20261028-002",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.12.0",
+      "rollback": {
+        "tag": "v4.12.0",
+        "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+        "version": "4.12.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+        },
+        "image_ids": {
+          "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+        }
+      },
+      "planned_version": "5.0.2",
+      "tag": "v5.0.2",
+      "commit_sha": "c1d910402412def4a6786eb13785d8f355709775",
+      "artifact_model": "CI_BUILD_ONCE",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/47",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Additive named-rule read index and bounded/read-only queries only. No historical fact rewrite, deletion or downgrade; stable old-code rollback passed. Original REL001 protected full backup retained, not claimed as a new backup.",
+        "evidence": "REL002 actual rollback receipt; CHG002 profile-query-tests 73+7 local tests; PR47/main CI40621246492 and candidate40621428166."
+      },
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:d8feb50d51ef19a7456a4c2623e71a9ad1efc119338c7ed1327eb1e66887f964"
+      },
+      "artifact_id": {
+        "app": "sha256:97b1661d406611893212705d85dd15b35dc4897997aaeef31c981120315b3f19"
+      },
+      "candidate_evidence": "evidence/REL-20261028-003/stock/candidate.json",
+      "quality_run_id": "40621246492",
+      "candidate_run_id": "40621428166"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.39.0",
+      "rollback": {
+        "tag": "v0.39.0",
+        "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+        "version": "0.39.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+        },
+        "image_ids": {
+          "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+          "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+        }
+      },
+      "planned_version": "1.0.0",
+      "tag": "v1.0.0",
+      "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+      },
+      "artifact_id": {
+        "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+        "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+      },
+      "candidate_evidence": "evidence/REL-20261028-001/dashboard/candidate.json",
+      "quality_run_id": "40568886293",
+      "candidate_run_id": "40569553203",
+      "existing_tag_evidence": "Same immutable v1.0.0 and CI artifact from rolled-back REL-20261028-001; no re-tag or rebuild.",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Unchanged Dashboard 1.0.0 artifact; no database or schema changes. Original protected stock backup retained.",
+        "evidence": "Unchanged Dashboard candidate40569553203; REL001 actual old-code rollback; same exact artifact."
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T02:35:35.732515+00:00",
+    "completed_at": "2026-10-28T02:46:20.968441+00:00"
+  },
+  "verification": {
+    "status": "FAILED_SECTOR_PROJECTION_LATENCY",
+    "evidence": [
+      "changes/evidence/CHG-20261027-002/profile-query-tests.txt",
+      "releases/evidence/REL-20261028-003/core-readback.json",
+      "releases/evidence/REL-20261028-003/foundation-readback.json"
+    ],
+    "required_after_deployment": [
+      "fixed authenticated watchlist smoke without timeout changes",
+      "collector heartbeat and real date/coverage",
+      "affected short/swing/watchlist/common consumer readback including margin"
+    ],
+    "known_limitations": [
+      "Initial two deployment attempts were rolled back; no new production baseline is asserted."
+    ],
+    "main_ci": "https://github.com/mumukun/stock-analyzer/actions/runs/40621246492",
+    "candidate_ci": "https://github.com/mumukun/stock-analyzer/actions/runs/40621428166",
+    "findings": {
+      "read_contract_pass": 13,
+      "failed_path": "/api/v1/sector-workbench",
+      "provider_status": 503,
+      "provider_detail": "后台结果尚未更新，保留历史快照，请稍后重试",
+      "current_tail": {
+        "trade_date": "2026-10-28",
+        "quality": "partial",
+        "items": 62,
+        "evaluated_at": "2026-10-28T10:50:50.230397+08:00",
+        "known_universe_count": 5576,
+        "received_count": 5568,
+        "evaluable_count": 0
+      },
+      "collector": "Native 60s heartbeat recheck passed; CN5577 have today facts, source advanced10:03->10:40. Remaining lag/source gaps not claimed recovered."
+    },
+    "failure_detail": "Sector workbench remained503 after startup; pg_stat_activity found DISTINCT trade_date over swing_daily_bar running165s and same-time intraday history query543s. Current tail has62 partial observations; not a complete evaluable universe. Begin exact plan rollback, preserve all data.",
+    "correction_pr": "https://github.com/mumukun/stock-analyzer/pull/48",
+    "correction_tests": "changes/evidence/CHG-20261027-002/history-query-tests.txt"
+  },
+  "rollback": {
+    "status": "ROLLBACK_PASS",
+    "receipt": "releases/evidence/REL-20261028-002/rollback-receipt.json",
+    "stock_tag": "v4.12.0",
+    "dashboard_tag": "v0.39.0",
+    "failed_attempt_receipt": "releases/evidence/REL-20261028-003/rollback-attempt1-receipt.json",
+    "last_confirmed_at": "2026-10-28T03:01:47.752959+00:00",
+    "resume_result": "SSH_CONNECT_TIMEOUT_BEFORE_NAS_EXECUTION",
+    "actual_runtime_identity": {
+      "stock-analyzer": "v4.12.0",
+      "investment-research-dashboard": "v0.39.0"
+    },
+    "completed_at": "2026-10-28T03:13:55.776492+00:00",
+    "database_restore": false
+  },
+  "created_at": "2026-10-28T02:30:09.907969+00:00",
+  "updated_at": "2026-10-28T03:13:55.776492+00:00",
+  "database_review": {
+    "decision": "skip second full backup",
+    "reason": "No destructive migration; new index and request-scoped read path preserve all facts. Real old-code rollback passed twice. Retain original protected full backup; skip another full dump.",
+    "existing_backup_receipt": "releases/evidence/REL-20261028-001/deployment-receipt.json"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261028-003/image-release-plan.json",
+  "tag_status": "IMMUTABLE_v5.0.2_PUSHED_EXISTING_DASHBOARD_v1.0.0_REUSED",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-003/deployment-receipt.json"
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "release_id": "REL-20261028-001",
+  "plan_hash": "82dd6176592aa2d7bd46087879a3ee25ed1c51db0e1c0a5878745083d71ba4ad",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "status": "PASS",
+        "policy": {
+          "mode": "full",
+          "data_impact": "additive",
+          "rollback_compatible": true,
+          "reason": "Transfer foundation writers and add clocks/revision state while continuing updates to legacy fact tables. Preserve the complete pre-switch state once; no restore drill or destructive migration.",
+          "evidence": "CHG-20261027-002 ownership inventory, 1101 development regressions, 61 consumer core tests, 11 worker tests, 23 SDK tests, exact merged-main CI/candidate. Legacy records remain readable; code rollback may require normal historical revalidation."
+        },
+        "path": "/volume1/docker/.investment-platform-releases/REL-20261028-001/stock-analyzer.dump",
+        "sha256": "0d3af6d986366b5921dcd0d9a5c2ea22b84f52d89b5631405a7d5057a965ec4d",
+        "size": 1231869950
+      },
+      "deployment_started": true,
+      "completed": false,
+      "image_ids": {
+        "stock-api": "sha256:4362e7a6f722e2f48cbe5dd213693fcbb6261f432ae9d021ce1c5de3fe4e61b7",
+        "stock-watch": "sha256:4362e7a6f722e2f48cbe5dd213693fcbb6261f432ae9d021ce1c5de3fe4e61b7",
+        "stock-data": "sha256:4362e7a6f722e2f48cbe5dd213693fcbb6261f432ae9d021ce1c5de3fe4e61b7"
+      },
+      "rolled_back": true
+    },
+    "investment-research-dashboard": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "Consumer read/refresh semantics and version metadata only; no migration or destructive projection rewrite; old consumer remains compatible. Independent scheduled backup coverage is not assumed.",
+          "evidence": "CHG-20261027-002 ownership inventory, 1101 development regressions, 61 consumer core tests, 11 worker tests, 23 SDK tests, exact merged-main CI/candidate. Legacy records remain readable; code rollback may require normal historical revalidation."
+        }
+      },
+      "deployment_started": true,
+      "completed": false,
+      "image_ids": {
+        "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+        "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+      },
+      "rolled_back": true
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-27T23:13:24.037413+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 132.819
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-27T23:15:43.377076+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 523.867
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "stop_legacy_collectors",
+      "started_at": "2026-10-27T23:24:29.277535+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 18.251
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-27T23:24:47.687907+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 11.527
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-27T23:24:59.576742+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 55.818
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-27T23:25:55.581964+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 31.239
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-10-27T23:26:29.752573+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 150.293
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-10-27T23:29:07.994965+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.92
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-10-27T23:29:09.931021+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 6.246
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-10-27T23:29:18.820214+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 159.037
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-10-27T23:31:58.220581+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 7.468
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "rollback_checkout",
+      "started_at": "2026-10-28T01:34:49.273712+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 26.541
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "rollback_start",
+      "started_at": "2026-10-28T01:35:23.407389+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 154.244
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "rollback_verify",
+      "started_at": "2026-10-28T01:37:58.228008+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 10.005
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "stop_added_collectors",
+      "started_at": "2026-10-28T01:38:39.780852+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 8.353
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "remove_added_collectors",
+      "started_at": "2026-10-28T01:38:48.664363+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 22.59
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "rollback_checkout",
+      "started_at": "2026-10-28T01:39:13.724648+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 20.719
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "rollback_start",
+      "started_at": "2026-10-28T01:39:35.202795+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 74.85
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "rollback_verify",
+      "started_at": "2026-10-28T01:40:50.737120+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 32.801
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.0.0",
+      "commit_sha": "29332fca45d9aa80d9be879e3a828576d42594aa",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:d8161ca5ae87d0e9cc1e2c7eaa8f0a69a72c800d74d4e089fb850f08df80a460"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v1.0.0",
+      "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+      }
+    }
+  ],
+  "last_operation": "rollback",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-28T01:41:27.410219+00:00"
+}

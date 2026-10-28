@@ -1,0 +1,142 @@
+{
+  "read_at": "2026-10-28T10:47:12.140312+08:00",
+  "runtime_role": "api",
+  "quotes": [
+    {
+      "market": "CN",
+      "rows": 5577,
+      "instruments": 5577,
+      "today_instruments": 5577,
+      "trade_date": "2026-10-28",
+      "source_time": "2026-10-28 10:40:15+08:00",
+      "received_at": "2026-10-28 10:40:17.576873+08:00"
+    },
+    {
+      "market": "US",
+      "rows": 103,
+      "instruments": 103,
+      "today_instruments": 0,
+      "trade_date": "2026-10-27",
+      "source_time": "2026-10-28 10:30:11+08:00",
+      "received_at": "2026-10-28 10:44:56.729657+08:00"
+    }
+  ],
+  "states": [
+    {
+      "dataset": "cn-market-flow",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 77,
+      "data_date": "2026-10-28",
+      "data_time": "2026-10-28 10:46:00+08:00",
+      "checked_at": "2026-10-28 10:47:01.105920+08:00",
+      "last_success_at": "2026-10-28 10:47:01.105920+08:00"
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 60,
+      "data_date": null,
+      "data_time": "2026-10-28 09:32:20+08:00",
+      "checked_at": "2026-10-28 09:32:23.860309+08:00",
+      "last_success_at": "2026-10-28 09:32:23.860309+08:00"
+    },
+    {
+      "dataset": "cn-snapshot",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 5576,
+      "data_date": null,
+      "data_time": "2026-10-28 10:40:12+08:00",
+      "checked_at": "2026-10-28 10:45:39.525753+08:00",
+      "last_success_at": "2026-10-28 10:45:39.525753+08:00"
+    },
+    {
+      "dataset": "industry-fund-history",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 48,
+      "ready_count": 48,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 10:18:03.141613+08:00",
+      "last_success_at": "2026-10-28 10:18:03.141613+08:00"
+    },
+    {
+      "dataset": "industry-intraday",
+      "scope_key": "all",
+      "status": "unavailable",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 10:20:55.246601+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "seat-trades",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 100,
+      "ready_count": 100,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 09:02:20.072311+08:00",
+      "last_success_at": "2026-10-28 09:02:20.072311+08:00"
+    },
+    {
+      "dataset": "sina-industry-catalog",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 10:44:43.791089+08:00",
+      "last_success_at": "2026-10-28 10:44:43.791089+08:00"
+    },
+    {
+      "dataset": "system",
+      "scope_key": "collector",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": "2026-10-28 10:46:59.403534+08:00",
+      "checked_at": "2026-10-28 10:47:02.300597+08:00",
+      "last_success_at": "2026-10-28 10:47:02.300597+08:00"
+    },
+    {
+      "dataset": "us-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 1,
+      "data_date": null,
+      "data_time": "2026-10-28 10:30:11+08:00",
+      "checked_at": "2026-10-28 10:47:04.063858+08:00",
+      "last_success_at": "2026-10-28 10:47:04.063858+08:00"
+    }
+  ],
+  "reference": {
+    "directory_complete": true,
+    "directory_rows": 5576,
+    "calendar_rows": 8797
+  },
+  "named_rule_index": [
+    {
+      "indisvalid": true,
+      "indisready": true
+    }
+  ],
+  "earlier_observation": {
+    "read_at": "2026-10-28T10:41:29.788942+08:00",
+    "cn_source_time": "2026-10-28 10:03:58+08:00",
+    "collector_checked_at": "2026-10-28 10:40:10.802011+08:00",
+    "note": "Startup delay prompted focused recheck; directory count expression corrected from records to actual items key."
+  }
+}
