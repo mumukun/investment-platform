@@ -1,0 +1,24 @@
+............................................................. [  5%]
+........................................................................ [ 11%]
+.......ssss.ss..ssssss...................sssssss..sss................... [ 17%]
+................................................................ [ 22%]
+..........ss.........s.........................s.............ssssssssss............s................................................ [ 34%]
+....................s.............................ss.................... [ 40%]
+............................ssssssssssssssssssssssssssssssssssssssssssss [ 46%]
+ssssssssssssssssssssssssssssssssssssssssssssssss........................ [ 52%]
+.............................................s....................... [ 58%]
+................................................................. [ 64%]
+........................................................................ [ 70%]
+........................................................................ [ 76%]
+........................................................................ [ 82%]
+........................................................................ [ 88%]
+......................................................... [ 93%]
+........................s.....s...................... [ 97%]
+........................                                                 [100%]
+=============================== warnings summary ===============================
+../../../../Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1038 passed, 135 skipped, 1 warning, 75 subtests passed in 132.23s (0:02:12)

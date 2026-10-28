@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261029-004",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261028-002"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.1.1",
+      "commit_sha": "0a9dbdd30cf7263a33a29cd02d89f418a9c4f569",
+      "planned_version": "5.1.1",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:d2a7350912d79c5d0073e8f1188ca25d03ba6b446908f408eb87c8cad4c2f142"
+      },
+      "artifact_id": {
+        "app": "sha256:cea190dd71f0d386a135046229df580f0ac544dd56fd51686a2486ed87a1cb9d"
+      },
+      "rollback": {
+        "tag": "v5.1.0",
+        "commit_sha": "df02dc59a9f5f25a3b5dd5c1733c96b112674ea7",
+        "version": "5.1.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:bb4d6a334852228bba0194c060e3f2b2ef28a209a2c4375a50c0f9f252710806"
+        },
+        "image_ids": {
+          "app": "sha256:6a5835a4ba1702bb5c0f22aa22467c4e6f72ec5f95d942d8dbde7ecc858f01eb"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "0a9dbdd30cf7263a33a29cd02d89f418a9c4f569",
+          "run_id": "40745379758"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:d2a7350912d79c5d0073e8f1188ca25d03ba6b446908f408eb87c8cad4c2f142"
+          }
+        },
+        "candidate_run_id": "40745909160"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261029-004/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-10-28T18:40:16.236772+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "affected_evidence": "releases/evidence/REL-20261029-004/affected-readback.jsonl",
+    "known_limitations": [
+      "After-close checks do not prove real intraday P95, availability or tail deadline success. Missing historical tail baseline cannot be reconstructed as a formal signal.",
+      "Same-NAS backup/archive is not off-device disaster recovery; historical heap space is reused gradually, no VACUUM FULL.",
+      "Formal references and sparse valid-amount histories are protected; effective retention may exceed180/40sessions."
+    ]
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Continue user explicit development/testing then Production deployment authorization for the same unfinished selection reliability Change; post-deployment verification identified stale current counts."
+  },
+  "release_profile": "routine",
+  "timing": {
+    "deployment_started_at": "2026-10-28T18:36:12.779001+00:00",
+    "deployment_completed_at": "2026-10-28T18:40:16.236772+00:00",
+    "user_request_timestamp": "UNKNOWN",
+    "note": "Development, tests, PR/main CI and candidate wait preceded deployment; deployment-only duration is not the full user wait. Full backup is recorded in stage timings; no five-minute total claim."
+  }
+}

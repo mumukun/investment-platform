@@ -1,0 +1,1 @@
+{"query": "single_grouped_date_coverage", "seconds": 30.787, "dates": 120, "latest": [{"trade_date": "2026-10-28", "code_count": 4789}, {"trade_date": "2026-10-27", "code_count": 5217}], "oldest": [{"trade_date": "2026-05-06", "code_count": 5184}]}

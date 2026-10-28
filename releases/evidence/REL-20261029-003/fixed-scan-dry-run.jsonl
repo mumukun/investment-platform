@@ -1,0 +1,2 @@
+{"starting": "run_daily_scan", "dry_run": true, "database": "FORCED_READ_ONLY", "trade_date": "2026-10-28", "rules": "swing-rules-v5.2.0"}
+{"dry_run_result": {"trade_date": "2026-10-28", "universe": 2309, "pool": 818, "feature_rows": 2309, "fresh_feature_rows": 2309, "stale_or_incomplete_rows": 0, "regime": "趋势扩张", "sectors": 125, "upgraded": 193, "dry_run": true, "skipped": false}, "seconds": 57.046, "counts": null, "global_gaps": [], "gap_types": {}}

@@ -1,0 +1,177 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261029-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "df02dc59a9f5f25a3b5dd5c1733c96b112674ea7",
+        "version": "5.1.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:bb4d6a334852228bba0194c060e3f2b2ef28a209a2c4375a50c0f9f252710806"
+        },
+        "image_ids": {
+          "app": "sha256:6a5835a4ba1702bb5c0f22aa22467c4e6f72ec5f95d942d8dbde7ecc858f01eb"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "df02dc59a9f5f25a3b5dd5c1733c96b112674ea7",
+            "run_id": "40736450977"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:bb4d6a334852228bba0194c060e3f2b2ef28a209a2c4375a50c0f9f252710806"
+            }
+          },
+          "candidate_run_id": "40737020780"
+        }
+      },
+      "tag": "v5.1.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.0.8",
+        "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+        "image_ids": {
+          "stock-api": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045",
+          "stock-watch": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045",
+          "stock-data": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+        }
+      },
+      "rollback": {
+        "tag": "v5.0.8",
+        "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+        "version": "5.0.8",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+        },
+        "image_ids": {
+          "app": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "tables",
+        "data_impact": "destructive",
+        "rollback_compatible": true,
+        "reason": "The prior full-database dump hit the fixed600s runner limit before any switch. Supported table backup covers every source table eligible for retirement/partition/projection plus revision metadata; unrelated auxiliary/news/ledger tables are not deleted. Same tested candidate and rollback retained.",
+        "evidence": "CHG-20261028-002: isolated PG archive/restore, retention protection, original-row partition/upsert compatibility, 111 affected tests; Dashboard24 contract and46 UI tests.; REL-20261029-001 failed receipt proves no deployment_started or database mutation; policy scope matches lifecycle.POLICIES and raw price projection writes.",
+        "tables": [
+          "stock_analyzer.intraday_stock_bar",
+          "stock_analyzer.market_intraday_kline",
+          "stock_analyzer.a_share_snapshot",
+          "stock_analyzer.swing_daily_bar",
+          "stock_analyzer.a_share_daily_close",
+          "stock_analyzer.a_share_daily_metric",
+          "stock_analyzer.tech_board_fact",
+          "stock_analyzer.market_data_state"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+        "version": "1.1.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
+        },
+        "image_ids": {
+          "api": "sha256:533c697d9eea324a01a3954edaabfb894e2057ccae38bd289c7e58bb6acdf898",
+          "web": "sha256:a271f5e3b539612d443eb718a567b9aea311e55e09d8bab692c0beacf189a26b"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+            "run_id": "40736278506"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
+            }
+          },
+          "candidate_run_id": "40736981248"
+        }
+      },
+      "tag": "v1.1.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v1.0.0",
+        "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+        "image_ids": {
+          "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+          "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+        },
+        "build_time": "2026-10-27T19:29:32Z"
+      },
+      "rollback": {
+        "tag": "v1.0.0",
+        "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+        "version": "1.0.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+        },
+        "image_ids": {
+          "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+          "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Optional contract fields and presentation only; no Dashboard schema or fact rewrite.",
+        "evidence": "CHG-20261028-002: isolated PG archive/restore, retention protection, original-row partition/upsert compatibility, 111 affected tests; Dashboard24 contract and46 UI tests."
+      }
+    }
+  ],
+  "changes": [
+    "CHG-20261028-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户2026-10-29明确授权：按建议开发，开发和测试完成之后部署生产环境上线；最终日线180/分钟40交易日。"
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

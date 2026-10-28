@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@1.1.0 test
+> vitest run --run src/components/ShortTailSelection.spec.ts src/views/ShortSelectionView.spec.ts src/utils/shortTail.spec.ts src/views/SwingSelectionView.spec.ts
+
+
+ RUN  v4.1.11 /private/tmp/CHG-20261028-002/investment-research-dashboard
+
+
+ Test Files  4 passed (4)
+      Tests  46 passed (46)
+   Start at  01:09:27
+   Duration  11.98s (transform 1.19s, setup 65ms, import 2.86s, tests 14.19s, environment 2.30s)

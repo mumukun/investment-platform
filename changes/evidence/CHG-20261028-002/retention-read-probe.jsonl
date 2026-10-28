@@ -1,0 +1,1 @@
+{"mode": "production read-only capacity probe", "base_table_estimated_rows": 15483258, "cutoff": "2026-08-26", "protected_codes": 379, "batch_rows": 2000, "query_seconds": 0.204, "compression_roundtrip_seconds": 0.107, "raw_bytes": 679152, "compressed_bytes": 55428, "source_deletions": 0, "archive_files_written": 0}

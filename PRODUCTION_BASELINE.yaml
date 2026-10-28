@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-28T14:36:54.916446+00:00",
+  "verified_at": "2026-10-28T20:21:21.404381+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -51,20 +51,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-10-28T14:36:54.916446+00:00",
-        "application_version": "5.0.8",
+        "verified_at": "2026-10-28T20:21:21.404381+00:00",
+        "application_version": "5.1.3",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v5.0.8",
-        "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+        "tag": "v5.1.3",
+        "commit_sha": "2da449e9ea6d6e6fdbfe69d0f3773c394257a15c",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6491f7fb94fee1e1e5b84303291bca818360a249dd1e683e0821cebb6d1f1bbd"
         },
         "artifact_id": {
-          "app": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+          "app": "sha256:d4381d912f19e78abc8763ebaba540ffd1203a92f37cb0b976db87fb48a944f5"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6491f7fb94fee1e1e5b84303291bca818360a249dd1e683e0821cebb6d1f1bbd"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
@@ -72,18 +72,21 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-10-28T14:29:32.223998+00:00",
-        "health": "NATIVE_HEALTH_VERSION_SMOKE_CORE8_READ_AND_PROJECTION_PUBLISH_PASS_WITH_DECLARED_DATA_GAPS",
+        "deployment_timestamp": "2026-10-28T20:21:21.404381+00:00",
+        "health": "NATIVE_HEALTH_VERSION_AND_PRODUCTION_SMOKE_PASS",
         "rollback_baseline": {
-          "tag": "v5.0.7",
-          "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
-          "version": "5.0.7",
+          "tag": "v5.1.2",
+          "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+          "version": "5.1.2",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:84e81c6465eb729d911e7d1c3d211e97803d45c49c128bbe7d33537be5c3df55"
           },
           "image_ids": {
-            "app": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177"
+            "app": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965"
           },
+          "known_limitations": [
+            "Previous version retains diagnosed retention table-wide timeout behavior."
+          ],
           "runtime_services": {
             "app": [
               "stock-api",
@@ -91,17 +94,15 @@
               "stock-data"
             ]
           },
-          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION_WITH_DECLARED_GENERAL_SHORT_LIMITATION"
+          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "app": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+          "app": "sha256:d4381d912f19e78abc8763ebaba540ffd1203a92f37cb0b976db87fb48a944f5"
         },
         "evidence": [
-          "releases/REL-20261028-009.yaml",
-          "releases/evidence/REL-20261028-009/deployment-receipt.json",
-          "releases/evidence/REL-20261028-009/core-readback.json",
-          "releases/evidence/REL-20261028-009/projection-state-initial.json",
-          "releases/evidence/REL-20261028-009/startup-jobs.json"
+          "releases/REL-20261029-006.yaml",
+          "releases/evidence/REL-20261029-006/deployment-receipt.json",
+          "changes/CHG-20261028-002.md"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -148,10 +149,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "none",
+            "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "Only explicit ISO serialization of nested dates at existing API projection JSONB persistence. No schema, foundation writes, deletion, backfill, rule or public wire model change. Old5.0.7 reads same ISO values; independent backup coverage is not assumed.",
-            "evidence": "32 targeted API/watch tests;12 separate business PG tests with overlapping counts not added; PR CI40703920096 and frozen main CI40704491277 PASS; exact candidate40704997621 smoke PASS. Real readonly datetime diagnostic retained in REL008. Current5.0.7 image retained with declared comprehensive-short limitation."
+            "reason": "Existing verified retention policy only reduces batches and isolates timeouts; archive verification, locks, receipts and retention scope unchanged.",
+            "evidence": "CHG-20261028-002: PR58 isolated PostgreSQL retention9 PASS / PR50 client-to-page17 PASS, frozen main CI and original candidate. Existing independent2.13GB full backup and verified archives; no additional source-data transformation or deletion scope."
           }
         },
         "short_tail": {
@@ -263,112 +264,94 @@
           "sample_oldest_seconds": 2667.428,
           "status": "LATEST_FRESH_SAMPLE_CATCHUP"
         },
-        "build_time": "2026-10-28T14:20:51Z",
-        "build_time_source": "OCI_IMAGE_LABEL_VERIFIED",
+        "build_time": "2026-10-28T20:09:43Z",
+        "build_time_source": "EXACT_DEPLOYED_IMAGE_OCI_LABEL",
         "current_readback": {
-          "read_at": "2026-10-28T14:36:54.916446+00:00",
-          "scope": "POST_CLOSE_READ_CONTRACT_AND_NATURAL_PROJECTION_PERSISTENCE; NOT_INTRADAY_FRESHNESS_ACCEPTANCE",
-          "successful_checks": 8,
-          "watchlist": 69,
-          "watch_strategy": {
-            "items": 69,
-            "assessed_at": "2026-10-28T22:09:44+08:00",
-            "quality": "stale"
-          },
-          "general_short": {
-            "path": "provider:/short-selection",
-            "status": "PASS_PROVIDER_READ_CONTRACT",
-            "seconds": 0.138,
-            "trade_date": "2026-10-28",
-            "data_time": "2026-10-28T16:04:58.348036+08:00",
-            "generated_at": "2026-10-28T22:33:59+08:00",
-            "degraded": false,
-            "candidates": 102,
-            "excluded": 40
-          },
-          "tail": {
-            "evaluated_at": "2026-10-28T15:01:09.710735+08:00",
-            "history_missing_count": 26
-          },
-          "swing": {
-            "same_generation": true,
-            "evaluated_at": "2026-10-28T15:07:26+08:00",
-            "current_quality": "partial",
-            "provider_freshness": "delayed",
-            "consumer_freshness": "healthy"
-          },
-          "sector": {
-            "business_date": "2026-10-28",
-            "summaries": 193,
-            "quality": "healthy"
-          },
-          "tech": {
-            "boards": 15,
-            "securities": 477
-          },
-          "api_projections": {
-            "version": "5.0.8",
-            "published": 5,
-            "failed_at": null
-          }
+          "read_at": "2026-10-28T20:32:55.752252+00:00",
+          "scope": "COMPLETED_CLOSE_AND_TAIL_FAILURE_REAL_CONTRACT_NOT_INTRADAY_SLO",
+          "evidence": "releases/evidence/REL-20261029-006/affected-readback.jsonl",
+          "swing_generation_id": "28903d638ca187a12fc3b7d45a593bfe1cfa7ee6e6a75febd514d90a774a342f",
+          "swing_trade_date": "2026-10-28",
+          "swing_evaluated_at": "2026-10-29T04:28:06+08:00",
+          "candidate_stocks": 857,
+          "eod_conditional_plan_stocks": 50,
+          "tail_formal": false,
+          "tail_publication_status": "failed",
+          "intraday_slo": "PENDING_REAL_SESSION",
+          "input_ready": 2860,
+          "input_eligible": 2872,
+          "remaining_affected_stocks": 162
         },
         "retained_previous_build_time": {
           "version": "5.0.6",
           "build_time": "2026-10-28T06:31:06Z",
           "source": "OCI_IMAGE_LABEL_VERIFIED"
-        }
+        },
+        "selection_reliability": {
+          "status": "DEPLOYED_PENDING_REAL_TRADING_WINDOW_VALIDATION",
+          "change": "CHG-20261028-002",
+          "rules_changed": false,
+          "daily_sessions": 180,
+          "minute_sessions": 40,
+          "notes": "Nightly verified archives preserve formal references and sparse history; intraday P95 and tail14:31/14:50 deadlines require real-session evidence.",
+          "maintenance_scope": "Verified backups and archives; reference/sparse-history holds; staged retirement, real-session SLO pending"
+        },
+        "prior_build_time_before_CHG_20261028_002": "2026-10-28T14:20:51Z",
+        "build_time_status": "VERIFIED"
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-10-28T03:36:54.891246+00:00",
-        "application_version": "1.0.0",
+        "verified_at": "2026-10-28T20:21:21.404381+00:00",
+        "application_version": "1.1.1",
         "application_version_source": "VERSION",
-        "tag": "v1.0.0",
-        "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+        "tag": "v1.1.1",
+        "commit_sha": "286647676a061c2a77554dbcef8a2bdd5c060a40",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:dc8b31369f6551773014e0482fa76a1dbe77d52ec4082c4c31191b73468b8d34",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bdb917484b527ce82a10a324274722a2fbd58a02906c76504fd66025f7265ac4"
         },
         "artifact_id": {
-          "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
-          "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+          "api": "sha256:f21cc77bbb528a61bdc9faef1daefd0d49bf9e5203bd56a4c985145d7cdd56a9",
+          "web": "sha256:7d3cdeb4406bfd5a783c8d86d021bc497d8d1860a010d02df4a0fc61e013d4c6"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:dc8b31369f6551773014e0482fa76a1dbe77d52ec4082c4c31191b73468b8d34",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bdb917484b527ce82a10a324274722a2fbd58a02906c76504fd66025f7265ac4"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
           "investment-research-dashboard-nas-api-1",
           "investment-research-dashboard-nas-web-1"
         ],
-        "deployment_timestamp": "2026-10-28T03:30:37.505890+00:00",
-        "health": "NATIVE_HEALTH_VERSION_SMOKE_PASS_WITH_DECLARED_DATA_GAPS",
+        "deployment_timestamp": "2026-10-28T20:21:21.404381+00:00",
+        "health": "NATIVE_HEALTH_VERSION_AND_PRODUCTION_SMOKE_PASS",
         "rollback_baseline": {
-          "tag": "v0.39.0",
-          "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
-          "version": "0.39.0",
+          "tag": "v1.1.0",
+          "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+          "version": "1.1.0",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
           },
           "image_ids": {
-            "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
-            "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+            "api": "sha256:533c697d9eea324a01a3954edaabfb894e2057ccae38bd289c7e58bb6acdf898",
+            "web": "sha256:a271f5e3b539612d443eb718a567b9aea311e55e09d8bab692c0beacf189a26b"
           },
-          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION",
-          "build_time": "2026-10-26T15:29:57Z"
+          "known_limitations": [
+            "Previous consumer rejects cross-day completed close evaluation; older projections remain readable."
+          ],
+          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
-          "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+          "api": "sha256:f21cc77bbb528a61bdc9faef1daefd0d49bf9e5203bd56a4c985145d7cdd56a9",
+          "web": "sha256:7d3cdeb4406bfd5a783c8d86d021bc497d8d1860a010d02df4a0fc61e013d4c6"
         },
         "evidence": [
-          "releases/REL-20261028-004.yaml",
-          "releases/evidence/REL-20261028-004/deployment-receipt.json",
-          "releases/evidence/REL-20261028-004/core-readback.json"
+          "releases/REL-20261029-006.yaml",
+          "releases/evidence/REL-20261029-006/deployment-receipt.json",
+          "changes/CHG-20261028-002.md"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -415,10 +398,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "none",
+            "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "Unchanged Dashboard 1.0.0 artifact; no database or schema changes. Original protected stock backup retained.",
-            "evidence": "Unchanged Dashboard candidate40569553203; REL001 actual old-code rollback; same exact artifact."
+            "reason": "Completed-close validation compatibility only; existing own current/evidence projections, no schema/ledger/source rewrite or deletion.",
+            "evidence": "CHG-20261028-002: PR58 isolated PostgreSQL retention9 PASS / PR50 client-to-page17 PASS, frozen main CI and original candidate. Existing independent2.13GB full backup and verified archives; no additional source-data transformation or deletion scope."
           }
         },
         "short_tail": {
@@ -579,7 +562,7 @@
             "quality": "fresh"
           }
         },
-        "build_time_status": "UNKNOWN_SSH_RECHECK_TIMED_OUT_IMAGE_CREATED_LABEL_REMAINS_ON_EXACT_ARTIFACT",
+        "build_time_status": "VERIFIED",
         "sector_workbench": {
           "business_date": "2026-10-27",
           "snapshot_date": "2026-10-28",
@@ -591,7 +574,34 @@
           "actual_trade_date": "2026-10-28",
           "read_seconds": 23.991
         },
-        "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations"
+        "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations",
+        "selection_reliability": {
+          "status": "DEPLOYED_PENDING_REAL_TRADING_WINDOW_VALIDATION",
+          "change": "CHG-20261028-002",
+          "rules_changed": false,
+          "daily_sessions": 180,
+          "minute_sessions": 40,
+          "notes": "Nightly verified archives preserve formal references and sparse history; intraday P95 and tail14:31/14:50 deadlines require real-session evidence.",
+          "maintenance_scope": "Verified backups and archives; reference/sparse-history holds; staged retirement, real-session SLO pending"
+        },
+        "build_time": "2026-10-28T20:07:43Z",
+        "build_time_source": "EXACT_DEPLOYED_IMAGE_OCI_LABEL",
+        "current_readback": {
+          "read_at": "2026-10-28T20:32:55.752252+00:00",
+          "scope": "COMPLETED_CLOSE_AND_TAIL_FAILURE_REAL_CONTRACT_NOT_INTRADAY_SLO",
+          "evidence": "releases/evidence/REL-20261029-006/affected-readback.jsonl",
+          "swing_generation_id": "28903d638ca187a12fc3b7d45a593bfe1cfa7ee6e6a75febd514d90a774a342f",
+          "swing_trade_date": "2026-10-28",
+          "swing_evaluated_at": "2026-10-29T04:28:06+08:00",
+          "candidate_stocks": 857,
+          "eod_conditional_plan_stocks": 50,
+          "tail_formal": false,
+          "tail_publication_status": "failed",
+          "intraday_slo": "PENDING_REAL_SESSION",
+          "input_ready": 2860,
+          "input_eligible": 2872,
+          "remaining_affected_stocks": 162
+        }
       }
     }
   }

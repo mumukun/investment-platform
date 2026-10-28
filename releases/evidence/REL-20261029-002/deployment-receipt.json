@@ -1,0 +1,45 @@
+{
+  "release_id": "REL-20261029-002",
+  "plan_hash": "ab5b7de2b95806d1041c520c2c90c1205921d1e0ba374ea483bd552f1814f6e9",
+  "repositories": {
+    "stock-analyzer": {}
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-28T17:54:25.268392+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 4.69
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-28T17:54:36.581273+00:00",
+      "status": "FAILED",
+      "elapsed_seconds": 600.974
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.1.0",
+      "commit_sha": "df02dc59a9f5f25a3b5dd5c1733c96b112674ea7",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:bb4d6a334852228bba0194c060e3f2b2ef28a209a2c4375a50c0f9f252710806"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v1.1.0",
+      "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "FAILED",
+  "last_operation_at": "2026-10-28T18:04:39.533474+00:00"
+}

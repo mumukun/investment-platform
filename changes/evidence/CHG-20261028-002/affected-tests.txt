@@ -1,0 +1,9 @@
+........................................................................ [ 64%]
+.......................................                                  [100%]
+=============================== warnings summary ===============================
+tests/test_short_tail.py::ApiSchedulerTest::test_auth_disabled_and_database_error_are_explicit
+  /Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+111 passed, 1 warning in 64.03s (0:01:04)

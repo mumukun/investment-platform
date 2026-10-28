@@ -1,0 +1,100 @@
+{
+  "runtime": {
+    "at": "2026-10-29T00:00:54.184797+08:00",
+    "version": "5.0.8",
+    "rules": "swing-rules-v5.2.0"
+  },
+  "current": {
+    "trade_date": "2026-10-28",
+    "session_state": "closed",
+    "evaluated_at": "2026-10-28T15:07:26+08:00",
+    "last_progress_at": "2026-10-28T14:59:04+08:00",
+    "quality": "partial",
+    "coverage": {
+      "known_universe_count": 5576,
+      "universe_complete": true,
+      "received_count": 600,
+      "evaluable_count": 4839,
+      "candidate_count": 807
+    },
+    "excluded_counts": {
+      "missing_quotes": 0,
+      "missing_history": 24
+    },
+    "generation_id": "b4cdcc54ad2df51f609958a8704bbe5e04c85bb860de745730d60b545e41e193"
+  },
+  "decisions": {
+    "可计划参与": 1,
+    "暂缓参与": 803,
+    "禁止追高": 3
+  },
+  "qualification": {
+    "original_qualified": 16,
+    "observation_only": 791
+  },
+  "coverage": {
+    "feature_coverage_avg": 100.0,
+    "delayed_after_seconds": 900,
+    "max_data_age_seconds": 180,
+    "bse_actionable": false,
+    "same_time_history_days": 20,
+    "same_time_history_required": 15,
+    "same_time_ratio_ready": true,
+    "same_time_ratio_items": 927,
+    "same_time_ratio_coverage_pct": 96.8,
+    "eod_conditional_plan_items": 0,
+    "bar_end_date": "2026-10-27",
+    "freshness_ok": false,
+    "eligible_feature_minimum": 120,
+    "selection_phase": "intraday",
+    "confirmation_dates_available": true,
+    "current_publication_independent": true
+  },
+  "discovery": {
+    "pool": 46,
+    "quoted": 600,
+    "status": "partial",
+    "scanned": 4839,
+    "version": "swing-intraday-discovery-v1",
+    "universe": 5576,
+    "data_time": "2026-10-28T14:59:04+08:00",
+    "quote_time": "2026-10-28T14:40:06+08:00",
+    "trade_date": "2026-10-28",
+    "market_time": "2026-10-28T14:50:50.774842+08:00",
+    "baseline_date": "2026-10-27",
+    "missing_quotes": 0,
+    "feature_version": "swing-intraday-features-v1",
+    "missing_history": 24,
+    "universe_complete": true
+  },
+  "candidate_source_range": [
+    "2026-10-28T09:42:15+08:00",
+    "2026-10-28T14:43:27+08:00"
+  ],
+  "baseline_health": {
+    "counts": {
+      "ready": 2881,
+      "market": 5577,
+      "eligible": 2889,
+      "excluded": 2537,
+      "gap_count": 159,
+      "snapshots": 5576,
+      "affected_stocks": 159
+    },
+    "status": "partial",
+    "checked_at": "2026-10-27T22:19:36+08:00",
+    "expected_trade_date": "2026-10-27",
+    "publication_allowed": true
+  },
+  "actionable_sample": {
+    "confirmation_trade_date": null,
+    "confirmed_at": null,
+    "code": "603816",
+    "name": "顾家家居",
+    "participation_decision": "可计划参与",
+    "data_time": "2026-10-28T13:57:28+08:00",
+    "source_time": "2026-10-28T13:56:53+08:00",
+    "evaluated_at": "2026-10-28T13:57:28+08:00",
+    "qualification_status": "original_qualified"
+  }
+}

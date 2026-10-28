@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261029-005",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261028-002"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.1.2",
+      "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+      "planned_version": "5.1.2",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:84e81c6465eb729d911e7d1c3d211e97803d45c49c128bbe7d33537be5c3df55"
+      },
+      "artifact_id": {
+        "app": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965"
+      },
+      "rollback": {
+        "tag": "v5.1.1",
+        "commit_sha": "0a9dbdd30cf7263a33a29cd02d89f418a9c4f569",
+        "version": "5.1.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:d2a7350912d79c5d0073e8f1188ca25d03ba6b446908f408eb87c8cad4c2f142"
+        },
+        "image_ids": {
+          "app": "sha256:cea190dd71f0d386a135046229df580f0ac544dd56fd51686a2486ed87a1cb9d"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "known_limitations": [
+          "Previous5.1.1 retains the diagnosed late-minute quote phase race and slow per-date coverage counts; existing healthy-row selection and schema remain usable."
+        ]
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+          "run_id": "40754065978"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:84e81c6465eb729d911e7d1c3d211e97803d45c49c128bbe7d33537be5c3df55"
+          }
+        },
+        "candidate_run_id": "40754556059"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261029-005/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-10-28T19:39:13.769951+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "affected_evidence": "releases/evidence/REL-20261029-005/final-close-recompute.jsonl",
+    "known_limitations": [
+      "After-close checks do not prove real intraday P95, availability or tail deadline success. Missing historical tail baseline cannot be reconstructed as a formal signal.",
+      "Same-NAS backup/archive is not off-device disaster recovery; historical heap space is reused gradually, no VACUUM FULL.",
+      "Formal references and sparse valid-amount histories are protected; effective retention may exceed180/40sessions."
+    ],
+    "consumer_readback": "FAILED_CROSS_DAY_CLOCK_VALIDATION_FOLLOWUP_REL006",
+    "maintenance_evidence": [
+      "releases/evidence/REL-20261029-005/bootstrap-parent-stats.jsonl",
+      "releases/evidence/REL-20261029-005/maintenance-readback.jsonl"
+    ]
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Continue current user explicit development/test then Production deployment authorization for CHG-20261028-002. Complete the remaining verified cutoff/coverage/statistics fixes before closing the same task."
+  },
+  "release_profile": "routine",
+  "timing": {
+    "deployment_started_at": "2026-10-28T19:36:18.379827+00:00",
+    "deployment_completed_at": "2026-10-28T19:39:13.769951+00:00",
+    "user_request_timestamp": "UNKNOWN",
+    "note": "Development, tests, PR/main CI and candidate wait preceded deployment; deployment-only duration is not the full user wait. Full backup is recorded in stage timings; no five-minute total claim."
+  }
+}
