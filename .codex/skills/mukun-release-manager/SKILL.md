@@ -22,6 +22,12 @@ or a second verify for every release. Drills are disabled by default, including 
 and deployment changes. Prefer focused local tests; explain a concrete unresolved data-loss risk before
 considering a minimal extra validation. Do not automatically run clone/restore/old-image/rollback tools.
 Use the existing deploy entry once; it includes baseline, the reviewed backup decision, identity, health and smoke.
+Functional, affected integration and performance validation belongs before development completion under
+`docs/development-validation.md`. New image-release-v1 plans omit manual `gates`; never fabricate six PASS
+entries or run a twelve-item manual review. Existing frozen plans retain their validation and hash.
+Use `--receipt` and `--manifest` on the single deploy invocation to generate the compact record from actual
+results; do not retype identities or tests. This requires the updated NAS runner; do not claim it installed
+or reinstall it per release. An administrator update needs its own current authorization.
 New plans use per-repository database_backup per RELEASE_RULES: skip reviewed non-destructive,
 rollback-compatible changes; table/full backup for data risk. Record SKIPPED honestly. Legacy plans without
 the field retain full backup. Independent scheduled backup coverage must not be assumed.
@@ -36,6 +42,8 @@ in the business PR; record READY locally after its merge/checks, then batch gove
 Use compact Change/Manifest records and link existing CI/candidate/receipt detail instead of duplicating it.
 Do not add a second full code review, a rollout observation period or a new flag for ordinary personal-use
 features. Cleanup/archive follows deployment. Freeze once; later unrelated main changes belong to another release.
+Ordinary completion does not wait for full collection cycles, queue drainage or every quote to catch up.
+Report data lag separately; actual core failures and explicitly required acceptance goals must still be resolved.
 Never claim an unready/failed release succeeded or hide waiting outside the reported elapsed time.
 
 ## Select exactly one authorization mode
@@ -93,7 +101,7 @@ gate fails, required evidence is missing, compatibility is unknown, or a depende
 - Production identity is immutable Git Tag + exact Commit SHA + exact Artifact identity. Record an
   image digest when Docker is used. Never use `main`, `HEAD`, or `latest` as production identity.
 - Read each target's current `SYSTEM_MAP.yaml` deployment status. An `exact_tag_capable` entry may be
-  used for Formal Release only when the persisted Release Manifest already contains the repository's
+  used for Formal Release only when the persisted execution plan or Release Manifest already contains the repository's
   immutable Tag, exact SHA, and explicit rollback Tag, and the entry's dry-run resolves the same Tag
   to the same SHA on `origin/main`. Any non-compliant, floating-ref, mismatched, or unverifiable entry
   blocks Formal Release before deployment.
@@ -112,7 +120,7 @@ gate fails, required evidence is missing, compatibility is unknown, or a depende
 
 - For every affected repository, require a verified `PRODUCTION_BASELINE.yaml` entry before release
   preparation. Copy its current Production Tag to both `previous_version` and `rollback_version`, and
-  its exact Commit and available Artifact identity into the Release Manifest. `UNKNOWN` or `BLOCKED`
+  its exact Commit and available Artifact identity into the frozen plan. The receipt generates the final Manifest. `UNKNOWN` or `BLOCKED`
   rollback state blocks Formal Release.
 - During routine Prepare, reuse the latest verified Production release receipt/baseline. The NAS deployer
   validates real image/version/checkout drift at the actual switch. Do not run a separate baseline refresh
@@ -133,7 +141,7 @@ than guessing. For a high-risk Production release, an unknown rollback point is 
 ## Keep output compact
 
 Successful preparation reports only Release ID, Changes, affected repositories, versions, SHAs,
-order, rollback versions, gate result, and `READY_FOR_FORMAL_RELEASE`.
+order, rollback versions, applicable check result, and `READY_FOR_FORMAL_RELEASE`.
 
 Successful Formal Release reports only Release ID, repository versions, production Tags, deployment
 order, smoke/E2E results, production identities, rollback points, and `RELEASED`.

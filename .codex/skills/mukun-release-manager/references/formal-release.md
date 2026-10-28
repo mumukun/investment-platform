@@ -1,6 +1,6 @@
 # Formal Release
 
-Requires explicit Production authorization. If no prepared Manifest exists, do the concise preparation in
+Requires explicit Production authorization. If no frozen execution plan exists, do the concise preparation in
 prepare-release.md in the same turn. Follow RELEASE_RULES.md's personal-use routine by default.
 
 ## Execute once
@@ -9,12 +9,12 @@ prepare-release.md in the same turn. Follow RELEASE_RULES.md's personal-use rout
    applicable evidence and authorization; record READY_FOR_FORMAL_RELEASE then IN_PROGRESS locally.
 2. Create/push immutable Tags at those SHAs. Fetch precise Tags/main as the NAS deploy user. Select the same
    CI artifacts; Tags do not rebuild. Never include unrelated repositories or a newer floating main.
-3. Call image_release.py deploy once. It already verifies CI, cached/pinned images, live baseline, protected
+3. Call image_release.py deploy once with --receipt and --manifest. It already verifies CI, cached/pinned images, live baseline, protected
    reviewed backup decision/readability when required, exact checkout, dependency order, running identity, health/version and production smoke.
    Do not routinely prepend preflight/prefetch or append verify, a full production acceptance script, clone
    restore, runner rollback drill or browser suite. A targeted extra check is required only for an affected
    boundary not covered by existing smoke; use the risk table, not a blanket test list.
-4. Save the returned receipt; reference its actual identity, time and backup details from the Manifest/baseline,
+4. Save the returned receipt and generated Manifest; reference its actual identity, time and backup details from the baseline,
    recording only rollback context and limitations not already captured there;
    mark RELEASED only on real success. Combine governance changes into one closeout commit/PR with authorization.
    Safe branch cleanup and optional page inspection follow without delaying successful deployment reporting.

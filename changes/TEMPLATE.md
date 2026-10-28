@@ -17,6 +17,10 @@ READY / RELEASED / BLOCKED / CANCELLED. -->
 
 ## Tests
 
+<!-- 开发完成前按 docs/development-validation.md 选择功能、受影响集成和性能专项。
+记录行为/边界、实际规模、命令/CI链接与结果；不按测试数量或覆盖率判断完成。
+未执行、跳过或模拟明确标注，部署复用结果，不另开验收阶段。 -->
+
 | Affected behavior / boundary | Command or existing evidence link | Result |
 | --- | --- | --- |
 |  |  | NOT_RUN |

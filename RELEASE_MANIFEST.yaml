@@ -36,7 +36,8 @@ deployment:
   completed_at: null
 
 # Actual runtime identities, backup details and stage checks come from deployment_receipts.
-# Add only checks or limitations not already captured there. Keep image-release-v1 plan schema unchanged.
+# Add only checks or limitations not already captured there. New image-release-v1 plans omit manual gates.
+# deploy --receipt ... --manifest ... completes a matching prepared record or generates this summary.
 verification:
   status: NOT_STARTED
   evidence: []

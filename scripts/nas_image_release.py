@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import fcntl
-import hashlib
 import json
 import os
 import subprocess
@@ -15,7 +14,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
-from image_release import COMPONENTS, database_backup_policy, file_hash, require, service_components, validate_plan
+from image_release import COMPONENTS, database_backup_policy, file_hash, frozen_plan_hash, require, service_components, validate_plan
 
 CONFIG = Path("/usr/local/etc/investment-platform-deploy.json")
 
@@ -133,14 +132,7 @@ class Deployer:
     def __init__(self, plan, config, state_path):
         self.plan, self.config, self.state_path = plan, config, state_path
         # Authorization may be added after preparation, without changing frozen deployment inputs.
-        identity = {
-            key: value
-            for key, value in plan.items()
-            if key not in {"authorization", "transport"}
-        }
-        self.plan_hash = hashlib.sha256(
-            json.dumps(identity, sort_keys=True).encode()
-        ).hexdigest()
+        self.plan_hash = frozen_plan_hash(plan)
         self.state = (
             json.loads(state_path.read_text())
             if state_path.exists()

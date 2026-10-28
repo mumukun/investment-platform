@@ -18,8 +18,10 @@ the existing evidence, omitting unchanged impact sections. Freeze once rather th
    RELEASE_RULES.md to changed migrations, contracts or deployment mechanisms. No routine clone/restore,
    old-image test, runner rollback test or second real-source probe. Do not call verify-ci separately just
    to repeat the same check inside deploy.
-4. Reuse the verified previous Production Tag/SHA/image and configuration. Record them in a single Manifest
-   and image-release-v1 plan, with honest evidence reuse notes. The deployer checks live drift before switching.
+4. Reuse the verified previous Production Tag/SHA/image and configuration. Freeze them, scope and Change IDs
+   once in the image-release-v1 plan; generate the Manifest after deployment instead of retyping a prepared copy.
+   New plans omit manual gates; the Change/CI already records development validation.
+   The deployer checks live drift before switching. Reuse the candidate metadata; do not copy it into new proof files.
 5. Mark READY_FOR_FORMAL_RELEASE when applicable checks pass. A prepare-only request ends here; a formally
    authorized turn continues immediately. Persist local state; combine governance commits at closeout.
 
