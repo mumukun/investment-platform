@@ -1,0 +1,300 @@
+[
+  {
+    "at": "2026-10-29T00:12:38.196257+08:00",
+    "version": "5.0.8",
+    "rules": "swing-rules-v5.2.0"
+  },
+  {
+    "label": "daily_jobs",
+    "seconds": 1.085,
+    "rows": [
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T06:43:21.405552+00:00",
+        "finished_at": "2026-10-28T07:07:35.023257+00:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle_close_1442",
+        "started_at": "2026-10-28T14:43:17.779917+08:00",
+        "finished_at": "2026-10-28T15:07:39.503728+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T06:35:19.570777+00:00",
+        "finished_at": null,
+        "status": "running"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T05:56:57.751707+00:00",
+        "finished_at": "2026-10-28T06:34:58.621341+00:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle_day_1356",
+        "started_at": "2026-10-28T13:56:54.101760+08:00",
+        "finished_at": "2026-10-28T14:35:00.072099+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T05:27:37.728146+00:00",
+        "finished_at": null,
+        "status": "running"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T05:15:39.184614+00:00",
+        "finished_at": null,
+        "status": "running"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T05:00:20.164291+00:00",
+        "finished_at": null,
+        "status": "running"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T04:59:19.788308+00:00",
+        "finished_at": "2026-10-28T04:59:20.678077+00:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle_day_1259",
+        "started_at": "2026-10-28T12:59:19.281273+08:00",
+        "finished_at": "2026-10-28T12:59:22.340277+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle",
+        "started_at": "2026-10-28T04:58:19.746913+00:00",
+        "finished_at": "2026-10-28T04:58:20.494085+00:00",
+        "status": "success"
+      },
+      {
+        "job_name": "swing_cycle_day_1258",
+        "started_at": "2026-10-28T12:58:19.265924+08:00",
+        "finished_at": "2026-10-28T12:58:21.738604+08:00",
+        "status": "success"
+      }
+    ]
+  },
+  {
+    "label": "foundation",
+    "seconds": 0.018,
+    "rows": [
+      {
+        "dataset": "cn-daily",
+        "scope_key": "all",
+        "status": "ready",
+        "ready_count": null,
+        "expected_count": null,
+        "checked_at": "2026-10-28 22:24:25.981151+08:00",
+        "last_success_at": "2026-10-28 22:24:25.981151+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "cn-daily",
+        "scope_key": "cursor",
+        "status": "ready",
+        "ready_count": 4200,
+        "expected_count": null,
+        "checked_at": "2026-10-28 22:19:12.953076+08:00",
+        "last_success_at": "2026-10-28 22:19:12.953076+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "system",
+        "scope_key": "collector",
+        "status": "ready",
+        "ready_count": null,
+        "expected_count": null,
+        "checked_at": "2026-10-29 00:12:27.179681+08:00",
+        "last_success_at": "2026-10-29 00:12:27.179681+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "system",
+        "scope_key": "publication",
+        "status": "collecting",
+        "ready_count": 3192,
+        "expected_count": null,
+        "checked_at": "2026-10-29 00:12:27.180776+08:00",
+        "last_success_at": "2026-10-29 00:10:10.579879+08:00",
+        "issue": "{\"stream_pending\": 0, \"control_pending\": 0, \"sample_batches_pending\": 0, \"sample_rows_pending\": 0, \"sample_oldest_pending_seconds\": 0, \"bulk_batches_pending\": 4, \"inflight_events\": 1, \"inflight_kind\": \"kline\", \"oldest_pending_seconds\": 20.206, \"stream_oldest_pending_seconds\": 0, \"source_pending\": {\"cn-kline\": 5}, \"last_primary_seconds\": 0.001, \"last_bulk_seconds\": 2.309, \"last_bulk_kind\": \"kline\", \"last_quote_received_at\": \"2026-10-28T23:30:22.750468+08:00\", \"last_quote_published_at\": \"2026-10-28T23:30:25.474230+08:00\"}"
+      }
+    ]
+  },
+  {
+    "label": "daily_refresh",
+    "seconds": 0.55,
+    "rows": [
+      {
+        "status": "failed",
+        "n": 10,
+        "first": "001239",
+        "last": "601326",
+        "first_update": "2026-10-28 16:32:25.529871+08:00",
+        "last_update": "2026-10-28 21:27:10.309220+08:00"
+      },
+      {
+        "status": "success",
+        "n": 4190,
+        "first": "000001",
+        "last": "603399",
+        "first_update": "2026-10-28 15:40:13.429005+08:00",
+        "last_update": "2026-10-28 22:24:25.997586+08:00"
+      }
+    ]
+  },
+  {
+    "label": "daily_failures",
+    "seconds": 0.03,
+    "rows": [
+      {
+        "code": "001239",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 16:32:25.529871+08:00"
+      },
+      {
+        "code": "001246",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 16:32:25.529900+08:00"
+      },
+      {
+        "code": "001248",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 16:32:25.529928+08:00"
+      },
+      {
+        "code": "001330",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 16:34:50.704029+08:00"
+      },
+      {
+        "code": "001365",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 16:37:16.448471+08:00"
+      },
+      {
+        "code": "001393",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 16:37:16.448502+08:00"
+      },
+      {
+        "code": "002717",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 17:38:48.145737+08:00"
+      },
+      {
+        "code": "002827",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 17:53:50.929595+08:00"
+      },
+      {
+        "code": "301468",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 19:49:38.303081+08:00"
+      },
+      {
+        "code": "601326",
+        "status": "failed",
+        "error": "DailySourceUnavailable",
+        "updated_at": "2026-10-28 21:27:10.309220+08:00"
+      }
+    ]
+  },
+  {
+    "label": "daily_coverage",
+    "seconds": 1.562,
+    "rows": [
+      {
+        "n": 4190,
+        "first": "000001",
+        "last": "603399"
+      }
+    ]
+  },
+  {
+    "label": "validation_coverage",
+    "seconds": 0.554,
+    "rows": [
+      {
+        "n": 4190,
+        "valid": 4190
+      }
+    ]
+  },
+  {
+    "label": "raw_coverage",
+    "seconds": 5.928,
+    "rows": [
+      {
+        "n": 4190
+      }
+    ]
+  },
+  {
+    "label": "snapshot_orphan",
+    "seconds": 0.174,
+    "rows": [
+      {
+        "trade_date": "2026-10-28",
+        "code": "301139",
+        "name": "元道退",
+        "update_time": "2026-10-28T09:26:35.316611+08:00",
+        "source_time": "2026-10-28 09:10:00+08:00",
+        "quote_quality": "partial"
+      },
+      {
+        "trade_date": "2026-10-27",
+        "code": "301139",
+        "name": "元道退",
+        "update_time": "2026-10-27T15:03:29",
+        "source_time": null,
+        "quote_quality": null
+      }
+    ]
+  },
+  {
+    "label": "schema_performance",
+    "seconds": 0.04,
+    "rows": [
+      {
+        "n": 0
+      }
+    ]
+  },
+  {
+    "scheduler_log": "logs/scheduler_jobs.log",
+    "cycle_summaries_tail": [
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle skipped: 非连续交易时段，保留最近结果",
+      "swing cycle done: date=2026-10-28 minute=14:27 pool=95 quotes=580 upgraded=0 downgraded=0 degraded=41 regime=趋势扩张",
+      "swing cycle done: date=2026-10-28 minute=14:59 pool=92 quotes=600 upgraded=0 downgraded=0 degraded=24 regime=趋势扩张"
+    ]
+  }
+]

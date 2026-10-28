@@ -1,0 +1,22 @@
+[
+  {
+    "scope": "DEPLOYED_READ_AND_FEATURE_STAGES_ONLY; NO_CURRENT_SESSION_OR_PUBLICATION_ACCEPTANCE",
+    "at": "2026-10-29T00:14:35.076473+08:00",
+    "day": "2026-10-28",
+    "foundation_writes": false,
+    "signal_publication": false,
+    "clock_override": false
+  },
+  {
+    "stage": "scope",
+    "seconds": 18.799,
+    "codes": 5125
+  },
+  {
+    "status": "STOPPED_AT_90_SECOND_STATEMENT_TIMEOUT",
+    "stage": "completed_history_read_fallback",
+    "exception": "psycopg.errors.QueryCanceled",
+    "remaining_stages": "NOT_RUN",
+    "accepted_as_full_intraday_performance": "NO"
+  }
+]

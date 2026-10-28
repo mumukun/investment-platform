@@ -1,0 +1,314 @@
+[
+  {
+    "label": "activity",
+    "seconds": 0.92,
+    "rows": [
+      {
+        "state": "active",
+        "wait_event_type": "IO",
+        "wait_event": "BufFileWrite",
+        "n": 1
+      },
+      {
+        "state": "active",
+        "wait_event_type": "IPC",
+        "wait_event": "MessageQueueSend",
+        "n": 2
+      },
+      {
+        "state": "active",
+        "wait_event_type": "LWLock",
+        "wait_event": "WALWrite",
+        "n": 5
+      },
+      {
+        "state": "active",
+        "wait_event_type": null,
+        "wait_event": null,
+        "n": 1
+      },
+      {
+        "state": "idle in transaction",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "n": 2
+      }
+    ]
+  },
+  {
+    "label": "jobs",
+    "error": "ProgrammingError",
+    "seconds": 0.01
+  },
+  {
+    "label": "scans",
+    "seconds": 0.02,
+    "rows": [
+      {
+        "trade_date": "2026-10-27",
+        "rules_version": "swing-rules-v5.2.0",
+        "data_time": "2026-10-27T22:19:36+08:00",
+        "pool_count": 1000
+      },
+      {
+        "trade_date": "2026-10-26",
+        "rules_version": "swing-rules-v5.2.0",
+        "data_time": "2026-10-26T23:44:29+08:00",
+        "pool_count": 1054
+      },
+      {
+        "trade_date": "2026-10-23",
+        "rules_version": "swing-rules-v5.2.0",
+        "data_time": "2026-10-23T22:17:39+08:00",
+        "pool_count": 1063
+      },
+      {
+        "trade_date": "2026-10-22",
+        "rules_version": "swing-rules-v5.2.0",
+        "data_time": "2026-10-22T22:18:04+08:00",
+        "pool_count": 1024
+      },
+      {
+        "trade_date": "2026-10-21",
+        "rules_version": "swing-rules-v5.2.0",
+        "data_time": "2026-10-21T22:17:54+08:00",
+        "pool_count": 1101
+      }
+    ]
+  },
+  {
+    "label": "latest_health",
+    "seconds": 0.96,
+    "rows": [
+      {
+        "trade_date": "2026-10-28",
+        "checked_at": "2026-10-28 22:29:59+08:00",
+        "status": "blocked",
+        "counts": {
+          "ready": 2317,
+          "market": 5576,
+          "eligible": 2884,
+          "excluded": 2543,
+          "gap_count": 1275,
+          "snapshots": 5577,
+          "affected_stocks": 716
+        },
+        "allowed": false
+      },
+      {
+        "trade_date": "2026-10-27",
+        "checked_at": "2026-10-27 22:19:36+08:00",
+        "status": "partial",
+        "counts": {
+          "ready": 2881,
+          "market": 5577,
+          "eligible": 2889,
+          "excluded": 2537,
+          "gap_count": 159,
+          "snapshots": 5576,
+          "affected_stocks": 159
+        },
+        "allowed": true
+      }
+    ]
+  },
+  {
+    "label": "daily28",
+    "seconds": 6.42,
+    "rows": [
+      {
+        "n": 4190
+      }
+    ]
+  },
+  {
+    "label": "index28",
+    "seconds": 0.1,
+    "rows": [
+      {
+        "index_code": "sh000001",
+        "trade_date": "2026-10-28",
+        "close": 3681.469
+      },
+      {
+        "index_code": "sz399006",
+        "trade_date": "2026-10-28",
+        "close": 2634.76
+      },
+      {
+        "index_code": "sh000300",
+        "trade_date": "2026-10-28",
+        "close": 4083.87
+      },
+      {
+        "index_code": "sz399001",
+        "trade_date": "2026-10-28",
+        "close": 11473.181
+      },
+      {
+        "index_code": "sh000688",
+        "trade_date": "2026-10-28",
+        "close": 1282.931
+      }
+    ]
+  },
+  {
+    "label": "minute_relations",
+    "error": "ProgrammingError",
+    "seconds": 0.04
+  },
+  {
+    "label": "foundation_state",
+    "error": "UndefinedColumn",
+    "seconds": 0.02
+  },
+  {
+    "path_confirmations": {
+      "已确认": 1,
+      "等待条件": 923,
+      "未确认": 3
+    },
+    "blockers": [
+      [
+        "完整5分钟确认周期（V5平台关键位）",
+        525
+      ],
+      [
+        "重新站稳MA10",
+        386
+      ],
+      [
+        "短中期均线结构尚未稳定",
+        341
+      ],
+      [
+        "尚未站稳 MA20",
+        339
+      ],
+      [
+        "当前路径已完成前置阶段",
+        317
+      ],
+      [
+        "趋势连续性不足",
+        268
+      ],
+      [
+        "低点结构仍在下移",
+        251
+      ],
+      [
+        "MA20 尚未上行",
+        241
+      ],
+      [
+        "相对交易板块与行业均偏弱",
+        234
+      ],
+      [
+        "VWAP转强",
+        199
+      ],
+      [
+        "MA60 仍明显下行",
+        97
+      ],
+      [
+        "站稳MA20",
+        97
+      ],
+      [
+        "近期仍有新低",
+        88
+      ],
+      [
+        "平台内承接位置",
+        87
+      ],
+      [
+        "累计量能尚未改善",
+        85
+      ],
+      [
+        "成交额尚未收敛",
+        79
+      ],
+      [
+        "MA20 仍快速下行",
+        74
+      ],
+      [
+        "上涨/下跌成交额结构偏弱",
+        69
+      ],
+      [
+        "价格已进入加速区，禁止追高",
+        69
+      ],
+      [
+        "下跌量能尚未收缩",
+        64
+      ]
+    ],
+    "candidate_source_minutes": {
+      "13:56": 105,
+      "09:53": 50,
+      "13:28": 100,
+      "09:42": 12,
+      "14:43": 132,
+      "14:40": 145,
+      "10:40": 70,
+      "13:27": 193
+    },
+    "decision_gates_top": [
+      [
+        "完整5分钟确认周期（V5平台关键位）：未满足（0根；≥2）",
+        466
+      ],
+      [
+        "尚未站稳 MA20",
+        307
+      ],
+      [
+        "短中期均线结构尚未稳定",
+        300
+      ],
+      [
+        "当前路径已完成前置阶段：未满足（0；≥1）",
+        249
+      ],
+      [
+        "低点结构仍在下移",
+        231
+      ],
+      [
+        "趋势连续性不足",
+        226
+      ],
+      [
+        "MA20 尚未上行",
+        221
+      ],
+      [
+        "相对交易板块与行业均偏弱",
+        215
+      ],
+      [
+        "近期仍有新低",
+        87
+      ],
+      [
+        "累计量能尚未改善",
+        80
+      ],
+      [
+        "MA20 仍快速下行",
+        74
+      ],
+      [
+        "MA60 仍明显下行",
+        69
+      ]
+    ]
+  }
+]

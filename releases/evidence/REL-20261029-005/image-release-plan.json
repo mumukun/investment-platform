@@ -1,0 +1,98 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261029-005",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+        "version": "5.1.2",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:84e81c6465eb729d911e7d1c3d211e97803d45c49c128bbe7d33537be5c3df55"
+        },
+        "image_ids": {
+          "app": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+            "run_id": "40754065978"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:84e81c6465eb729d911e7d1c3d211e97803d45c49c128bbe7d33537be5c3df55"
+            }
+          },
+          "candidate_run_id": "40754556059"
+        }
+      },
+      "tag": "v5.1.2",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.1.1",
+        "commit_sha": "0a9dbdd30cf7263a33a29cd02d89f418a9c4f569",
+        "image_ids": {
+          "stock-api": "sha256:cea190dd71f0d386a135046229df580f0ac544dd56fd51686a2486ed87a1cb9d",
+          "stock-watch": "sha256:cea190dd71f0d386a135046229df580f0ac544dd56fd51686a2486ed87a1cb9d",
+          "stock-data": "sha256:cea190dd71f0d386a135046229df580f0ac544dd56fd51686a2486ed87a1cb9d"
+        }
+      },
+      "rollback": {
+        "tag": "v5.1.1",
+        "commit_sha": "0a9dbdd30cf7263a33a29cd02d89f418a9c4f569",
+        "version": "5.1.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:d2a7350912d79c5d0073e8f1188ca25d03ba6b446908f408eb87c8cad4c2f142"
+        },
+        "image_ids": {
+          "app": "sha256:cea190dd71f0d386a135046229df580f0ac544dd56fd51686a2486ed87a1cb9d"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "known_limitations": [
+          "Previous5.1.1 retains the diagnosed late-minute quote phase race and slow per-date coverage counts; existing healthy-row selection and schema remain usable."
+        ]
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Compatible extra business checkpoint and optional diagnostics; read-only coverage/current-count fixes and native planner statistics after committed partition DDL. No source fact rewrite, table/index/schema change, retention policy change or new deletion. Old5.1.1 reads the same data/schema. Independent full backup and verified archives already completed in REL003.",
+        "evidence": "PR57 exact head quality and frozen main/candidate passed;39 isolatedPG/function regressions and same-rule timing/empty-input cases. Consumer market=dict is compatible, no Dashboard change. REL004 actual deployed identity; REL003 full backup and unchanged archive protection."
+      }
+    }
+  ],
+  "changes": [
+    "CHG-20261028-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "Continue current user explicit development/test then Production deployment authorization for CHG-20261028-002. Complete the remaining verified cutoff/coverage/statistics fixes before closing the same task."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

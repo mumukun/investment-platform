@@ -1,0 +1,681 @@
+[
+  {
+    "projection": {
+      "key": "current:tail:2026-10-28",
+      "trade_date": "2026-10-28",
+      "evaluated_at": "2026-10-28T15:01:09.710735+08:00",
+      "quality": "healthy",
+      "coverage": {
+        "known_universe_count": 5576,
+        "universe_complete": true,
+        "received_count": 5569,
+        "evaluable_count": 184,
+        "feature_ready_count": 5179,
+        "fresh_quote_count": 5515,
+        "expected_quote_count": 5524,
+        "history_checked_count": 5013,
+        "history_ready_count": 4987,
+        "history_missing_count": 26,
+        "candidate_count": 46,
+        "original_qualified_count": 14,
+        "observation_count": 32
+      },
+      "items_count": 46,
+      "items_reasons": {
+        "当天板块相对强度/上涨宽度/覆盖未通过": 32,
+        "历史流动性及价格结构达标，仅供观察；今日量能/环境仍须按原规则确认": 32
+      },
+      "excluded_reasons": {
+        "未满足两条结构路径": 4803,
+        "目录或上市历史不足25个完成日": 503,
+        "缺少当天有效证券规则": 496,
+        "ST/停牌/特殊交易阶段": 52,
+        "历史/复权输入不足": 26,
+        "报价缺失/陈旧或时点不可核验": 2
+      }
+    }
+  },
+  {
+    "projection": {
+      "key": "5.0.8:6675ea5a9fdf7d37:short-selection",
+      "trade_date": "2026-10-28",
+      "data_time": "2026-10-28T16:04:58.348036+08:00",
+      "generated_at": "2026-10-29T00:00:33+08:00",
+      "pipeline": [
+        {
+          "key": "universe",
+          "note": "a_share_snapshot 最新完整快照",
+          "count": 5577,
+          "label": "全市场快照"
+        },
+        {
+          "key": "regime",
+          "note": "健康轮动 · 置信度 0.87",
+          "count": 1,
+          "label": "市场状态"
+        },
+        {
+          "key": "sector",
+          "note": "六维评分+生命周期",
+          "count": 125,
+          "label": "板块双层分类"
+        },
+        {
+          "key": "evaluate",
+          "note": "六维机会分+独立风险分；按风险调整优先级排序",
+          "count": 4877,
+          "label": "双分评估"
+        },
+        {
+          "key": "candidate",
+          "note": "盘中量价未接入，正式升级封顶于等待确认",
+          "count": 102,
+          "label": "研究候选"
+        },
+        {
+          "key": "excluded",
+          "note": "硬否决/风险分≥50 独立分组",
+          "count": 4775,
+          "label": "排除与高风险"
+        },
+        {
+          "key": "below_threshold",
+          "note": "机会分 <60，不展示、不属于高风险",
+          "count": 596,
+          "label": "未达研究线"
+        }
+      ],
+      "intraday_coverage": "missing",
+      "candidates_count": 102,
+      "candidates_state": {
+        "等待确认": 8,
+        "初步候选": 92,
+        "过热不追": 2
+      },
+      "candidates_grade": {
+        "A档": 1,
+        "B档": 7,
+        "C档": 94
+      },
+      "excluded_reasons": {
+        "盘中量价未接入，机会分量价维度使用日线量比代理": 40,
+        "规则失效，立即降级": 40,
+        "市场状态 健康轮动 限制 隔夜观察候选": 39,
+        "角色 退潮股 · 候选类型 隔夜观察候选": 29,
+        "角色 补涨 · 候选类型 隔夜观察候选": 7,
+        "角色 回踩核心 · 候选类型 隔夜观察候选": 2,
+        "角色 龙头 · 候选类型 板块核心承接候选": 1,
+        "核心股涨幅位置 100%，允许但需人工盯确认": 1,
+        "角色 后排跟风 · 候选类型 隔夜观察候选": 1
+      }
+    }
+  },
+  {
+    "label": "jobs",
+    "seconds": 0.779,
+    "rows": [
+      {
+        "job_name": "startup_short_close_tracking",
+        "started_at": "2026-10-28T22:33:27.897638+08:00",
+        "finished_at": "2026-10-28T22:33:42.271635+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "startup_hotmap_cache",
+        "started_at": "2026-10-28T22:30:56.572774+08:00",
+        "finished_at": "2026-10-28T22:33:27.453458+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "startup_short_close_tracking",
+        "started_at": "2026-10-28T22:09:22.791910+08:00",
+        "finished_at": "2026-10-28T22:09:37.156317+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "startup_hotmap_cache",
+        "started_at": "2026-10-28T22:06:25.803117+08:00",
+        "finished_at": "2026-10-28T22:09:22.287467+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_close_tracking_retry",
+        "started_at": "2026-10-28T22:04:30.464558+08:00",
+        "finished_at": "2026-10-28T22:04:53.648388+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_2045",
+        "started_at": "2026-10-28T20:47:27.558117+08:00",
+        "finished_at": "2026-10-28T20:47:29.512684+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_close_tracking_retry",
+        "started_at": "2026-10-28T20:45:14.300976+08:00",
+        "finished_at": "2026-10-28T20:45:28.270068+08:00",
+        "status": "failed"
+      },
+      {
+        "job_name": "short_tail_1745",
+        "started_at": "2026-10-28T17:47:21.049391+08:00",
+        "finished_at": "2026-10-28T17:47:33.339816+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_close_tracking",
+        "started_at": "2026-10-28T16:35:12.112952+08:00",
+        "finished_at": "2026-10-28T16:35:34.540764+08:00",
+        "status": "failed"
+      },
+      {
+        "job_name": "short_tail_1615",
+        "started_at": "2026-10-28T16:17:44.020012+08:00",
+        "finished_at": "2026-10-28T16:17:53.874270+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "hotmap_cache_final",
+        "started_at": "2026-10-28T16:09:53.001371+08:00",
+        "finished_at": "2026-10-28T16:11:31.031249+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1500",
+        "started_at": "2026-10-28T15:00:18.524350+08:00",
+        "finished_at": "2026-10-28T15:00:22.361287+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1459",
+        "started_at": "2026-10-28T14:59:18.505534+08:00",
+        "finished_at": "2026-10-28T14:59:36.020572+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1458",
+        "started_at": "2026-10-28T14:58:18.476265+08:00",
+        "finished_at": "2026-10-28T14:58:22.006772+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1457",
+        "started_at": "2026-10-28T14:57:18.714498+08:00",
+        "finished_at": "2026-10-28T14:57:26.177778+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1456",
+        "started_at": "2026-10-28T14:56:58.449192+08:00",
+        "finished_at": "2026-10-28T15:01:51.175237+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1456",
+        "started_at": "2026-10-28T14:56:18.437310+08:00",
+        "finished_at": "2026-10-28T14:56:20.283616+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1455",
+        "started_at": "2026-10-28T14:55:18.364654+08:00",
+        "finished_at": "2026-10-28T14:55:21.641649+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "hotmap_cache_1455",
+        "started_at": "2026-10-28T14:55:18.364345+08:00",
+        "finished_at": "2026-10-28T14:56:02.208497+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1454",
+        "started_at": "2026-10-28T14:54:18.342606+08:00",
+        "finished_at": "2026-10-28T14:54:19.928715+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1453",
+        "started_at": "2026-10-28T14:53:18.325604+08:00",
+        "finished_at": "2026-10-28T14:53:28.544393+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1452",
+        "started_at": "2026-10-28T14:52:18.305809+08:00",
+        "finished_at": "2026-10-28T14:52:19.839928+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1451",
+        "started_at": "2026-10-28T14:51:38.293147+08:00",
+        "finished_at": "2026-10-28T14:56:47.810397+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1451",
+        "started_at": "2026-10-28T14:51:18.248493+08:00",
+        "finished_at": "2026-10-28T14:51:38.135188+08:00",
+        "status": "success"
+      }
+    ]
+  },
+  {
+    "label": "foundation",
+    "seconds": 0.018,
+    "rows": [
+      {
+        "dataset": "cn-daily",
+        "scope_key": "all",
+        "status": "ready",
+        "ready_count": null,
+        "expected_count": null,
+        "checked_at": "2026-10-28 22:24:25.981151+08:00",
+        "last_success_at": "2026-10-28 22:24:25.981151+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "cn-daily",
+        "scope_key": "cursor",
+        "status": "ready",
+        "ready_count": 4200,
+        "expected_count": null,
+        "checked_at": "2026-10-28 22:19:12.953076+08:00",
+        "last_success_at": "2026-10-28 22:19:12.953076+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "cn-kline",
+        "scope_key": "cursor",
+        "status": "ready",
+        "ready_count": 5268,
+        "expected_count": null,
+        "checked_at": "2026-10-29 00:23:24.222899+08:00",
+        "last_success_at": "2026-10-29 00:23:24.222899+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "cn-quotes",
+        "scope_key": "all",
+        "status": "ready",
+        "ready_count": 5576,
+        "expected_count": 5576,
+        "checked_at": "2026-10-29 00:30:26.858343+08:00",
+        "last_success_at": "2026-10-29 00:30:26.858343+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "cn-quotes",
+        "scope_key": "cursor",
+        "status": "ready",
+        "ready_count": 4220,
+        "expected_count": null,
+        "checked_at": "2026-10-29 00:30:26.859541+08:00",
+        "last_success_at": "2026-10-29 00:30:26.859541+08:00",
+        "issue": null
+      },
+      {
+        "dataset": "cn-quotes",
+        "scope_key": "published",
+        "status": "ready",
+        "ready_count": 60,
+        "expected_count": null,
+        "checked_at": "2026-10-29 00:30:12.272377+08:00",
+        "last_success_at": "2026-10-29 00:30:12.272377+08:00",
+        "issue": null
+      }
+    ]
+  },
+  {
+    "kinds": [
+      {
+        "kind": "entry_gate",
+        "n": 1,
+        "first": "2026-10-28 14:50:53.548016+08:00",
+        "last": "2026-10-28 14:50:53.548016+08:00"
+      },
+      {
+        "kind": "failure",
+        "n": 1,
+        "first": "2026-10-28 14:51:18.974906+08:00",
+        "last": "2026-10-28 14:51:18.974906+08:00"
+      },
+      {
+        "kind": "inputs",
+        "n": 1,
+        "first": "2026-10-28 14:48:37.470327+08:00",
+        "last": "2026-10-28 14:48:37.470327+08:00"
+      },
+      {
+        "kind": "poll",
+        "n": 5,
+        "first": "2026-10-28 14:35:46.117566+08:00",
+        "last": "2026-10-28 14:50:53.548016+08:00"
+      },
+      {
+        "kind": "preview",
+        "n": 1,
+        "first": "2026-10-28 14:56:20.566172+08:00",
+        "last": "2026-10-28 14:56:20.566172+08:00"
+      }
+    ]
+  },
+  {
+    "poll_clocks": [
+      {
+        "kind": "poll",
+        "run_key": "2026-10-28T14:35:29.336546+08:00",
+        "created_at": "2026-10-28 14:35:46.117566+08:00",
+        "received_at": "2026-10-28T14:35:46.117566+08:00",
+        "reason": null
+      },
+      {
+        "kind": "poll",
+        "run_key": "2026-10-28T14:43:56.409585+08:00",
+        "created_at": "2026-10-28 14:43:57.079806+08:00",
+        "received_at": "2026-10-28T14:43:57.079806+08:00",
+        "reason": null
+      },
+      {
+        "kind": "poll",
+        "run_key": "2026-10-28T14:47:18.884013+08:00",
+        "created_at": "2026-10-28 14:47:19.556057+08:00",
+        "received_at": "2026-10-28T14:47:19.556057+08:00",
+        "reason": null
+      },
+      {
+        "kind": "poll",
+        "run_key": "2026-10-28T14:48:36.853531+08:00",
+        "created_at": "2026-10-28 14:48:37.470327+08:00",
+        "received_at": "2026-10-28T14:48:37.470327+08:00",
+        "reason": null
+      },
+      {
+        "kind": "inputs",
+        "run_key": "latest",
+        "created_at": "2026-10-28 14:48:37.470327+08:00",
+        "received_at": "2026-10-28T14:48:37.470327+08:00",
+        "reason": null
+      },
+      {
+        "kind": "poll",
+        "run_key": "2026-10-28T14:50:52.773930+08:00",
+        "created_at": "2026-10-28 14:50:53.548016+08:00",
+        "received_at": "2026-10-28T14:50:53.548016+08:00",
+        "reason": null
+      },
+      {
+        "kind": "failure",
+        "run_key": "deadline",
+        "created_at": "2026-10-28 14:51:18.974906+08:00",
+        "received_at": null,
+        "reason": "正式发布超时或必要尾盘数据未齐"
+      }
+    ]
+  },
+  {
+    "jobs_window": [
+      {
+        "job_name": "short_tail_1427",
+        "started_at": "2026-10-28T14:27:16.614513+08:00",
+        "finished_at": "2026-10-28T14:27:19.069917+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1428",
+        "started_at": "2026-10-28T14:28:16.633165+08:00",
+        "finished_at": "2026-10-28T14:28:17.899427+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1429",
+        "started_at": "2026-10-28T14:29:16.652558+08:00",
+        "finished_at": "2026-10-28T14:29:18.612621+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1429",
+        "started_at": "2026-10-28T14:29:16.658315+08:00",
+        "finished_at": "2026-10-28T14:36:08.073695+08:00",
+        "status": "failed"
+      },
+      {
+        "job_name": "hotmap_cache_1430",
+        "started_at": "2026-10-28T14:30:16.666894+08:00",
+        "finished_at": "2026-10-28T14:32:25.769916+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1430",
+        "started_at": "2026-10-28T14:30:16.669799+08:00",
+        "finished_at": "2026-10-28T14:30:24.092481+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1431",
+        "started_at": "2026-10-28T14:31:16.727228+08:00",
+        "finished_at": "2026-10-28T14:31:19.149698+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1432",
+        "started_at": "2026-10-28T14:32:16.790805+08:00",
+        "finished_at": "2026-10-28T14:32:18.238263+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1433",
+        "started_at": "2026-10-28T14:33:16.820481+08:00",
+        "finished_at": "2026-10-28T14:33:20.286757+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1434",
+        "started_at": "2026-10-28T14:34:16.855872+08:00",
+        "finished_at": "2026-10-28T14:34:27.402883+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "hotmap_cache_1435",
+        "started_at": "2026-10-28T14:35:16.892921+08:00",
+        "finished_at": "2026-10-28T14:39:59.614177+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1435",
+        "started_at": "2026-10-28T14:35:16.916504+08:00",
+        "finished_at": "2026-10-28T14:35:19.584887+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1436",
+        "started_at": "2026-10-28T14:36:16.972864+08:00",
+        "finished_at": "2026-10-28T14:36:20.655735+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1437",
+        "started_at": "2026-10-28T14:37:16.991892+08:00",
+        "finished_at": "2026-10-28T14:37:24.834881+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1438",
+        "started_at": "2026-10-28T14:38:17.011061+08:00",
+        "finished_at": "2026-10-28T14:38:22.047089+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1439",
+        "started_at": "2026-10-28T14:39:17.069601+08:00",
+        "finished_at": "2026-10-28T14:39:27.132501+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1440",
+        "started_at": "2026-10-28T14:40:17.088060+08:00",
+        "finished_at": "2026-10-28T14:40:18.372088+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "startup_short_tail_preview",
+        "started_at": "2026-10-28T14:42:50.670498+08:00",
+        "finished_at": "2026-10-28T14:44:09.566367+08:00",
+        "status": "failed"
+      },
+      {
+        "job_name": "hotmap_cache_1440",
+        "started_at": "2026-10-28T14:43:17.765908+08:00",
+        "finished_at": "2026-10-28T14:47:18.331974+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1442",
+        "started_at": "2026-10-28T14:43:17.789465+08:00",
+        "finished_at": "2026-10-28T14:43:21.136273+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1443",
+        "started_at": "2026-10-28T14:43:37.870605+08:00",
+        "finished_at": "2026-10-28T14:43:45.691516+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1444",
+        "started_at": "2026-10-28T14:44:17.933156+08:00",
+        "finished_at": "2026-10-28T14:44:19.507920+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1444",
+        "started_at": "2026-10-28T14:44:17.946229+08:00",
+        "finished_at": "2026-10-28T14:45:36.894377+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1445",
+        "started_at": "2026-10-28T14:45:17.986526+08:00",
+        "finished_at": "2026-10-28T14:45:38.200990+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1445",
+        "started_at": "2026-10-28T14:45:58.030008+08:00",
+        "finished_at": "2026-10-28T14:47:36.078139+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1446",
+        "started_at": "2026-10-28T14:46:18.037128+08:00",
+        "finished_at": "2026-10-28T14:46:27.131125+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1447",
+        "started_at": "2026-10-28T14:47:18.068325+08:00",
+        "finished_at": "2026-10-28T14:47:19.374457+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "hotmap_cache_1445",
+        "started_at": "2026-10-28T14:47:38.095609+08:00",
+        "finished_at": "2026-10-28T14:49:38.504073+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1447",
+        "started_at": "2026-10-28T14:47:38.120534+08:00",
+        "finished_at": "2026-10-28T14:49:02.712097+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1448",
+        "started_at": "2026-10-28T14:48:18.136704+08:00",
+        "finished_at": "2026-10-28T14:48:20.059949+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1449",
+        "started_at": "2026-10-28T14:49:18.163068+08:00",
+        "finished_at": "2026-10-28T14:49:22.347708+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_preview_1449",
+        "started_at": "2026-10-28T14:49:18.169138+08:00",
+        "finished_at": "2026-10-28T14:51:26.731068+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "hotmap_cache_1450",
+        "started_at": "2026-10-28T14:50:18.183124+08:00",
+        "finished_at": "2026-10-28T14:54:22.947260+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1450",
+        "started_at": "2026-10-28T14:50:18.206329+08:00",
+        "finished_at": "2026-10-28T14:50:24.347368+08:00",
+        "status": "success"
+      },
+      {
+        "job_name": "short_tail_1451",
+        "started_at": "2026-10-28T14:51:18.248493+08:00",
+        "finished_at": "2026-10-28T14:51:38.135188+08:00",
+        "status": "success"
+      }
+    ]
+  },
+  {
+    "latest_poll": [
+      {
+        "trade_date": "2026-10-28",
+        "minute": "16:15",
+        "n": 390
+      }
+    ]
+  },
+  {
+    "selection_date": "2026-10-28",
+    "seconds": 1.72,
+    "phase": "preview",
+    "issues": [
+      "今日正式批次未发布，只有观察名单"
+    ],
+    "published_at": null,
+    "formal": null,
+    "current": {
+      "trade_date": "2026-10-28",
+      "quality": "healthy",
+      "items_count": 46,
+      "items_eligible": 14,
+      "items_qualification": {
+        "original_qualified": 14,
+        "observation_only": 32
+      },
+      "evaluated_at": "2026-10-28T15:01:09.710735+08:00"
+    }
+  },
+  {
+    "selection_date": "2026-10-29",
+    "seconds": 0.47,
+    "phase": "preview",
+    "issues": [
+      "今日正式批次未发布，只有观察名单"
+    ],
+    "published_at": null,
+    "formal": null,
+    "current": {
+      "trade_date": "2026-10-28",
+      "quality": "stale",
+      "items_count": 46,
+      "items_eligible": 14,
+      "items_qualification": {
+        "original_qualified": 14,
+        "observation_only": 32
+      },
+      "evaluated_at": "2026-10-28T15:01:09.710735+08:00"
+    }
+  }
+]

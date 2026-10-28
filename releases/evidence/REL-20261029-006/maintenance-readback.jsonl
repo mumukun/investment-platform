@@ -1,0 +1,8 @@
+{"version": "5.1.3", "backup_ready": true}
+{"label": "parent", "rows": [{"relname": "intraday_stock_bar", "relkind": "p", "reltuples": 18871476.0, "last_analyze": "2026-10-29 03:53:47.399993+08:00"}]}
+{"label": "children", "rows": [{"n": 11}]}
+{"label": "inherited_stats", "rows": [{"attname": "code", "n_distinct": 5542.0}, {"attname": "trade_date", "n_distinct": 48.0}]}
+{"label": "archives", "rows": [{"table_name": "intraday_stock_bar", "batches": 30, "archived_rows": 39100, "latest": "2026-10-29 04:22:45.847537+08:00"}, {"table_name": "a_share_snapshot", "batches": 13, "archived_rows": 1300, "latest": "2026-10-29 04:16:51.146091+08:00"}]}
+{"label": "lifecycle_state", "rows": [{"dataset": "data-retention", "status": "partial", "checked_at": "2026-10-29 04:17:55.937578+08:00", "issue": "{\"status\": \"partial\", \"deferred_tables\": [\"intraday_stock_bar\", \"market_intraday_kline\"], \"archived_rows\": 1300, \"cutoffs\": {\"intraday_stock_bar\": \"2026-08-26\", \"market_intraday_kline\": \"2026-08-26\", \"a_share_snapshot\": \"2026-07-29\", \"swing_daily_bar\": \"2026-01-27\", \"a_share_daily_close\": \"2026-01-27\", \"a_share_daily_metric\": \"2026-01-27\", \"tech_board_fact\": \"2026-09-23\"}, \"seconds\": 62.271}"}]}
+{"label": "receipt_progress", "rows": [{"status": "failed", "n": 11, "latest": "2026-10-29 03:23:55.685187+08:00"}, {"status": "success", "n": 5565, "latest": "2026-10-29 04:14:31.894549+08:00"}]}
+{"persisted_archive_hash": "PASS", "row_count": 100}

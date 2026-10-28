@@ -1,0 +1,170 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261029-006",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "2da449e9ea6d6e6fdbfe69d0f3773c394257a15c",
+        "version": "5.1.3",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6491f7fb94fee1e1e5b84303291bca818360a249dd1e683e0821cebb6d1f1bbd"
+        },
+        "image_ids": {
+          "app": "sha256:d4381d912f19e78abc8763ebaba540ffd1203a92f37cb0b976db87fb48a944f5"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "2da449e9ea6d6e6fdbfe69d0f3773c394257a15c",
+            "run_id": "40760337228"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:6491f7fb94fee1e1e5b84303291bca818360a249dd1e683e0821cebb6d1f1bbd"
+            }
+          },
+          "candidate_run_id": "40760741613"
+        }
+      },
+      "tag": "v5.1.3",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.1.2",
+        "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+        "image_ids": {
+          "stock-api": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965",
+          "stock-watch": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965",
+          "stock-data": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965"
+        }
+      },
+      "rollback": {
+        "tag": "v5.1.2",
+        "commit_sha": "011606b255d3cfd6fbb1da526fe122ff5e164bfa",
+        "version": "5.1.2",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:84e81c6465eb729d911e7d1c3d211e97803d45c49c128bbe7d33537be5c3df55"
+        },
+        "image_ids": {
+          "app": "sha256:06fccd5af5e7ae743b1c83ba21422a5a56b93592fd5e8d3f0e16a8af76105965"
+        },
+        "known_limitations": [
+          "Previous version retains diagnosed retention table-wide timeout behavior."
+        ],
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Existing verified retention policy only reduces batches and isolates timeouts; archive verification, locks, receipts and retention scope unchanged.",
+        "evidence": "CHG-20261028-002: PR58 isolated PostgreSQL retention9 PASS / PR50 client-to-page17 PASS, frozen main CI and original candidate. Existing independent2.13GB full backup and verified archives; no additional source-data transformation or deletion scope."
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "286647676a061c2a77554dbcef8a2bdd5c060a40",
+        "version": "1.1.1",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:dc8b31369f6551773014e0482fa76a1dbe77d52ec4082c4c31191b73468b8d34",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bdb917484b527ce82a10a324274722a2fbd58a02906c76504fd66025f7265ac4"
+        },
+        "image_ids": {
+          "api": "sha256:f21cc77bbb528a61bdc9faef1daefd0d49bf9e5203bd56a4c985145d7cdd56a9",
+          "web": "sha256:7d3cdeb4406bfd5a783c8d86d021bc497d8d1860a010d02df4a0fc61e013d4c6"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "286647676a061c2a77554dbcef8a2bdd5c060a40",
+            "run_id": "40759781532"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:dc8b31369f6551773014e0482fa76a1dbe77d52ec4082c4c31191b73468b8d34",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bdb917484b527ce82a10a324274722a2fbd58a02906c76504fd66025f7265ac4"
+            }
+          },
+          "candidate_run_id": "40760455650"
+        }
+      },
+      "tag": "v1.1.1",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v1.1.0",
+        "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+        "image_ids": {
+          "api": "sha256:533c697d9eea324a01a3954edaabfb894e2057ccae38bd289c7e58bb6acdf898",
+          "web": "sha256:a271f5e3b539612d443eb718a567b9aea311e55e09d8bab692c0beacf189a26b"
+        }
+      },
+      "rollback": {
+        "tag": "v1.1.0",
+        "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+        "version": "1.1.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
+        },
+        "image_ids": {
+          "api": "sha256:533c697d9eea324a01a3954edaabfb894e2057ccae38bd289c7e58bb6acdf898",
+          "web": "sha256:a271f5e3b539612d443eb718a567b9aea311e55e09d8bab692c0beacf189a26b"
+        },
+        "known_limitations": [
+          "Previous consumer rejects cross-day completed close evaluation; older projections remain readable."
+        ]
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Completed-close validation compatibility only; existing own current/evidence projections, no schema/ledger/source rewrite or deletion.",
+        "evidence": "CHG-20261028-002: PR58 isolated PostgreSQL retention9 PASS / PR50 client-to-page17 PASS, frozen main CI and original candidate. Existing independent2.13GB full backup and verified archives; no additional source-data transformation or deletion scope."
+      }
+    }
+  ],
+  "changes": [
+    "CHG-20261028-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly authorized development/tests then Production rollout for CHG-20261028-002. Complete consumer cross-day close acceptance and bounded retention isolation found during final real readback."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

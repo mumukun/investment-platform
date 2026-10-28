@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261029-001",
+  "status": "FAILED",
+  "changes": [
+    "CHG-20261028-002"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.1.0",
+      "commit_sha": "df02dc59a9f5f25a3b5dd5c1733c96b112674ea7",
+      "planned_version": "5.1.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:bb4d6a334852228bba0194c060e3f2b2ef28a209a2c4375a50c0f9f252710806"
+      },
+      "artifact_id": {
+        "app": "sha256:6a5835a4ba1702bb5c0f22aa22467c4e6f72ec5f95d942d8dbde7ecc858f01eb"
+      },
+      "rollback": {
+        "tag": "v5.0.8",
+        "commit_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+        "version": "5.0.8",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:0e1f8c312047f9b8069df43c51720975d5ed66b5d8667de84d402648c336381f"
+        },
+        "image_ids": {
+          "app": "sha256:3e434378793662ad04264d5a60d3f91cc6a0395d2cf699f9cb419f99a98a4045"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "df02dc59a9f5f25a3b5dd5c1733c96b112674ea7",
+          "run_id": "40736450977"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:bb4d6a334852228bba0194c060e3f2b2ef28a209a2c4375a50c0f9f252710806"
+          }
+        },
+        "candidate_run_id": "40737020780"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v1.1.0",
+      "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+      "planned_version": "1.1.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
+      },
+      "artifact_id": {
+        "api": "sha256:533c697d9eea324a01a3954edaabfb894e2057ccae38bd289c7e58bb6acdf898",
+        "web": "sha256:a271f5e3b539612d443eb718a567b9aea311e55e09d8bab692c0beacf189a26b"
+      },
+      "rollback": {
+        "tag": "v1.0.0",
+        "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+        "version": "1.0.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+        },
+        "image_ids": {
+          "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+          "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "dc9554492e6a85b0cc56782f4d695ce63759ade7",
+          "run_id": "40736278506"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8e04337a2e16350c8e77dc6ad0155faf582a08d4276e16d963d91e7f62b742e4",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5a1472166739cb7deccfa5fa2bc26be06c62d46b35fbb73e366e1a5d6608c575"
+          }
+        },
+        "candidate_run_id": "40736981248"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261029-001/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "FAILED",
+    "completed_at": "2026-10-28T17:52:51.810640+00:00"
+  },
+  "verification": {
+    "status": "NOT_PASSED"
+  }
+}

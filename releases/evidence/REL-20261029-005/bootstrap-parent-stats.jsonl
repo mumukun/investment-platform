@@ -1,0 +1,2 @@
+{"action": "one_time_parent_statistics", "at": "2026-10-29T03:51:29.263548+08:00", "query_budget_seconds": 600, "lock_budget_seconds": 1, "market_fact_writes": 0, "schema_changes": 0}
+{"status": "analyzed", "seconds": 337.31}

@@ -1,0 +1,447 @@
+[
+  {
+    "database": [
+      {
+        "schema": "stock_analyzer",
+        "bytes": 14624365591,
+        "version": "PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "relname": "intraday_stock_bar",
+        "n_live_tup": 15483258,
+        "n_dead_tup": 0,
+        "n_tup_ins": 11244800,
+        "n_tup_upd": 371137,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 23:35:45.806630+08:00",
+        "last_autoanalyze": "2026-10-28 22:26:36.325854+08:00",
+        "heap_toast_bytes": 2606006272,
+        "index_bytes": 3311296512,
+        "total_bytes": 5917302784
+      },
+      {
+        "relname": "tech_board_fact",
+        "n_live_tup": 2322808,
+        "n_dead_tup": 2545,
+        "n_tup_ins": 2324927,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-27 11:55:30.870808+08:00",
+        "last_autoanalyze": "2026-10-27 14:34:33.920953+08:00",
+        "heap_toast_bytes": 3116597248,
+        "index_bytes": 647585792,
+        "total_bytes": 3764183040
+      },
+      {
+        "relname": "market_intraday_kline",
+        "n_live_tup": 5154487,
+        "n_dead_tup": 479,
+        "n_tup_ins": 5162618,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 23:59:34.166836+08:00",
+        "last_autoanalyze": "2026-10-29 00:07:06.403926+08:00",
+        "heap_toast_bytes": 1113292800,
+        "index_bytes": 485752832,
+        "total_bytes": 1599045632
+      },
+      {
+        "relname": "market_auxiliary_fact",
+        "n_live_tup": 594390,
+        "n_dead_tup": 0,
+        "n_tup_ins": 594459,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 21:10:54.874968+08:00",
+        "last_autoanalyze": "2026-10-28 22:26:51.893250+08:00",
+        "heap_toast_bytes": 369336320,
+        "index_bytes": 205217792,
+        "total_bytes": 574554112
+      },
+      {
+        "relname": "margin_disclosure",
+        "n_live_tup": 740939,
+        "n_dead_tup": 1111,
+        "n_tup_ins": 743270,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 19:21:53.315428+08:00",
+        "last_autoanalyze": "2026-10-28 21:21:29.225515+08:00",
+        "heap_toast_bytes": 276873216,
+        "index_bytes": 206962688,
+        "total_bytes": 483835904
+      },
+      {
+        "relname": "swing_daily_bar",
+        "n_live_tup": 978300,
+        "n_dead_tup": 53580,
+        "n_tup_ins": 371821,
+        "n_tup_upd": 5782241,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-27 18:24:22.303885+08:00",
+        "last_autoanalyze": "2026-10-27 18:26:54.799156+08:00",
+        "heap_toast_bytes": 181288960,
+        "index_bytes": 148922368,
+        "total_bytes": 330211328
+      },
+      {
+        "relname": "a_share_daily_metric",
+        "n_live_tup": 477156,
+        "n_dead_tup": 82190,
+        "n_tup_ins": 83606,
+        "n_tup_upd": 6140048,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 18:54:46.923682+08:00",
+        "last_autoanalyze": "2026-10-28 22:01:33.962949+08:00",
+        "heap_toast_bytes": 196108288,
+        "index_bytes": 31268864,
+        "total_bytes": 227377152
+      },
+      {
+        "relname": "a_share_daily_close",
+        "n_live_tup": 903747,
+        "n_dead_tup": 93140,
+        "n_tup_ins": 92028,
+        "n_tup_upd": 4805049,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-27 12:21:13.419269+08:00",
+        "last_autoanalyze": "2026-10-27 14:16:07.167008+08:00",
+        "heap_toast_bytes": 73760768,
+        "index_bytes": 144572416,
+        "total_bytes": 218333184
+      },
+      {
+        "relname": "a_share_snapshot",
+        "n_live_tup": 399330,
+        "n_dead_tup": 61,
+        "n_tup_ins": 83606,
+        "n_tup_upd": 4904920,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 16:26:01.263307+08:00",
+        "last_autoanalyze": "2026-10-28 14:53:30.246948+08:00",
+        "heap_toast_bytes": 125190144,
+        "index_bytes": 71696384,
+        "total_bytes": 196886528
+      },
+      {
+        "relname": "market_quote_latest",
+        "n_live_tup": 5800,
+        "n_dead_tup": 595,
+        "n_tup_ins": 5800,
+        "n_tup_upd": 373276,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 22:05:27.516221+08:00",
+        "last_autoanalyze": "2026-10-29 00:11:11.608306+08:00",
+        "heap_toast_bytes": 183615488,
+        "index_bytes": 3489792,
+        "total_bytes": 187105280
+      },
+      {
+        "relname": "global_board_fact",
+        "n_live_tup": 247148,
+        "n_dead_tup": 0,
+        "n_tup_ins": 247148,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 03:40:34.609315+08:00",
+        "last_autoanalyze": "2026-10-28 11:46:01.118267+08:00",
+        "heap_toast_bytes": 91185152,
+        "index_bytes": 28147712,
+        "total_bytes": 119332864
+      },
+      {
+        "relname": "api_read_projection",
+        "n_live_tup": 245,
+        "n_dead_tup": 32,
+        "n_tup_ins": 245,
+        "n_tup_upd": 111583,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 23:35:17.351444+08:00",
+        "last_autoanalyze": "2026-10-29 00:38:53.598411+08:00",
+        "heap_toast_bytes": 103309312,
+        "index_bytes": 49152,
+        "total_bytes": 103358464
+      },
+      {
+        "relname": "sector_fund_fact",
+        "n_live_tup": 91941,
+        "n_dead_tup": 0,
+        "n_tup_ins": 91941,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-16 15:14:28.028837+08:00",
+        "last_autoanalyze": "2026-10-16 15:15:28.093520+08:00",
+        "heap_toast_bytes": 77373440,
+        "index_bytes": 25133056,
+        "total_bytes": 102506496
+      },
+      {
+        "relname": "swing_setup_snapshot",
+        "n_live_tup": 71466,
+        "n_dead_tup": 5772,
+        "n_tup_ins": 805385,
+        "n_tup_upd": 1413678,
+        "n_tup_del": 783561,
+        "last_autovacuum": "2026-10-27 21:09:39.302559+08:00",
+        "last_autoanalyze": "2026-10-27 22:05:32.406438+08:00",
+        "heap_toast_bytes": 90611712,
+        "index_bytes": 9674752,
+        "total_bytes": 100286464
+      },
+      {
+        "relname": "market_structure_fact",
+        "n_live_tup": 84278,
+        "n_dead_tup": 0,
+        "n_tup_ins": 81670,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-29 00:40:55.678111+08:00",
+        "last_autoanalyze": "2026-10-28 22:07:55.611657+08:00",
+        "heap_toast_bytes": 72499200,
+        "index_bytes": 18407424,
+        "total_bytes": 90906624
+      },
+      {
+        "relname": "short_candidate_snapshot",
+        "n_live_tup": 99498,
+        "n_dead_tup": 0,
+        "n_tup_ins": 20181,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": null,
+        "last_autoanalyze": "2026-10-26 11:41:21.742840+08:00",
+        "heap_toast_bytes": 76972032,
+        "index_bytes": 10838016,
+        "total_bytes": 87810048
+      },
+      {
+        "relname": "swing_feature_snapshot",
+        "n_live_tup": 111942,
+        "n_dead_tup": 7457,
+        "n_tup_ins": 56182,
+        "n_tup_upd": 1362122,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-27 22:21:40.560748+08:00",
+        "last_autoanalyze": "2026-10-27 22:21:49.568767+08:00",
+        "heap_toast_bytes": 71327744,
+        "index_bytes": 12197888,
+        "total_bytes": 83525632
+      },
+      {
+        "relname": "swing_state_event",
+        "n_live_tup": 104723,
+        "n_dead_tup": 0,
+        "n_tup_ins": 26388,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-23 09:43:53.827618+08:00",
+        "last_autoanalyze": "2026-10-20 14:23:17.749061+08:00",
+        "heap_toast_bytes": 59990016,
+        "index_bytes": 19644416,
+        "total_bytes": 79634432
+      },
+      {
+        "relname": "security_concept_membership",
+        "n_live_tup": 298841,
+        "n_dead_tup": 0,
+        "n_tup_ins": 264637,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-25 22:41:46.750364+08:00",
+        "last_autoanalyze": "2026-10-27 08:21:27.762941+08:00",
+        "heap_toast_bytes": 37175296,
+        "index_bytes": 30007296,
+        "total_bytes": 67182592
+      },
+      {
+        "relname": "security_trade_rule",
+        "n_live_tup": 190008,
+        "n_dead_tup": 20630,
+        "n_tup_ins": 88622,
+        "n_tup_upd": 346285,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 12:33:56.088296+08:00",
+        "last_autoanalyze": "2026-10-28 13:19:22.242708+08:00",
+        "heap_toast_bytes": 36872192,
+        "index_bytes": 28631040,
+        "total_bytes": 65503232
+      },
+      {
+        "relname": "intraday_sector_snapshot",
+        "n_live_tup": 241076,
+        "n_dead_tup": 834,
+        "n_tup_ins": 129410,
+        "n_tup_upd": 141,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-23 11:58:14.656920+08:00",
+        "last_autoanalyze": "2026-10-26 10:26:50.397158+08:00",
+        "heap_toast_bytes": 37675008,
+        "index_bytes": 22781952,
+        "total_bytes": 60456960
+      },
+      {
+        "relname": "swing_reference",
+        "n_live_tup": 2107,
+        "n_dead_tup": 0,
+        "n_tup_ins": 2107,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-23 11:18:15.655930+08:00",
+        "last_autoanalyze": "2026-10-27 22:02:29.999052+08:00",
+        "heap_toast_bytes": 29532160,
+        "index_bytes": 147456,
+        "total_bytes": 29679616
+      },
+      {
+        "relname": "global_board_run",
+        "n_live_tup": 14044,
+        "n_dead_tup": 0,
+        "n_tup_ins": 13922,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-28 15:17:40.544207+08:00",
+        "last_autoanalyze": "2026-10-28 03:58:39.926784+08:00",
+        "heap_toast_bytes": 29171712,
+        "index_bytes": 327680,
+        "total_bytes": 29499392
+      },
+      {
+        "relname": "market_structure_generation",
+        "n_live_tup": 1479,
+        "n_dead_tup": 0,
+        "n_tup_ins": 1479,
+        "n_tup_upd": 0,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-21 16:44:05.438452+08:00",
+        "last_autoanalyze": "2026-10-22 01:49:12.303662+08:00",
+        "heap_toast_bytes": 25853952,
+        "index_bytes": 368640,
+        "total_bytes": 26222592
+      },
+      {
+        "relname": "short_tail_run",
+        "n_live_tup": 21,
+        "n_dead_tup": 5,
+        "n_tup_ins": 21,
+        "n_tup_upd": 109,
+        "n_tup_del": 0,
+        "last_autovacuum": "2026-10-26 14:44:24.892369+08:00",
+        "last_autoanalyze": "2026-10-28 10:34:14.214084+08:00",
+        "heap_toast_bytes": 13049856,
+        "index_bytes": 32768,
+        "total_bytes": 13082624
+      }
+    ]
+  },
+  {
+    "settings": [
+      {
+        "name": "archive_mode",
+        "setting": "off",
+        "unit": null
+      },
+      {
+        "name": "autovacuum",
+        "setting": "on",
+        "unit": null
+      },
+      {
+        "name": "effective_cache_size",
+        "setting": "524288",
+        "unit": "8kB"
+      },
+      {
+        "name": "maintenance_work_mem",
+        "setting": "65536",
+        "unit": "kB"
+      },
+      {
+        "name": "max_connections",
+        "setting": "100",
+        "unit": null
+      },
+      {
+        "name": "shared_buffers",
+        "setting": "16384",
+        "unit": "8kB"
+      },
+      {
+        "name": "track_io_timing",
+        "setting": "off",
+        "unit": null
+      },
+      {
+        "name": "work_mem",
+        "setting": "4096",
+        "unit": "kB"
+      }
+    ]
+  },
+  {
+    "activity": [
+      {
+        "state": "active",
+        "wait_event_type": null,
+        "wait_event": null,
+        "n": 1
+      },
+      {
+        "state": "idle",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "n": 1
+      },
+      {
+        "state": "idle in transaction",
+        "wait_event_type": "Client",
+        "wait_event": "ClientRead",
+        "n": 1
+      }
+    ]
+  },
+  {
+    "stats_clock": [
+      {
+        "stats_reset": null,
+        "temp_bytes": 1965915561984,
+        "temp_files": 84666,
+        "deadlocks": 12
+      }
+    ]
+  },
+  {
+    "intraday_range": [
+      {
+        "earliest": "2026-08-18",
+        "latest": "2026-10-28"
+      }
+    ]
+  },
+  {
+    "fact_distribution_estimate": [
+      {
+        "tablename": "tech_board_fact",
+        "attname": "kind",
+        "n_distinct": 7.0,
+        "most_common_vals": "{quote,rotation_quote,concept_run}"
+      },
+      {
+        "tablename": "market_auxiliary_fact",
+        "attname": "dataset",
+        "n_distinct": 7.0,
+        "most_common_vals": "{cn-stock-daily-raw,sina-industry-daily,seat-trades,sina-index-daily,sina-industry-members,cn-market-flow,sina-industry-intraday}"
+      }
+    ]
+  },
+  {
+    "configured_history_windows": {
+      "short": 5,
+      "trend": 20,
+      "long": 60
+    }
+  }
+]
