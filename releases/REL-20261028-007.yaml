@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261028-007",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "authorization": "用户原正式发布及核心验证授权，继续修正同一需求中定位的短线重复计算。",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v5.0.5",
+      "planned_version": "5.0.6",
+      "tag": "v5.0.6",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/51",
+      "commit_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+      "quality_run_id": "40644098703",
+      "quality_status": "PASS",
+      "candidate_run_id": "40644323114",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:553edacb30af70c133d1a3e16fba64cf574b99ae1b5350f4a835110e2d80f5ed"
+      },
+      "artifact_id": {
+        "app": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261028-007/stock/candidate.json",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Business compute batching/context reuse only. No schema, foundation write, deletion, backfill or scoring/cutoff change; old5.0.5 reads same results. Existing protected REL001 backup retained.",
+        "evidence": "47 isolated rule/PG/boundary tests; exact main CI40644098703 and candidate40644323114; unchanged source/consumer evidence from REL006."
+      },
+      "rollback": {
+        "tag": "v5.0.5",
+        "commit_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+        "version": "5.0.5",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f2d81175d24ba0d896ce0065c6191ef822f5969278695b5d9a958cd5a2efab79"
+        },
+        "image_ids": {
+          "app": "sha256:2d922c41ea34da531aebca5b345cb45b62b2c7743f07399762883035c70ed853"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "build_time": "2026-10-28T06:31:06Z"
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T06:38:15.358236+00:00",
+    "completed_at": "2026-10-28T06:43:15.623222+00:00"
+  },
+  "verification": {
+    "status": "PASS_CORE_READ_AND_RECOVERED_TAIL_INPUT_WITH_DECLARED_SAMPLE_LAG",
+    "local_evidence": "changes/evidence/CHG-20261027-002/tail-batch-tests.txt",
+    "reused_evidence": "REL006 unchanged data process,93/36 PG tests,20 Consumer compatibility and4 actual core reads; business input computation changed, so repeat affected tail/current input/latency and necessary core reads without claiming all samples ready.",
+    "core_evidence": "releases/evidence/REL-20261028-007/core-readback.json",
+    "foundation_evidence": "releases/evidence/REL-20261028-007/foundation-final.json",
+    "tail_evidence": "releases/evidence/REL-20261028-007/tail-after.json",
+    "latest_source_quote_time": "2026-10-28 14:58:51+08:00",
+    "fresh_quote_coverage": 1.0,
+    "known_limitations": [
+      "Minute outbox143036 rows, oldest2667s at14:59; still collecting/catching up, not all minute data realtime or drained. Latest quotes remain100% within180s with primary queue32.687s.",
+      "Current tail39 rows=15 original-qualified+24 observations; history_missing26 among5014 checked,5179 constructible features. Legacy preview healthy180 rows is a separate layer; do not sum or call183/180 evaluated input count.",
+      "Swing page2 is pagination, source14:27 state marked stale at final read; valid last-known-good read is not a claim of fresh intraday decisions.",
+      "Sector first502 during new projection build; targeted retry passed193 summaries0.060s, failure preserved. businessDateOct27/latestSnapshotDateOct28, stale/unavailable curves retained.",
+      "Unchanged common boundaries reuse dated REL003/004/006 evidence, not a repeated browser/full E2E. First core6 probe used wrong system Python; corrected runtime interpreter, not an application failure.",
+      "Initial runtime environment probe had null commit/build_time because stock image stores OCI labels rather than APP_* env. Exact native identity and image-labels.json supply real SHA/build time; values not guessed."
+    ]
+  },
+  "database_review": {
+    "mode": "skip",
+    "data_impact": "none",
+    "rollback_compatible": true,
+    "reason": "No schema, foundation write, deletion or backfill. Same strategy/result contracts; business computes once with previously observed context, old5.0.5 can read unchanged rows. Existing protected REL001 backup retained."
+  },
+  "created_at": "2026-10-28T06:28:09.161786+00:00",
+  "timing": {
+    "followup_first_clock_record": "2026-10-28T04:35:55+00:00",
+    "business_batch_fix_started_approx": "2026-10-28T06:20:00+00:00",
+    "note": "Includes preceding corrective development, failed5.0.4 and actual rollback,5.0.5 deployment/acceptance, and this business fix; not deploy-only timing.",
+    "accepted_at": "2026-10-28T07:04:19.595311+00:00",
+    "elapsed_followup_lower_bound_seconds": 8904,
+    "deploy_seconds": 300.265
+  },
+  "image_execution_plan": "releases/evidence/REL-20261028-007/image-release-plan.json",
+  "updated_at": "2026-10-28T07:04:19.595311+00:00",
+  "tag_status": "IMMUTABLE_v5.0.6_PUSHED",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-007/deployment-receipt.json"
+  ],
+  "released_at": "2026-10-28T07:04:19.595311+00:00"
+}

@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-10-28T03:36:54.891246+00:00",
+  "verified_at": "2026-10-28T07:04:19.595311+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -51,20 +51,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-10-28T03:36:54.891246+00:00",
-        "application_version": "5.0.3",
+        "verified_at": "2026-10-28T07:04:19.595311+00:00",
+        "application_version": "5.0.6",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v5.0.3",
-        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "tag": "v5.0.6",
+        "commit_sha": "c7f530ef592a52c2177648404adcac58360845eb",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:553edacb30af70c133d1a3e16fba64cf574b99ae1b5350f4a835110e2d80f5ed"
         },
         "artifact_id": {
-          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+          "app": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:553edacb30af70c133d1a3e16fba64cf574b99ae1b5350f4a835110e2d80f5ed"
         },
         "artifact_identity_status": "VERIFIED_CI_DIGEST_AND_RUNTIME_CONFIG_ID",
         "containers": [
@@ -72,28 +72,37 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-10-28T03:30:37.505890+00:00",
-        "health": "NATIVE_HEALTH_VERSION_SMOKE_PASS_WITH_DECLARED_DATA_GAPS",
+        "deployment_timestamp": "2026-10-28T06:43:15.623222+00:00",
+        "health": "NATIVE_HEALTH_VERSION_SMOKE_CORE_READ_PASS_WITH_DECLARED_SAMPLE_AND_WAVE_LAG",
         "rollback_baseline": {
-          "tag": "v4.12.0",
-          "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
-          "version": "4.12.0",
+          "tag": "v5.0.5",
+          "commit_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+          "version": "5.0.5",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:f2d81175d24ba0d896ce0065c6191ef822f5969278695b5d9a958cd5a2efab79"
           },
           "image_ids": {
-            "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+            "app": "sha256:2d922c41ea34da531aebca5b345cb45b62b2c7743f07399762883035c70ed853"
           },
-          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION",
-          "build_time": "2026-10-26T15:25:02Z"
+          "runtime_services": {
+            "app": [
+              "stock-api",
+              "stock-watch",
+              "stock-data"
+            ]
+          },
+          "status": "VERIFIED_RETAINED_PREVIOUS_PRODUCTION"
         },
         "next_release_rollback_images": {
-          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+          "app": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
         },
         "evidence": [
-          "releases/REL-20261028-004.yaml",
-          "releases/evidence/REL-20261028-004/deployment-receipt.json",
-          "releases/evidence/REL-20261028-004/core-readback.json"
+          "releases/REL-20261028-007.yaml",
+          "releases/evidence/REL-20261028-007/deployment-receipt.json",
+          "releases/evidence/REL-20261028-007/core-readback.json",
+          "releases/evidence/REL-20261028-007/foundation-final.json",
+          "releases/evidence/REL-20261028-007/tail-after.json",
+          "releases/evidence/REL-20261028-007/image-labels.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -142,8 +151,8 @@
             "mode": "skip",
             "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "Read-query rewrites only; no new schema, index or fact mutation. Reuses verified existing intraday indexes. Original protected REL001 full backup retained.",
-            "evidence": "119 isolated/local tests, PR48/main CI40624935744/candidate40625095501, actual REL003 rollback PASS."
+            "reason": "Business compute batching/context reuse only. No schema, foundation write, deletion, backfill or scoring/cutoff change; old5.0.5 reads same results. Existing protected REL001 backup retained.",
+            "evidence": "47 isolated rule/PG/boundary tests; exact main CI40644098703 and candidate40644323114; unchanged source/consumer evidence from REL006."
           }
         },
         "short_tail": {
@@ -222,7 +231,6 @@
             "quality": "fresh"
           }
         },
-        "build_time_status": "UNKNOWN_SSH_RECHECK_TIMED_OUT_IMAGE_CREATED_LABEL_REMAINS_ON_EXACT_ARTIFACT",
         "sector_workbench": {
           "business_date": "2026-10-27",
           "snapshot_date": "2026-10-28",
@@ -245,7 +253,17 @@
           "read_at_note": "Client result clock; SQL executed before receipt. Later SSH final readback timed out.",
           "last_observed_by_client_at": "2026-10-28T11:30:54+08:00"
         },
-        "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations"
+        "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations",
+        "foundation": {
+          "read_at": "2026-10-28T14:59:09.749744+08:00",
+          "fresh_coverage_latest": 1.0,
+          "primary_queue_age_seconds": 32.687,
+          "sample_pending_rows": 143036,
+          "sample_oldest_seconds": 2667.428,
+          "status": "LATEST_FRESH_SAMPLE_CATCHUP"
+        },
+        "build_time": "2026-10-28T06:31:06Z",
+        "build_time_source": "OCI_IMAGE_LABEL_VERIFIED"
       }
     },
     "investment-research-dashboard": {

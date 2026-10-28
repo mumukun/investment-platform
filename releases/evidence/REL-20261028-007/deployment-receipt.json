@@ -1,0 +1,75 @@
+{
+  "release_id": "REL-20261028-007",
+  "plan_hash": "4f0b73976e19e6dde9b6b6ebdd42504c9a3a0a788ec816d8655d6093784ec3e8",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "Business compute batching/context reuse only. No schema, foundation write, deletion, backfill or scoring/cutoff change; old5.0.5 reads same results. Existing protected REL001 backup retained.",
+          "evidence": "47 isolated rule/PG/boundary tests; exact main CI40644098703 and candidate40644323114; unchanged source/consumer evidence from REL006."
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d",
+        "stock-watch": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d",
+        "stock-data": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-28T06:38:39.867669+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 107.431
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-10-28T06:40:36.364775+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 1.98
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-10-28T06:40:44.309884+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 2.386
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-10-28T06:40:49.321964+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 114.249
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-10-28T06:42:44.484128+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 30.247
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.0.6",
+      "commit_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:553edacb30af70c133d1a3e16fba64cf574b99ae1b5350f4a835110e2d80f5ed"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-10-28T06:43:15.623222+00:00"
+}

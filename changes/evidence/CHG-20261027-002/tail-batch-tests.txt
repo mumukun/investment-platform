@@ -1,0 +1,3 @@
+47 PASS,1 existing AnyIO deprecation warning,14.22s. Synthetic task PG57310; test_short_tail_refresh/short_tail/current_candidate_contracts/market_data_boundaries.
+6000 stored quotes produce one full-market callback instead of10 partial callbacks; explicit same observed context produces identical original preview result with no second history read. Existing cutoff/future/stale/missing/empty/universe and zero acquisition boundaries pass. Critical Ruff/config/compile/diff PASS.
+No foundation/consumer/schema/scoring change; reuse unchanged data-service/consumer evidence. Actual business refresh latency and current input counts must be checked after exact deployment.

@@ -1,0 +1,140 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "path": "/api/v1/watchlist",
+      "status": "PASS_READ_CONTRACT",
+      "items": 69,
+      "provider_contract_validated": true,
+      "provider_items": 69,
+      "provider_with_quote": 69,
+      "provider_quote_dates": [
+        "2026-09-14",
+        "2026-09-16",
+        "2026-10-16",
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "elapsed_seconds": 1.578
+    },
+    {
+      "path": "/api/v1/short-selection/tail?contract_version=investment-dashboard-short-tail-selection-v2",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": "investment-dashboard-short-tail-selection-v2",
+      "trade_date": "2026-10-28",
+      "actual_trade_date": null,
+      "quality": "stale",
+      "freshness_status": null,
+      "data_time": null,
+      "generated_at": "2026-10-28T14:04:09.812413+08:00",
+      "display_basis": null,
+      "phase": "preview",
+      "items": 0,
+      "current": {
+        "quality": "partial",
+        "evaluated_at": "2026-10-28T14:14:06.625852+08:00",
+        "trade_date": "2026-10-28",
+        "coverage": {
+          "received_count": 5569,
+          "candidate_count": 40,
+          "evaluable_count": 0,
+          "fresh_quote_count": 0,
+          "observation_count": 40,
+          "universe_complete": true,
+          "feature_ready_count": 5179,
+          "history_ready_count": 0,
+          "expected_quote_count": 5524,
+          "known_universe_count": 5576,
+          "history_checked_count": 0,
+          "history_missing_count": 0,
+          "original_qualified_count": 0
+        },
+        "issues": [
+          "市场行情覆盖不足80%"
+        ],
+        "items": 40
+      },
+      "provider_current": {
+        "quality": "partial",
+        "evaluated_at": "2026-10-28T14:14:50.436481+08:00",
+        "trade_date": "2026-10-28",
+        "coverage": {
+          "known_universe_count": 5576,
+          "universe_complete": true,
+          "received_count": 5569,
+          "evaluable_count": 0,
+          "feature_ready_count": 5179,
+          "fresh_quote_count": 0,
+          "expected_quote_count": 5524,
+          "history_checked_count": 0,
+          "history_ready_count": 0,
+          "history_missing_count": 0,
+          "candidate_count": 41,
+          "original_qualified_count": 0,
+          "observation_count": 41
+        },
+        "issues": [
+          "市场行情覆盖不足80%"
+        ]
+      },
+      "diagnostic_counts_present": true,
+      "elapsed_seconds": 2.321
+    },
+    {
+      "path": "/api/v1/swing-selection/list?page=1&page_size=2&scope=all&contract_version=investment-dashboard-swing-selection-v4",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": "investment-dashboard-swing-selection-v4",
+      "trade_date": "2026-10-28",
+      "actual_trade_date": null,
+      "quality": null,
+      "freshness_status": "stale",
+      "data_time": "2026-10-28T13:57:28+08:00",
+      "generated_at": "2026-10-28T13:57:28+08:00",
+      "display_basis": null,
+      "phase": null,
+      "items": 2,
+      "provider_contract_validated": true,
+      "elapsed_seconds": 10.845
+    },
+    {
+      "path": "/api/v1/sector-workbench",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": null,
+      "trade_date": null,
+      "actual_trade_date": null,
+      "quality": null,
+      "freshness_status": null,
+      "data_time": null,
+      "generated_at": null,
+      "display_basis": null,
+      "phase": null,
+      "elapsed_seconds": 1.299,
+      "meta": {
+        "isMock": false,
+        "source": "stock-analyzer swing_daily_bar + latest industry profile",
+        "quality": "stale",
+        "universe": "波段日线流动性预筛股票池",
+        "generatedAt": "2026-10-28T06:02:56.093569+00:00",
+        "limitations": [
+          "行业映射不是历史时点成分，存在幸存者偏差。",
+          "行业名称尚未完成统一治理。",
+          "历史资金强度和盘中同时点曲线未接入。"
+        ],
+        "businessDate": "2026-10-27",
+        "limitedCount": 40,
+        "availableCount": 65,
+        "directoryCount": 193,
+        "activeThreshold": 1.5,
+        "totalStockCount": 5525,
+        "mappedStockCount": 5522,
+        "unavailableCount": 88,
+        "marketCoveragePct": 99.9,
+        "latestSnapshotDate": "2026-10-28",
+        "classificationLevel": "最新子行业优先，缺失回退行业",
+        "latestBarCoveragePct": 99.9,
+        "latestAvailableBarDate": "2026-10-27"
+      },
+      "summaries": 193
+    }
+  ]
+}

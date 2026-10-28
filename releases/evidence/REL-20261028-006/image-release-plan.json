@@ -1,0 +1,118 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261028-006",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+        "version": "5.0.5",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f2d81175d24ba0d896ce0065c6191ef822f5969278695b5d9a958cd5a2efab79"
+        },
+        "image_ids": {
+          "app": "sha256:2d922c41ea34da531aebca5b345cb45b62b2c7743f07399762883035c70ed853"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+            "run_id": "40639000220"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:f2d81175d24ba0d896ce0065c6191ef822f5969278695b5d9a958cd5a2efab79"
+            }
+          },
+          "candidate_run_id": "40639193332"
+        }
+      },
+      "tag": "v5.0.5",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.0.3",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "image_ids": {
+          "stock-api": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53",
+          "stock-watch": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53",
+          "stock-data": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        }
+      },
+      "rollback": {
+        "tag": "v5.0.3",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "version": "5.0.3",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+        },
+        "image_ids": {
+          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Only additive market_sample_outbox. No historical delete/backfill or incompatible schema. Latest+pending atomic; sample+ack atomic; old5.0.3 ignores queue; new code replays persisted tasks. Protected REL001 backup retained, no restore drill.",
+        "evidence": "93 focused tests and36 overlapping final data-boundary tests including >128 load,1025-row bounded split, atomic failure/owner-loss/restart. Exact main CI40639000220/candidate40639193332 PASS."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "PR50 main5d6d1653, CI40639000220, candidate40639193332 PASS; stock5.0.5 only. Dashboard1.0.0/News excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Additive outbox ignored byold5.0.3, unchanged fact fields and sample replacement policy; no scoring/quote validity relaxation; optional5.0.4 diagnostics already accepted by20 unchanged Dashboard tests."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "93 focused regressions plus36 overlapping final data tests: blocked samples beyond128,6000 symbols,1025 split, atomic enqueue/ack rollback, owner loss, new-worker drain and business role denial. Ruff/config/compile/diff PASS."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Unchanged sources; actual13:21 showed4738/5576 fresh quotes and source13:20 (providers work); REL005 failed backpressure capacity and rolled back, not treated as successful acceptance. This patch proves >128 independently in PG; post-switch requires actual fresh coverage/primary age and four core reads. Durable sample age/progress explicitly separate, not claimed all-ready."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Same verified root-owned879250a runner,3 services,mihomo downloads/domestic DIRECT. No credentials/parameters/proxy changes; NAS shows6GB available memory, identified WAL/IO waits. Deploy rechecks drift."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Actual REL005 ROLLBACK_PASS05:27:22 restored exact current5.0.3 three services. Same retained digest/IDs in frozen expected_production; additive queue survives rollback for later safe replay. No DB restore/delete."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested new release after changes/core verification and now says继续处理; same authorized fix."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

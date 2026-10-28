@@ -1,0 +1,118 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261028-005",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "ba94a0d2d81a6aaa6df6d836f27c810740bb55cf",
+        "version": "5.0.4",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5f343360c95ab0e0fafde17a0db752a0d50b286f12a4fcb3700647e8fe005113"
+        },
+        "image_ids": {
+          "app": "sha256:56f08500017acda230341c8223f3e1e3253491ee75b34ebcfe8a870fb7f8fbef"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "ba94a0d2d81a6aaa6df6d836f27c810740bb55cf",
+            "run_id": "40635846860"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:5f343360c95ab0e0fafde17a0db752a0d50b286f12a4fcb3700647e8fe005113"
+            }
+          },
+          "candidate_run_id": "40636026472"
+        }
+      },
+      "tag": "v5.0.4",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.0.3",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "image_ids": {
+          "stock-api": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53",
+          "stock-watch": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53",
+          "stock-data": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        }
+      },
+      "rollback": {
+        "tag": "v5.0.3",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "version": "5.0.3",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+        },
+        "image_ids": {
+          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "No DDL, deletion, backfill or irreversible rewrite. Same quote/revision/sample semantics; only transaction grouping and scheduling changed. Old5.0.3 can read unchanged facts. Protected REL001 backup retained.",
+        "evidence": "88 isolated stock tests,20 unchanged Dashboard compatibility tests, PR49/main CI40635846860/candidate40636026472; fenced precommit and failed-sample/latest atomic behavior."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "PR49 merged exact main ba94a0d2; main CI40635846860 and candidate40636026472 PASS. Stock only5.0.4, unchanged Dashboard1.0.0 and News excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "No DDL or scoring/freshness change; optional input counts preserve existing v1/v2 field meanings. Dashboard1.0.0 old/new payload parser and20 compatibility tests passed."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "88 focused stock tests including6000-symbol slow-sample publication/drain, bounded queues, pending-source gating, failed-sample status, lost-owner rollback and current-tail/wave regressions;20 consumer read-only tests."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Sources unchanged: reuse actual Tencent11:27:06 diagnostic0.326s and verified5576 directory/8797 calendar. Actual13:00 read showed5577 CNtoday facts but lag11:40; this fix targets publication. New metrics/actual market freshness and4 core reads are required post-switch acceptance, not preclaimed."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Same installed root-owned879250a candidate-v2 runner and existing3-service topology/proxy configuration; actual12:58 all3runtime IDs match5.0.3. Deploy independently rechecks live drift."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Retain exact current5.0.3 Tag/f549604 digest/configID and3 services. Same schema/fact policy, prior runner rollback mechanism verified REL003, no new drill/restore. Not a claim old version had realtime quotes."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User explicitly requested new release after changes/core verification and now says继续处理; same authorized fix."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

@@ -65,6 +65,7 @@
 | us_market_calendar_event/run | 海外事件事实与采集状态 | 数据程序；策略结论不混入事件事实 |
 | market_quote_latest（新增） | 公共最新报价，跨功能读取；只保留每来源/口径最新有效值 | 数据程序 |
 | market_data_state（新增） | 轻量事实就绪/版本/数据进程心跳，无业务请求 | 仅数据程序；不建request表、不接受业务采集请求 |
+| market_sample_outbox（5.0.5新增） | 报价事务派生的待写分钟样本，完成事实写入后原子确认；可恢复 | 仅数据程序产生/消费；不接受业务请求，不删除历史事实 |
 | market_intraday_kline（新增） | 真实区间 K 线，与累计采样明确分开 | 数据程序 |
 | market_auxiliary_fact（新增） | 日历/基础参考、现有表未承载的公司资料、席位目录/明细、市场资金源事实 | 数据程序；严格领域模型，不保存页面响应或整包重复历史 |
 | short_candidate_snapshot、short_signal_event/outcome、short_tail_run/observation、setup/factor ledger | 短线候选/信号/规则证据/结果；observation 是特定策略当时使用的证据 | 短线功能；不回写公共事实 |

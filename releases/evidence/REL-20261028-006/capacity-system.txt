@@ -1,0 +1,31 @@
+MemTotal:       20328580 kB
+MemFree:          559512 kB
+MemAvailable:    6091332 kB
+Buffers:           25600 kB
+Cached:          9970620 kB
+SwapCached:        87852 kB
+Active:          9115000 kB
+Inactive:        3366688 kB
+Active(anon):    4835084 kB
+Inactive(anon):  2182736 kB
+Active(file):    4279916 kB
+Inactive(file):  1183952 kB
+Unevictable:     4766192 kB
+Mlocked:         4766192 kB
+SwapTotal:      14294956 kB
+SwapFree:       10245248 kB
+Dirty:             21800 kB
+Writeback:          1040 kB
+stock-api 404.9MiB / 19.39GiB 0
+stock-watch 645.5MiB / 19.39GiB 0
+stock-data 1.575GiB / 19.39GiB 0
+investment-research-dashboard-nas-web-1 6.004MiB / 19.39GiB 0
+investment-research-dashboard-nas-api-1 702.9MiB / 19.39GiB 0
+marketnewsfeed-market-news-feed-1 143.6MiB / 19.39GiB 0
+docker-1ms-run-hslr-sun-panel-1 9.199MiB / 19.39GiB 0
+hermes-agent 142.7MiB / 19.39GiB 0
+shared-postgres 3.75GiB / 19.39GiB 0
+mihomo-1 43.18MiB / 19.39GiB 0
+bitwarden 25.38MiB / 19.39GiB 0
+calibre-web 9.602MiB / 19.39GiB 0
+baiduapp 135.4MiB / 19.39GiB 0

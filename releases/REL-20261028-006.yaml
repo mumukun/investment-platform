@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261028-006",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "release_profile": "routine",
+  "corrects_release": "REL-20261028-005",
+  "authorization": "用户明确要求修复后重新发布并验证核心功能；当前继续处理，同一正式发布授权有效。",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v5.0.3",
+      "planned_version": "5.0.5",
+      "tag": "v5.0.5",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/50",
+      "commit_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+      "quality_run_id": "40639000220",
+      "quality_status": "PASS",
+      "candidate_run_id": "40639193332",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:f2d81175d24ba0d896ce0065c6191ef822f5969278695b5d9a958cd5a2efab79"
+      },
+      "artifact_id": {
+        "app": "sha256:2d922c41ea34da531aebca5b345cb45b62b2c7743f07399762883035c70ed853"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261028-006/stock/candidate.json",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Only additive market_sample_outbox. No historical delete/backfill or incompatible schema. Latest+pending atomic; sample+ack atomic; old5.0.3 ignores queue; new code replays persisted tasks. Protected REL001 backup retained, no restore drill.",
+        "evidence": "93 focused tests and36 overlapping final data-boundary tests including >128 load,1025-row bounded split, atomic failure/owner-loss/restart. Exact main CI40639000220/candidate40639193332 PASS."
+      },
+      "rollback": {
+        "tag": "v5.0.3",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "version": "5.0.3",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+        },
+        "image_ids": {
+          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T05:45:19.526731+00:00",
+    "completed_at": "2026-10-28T05:57:03.071765+00:00"
+  },
+  "verification": {
+    "status": "PASS_LATEST_PRICE_AND_CORE_READ_CONTRACT_WITH_DECLARED_LAG",
+    "local_evidence": "changes/evidence/CHG-20261027-002/durable-publication-tests.txt",
+    "unchanged": "Dashboard1.0.0/News2.5.0不发布；沿用20项Consumer兼容及原有带日期的未改常用边界证据。",
+    "acceptance": "盘中最新报价覆盖>=80%且原180秒门槛不变、报价通道等待收敛、心跳与四条核心真实读取；分钟任务积压另行核对实际推进/质量，不混同报价新鲜度，不虚报全部样本就绪。",
+    "foundation_evidence": [
+      "releases/evidence/REL-20261028-006/foundation-capacity.json",
+      "releases/evidence/REL-20261028-006/foundation-next-cycle.json"
+    ],
+    "core_evidence": "releases/evidence/REL-20261028-006/core-readback.json",
+    "known_limitations": [
+      "Startup fresh coverage30.13% then67.74% failed; later96.70% and84.95% passed with source clock progress and primary queue0/22s. Not claiming all-time freshness from early failed reads.",
+      "Durable minute sample backlog45512 rows/18min and growing; facts preserved but sample completion not realtime. No history cleanup.",
+      "Current tail40/41 partial observations; feature_ready5179, history_checked0/missing0, original fresh0 at captured business evaluation. Historical-all-missing false diagnosis removed; business consumption still delayed.",
+      "Swing page2 is page count; stale13:57 state, not a healthy current decision claim. Sector193 reads but businessDateOct27, snapshotOct28, stale/unavailable curves retained.",
+      "First core probe used system Python without pydantic; corrected actual /app/.venv/bin/python produced4/4 read contracts. SSH disconnects are separate from app results."
+    ]
+  },
+  "database_review": {
+    "mode": "skip",
+    "data_impact": "additive",
+    "rollback_compatible": true,
+    "reason": "Only additive market_sample_outbox; no historical fact deletion, backfill or incompatible DDL. Old5.0.3 ignores new table; new worker recovers persisted work. Atomic enqueue/ack/fencing/restart tests passed. Existing protected REL001 full backup retained."
+  },
+  "rollback_evidence": "REL005 rollback actual PASS2026-10-28T05:27:22Z restored5.0.3 three services; runtime identity known, same retained digest/configID.",
+  "created_at": "2026-10-28T05:36:13.243851+00:00",
+  "timing": {
+    "followup_first_clock_record": "2026-10-28T04:35:55+00:00",
+    "outbox_correction_after_failed_acceptance": "2026-10-28T05:24:00+00:00",
+    "note": "Includes failed5.0.4/rollback and corrective development/CI; exact total recorded at acceptance, not deploy-only timing.",
+    "accepted_at": "2026-10-28T06:21:10.072200+00:00",
+    "elapsed_followup_lower_bound_seconds": 6315
+  },
+  "image_execution_plan": "releases/evidence/REL-20261028-006/image-release-plan.json",
+  "updated_at": "2026-10-28T05:42:55.015453+00:00",
+  "tag_status": "IMMUTABLE_v5.0.5_PUSHED",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-006/deployment-receipt.json"
+  ],
+  "released_at": "2026-10-28T06:21:10.072200+00:00"
+}

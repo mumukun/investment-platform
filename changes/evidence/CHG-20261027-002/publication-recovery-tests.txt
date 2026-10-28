@@ -1,0 +1,6 @@
+Stock: 88 passed (isolated task PostgreSQL; synthetic inputs only), 1 existing AnyIO deprecation warning, 51.26s.
+Dashboard unchanged1.0.0: 20 passed, 1 existing Starlette deprecation warning, 0.43s. Oldv2 fixture and optional diagnostics both parse with identical rows.
+Checks: full Ruff on changed data modules/new tests; critical Ruff on legacy engine/candidates; config and compileall; git diff --check PASS.
+Covers: 6000-symbol latest publication while sample writer blocked, complete eventual sample drain; bounded queue/shutdown; pending source prevents duplicate schedule; primary frames64events/2commits; own-transaction reference/rule visibility; lost owner rolls back samples; failed samples retain latest facts and mark unavailable; stale quotes do not falsely imply missing history, actual missing history and valid zero candidates; current tail/wave regression and consumer read-only projections.
+Environment corrections: initial extra runs were sandbox-denied on loopback or missing isolated Dashboard DATABASE_URL, rerun above with proper task-only databases. Not application failures or production tests.
+Production source freshness/coverage and queue convergence still require actual deployment acceptance; fixture results do not prove NAS throughput.

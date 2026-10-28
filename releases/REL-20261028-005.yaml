@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261028-005",
+  "status": "ROLLED_BACK",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "release_profile": "routine",
+  "authorization": "用户要求修改后重新发版并验证核心功能，2026-10-28明确继续处理；沿用同一修复/正式发布授权",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v5.0.3",
+      "planned_version": "5.0.4",
+      "tag": "v5.0.4",
+      "rollback": {
+        "tag": "v5.0.3",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "version": "5.0.3",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+        },
+        "image_ids": {
+          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/49",
+      "commit_sha": "ba94a0d2d81a6aaa6df6d836f27c810740bb55cf",
+      "quality_run_id": "40635846860",
+      "candidate_run_id": "40636026472",
+      "quality_status": "PASS",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:5f343360c95ab0e0fafde17a0db752a0d50b286f12a4fcb3700647e8fe005113"
+      },
+      "artifact_id": {
+        "app": "sha256:56f08500017acda230341c8223f3e1e3253491ee75b34ebcfe8a870fb7f8fbef"
+      },
+      "candidate_evidence": "releases/evidence/REL-20261028-005/stock/candidate.json",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "No DDL, deletion, backfill or irreversible rewrite. Same quote/revision/sample semantics; only transaction grouping and scheduling changed. Old5.0.3 can read unchanged facts. Protected REL001 backup retained.",
+        "evidence": "88 isolated stock tests,20 unchanged Dashboard compatibility tests, PR49/main CI40635846860/candidate40636026472; fenced precommit and failed-sample/latest atomic behavior."
+      }
+    }
+  ],
+  "created_at": "2026-10-28T05:02:33.926018+00:00",
+  "verification": {
+    "local": "changes/evidence/CHG-20261027-002/publication-recovery-tests.txt",
+    "before": "releases/evidence/REL-20261028-005/foundation-before.json",
+    "after_deploy": [
+      "Native identity/version/heartbeat; actual source/received/published times and coverage; bounded queue progress; current-tail diagnostics; swing/watchlist/sector reads"
+    ],
+    "unchanged": "Dashboard1.0.0 and News2.5.0 excluded; source authorization, scoring, schemas and thresholds unchanged. Reuse earlier dated source/common-read evidence, not a new full E2E.",
+    "status": "FAILED_REALTIME_BACKPRESSURE",
+    "initial_read": "13:17 fresh3299/5576=59.16%, queue106.9s, native heartbeat PASS; cannot claim realtime. One post-startup follow-up SSH timed out.",
+    "failure": "13:21 sample backlog reached128 and source stream128, age206s;13:23 sample128/stream128 age312s and fresh0/5576. New bounded sample channel incorrectly stops primary publication when full. Native deploy PASS does not satisfy acceptance."
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T05:10:21.856337+00:00",
+    "completed_at": "2026-10-28T05:15:42.273635+00:00"
+  },
+  "database_review": {
+    "mode": "skip",
+    "data_impact": "none",
+    "rollback_compatible": true,
+    "reason": "Same validated facts, revisions and sample policy; scheduling/transaction grouping only, no DDL or irreversible data rewrite. Lost-owner and failed-sample tests prove transaction behavior; old5.0.3 reads same tables. Existing protected REL001 backup retained, no additional backup or restore drill."
+  },
+  "timing": {
+    "first_clock_record": "2026-10-28T04:35:55+00:00",
+    "note": "Lower bound for this follow-up, includes implementation, tests, PR/CI and deployment; original multi-attempt request remains documented in REL004."
+  },
+  "git_review": "PASS: isolated task branch, unrelated original checkout untouched, no unfinished operation; PR49 merged exact head c557bcba, main frozen ba94a0d2. No branch cleanup.",
+  "image_execution_plan": "releases/evidence/REL-20261028-005/image-release-plan.json",
+  "updated_at": "2026-10-28T05:24:38.353564+00:00",
+  "tag_status": "IMMUTABLE_v5.0.4_PUSHED",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-005/deployment-receipt.json"
+  ],
+  "rollback_status": "ROLLBACK_PASS",
+  "rollback_receipt": "releases/evidence/REL-20261028-005/rollback-receipt.json",
+  "rollback_completed_at": "2026-10-28T05:27:22.053041+00:00"
+}

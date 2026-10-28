@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "path": "/api/v1/sector-workbench",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": null,
+      "trade_date": null,
+      "actual_trade_date": null,
+      "quality": null,
+      "freshness_status": null,
+      "data_time": null,
+      "generated_at": null,
+      "display_basis": null,
+      "phase": null,
+      "elapsed_seconds": 0.06,
+      "meta": {
+        "isMock": false,
+        "source": "stock-analyzer swing_daily_bar + latest industry profile",
+        "quality": "stale",
+        "universe": "波段日线流动性预筛股票池",
+        "generatedAt": "2026-10-28T06:50:40.581585+00:00",
+        "limitations": [
+          "行业映射不是历史时点成分，存在幸存者偏差。",
+          "行业名称尚未完成统一治理。",
+          "历史资金强度和盘中同时点曲线未接入。"
+        ],
+        "businessDate": "2026-10-27",
+        "limitedCount": 40,
+        "availableCount": 65,
+        "directoryCount": 193,
+        "activeThreshold": 1.5,
+        "totalStockCount": 5525,
+        "mappedStockCount": 5522,
+        "unavailableCount": 88,
+        "marketCoveragePct": 99.9,
+        "latestSnapshotDate": "2026-10-28",
+        "classificationLevel": "最新子行业优先，缺失回退行业",
+        "latestBarCoveragePct": 99.9,
+        "latestAvailableBarDate": "2026-10-27"
+      },
+      "summaries": 193
+    }
+  ]
+}

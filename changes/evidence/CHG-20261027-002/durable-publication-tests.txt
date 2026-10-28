@@ -1,0 +1,5 @@
+93 focused tests PASS,1 existing AnyIO warning,57.64s: data worker/store/boundaries, current tail/wave and swing discovery, synthetic task-only PostgreSQL.
+Final changed-boundary rerun:36 PASS in25.67s, including new1025-row bounded split/idempotence; final status/metrics logic. This overlaps prior93, not129 distinct tests.
+Key checks:300 quote events beyond old128 sample capacity continue to latest facts while sample writer blocked;6000-symbol publication; no source requests on recovery; atomic latest+outbox; atomic sample+ack rollback on post-ack exception; owner loss retains work; new worker drains; unchanged rule xmin/timestamp stable, changed rule updates; api/business role cannot stage or consume work.
+One first-run mock-only failure: old MagicMock connection lacked new sample_backlog return, fixture updated; rerun93 PASS.
+Ruff, config, compile and diff checks PASS. Dashboard1.0.0 compatibility unchanged from20-pass evidence for5.0.4 diagnostic counts; no consumer edits. Actual NAS source freshness/queue progress and core4 consumers pending precise deployment.

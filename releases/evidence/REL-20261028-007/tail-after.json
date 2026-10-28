@@ -1,0 +1,31 @@
+{
+  "read_at": "2026-10-28T14:45:58.961575+08:00",
+  "built_at": "2026-10-28 14:45:22.876081+08:00",
+  "evaluated_at": "2026-10-28 14:44:47.272727+08:00",
+  "evaluation_age_seconds": 71.688848,
+  "publication_seconds": 35.603354,
+  "coverage": {
+    "known_universe_count": 5576,
+    "universe_complete": true,
+    "received_count": 5569,
+    "evaluable_count": 183,
+    "feature_ready_count": 5179,
+    "fresh_quote_count": 5517,
+    "expected_quote_count": 5524,
+    "history_checked_count": 5014,
+    "history_ready_count": 4988,
+    "history_missing_count": 26,
+    "candidate_count": 38,
+    "original_qualified_count": 15,
+    "observation_count": 23
+  },
+  "input_quotes": 5569,
+  "source_names": [
+    "tencent"
+  ],
+  "latest_source": "2026-10-28T14:44:18+08:00",
+  "valid_at_evaluation": 5569,
+  "valid_now": 5563,
+  "positive_amount": 5569,
+  "future_received": 0
+}
