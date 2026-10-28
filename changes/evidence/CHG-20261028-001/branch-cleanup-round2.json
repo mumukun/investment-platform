@@ -1,0 +1,1145 @@
+{
+  "change_id": "CHG-20261028-001",
+  "round": 2,
+  "completed_at": "2026-10-28T16:03:47.554199+00:00",
+  "deleted_local": 73,
+  "deleted_origin": 25,
+  "repositories": [
+    {
+      "repository": "investment-platform",
+      "verified_main": "efc223cf36c5c1346c5aedba9da510ab601f3a15",
+      "before": {
+        "local": 71,
+        "origin": 18
+      },
+      "after": {
+        "local": 43,
+        "origin": 11
+      },
+      "deleted": {
+        "feat/CHG-20261015-001-eastmoney-retirement": {
+          "local": {
+            "sha": "76b905f54da470a562e371493bb46c52982f30c3",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261015-006-microcap-daily": {
+          "local": {
+            "sha": "d5ed5bd8cc2d612b0cdb66e539ed705079b1c52c",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261015-007-market-breadth": {
+          "local": {
+            "sha": "d5ed5bd8cc2d612b0cdb66e539ed705079b1c52c",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261016-001-sector-fund-research": {
+          "local": {
+            "sha": "57f61e5b302f82a39404c07147c34cd18aab9f3d",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261019-004-mobile-h5-pwa": {
+          "local": {
+            "sha": "a6376114a952a2cc03ce83dc46f5276676905704",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261020-002-domestic-stock-direct": {
+          "local": {
+            "sha": "065cf52df9f64735ed40e44314797c395ad4ceba",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261021-004-performance-policy": {
+          "local": {
+            "sha": "2650356571c1ad48bedff97680f898b6e8bdc79e",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261022-007-release-backup-policy": {
+          "local": {
+            "sha": "58a9ea0fb204a184b12cbc99ec1259b50c18208c",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261024-001-short-selection": {
+          "local": {
+            "sha": "400c1ea2bd09f63a338819c49c9d65f7767638b8",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/73",
+              "head_sha": "400c1ea2bd09f63a338819c49c9d65f7767638b8",
+              "merge_sha": "47dad776c51f6950195e9868c753509e82de74d4",
+              "verified_tree": "ae0c6e3fe833836e5b69ebda72501b08bd64e333"
+            }
+          },
+          "origin": {
+            "sha": "400c1ea2bd09f63a338819c49c9d65f7767638b8",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/73",
+              "head_sha": "400c1ea2bd09f63a338819c49c9d65f7767638b8",
+              "merge_sha": "47dad776c51f6950195e9868c753509e82de74d4",
+              "verified_tree": "ae0c6e3fe833836e5b69ebda72501b08bd64e333"
+            }
+          }
+        },
+        "feat/CHG-20261025-005-system-hardening": {
+          "local": {
+            "sha": "53eaf399cdf0e20c9344fd9ba1b9adab056fae79",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/75",
+              "head_sha": "53eaf399cdf0e20c9344fd9ba1b9adab056fae79",
+              "merge_sha": "22c9d6dae025ef04e7e426582fe9a75f6a18998f",
+              "verified_tree": "61655ca22dfc50fe12e2fe3edf6b6fb774035158"
+            }
+          },
+          "origin": {
+            "sha": "53eaf399cdf0e20c9344fd9ba1b9adab056fae79",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/75",
+              "head_sha": "53eaf399cdf0e20c9344fd9ba1b9adab056fae79",
+              "merge_sha": "22c9d6dae025ef04e7e426582fe9a75f6a18998f",
+              "verified_tree": "61655ca22dfc50fe12e2fe3edf6b6fb774035158"
+            }
+          }
+        },
+        "fix/CHG-20261014-002-average-price-recovery": {
+          "local": {
+            "sha": "d5ed5bd8cc2d612b0cdb66e539ed705079b1c52c",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261014-003-postmarket-review": {
+          "local": {
+            "sha": "76b905f54da470a562e371493bb46c52982f30c3",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261015-003-board-intraday": {
+          "local": {
+            "sha": "babf3d0d84dd268013ad7aa980b25d7bf3549a51",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261020-001-sector-flow-curves": {
+          "local": {
+            "sha": "e420e277ee4879a2253cf1c2b1eab59ffb314d0c",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261022-005-nas-backup-cleanup": {
+          "local": {
+            "sha": "117a3fb22675d50d3274e37773ccbbfbbe2fcaab",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261025-001-short-ui": {
+          "local": {
+            "sha": "ac2e1ad7a13f1fa50a9ff1543125840cbe2215e9",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/74",
+              "head_sha": "ac2e1ad7a13f1fa50a9ff1543125840cbe2215e9",
+              "merge_sha": "d2476f2487ad06551b3b02e2496ff060b7e56df0",
+              "verified_tree": "b5173fefdae51ef5e026a09eee0133219e335e53"
+            }
+          },
+          "origin": {
+            "sha": "ac2e1ad7a13f1fa50a9ff1543125840cbe2215e9",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/74",
+              "head_sha": "ac2e1ad7a13f1fa50a9ff1543125840cbe2215e9",
+              "merge_sha": "d2476f2487ad06551b3b02e2496ff060b7e56df0",
+              "verified_tree": "b5173fefdae51ef5e026a09eee0133219e335e53"
+            }
+          }
+        },
+        "fix/CHG-20261025-002-status-colors": {
+          "local": {
+            "sha": "d2476f2487ad06551b3b02e2496ff060b7e56df0",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261026-005-swing-live-projection": {
+          "local": {
+            "sha": "ab581df167bcec93e335586c7a677eb8386b6e01",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261027-001-data-status-copy": {
+          "local": {
+            "sha": "217c091f9b9acf88980107bcadff88d16e88fcc7",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-publication-recovery": {
+          "local": {
+            "sha": "7f6a4ffeee25b525e98ad15344b98a45360901a8",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/80",
+              "head_sha": "7f6a4ffeee25b525e98ad15344b98a45360901a8",
+              "merge_sha": "b08a33cc3a21648a856de76d05b4a0368418e34d",
+              "verified_tree": "6d1f412814b74a11cef1385266f9a8703adc7ce5"
+            }
+          },
+          "origin": {
+            "sha": "7f6a4ffeee25b525e98ad15344b98a45360901a8",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-platform/pull/80",
+              "head_sha": "7f6a4ffeee25b525e98ad15344b98a45360901a8",
+              "merge_sha": "b08a33cc3a21648a856de76d05b4a0368418e34d",
+              "verified_tree": "6d1f412814b74a11cef1385266f9a8703adc7ce5"
+            }
+          }
+        },
+        "hotfix/CHG-20261014-002-eastmoney-collection": {
+          "local": {
+            "sha": "4822da898f80d81ae78417497d8458bfcb35b82b",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "hotfix/CHG-20261019-001-sina-intraday": {
+          "local": {
+            "sha": "c996f97239da03c3671daa2834eed8b017a3915b",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "hotfix/CHG-20261020-003-swing-approved-sources": {
+          "local": {
+            "sha": "d5521435f0597c2823130c62784178b4d38cb4f7",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "hotfix/CHG-20261021-003-current-signals": {
+          "local": {
+            "sha": "6976f6df240e0d8729981a607ba0f6fdaabd2e86",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "hotfix/CHG-20261022-002-seat-source": {
+          "local": {
+            "sha": "11bd46f5b0a9871eaf3393fb56aad17775a0968b",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "feat/CHG-20261013-002-market-structure-etf": {
+          "local": {
+            "sha": "4822da898f80d81ae78417497d8458bfcb35b82b",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          },
+          "origin": {
+            "sha": "29473f85d6c8b2b3559e83f001d3938811f00644",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261022-006-swing-stock-detail": {
+          "local": {
+            "sha": "357d2bb808a5aa8d10336ee336d3b4db4eb8c142",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          },
+          "origin": {
+            "sha": "b705edb7a737322ed8b7177245dfb528d8c98cc8",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-daily-data-reuse": {
+          "local": {
+            "sha": "c69ee68bae5125929c159bb3388ada7105158712",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          },
+          "origin": {
+            "sha": "e994a9ed68b56ba9d88cfcd1343019afbddae30e",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "efc223cf36c5c1346c5aedba9da510ab601f3a15"
+            }
+          }
+        }
+      },
+      "retained_local": {
+        "worktree_in_use": [
+          "feat/CHG-20261013-001-system-functional-manual",
+          "feat/CHG-20261015-004-green-login",
+          "feat/CHG-20261015-009-watchlist-redesign",
+          "feat/CHG-20261016-001-release-integration",
+          "feat/CHG-20261016-002-shared-stock-drawer",
+          "feat/CHG-20261016-006-release-integration",
+          "feat/CHG-20261016-006-unified-stock-detail",
+          "feat/CHG-20261016-008-tech-board-layout",
+          "feat/CHG-20261016-009-compact-global-board",
+          "feat/CHG-20261021-007-market-observation",
+          "feat/CHG-20261025-004-sector-rotation",
+          "feat/CHG-20261026-004-margin-observation",
+          "fix/CHG-20261013-003-ctee-profile-recovery",
+          "fix/CHG-20261015-008-auth-layout",
+          "fix/CHG-20261016-003-seat-ui-consistency",
+          "fix/CHG-20261016-004-market-availability",
+          "fix/CHG-20261018-011-postgres-query-cost",
+          "fix/CHG-20261018-012-retire-feishu-queue",
+          "fix/CHG-20261021-003-release-integration",
+          "fix/CHG-20261021-006-sector-flow-chart",
+          "fix/CHG-20261021-010-matrix-density",
+          "fix/CHG-20261021-011-flow-stability",
+          "fix/CHG-20261022-002-release-integration",
+          "fix/CHG-20261022-003-swing-refresh",
+          "fix/CHG-20261025-003-tech-density",
+          "fix/CHG-20261025-006-market-view-recovery",
+          "fix/CHG-20261026-001-market-decision-scope",
+          "fix/CHG-20261026-002-capital-flow-continuity",
+          "fix/CHG-20261026-003-ladder-streak-recovery",
+          "fix/CHG-20261026-005-pending-integration",
+          "fix/CHG-20261026-007-margin-history",
+          "fix/CHG-20261027-002-wave-throughput",
+          "hotfix/CHG-20261014-002-market-style-recovery",
+          "hotfix/CHG-20261019-003-swing-availability",
+          "hotfix/CHG-20261021-005-limit-up-ladder"
+        ],
+        "unproven_unoccupied_tip": [
+          "feat/CHG-20261018-008-tech-index-reference",
+          "feat/CHG-20261022-001-all-a-reference",
+          "fix/CHG-20261018-009-limit-up-matrix",
+          "fix/CHG-20261024-002-tech-reference-first",
+          "fix/CHG-20261026-005-market-environment-ui",
+          "fix/CHG-20261026-005-short-preview",
+          "hotfix/CHG-20261021-003-swing-intraday"
+        ],
+        "protected": [
+          "main"
+        ]
+      }
+    },
+    {
+      "repository": "stock-analyzer",
+      "verified_main": "9061b86b993d9848fb6f8353a005f2aaa667183a",
+      "before": {
+        "local": 50,
+        "origin": 26
+      },
+      "after": {
+        "local": 27,
+        "origin": 14
+      },
+      "deleted": {
+        "feat/CHG-20261013-002-market-structure-etf": {
+          "local": {
+            "sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          },
+          "origin": {
+            "sha": "fb82b58f6a93eb34a82a32bbc3b58de30e83d761",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "feat/CHG-20261015-001-eastmoney-retirement": {
+          "local": {
+            "sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "feat/CHG-20261015-006-microcap-daily": {
+          "local": {
+            "sha": "65982853406af8bb07105996d6e7447cc07b1718",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "feat/CHG-20261015-007-market-breadth": {
+          "local": {
+            "sha": "65982853406af8bb07105996d6e7447cc07b1718",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "feat/CHG-20261016-001-sector-fund-research": {
+          "local": {
+            "sha": "580882d15a9898a9ea415ba0ce06e9c80b1489cd",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "feat/CHG-20261024-001-short-selection": {
+          "local": {
+            "sha": "5a946dbac107d59fc4145f8f9f58331abc57c702",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/39",
+              "head_sha": "5a946dbac107d59fc4145f8f9f58331abc57c702",
+              "merge_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+              "verified_tree": "c9e04bbf613a8e379691997c7d81e45e3b8fe4c5"
+            }
+          },
+          "origin": {
+            "sha": "5a946dbac107d59fc4145f8f9f58331abc57c702",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/39",
+              "head_sha": "5a946dbac107d59fc4145f8f9f58331abc57c702",
+              "merge_sha": "be60e42b6ba37eda9020e1d428b7be0749b80409",
+              "verified_tree": "c9e04bbf613a8e379691997c7d81e45e3b8fe4c5"
+            }
+          }
+        },
+        "feat/CHG-20261025-005-system-hardening": {
+          "local": {
+            "sha": "23ff214f0d1fe6a95b3f8259f29a674412338fb7",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/40",
+              "head_sha": "23ff214f0d1fe6a95b3f8259f29a674412338fb7",
+              "merge_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+              "verified_tree": "7ff46b017d0ab99e2de5a2737e8189019f89b49d"
+            }
+          },
+          "origin": {
+            "sha": "23ff214f0d1fe6a95b3f8259f29a674412338fb7",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/40",
+              "head_sha": "23ff214f0d1fe6a95b3f8259f29a674412338fb7",
+              "merge_sha": "bf7d5f6e6018222bf41e516d264f93eba7326018",
+              "verified_tree": "7ff46b017d0ab99e2de5a2737e8189019f89b49d"
+            }
+          }
+        },
+        "fix/CHG-20261014-002-average-price-recovery": {
+          "local": {
+            "sha": "65982853406af8bb07105996d6e7447cc07b1718",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261014-003-postmarket-review": {
+          "local": {
+            "sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261018-011-postgres-query-cost": {
+          "local": {
+            "sha": "408f536e93fc7858b2147465dddb680cbe2c7b4f",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-bounded-history-queries": {
+          "local": {
+            "sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          },
+          "origin": {
+            "sha": "005db676b47560b0780a4e7dfe28dea6497be8d0",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-bounded-profile-reads": {
+          "local": {
+            "sha": "c1d910402412def4a6786eb13785d8f355709775",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          },
+          "origin": {
+            "sha": "d7381702eb65440400e4842b8c0cf6c40fc4e02e",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-business-throughput": {
+          "local": {
+            "sha": "e66e04beb5a14dd6942de40ef43f677cc7dcf60e",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/53",
+              "head_sha": "e66e04beb5a14dd6942de40ef43f677cc7dcf60e",
+              "merge_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+              "verified_tree": "823df2b9443fb1ecf7858893ae92090935893ee7"
+            }
+          },
+          "origin": {
+            "sha": "e66e04beb5a14dd6942de40ef43f677cc7dcf60e",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/53",
+              "head_sha": "e66e04beb5a14dd6942de40ef43f677cc7dcf60e",
+              "merge_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+              "verified_tree": "823df2b9443fb1ecf7858893ae92090935893ee7"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-collector-heartbeat": {
+          "local": {
+            "sha": "886392c60fabbdec353223fc0cff9a1aa51d3f13",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          },
+          "origin": {
+            "sha": "7f65a391ffd05a7760846f79bc82c506bd41e1b1",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-daily-data-reuse": {
+          "local": {
+            "sha": "29332fca45d9aa80d9be879e3a828576d42594aa",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          },
+          "origin": {
+            "sha": "be5978407d34d946c9a985bfa5683dfb429eb7ee",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-durable-publication": {
+          "local": {
+            "sha": "c734a458b1a922f74011544cc6ac6aab6e1a4037",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/50",
+              "head_sha": "c734a458b1a922f74011544cc6ac6aab6e1a4037",
+              "merge_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+              "verified_tree": "1abf08ba300283184570432e96a5d25cdb090f6d"
+            }
+          },
+          "origin": {
+            "sha": "c734a458b1a922f74011544cc6ac6aab6e1a4037",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/50",
+              "head_sha": "c734a458b1a922f74011544cc6ac6aab6e1a4037",
+              "merge_sha": "5d6d1653adeeab34933ecff1b4057d6b08f49b4e",
+              "verified_tree": "1abf08ba300283184570432e96a5d25cdb090f6d"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-publication-recovery": {
+          "local": {
+            "sha": "c557bcba21f40ea7dacc0e996c3554cb2a0f489b",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/49",
+              "head_sha": "c557bcba21f40ea7dacc0e996c3554cb2a0f489b",
+              "merge_sha": "ba94a0d2d81a6aaa6df6d836f27c810740bb55cf",
+              "verified_tree": "ae819685a973f50b83e49ae3efe9422fea6c6d7a"
+            }
+          },
+          "origin": {
+            "sha": "c557bcba21f40ea7dacc0e996c3554cb2a0f489b",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/49",
+              "head_sha": "c557bcba21f40ea7dacc0e996c3554cb2a0f489b",
+              "merge_sha": "ba94a0d2d81a6aaa6df6d836f27c810740bb55cf",
+              "verified_tree": "ae819685a973f50b83e49ae3efe9422fea6c6d7a"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-tail-batch-reuse": {
+          "local": {
+            "sha": "53b2309ff1d74b55c6361b13f019a0405c26e1bc",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/51",
+              "head_sha": "53b2309ff1d74b55c6361b13f019a0405c26e1bc",
+              "merge_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+              "verified_tree": "24286cf547454040acbdc7311a8a1e6ba5ed04c5"
+            }
+          },
+          "origin": {
+            "sha": "53b2309ff1d74b55c6361b13f019a0405c26e1bc",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/51",
+              "head_sha": "53b2309ff1d74b55c6361b13f019a0405c26e1bc",
+              "merge_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+              "verified_tree": "24286cf547454040acbdc7311a8a1e6ba5ed04c5"
+            }
+          }
+        },
+        "fix/CHG-20261027-002-wave-throughput": {
+          "local": {
+            "sha": "89f6ef4caea7c2b6b8df7e0ec9419ee38d8c25de",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/52",
+              "head_sha": "89f6ef4caea7c2b6b8df7e0ec9419ee38d8c25de",
+              "merge_sha": "df947733d6cf74d7c8567a4abdf2e832088b8d69",
+              "verified_tree": "200e4154792b75e6a7ece30b96a0ffdc35e8b821"
+            }
+          },
+          "origin": {
+            "sha": "89f6ef4caea7c2b6b8df7e0ec9419ee38d8c25de",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/stock-analyzer/pull/52",
+              "head_sha": "89f6ef4caea7c2b6b8df7e0ec9419ee38d8c25de",
+              "merge_sha": "df947733d6cf74d7c8567a4abdf2e832088b8d69",
+              "verified_tree": "200e4154792b75e6a7ece30b96a0ffdc35e8b821"
+            }
+          }
+        },
+        "hotfix/CHG-20261014-002-eastmoney-collection": {
+          "local": {
+            "sha": "99915d2b0b8d8b09cdefe07b9d8693cb967ff338",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "hotfix/CHG-20261020-003-swing-approved-sources": {
+          "local": {
+            "sha": "223c35ee7ddded032d5239afcaec8e5f7ec7f2f1",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "hotfix/CHG-20261021-003-current-signals": {
+          "local": {
+            "sha": "b336cd0863ceb41e5f3179a665db66e54a35835f",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        },
+        "hotfix/CHG-20261022-002-seat-source": {
+          "local": {
+            "sha": "22adbbd50388c67b09527e4017c2cb398ddc5226",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "9061b86b993d9848fb6f8353a005f2aaa667183a"
+            }
+          }
+        }
+      },
+      "retained_local": {
+        "worktree_in_use": [
+          "feat/CHG-20261015-005-tech-board",
+          "feat/CHG-20261015-008-sina-tech",
+          "feat/CHG-20261016-001-release-integration",
+          "feat/CHG-20261022-004-swing-selection-optimization",
+          "feat/CHG-20261025-004-sector-rotation",
+          "feat/CHG-20261026-004-margin-observation",
+          "fix/CHG-20261011-004-swing-history",
+          "fix/CHG-20261016-004-market-availability",
+          "fix/CHG-20261021-003-release-integration",
+          "fix/CHG-20261021-011-flow-stability",
+          "fix/CHG-20261022-002-release-integration",
+          "fix/CHG-20261022-003-swing-refresh",
+          "fix/CHG-20261025-006-market-view-recovery",
+          "fix/CHG-20261026-003-ladder-streak-recovery",
+          "fix/CHG-20261026-005-pending-integration",
+          "fix/CHG-20261026-006-intraday-candidates",
+          "fix/CHG-20261026-007-margin-history",
+          "fix/CHG-20261027-002-projection-json",
+          "hotfix/CHG-20261014-002-market-style-recovery",
+          "hotfix/CHG-20261019-001-sina-intraday",
+          "hotfix/CHG-20261019-003-swing-availability",
+          "hotfix/CHG-20261021-005-limit-up-ladder",
+          "hotfix/CHG-20261021-008-swing-rule-facts"
+        ],
+        "unproven_unoccupied_tip": [
+          "feat/CHG-20261018-008-tech-index-reference",
+          "fix/CHG-20261026-005-swing-live-projection",
+          "hotfix/CHG-20261021-003-swing-intraday"
+        ],
+        "protected": [
+          "main"
+        ]
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "verified_main": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "before": {
+        "local": 62,
+        "origin": 19
+      },
+      "after": {
+        "local": 42,
+        "origin": 14
+      },
+      "deleted": {
+        "feat/CHG-20261013-002-market-structure-etf": {
+          "local": {
+            "sha": "ad357aa186dea935309de90f344de37d976db980",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          },
+          "origin": {
+            "sha": "73e21bc5db16b6f3638b81ecbcc199512282a845",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261015-006-microcap-daily": {
+          "local": {
+            "sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261015-007-breadth-integration": {
+          "local": {
+            "sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261015-007-market-breadth": {
+          "local": {
+            "sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261016-001-sector-fund-research": {
+          "local": {
+            "sha": "46b2bec9bea7d1adf6889b2b2d01ae1bd1334684",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261019-004-mobile-h5-pwa": {
+          "local": {
+            "sha": "b40c1849904e3a21fe862aff5eacce157a378219",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261022-001-all-a-reference": {
+          "local": {
+            "sha": "6fe105149246c063392d721b30fd2d78172a53f1",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "feat/CHG-20261024-001-short-selection": {
+          "local": {
+            "sha": "0b5bf8e6c8a9fc3c2a73107097032b4bd7a2696d",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/41",
+              "head_sha": "0b5bf8e6c8a9fc3c2a73107097032b4bd7a2696d",
+              "merge_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+              "verified_tree": "7e0daff0fec46ccd37cf55e8a35048a0f3da5b50"
+            }
+          },
+          "origin": {
+            "sha": "0b5bf8e6c8a9fc3c2a73107097032b4bd7a2696d",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/41",
+              "head_sha": "0b5bf8e6c8a9fc3c2a73107097032b4bd7a2696d",
+              "merge_sha": "0276e9bd2a4d42d66a8227231a5136fe541048a5",
+              "verified_tree": "7e0daff0fec46ccd37cf55e8a35048a0f3da5b50"
+            }
+          }
+        },
+        "feat/CHG-20261025-005-system-hardening": {
+          "local": {
+            "sha": "96f8d9478e7f46da8c7137469446070d2be1dc2e",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/43",
+              "head_sha": "96f8d9478e7f46da8c7137469446070d2be1dc2e",
+              "merge_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+              "verified_tree": "a213a2bef278d50889e73e24dddff01c0e7c553d"
+            }
+          },
+          "origin": {
+            "sha": "96f8d9478e7f46da8c7137469446070d2be1dc2e",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/43",
+              "head_sha": "96f8d9478e7f46da8c7137469446070d2be1dc2e",
+              "merge_sha": "4c640cfd3201a7dfdb7b6ca0d2e96c3549fd512c",
+              "verified_tree": "a213a2bef278d50889e73e24dddff01c0e7c553d"
+            }
+          }
+        },
+        "fix/CHG-20261014-002-average-price-recovery": {
+          "local": {
+            "sha": "492c580a1f4f4cfcef99987da29bce305bd02590",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "fix/CHG-20261014-003-postmarket-review": {
+          "local": {
+            "sha": "ad357aa186dea935309de90f344de37d976db980",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "fix/CHG-20261015-003-board-intraday": {
+          "local": {
+            "sha": "d7af53e5e28d7eefcf3b10261990cceb2f82f24e",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "fix/CHG-20261018-011-postgres-query-cost": {
+          "local": {
+            "sha": "c04f3309101302bed1662df2287e203628220dba",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "fix/CHG-20261020-001-sector-flow-curves": {
+          "local": {
+            "sha": "32348e2c9748e5d69e6bb7cdc475f76a5dc5c9cc",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "fix/CHG-20261024-002-tech-reference-first": {
+          "local": {
+            "sha": "7924ec46b930e25cd20ca7bd78731d5db8d9535a",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/40",
+              "head_sha": "7924ec46b930e25cd20ca7bd78731d5db8d9535a",
+              "merge_sha": "d43dce251860cad221c501991962c0245b20a1a9",
+              "verified_tree": "378b07821de5337e175f56be3f435c5bfdce045a"
+            }
+          },
+          "origin": {
+            "sha": "7924ec46b930e25cd20ca7bd78731d5db8d9535a",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/40",
+              "head_sha": "7924ec46b930e25cd20ca7bd78731d5db8d9535a",
+              "merge_sha": "d43dce251860cad221c501991962c0245b20a1a9",
+              "verified_tree": "378b07821de5337e175f56be3f435c5bfdce045a"
+            }
+          }
+        },
+        "fix/CHG-20261025-001-short-ui": {
+          "local": {
+            "sha": "14df5eba82a6873852f918c807cca3238f6510b7",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/42",
+              "head_sha": "14df5eba82a6873852f918c807cca3238f6510b7",
+              "merge_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+              "verified_tree": "83850ccc5602846feba17f4943ecd087250000b6"
+            }
+          },
+          "origin": {
+            "sha": "14df5eba82a6873852f918c807cca3238f6510b7",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/investment-research-dashboard/pull/42",
+              "head_sha": "14df5eba82a6873852f918c807cca3238f6510b7",
+              "merge_sha": "82ad77d4af81e88c8fe3568f0b9af9328ba8b22d",
+              "verified_tree": "83850ccc5602846feba17f4943ecd087250000b6"
+            }
+          }
+        },
+        "fix/CHG-20261026-005-swing-live-projection": {
+          "local": {
+            "sha": "30214833e1718d25ec6790e56c7bdb34d9b8b34b",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "hotfix/CHG-20261020-003-swing-approved-sources": {
+          "local": {
+            "sha": "5100373b1857557dea367ce19ef323512e7fb879",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "hotfix/CHG-20261021-003-current-signals": {
+          "local": {
+            "sha": "ffcfc8dc466c6a2cb458cdf98417e7e29469d26f",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        },
+        "hotfix/CHG-20261022-002-seat-source": {
+          "local": {
+            "sha": "41d7263d218816bdcccdca8f9c69d8447a4c0c0b",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218"
+            }
+          }
+        }
+      },
+      "retained_local": {
+        "worktree_in_use": [
+          "feat/CHG-20261011-004-sidebar-order",
+          "feat/CHG-20261015-004-green-login",
+          "feat/CHG-20261015-005-tech-board",
+          "feat/CHG-20261015-009-watchlist-redesign",
+          "feat/CHG-20261016-001-release-integration",
+          "feat/CHG-20261016-002-shared-stock-drawer",
+          "feat/CHG-20261016-006-release-integration",
+          "feat/CHG-20261016-006-unified-stock-detail",
+          "feat/CHG-20261016-008-tech-board-layout",
+          "feat/CHG-20261016-009-compact-global-board",
+          "feat/CHG-20261021-007-market-observation",
+          "feat/CHG-20261022-004-swing-selection-optimization",
+          "feat/CHG-20261025-004-sector-rotation",
+          "feat/CHG-20261026-004-margin-observation",
+          "fix/CHG-20261015-008-auth-layout",
+          "fix/CHG-20261016-003-seat-ui-consistency",
+          "fix/CHG-20261016-004-market-availability",
+          "fix/CHG-20261021-003-release-integration",
+          "fix/CHG-20261021-006-sector-flow-chart",
+          "fix/CHG-20261021-010-matrix-density",
+          "fix/CHG-20261021-011-flow-stability",
+          "fix/CHG-20261022-002-release-integration",
+          "fix/CHG-20261022-003-swing-refresh",
+          "fix/CHG-20261025-002-status-colors",
+          "fix/CHG-20261025-003-tech-density",
+          "fix/CHG-20261025-006-market-view-recovery",
+          "fix/CHG-20261026-001-market-decision-scope",
+          "fix/CHG-20261026-002-capital-flow-continuity",
+          "fix/CHG-20261026-003-ladder-streak-recovery",
+          "fix/CHG-20261026-005-pending-integration",
+          "fix/CHG-20261026-007-margin-history",
+          "fix/CHG-20261027-001-data-status-copy",
+          "fix/CHG-20261027-002-daily-data-reuse",
+          "hotfix/CHG-20261019-001-sina-intraday",
+          "hotfix/CHG-20261019-003-swing-availability",
+          "hotfix/CHG-20261021-005-limit-up-ladder"
+        ],
+        "unproven_unoccupied_tip": [
+          "feat/CHG-20261018-008-tech-index-reference",
+          "fix/CHG-20261018-009-limit-up-matrix",
+          "fix/CHG-20261026-005-market-environment-ui",
+          "fix/CHG-20261026-005-short-preview",
+          "hotfix/CHG-20261021-003-swing-intraday"
+        ],
+        "protected": [
+          "main"
+        ]
+      }
+    },
+    {
+      "repository": "marketNewsFeed",
+      "verified_main": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf",
+      "before": {
+        "local": 6,
+        "origin": 4
+      },
+      "after": {
+        "local": 4,
+        "origin": 3
+      },
+      "deleted": {
+        "feat/CHG-20261025-005-system-hardening": {
+          "local": {
+            "sha": "d8e1023eceda13e14f07f50d7ee3cb866cf3663e",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/marketNewsFeed/pull/13",
+              "head_sha": "d8e1023eceda13e14f07f50d7ee3cb866cf3663e",
+              "merge_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+              "verified_tree": "c3b4adaf23a1ccebb06d99c60c8c7d50ab50dbdd"
+            }
+          },
+          "origin": {
+            "sha": "d8e1023eceda13e14f07f50d7ee3cb866cf3663e",
+            "proof": {
+              "kind": "merged-PR-with-identical-merge-tree",
+              "pr": "https://github.com/mumukun/marketNewsFeed/pull/13",
+              "head_sha": "d8e1023eceda13e14f07f50d7ee3cb866cf3663e",
+              "merge_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+              "verified_tree": "c3b4adaf23a1ccebb06d99c60c8c7d50ab50dbdd"
+            }
+          }
+        },
+        "fix/CHG-20261018-011-postgres-query-cost": {
+          "local": {
+            "sha": "811b6c2c2ec36477c91d666b777b51a4da89d5e8",
+            "proof": {
+              "kind": "reachable-from-origin-main",
+              "main_sha": "3ccc15359c0c8bac0bc61c5505be84d5c8813ecf"
+            }
+          }
+        }
+      },
+      "retained_local": {
+        "worktree_in_use": [
+          "fix/CHG-20261013-003-ctee-profile-recovery",
+          "fix/CHG-20261018-012-retire-feishu-queue",
+          "hotfix/CHG-20261019-002-news-index-artifact"
+        ],
+        "unproven_unoccupied_tip": [],
+        "protected": [
+          "main"
+        ]
+      }
+    }
+  ],
+  "validation": "All selected tips reachable from origin/main, or an exact merged PR with identical Git merge-tree result. Current tips guarded by expected SHA; occupied worktrees, open PR/CI/dependencies and protected refs excluded. No application or database operations.",
+  "references": [
+    "https://git-scm.com/docs/git-merge-tree",
+    "https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request"
+  ]
+}
