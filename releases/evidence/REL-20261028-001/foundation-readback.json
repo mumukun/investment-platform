@@ -1,0 +1,71 @@
+{
+  "quotes": [
+    {
+      "market": "CN",
+      "n": 900,
+      "trade_date": "2026-10-27",
+      "source_time": "2026-10-27 16:15:00+08"
+    },
+    {
+      "market": "US",
+      "n": 21,
+      "trade_date": "2026-10-27",
+      "source_time": "2026-10-28 07:16:09+08"
+    }
+  ],
+  "reference": {
+    "directory_complete": true,
+    "directory_rows": 5577,
+    "calendar_rows": 8797
+  },
+  "states": [
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": "60",
+      "data_date": null,
+      "data_time": "2026-10-27 16:15:00+08:00",
+      "checked_at": "2026-10-28 07:26:22.198873+08:00",
+      "issue": null,
+      "last_issue": null
+    },
+    {
+      "dataset": "system",
+      "scope_key": "collector",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": "2026-10-28 07:26:19.478029+08:00",
+      "checked_at": "2026-10-28 07:26:19.478514+08:00",
+      "issue": null,
+      "last_issue": null
+    },
+    {
+      "dataset": "system",
+      "scope_key": "collector-owner",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 07:26:18.944456+08:00",
+      "issue": "8a6407c9af2040929b9afd2a86d72015",
+      "last_issue": null
+    },
+    {
+      "dataset": "us-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": "1",
+      "data_date": null,
+      "data_time": "2026-10-28 07:16:09+08:00",
+      "checked_at": "2026-10-28 07:28:12.589789+08:00",
+      "issue": null,
+      "last_issue": null
+    }
+  ]
+}

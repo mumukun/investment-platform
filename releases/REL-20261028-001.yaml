@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261028-001",
+  "status": "ROLLED_BACK",
+  "release_profile": "routine",
+  "created_at": "2026-10-27T19:24:27.895361+00:00",
+  "authorization": "用户2026-10-28：修改完成之后就重新发版本，尤其验证短线、波段、自选及其他常用功能",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.12.0",
+      "planned_version": "5.0.0",
+      "tag": "v5.0.0",
+      "commit_sha": "29332fca45d9aa80d9be879e3a828576d42594aa",
+      "artifact_model": "CI_BUILD_ONCE",
+      "rollback": {
+        "tag": "v4.12.0",
+        "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+        "version": "4.12.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+        },
+        "image_ids": {
+          "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+        }
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/45",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:d8161ca5ae87d0e9cc1e2c7eaa8f0a69a72c800d74d4e089fb850f08df80a460"
+      },
+      "artifact_id": {
+        "app": "sha256:4362e7a6f722e2f48cbe5dd213693fcbb6261f432ae9d021ce1c5de3fe4e61b7"
+      },
+      "candidate_evidence": "evidence/REL-20261028-001/stock/candidate.json",
+      "quality_run_id": "40569091087",
+      "candidate_run_id": "40569362046",
+      "database_backup_policy": {
+        "mode": "full",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Transfer foundation writers and add clocks/revision state while continuing updates to legacy fact tables. Preserve the complete pre-switch state once; no restore drill or destructive migration.",
+        "evidence": "CHG-20261027-002 ownership inventory, 1101 development regressions, 61 consumer core tests, 11 worker tests, 23 SDK tests, exact merged-main CI/candidate. Legacy records remain readable; code rollback may require normal historical revalidation."
+      },
+      "tag_pushed_at": "2026-10-27T23:12:26.666025+00:00"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.39.0",
+      "planned_version": "1.0.0",
+      "tag": "v1.0.0",
+      "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "artifact_model": "CI_BUILD_ONCE",
+      "rollback": {
+        "tag": "v0.39.0",
+        "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+        "version": "0.39.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+        },
+        "image_ids": {
+          "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+          "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+        }
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/48",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+      },
+      "artifact_id": {
+        "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+        "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+      },
+      "candidate_evidence": "evidence/REL-20261028-001/dashboard/candidate.json",
+      "quality_run_id": "40568886293",
+      "candidate_run_id": "40569553203",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Consumer read/refresh semantics and version metadata only; no migration or destructive projection rewrite; old consumer remains compatible. Independent scheduled backup coverage is not assumed.",
+        "evidence": "CHG-20261027-002 ownership inventory, 1101 development regressions, 61 consumer core tests, 11 worker tests, 23 SDK tests, exact merged-main CI/candidate. Legacy records remain readable; code rollback may require normal historical revalidation."
+      },
+      "tag_pushed_at": "2026-10-27T23:12:31.728657+00:00"
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "ROLLED_BACK",
+    "started_at": "2026-10-27T23:12:22.087467+00:00",
+    "completed_at": "2026-10-27T23:32:06.315567+00:00"
+  },
+  "verification": {
+    "status": "FAILED_POST_DEPLOY_ACCEPTANCE",
+    "evidence": [
+      "../changes/evidence/CHG-20261027-002/architecture-verification.json",
+      "../changes/evidence/CHG-20261027-002/release-core-tests.txt",
+      "../changes/evidence/CHG-20261027-002/release-worker-tests.txt"
+    ],
+    "known_limitations": [
+      "Original stock full regression: 1101 passed/73 subtests/1 optional benchmark skip; later source packaging fix covered by 23 transport tests and final CI.",
+      "Observed: stock-data running without restart/OOM but unhealthy due delayed main-loop heartbeat during first bulk publication; investigation and corrective acceptance in progress. Do not treat deploy receipt PASS as final acceptance."
+    ],
+    "real_source_chain": {
+      "scope": "isolated task database, actual approved sources; not production readback",
+      "stock_commit": "be5978407d34d946c9a985bfa5683dfb429eb7ee",
+      "directory_count": 5577,
+      "calendar_count": 8797,
+      "quote_expected": 5577,
+      "quote_ready": 5577,
+      "quote_trade_date": "2026-10-27",
+      "first_source_time": "2026-10-27T07:38:00+00:00",
+      "last_source_time": "2026-10-27T08:15:00+00:00",
+      "business_requests": 0,
+      "status": "PASS"
+    },
+    "additional_tests": {
+      "dashboard_core": 61,
+      "worker": 11,
+      "sdk_transport": {
+        "passed": 23,
+        "subtests_passed": 10
+      },
+      "dashboard_version_build": "PASS"
+    },
+    "test_container_cleanup": {
+      "container_id": "d85945d4b0f65ca4b2895d4cb320b00fc5d25d903b4e7bcccc897a16dac4d5dd",
+      "label_verified": true,
+      "tmpfs_verified": true,
+      "removed": true
+    },
+    "core_readback_script": "releases/evidence/REL-20261028-001/production-core-readback.py",
+    "ci_provenance": "PASS: successful exact main quality and candidate Actions, downloaded candidate equality",
+    "failures": [
+      "stock-data sustained unhealthy main-loop heartbeat under bulk publication",
+      "margin-observation timed out at 45 seconds"
+    ]
+  },
+  "blockers": [],
+  "runner_package": {
+    "source_commit": "879250a67d87e85445f97095d829f9deee3abac0",
+    "sha256": "bc75db52160899335f8b6566166f74d1b6b306efeee99f93b03b5e435d1a4cdf",
+    "nas_archive": "/volume1/homes/freemumu/CHG-20261027-002-runner-879250a.tar.gz",
+    "previous_modules": {
+      "image_release.py": "754d156abe966ce7a8897c4e8c7fdb4a7d1fcc6ae683b6453ed500fde388fe57",
+      "nas_image_release.py": "602ff2092ef91cd132733f818b221862d71e2c0bc9fdb48e7a2adb16f721880f"
+    },
+    "installation_verified_at": "2026-10-27T23:12:00.015374+00:00",
+    "installed_modules_sha256": {
+      "image_release.py": "15756426834725122285d839a0400b1b8f72cb29631975a0c44a50ee26bdd054",
+      "nas_image_release.py": "54076d64b8fdab6d8a3d5f535a72221ecdbd2e5effc9a244ea5a52021673ad8a",
+      "nas_source_release.py": "fbf7856c90e6b139e598dc2d93154d0a9f22f76ebd9d50b64d197477fdb2895d",
+      "nas_checks.py": "d4cfa4e128a74650a8df6f7d7fd8c1b8814b3c3093f1fe3835b6de1833689993"
+    }
+  },
+  "governance_pr": "https://github.com/mumukun/investment-platform/pull/78",
+  "image_execution_plan": "releases/evidence/REL-20261028-001/image-release-plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261028-001/stock/candidate.json",
+    "releases/evidence/REL-20261028-001/dashboard/candidate.json"
+  ],
+  "updated_at": "2026-10-27T23:12:00.015374+00:00",
+  "timing": {
+    "first_clock_record": "2026-10-27T19:14:49+00:00",
+    "recorded_at": "2026-10-27T19:35:24.225800+00:00",
+    "elapsed_lower_bound_seconds": 1235,
+    "note": "First clock record followed the initial rules review, so this is a lower bound on total handling/user wait. Includes commits, CI, candidate builds, SDK correction and concurrent administrator-installation wait; no deployment has started.",
+    "resume_recorded_at": "2026-10-27T23:12:00.015374+00:00"
+  },
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-001/deployment-receipt.json"
+  ],
+  "rollback": {
+    "status": "PASS",
+    "completed_at": "2026-10-28T01:41:27.410219+00:00",
+    "receipt": "releases/evidence/REL-20261028-001/rollback-receipt.json",
+    "database_restore": false,
+    "data_deleted": false
+  },
+  "rollback_actual_identity": {
+    "stock-analyzer": {
+      "tag": "v4.12.0",
+      "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+      "version": "4.12.0",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+      },
+      "image_ids": {
+        "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+      }
+    },
+    "investment-research-dashboard": {
+      "tag": "v0.39.0",
+      "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+      "version": "0.39.0",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+      },
+      "image_ids": {
+        "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+        "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+      }
+    }
+  },
+  "corrective_release": "REL-20261028-002"
+}

@@ -1,0 +1,7 @@
+...................................sssssss.............................. [ 90%]
+........                                                                 [100%]
+73 passed, 7 skipped in 5.57s
+
+Dedicated existing PG queries:
+.......                                                                  [100%]
+7 passed in 3.08s

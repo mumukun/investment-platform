@@ -1,0 +1,176 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261028-004",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+        "version": "5.0.3",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+        },
+        "image_ids": {
+          "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+            "run_id": "40624935744"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+            }
+          },
+          "candidate_run_id": "40625095501"
+        }
+      },
+      "tag": "v5.0.3",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v4.12.0",
+        "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+        "image_ids": {
+          "stock-api": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5",
+          "stock-watch": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+        },
+        "build_time": "2026-10-26T15:25:02Z"
+      },
+      "rollback": {
+        "tag": "v4.12.0",
+        "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+        "version": "4.12.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Read-query rewrites only; no new schema, index or fact mutation. Reuses verified existing intraday indexes. Original protected REL001 full backup retained.",
+        "evidence": "119 isolated/local tests, PR48/main CI40624935744/candidate40625095501, actual REL003 rollback PASS."
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+        "version": "1.0.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+        },
+        "image_ids": {
+          "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+          "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+            "run_id": "40568886293"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+            }
+          },
+          "candidate_run_id": "40569553203"
+        }
+      },
+      "tag": "v1.0.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v0.39.0",
+        "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+        "image_ids": {
+          "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+          "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+        },
+        "build_time": "2026-10-26T15:29:57Z"
+      },
+      "rollback": {
+        "tag": "v0.39.0",
+        "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+        "version": "0.39.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Unchanged Dashboard 1.0.0 artifact; no database or schema changes. Original protected stock backup retained.",
+        "evidence": "Unchanged Dashboard candidate40569553203; REL001 actual old-code rollback; same exact artifact."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Exact merged stock PR48 f549604808de3a5ad6d29434d20ce0423942aad0, main CI40624935744 and candidate40625095501 passed; unchanged Dashboard1.0.0 artifact; news excluded."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Approved decoupling plan and MAJOR 5.0.0/1.0.0 migration: retained history/legacy reads, no destructive DDL, POST410 and retired source CLI documented; consumer GET migrated."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "119 isolated/local tests prove old/new history semantics, sparse dates, coverage fallback, 200-stock bounded indexed seeks. REL003 13 other real reads passed; repeat affected core/sector plus high-latency margin/ladder. Tail current partial is distinct from legacy unavailable."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Actual independent CN5577 today facts, verified directory5576/calendar8797, native60s heartbeat passed. Current tail62 partial observations and received5568 are real, remaining historical/quote freshness gaps explicit. Not a claim of fully ready inputs."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Reviewed candidate-v2 runner 879250a remains installed root-owned with verified hashes; no new configuration, secrets or flags. Real rollback restored old exact identity; normal deploy enforces live drift."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "REL003 actual rollback PASS at2026-10-28T03:13:55Z restored old exact4.12.0/0.39.0 runtime and health/smoke; same retained baseline; no database restore."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User 2026-10-28 explicitly requests new production release after changes and validation of short/swing/watchlist/common functions."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

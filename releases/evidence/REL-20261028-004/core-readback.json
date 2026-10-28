@@ -1,0 +1,141 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "path": "/api/v1/watchlist",
+      "status": "PASS_READ_CONTRACT",
+      "items": 69,
+      "provider_contract_validated": true,
+      "provider_items": 69,
+      "provider_with_quote": 69,
+      "provider_quote_dates": [
+        "2026-09-14",
+        "2026-09-16",
+        "2026-10-16",
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "elapsed_seconds": 0.396
+    },
+    {
+      "path": "/api/v1/short-selection/tail?contract_version=investment-dashboard-short-tail-selection-v2",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": "investment-dashboard-short-tail-selection-v2",
+      "trade_date": "2026-10-28",
+      "actual_trade_date": null,
+      "quality": "unavailable",
+      "freshness_status": null,
+      "data_time": null,
+      "generated_at": "2026-10-28T11:20:45.431067+08:00",
+      "display_basis": null,
+      "phase": "preview",
+      "items": 0,
+      "current": {
+        "quality": "partial",
+        "evaluated_at": "2026-10-28T11:30:15.938833+08:00",
+        "trade_date": "2026-10-28",
+        "coverage": {
+          "received_count": 5569,
+          "candidate_count": 58,
+          "evaluable_count": 0,
+          "observation_count": 58,
+          "universe_complete": true,
+          "known_universe_count": 5576,
+          "original_qualified_count": 0
+        },
+        "issues": [
+          "市场行情覆盖不足80%",
+          "基础池历史/复权输入全部不可用"
+        ],
+        "items": 58
+      },
+      "elapsed_seconds": 0.359
+    },
+    {
+      "path": "/api/v1/swing-selection/list?page=1&page_size=2&scope=all&contract_version=investment-dashboard-swing-selection-v4",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": "investment-dashboard-swing-selection-v4",
+      "trade_date": "2026-10-28",
+      "actual_trade_date": null,
+      "quality": null,
+      "freshness_status": "healthy",
+      "data_time": "2026-10-28T11:17:18+08:00",
+      "generated_at": "2026-10-28T11:17:18+08:00",
+      "display_basis": null,
+      "phase": null,
+      "items": 2,
+      "provider_contract_validated": true,
+      "elapsed_seconds": 4.214
+    },
+    {
+      "path": "/api/v1/sector-workbench",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": null,
+      "trade_date": null,
+      "actual_trade_date": null,
+      "quality": null,
+      "freshness_status": null,
+      "data_time": null,
+      "generated_at": null,
+      "display_basis": null,
+      "phase": null,
+      "elapsed_seconds": 0.28,
+      "meta": {
+        "isMock": false,
+        "source": "stock-analyzer swing_daily_bar + latest industry profile",
+        "quality": "stale",
+        "universe": "波段日线流动性预筛股票池",
+        "generatedAt": "2026-10-28T03:25:03.157617+00:00",
+        "limitations": [
+          "行业映射不是历史时点成分，存在幸存者偏差。",
+          "行业名称尚未完成统一治理。",
+          "历史资金强度和盘中同时点曲线未接入。"
+        ],
+        "businessDate": "2026-10-27",
+        "limitedCount": 40,
+        "availableCount": 65,
+        "directoryCount": 193,
+        "activeThreshold": 1.5,
+        "totalStockCount": 5525,
+        "mappedStockCount": 5522,
+        "unavailableCount": 88,
+        "marketCoveragePct": 99.9,
+        "latestSnapshotDate": "2026-10-28",
+        "classificationLevel": "最新子行业优先，缺失回退行业",
+        "latestBarCoveragePct": 99.9,
+        "latestAvailableBarDate": "2026-10-27"
+      },
+      "summaries": 193
+    },
+    {
+      "path": "/api/v1/limit-up-ladder",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": "investment-dashboard-limit-up-ladder-v2",
+      "trade_date": null,
+      "actual_trade_date": "2026-10-28",
+      "quality": null,
+      "freshness_status": null,
+      "data_time": null,
+      "generated_at": "2026-10-28T11:32:47+08:00",
+      "display_basis": null,
+      "phase": null,
+      "elapsed_seconds": 23.991
+    },
+    {
+      "path": "/api/v1/margin-observation",
+      "status": "PASS_READ_CONTRACT",
+      "contract_version": "investment-dashboard-margin-observation-v1",
+      "trade_date": null,
+      "actual_trade_date": "2026-10-27",
+      "quality": "fresh",
+      "freshness_status": null,
+      "data_time": "2026-10-28T11:26:34.230775+08:00",
+      "generated_at": "2026-10-28T11:32:52.013595+08:00",
+      "display_basis": null,
+      "phase": null,
+      "items": 50,
+      "series": 6,
+      "elapsed_seconds": 34.432
+    }
+  ]
+}

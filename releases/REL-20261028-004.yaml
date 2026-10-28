@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_profile": "routine",
+  "authorization": "用户2026-10-28：修改完成之后就重新发版本，尤其验证短线、波段、自选及其他常用功能",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "governance_pr": "https://github.com/mumukun/investment-platform/pull/78",
+  "release_id": "REL-20261028-004",
+  "status": "RELEASED",
+  "corrects_release": "REL-20261028-003",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v4.12.0",
+      "rollback": {
+        "tag": "v4.12.0",
+        "commit_sha": "dde82a8c796ff998bec9b6a24bc1d48fc0a24edc",
+        "version": "4.12.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:fc94b6059a8cd4767e6f190f12194ec3ef6cea338e4e08cb73865618bed85a51"
+        },
+        "image_ids": {
+          "app": "sha256:eae806838747018de6c87dcf299031e78ca84c1bd2cc766df3a093524ec5b2f5"
+        }
+      },
+      "planned_version": "5.0.3",
+      "tag": "v5.0.3",
+      "commit_sha": "f549604808de3a5ad6d29434d20ce0423942aad0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/48",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Read-query rewrites only; no new schema, index or fact mutation. Reuses verified existing intraday indexes. Original protected REL001 full backup retained.",
+        "evidence": "119 isolated/local tests, PR48/main CI40624935744/candidate40625095501, actual REL003 rollback PASS."
+      },
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:45c87a2d66aae83a3e3d24d1693764c1133b126cd735eea658a9ae564e37f7bf"
+      },
+      "artifact_id": {
+        "app": "sha256:a6c1958364e7c68d386f029b40a054472db7fc0be84b9f28bfb0833dbae46e53"
+      },
+      "candidate_evidence": "evidence/REL-20261028-004/stock/candidate.json",
+      "quality_run_id": "40624935744",
+      "candidate_run_id": "40625095501"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "previous_version": "v0.39.0",
+      "rollback": {
+        "tag": "v0.39.0",
+        "commit_sha": "55ed3c193b97ac97fea06af9d8d78c325c508b2b",
+        "version": "0.39.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a5581c0b21e270d4541abeadc11b05163d85b4c3c5579f1eec477a33017d5bac",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:67e096afc1fb8f6049ed347720c5c08a13e42a3561762b92cd6d7fb25ede3de3"
+        },
+        "image_ids": {
+          "api": "sha256:b7d5fd0fdbd85f8ef9c3491bb682ea2af88295e6bb8262a838f759390b09deda",
+          "web": "sha256:98c2b4334737d47d598655622d3788fa6fb32c9318f1cab5ff585b2ebf2f982b"
+        }
+      },
+      "planned_version": "1.0.0",
+      "tag": "v1.0.0",
+      "commit_sha": "92ea9fe5b7db3156d2818053b0e9353f61c27218",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ae2bdb77510868f0ddc4fc85f3e8a77a0373678f0db4c6c665f89fe74db54d92",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:7b1d44d948f5658d8cf4023dd66400f64c0092f9d2c097d55eaf50df1bdc82dd"
+      },
+      "artifact_id": {
+        "api": "sha256:dbd638fee91a71db0f1becb4a68aa2a93aa232e87eecc8a721100d537b2c425c",
+        "web": "sha256:f420a0196bcc0dd111a413b264eb8328efbc0c2e383b4ef35d06b4c707f53d04"
+      },
+      "candidate_evidence": "evidence/REL-20261028-001/dashboard/candidate.json",
+      "quality_run_id": "40568886293",
+      "candidate_run_id": "40569553203",
+      "existing_tag_evidence": "Same immutable v1.0.0 and CI artifact from rolled-back REL-20261028-001; no re-tag or rebuild.",
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Unchanged Dashboard 1.0.0 artifact; no database or schema changes. Original protected stock backup retained.",
+        "evidence": "Unchanged Dashboard candidate40569553203; REL001 actual old-code rollback; same exact artifact."
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T03:18:21.090662+00:00",
+    "completed_at": "2026-10-28T03:30:37.505890+00:00"
+  },
+  "verification": {
+    "status": "PASS_READ_CONTRACT_WITH_DECLARED_DATA_LIMITATIONS",
+    "evidence": [
+      "changes/evidence/CHG-20261027-002/history-query-tests.txt",
+      "releases/evidence/REL-20261028-003/core-readback.json",
+      "releases/evidence/REL-20261028-004/deployment-receipt.json",
+      "releases/evidence/REL-20261028-004/core-readback.json",
+      "releases/evidence/REL-20261028-004/foundation-readback.json"
+    ],
+    "after_deploy": [
+      "fixed normal deploy health/version/watchlist smoke",
+      "targeted sector workbench and same-time history progress",
+      "current tail and swing/watchlist real consumers without equating legacy and current",
+      "collector heartbeat/quote source progress"
+    ],
+    "known_limitations": [
+      "Current tail58 partial observations; evaluable_count0 and history/adjustment gaps explicitly retained; legacy unavailable is not current-layer failure.",
+      "Sector193 summaries reads0.280s; businessDate2026-10-27/latestSnapshotDate2026-10-28, quality stale with declared unavailable series.",
+      "Watchlist69/provider69 with prices; paused/uncovered records retain older dates; not all quotes current.",
+      "Ladder23.991s and margin34.432s passed45s readback, remain slow; no new SLA claim.",
+      "Collector publishing progresses but quote age remains under final readback; do not claim fully realtime.",
+      "NAS intermittent SSH/GitHub disconnections and high IO load observed; no DNS evidence or system settings changed."
+    ],
+    "foundation_initial_note": "At11:25 heartbeat passed but quote source10:41 remained delayed. One approved source read at11:27 proved live11:27 time; read-only11:30 showed DB advanced11:24. Continued progress/freshness remains under acceptance, not claimed fully realtime.",
+    "targeted_core": "PASS_READ_CONTRACT_6_OF_6_WITH_DECLARED_DATA_GAPS",
+    "core_evidence": "releases/evidence/REL-20261028-004/core-readback.json",
+    "reused_common_evidence": {
+      "path": "releases/evidence/REL-20261028-003/core-readback.json",
+      "scope": "watchlist profiles, bars, capital flow, rotation, technology, global, overseas/calendar; same unchanged Dashboard artifact and unchanged stock read boundaries; earlier dated reads, not new5.0.3 probes"
+    },
+    "final_foundation_recheck": {
+      "status": "SSH_BANNER_TIMEOUT",
+      "earlier_successful_read": "releases/evidence/REL-20261028-004/foundation-readback.json",
+      "last_known_cn_progress": "Read-only11:30 observed source11:24:39 and receive11:24:42; source11:27 diagnostic returned realtime quote within0.326s. Collector publication accumulation remains explicit."
+    },
+    "build_time_readback": "SSH_TIMEOUT; exactTag/SHA/digests/configIDs and native versions verified by receipt; timestamps not guessed."
+  },
+  "rollback": {
+    "status": "VERIFIED_STABLE_RESTORED",
+    "receipt": "releases/evidence/REL-20261028-003/rollback-receipt.json",
+    "stock_tag": "v4.12.0",
+    "dashboard_tag": "v0.39.0"
+  },
+  "created_at": "2026-10-28T03:09:27.414921+00:00",
+  "updated_at": "2026-10-28T03:36:54.891246+00:00",
+  "database_review": {
+    "decision": "skip second full backup",
+    "reason": "Query-only correction; original additive schema retained. No new schema/index/fact changes. Existing protected full backup remains available.",
+    "existing_backup_receipt": "releases/evidence/REL-20261028-001/deployment-receipt.json"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261028-004/image-release-plan.json",
+  "tag_status": "IMMUTABLE_v5.0.3_PUSHED_EXISTING_DASHBOARD_v1.0.0_REUSED",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-004/deployment-receipt.json"
+  ],
+  "released_at": "2026-10-28T03:36:54.891246+00:00",
+  "timing": {
+    "first_clock_record": "2026-10-27T19:14:49+00:00",
+    "accepted_at": "2026-10-28T03:36:54.891246+00:00",
+    "elapsed_lower_bound_seconds": 30125,
+    "initial_preparation_lower_bound_seconds": 1235,
+    "administrator_install_wait_window_seconds": 12995,
+    "formal_resume_to_acceptance_seconds": 15894,
+    "note": "Lower bound: initial rules work preceded first clock. Administrator interval is approximate prepared-to-resume window and overlaps other handling, not pure user delay. Total includes all corrections, PR/CI waits, failed attempts, actual rollbacks, network interruptions, source/SQL diagnosis and final acceptance. Governance closeout continues after this point; not a five-minute release claim."
+  }
+}
