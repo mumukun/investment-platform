@@ -5,7 +5,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from image_release import IMAGE_ID, SHA, VERSION, require, file_hash, database_backup_policy
+from image_release import IMAGE_ID, SHA, VERSION, require, file_hash, database_backup_policy, validate_legacy_gates
 from nas_image_release import atomic_json, backup_command, release_lock, run
 
 REPOSITORY = 'marketNewsFeed'
@@ -31,13 +31,7 @@ def validate_source_plan(plan, formal=False, preparation=False):
     require(IMAGE_ID.fullmatch(entry['expected_production'].get('image_id', '')), 'verified baseline image required')
     quality = entry.get('quality', {})
     require(quality.get('status') == 'PASS' and quality.get('commit_sha') == entry['commit_sha'] and quality.get('evidence'), 'frozen source quality evidence required')
-    for name in ('scope', 'compatibility', 'integration', 'real_data', 'configuration', 'rollback'):
-        gate = plan.get('gates', {}).get(name, {})
-        if preparation and name not in {'scope', 'compatibility'}:
-            require(gate.get('status') in {'PASS', 'NOT_RUN', 'PENDING'}, 'preparation gate missing: ' + name)
-            require(gate['status'] != 'PASS' or bool(gate.get('evidence')), 'PASS evidence missing: ' + name)
-        else:
-            require(gate.get('status') == 'PASS' and gate.get('evidence'), 'release gate missing: ' + name)
+    validate_legacy_gates(plan, preparation)
     if formal:
         auth = plan.get('authorization', {})
         require(auth.get('status') == 'FORMAL' and auth.get('evidence'), 'formal authorization required')

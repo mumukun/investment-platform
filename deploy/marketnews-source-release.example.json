@@ -31,34 +31,9 @@
       }
     }
   ],
-  "gates": {
-    "scope": {
-      "status": "PASS",
-      "evidence": "reviewed"
-    },
-    "compatibility": {
-      "status": "PASS",
-      "evidence": "reviewed"
-    },
-    "integration": {
-      "status": "PASS",
-      "evidence": "reviewed"
-    },
-    "real_data": {
-      "status": "PASS",
-      "evidence": "reviewed"
-    },
-    "configuration": {
-      "status": "PASS",
-      "evidence": "reviewed"
-    },
-    "rollback": {
-      "status": "PASS",
-      "evidence": "reviewed"
-    }
-  },
   "authorization": {
     "status": "NOT_AUTHORIZED",
     "evidence": ""
-  }
+  },
+  "changes": []
 }

@@ -25,10 +25,18 @@ test, runtime, database, and deployment commands still come from the affected re
    unchanged None sections and copied logs. Mark uncertain relationships explicitly.
 5. When development is authorized, create one branch per affected repository using the same Change ID:
    `feat/<CHANGE_ID>-description`, `fix/<CHANGE_ID>-description`, or `hotfix/<CHANGE_ID>-description`.
-   Preserve unrelated work and use isolated worktrees when required.
+   Reuse that Change's existing safe branch/worktree first. Do not create extra branches for versions,
+   READY, release preparation or archival. Preserve unrelated work and use isolated worktrees when required.
 6. Keep Branches, PRs, tests, commits, decisions, and evidence current as work progresses.
 
 ## Confirm READY
+
+Before completion, apply the repository's existing checks and platform `docs/development-validation.md`:
+verify functional outcomes, affected integration boundaries, and performance when queries, batch size,
+collection, scheduling, concurrency or an explicit performance goal changes. Record commands/CI links,
+actual workload and results in the existing Change/PR. A green CI or test count alone does not establish
+acceptance. Report required skipped/unrun checks honestly. Do not create another report, approval or
+release-time testing phase; simple copy/style/docs changes stay proportionate.
 
 Only mark a Change `READY` when the requested implementation and documentation are complete, required repository
 and affected cross-repository tests passed, PRs merged to `main`, and release and rollback impact is recorded.

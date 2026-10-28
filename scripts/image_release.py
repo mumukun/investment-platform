@@ -26,6 +26,12 @@ def require(condition, message):
         raise ValueError(message)
 
 
+def frozen_plan_hash(plan):
+    identity = {key: value for key, value in plan.items()
+                if key not in {"authorization", "transport"}}
+    return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+
+
 def service_components(repository, metadata):
     """Freeze runtime membership per artifact; old manifests retain two stock services."""
     default = COMPONENTS[repository]
@@ -144,6 +150,22 @@ def validate_candidate(candidate):
         )
 
 
+def validate_legacy_gates(plan, preparation=False):
+    """New plans omit this manual checklist; preserve existing frozen plans."""
+    if "gates" not in plan:
+        return
+    for name in ("scope", "compatibility", "integration", "real_data", "configuration", "rollback"):
+        gate = plan["gates"].get(name, {})
+        if preparation and name not in {"scope", "compatibility"}:
+            require(gate.get("status") in {"PASS", "NOT_RUN", "PENDING"},
+                    f"preparation gate missing or failed: {name}")
+            require(gate["status"] != "PASS" or bool(gate.get("evidence")),
+                    f"preparation PASS evidence missing: {name}")
+        else:
+            require(gate.get("status") == "PASS" and bool(gate.get("evidence")),
+                    f"release gate missing: {name}")
+
+
 def validate_plan(plan, formal=False, preparation=False):
     require(not (formal and preparation), "formal operations cannot use preparation gates")
     if plan.get("artifact_model") == "SOURCE_TAG_BUILD":
@@ -232,29 +254,7 @@ def validate_plan(plan, formal=False, preparation=False):
             all(dep in names[: names.index(repo)] for dep in dependencies),
             "required provider must precede consumer",
         )
-    for name in (
-        "scope",
-        "compatibility",
-        "integration",
-        "real_data",
-        "configuration",
-        "rollback",
-    ):
-        gate = plan.get("gates", {}).get(name, {})
-        if preparation and name not in {"scope", "compatibility"}:
-            require(
-                gate.get("status") in {"PASS", "NOT_RUN", "PENDING"},
-                f"preparation gate missing or failed: {name}",
-            )
-            require(
-                gate["status"] != "PASS" or bool(gate.get("evidence")),
-                f"preparation PASS evidence missing: {name}",
-            )
-            continue
-        require(
-            gate.get("status") == "PASS" and bool(gate.get("evidence")),
-            f"release gate missing: {name}",
-        )
+    validate_legacy_gates(plan, preparation)
     if formal:
         auth = plan.get("authorization", {})
         require(
@@ -393,6 +393,72 @@ def verify_ci(plan):
     print("GitHub quality and candidate evidence verified for exact source and digests")
 
 
+def write_manifest(path, plan, receipt, receipt_path):
+    """Summarize the actual receipt once, without new tests or Production probes."""
+    receipt = receipt.get("receipt", receipt)
+    require(receipt.get("release_id") == plan["release_id"], "receipt Release ID mismatch")
+    source = plan.get("artifact_model") == "SOURCE_TAG_BUILD"
+    rows = []
+    if source:
+        entry = plan["repositories"][0]
+        require(receipt.get("tag") == entry["tag"] and receipt.get("commit_sha") == entry["commit_sha"],
+                "source receipt identity mismatch")
+        require(receipt.get("previous") == entry["expected_production"], "source receipt baseline mismatch")
+        success = receipt.get("status") == "PASS" and bool(IMAGE_ID.fullmatch(receipt.get("image_id", "")))
+        status = "RELEASED" if success else "FAILED"
+        rows.append({"repository": entry["repository"], "tag": entry["tag"],
+                     "commit_sha": entry["commit_sha"], "artifact_model": "SOURCE_TAG_BUILD",
+                     "artifact_id": receipt.get("image_id", "UNKNOWN"),
+                     "rollback": entry["expected_production"], "quality": entry["quality"]})
+    else:
+        require(receipt.get("plan_hash") == frozen_plan_hash(plan), "receipt frozen plan mismatch")
+        operation = receipt.get("last_operation")
+        require(operation in {"deploy", "rollback", "verify"}, "deployment receipt required")
+        states = receipt.get("repositories", {})
+        complete = True
+        for entry in plan["repositories"]:
+            candidate = entry["candidate"]
+            repo = candidate["repository"]
+            state = states.get(repo, {})
+            expected = {service: candidate["image_ids"][component]
+                        for component, services in service_components(repo, candidate).items()
+                        for service in services}
+            complete = complete and state.get("completed", False) and state.get("image_ids") == expected
+            rows.append({"repository": repo, "tag": entry["tag"],
+                         "commit_sha": candidate["commit_sha"], "planned_version": candidate["version"],
+                         "artifact_model": "CI_BUILD_ONCE", "artifact": candidate["images"],
+                         "artifact_id": candidate["image_ids"], "rollback": entry["rollback"],
+                         "ci_evidence": candidate["evidence"]})
+        if receipt.get("last_result") == "PASS" and operation == "rollback":
+            status = "ROLLED_BACK"
+        elif receipt.get("last_result") == "PASS" and complete:
+            status = "RELEASED"
+        else:
+            status = "PARTIAL" if any(s.get("deployment_started") for s in states.values()) else "FAILED"
+    document = {"schema_version": "1.0", "template": False, "generated_by": "image_release.py",
+                "release_id": plan["release_id"], "status": status,
+                "changes": plan.get("changes", []), "release_order": plan["release_order"],
+                "repositories": rows, "deployment_receipts": [str(receipt_path)],
+                "deployment": {"environment": plan["environment"], "status": status,
+                               "completed_at": receipt.get("last_operation_at", receipt.get("completed_at"))},
+                "verification": {"status": "DEPLOYMENT_SMOKE_PASS" if status == "RELEASED" else "NOT_PASSED"}}
+    if path.exists():
+        previous = json.loads(path.read_text())
+        same_identity = [(r.get("repository"), r.get("tag"), r.get("commit_sha"))
+                         for r in previous.get("repositories", [])] == [
+                             (r["repository"], r["tag"], r["commit_sha"]) for r in rows]
+        prepared = previous.get("status") in {"DRAFT", "READY_FOR_FORMAL_RELEASE", "IN_PROGRESS"} and same_identity
+        require(previous.get("release_id") == plan["release_id"]
+                and (previous.get("generated_by") == "image_release.py" or prepared),
+                "refusing to replace a manually maintained or unrelated Manifest")
+        previous_rows = {r["repository"]: r for r in previous.get("repositories", [])}
+        document["repositories"] = [{**previous_rows.get(r["repository"], {}), **r} for r in rows]
+        document["changes"] = plan.get("changes", previous.get("changes", []))
+        document = {**previous, **document,
+                    "verification": {**previous.get("verification", {}), **document["verification"]}}
+    path.write_text(json.dumps(document, indent=2, ensure_ascii=False) + "\n")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -406,6 +472,7 @@ def main():
             "deploy",
             "verify",
             "rollback",
+            "record",
         ],
     )
     parser.add_argument("plan", type=Path)
@@ -418,15 +485,25 @@ def main():
         help="Save NAS evidence including partial failure; no secrets included",
     )
     parser.add_argument("--bundle-dir", type=Path)
+    parser.add_argument("--manifest", type=Path, help="Generate a compact Manifest from the deployment receipt")
     args = parser.parse_args()
+    if args.manifest:
+        require(args.manifest.resolve() not in {args.plan.resolve(), args.receipt.resolve() if args.receipt else None},
+                "Manifest must not replace the plan or receipt")
     plan = json.loads(args.plan.read_text())
     validate_plan(
         plan, formal=args.mode in {"deploy", "rollback"},
         preparation=args.mode in {"preflight", "prefetch"},
     )
+    if args.mode == "record":
+        require(args.receipt is not None and args.manifest is not None, "record requires --receipt and --manifest")
+        write_manifest(args.manifest, plan, json.loads(args.receipt.read_text()), args.receipt)
+        return
+    require(args.manifest is None or (args.receipt is not None and args.mode in {"deploy", "rollback", "verify"}),
+            "automatic Manifest requires a deployment receipt")
     if args.mode == "check":
         print(
-            "plan structural gates PASS; GitHub, live NAS and backup checks remain separate"
+            "plan valid; deploy verifies CI, live NAS identity and the backup decision"
         )
         return
     source_build = plan.get("artifact_model") == "SOURCE_TAG_BUILD"
@@ -478,6 +555,8 @@ def main():
     returncode = process.wait()
     if args.receipt and receipt is not None:
         args.receipt.write_text(json.dumps(receipt, indent=2) + "\n")
+        if args.manifest:
+            write_manifest(args.manifest, plan, receipt, args.receipt)
     if returncode:
         raise ValueError(
             "NAS operation failed; protected partial state remains available for recovery"

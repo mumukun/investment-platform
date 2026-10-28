@@ -41,25 +41,39 @@ Dashboard repository variables：`CANDIDATE_PRO_KLINE_ENABLED` 与
 REL-20261011-002 的NAS切换实测约211秒，包含两库约104秒备份；此值不代表完整发布耗时。
 
 ```sh
-python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas> --key <key-path> --receipt <deployment-receipt.json>
+python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas> --key <key-path> --receipt <deployment-receipt.json> --manifest releases/<release_id>.yaml
 ```
 
 这个 deploy 已包含 CI/镜像/基线检查、按风险执行或跳过备份、切换、版本/健康与生产 smoke，不再另跑 verify。
 正式 Tag/main 仍先由部署用户精确 fetch；不使用浮动 main/latest、不在 NAS 重建。
-执行计划 gates 可引用已经验证且边界未变的证据，明确“复用、未重跑”；不把审核通过冒充新测试。
+功能、集成和按影响选择的性能验证在开发完成前按 [开发验证](development-validation.md) 完成。
+新执行计划不再填写六项手工 gates；候选 CI/镜像/基线/备份与部署 smoke 继续执行。
 结果/失败 receipt 和 Manifest 集中收尾，不为每个阶段开 PR；分支清理不阻塞切换。
+
+`--manifest` 从实际 receipt 生成精简记录，包含版本、SHA、镜像、CI 与回滚身份，只引用回执，
+不重复探测 NAS 或生成多份验收文件。可补全同一身份的 DRAFT/READY/IN_PROGRESS 准备记录，
+保留已有 PR、备注和验证限制；历史手工终态或无关 Manifest 不自动覆盖。部署 smoke 通过只
+证明其实际范围，不能代替功能/性能专项结果。已有回执可完全在本地补记：
+
+```sh
+python3 scripts/image_release.py record <plan.json> --receipt <deployment-receipt.json> --manifest releases/<release_id>.yaml
+```
 
 ## 2. 准备发布
 
-使用 RELEASE_MANIFEST.yaml 管理正式治理记录，并在同一 Release 保存 image-release-v1 JSON
-执行计划（deploy/image-release.example.json 是不可执行的 DRAFT 模板）。执行计划至少包含：
+准备时只冻结 image-release-v1 JSON 执行计划，部署后从 receipt 自动生成正式 Manifest；
+`RELEASE_MANIFEST.yaml` 保留为手工记录参考，不再先填一份重复准备记录。
+deploy/image-release.example.json 是不可执行的 DRAFT 模板。执行计划至少包含：
 
-- `release_id/environment/status`，status 为 READY_FOR_FORMAL_RELEASE；
+- `release_id/environment/status`，status 为 READY_FOR_FORMAL_RELEASE；`changes` 直接引用 Change ID；
 - 按 release_order 排序的 repositories；每项包含原样 candidate.json、精确 tag、dependencies；
 - expected_production 的 tag/commit_sha、每个 Compose service 的完整 image_ids，以及 Dashboard build_time；
 - rollback 的 tag/commit_sha/version，以及每组件 digest 或已保留的本地 Image ID，必须匹配 baseline；
-- scope、compatibility、integration、real_data、configuration、rollback 的 PASS 与可核对证据；
 - authorization 在准备阶段为 NOT_AUTHORIZED；正式发布时改为 FORMAL 并记录用户明确授权证据。
+
+新计划省略 `gates`，必要开发证据在 Change/CI 中只记录一次。旧冻结计划若已有该字段，继续
+沿用原校验，不能删除已知失败来继续发布。控制器与 NAS 共用校验模块，省略 gates 的能力需在
+后续明确授权下更新一次 NAS runner；本次代码变更不表示已安装，旧 runner 仍要求原格式。
 
 ### 发布前数据库备份决策
 
@@ -101,11 +115,11 @@ Change应说明关联对象、序列与恢复顺序，按表备份不保证能�
 不得将 fixture smoke 直接填入 real_data/integration。没有正式授权不生成正式 Tag、不启动生产、不
 迁移、不启用功能。版本更新优先纳入业务 PR；Release 收集期间如有并行 Change 仍须重新核对 SemVer。
 
-仅 `preflight` / `prefetch` 可以接收 `NEEDS_TARGET_VERIFICATION` 计划：scope、compatibility
-仍须 PASS 并有证据，四项目标门禁必须显式为 PASS、NOT_RUN 或 PENDING；失败或缺失仍拒绝。
-精确候选、生产基线、回滚镜像、顺序和传输验证保持不变，本地 prefetch 先核对真实 GitHub 候选证据。
-这些模式不启动业务容器、不迁移数据库。deploy / verify / rollback 仍要求全部门禁 PASS 与
-READY_FOR_FORMAL_RELEASE；deploy / rollback 另要求正式发布授权。预取 receipt 不代表发布通过。
+仅 `preflight` / `prefetch` 可以接收 `NEEDS_TARGET_VERIFICATION` 计划。精确候选、生产基线、
+回滚镜像、顺序和传输验证保持不变，本地 prefetch 先核对真实 GitHub 候选证据。
+这些模式不启动业务容器、不迁移数据库。deploy / verify / rollback 要求 READY_FOR_FORMAL_RELEASE；
+deploy / rollback 另要求正式发布授权。旧计划如保留 gates，准备与正式执行仍分别按原规则校验。
+预取 receipt 不代表发布通过，日常部署不增加预取阶段。
 
 本地 `python3 scripts/image_release.py check <plan.json>` 验证结构；
 `python3 scripts/image_release.py verify-ci <plan.json>` 使用 gh 查询成功 CI 和候选 run，并下载候选
@@ -212,8 +226,8 @@ Compose `up -d --no-build --pull never` → 运行身份、health/version 和管
 阶段状态和时间写入 root-only journal，并返回不含凭据的 receipt。正式切换开始后备份不得重建覆盖；
 断网重试先核对当前 image IDs 与此计划的 baseline/target，第三方 drift 停止。已经启动目标镜像时
 仅重新核对备份与验收，不再次 restart。部分启动失败只允许本计划的旧/新/缺失容器状态恢复。
-同一 Release ID 的候选与门禁不可变；重新授权或切换已验证的传输方式不改变 freeze hash。
-修改候选或门禁须重新准备 Release。失败返回部分 receipt，控制器即使非零退出也会保存它；
+同一 Release ID 的冻结计划不可变；重新授权或切换已验证的传输方式不改变 freeze hash。
+修改候选、范围或已有 gates 须重新准备 Release。失败返回部分 receipt，控制器即使非零退出也会保存它；
 连接中断时以 NAS 受保护 journal 为准。已验收的本地镜像重复执行跳过 pull/load。
 
 `rollback` 反向恢复已由本计划开始部署的仓库，使用保留镜像和原 Tag，不重建、不自动数据库 downgrade。

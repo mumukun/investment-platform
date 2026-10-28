@@ -99,6 +99,19 @@ def plan():
 
 
 class PlanTests(unittest.TestCase):
+    def test_new_plans_need_no_manual_gates_but_keep_ci_identity_and_authorization(self):
+        value = plan()
+        del value["gates"]
+        release.validate_plan(value)
+        release.validate_plan(value, preparation=True)
+        with self.assertRaisesRegex(ValueError, "authorization"):
+            release.validate_plan(value, formal=True)
+        value["authorization"] = {"status": "FORMAL", "evidence": "user formal release"}
+        release.validate_plan(value, formal=True)
+        value["repositories"][0]["candidate"]["evidence"]["quality"]["status"] = "FAIL"
+        with self.assertRaises(ValueError):
+            release.validate_plan(value, formal=True)
+
     def test_actual_docker_info_proxy_keys_are_reported_by_both_tools(self):
         for enabled in (False, True):
             info = {"Architecture": "x86_64", "HttpProxy": "http://127.0.0.1:7890" if enabled else "", "HttpsProxy": "http://127.0.0.1:7890" if enabled else ""}

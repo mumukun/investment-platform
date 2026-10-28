@@ -6,7 +6,9 @@ scripts, and CI for concrete commands; do not copy every repository command into
 ## Persistent identity
 
 - Release ID format: `REL-YYYYMMDD-NNN`; inspect existing records before allocating the sequence.
-- Manifest path: `releases/<release_id>.yaml`, initialized from `RELEASE_MANIFEST.yaml`.
+- Freeze one execution plan before mutations; it holds scope, exact identities and rollback. Do not retype
+  a second prepared Manifest. Generate `releases/<release_id>.yaml` from the actual deployment receipt;
+  `RELEASE_MANIFEST.yaml` remains a manual-reference template.
 - A Release may contain multiple READY Changes. Its repository scope is the union of their affected
   repositories, reduced to repositories with actual release changes.
 - Persist state locally/NAS journal at material transitions; combine shared governance commit/PR at closeout.
@@ -21,10 +23,18 @@ At minimum record:
 
 Omit inapplicable fields and duplicated top-level/per-repository versions or test detail. Do not create extra
 identity, hash, configuration or test summary files when the candidate/deploy receipt already provides the
-same evidence. Keep the existing image-release-v1 executable plan and required fields unchanged. An unchanged
+same evidence. Keep image-release-v1; new plans omit the optional legacy `gates` field. An unchanged
 boundary needs one honest evidence reference, not another probe/report. No separate READY/preparation governance
 PR before deployment; persist locally and archive once at closeout. Ordinary personal-use features do not
 require a new flag, grey rollout or observation gate.
+
+Use `image_release.py deploy ... --receipt ... --manifest releases/<release_id>.yaml` to summarize the real
+receipt, or local `record` to regenerate that same generated record without contacting NAS. Hand-maintained
+final/unrelated Manifests are never overwritten; matching prepared records are completed while preserving
+existing PR links, notes and verification limitations. Generated deployment smoke evidence is not full functional/performance or
+real-source acceptance; reference development evidence from the Change/CI and add actual limitations only.
+Generated records are JSON (valid YAML 1.2); only matching JSON preparation records can be completed in place.
+Keep historical hand-written YAML intact.
 
 ## Git and worktree preflight
 
@@ -36,30 +46,18 @@ Never reset, discard, clean, delete unknown files or branches, rewrite history, 
 state through an automatic stash. Block or use a provably safe isolated worktree. A dirty checkout
 does not authorize including unrelated changes.
 
-## Required gates
+## Checks performed by the existing deployment entry
 
-1. **Scope** — every Change is READY; every repository is affected; nothing extra is included.
-2. **Git identity** — frozen SHAs are committed, reachable as required, and match evidence.
-3. **Version** — application versions are independent; planned Tags are unused and immutable.
-4. **Compatibility** — API, contract, webhook, command, lookup, database, and config changes are
-   backward compatible or have explicitly approved breaking-change plans.
-5. **Dependency** — required/optional/none classification and dynamic order are evidence-based.
-6. **Tests** — repository, contract, integration, migration, build, and risk-based E2E evidence is
-   current for the frozen SHA.
-7. **Artifact** — exact identity and digest can be tied to the frozen Tag/SHA; `latest` is invalid.
-8. **Deployment** — the entrypoint can deploy that exact Artifact. A floating-main fallback blocks.
-9. **Production baseline** — current Tag, SHA, Artifact, and previous stable rollback identity are
-   authoritative, not inferred.
-10. **Rollback** — rollback version and implementation are executable; high-risk `UNKNOWN` blocks.
-11. **Security/config** — required configuration is present without exposing values; backup and
-    migration evidence is readable where applicable.
-12. **Authorization** — current user wording authorizes the exact next mutation and environment.
+Select affected READY Changes and their tested frozen main artifacts once. Formal authorization is still
+required for mutations. The entry enforces exact Tag/SHA/image identity, CI/candidate provenance, actual
+baseline/retained rollback image, configuration, dependency order and the reviewed backup decision, then
+checks runtime identity, health and one smoke. Stop on actual failure and keep the partial receipt.
 
-For routine releases, these are review gates, not twelve fresh test runs. Reuse successful frozen-main CI
-and verified unchanged-boundary evidence with its source/reason/limitations. Existing PASS in image-release-v1
-may represent evidence review; do not describe skipped execution as a newly run test. Live baseline, readable
-backup decision (and readability when required), image identity, health and smoke remain enforced by deploy. Apply RELEASE_RULES.md's risk table for
-changed boundaries; no blanket restore/rollback/browser rerun or separate production-baseline refresh.
+Do not turn these conditions into a twelve-item manual review or require six evidence strings. Development
+functional/integration/performance validation is recorded once under `docs/development-validation.md`.
+Only investigate missing or conflicting evidence. Legacy plans containing `gates` keep their original checks;
+never delete a known failure to bypass it. Do not run restore/rollback/browser suites or baseline-refresh jobs
+as routine preparation. See RELEASE_RULES.md for actual data/contract changes and backup scope.
 
 Use `dashboard-contract-check` when a Dashboard/upstream contract change needs specialized
 validation and that Skill is available. Do not duplicate all contract schemas here.

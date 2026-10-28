@@ -1,6 +1,6 @@
 # Investment Platform Governance
 
-治理规范版本：1.1（2026-10-11）。
+治理规范版本：1.2（2026-10-28）。
 
 本仓库是 `marketNewsFeed`、`stock-analyzer` 与
 `investment-research-dashboard` 的 Control Plane / Governance Repository。它管理跨仓库
@@ -51,6 +51,9 @@ Change ID、分支模型、`main` 语义、发布授权、版本治理和跨仓�
 - `hotfix/CHG-YYYYMMDD-NNN-description`
 
 一个 Change 涉及多个仓库时，各仓库使用同一 Change ID，但只在确实受影响的仓库创建分支。
+同一 Change 在同一仓库复用已有的安全任务分支和 worktree；版本、READY、发布准备和归档
+不再另建分支。分支清理作为当次收尾处理，按授权范围执行；保留时写明未合并成果、未提交
+内容或 worktree/任务占用等具体原因，避免无说明地长期积压，清理不阻塞已验收的部署。
 分支是临时工作空间；合并后在确认 PR、独有提交、未推送内容、worktree、CI 和依赖均已解除后
 删除。历史由 Commit、PR、Change、Tag 和 Release Manifest 保存。
 
@@ -96,8 +99,12 @@ Feature Activation。
 
 ## 8. 测试与发布顺序
 
-平台级证据分为 Repository Test、Contract Test、Integration Test 和 Critical-path E2E。允许少量
-稳定黄金链路 E2E，不默认引入大规模浏览器测试、截图回归或脆弱 DOM selector 测试。
+功能实现完成前按 [开发验证](docs/development-validation.md) 完成必要的功能、集成和专项测试。
+功能测试验证业务结果；涉及接口、数据库或跨仓链路时覆盖相应集成；涉及查询、批处理、采集、
+调度、并发或性能目标时补性能验证，记录实际规模、环境、预算和结果。已知关键失败在提交前处理，
+未执行、跳过或仅模拟的验证明确说明，不能以 CI 绿色或测试数量代替验收。
+必要检查沿用仓库现有 CI/本地入口，结果记在同一个 Change/PR，不另建审批、验收阶段或报告体系。
+允许少量稳定黄金链路 E2E，不默认引入大规模浏览器测试、截图回归或脆弱 DOM selector 测试。
 复用冻结 main SHA 的本地/CI 证据；正式发布不重复全套测试、隔离数据库恢复、旧镜像兼容、
 发布器中断/回滚演练。演练默认不执行；数据库、契约、部署或恢复机制变化优先本地针对性测试，
 仅已识别且未能排除的实际数据安全风险需要另行确定最小验证。未受影响的能力不重验。
@@ -112,8 +119,11 @@ Feature Activation。
 Manifest；禁止默认重新阅读完整源码，只有 gate 失败或证据不足时才深入。
 已读取且未变化的规则无需每阶段重读；提交后不默认再开一轮全量代码审查。
 
-实际 Release Manifest 应从根目录 `RELEASE_MANIFEST.yaml` 模板生成并保存为
-`releases/<release_id>.yaml`。Release 状态、Tag、SHA、Artifact、验证和回滚点必须落盘。
+Release 状态、Tag、SHA、Artifact、验证和回滚点必须落盘。日常准备先冻结一份执行计划，
+不再为同一身份另填一份准备 Manifest；正式操作前计划须包含范围、精确身份和回滚点。
+部署后由 `scripts/image_release.py` 从计划与实际 receipt 生成 `releases/<release_id>.yaml`，
+根目录 `RELEASE_MANIFEST.yaml` 保留为手工记录参考。新执行计划省略六项手填 `gates`；
+旧冻结计划与记录保持原样和原校验，不因流程精简改写历史。
 
 ## 10. Skills 与完成报告
 

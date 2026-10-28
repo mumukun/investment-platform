@@ -26,6 +26,20 @@ def plan():
 
 
 class SourcePlanTest(unittest.TestCase):
+    def test_source_plan_needs_no_manual_gates_and_retains_quality_requirement(self):
+        p = plan()
+        del p['gates']
+        controller.validate_plan(p, formal=True)
+        p['repositories'][0]['quality']['status'] = 'FAIL'
+        with self.assertRaisesRegex(ValueError, 'quality evidence'):
+            controller.validate_plan(p, formal=True)
+
+    def test_legacy_source_plan_still_rejects_explicit_failed_gate(self):
+        p = plan()
+        p['gates']['integration']['status'] = 'FAIL'
+        with self.assertRaisesRegex(ValueError, 'integration'):
+            controller.validate_plan(p, formal=True)
+
     def test_source_uses_the_same_reviewed_backup_policy_validation(self):
         p = plan()
         p['repositories'][0]['database_backup'] = backup_policy()
