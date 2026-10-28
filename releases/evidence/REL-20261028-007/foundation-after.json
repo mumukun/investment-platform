@@ -1,0 +1,160 @@
+{
+  "runtime": {
+    "version": "5.0.6",
+    "commit": null,
+    "build_time": null,
+    "role": "api"
+  },
+  "read_at": "2026-10-28T14:45:49.653243+08:00",
+  "session": "active",
+  "directory": 5576,
+  "quotes": {
+    "instruments": 5576,
+    "today": 5576,
+    "fresh": 5576,
+    "oldest": "2026-10-28 14:26:09+08:00",
+    "newest": "2026-10-28 14:45:39+08:00",
+    "received": "2026-10-28 14:45:40.092590+08:00"
+  },
+  "fresh_coverage": 1.0,
+  "completed_at": "2026-10-28T14:45:58.954606+08:00",
+  "heartbeat_age_seconds": 23.69,
+  "publication": {
+    "stream_pending": 0,
+    "control_pending": 0,
+    "sample_batches_pending": 1863,
+    "sample_rows_pending": 111728,
+    "sample_oldest_pending_seconds": 2137.886,
+    "bulk_batches_pending": 0,
+    "inflight_events": 1,
+    "inflight_kind": "quote-samples",
+    "oldest_pending_seconds": 0,
+    "stream_oldest_pending_seconds": 0,
+    "source_pending": {},
+    "last_primary_seconds": 15.871,
+    "last_bulk_seconds": 23.384,
+    "last_bulk_kind": "quote-samples",
+    "last_quote_received_at": "2026-10-28T14:44:44.259986+08:00",
+    "last_quote_published_at": "2026-10-28T14:45:35.265812+08:00"
+  },
+  "states": [
+    {
+      "dataset": "cn-quote-samples",
+      "scope_key": "published",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 480,
+      "data_date": null,
+      "data_time": "2026-10-28 14:08:13+08:00",
+      "checked_at": "2026-10-28 14:45:13.876245+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 5576,
+      "ready_count": 5576,
+      "data_date": "2026-10-28",
+      "data_time": "2026-10-28 14:44:43+08:00",
+      "checked_at": "2026-10-28 14:45:29.002801+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "published",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 60,
+      "data_date": null,
+      "data_time": "2026-10-28 14:45:39+08:00",
+      "checked_at": "2026-10-28 14:45:40.429703+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "system",
+      "scope_key": "collector",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": null,
+      "data_date": null,
+      "data_time": "2026-10-28 14:45:19.388717+08:00",
+      "checked_at": "2026-10-28 14:45:35.269456+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "system",
+      "scope_key": "publication",
+      "status": "partial",
+      "expected_count": null,
+      "ready_count": 294,
+      "data_date": null,
+      "data_time": null,
+      "checked_at": "2026-10-28 14:45:35.278520+08:00",
+      "issue": "{\"stream_pending\": 0, \"control_pending\": 0, \"sample_batches_pending\": 1863, \"sample_rows_pending\": 111728, \"sample_oldest_pending_seconds\": 2137.886, \"bulk_batches_pending\": 0, \"inflight_events\": 1, \"inflight_kind\": \"quote-samples\", \"oldest_pending_seconds\": 0, \"stream_oldest_pending_seconds\": 0, \"source_pending\": {}, \"last_primary_seconds\": 15.871, \"last_bulk_seconds\": 23.384, \"last_bulk_kind\": \"quote-samples\", \"last_quote_received_at\": \"2026-10-28T14:44:44.259986+08:00\", \"last_quote_published_at\": \"2026-10-28T14:45:35.265812+08:00\"}"
+    }
+  ],
+  "active_queries": [
+    {
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "age_seconds": "625",
+      "query": "autovacuum: VACUUM ANALYZE stock_analyzer.market_quote_latest"
+    },
+    {
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "age_seconds": "487",
+      "query": "autovacuum: VACUUM pg_toast.pg_toast_2625477"
+    },
+    {
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "age_seconds": "169",
+      "query": "SELECT revision,failed_at,built_at FROM api_read_projection WHERE cache_key=$1"
+    },
+    {
+      "state": "active",
+      "wait_event_type": "IO",
+      "wait_event": "DataFileWrite",
+      "age_seconds": "169",
+      "query": "WITH RECURSIVE dates(trade_date,n) AS (\n          SELECT max(trade_date),1 FROM swing_daily_bar WHERE trade_date<=$1\n          UNION ALL\n   "
+    },
+    {
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "age_seconds": "156",
+      "query": "SELECT pg_try_advisory_xact_lock(hashtext(current_schema()),hashtext($1)) locked"
+    },
+    {
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "age_seconds": "147",
+      "query": "SELECT pg_try_advisory_xact_lock(2026102604) AS acquired"
+    },
+    {
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "age_seconds": "100",
+      "query": "SELECT pg_try_advisory_lock(52182404) locked"
+    },
+    {
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "age_seconds": "42",
+      "query": "SELECT revision,failed_at,built_at FROM api_read_projection WHERE cache_key=$1"
+    }
+  ],
+  "acceptance": {
+    "heartbeat": true,
+    "fresh_coverage": true,
+    "primary_queue_age": true
+  }
+}
