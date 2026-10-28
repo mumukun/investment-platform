@@ -1,0 +1,118 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261028-008",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+        "version": "5.0.7",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+        },
+        "image_ids": {
+          "app": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+            "run_id": "40697641422"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+            }
+          },
+          "candidate_run_id": "40698046665"
+        }
+      },
+      "tag": "v5.0.7",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.0.6",
+        "commit_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+        "image_ids": {
+          "stock-api": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d",
+          "stock-watch": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d",
+          "stock-data": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
+        }
+      },
+      "rollback": {
+        "tag": "v5.0.6",
+        "commit_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+        "version": "5.0.6",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:553edacb30af70c133d1a3e16fba64cf574b99ae1b5350f4a835110e2d80f5ed"
+        },
+        "image_ids": {
+          "app": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Compatible private business projections and an idempotent raw-history lookup index (already present on NAS). Existing setup replacement scope only removes obsolete identities and preserves unchanged rows. Date values keep original ISO clocks. No foundation writes, backfill, deletion expansion or historical cleanup; old5.0.6 ignores private keys and uses unchanged result columns. No independent backup coverage is assumed.",
+        "evidence": "Full local1024 tests/75 subtests plus52 affected final-query tests; final PR CI40696748426 and main CI40697641422 PASS; candidate40698046665 isolated image smoke PASS. NAS existing raw-close index verified; old5.0.6 rollback artifact retained."
+      }
+    }
+  ],
+  "gates": {
+    "scope": {
+      "status": "PASS",
+      "evidence": "Only stock5.0.7, merged PR52/53 final main c39e86fb; mainCI40697641422 and exact candidate40698046665 PASS. Dashboard1.0.0/News2.5.0 unchanged."
+    },
+    "compatibility": {
+      "status": "PASS",
+      "evidence": "Same API/model/rule/scoring/source clocks and14:50 cutoff. Exact original raw-trend digests and tech legacy/time-selection results match. Private caches are additive, old code ignores keys; replacement scope is unchanged and preserves equal rows. Existing NAS raw-close index declared for fresh DBs."
+    },
+    "integration": {
+      "status": "PASS",
+      "evidence": "1024 local tests/75 subtests; final52 affected query/route tests; final PR/main CI and isolated candidate smoke PASS. Explicit PG coverage includes wave/current/tail/watch, ISO timestamp persistence, revisions/races, selected global minute, tech samples and sector80% threshold. No full production restore or duplicate test phase."
+    },
+    "real_data": {
+      "status": "PASS",
+      "evidence": "Sources/contracts unchanged: reuse REL007 real-source/core evidence with its dates and declared lags. Additional read-only5.0.6 job timings/error frames and actual index metadata identify the affected paths. No source crawl repeated. After switch read actual core/tech outputs and natural startup jobs; post-close checks cannot certify intraday latency."
+    },
+    "configuration": {
+      "status": "PASS",
+      "evidence": "Same three runtime services, owner/fence controls, sources, .env, credentials, proxy and release runner as REL007. No network/permissions/config changes. Native deployment enforces live drift, exact identity and health."
+    },
+    "rollback": {
+      "status": "PASS",
+      "evidence": "Verified current5.0.6 c7f530ef/digest553edacb/config003ca839 retained from REL007. Old5.0.6 reads identical result columns/ISO data and ignores private cache keys; no DB downgrade, history deletion or recovery drill."
+    }
+  },
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "User requested a new release after changes and explicitly authorized continuing this same Change, including the later short/watch/common-business performance scope."
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}

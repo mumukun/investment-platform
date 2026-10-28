@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261028-008",
+  "status": "RELEASED",
+  "release_profile": "routine",
+  "release_target_seconds": 300,
+  "assistant_review_target_seconds": 60,
+  "created_at": "2026-10-28T12:21:14.932544+00:00",
+  "updated_at": "2026-10-28T14:12:36.297409+00:00",
+  "changes": [
+    "CHG-20261027-002"
+  ],
+  "authorization": "User requested a new release after the original changes and authorized direct development of this remaining wave-delay fix in the same Change.",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "previous_version": "v5.0.6",
+      "planned_version": "5.0.7",
+      "tag": "v5.0.7",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/53",
+      "quality_status": "PASS",
+      "rollback": {
+        "tag": "v5.0.6",
+        "commit_sha": "c7f530ef592a52c2177648404adcac58360845eb",
+        "version": "5.0.6",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:553edacb30af70c133d1a3e16fba64cf574b99ae1b5350f4a835110e2d80f5ed"
+        },
+        "image_ids": {
+          "app": "sha256:003ca8394b84891757dcdd070231ac20f263cf3a8f0cddd6ec73a3741f75131d"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup_policy": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Compatible private business projections and an idempotent raw-history lookup index (already present on NAS). Existing setup replacement scope only removes obsolete identities and preserves unchanged rows. Date values keep original ISO clocks. No foundation writes, backfill, deletion expansion or historical cleanup; old5.0.6 ignores private keys and uses unchanged result columns. No independent backup coverage is assumed.",
+        "evidence": "Full local1024 tests/75 subtests plus52 affected final-query tests; final PR CI40696748426 and main CI40697641422 PASS; candidate40698046665 isolated image smoke PASS. NAS existing raw-close index verified; old5.0.6 rollback artifact retained."
+      },
+      "pr_quality_run_id": "40696748426",
+      "superseded_preliminary_sha": "df947733d6cf74d7c8567a4abdf2e832088b8d69",
+      "additional_prs": [
+        "https://github.com/mumukun/stock-analyzer/pull/52"
+      ],
+      "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+      "quality_run_id": "40697641422",
+      "candidate_run_id": "40698046665",
+      "candidate_evidence": "releases/evidence/REL-20261028-008/stock/candidate.json",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+      },
+      "artifact_id": {
+        "app": "sha256:32634026767dd9e6fcebf4ed65c1090d48519d8b92d573b1d0dc125334d44177"
+      },
+      "artifact_model": "CI_BUILD_ONCE"
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "DEPLOY_PASS",
+    "started_at": "2026-10-28T13:44:09.148087+00:00",
+    "completed_at": "2026-10-28T14:04:42.153304+00:00"
+  },
+  "verification": {
+    "status": "CORE_READ_PASS_WITH_DECLARED_GENERAL_SHORT_PROJECTION_FAILURE",
+    "local_evidence": "changes/evidence/CHG-20261027-002/business-throughput-tests.txt",
+    "performance_evidence": [
+      "changes/evidence/CHG-20261027-002/wave-before-benchmark.json",
+      "changes/evidence/CHG-20261027-002/wave-benchmark.json",
+      "changes/evidence/CHG-20261027-002/business-input-benchmark.json"
+    ],
+    "known_limitations": [
+      "Synthetic PG cold/warm26.020/17.413s for5224 instruments versus43.164/44.695s on frozen5.0.6; this does not establish NAS or Consumer end-to-end timing.",
+      "After market close, preserve actual last assessment clocks. Intraday freshness requires the next real continuous trading session.",
+      "Foundation minute-sample catch-up is not changed or declared complete by this business optimization.",
+      "Sector/tech initial503 recovered after normal background builds; targeted readback0.243/0.727s. Sector cold build173.970s is still slow under NAS concurrent startup load.",
+      "Comprehensive short API projection repeatedly fails datetime JSON serialization, despite tail v2 read passing. Read-only in-memory diagnostic confirmed exact boundary; continue minimal5.0.8 fix-forward. This is not all-feature acceptance.",
+      "Watch strategy read is69 rows but retains14:58:31 assessment/stale quality. Natural short_close_tracking_retry succeeded23.184s; maintenance ran79.905/121.925s, while outer swing recovery/startup scan still failed due input health. No new successful watch strategy refresh is claimed.",
+      "Wave consumer/provider generation matches but old15:07:26 assessment and partial current coverage remain; provider delayed versus consumer healthy is preserved as a dated discrepancy, not a real-time success."
+    ],
+    "additional_local_evidence": [
+      "changes/evidence/CHG-20261027-002/poll-window-tests.txt",
+      "changes/evidence/CHG-20261027-002/wave-throughput-tests.txt"
+    ],
+    "core_initial": "releases/evidence/REL-20261028-008/core-readback.jsonl",
+    "core_targeted_retry": "releases/evidence/REL-20261028-008/core-targeted-readback.jsonl",
+    "natural_jobs": "releases/evidence/REL-20261028-008/startup-jobs.json",
+    "general_short_diagnostic": "releases/evidence/REL-20261028-008/short-projection-diagnostic.txt",
+    "general_short_followup": "Resolved by REL-20261028-0095.0.8; initial failed diagnosis/readback retained."
+  },
+  "timing": {
+    "release_handling_started_at": "2026-10-28T12:15:17+00:00",
+    "development_first_recorded_profile_at": "2026-10-28T11:54:29+00:00",
+    "note": "Original user request timestamp unavailable; profile time is only a lower bound on development duration. Include CI and deployment waits, not deployment alone.",
+    "expanded_scope_release_started_at": "2026-10-28T13:16:19+00:00",
+    "deployment_completed_at": "2026-10-28T14:04:42.153304+00:00",
+    "core_targeted_read_at": "2026-10-28T22:09:56.815850+08:00",
+    "combined_optimization_core_verified_at": "2026-10-28T14:36:54.916446+00:00",
+    "combined_release_handling_elapsed_seconds": 8497.916,
+    "since_first_profile_lower_bound_seconds": 9745.916
+  },
+  "notes": [
+    "At initial scope expansion the release was still unpublished: no formal tag or production switch had occurred. Later final source/artifact/Tag identities are recorded above.",
+    "Expanded development included raw windows, tail history caching, JSON result-save errors, tech latest/sample reads, sector coverage reuse and derived metric writes. The final poll-window follow-up was validated by52 affected tests after the1024-test suite.",
+    "First native attempt: pull PASS214.06s, then stopped before backup/checkout/start because NAS lacked the frozen tag/main references. Read-only inspection confirmed all three services still ran5.0.6 and tracked checkout was clean. Exact tag and main references subsequently fetched and verified at c39e86fb; resume the unchanged plan, retaining the initial failed receipt. No rollback occurred.",
+    "Initial startup-job inspection script assumed tuple rows; corrected dict-row parsing and reran read-only. Initial empty file is not success evidence. No manual business refresh invoked."
+  ],
+  "image_execution_plan": "releases/evidence/REL-20261028-008/image-release-plan.json",
+  "candidate_evidence": [
+    "releases/evidence/REL-20261028-008/stock/candidate.json"
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261028-008/deployment-receipt.json",
+    "releases/evidence/REL-20261028-008/deployment-initial-failed.json"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "release_id": "REL-20261028-008",
+  "plan_hash": "de7d52ea0a5c82877c243882dc7084afce0a1d2a58baaa01e4e2b82936b5e578",
+  "repositories": {
+    "stock-analyzer": {}
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-10-28T13:44:31.055656+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 214.06
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v5.0.7",
+      "commit_sha": "c39e86fb3dd9bb6b3e46b3e602fab49af981f5c2",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:3d36094ec21f87a9702277b8a426e20cd9707fc656b66639ac27fd1fc05bf1a4"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "FAILED",
+  "last_operation_at": "2026-10-28T13:48:07.929739+00:00"
+}

@@ -1,0 +1,25 @@
+............................................................. [  5%]
+......................................................................ss [ 11%]
+ss.ss..ssssss...................sssssss..sss............................ [ 17%]
+................................................................ [ 23%]
+.ss.........s.........................s.............ssssssss [ 28%]
+ss............s......................................................... [ 34%]
+...........s.............................ss............................. [ 40%]
+..............ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 47%]
+ssssssssssssssssssssssssssssssssss...................................... [ 53%]
+...............................s................................. [ 58%]
+..................................................................... [ 64%]
+........................................................................ [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 83%]
+........................................................................ [ 89%]
+......................................................... [ 94%]
+..................................................... [ 99%]
+........                                                                 [100%]
+=============================== warnings summary ===============================
+../../../../Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1024 passed, 133 skipped, 1 warning, 75 subtests passed in 134.71s (0:02:14)
