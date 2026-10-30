@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-30T01:43:42.462603+00:00",
+  "environment": "local public-source read only; no NAS/production writes",
+  "quote_batches": 1,
+  "quotes": [
+    {
+      "id": "kr.KOSPI",
+      "quote": {
+        "instrument_id": "kr.KOSPI",
+        "source": "新浪",
+        "source_symbol": "b_KOSPI",
+        "value": 5646.07,
+        "previous": 5937.66,
+        "change": -291.59,
+        "change_pct": -4.91,
+        "data_time": "2026-10-30T09:43:20+08:00",
+        "collected_at": "2026-10-30T01:43:42.462603Z"
+      },
+      "quality": "recent",
+      "daily_count": 120,
+      "daily_from": "2026-05-04",
+      "daily_to": "2026-10-29",
+      "history_issues": []
+    },
+    {
+      "id": "kr.KOSDAQ",
+      "quote": {
+        "instrument_id": "kr.KOSDAQ",
+        "source": "新浪",
+        "source_symbol": "b_KOSDAQ",
+        "value": 725.79,
+        "previous": 753.23,
+        "change": -27.44,
+        "change_pct": -3.64,
+        "data_time": "2026-10-30T09:43:20+08:00",
+        "collected_at": "2026-10-30T01:43:42.462603Z"
+      },
+      "quality": "recent",
+      "daily_count": 120,
+      "daily_from": "2026-05-04",
+      "daily_to": "2026-10-29",
+      "history_issues": []
+    }
+  ],
+  "elapsed_seconds": 0.702
+}

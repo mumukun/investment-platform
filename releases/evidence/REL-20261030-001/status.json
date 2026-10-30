@@ -1,0 +1,30 @@
+{
+  "release_id": "REL-20261030-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261030-001",
+    "CHG-20261030-002",
+    "CHG-20261030-003"
+  ],
+  "versions": {
+    "stock-analyzer": "5.3.0",
+    "investment-research-dashboard": "1.3.0"
+  },
+  "authorization": "用户明确要求：这次未上线的需求提交代码生产上线",
+  "phase": "production identity, health and native smoke passed; closeout",
+  "previous_release": "REL-20261029-013",
+  "main_commits": {
+    "stock-analyzer": "a5f1954c8dcc93a0ffcb031459407d2b951c1af0",
+    "investment-research-dashboard": "f5840a53f320a13a73227312e70ef7d48d192370"
+  },
+  "pull_requests": {
+    "stock-analyzer": "https://github.com/mumukun/stock-analyzer/pull/65",
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/54"
+  },
+  "tags": {
+    "stock-analyzer": "v5.3.0",
+    "investment-research-dashboard": "v1.3.0"
+  },
+  "last_receipt": "deployment-receipt.json",
+  "completed_at": "2026-10-30T09:10:58.757051+00:00"
+}

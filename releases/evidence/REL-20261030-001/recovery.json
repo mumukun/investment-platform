@@ -1,0 +1,8 @@
+{
+  "initial_result": "PARTIAL",
+  "failed_stage": "investment-research-dashboard.pull",
+  "diagnosis": "GHCR unauthorized with existing NAS Docker authentication; private package visibility unchanged",
+  "recovery": "Temporary mode-0700 Docker config populated through SSH stdin from existing authenticated GitHub CLI, pull exact frozen digests, remove temporary credential config on command exit; resume same immutable plan",
+  "connectivity": "SSH recovery attempts timed out before reconnecting; NAS load average 7.45, IO 5.59 at 2026-10-30T16:29:15+08:00",
+  "first_receipt": "deployment-receipt-first-attempt.json"
+}
