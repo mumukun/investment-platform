@@ -277,6 +277,18 @@ contracts:
       - investment-research-dashboard
     version_kind: contract_version
     status: verified
+  investment-dashboard-limit-up-ladder-v3:
+    provider: stock-analyzer
+    consumers:
+      - investment-research-dashboard
+    version_kind: contract_version
+    rules_version: limit-up-pool-mapping-v1
+    interface: GET /api/integrations/investment-dashboard/limit-up-ladder?contract_version=investment-dashboard-limit-up-ladder-v3
+    evidence:
+      - stock-analyzer/stock_analyzer/limit_up_contract.py
+      - stock-analyzer/stock_analyzer/market_data/limit_pool.py
+      - investment-research-dashboard/backend/app/integrations/stock_analyzer.py
+    status: needs_verification
   investment-dashboard-limit-up-ladder-v1:
     provider: stock-analyzer
     consumers:

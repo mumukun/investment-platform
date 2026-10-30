@@ -1,0 +1,169 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261030-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "a5f1954c8dcc93a0ffcb031459407d2b951c1af0",
+        "version": "5.3.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:cf2c50628f99b03998d916839bc380995212cca3eaa27f72fd3ec17f4b015d20"
+        },
+        "image_ids": {
+          "app": "sha256:99824334e150ad357c4e2f81d137ab0f586da7164d0bd13c5c77424b99046252"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "a5f1954c8dcc93a0ffcb031459407d2b951c1af0",
+            "run_id": "41019086649"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:cf2c50628f99b03998d916839bc380995212cca3eaa27f72fd3ec17f4b015d20"
+            }
+          },
+          "candidate_run_id": "41019512808"
+        }
+      },
+      "tag": "v5.3.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v5.2.2",
+        "commit_sha": "0a0818a33a14dbf4d830e3e88a18c6e9d01a4af9",
+        "image_ids": {
+          "stock-api": "sha256:b73335da63316ca668819494c9df77b5cb08daad250b2d7673e2bd46b260dc39",
+          "stock-watch": "sha256:b73335da63316ca668819494c9df77b5cb08daad250b2d7673e2bd46b260dc39",
+          "stock-data": "sha256:b73335da63316ca668819494c9df77b5cb08daad250b2d7673e2bd46b260dc39"
+        }
+      },
+      "rollback": {
+        "commit_sha": "0a0818a33a14dbf4d830e3e88a18c6e9d01a4af9",
+        "version": "5.2.2",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7faa65b2ed4386fafcba25388e4da6d374f11882ca9ed691e8ba5051599c5c69"
+        },
+        "image_ids": {
+          "app": "sha256:b73335da63316ca668819494c9df77b5cb08daad250b2d7673e2bd46b260dc39"
+        },
+        "tag": "v5.2.2",
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "兼容新增独立涨停池表和请求时钟，不删除或重写既有事实；旧应用可忽略新表。按用户明确偏好不做部署时数据库备份。",
+        "evidence": "CHG-20261030-001/002/003 定向功能、隔离PostgreSQL事务/契约/性能、47项整合前端和 main CI；无数据清理或回填。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "f5840a53f320a13a73227312e70ef7d48d192370",
+        "version": "1.3.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a04934f8f43732ef0fcb3a200e1874fb46eccb425492fb2bcf77eb39bbbbe2fb",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:d88e705b24ebc51290a53a1f45d92944840fe2dc352f47f44326d42326d0da01"
+        },
+        "image_ids": {
+          "api": "sha256:3a21c79ba85af9e8abb747746aab5d8534b2b05a667cf6b1155ea4e74e1d105e",
+          "web": "sha256:5fd42bc6ed87378f61b5cf23d5614537f7475f7d998e5481791f05aa7abbd9fa"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "f5840a53f320a13a73227312e70ef7d48d192370",
+            "run_id": "41018919163"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a04934f8f43732ef0fcb3a200e1874fb46eccb425492fb2bcf77eb39bbbbe2fb",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:d88e705b24ebc51290a53a1f45d92944840fe2dc352f47f44326d42326d0da01"
+            }
+          },
+          "candidate_run_id": "41019368261"
+        }
+      },
+      "tag": "v1.3.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v1.2.1",
+        "commit_sha": "e003c97a6a91cf3d7b4e094923364479ffe0f498",
+        "image_ids": {
+          "api": "sha256:8fc1013980b630176a8e91c7abebd9ead9cc29375b6b01e78891a315e44e8391",
+          "web": "sha256:c52ce6ded26df86d62128223c9f5369c906775a23ee6926c5f98459d14d94f65"
+        },
+        "build_time": "2026-10-29T15:23:24Z"
+      },
+      "rollback": {
+        "commit_sha": "e003c97a6a91cf3d7b4e094923364479ffe0f498",
+        "version": "1.2.1",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4ea79a3a9c1beea7e250da2815feb37d148bdc08e9491625f4bf3e8f1e707cc7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:9719362c02e6b000defe6e131c1cab56835e6a44341772d2231893e227212f87"
+        },
+        "image_ids": {
+          "api": "sha256:8fc1013980b630176a8e91c7abebd9ead9cc29375b6b01e78891a315e44e8391",
+          "web": "sha256:c52ce6ded26df86d62128223c9f5369c906775a23ee6926c5f98459d14d94f65"
+        },
+        "tag": "v1.2.1"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "兼容新增独立涨停池表和请求时钟，不删除或重写既有事实；旧应用可忽略新表。按用户明确偏好不做部署时数据库备份。",
+        "evidence": "CHG-20261030-001/002/003 定向功能、隔离PostgreSQL事务/契约/性能、47项整合前端和 main CI；无数据清理或回填。"
+      }
+    }
+  ],
+  "changes": [
+    "CHG-20261030-001",
+    "CHG-20261030-002",
+    "CHG-20261030-003"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮明确授权：这次未上线的需求提交代码生产上线吧。"
+  },
+  "transport": {
+    "mode": "registry"
+  }
+}
