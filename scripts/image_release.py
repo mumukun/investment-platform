@@ -531,6 +531,10 @@ def main():
         "-o",
         "ConnectTimeout=8",
         "-o",
+        "ServerAliveInterval=10",
+        "-o",
+        "ServerAliveCountMax=3",
+        "-o",
         "StrictHostKeyChecking=yes",
         "-p",
         str(args.port),
@@ -558,6 +562,11 @@ def main():
         if args.manifest:
             write_manifest(args.manifest, plan, receipt, args.receipt)
     if returncode:
+        if receipt is None:
+            raise ValueError(
+                "NAS command ended without a receipt; execution status unknown; "
+                "inspect the existing task/journal before retrying"
+            )
         raise ValueError(
             "NAS operation failed; protected partial state remains available for recovery"
         )
