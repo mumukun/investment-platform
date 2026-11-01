@@ -1,0 +1,101 @@
+[
+  {
+    "mode": "ladder",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "cardWidth": 264,
+    "cardHeight": 136,
+    "visible": 9,
+    "total": 47,
+    "columns": "263.5px 263.5px 263.5px 263.5px",
+    "cardFacts": 4
+  },
+  {
+    "mode": "compact",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "cardWidth": 264,
+    "cardHeight": 136,
+    "visible": 16,
+    "total": 47,
+    "columns": "263.5px 263.5px 263.5px 263.5px",
+    "cardFacts": 4
+  },
+  {
+    "mode": "matrix",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "cardWidth": 264,
+    "cardHeight": 136,
+    "visible": 2,
+    "total": 47,
+    "columns": "none",
+    "cardFacts": 4
+  },
+  {
+    "mode": "ladder",
+    "width": 768,
+    "scrollWidth": 768,
+    "cardWidth": 305,
+    "cardHeight": 136,
+    "visible": 7,
+    "total": 47,
+    "columns": "305px 305px",
+    "cardFacts": 4
+  },
+  {
+    "mode": "compact",
+    "width": 768,
+    "scrollWidth": 768,
+    "cardWidth": 305,
+    "cardHeight": 136,
+    "visible": 10,
+    "total": 47,
+    "columns": "305px 305px",
+    "cardFacts": 4
+  },
+  {
+    "mode": "matrix",
+    "width": 768,
+    "scrollWidth": 768,
+    "cardWidth": 305,
+    "cardHeight": 136,
+    "visible": 1,
+    "total": 47,
+    "columns": "none",
+    "cardFacts": 4
+  },
+  {
+    "mode": "ladder",
+    "width": 390,
+    "scrollWidth": 390,
+    "cardWidth": 332,
+    "cardHeight": 136,
+    "visible": 4,
+    "total": 47,
+    "columns": "332px",
+    "cardFacts": 4
+  },
+  {
+    "mode": "compact",
+    "width": 390,
+    "scrollWidth": 390,
+    "cardWidth": 332,
+    "cardHeight": 136,
+    "visible": 4,
+    "total": 47,
+    "columns": "332px",
+    "cardFacts": 4
+  },
+  {
+    "mode": "matrix",
+    "width": 390,
+    "scrollWidth": 390,
+    "cardWidth": 332,
+    "cardHeight": 136,
+    "visible": 0,
+    "total": 47,
+    "columns": "none",
+    "cardFacts": 4
+  }
+]

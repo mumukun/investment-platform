@@ -1,0 +1,9 @@
+{
+  "rows": 579000,
+  "sectors": 193,
+  "stocks": 4825,
+  "dates": 120,
+  "evidence": "synthetic local compute, not production latency",
+  "baselineSeconds": 1.374,
+  "trendSeconds": 2.783
+}

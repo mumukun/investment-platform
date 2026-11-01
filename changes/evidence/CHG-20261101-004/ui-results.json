@@ -1,0 +1,56 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "rail": 168,
+    "rows": 13
+  },
+  {
+    "selected": "资源黄金产业黄金股票+0.88%",
+    "detail": "黄金产业指数详情",
+    "focused": "detail",
+    "rankCount": 3,
+    "closeChart": true,
+    "scrollWidth": 1440
+  },
+  {
+    "memberRows": 1,
+    "member": "演示股份乙00000124.50-0.84%3.612026/10/23 15:00:00最近交易时段"
+  },
+  {
+    "width": 768,
+    "scrollWidth": 768,
+    "rail": 168,
+    "rows": 13
+  },
+  {
+    "selected": "资源黄金产业黄金股票+0.88%",
+    "detail": "黄金产业指数详情",
+    "focused": "detail",
+    "rankCount": 3,
+    "closeChart": true,
+    "scrollWidth": 768
+  },
+  {
+    "memberRows": 1,
+    "member": "演示股份乙00000124.50-0.84%3.612026/10/23 15:00:00最近交易时段"
+  },
+  {
+    "width": 390,
+    "scrollWidth": 390,
+    "rail": 356,
+    "rows": 13
+  },
+  {
+    "selected": "资源黄金产业黄金股票+0.88%",
+    "detail": "黄金产业指数详情",
+    "focused": "detail",
+    "rankCount": 3,
+    "closeChart": true,
+    "scrollWidth": 390
+  },
+  {
+    "memberRows": 1,
+    "member": "演示股份乙00000124.50-0.84%3.612026/10/23 15:00:00最近交易时段"
+  }
+]
