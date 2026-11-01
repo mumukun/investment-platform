@@ -1,0 +1,18 @@
+{
+  "status": "UNAVAILABLE_SOURCE_GAP",
+  "businessDate": "2026-10-30",
+  "mappedUniverse": 5577,
+  "sourceDate": "2026-09-25",
+  "sourceRows": 3045,
+  "validPrices": 3043,
+  "nextObservedDate": "2026-09-28",
+  "minimumCoveragePct": 80,
+  "ready5dSectors": 106,
+  "ready20dSectors": 0,
+  "ma20Sectors": 106,
+  "ma60Sectors": 18,
+  "selectedChartPoints": 20,
+  "selectedValidNavPoints": 19,
+  "selectedBaseDate": "2026-09-29",
+  "scope": "read-only live API and aggregate SQL; no source collection/backfill; existing gap explicitly preserved"
+}

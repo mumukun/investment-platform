@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": {
+    "provider": {
+      "status": "PASS",
+      "contract": "investment-dashboard-sector-workbench-v1",
+      "rules": "sector-activity-rules-v0.2",
+      "businessDate": "2026-10-30",
+      "quality": "healthy",
+      "sectors": 193,
+      "trendReady": 0,
+      "points": 20,
+      "hasGap": false,
+      "seconds": 0.06
+    },
+    "consumer": {
+      "status": "PASS",
+      "runtime": {
+        "app_version": "2.2.0",
+        "git_commit": "473d9d9f52cecc9eeda543ddb7409de449e254b6",
+        "build_time": "2026-11-01T12:11:01Z",
+        "environment": "production",
+        "api_version": "v1"
+      },
+      "rules": "sector-activity-rules-v0.2",
+      "businessDate": "2026-10-30",
+      "sectors": 193,
+      "points": 20,
+      "seconds": 0.12
+    }
+  }
+}

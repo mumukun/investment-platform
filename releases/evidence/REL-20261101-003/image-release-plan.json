@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261101-003",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "5bca0c630660a76c7b82dc7bb5797b691225aaa6",
+        "version": "6.2.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:95a2a48f43f977c0d779e7dd254bf09c2c62db3a7f29e119efe13c3eaff87174"
+        },
+        "image_ids": {
+          "app": "sha256:78c64e83a257c6dd203ba4c0b72da296d75b58dd44c37a6d2656a2aca93bc11e"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "5bca0c630660a76c7b82dc7bb5797b691225aaa6",
+            "run_id": "41304647628"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:95a2a48f43f977c0d779e7dd254bf09c2c62db3a7f29e119efe13c3eaff87174"
+            }
+          },
+          "candidate_run_id": "41305052093"
+        }
+      },
+      "tag": "v6.2.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.1.0",
+        "commit_sha": "69cba6a80008f384f4005265e8f1a8c1205564b5",
+        "image_ids": {
+          "stock-api": "sha256:46dce99f8025a901aba84f357e489b2bbc91de255b7565dd33d19587b8bac8f5",
+          "stock-watch": "sha256:46dce99f8025a901aba84f357e489b2bbc91de255b7565dd33d19587b8bac8f5",
+          "stock-data": "sha256:46dce99f8025a901aba84f357e489b2bbc91de255b7565dd33d19587b8bac8f5"
+        }
+      },
+      "rollback": {
+        "commit_sha": "69cba6a80008f384f4005265e8f1a8c1205564b5",
+        "version": "6.1.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:18d0b571944050b65b86fcd1d0b8508d9181a37583c853d2d6541cd4bb82a767"
+        },
+        "image_ids": {
+          "app": "sha256:46dce99f8025a901aba84f357e489b2bbc91de255b7565dd33d19587b8bac8f5"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "tag": "v6.1.0"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "仅既有日线只读计算、兼容追加字段与前端布局；无DDL、基础/历史数据重写、采集、依赖或运行配置变化。旧v1 Consumer兼容忽略新字段，新Consumer兼容旧Provider。",
+        "evidence": "changes/CHG-20261101-004.md；计算/隔离PG/鉴权与跨仓HTTP、Consumer兼容测试、main CI和同镜像候选smoke。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "473d9d9f52cecc9eeda543ddb7409de449e254b6",
+        "version": "2.2.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:abb106f3b54cd50b4434c480f5ba919a954d7ff6bcc87e9d1f749fa2f5bbb390",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4c17e5b113cc83bd55ef4c227f5088d978f7bb2cbfa3bf8947e22fc9701819ff"
+        },
+        "image_ids": {
+          "api": "sha256:636fad188377a14d70fd4f9a2118c5b763769c9e678aca8f2761134b5e6a27c8",
+          "web": "sha256:ef03851eb2d8d06c7d84e7aa19d5f1f1f0e12c8518d30c93c5de98b15c0a1526"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "473d9d9f52cecc9eeda543ddb7409de449e254b6",
+            "run_id": "41304951801"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:abb106f3b54cd50b4434c480f5ba919a954d7ff6bcc87e9d1f749fa2f5bbb390",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4c17e5b113cc83bd55ef4c227f5088d978f7bb2cbfa3bf8947e22fc9701819ff"
+            }
+          },
+          "candidate_run_id": "41305234888"
+        }
+      },
+      "tag": "v2.2.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.1.0",
+        "commit_sha": "11f736e46fcc0af23160cd3fce970e54c8a50c16",
+        "image_ids": {
+          "api": "sha256:80e115b994e3f6057b26e5127afee3f835895e569809d6b31f4c5fd87b6a1bbc",
+          "web": "sha256:7e06d30fc53773568b0a323ce776596159df46959a09c38df9e56708b8316989"
+        },
+        "build_time": "2026-10-31T20:33:25Z"
+      },
+      "rollback": {
+        "commit_sha": "11f736e46fcc0af23160cd3fce970e54c8a50c16",
+        "version": "2.1.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7ccb6555b00872410724ab2ae9669c1b9b0ef5ea40b51e4793d652ea85a1f30e",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:304fddb4dfee940080b887432157f8bd697f47e73bd6bc1e31121adf1dbae551"
+        },
+        "image_ids": {
+          "api": "sha256:80e115b994e3f6057b26e5127afee3f835895e569809d6b31f4c5fd87b6a1bbc",
+          "web": "sha256:7e06d30fc53773568b0a323ce776596159df46959a09c38df9e56708b8316989"
+        },
+        "tag": "v2.1.0"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "仅既有日线只读计算、兼容追加字段与前端布局；无DDL、基础/历史数据重写、采集、依赖或运行配置变化。旧v1 Consumer兼容忽略新字段，新Consumer兼容旧Provider。",
+        "evidence": "changes/CHG-20261101-004.md；计算/隔离PG/鉴权与跨仓HTTP、Consumer兼容测试、main CI和同镜像候选smoke。"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户2026-11-01明确要求：提交代码 生产环境发版本吧；范围为CHG-20261101-004的全部已验收改动。"
+  },
+  "changes": [
+    "CHG-20261101-004"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
