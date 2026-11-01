@@ -80,15 +80,33 @@ class ReleaseRecordTests(unittest.TestCase):
                 args = ["runner", "deploy", str(plan_path), "--host", "fixture-nas",
                         "--receipt", str(self.receipt_path), "--manifest", str(self.output)]
                 with patch.object(sys, "argv", args), patch.object(release, "verify_ci") as ci, \
-                        patch.object(release.subprocess, "Popen", return_value=process), redirect_stdout(io.StringIO()):
+                        patch.object(release.subprocess, "Popen", return_value=process) as launch, redirect_stdout(io.StringIO()):
                     if code:
                         with self.assertRaisesRegex(ValueError, "NAS operation failed"):
                             release.main()
                     else:
                         release.main()
                     ci.assert_called_once_with(self.plan)
+                    command = launch.call_args[0][0]
+                    self.assertIn("ServerAliveInterval=10", command)
+                    self.assertIn("ServerAliveCountMax=3", command)
+                    self.assertIn("StrictHostKeyChecking=yes", command)
                 self.assertEqual(json.loads(self.output.read_text())["status"], expected)
                 self.assertEqual(json.loads(self.receipt_path.read_text())["last_result"], self.receipt["last_result"])
+
+    def test_lost_connection_without_receipt_leaves_execution_unknown(self):
+        self.plan["authorization"] = {"status": "FORMAL", "evidence": "test-only authorization"}
+        plan_path = self.root / "plan.json"
+        plan_path.write_text(json.dumps(self.plan))
+        process = SimpleNamespace(stdin=io.StringIO(), stdout=io.StringIO(), wait=lambda: 255)
+        args = ["runner", "deploy", str(plan_path), "--host", "fixture-nas",
+                "--receipt", str(self.receipt_path), "--manifest", str(self.output)]
+        with patch.object(sys, "argv", args), patch.object(release, "verify_ci"), \
+                patch.object(release.subprocess, "Popen", return_value=process), redirect_stdout(io.StringIO()):
+            with self.assertRaisesRegex(ValueError, "execution status unknown"):
+                release.main()
+        self.assertFalse(self.receipt_path.exists())
+        self.assertFalse(self.output.exists())
 
     def test_wrong_release_hash_or_running_image_cannot_certify_release(self):
         self.receipt["repositories"]["stock-analyzer"]["image_ids"]["stock-api"] = "sha256:" + "9" * 64

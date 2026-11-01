@@ -1,11 +1,12 @@
 ---
 name: change-manager
-description: Create and maintain Investment Platform Change records, determine affected repositories and dependencies, create Change-ID branches, and confirm readiness. Use for starting, planning, updating, or completing a governed feature or fix; do not use for production release execution.
+description: Group feedback within one Investment Platform conversation and delivery round into one default Change, maintain scope and acceptance items, determine affected repositories and dependencies, reuse Change-ID branches, and report implementation versus release readiness. Use for starting, planning, updating, or completing governed work; do not use for production release execution.
 ---
 
 # Change Manager
 
-Manage one business requirement as one durable Change without scanning or modifying unrelated repositories.
+Default to one requirement and one active Change per conversation and delivery round. Keep additional
+feedback as scope and acceptance items without scanning or modifying unrelated repositories.
 
 ## Authority and inputs
 
@@ -15,21 +16,31 @@ test, runtime, database, and deployment commands still come from the affected re
 
 ## Create or continue a Change
 
-1. Confirm the request, outcome, non-goals, acceptance criteria, and whether an existing Change ID was supplied.
-2. For a new Change, inspect only existing `changes/CHG-YYYYMMDD-*.md` names and allocate the next unused
-   three-digit sequence for the current date. Create `changes/<CHANGE_ID>.md` from the template.
-3. Read `SYSTEM_MAP.yaml`, then inspect only the likely affected repositories and relevant modules. Do not
+1. Identify the conversation's existing Change first. Fold subsequent page/module adjustments and fixes
+   into its scope and acceptance items; different pages, feedback turns, commits or delivery stages alone
+   do not justify new Changes, branches or PRs. State the combined scope briefly without adding approval steps.
+2. Split only for an explicit independent-delivery request or a concrete boundary that cannot be delivered
+   safely together, including data-risk handling. Separate acceptance items/tests alone do not justify a split.
+   Record the reason briefly in the existing Change. Grouping never expands authorization.
+   After release, group additional changes into the next delivery round: when development starts, create
+   one new Change linked to the prior round, preserving released records/Tags. Start ordinary work from
+   current main; route urgent production fixes to hotfix-manager. Subsequent feedback belongs to that new
+   round. Questions, discussion, retrospectives and read-only investigation alone create no Change.
+3. Only when a new Change is warranted, inspect existing `changes/CHG-YYYYMMDD-*.md` names and allocate
+   the next unused three-digit sequence for the current date. Create it from `changes/TEMPLATE.md`.
+4. Read `SYSTEM_MAP.yaml`, then inspect only the likely affected repositories and relevant modules. Do not
    default to all repositories.
-4. Use the compact template: scope, repository/branch/PR identity, required test links, release impact and
-   rollback. Add dependency/API/database/contract or Feature Flag detail only when actually affected; omit
+5. Use the compact template: scope and acceptance items, repository/branch/PR identity, required test
+   links, release impact and rollback. Add dependency/API/database/contract or Feature Flag detail only when affected; omit
    unchanged None sections and copied logs. Mark uncertain relationships explicitly.
-5. When development is authorized, create one branch per affected repository using the same Change ID:
+6. When development is authorized, use one task branch per actually affected repository with the same Change ID:
    `feat/<CHANGE_ID>-description`, `fix/<CHANGE_ID>-description`, or `hotfix/<CHANGE_ID>-description`.
    Reuse that Change's existing safe branch/worktree first. Do not create extra branches for versions,
    READY, release preparation or archival. Preserve unrelated work and use isolated worktrees when required.
-6. Keep Branches, PRs, tests, commits, decisions, and evidence current as work progresses.
+7. Keep Branches, PRs, tests, commits, decisions, and evidence current as work progresses. Multiple logical
+   commits may belong to one Change and PR; they do not require separate requirement records.
 
-## Confirm READY
+## Report completion and READY separately
 
 Before completion, apply the repository's existing checks and platform `docs/development-validation.md`:
 verify functional outcomes, affected integration boundaries, and performance when queries, batch size,
@@ -45,7 +56,9 @@ After business PRs merge and required checks pass, record READY locally without 
 wait. Batch record commits at closeout; only committed records are shared facts. Include version/changelog
 changes in the feature PR instead of creating another preparation PR. Do not start another full review or
 test phase after submission unless conflicts, new changes or failed evidence require it.
-“Development complete” has this same meaning.
+Report implementation and required validation complete as REVIEW even when not submitted/merged yet.
+Always distinguish local changes, committed, merged/READY, and actually RELEASED; do not call an unmerged
+change READY. Reuse already granted authorization; do not ask again just because the phase changed.
 
 Do not create release Tags, deploy Production, activate features, or mark a Release successful. Commit, push,
 PR, merge, and branch deletion remain separately governed actions and require the user's current authorization.

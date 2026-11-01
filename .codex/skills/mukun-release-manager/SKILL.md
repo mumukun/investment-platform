@@ -16,35 +16,29 @@ does not replace repository-specific build, test, deployment, health, or rollbac
 
 ## Default: personal-use routine release
 
-Follow the four-step routine in `RELEASE_RULES.md`. Reuse exact main CI/candidate and unchanged-boundary
-evidence. Do not repeat full restore, old-image compatibility, runner recovery/rollback, both transport modes,
-or a second verify for every release. Drills are disabled by default, including ordinary additive migrations
-and deployment changes. Prefer focused local tests; explain a concrete unresolved data-loss risk before
-considering a minimal extra validation. Do not automatically run clone/restore/old-image/rollback tools.
-Use the existing deploy entry once; it includes baseline, the reviewed backup decision, identity, health and smoke.
-Functional, affected integration and performance validation belongs before development completion under
-`docs/development-validation.md`. New image-release-v1 plans omit manual `gates`; never fabricate six PASS
-entries or run a twelve-item manual review. Existing frozen plans retain their validation and hash.
-Use `--receipt` and `--manifest` on the single deploy invocation to generate the compact record from actual
-results; do not retype identities or tests. This requires the updated NAS runner; do not claim it installed
-or reinstall it per release. An administrator update needs its own current authorization.
-New plans use per-repository database_backup per RELEASE_RULES: skip reviewed non-destructive,
-rollback-compatible changes; table/full backup for data risk. Record SKIPPED honestly. Legacy plans without
-the field retain full backup. Independent scheduled backup coverage must not be assumed.
-Start elapsed timing at the user’s submit/merge/prepare request, or formal request when direct; target about
-five minutes for routine handling. Include commits/merges/CI waiting/assistant preparation, not only deployment.
-For separate prepare/formal authorization report both phases and actual handling total; label user approval
-waiting separately, never deploy on prepare-only wording. Assistant evidence review targets 30–60 seconds;
-move required development verification before development completion, reuse it during release, and report
-missing evidence immediately. One chat owns release; exchange final evidence once, not repeated coordination.
-No separate version, READY, preparation or baseline-refresh PR for routine releases. Keep version updates
-in the business PR; record READY locally after its merge/checks, then batch governance closeout once.
-Use compact Change/Manifest records and link existing CI/candidate/receipt detail instead of duplicating it.
-Do not add a second full code review, a rollout observation period or a new flag for ordinary personal-use
-features. Cleanup/archive follows deployment. Freeze once; later unrelated main changes belong to another release.
-Ordinary completion does not wait for full collection cycles, queue drainage or every quote to catch up.
-Report data lag separately; actual core failures and explicitly required acceptance goals must still be resolved.
-Never claim an unready/failed release succeeded or hide waiting outside the reported elapsed time.
+Follow `RELEASE_RULES.md` for the four-step routine, reviewed backup policy and exact-artifact checks.
+Read unchanged rules/evidence once, reuse completed affected tests, keep version updates in the business PR,
+and use one frozen plan with the existing deploy/receipt/Manifest entry. No extra version/READY/governance
+PR, full review, clone/restore/rollback drill, manual gates, new flag or observation period for routine work.
+
+Prepare known baseline/rollback/target details while CI/candidates run. Once the selected candidate passes,
+freeze its exact SHA/digests and continue directly to Tag, exact target fetch and deployment when formal
+permission already exists. Do not reopen preparation or ask again at each phase. Prepare-only stays prepare-only.
+Use the roughly two-minute candidate-to-launch target to expose unexplained waits, never to bypass a gate.
+
+Prefer the same restricted NAS runner as an independent NAS-local task; retrieve its log and actual receipt.
+Use the verified procedure linked from formal-release.md, not a new deployer or broader privileges. The
+synchronous CLI now has SSH keepalive; do not describe that as built-in asynchronous execution.
+A lost management connection makes completion unknown: inspect the existing task/journal first, collect
+completed results, or resume the same plan after the task has stopped. Do not relaunch a live task or infer
+service failure/performance from missing SSH output. Real gate failures still stop downstream.
+
+Time from the user's submit/merge/prepare request (formal request when direct), including assistant handling,
+CI/candidates and recovery. Report first verified service availability separately from receipt recovery and
+optional closeout; mark unexplained time honestly. Target about five minutes for routine total handling,
+reuse evidence in 30–60 seconds, and explain concrete delays. Cleanup and optional page checks follow the
+availability report. Required affected-boundary acceptance must still pass; ordinary completion does not
+wait for full data collection or queue drainage. Never claim an incomplete release succeeded.
 
 ## Select exactly one authorization mode
 

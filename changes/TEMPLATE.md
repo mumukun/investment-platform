@@ -3,11 +3,14 @@
 ## Title / Status
 
 <!-- Outcome-oriented title. Status: DRAFT / PLANNED / IN_PROGRESS / REVIEW / MERGED /
-READY / RELEASED / BLOCKED / CANCELLED. -->
+READY / RELEASED / BLOCKED / CANCELLED. REVIEW may mean implementation and required validation complete;
+report actual commit/merge state below. READY still requires merged main and passed checks. -->
 
 ## Description
 
-<!-- User outcome, scope and acceptance criteria. Omit unrelated or unchanged impact sections. -->
+<!-- Combined outcome, scope and acceptance items for this conversation's current delivery round.
+Append feedback within that round; after release link the next round to the prior Change/Release.
+Questions alone create no Change. Omit unrelated or unchanged impact sections. -->
 
 ## Affected Repositories and Git
 

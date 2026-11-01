@@ -10,6 +10,9 @@ Business versions/changelog belong in the feature PR. Merged business PRs and pa
 local READY; no extra version, READY, preparation or baseline governance PR/CI wait. Compact records link
 the existing evidence, omitting unchanged impact sections. Freeze once rather than restart for unrelated main commits.
 
+Prepare known target paths, connection details and rollback/baseline inputs while CI/candidates run.
+After successful candidate verification, formal authorization continues directly; do not repeat preparation.
+
 1. Read selected READY Changes, current baseline and existing candidate evidence. Include only changed
    business repositories; governance-only Changes do not receive business versions or a deployment.
 2. Check relevant Git state and freeze the committed main SHA/version and corresponding successful CI

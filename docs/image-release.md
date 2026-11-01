@@ -59,6 +59,45 @@ python3 scripts/image_release.py deploy <plan.json> --host <deploy-user@nas> --k
 python3 scripts/image_release.py record <plan.json> --receipt <deployment-receipt.json> --manifest releases/<release_id>.yaml
 ```
 
+## NAS独立运行与回执恢复
+
+REL-20261101-002中，服务已完成切换与smoke，但管理SSH输出中断，完整回执晚取回。
+后续正式发布优先将**同一个**受限命令与原冻结计划在NAS本机独立运行，避免管理连接决定任务寿命。
+本节是已验证的调用方式；当前同步CLI没有内置异步启动/查询命令，不宣称新增能力已经部署。
+
+1. 本地用现有 `image_release.py verify-ci <plan.json>` 校验冻结计划及成功CI/candidate证据一次；
+   正式授权后创建不可变Tag，目标精确fetch。独立运行不经过同步deploy的本地CI校验，不能省略
+   这一步；使用同步deploy时CI校验已内置，不另跑verify-ci。计划/证据未变的回执恢复不重复验证。
+2. 将同一计划写入NAS部署用户专用目录（目录0700、计划0600，不含凭据），启动前检查本Release
+   是否已有活跃任务或终态回执。已有任务先观察，不重复启动；原发布器仍持有全局锁。
+3. NAS上的调用核心如下，plan_file/log_file是该专用目录中打开的文件句柄：
+
+```python
+job = subprocess.Popen(
+    ["sudo", "-n", "/usr/local/sbin/nas-image-release", "deploy"],
+    stdin=plan_file, stdout=log_file, stderr=subprocess.STDOUT,
+    start_new_session=True,
+)
+```
+
+该方式继续使用已有sudo窄命令、计划校验、镜像身份、基线、备份决策、顺序与smoke；
+不新增root入口、不修改权限、不将业务重算夹带进部署。保存PID只用于定位，PID存在不能证明发布成功。
+
+4. 通过短连接读取阶段日志及完整receipt；收集到实际回执后，用现有本地命令生成Manifest，
+   不再连NAS或重复验收：
+
+```sh
+python3 scripts/image_release.py record <plan.json> --receipt <actual-receipt.json> --manifest releases/<release_id>.yaml
+```
+
+record会核对回执中的Release、冻结计划及镜像标识，失败或不完整回执不会标记RELEASED。日志中没有回执
+时状态为未确认，不能用网页可打开代替完整部署检查。若任务已停止且未完成，查明失败原因后
+才使用同一计划/受保护日志恢复；不换Tag、重建镜像或删除失败状态。
+
+SSH保活只能让失联更快暴露，不能证明远端任务停止。预先保持正确工具路径及外网代理默认；
+经确认的同设备局域网备用地址须沿用原主机密钥校验。独立运行不要求重新安装NAS runner。
+服务首次健康时间、任务完成时间和回执取回时间分别取自已有日志，不能混成一次超长切换。
+
 ## 2. 准备发布
 
 准备时只冻结 image-release-v1 JSON 执行计划，部署后从 receipt 自动生成正式 Manifest；
