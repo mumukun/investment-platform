@@ -76,7 +76,7 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": true,
+        "deployment_timestamp": "2026-11-02T14:44:31.575201+00:00",
         "health": "PASS: exact identity, health and authenticated production smoke",
         "rollback_baseline": {
           "tag": "v6.3.0",
@@ -435,7 +435,7 @@
           "hasGap": false,
           "seconds": 0.06
         },
-        "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; container StartedAt not separately probed",
+        "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; actual availability in release receipt",
         "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed.",
         "release_limitations": "No historical tail backfill or new live-session effectiveness claim. Ratio 1.0 to 1.2 remains an excluded unimplemented proposal."
       }
@@ -465,7 +465,7 @@
           "api",
           "web"
         ],
-        "deployment_timestamp": true,
+        "deployment_timestamp": "2026-11-02T14:48:56.276861+00:00",
         "health": "PASS: exact identity, health and authenticated production smoke",
         "rollback_baseline": {
           "tag": "v2.3.0",
@@ -851,7 +851,7 @@
           ],
           "verified": "All research decisions, prices, scores, original clocks, funnel, coverage and exclusions match exactly; independently computed request-time age labels excluded."
         },
-        "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; container StartedAt not separately probed",
+        "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; actual availability in release receipt",
         "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed.",
         "release_limitations": "No historical tail backfill or new live-session effectiveness claim. Ratio 1.0 to 1.2 remains an excluded unimplemented proposal."
       }
