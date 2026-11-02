@@ -1,0 +1,30 @@
+{
+  "release_id": "REL-20261102-002",
+  "plan_hash": "72a968074079717cdc31474e7811762ee47daa75a7c91a6a15eeb2d928556e01",
+  "repositories": {
+    "investment-research-dashboard": {}
+  },
+  "events": [
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-11-02T07:59:40.888926+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 108.345
+    }
+  ],
+  "identity": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.2.1",
+      "commit_sha": "cf43806fe2becb4ac6aec26faf29da41831b3bbe",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f544af948beac6abca543f553d32ec781deeaaf35422d0551baa57e9bbed0e57",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4d0bd6ff33d94dab666264370f162c987024deab78ac7c898867b4f284cff3e5"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "FAILED",
+  "last_operation_at": "2026-11-02T08:01:30.135053+00:00"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "image-release-v1",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "release_id": "REL-20261102-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.5.1",
+      "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+      "expected_production": {
+        "tag": "v2.5.0",
+        "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+        "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/41407573745 ; merged-main CI PASS, PR15/local Compose/blocked-sink checks PASS"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Only per-container log delivery/rotation and docs/CI; no runtime Python, schema, data or message ledger changes. Existing data mounts retained.",
+        "evidence": "CHG-20261102-001 local blocked-sink and rotation checks; PR15/main CI; production v2.5.0 boundary retained."
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户2026-11-02明确要求：这些需求开发完成就上线吧；范围为本轮选股修复及新闻日志修复。"
+  },
+  "changes": [
+    "CHG-20261102-001"
+  ],
+  "rollback": {
+    "tag": "v2.5.0",
+    "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+    "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+    "note": "retained source tag/image; source runner has no automatic rollback mode"
+  }
+}

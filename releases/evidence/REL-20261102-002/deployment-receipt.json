@@ -1,0 +1,82 @@
+{
+  "release_id": "REL-20261102-002",
+  "plan_hash": "72a968074079717cdc31474e7811762ee47daa75a7c91a6a15eeb2d928556e01",
+  "repositories": {
+    "investment-research-dashboard": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "Restore existing read-only Provider sync into compatible current snapshots; update same-generation calculation metadata only. No DDL, foundation facts, formal ledger or destructive history rewrite. Existing previous code can read retained payloads.",
+          "evidence": "CHG-20261102-001: 44 targeted PostgreSQL/API tests, frontend/build evidence and PR62 CI; existing schema and Provider contracts unchanged."
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "api": "sha256:1a21d36253cf18204eccb1e5e0a89aa365472166773cc772d22c6374cc67a1f8",
+        "web": "sha256:73fb252fb3bbfa3cd31093042521b9f7b3f7e6333bd7ff1b3f4126a82a6625e2"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-11-02T07:59:40.888926+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 108.345
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-11-02T08:04:21.370185+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 1.588
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-11-02T08:04:33.147084+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 3.352
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-11-02T08:04:39.567892+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 3.976
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-11-02T08:04:48.219074+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 247.777
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-11-02T08:08:56.369894+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 11.603
+    }
+  ],
+  "identity": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.2.1",
+      "commit_sha": "cf43806fe2becb4ac6aec26faf29da41831b3bbe",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f544af948beac6abca543f553d32ec781deeaaf35422d0551baa57e9bbed0e57",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4d0bd6ff33d94dab666264370f162c987024deab78ac7c898867b4f284cff3e5"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-11-02T08:09:08.809784+00:00"
+}

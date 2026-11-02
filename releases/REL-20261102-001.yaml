@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261102-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261102-001"
+  ],
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.5.1",
+      "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+      "artifact_model": "SOURCE_TAG_BUILD",
+      "artifact_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+      "rollback": {
+        "tag": "v2.5.0",
+        "commit_sha": "2dce081e5d1c878cad2d2ab3c77e6887f7b4ed59",
+        "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/41407573745 ; merged-main CI PASS, PR15/local Compose/blocked-sink checks PASS"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261102-001/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "COMPLETED_WITH_INITIAL_VERIFY_FAILURE",
+    "completed_at": "2026-11-02T07:48:52.495939+00:00"
+  },
+  "verification": {
+    "status": "PASS_AFTER_RETRY",
+    "evidence": "releases/evidence/REL-20261102-001/post-deploy-verification.json",
+    "original_receipt_retained": true
+  },
+  "verification_recovery": {
+    "status": "PASS",
+    "initial_deployment_receipt_status": "FAILED",
+    "initial_stage": "verify",
+    "evidence": "releases/evidence/REL-20261102-001/post-deploy-verification.json",
+    "method": "Same installed nas_checks health/smoke with unchanged budgets, plus exact live Tag/SHA/Image ID/log-config readback. No second deploy or altered root receipt.",
+    "limitation": "Protected source-state.json retains initial FAILED; original receipt is preserved. Runtime deployment was completed; post-start verification reconciled here."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261102-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261102-001"
+  ],
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.2.1",
+      "commit_sha": "cf43806fe2becb4ac6aec26faf29da41831b3bbe",
+      "planned_version": "2.2.1",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f544af948beac6abca543f553d32ec781deeaaf35422d0551baa57e9bbed0e57",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4d0bd6ff33d94dab666264370f162c987024deab78ac7c898867b4f284cff3e5"
+      },
+      "artifact_id": {
+        "api": "sha256:1a21d36253cf18204eccb1e5e0a89aa365472166773cc772d22c6374cc67a1f8",
+        "web": "sha256:73fb252fb3bbfa3cd31093042521b9f7b3f7e6333bd7ff1b3f4126a82a6625e2"
+      },
+      "rollback": {
+        "commit_sha": "473d9d9f52cecc9eeda543ddb7409de449e254b6",
+        "version": "2.2.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:abb106f3b54cd50b4434c480f5ba919a954d7ff6bcc87e9d1f749fa2f5bbb390",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4c17e5b113cc83bd55ef4c227f5088d978f7bb2cbfa3bf8947e22fc9701819ff"
+        },
+        "image_ids": {
+          "api": "sha256:636fad188377a14d70fd4f9a2118c5b763769c9e678aca8f2761134b5e6a27c8",
+          "web": "sha256:ef03851eb2d8d06c7d84e7aa19d5f1f1f0e12c8518d30c93c5de98b15c0a1526"
+        },
+        "tag": "v2.2.0"
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "cf43806fe2becb4ac6aec26faf29da41831b3bbe",
+          "run_id": "41408051380"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f544af948beac6abca543f553d32ec781deeaaf35422d0551baa57e9bbed0e57",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4d0bd6ff33d94dab666264370f162c987024deab78ac7c898867b4f284cff3e5"
+          }
+        },
+        "candidate_run_id": "41408529746"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261102-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-02T08:09:08.809784+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "short_business_chain": {
+      "status": "PASS",
+      "evidence": "releases/evidence/REL-20261102-002/short-production-readback.json",
+      "note": "767 candidates, today trade date and full stable facts match; source_age_seconds excluded as request-time-derived label. Existing strict smoke false failure is explicitly retained in Change."
+    }
+  },
+  "initial_attempt": "releases/evidence/REL-20261102-002/initial-deployment-receipt.json"
+}
