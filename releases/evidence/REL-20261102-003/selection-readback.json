@@ -1,0 +1,35 @@
+{
+  "version": {
+    "app_version": "2.3.0",
+    "git_commit": "8717caa3a83e8e06832e5ad1a122d755b04af12a",
+    "build_time": "2026-11-02T10:52:55Z",
+    "environment": "production"
+  },
+  "wave": {
+    "trade_date": "2026-11-02",
+    "generation": "d82fa237db712ff9c8be393a76025a2f6db5245c8d8127220e6e29fb32a1cbc1",
+    "evaluated_at": "2026-11-02T19:06:12+08:00",
+    "summary": {
+      "暂缓参与": 313,
+      "禁止追高": 92,
+      "可计划参与": 21
+    },
+    "pagination": {
+      "page": 1,
+      "page_size": 100,
+      "total": 426,
+      "scope": "all"
+    },
+    "first_page_count": 100,
+    "first_page_observation_scored": 79,
+    "history_items": 100,
+    "health_checked": "2026-11-02T19:05:42+08:00",
+    "close_complete": false
+  },
+  "short": {
+    "count": 767,
+    "evaluated_at": "2026-11-02T16:35:55.758084+08:00",
+    "generation": "257f4afb95de8bd04180246a0392ba559b547ae8ba4874bf2ac83d6ffc40d40c",
+    "observation_fields": 0
+  }
+}
