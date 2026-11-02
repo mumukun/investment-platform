@@ -19,7 +19,7 @@
         "containers": [
           "marketnewsfeed-market-news-feed-1"
         ],
-        "deployment_timestamp": "2026-10-25T14:30:32.266226+00:00",
+        "deployment_timestamp": "2026-11-02T07:48:27.459923266Z",
         "health": "PASS_AFTER_POST_START_VERIFICATION_RETRY",
         "rollback_baseline": {
           "tag": "v2.5.0",
@@ -34,18 +34,14 @@
           "releases/evidence/REL-20261102-001/post-deploy-verification.json"
         ],
         "database_backup": {
-          "status": "PASS",
+          "status": "SKIPPED",
           "policy": {
-            "mode": "full",
-            "data_impact": "additive",
+            "mode": "skip",
+            "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "New durable jobs/evidence/version tables and topic idempotence write path; preserve complete News DB before switch. No delete/backfill/downgrade; old application ignores new tables.",
-            "evidence": "CHG005 offline transaction/lease/retry/dedup tests; protected NAS deployer pg_dump + archive readability."
-          },
-          "path": "/volume1/docker/.investment-platform-releases/REL-20261025-002/market_news.dump",
-          "sha256": "e8cfc4980a7e562935a09b4422c770392be094236e2055366c2e749d23dc7820",
-          "size": 72856457,
-          "readability": "PASS"
+            "reason": "Only per-container log delivery/rotation and docs/CI; no runtime Python, schema, data or message ledger changes. Existing data mounts retained.",
+            "evidence": "CHG-20261102-001 local blocked-sink and rotation checks; PR15/main CI; production v2.5.0 boundary retained."
+          }
         },
         "container_logging": {
           "driver": "json-file",
@@ -467,7 +463,7 @@
           "api",
           "web"
         ],
-        "deployment_timestamp": "2026-11-02T08:49:12.117512+00:00",
+        "deployment_timestamp": "2026-11-02T08:07:28.081810135Z",
         "health": "PASS: exact CI images, deployer health/authenticated smoke, current short business facts match provider",
         "rollback_baseline": {
           "commit_sha": "473d9d9f52cecc9eeda543ddb7409de449e254b6",
@@ -489,7 +485,8 @@
         "evidence": [
           "releases/REL-20261102-002.yaml",
           "releases/evidence/REL-20261102-002/deployment-receipt.json",
-          "releases/evidence/REL-20261102-002/short-production-readback.json"
+          "releases/evidence/REL-20261102-002/short-production-readback.json",
+          "releases/evidence/REL-20261102-002/runtime-identity.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -594,8 +591,8 @@
             "mode": "skip",
             "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "仅既有日线只读计算、兼容追加字段与前端布局；无DDL、基础/历史数据重写、采集、依赖或运行配置变化。旧v1 Consumer兼容忽略新字段，新Consumer兼容旧Provider。",
-            "evidence": "changes/CHG-20261101-004.md；计算/隔离PG/鉴权与跨仓HTTP、Consumer兼容测试、main CI和同镜像候选smoke。"
+            "reason": "Restore existing read-only Provider sync into compatible current snapshots; update same-generation calculation metadata only. No DDL, foundation facts, formal ledger or destructive history rewrite. Existing previous code can read retained payloads.",
+            "evidence": "CHG-20261102-001: 44 targeted PostgreSQL/API tests, frontend/build evidence and PR62 CI; existing schema and Provider contracts unchanged."
           }
         },
         "short_tail": {
@@ -841,7 +838,7 @@
           "points": 20,
           "seconds": 0.12
         },
-        "build_time": "2026-11-01T12:11:01Z",
+        "build_time": "2026-11-02T07:47:16Z",
         "current_short_readback": {
           "status": "PASS",
           "trade_date": "2026-11-02",
