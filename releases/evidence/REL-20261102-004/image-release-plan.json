@@ -1,0 +1,168 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261102-004",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
+        "version": "6.3.1",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
+        },
+        "image_ids": {
+          "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
+            "run_id": "41462650767"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
+            }
+          },
+          "candidate_run_id": "41463323280"
+        }
+      },
+      "tag": "v6.3.1",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.3.0",
+        "commit_sha": "a5af31980845834602eaf6ad87b95b54f4570324",
+        "image_ids": {
+          "stock-api": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9",
+          "stock-watch": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9",
+          "stock-data": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9"
+        }
+      },
+      "rollback": {
+        "tag": "v6.3.0",
+        "version": "6.3.0",
+        "commit_sha": "a5af31980845834602eaf6ad87b95b54f4570324",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:81f8a485da4c145bc22b7f9c78c86910c8b5e2eecc1bd50d640c8ced788ce70b"
+        },
+        "image_ids": {
+          "app": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "Existing tables only; freeze tail evidence and append idempotent paper trades. No migration, deletion, historical backfill or foundation rewrite; old code reads existing evidence. Dashboard UI changes only.",
+        "evidence": "CHG-20261102-003 isolated PG and scheduling32tests, 500candidate0.353s; CHG-20261102-004 frontend tests/build/browser. User deployment backup skip preference."
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
+        "version": "2.3.1",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
+        },
+        "image_ids": {
+          "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
+          "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
+            "run_id": "41462387654"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
+            }
+          },
+          "candidate_run_id": "41463227896"
+        }
+      },
+      "tag": "v2.3.1",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.3.0",
+        "commit_sha": "8717caa3a83e8e06832e5ad1a122d755b04af12a",
+        "image_ids": {
+          "api": "sha256:9bd0a3e07c30c75cdf4f20a87183996894b5193ad0d9456888590667628e62c2",
+          "web": "sha256:52091f81539489f200d4f488c9bb44ac964f18108f433d169eb4b89f0238d41b"
+        },
+        "build_time": "2026-11-02T10:52:55Z"
+      },
+      "rollback": {
+        "tag": "v2.3.0",
+        "version": "2.3.0",
+        "commit_sha": "8717caa3a83e8e06832e5ad1a122d755b04af12a",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:687800ba64657f939022ee5bd5b29b0b53593385871ff24d68db67f31034a36a",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5eaaa3997b6fcfba5d683b75c127a8be2762f2bb84286182acd0fec3dba4f219"
+        },
+        "image_ids": {
+          "api": "sha256:9bd0a3e07c30c75cdf4f20a87183996894b5193ad0d9456888590667628e62c2",
+          "web": "sha256:52091f81539489f200d4f488c9bb44ac964f18108f433d169eb4b89f0238d41b"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "Existing tables only; freeze tail evidence and append idempotent paper trades. No migration, deletion, historical backfill or foundation rewrite; old code reads existing evidence. Dashboard UI changes only.",
+        "evidence": "CHG-20261102-003 isolated PG and scheduling32tests, 500candidate0.353s; CHG-20261102-004 frontend tests/build/browser. User deployment backup skip preference."
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确授权：结合另一个对话实现的需求以及本对话需求，一起生产上线。"
+  },
+  "changes": [
+    "CHG-20261102-003",
+    "CHG-20261102-004"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

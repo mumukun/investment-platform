@@ -55,20 +55,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-11-02T11:07:42.411682+00:00",
-        "application_version": "6.3.0",
+        "verified_at": "2026-11-02T14:50:54.121875+00:00",
+        "application_version": "6.3.1",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v6.3.0",
-        "commit_sha": "a5af31980845834602eaf6ad87b95b54f4570324",
+        "tag": "v6.3.1",
+        "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:81f8a485da4c145bc22b7f9c78c86910c8b5e2eecc1bd50d640c8ced788ce70b"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
         },
         "artifact_id": {
-          "app": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9"
+          "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:81f8a485da4c145bc22b7f9c78c86910c8b5e2eecc1bd50d640c8ced788ce70b"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -76,17 +76,17 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-11-02T11:01:56.469216+00:00",
-        "health": "PASS: exact identity, health and authenticated smoke; wave page readback confirms observation ranking/history",
+        "deployment_timestamp": true,
+        "health": "PASS: exact identity, health and authenticated production smoke",
         "rollback_baseline": {
-          "tag": "v6.2.0",
-          "version": "6.2.0",
-          "commit_sha": "5bca0c630660a76c7b82dc7bb5797b691225aaa6",
+          "tag": "v6.3.0",
+          "version": "6.3.0",
+          "commit_sha": "a5af31980845834602eaf6ad87b95b54f4570324",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:95a2a48f43f977c0d779e7dd254bf09c2c62db3a7f29e119efe13c3eaff87174"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:81f8a485da4c145bc22b7f9c78c86910c8b5e2eecc1bd50d640c8ced788ce70b"
           },
           "image_ids": {
-            "app": "sha256:78c64e83a257c6dd203ba4c0b72da296d75b58dd44c37a6d2656a2aca93bc11e"
+            "app": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9"
           },
           "runtime_services": {
             "app": [
@@ -97,12 +97,11 @@
           }
         },
         "next_release_rollback_images": {
-          "app": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9"
+          "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
         },
         "evidence": [
-          "releases/REL-20261102-003.yaml",
-          "releases/evidence/REL-20261102-003/deployment-receipt.json",
-          "releases/evidence/REL-20261102-003/selection-readback.json"
+          "releases/REL-20261102-004.yaml",
+          "releases/evidence/REL-20261102-004/deployment-receipt.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -437,57 +436,57 @@
           "seconds": 0.06
         },
         "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; container StartedAt not separately probed",
-        "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed."
+        "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed.",
+        "release_limitations": "No historical tail backfill or new live-session effectiveness claim. Ratio 1.0 to 1.2 remains an excluded unimplemented proposal."
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-11-02T11:07:42.411682+00:00",
-        "application_version": "2.3.0",
+        "verified_at": "2026-11-02T14:50:54.121875+00:00",
+        "application_version": "2.3.1",
         "application_version_source": "VERSION",
-        "tag": "v2.3.0",
-        "commit_sha": "8717caa3a83e8e06832e5ad1a122d755b04af12a",
+        "tag": "v2.3.1",
+        "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:687800ba64657f939022ee5bd5b29b0b53593385871ff24d68db67f31034a36a",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5eaaa3997b6fcfba5d683b75c127a8be2762f2bb84286182acd0fec3dba4f219"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
         },
         "artifact_id": {
-          "api": "sha256:9bd0a3e07c30c75cdf4f20a87183996894b5193ad0d9456888590667628e62c2",
-          "web": "sha256:52091f81539489f200d4f488c9bb44ac964f18108f433d169eb4b89f0238d41b"
+          "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
+          "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:687800ba64657f939022ee5bd5b29b0b53593385871ff24d68db67f31034a36a",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5eaaa3997b6fcfba5d683b75c127a8be2762f2bb84286182acd0fec3dba4f219"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
           "api",
           "web"
         ],
-        "deployment_timestamp": "2026-11-02T11:04:52.528254+00:00",
-        "health": "PASS: exact identity, health and authenticated smoke; wave page readback confirms observation ranking/history",
+        "deployment_timestamp": true,
+        "health": "PASS: exact identity, health and authenticated production smoke",
         "rollback_baseline": {
-          "tag": "v2.2.1",
-          "version": "2.2.1",
-          "commit_sha": "cf43806fe2becb4ac6aec26faf29da41831b3bbe",
+          "tag": "v2.3.0",
+          "version": "2.3.0",
+          "commit_sha": "8717caa3a83e8e06832e5ad1a122d755b04af12a",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f544af948beac6abca543f553d32ec781deeaaf35422d0551baa57e9bbed0e57",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4d0bd6ff33d94dab666264370f162c987024deab78ac7c898867b4f284cff3e5"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:687800ba64657f939022ee5bd5b29b0b53593385871ff24d68db67f31034a36a",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5eaaa3997b6fcfba5d683b75c127a8be2762f2bb84286182acd0fec3dba4f219"
           },
           "image_ids": {
-            "api": "sha256:1a21d36253cf18204eccb1e5e0a89aa365472166773cc772d22c6374cc67a1f8",
-            "web": "sha256:73fb252fb3bbfa3cd31093042521b9f7b3f7e6333bd7ff1b3f4126a82a6625e2"
+            "api": "sha256:9bd0a3e07c30c75cdf4f20a87183996894b5193ad0d9456888590667628e62c2",
+            "web": "sha256:52091f81539489f200d4f488c9bb44ac964f18108f433d169eb4b89f0238d41b"
           }
         },
         "next_release_rollback_images": {
-          "api": "sha256:9bd0a3e07c30c75cdf4f20a87183996894b5193ad0d9456888590667628e62c2",
-          "web": "sha256:52091f81539489f200d4f488c9bb44ac964f18108f433d169eb4b89f0238d41b"
+          "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
+          "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
         },
         "evidence": [
-          "releases/REL-20261102-003.yaml",
-          "releases/evidence/REL-20261102-003/deployment-receipt.json",
-          "releases/evidence/REL-20261102-003/selection-readback.json"
+          "releases/REL-20261102-004.yaml",
+          "releases/evidence/REL-20261102-004/deployment-receipt.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -839,7 +838,6 @@
           "points": 20,
           "seconds": 0.12
         },
-        "build_time": "2026-11-02T10:52:55Z",
         "current_short_readback": {
           "status": "PASS",
           "trade_date": "2026-11-02",
@@ -854,9 +852,11 @@
           "verified": "All research decisions, prices, scores, original clocks, funnel, coverage and exclusions match exactly; independently computed request-time age labels excluded."
         },
         "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; container StartedAt not separately probed",
-        "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed."
+        "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed.",
+        "release_limitations": "No historical tail backfill or new live-session effectiveness claim. Ratio 1.0 to 1.2 remains an excluded unimplemented proposal."
       }
     }
   },
-  "verification_note": "Retained REL-20261029-013 baseline and receipt matched to live immutable OCI revisions and image IDs before this release."
+  "verification_note": "Retained REL-20261029-013 baseline and receipt matched to live immutable OCI revisions and image IDs before this release.",
+  "last_verified_at": "2026-11-02T14:50:54.121875+00:00"
 }
