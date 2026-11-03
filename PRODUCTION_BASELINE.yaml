@@ -55,20 +55,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-11-02T14:50:54.121875+00:00",
-        "application_version": "6.3.1",
+        "verified_at": "2026-11-03T05:24:18.221741+00:00",
+        "application_version": "6.4.0",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v6.3.1",
-        "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
+        "tag": "v6.4.0",
+        "commit_sha": "38b368e9c4df5297375652cb36b682661d463072",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
         },
         "artifact_id": {
-          "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
+          "app": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -76,17 +76,17 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-11-02T14:44:31.575201+00:00",
-        "health": "PASS: exact identity, health and authenticated production smoke",
+        "deployment_timestamp": "2026-11-03T05:08:53.086560927Z",
+        "health": "PASS: exact live images, installed health/version/smoke and affected readback",
         "rollback_baseline": {
-          "tag": "v6.3.0",
-          "version": "6.3.0",
-          "commit_sha": "a5af31980845834602eaf6ad87b95b54f4570324",
+          "tag": "v6.3.1",
+          "version": "6.3.1",
+          "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:81f8a485da4c145bc22b7f9c78c86910c8b5e2eecc1bd50d640c8ced788ce70b"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
           },
           "image_ids": {
-            "app": "sha256:8f7e52f8473a84ebc60dcbcc869dab3be47092762c43588dc50f127750b3d4d9"
+            "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
           },
           "runtime_services": {
             "app": [
@@ -97,11 +97,13 @@
           }
         },
         "next_release_rollback_images": {
-          "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
+          "app": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba"
         },
         "evidence": [
-          "releases/REL-20261102-004.yaml",
-          "releases/evidence/REL-20261102-004/deployment-receipt.json"
+          "releases/REL-20261103-001.yaml",
+          "releases/evidence/REL-20261103-001/deployment-receipt.json",
+          "releases/evidence/REL-20261103-001/runtime-identity.json",
+          "releases/evidence/REL-20261103-001/affected-readback.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -206,8 +208,8 @@
             "mode": "skip",
             "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "Append immutable assessment projections and optional observation fields in existing storage; no DDL, foundation rewrite, historic backfill or destructive ledger changes. Old code ignores added keys. Post-close new trades disabled for current rules.",
-            "evidence": "CHG-20261102-002 isolated PG immutability/recovery, contract and performance tests; no destructive migration. User deploy backup preference skip."
+            "reason": "Only read-only candle composition and additive optional confirmation metadata in existing business projections; no migrations, deletion, history rewrite, collection change or ledger change. Old code ignores optional JSON keys. User default skips deployment backups.",
+            "evidence": "CHG-20261103-001 targeted API/contract/isolated PostgreSQL and source-write-boundary checks; unchanged database schema and runtime topology."
           }
         },
         "short_tail": {
@@ -259,7 +261,7 @@
             "scan_completed": null
           }
         },
-        "data_observations_status": "Deployment identity and sector-trend chain updated; unrelated domain observations retain original dates.",
+        "data_observations_status": "Deployment identity and affected candle/short confirmation readbacks updated; other observations retain original dates.",
         "rotation": {
           "boards": 13,
           "bank_members": 30,
@@ -339,17 +341,17 @@
         "data_runtime": {
           "service": "stock-data",
           "entry": "scripts/market_data_worker.py",
-          "image_id": "sha256:904d09dcf713b7ef7fadf532731572f82fec9d9df1d8282dda489041efaa85e3",
+          "image_id": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba",
           "ownership": "independent collection catalog/schedules/foundation writes",
-          "health_evidence": "native deploy heartbeat PASS;11:25 focused60s read passed",
+          "health_evidence": "releases/evidence/REL-20261103-001/deployment-receipt.json resume_verify PASS; runtime-identity.json stock-data healthy",
           "publication_status": "PROGRESSING_WITH_LAG_NOT_FULLY_REALTIME",
           "last_confirmed_cn_source_time": "2026-10-28T11:24:39+08:00",
           "read_at_note": "Client result clock; SQL executed before receipt. Later SSH final readback timed out.",
           "last_observed_by_client_at": "2026-10-28T11:30:54+08:00",
           "status": "NATIVE_HEALTH_VERIFIED_SAMPLE_QUEUE_EMPTY_AT_READBACK",
-          "verified_at": "2026-10-28T14:29:32.223998+00:00",
-          "tag": "v5.2.1",
-          "commit_sha": "ae8e086983fe923955570d750b40efaad7d3db0f"
+          "verified_at": "2026-11-03T05:24:18.221741+00:00",
+          "tag": "v6.4.0",
+          "commit_sha": "38b368e9c4df5297375652cb36b682661d463072"
         },
         "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations",
         "foundation": {
@@ -360,7 +362,7 @@
           "sample_oldest_seconds": 2667.428,
           "status": "LATEST_FRESH_SAMPLE_CATCHUP"
         },
-        "build_time_source": "Selected runtime env names not exposed; exact tag/SHA/image verified by native receipt",
+        "build_time_source": "Exact candidate SHA/tag/image and runtime version verified; build time not independently read for this release",
         "current_readback": {
           "wave_trade_date": "2026-10-29",
           "wave_rules": "swing-rules-v5.3.1",
@@ -416,7 +418,7 @@
           "market_session_latency": "NOT_YET_VERIFIED"
         },
         "prior_build_time_before_CHG_20261028_002": "2026-10-28T14:20:51Z",
-        "build_time_status": "UNAVAILABLE",
+        "build_time_status": "NOT_REMEASURED_FOR_THIS_RELEASE",
         "confidence": "HIGH",
         "known_limitations": [
           "Today wave input validation remains partial; missing stocks isolated, no full-market completeness claim.",
@@ -435,58 +437,97 @@
           "hasGap": false,
           "seconds": 0.06
         },
-        "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; actual availability in release receipt",
-        "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed.",
-        "release_limitations": "No historical tail backfill or new live-session effectiveness claim. Ratio 1.0 to 1.2 remains an excluded unimplemented proposal."
+        "deployment_timestamp_basis": "Actual deployed container StartedAt; service verification completion retained in release receipt",
+        "selection_release_limitations": "2026-11-03 current short candidates classify existing participation evidence only; missing historical evidence is never fabricated.",
+        "release_limitations": "No source/collection/threshold/ledger changes, historical backfill or strategy-effectiveness claim.",
+        "live_kline_readback": [
+          {
+            "period": "day",
+            "trade_date": "2026-11-03",
+            "latest_bar": "2026-11-03",
+            "provisional": true,
+            "source": "stock-analyzer PostgreSQL + tencent",
+            "last_success_at": "2026-11-03T13:20:23+08:00",
+            "quality": "fresh"
+          },
+          {
+            "period": "week",
+            "trade_date": "2026-11-03",
+            "latest_bar": "2026-11-02",
+            "provisional": true,
+            "source": "stock-analyzer PostgreSQL + tencent",
+            "last_success_at": "2026-11-03T13:20:23+08:00",
+            "quality": "fresh"
+          },
+          {
+            "period": "month",
+            "trade_date": "2026-11-03",
+            "latest_bar": "2026-11-01",
+            "provisional": true,
+            "source": "stock-analyzer PostgreSQL + tencent",
+            "last_success_at": "2026-11-03T13:20:23+08:00",
+            "quality": "fresh"
+          }
+        ],
+        "short_confirmation_readback": {
+          "result_trade_date": "2026-11-03",
+          "candidates": 877,
+          "actionable": 133,
+          "confirmed_today": 116,
+          "carried": 17,
+          "unknown": 0
+        }
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-11-02T14:50:54.121875+00:00",
-        "application_version": "2.3.1",
+        "verified_at": "2026-11-03T05:24:18.221741+00:00",
+        "application_version": "2.4.0",
         "application_version_source": "VERSION",
-        "tag": "v2.3.1",
-        "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
+        "tag": "v2.4.0",
+        "commit_sha": "662593f95ed1c7faabf49418974c7130a575b350",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
         },
         "artifact_id": {
-          "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
-          "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
+          "api": "sha256:4df24d8b8a0752af1fbee60290069314ef942a035b71ec1a03354f2c1887268d",
+          "web": "sha256:0ba5a1cf2aedba50dca43dfea279e270138b80475ee67f179d7ce163be5a1187"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
           "api",
           "web"
         ],
-        "deployment_timestamp": "2026-11-02T14:48:56.276861+00:00",
-        "health": "PASS: exact identity, health and authenticated production smoke",
+        "deployment_timestamp": "2026-11-03T05:19:14.078951273Z",
+        "health": "PASS: exact live images, installed health/version/smoke and affected readback",
         "rollback_baseline": {
-          "tag": "v2.3.0",
-          "version": "2.3.0",
-          "commit_sha": "8717caa3a83e8e06832e5ad1a122d755b04af12a",
+          "tag": "v2.3.1",
+          "version": "2.3.1",
+          "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:687800ba64657f939022ee5bd5b29b0b53593385871ff24d68db67f31034a36a",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5eaaa3997b6fcfba5d683b75c127a8be2762f2bb84286182acd0fec3dba4f219"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
           },
           "image_ids": {
-            "api": "sha256:9bd0a3e07c30c75cdf4f20a87183996894b5193ad0d9456888590667628e62c2",
-            "web": "sha256:52091f81539489f200d4f488c9bb44ac964f18108f433d169eb4b89f0238d41b"
+            "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
+            "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
           }
         },
         "next_release_rollback_images": {
-          "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
-          "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
+          "api": "sha256:4df24d8b8a0752af1fbee60290069314ef942a035b71ec1a03354f2c1887268d",
+          "web": "sha256:0ba5a1cf2aedba50dca43dfea279e270138b80475ee67f179d7ce163be5a1187"
         },
         "evidence": [
-          "releases/REL-20261102-004.yaml",
-          "releases/evidence/REL-20261102-004/deployment-receipt.json"
+          "releases/REL-20261103-001.yaml",
+          "releases/evidence/REL-20261103-001/deployment-receipt.json",
+          "releases/evidence/REL-20261103-001/runtime-identity.json",
+          "releases/evidence/REL-20261103-001/affected-readback.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -589,10 +630,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "additive",
+            "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "Append immutable assessment projections and optional observation fields in existing storage; no DDL, foundation rewrite, historic backfill or destructive ledger changes. Old code ignores added keys. Post-close new trades disabled for current rules.",
-            "evidence": "CHG-20261102-002 isolated PG immutability/recovery, contract and performance tests; no destructive migration. User deploy backup preference skip."
+            "reason": "Only read-only candle composition and additive optional confirmation metadata in existing business projections; no migrations, deletion, history rewrite, collection change or ledger change. Old code ignores optional JSON keys. User default skips deployment backups.",
+            "evidence": "CHG-20261103-001 targeted API/contract/isolated PostgreSQL and source-write-boundary checks; unchanged database schema and runtime topology."
           }
         },
         "short_tail": {
@@ -605,7 +646,7 @@
             "尚无本策略真实快照"
           ]
         },
-        "data_observations_status": "Deployment identity and sector-trend chain updated; unrelated domain observations retain original dates.",
+        "data_observations_status": "Deployment identity and affected candle/short confirmation readbacks updated; other observations retain original dates.",
         "decision_context": [
           {
             "strategy_type": "intraday",
@@ -753,7 +794,7 @@
             "quality": "fresh"
           }
         },
-        "build_time_status": "VERIFIED",
+        "build_time_status": "NOT_REMEASURED_FOR_THIS_RELEASE",
         "sector_workbench": {
           "business_date": "2026-10-27",
           "snapshot_date": "2026-10-28",
@@ -803,7 +844,7 @@
           "five_minute_evidence_boundaries_preserved": true,
           "market_session_latency": "NOT_YET_VERIFIED"
         },
-        "build_time_source": "actual runtime APP_BUILD_TIME",
+        "build_time_source": "Exact candidate SHA/tag/image and runtime version verified; build time not independently read for this release",
         "current_readback": {
           "wave_trade_date": "2026-10-29",
           "wave_rules": "swing-rules-v5.3.1",
@@ -851,12 +892,49 @@
           ],
           "verified": "All research decisions, prices, scores, original clocks, funnel, coverage and exclusions match exactly; independently computed request-time age labels excluded."
         },
-        "deployment_timestamp_basis": "DEPLOYMENT_START_EVENT; actual availability in release receipt",
-        "selection_release_limitations": "Old short result remains 2026-11-02 16:35 without observation fields; new scoring applies to future computations, not retroactive history. Pre-release missing intraday archives are not reconstructed.",
-        "release_limitations": "No historical tail backfill or new live-session effectiveness claim. Ratio 1.0 to 1.2 remains an excluded unimplemented proposal."
+        "deployment_timestamp_basis": "Actual deployed container StartedAt; service verification completion retained in release receipt",
+        "selection_release_limitations": "2026-11-03 current short candidates classify existing participation evidence only; missing historical evidence is never fabricated.",
+        "release_limitations": "No source/collection/threshold/ledger changes, historical backfill or strategy-effectiveness claim.",
+        "live_kline_readback": [
+          {
+            "period": "day",
+            "trade_date": "2026-11-03",
+            "latest_bar": "2026-11-03",
+            "provisional": true,
+            "source": "stock-analyzer PostgreSQL + tencent",
+            "last_success_at": "2026-11-03T13:20:23+08:00",
+            "quality": "fresh"
+          },
+          {
+            "period": "week",
+            "trade_date": "2026-11-03",
+            "latest_bar": "2026-11-02",
+            "provisional": true,
+            "source": "stock-analyzer PostgreSQL + tencent",
+            "last_success_at": "2026-11-03T13:20:23+08:00",
+            "quality": "fresh"
+          },
+          {
+            "period": "month",
+            "trade_date": "2026-11-03",
+            "latest_bar": "2026-11-01",
+            "provisional": true,
+            "source": "stock-analyzer PostgreSQL + tencent",
+            "last_success_at": "2026-11-03T13:20:23+08:00",
+            "quality": "fresh"
+          }
+        ],
+        "short_confirmation_readback": {
+          "result_trade_date": "2026-11-03",
+          "candidates": 877,
+          "actionable": 133,
+          "confirmed_today": 116,
+          "carried": 17,
+          "unknown": 0
+        }
       }
     }
   },
-  "verification_note": "Retained REL-20261029-013 baseline and receipt matched to live immutable OCI revisions and image IDs before this release.",
-  "last_verified_at": "2026-11-02T14:50:54.121875+00:00"
+  "verification_note": "REL-20261103-001 updates only stock-analyzer and dashboard from exact frozen CI candidates. Original failed/DEPLOY_PASS receipts and supplemental runtime identity retained; unrelated observations and marketNewsFeed unchanged.",
+  "last_verified_at": "2026-11-03T05:24:18.221741+00:00"
 }
