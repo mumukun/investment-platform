@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-11-03 16:57:22.947139+08",
+  "states": [
+    {
+      "dataset": "cn-daily",
+      "scope_key": "coverage",
+      "status": "partial",
+      "checked_at": "2026-11-03 16:49:59.901706+08:00",
+      "data_date": "2026-11-03",
+      "ready_count": 1153,
+      "expected_count": 5578,
+      "issue": null
+    },
+    {
+      "dataset": "system",
+      "scope_key": "publication",
+      "status": "partial",
+      "checked_at": "2026-11-03 16:57:12.552004+08:00",
+      "data_date": null,
+      "ready_count": 11742,
+      "expected_count": null,
+      "metrics": {
+        "control_pending": 54,
+        "bulk_batches_pending": 127,
+        "inflight_kind": "kline",
+        "oldest_pending_seconds": 206.776,
+        "source_pending": {
+          "cn-kline": 181,
+          "us-quotes": 1
+        },
+        "last_bulk_seconds": 9.495,
+        "last_bulk_kind": "kline"
+      }
+    },
+    {
+      "dataset": "system",
+      "scope_key": "collector",
+      "status": "ready",
+      "checked_at": "2026-11-03 16:57:12.525506+08:00",
+      "data_date": null,
+      "ready_count": null,
+      "expected_count": null,
+      "issue": null
+    }
+  ]
+}

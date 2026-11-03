@@ -1,0 +1,27 @@
+{
+  "scope": "isolated-local-postgresql-synthetic",
+  "full_window_per_price_basis": 140,
+  "ordinary_new_session": {
+    "overlap_sessions": 5,
+    "requested_session_rows_per_price_basis": 6,
+    "adjusted_rows_written": 1,
+    "old_price_rows_rewritten": 0,
+    "same_day_repeat_source_requests": 0
+  },
+  "verification": {
+    "factor_source": "existing-sina-qfq-factor-adapter",
+    "full_check_interval_sessions": 20,
+    "incremental_cases_passed": 11,
+    "batch_cases_passed": 7,
+    "earlier_regression_cases_passed": 85,
+    "earlier_subtests_passed": 25,
+    "earlier_failure": "7 incremental cases initially failed on a reserved SQL alias; fixed and covered by the final 11-case run"
+  },
+  "limits": [
+    "First upgraded baseline requires one full window.",
+    "Missing factor evidence or historical gaps require full verification.",
+    "Tencent has a minimum 10-bar response window.",
+    "The existing Sina SDK may internally download full history before filtering; returned-row reduction is not a claim about every provider network payload.",
+    "No production deployment or end-to-end NAS speed measurement."
+  ]
+}

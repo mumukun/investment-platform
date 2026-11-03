@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 /private/tmp/CHG-20261103-003/investment-research-dashboard
+
+
+ Test Files  3 passed (3)
+      Tests  15 passed (15)
+   Start at  16:17:17
+   Duration  3.70s (transform 765ms, setup 40ms, import 2.94s, tests 2.87s, environment 1.61s)
+

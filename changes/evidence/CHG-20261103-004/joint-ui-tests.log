@@ -1,0 +1,13 @@
+
+> investment-research-dashboard@2.5.0 test
+> vitest run src/views/SectorsView.spec.ts src/views/RotationBoardView.spec.ts src/views/SwingSelectionView.spec.ts src/components/SectorFundMembers.spec.ts src/utils/rotationBoard.spec.ts src/components/ShortResearchSelection.spec.ts src/components/ShortStrengthExperiment.spec.ts
+
+
+ RUN  v4.1.11 /private/tmp/CHG-20261103-002/investment-research-dashboard
+
+
+ Test Files  7 passed (7)
+      Tests  69 passed (69)
+   Start at  23:41:56
+   Duration  16.74s (transform 3.42s, setup 124ms, import 9.92s, tests 19.11s, environment 5.75s)
+
