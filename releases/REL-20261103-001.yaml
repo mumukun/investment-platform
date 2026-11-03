@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261103-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261103-001"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.4.0",
+      "commit_sha": "38b368e9c4df5297375652cb36b682661d463072",
+      "planned_version": "6.4.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
+      },
+      "artifact_id": {
+        "app": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba"
+      },
+      "rollback": {
+        "tag": "v6.3.1",
+        "version": "6.3.1",
+        "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
+        },
+        "image_ids": {
+          "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "38b368e9c4df5297375652cb36b682661d463072",
+          "run_id": "41579984270"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
+          }
+        },
+        "candidate_run_id": "41580409515"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.4.0",
+      "commit_sha": "662593f95ed1c7faabf49418974c7130a575b350",
+      "planned_version": "2.4.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
+      },
+      "artifact_id": {
+        "api": "sha256:4df24d8b8a0752af1fbee60290069314ef942a035b71ec1a03354f2c1887268d",
+        "web": "sha256:0ba5a1cf2aedba50dca43dfea279e270138b80475ee67f179d7ce163be5a1187"
+      },
+      "rollback": {
+        "tag": "v2.3.1",
+        "version": "2.3.1",
+        "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
+        },
+        "image_ids": {
+          "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
+          "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "662593f95ed1c7faabf49418974c7130a575b350",
+          "run_id": "41578208818"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
+          }
+        },
+        "candidate_run_id": "41578489854"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261103-001/deployment-receipt.json",
+    "releases/evidence/REL-20261103-001/deployment-failed-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-03T05:21:01.571467+00:00"
+  },
+  "verification": {
+    "status": "PASS",
+    "affected_readback": "releases/evidence/REL-20261103-001/affected-readback.json",
+    "provider_readback": "releases/evidence/REL-20261103-001/provider-readback.json",
+    "runtime_identity": "releases/evidence/REL-20261103-001/runtime-identity.json",
+    "receipt_reconciliation": {
+      "generated_status": "PARTIAL",
+      "reason": "Installed deployer resume branch marks completed after resume_verify PASS but omits stock-analyzer image_ids. Original DEPLOY_PASS receipt is unchanged; all five live container image IDs/references independently match exact frozen candidates. Closeout status reconciled using those actual observations; no gate weakened or journal rewritten.",
+      "original_receipt": "releases/evidence/REL-20261103-001/deployment-receipt.json"
+    },
+    "limitations": [
+      "Readbacks sample 603766 current/historical candles and current short result; no full-market completeness or strategy effectiveness claim.",
+      "Historical missing confirmation evidence is not fabricated.",
+      "Other domain/source observations retain their own dated evidence."
+    ]
+  },
+  "timing": {
+    "formal_request_first_recorded_at": "2026-11-03T04:18:21+00:00",
+    "all_candidates_ready_at": "2026-11-03T04:51:57+00:00",
+    "nas_task_started_at": "2026-11-03T05:04:40.765051+00:00",
+    "completed_at": "2026-11-03T05:21:01.571467+00:00",
+    "request_to_deploy_complete_seconds": 3760.571467,
+    "candidate_ready_to_nas_launch_seconds": 763.765051,
+    "note": "Total approximately 62m41s before availability. Includes first PR CI assertion correction, CI/candidate runs, assistant preparation and actual deployment/recovery. Candidate-ready to launch gap is preparation, not CI. Remaining unattributed gaps are not relabeled as network/CI."
+  },
+  "recovery": {
+    "initial_result": "DEPLOY_FAILED",
+    "failed_stage": "stock-analyzer verify",
+    "reason": "Wrapper did not preserve underlying exception; exact root cause unknown. Same installed health/version/data checks subsequently passed without code/plan/image/budget changes.",
+    "resume": "Same frozen plan, preserved protected journal. Upstream resume_verify PASS without restart; downstream then deployed and verified.",
+    "failure_evidence": "releases/evidence/REL-20261103-001/deployment-failed-receipt.json"
+  }
+}
