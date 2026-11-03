@@ -1,0 +1,32 @@
+{
+  "stock-analyzer": {
+    "version": "6.5.0",
+    "evidence_column": true,
+    "configured_sources": [
+      "tencent",
+      "sina"
+    ]
+  },
+  "dashboard": {
+    "runtime": {
+      "app_version": "2.5.0",
+      "git_commit": "723f83c3c10e741a6fa6def58adc97391b5a7e5b",
+      "build_time": "2026-11-03T16:05:30Z",
+      "environment": "production",
+      "api_version": "v1"
+    },
+    "rotation_v2_count": 20,
+    "rotation_v1_count": 13,
+    "sector_contract": "investment-dashboard-sector-workbench-v1",
+    "sector_daily_status": "awaiting_close",
+    "intraday_phase": "preopen",
+    "intraday_quality": "unavailable"
+  },
+  "containers_started_at": {
+    "stock-api": "2026-11-03T16:16:01.977068416Z",
+    "stock-watch": "2026-11-03T16:16:06.557334509Z",
+    "stock-data": "2026-11-03T16:16:07.556637611Z",
+    "investment-research-dashboard-nas-api-1": "2026-11-03T16:19:34.353933164Z",
+    "investment-research-dashboard-nas-web-1": "2026-11-03T16:20:25.913652661Z"
+  }
+}

@@ -1,0 +1,5 @@
+RUN short-cycle
+.......                                                                  [100%]
+7 passed in 6.53s
+SUMMARY {"short-cycle": {"exit_code": 0, "seconds": 6.95}}
+Isolated full-test container removed.

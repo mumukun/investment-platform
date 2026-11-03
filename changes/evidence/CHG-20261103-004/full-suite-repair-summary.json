@@ -1,0 +1,14 @@
+{
+  "config": {
+    "exit_code": 0,
+    "seconds": 0.05
+  },
+  "full-pytest": {
+    "exit_code": 0,
+    "seconds": 33.91
+  },
+  "compileall": {
+    "exit_code": 0,
+    "seconds": 0.11
+  }
+}

@@ -1,0 +1,19 @@
+...................2026-11-03 23:43:55,688 WARNING Bulk publication deferred dataset=cn-daily kind=raw-daily: QueryCanceled
+..........................2026-11-03 23:43:57,207 INFO {"event": "api_projection_build", "name": "sector-workbench", "seconds": 0.0096}
+2026-11-03 23:43:57,227 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 8.41, "cache_age_seconds": 0.02}
+2026-11-03 23:43:57,435 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 9.14, "cache_age_seconds": 0.23}
+2026-11-03 23:43:57,613 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 8.87, "cache_age_seconds": 0.41}
+2026-11-03 23:43:57,785 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 8.63, "cache_age_seconds": 0.58}
+6000 stocks / 193 industries / 3 real HTTP reads: 0.519s, SELECTs 5/read
+2026-11-03 23:43:58,770 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 12.0, "cache_age_seconds": 1.56}
+Real Provider HTTP -> Consumer contract: PASS
+2026-11-03 23:43:59,172 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 9.57, "cache_age_seconds": 1.96}
+2026-11-03 23:43:59,361 INFO {"event": "api_projection_read", "name": "sector-workbench", "db_read_ms": 9.72, "cache_age_seconds": 2.15}
+................20 indices / 2400 daily points / 1400 constituents: 3 reads 0.251s; 3 SELECTs/read
+Real Provider HTTP -> Consumer validation/sync -> separate PostgreSQL -> list/detail: PASS; old 13-index archive unchanged
+................................2026-11-03 23:44:16,458 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail "HTTP/1.1 401 Unauthorized"
+2026-11-03 23:44:16,460 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail?contract_version=investment-dashboard-short-research-v1&date_to=2026-10-23 "HTTP/1.1 200 OK"
+2026-11-03 23:44:16,461 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail?contract_version=investment-dashboard-short-tail-selection-v1 "HTTP/1.1 400 Bad Request"
+2026-11-03 23:44:16,462 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail?contract_version=investment-dashboard-short-tail-selection-v2 "HTTP/1.1 400 Bad Request"
+.......
+100 passed in 31.00s

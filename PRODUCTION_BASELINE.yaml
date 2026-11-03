@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-11-02T11:07:42.411682+00:00",
+  "verified_at": "2026-11-03T16:20:35.555796+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -55,20 +55,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-11-03T05:24:18.221741+00:00",
-        "application_version": "6.4.0",
+        "verified_at": "2026-11-03T16:20:35.555796+00:00",
+        "application_version": "6.5.0",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v6.4.0",
-        "commit_sha": "38b368e9c4df5297375652cb36b682661d463072",
+        "tag": "v6.5.0",
+        "commit_sha": "c93a9060cd26e1725816ee2ff83f4863e0392f1d",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5011b7d1df09a6aec0ef0e55aafe38ef233d37b768029e8ed9814b0b65f8b828"
         },
         "artifact_id": {
-          "app": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba"
+          "app": "sha256:ffabfd7d6b4d179bd1600f54e955dd7d22d7433c15a24b4d918151af5674cdfe"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5011b7d1df09a6aec0ef0e55aafe38ef233d37b768029e8ed9814b0b65f8b828"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -76,17 +76,17 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-11-03T05:08:53.086560927Z",
-        "health": "PASS: exact live images, installed health/version/smoke and affected readback",
+        "deployment_timestamp": "2026-11-03T16:16:01.977068416Z",
+        "health": "PASS: exact running images/version and existing health/smoke; affected contracts read-only verified",
         "rollback_baseline": {
-          "tag": "v6.3.1",
-          "version": "6.3.1",
-          "commit_sha": "86fae14dc054ccefe9f28362fedd4101d48032aa",
+          "tag": "v6.4.0",
+          "version": "6.4.0",
+          "commit_sha": "38b368e9c4df5297375652cb36b682661d463072",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:eed521efa101e1b89c4b01a2e630f339d2b8f96c945e8e745286a098238e11a6"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
           },
           "image_ids": {
-            "app": "sha256:2ff2a101daf67be8dc3983745c04f423d93ab98980b20938d559e6ebd7ed18a7"
+            "app": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba"
           },
           "runtime_services": {
             "app": [
@@ -353,7 +353,7 @@
           "tag": "v6.4.0",
           "commit_sha": "38b368e9c4df5297375652cb36b682661d463072"
         },
-        "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations",
+        "release_limitations_evidence": "releases/REL-20261103-002.yaml",
         "foundation": {
           "read_at": "2026-10-28T14:59:09.749744+08:00",
           "fresh_coverage_latest": 1.0,
@@ -421,9 +421,9 @@
         "build_time_status": "NOT_REMEASURED_FOR_THIS_RELEASE",
         "confidence": "HIGH",
         "known_limitations": [
-          "Today wave input validation remains partial; missing stocks isolated, no full-market completeness claim.",
-          "Short final checkpoints missed earlier today are not synthesized; latest old preview is explicitly stale.",
-          "Real-session strategy latency remains unverified; manual minute cleanup is complete. Other data gaps and old short preview remain separately explicit."
+          "首次复权版本基线仍需完整窗口，后续证据有效时增量；生产全市场追平耗时未测量。",
+          "新增3个中证指数完整成分未接入；实验缺少已核验行业或覆盖时不出分。",
+          "原收盘模拟账本和算法保留，不声称实验改善胜率；未回填历史实验分数。"
         ],
         "sector_trend": {
           "status": "PASS",
@@ -437,9 +437,9 @@
           "hasGap": false,
           "seconds": 0.06
         },
-        "deployment_timestamp_basis": "Actual deployed container StartedAt; service verification completion retained in release receipt",
+        "deployment_timestamp_basis": "Actual API container StartedAt; all component starts in affected-readback.json",
         "selection_release_limitations": "2026-11-03 current short candidates classify existing participation evidence only; missing historical evidence is never fabricated.",
-        "release_limitations": "No source/collection/threshold/ledger changes, historical backfill or strategy-effectiveness claim.",
+        "release_limitations": "Only this release boundary verified; earlier domain observations retain their original dated evidence.",
         "live_kline_readback": [
           {
             "period": "day",
@@ -476,47 +476,49 @@
           "confirmed_today": 116,
           "carried": 17,
           "unknown": 0
-        }
+        },
+        "latest_release": "REL-20261103-002",
+        "verification_evidence": "releases/evidence/REL-20261103-002/deployment-receipt.json"
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-11-03T05:24:18.221741+00:00",
-        "application_version": "2.4.0",
+        "verified_at": "2026-11-03T16:20:35.555796+00:00",
+        "application_version": "2.5.0",
         "application_version_source": "VERSION",
-        "tag": "v2.4.0",
-        "commit_sha": "662593f95ed1c7faabf49418974c7130a575b350",
+        "tag": "v2.5.0",
+        "commit_sha": "723f83c3c10e741a6fa6def58adc97391b5a7e5b",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5a1b4f946c884d6971bea4021d48be2a785d368d4c72dee8cdd732dcb13975f7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f8bf9667e2268351659606d04eab1dfd55e5193c21c05111e6f63082147c5c29"
         },
         "artifact_id": {
-          "api": "sha256:4df24d8b8a0752af1fbee60290069314ef942a035b71ec1a03354f2c1887268d",
-          "web": "sha256:0ba5a1cf2aedba50dca43dfea279e270138b80475ee67f179d7ce163be5a1187"
+          "api": "sha256:d1f6560c802a8233e180d686d9fb2955fc6bb20d3ede9e7e9f5af228ef412251",
+          "web": "sha256:2b90946cae1d7eca2c068fdcc8fcd13fd6bae99f0efb7decba78720d386ac4bb"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5a1b4f946c884d6971bea4021d48be2a785d368d4c72dee8cdd732dcb13975f7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f8bf9667e2268351659606d04eab1dfd55e5193c21c05111e6f63082147c5c29"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
           "api",
           "web"
         ],
-        "deployment_timestamp": "2026-11-03T05:19:14.078951273Z",
-        "health": "PASS: exact live images, installed health/version/smoke and affected readback",
+        "deployment_timestamp": "2026-11-03T16:19:34.353933164Z",
+        "health": "PASS: exact running images/version and existing health/smoke; affected contracts read-only verified",
         "rollback_baseline": {
-          "tag": "v2.3.1",
-          "version": "2.3.1",
-          "commit_sha": "69c00c99f9f4aaf076364a6052fc7a1f85e163c3",
+          "tag": "v2.4.0",
+          "version": "2.4.0",
+          "commit_sha": "662593f95ed1c7faabf49418974c7130a575b350",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:f87da2d5dff72f1f524a6e59eb59e06fc04e3398f325fd1a0ccc181970bad187",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:17865d9656cfbb953e998bbd95efbaae016e18dace507d8306fde61f4d39bd6a"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
           },
           "image_ids": {
-            "api": "sha256:60194bb1563ea2bba6a94532a800efdbf1f4b69e801a9d67efbcd8859d69e3f4",
-            "web": "sha256:4d4a4d24d3c8456d1f9cd33f46182f6477e5e3af83786f4f35a2bed4724161c1"
+            "api": "sha256:4df24d8b8a0752af1fbee60290069314ef942a035b71ec1a03354f2c1887268d",
+            "web": "sha256:0ba5a1cf2aedba50dca43dfea279e270138b80475ee67f179d7ce163be5a1187"
           }
         },
         "next_release_rollback_images": {
@@ -794,7 +796,7 @@
             "quality": "fresh"
           }
         },
-        "build_time_status": "NOT_REMEASURED_FOR_THIS_RELEASE",
+        "build_time_status": "RUNTIME_VERIFIED",
         "sector_workbench": {
           "business_date": "2026-10-27",
           "snapshot_date": "2026-10-28",
@@ -806,7 +808,7 @@
           "actual_trade_date": "2026-10-28",
           "read_seconds": 23.991
         },
-        "release_limitations_evidence": "releases/REL-20261028-004.yaml verification.known_limitations",
+        "release_limitations_evidence": "releases/REL-20261103-002.yaml",
         "selection_reliability": {
           "status": "DEPLOYED_REAL_SESSION_SLO_PENDING",
           "changes": [
@@ -859,11 +861,11 @@
         },
         "confidence": "HIGH",
         "known_limitations": [
-          "Today wave input validation remains partial; missing stocks isolated, no full-market completeness claim.",
-          "Short final checkpoints missed earlier today are not synthesized; latest old preview is explicitly stale.",
-          "Real-session strategy latency remains unverified; manual minute cleanup is complete. Other data gaps and old short preview remain separately explicit."
+          "首次复权版本基线仍需完整窗口，后续证据有效时增量；生产全市场追平耗时未测量。",
+          "新增3个中证指数完整成分未接入；实验缺少已核验行业或覆盖时不出分。",
+          "原收盘模拟账本和算法保留，不声称实验改善胜率；未回填历史实验分数。"
         ],
-        "app_url": "http://s.freemumu.top:9360",
+        "app_url": "http://192.168.1.70:9360",
         "sector_trend": {
           "status": "PASS",
           "runtime": {
@@ -892,9 +894,9 @@
           ],
           "verified": "All research decisions, prices, scores, original clocks, funnel, coverage and exclusions match exactly; independently computed request-time age labels excluded."
         },
-        "deployment_timestamp_basis": "Actual deployed container StartedAt; service verification completion retained in release receipt",
+        "deployment_timestamp_basis": "Actual API container StartedAt; all component starts in affected-readback.json",
         "selection_release_limitations": "2026-11-03 current short candidates classify existing participation evidence only; missing historical evidence is never fabricated.",
-        "release_limitations": "No source/collection/threshold/ledger changes, historical backfill or strategy-effectiveness claim.",
+        "release_limitations": "Only this release boundary verified; earlier domain observations retain their original dated evidence.",
         "live_kline_readback": [
           {
             "period": "day",
@@ -931,10 +933,13 @@
           "confirmed_today": 116,
           "carried": 17,
           "unknown": 0
-        }
+        },
+        "latest_release": "REL-20261103-002",
+        "verification_evidence": "releases/evidence/REL-20261103-002/deployment-receipt.json",
+        "build_time": "2026-11-03T16:05:30Z"
       }
     }
   },
-  "verification_note": "REL-20261103-001 updates only stock-analyzer and dashboard from exact frozen CI candidates. Original failed/DEPLOY_PASS receipts and supplemental runtime identity retained; unrelated observations and marketNewsFeed unchanged.",
-  "last_verified_at": "2026-11-03T05:24:18.221741+00:00"
+  "verification_note": "REL-20261103-002 updates stock-analyzer6.5.0 and dashboard2.5.0 from frozen main CI candidates. Existing other-domain dated observations retained; marketNewsFeed unchanged.",
+  "last_verified_at": "2026-11-03T16:20:35.555796+00:00"
 }

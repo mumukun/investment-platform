@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261103-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261103-002",
+    "CHG-20261103-003",
+    "CHG-20261103-004"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.5.0",
+      "commit_sha": "c93a9060cd26e1725816ee2ff83f4863e0392f1d",
+      "planned_version": "6.5.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:5011b7d1df09a6aec0ef0e55aafe38ef233d37b768029e8ed9814b0b65f8b828"
+      },
+      "artifact_id": {
+        "app": "sha256:ffabfd7d6b4d179bd1600f54e955dd7d22d7433c15a24b4d918151af5674cdfe"
+      },
+      "rollback": {
+        "tag": "v6.4.0",
+        "version": "6.4.0",
+        "commit_sha": "38b368e9c4df5297375652cb36b682661d463072",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c5de914e0e666fcb53f3c9197092c6ef0b9ae519e17fa86eaafdaa14c2c543b9"
+        },
+        "image_ids": {
+          "app": "sha256:5a8c32622318bda9d5edb9524b0f4f247b0e2866ea1191207ae078cc4f4699ba"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "c93a9060cd26e1725816ee2ff83f4863e0392f1d",
+          "run_id": "41670275850"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:5011b7d1df09a6aec0ef0e55aafe38ef233d37b768029e8ed9814b0b65f8b828"
+          }
+        },
+        "candidate_run_id": "41671156428"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.5.0",
+      "commit_sha": "723f83c3c10e741a6fa6def58adc97391b5a7e5b",
+      "planned_version": "2.5.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5a1b4f946c884d6971bea4021d48be2a785d368d4c72dee8cdd732dcb13975f7",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f8bf9667e2268351659606d04eab1dfd55e5193c21c05111e6f63082147c5c29"
+      },
+      "artifact_id": {
+        "api": "sha256:d1f6560c802a8233e180d686d9fb2955fc6bb20d3ede9e7e9f5af228ef412251",
+        "web": "sha256:2b90946cae1d7eca2c068fdcc8fcd13fd6bae99f0efb7decba78720d386ac4bb"
+      },
+      "rollback": {
+        "tag": "v2.4.0",
+        "version": "2.4.0",
+        "commit_sha": "662593f95ed1c7faabf49418974c7130a575b350",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:c8ef2c5a8b6797f3dc0b7d9f53db8481e189192b344000dc67fb0cbf548eff31",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:16c97befa2a59baf5d15008f3b40d31e6db3fe5f74aeaaefb942280024d5ce3f"
+        },
+        "image_ids": {
+          "api": "sha256:4df24d8b8a0752af1fbee60290069314ef942a035b71ec1a03354f2c1887268d",
+          "web": "sha256:0ba5a1cf2aedba50dca43dfea279e270138b80475ee67f179d7ce163be5a1187"
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "723f83c3c10e741a6fa6def58adc97391b5a7e5b",
+          "run_id": "41669717081"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5a1b4f946c884d6971bea4021d48be2a785d368d4c72dee8cdd732dcb13975f7",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f8bf9667e2268351659606d04eab1dfd55e5193c21c05111e6f63082147c5c29"
+          }
+        },
+        "candidate_run_id": "41670549629"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261103-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-03T16:20:35.555796+00:00"
+  },
+  "verification": {
+    "affected_readback": "releases/evidence/REL-20261103-002/affected-readback.json",
+    "development_evidence": "changes/CHG-20261103-004.md (full and joint tests, integration/performance limits); CHG-20261103-002.md; CHG-20261103-003.md",
+    "known_limitations": [
+      "首次基线完整抓取，之后按证据增量；未测生产全市场追平时间。",
+      "3条中证完整成分缺失及未核验行业评分明确保留。",
+      "未回填实验历史、不声称胜率提高。"
+    ],
+    "timing": {
+      "handling_start_observed": "2026-11-03T15:08:54Z",
+      "first_service_availability": "2026-11-03T16:20:35.555796+00:00",
+      "handling_seconds_to_available": 4301.6,
+      "nas_task_seconds": 468.0,
+      "note": "Includes full testing, environment/fixture work, bug repair, added joint scope, assistant preparation, commits and CI/candidate waits. Scope clarification waiting and gaps were not separately clocked; do not attribute all unmeasured time to CI/network. Governance closeout follows availability."
+    },
+    "retained_worktrees": "002/003/004 branches and worktrees retained for current delivery evidence/previews; no cleanup or unrelated workspace changes."
+  }
+}

@@ -1,0 +1,183 @@
+............................................................. [  4%]
+........................................................................ [ 10%]
+................................................................... [ 15%]
+..s..................................................................... [ 20%]
+................................................................ [ 25%]
+............................................................ [ 29%]
+..........F.....F....................................................... [ 35%]
+........................................................................ [ 40%]
+........................................................................ [ 46%]
+.....................................................................F.. [ 51%]
+F..F..F..F..F..F..F..F.................................................. [ 57%]
+...................................................... [ 61%]
+..................................................................... [ 66%]
+........................................................................ [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 82%]
+........................................................................ [ 88%]
+......................................................... [ 92%]
+..................................................... [ 96%]
+............................................                             [100%]
+=================================== FAILURES ===================================
+______ test_latest_tech_facts_and_sample_revisions_match_original_queries ______
+tests/test_pg_application_queries.py:118: in test_latest_tech_facts_and_sample_revisions_match_original_queries
+    samples = conn.execute(calls[3][0], (identities, day, day)).fetchall()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/psycopg/connection.py:300: in execute
+    raise ex.with_traceback(None)
+E   psycopg.ProgrammingError: the query has 4 placeholders but 3 parameters were passed
+_______ test_same_time_baseline_uses_bounded_existing_index_seeks[True] ________
+tests/test_pg_application_queries.py:224: in test_same_time_baseline_uses_bounded_existing_index_seeks
+    result = swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:89: in amount_histories
+    with local_db.connect(database,schema) as conn,conn.cursor() as cursor:
+                                                   ^^^^^^^^^^^
+E   AttributeError: 'Capture' object has no attribute 'cursor'
+____ test_batched_swing_history_matches_per_stock_reader[1-10:30-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+____ test_batched_swing_history_matches_per_stock_reader[1-10:35-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+____ test_batched_swing_history_matches_per_stock_reader[1-10:40-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+____ test_batched_swing_history_matches_per_stock_reader[2-10:30-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+____ test_batched_swing_history_matches_per_stock_reader[2-10:35-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+____ test_batched_swing_history_matches_per_stock_reader[2-10:40-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+___ test_batched_swing_history_matches_per_stock_reader[20-10:30-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+___ test_batched_swing_history_matches_per_stock_reader[20-10:35-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+___ test_batched_swing_history_matches_per_stock_reader[20-10:40-sessions2] ____
+tests/test_short_history_postgres.py:90: in test_batched_swing_history_matches_per_stock_reader
+    assert swing_store.load_same_time_amount_histories(
+stock_analyzer/swing_store.py:689: in load_same_time_amount_histories
+    return amount_histories(database_url, codes,
+stock_analyzer/minute_history_projection.py:27: in amount_histories
+    before = revisions(codes)
+             ^^^^^^^^^^^^^^^^
+stock_analyzer/minute_history_projection.py:21: in revisions
+    with local_db.readonly_connect(database, schema) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_analyzer/local_db.py:590: in readonly_connect
+    raise ValueError("STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL")
+E   ValueError: STOCK_ANALYZER_DATABASE_URL must be a PostgreSQL connection URL
+=============================== warnings summary ===============================
+../../../../Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_limit_up_quotes.py:267: explicit isolated benchmark only
+FAILED tests/test_pg_application_queries.py::test_latest_tech_facts_and_sample_revisions_match_original_queries
+FAILED tests/test_pg_application_queries.py::test_same_time_baseline_uses_bounded_existing_index_seeks[True]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[1-10:30-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[1-10:35-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[1-10:40-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[2-10:30-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[2-10:35-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[2-10:40-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[20-10:30-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[20-10:35-sessions2]
+FAILED tests/test_short_history_postgres.py::test_batched_swing_history_matches_per_stock_reader[20-10:40-sessions2]
+11 failed, 1309 passed, 1 skipped, 1 warning, 91 subtests passed in 217.72s (0:03:37)
