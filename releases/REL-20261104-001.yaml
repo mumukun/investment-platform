@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261104-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261104-001"
+  ],
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.5.1",
+      "commit_sha": "7c793c3b5531e94f43d54dfcc094d241c7374a4e",
+      "planned_version": "2.5.1",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d3acc7ef7dc6dd37f28345ae8c429d6886f3fc1f83930006ad57f1f7524db25",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f6d67ea97b26b9db47a24468d17dc9b06ae340a98b79b0148ba168b767bea013"
+      },
+      "artifact_id": {
+        "api": "sha256:db7eb9a9ae7845ab8f075151dec1a192614eacd371c7d080497d4e082f5a220f",
+        "web": "sha256:0f05150436d53a33712a18395785dd1dfa4b2b5e38f6dd381e18bea792ced845"
+      },
+      "rollback": {
+        "tag": "v2.5.0",
+        "version": "2.5.0",
+        "commit_sha": "723f83c3c10e741a6fa6def58adc97391b5a7e5b",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:5a1b4f946c884d6971bea4021d48be2a785d368d4c72dee8cdd732dcb13975f7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f8bf9667e2268351659606d04eab1dfd55e5193c21c05111e6f63082147c5c29"
+        },
+        "image_ids": {
+          "api": "sha256:d1f6560c802a8233e180d686d9fb2955fc6bb20d3ede9e7e9f5af228ef412251",
+          "web": "sha256:2b90946cae1d7eca2c068fdcc8fcd13fd6bae99f0efb7decba78720d386ac4bb"
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "7c793c3b5531e94f43d54dfcc094d241c7374a4e",
+          "run_id": "41683938526"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8d3acc7ef7dc6dd37f28345ae8c429d6886f3fc1f83930006ad57f1f7524db25",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:f6d67ea97b26b9db47a24468d17dc9b06ae340a98b79b0148ba168b767bea013"
+          }
+        },
+        "candidate_run_id": "41684723777"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261104-001/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-03T17:38:56.439618+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS"
+  }
+}
