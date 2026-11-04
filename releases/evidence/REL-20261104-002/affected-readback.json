@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "production consumer-client to provider authenticated read-only evaluation",
+  "results": [
+    {
+      "code": "002821",
+      "contract": "investment-dashboard-stock-evaluation-v1",
+      "seconds": 20.281,
+      "short": {
+        "quality": "stale",
+        "decision": "暂缓参与",
+        "paths": 1,
+        "data_time": "2026-11-04T16:14:15+08:00"
+      },
+      "swing": {
+        "quality": "partial",
+        "decision": "不参与",
+        "paths": 3,
+        "data_time": "2026-11-04T16:14:15+08:00"
+      }
+    },
+    {
+      "code": "688018",
+      "contract": "investment-dashboard-stock-evaluation-v1",
+      "seconds": 6.764,
+      "short": {
+        "quality": "stale",
+        "decision": "暂缓参与",
+        "paths": 1,
+        "data_time": "2026-11-04T16:14:45+08:00"
+      },
+      "swing": {
+        "quality": "partial",
+        "decision": "暂缓参与",
+        "paths": 3,
+        "data_time": "2026-11-04T16:14:45+08:00"
+      }
+    }
+  ]
+}
