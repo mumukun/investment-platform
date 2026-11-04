@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "dry_run": {
+    "status": "dry_run",
+    "changed": 1
+  },
+  "repair": {
+    "status": "rebuilt",
+    "changed": 1,
+    "close_confirmed": 32,
+    "pending_actionable": 0
+  },
+  "trade_date": "2026-11-04",
+  "generation": "9d436c05dd0397ed9e1f39b0b6e8905c9ad94823ef17b5531782c2281712500e",
+  "evaluated_at": "2026-11-04T23:39:02+08:00",
+  "total": 632,
+  "decisions": {
+    "可计划参与": 32,
+    "暂缓参与": 448,
+    "禁止追高": 86,
+    "不参与": 66
+  },
+  "close": {
+    "confirmed": 32,
+    "not_selected": 599,
+    "pending": 1
+  },
+  "pending_actionable": 0,
+  "ledger_state_foundation_counts": {
+    "swing_simulated_trade": 368,
+    "swing_state_event": 111790,
+    "swing_setup_snapshot": 76487,
+    "market_quote_latest": 6844,
+    "swing_daily_bar": 1052396
+  },
+  "examples": []
+}

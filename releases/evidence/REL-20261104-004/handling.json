@@ -1,0 +1,5 @@
+{
+  "request_started_at": null,
+  "first_persisted_fix_work_at": "2026-11-04T14:54:26.744975+00:00",
+  "request_timing_note": "Exact user request timestamp unavailable; this is the first persisted fix implementation file timestamp, not the full request elapsed time."
+}

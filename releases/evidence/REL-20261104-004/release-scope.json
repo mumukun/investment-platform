@@ -1,0 +1,30 @@
+{
+  "scope": [
+    "pending close display preserves actual intraday decisions, scores and clocks",
+    "candidate display metrics",
+    "path participation explanations"
+  ],
+  "repositories": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "excluded": [
+    "marketNewsFeed",
+    "unrelated original worktrees and manual drafts"
+  ],
+  "formal_authorization": "我现在使用家庭的网络，你修复吧，修复验证没问题就和其他的未上线需求一起发布上线",
+  "target": "registered NAS LAN with existing strict host keys",
+  "known_limitations": [
+    "Missing close daily data remains explicitly pending; this fix does not manufacture foundation data.",
+    "Existing immutable assessments retain their original fields; richer metrics/explanations arrive with normal new evaluations."
+  ],
+  "local_tests": {
+    "postgres_continuity_contract": 17,
+    "ui": 58,
+    "backend_scope": 1,
+    "type_build": "PASS",
+    "python_compile": "PASS",
+    "backend_lint_format": "PASS"
+  },
+  "production_readback": "After deployment, dry-run and repair only current pending projection; verify unchanged ledgers, state and foundation row counts, preserve completed rows and source clocks, confirm consumer generation and filters."
+}
