@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "authenticated provider to consumer current projection and actionable/pending filters",
+  "generation": "9d436c05dd0397ed9e1f39b0b6e8905c9ad94823ef17b5531782c2281712500e",
+  "trade_date": "2026-11-04",
+  "total": 632,
+  "decisions": {
+    "可计划参与": 32,
+    "暂缓参与": 448,
+    "禁止追高": 86,
+    "不参与": 66
+  },
+  "pending_actionable": 0,
+  "close_confirmed": 32,
+  "display_metrics_items": 565,
+  "explained_paths": 776
+}
