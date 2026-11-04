@@ -1,0 +1,70 @@
+[
+  {
+    "container": "stock-api",
+    "dry_run": true,
+    "result": {
+      "metadata": 7,
+      "simulation": {
+        "status": "dry_run",
+        "as_of": "2026-11-05",
+        "samples": 259
+      }
+    }
+  },
+  {
+    "container": "stock-api",
+    "dry_run": false,
+    "result": {
+      "metadata": 7,
+      "simulation": {
+        "status": "refreshed",
+        "as_of": "2026-11-05",
+        "samples": 259
+      }
+    }
+  },
+  {
+    "container": "investment-research-dashboard-nas-api-1",
+    "dry_run": true,
+    "result": {
+      "status": "dry_run",
+      "snapshots": {
+        "swing": 8,
+        "tail": 8
+      }
+    }
+  },
+  {
+    "container": "investment-research-dashboard-nas-api-1",
+    "dry_run": false,
+    "result": {
+      "status": "prepared",
+      "snapshots": {
+        "swing": 8,
+        "tail": 8
+      }
+    }
+  },
+  {
+    "container": "stock-api",
+    "historical": {
+      "historical": [
+        {
+          "status": "refreshed",
+          "as_of": "2026-11-02",
+          "samples": 85
+        },
+        {
+          "status": "refreshed",
+          "as_of": "2026-11-03",
+          "samples": 248
+        },
+        {
+          "status": "refreshed",
+          "as_of": "2026-11-04",
+          "samples": 259
+        }
+      ]
+    }
+  }
+]

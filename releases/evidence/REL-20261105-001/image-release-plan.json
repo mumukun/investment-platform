@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261105-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "9ae25ae6fe6740ac6672fc3cf73c81de092d97f0",
+        "version": "6.8.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:569c24b757d8de29aff820d9ee707cee6db9c84fc65ad3321d3ac4fbd31e9aa9"
+        },
+        "image_ids": {
+          "app": "sha256:73fb02b664ac0832e6b1621b5164ab2e370cc9346e9900a2e7e5a65e6fd4f442"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "9ae25ae6fe6740ac6672fc3cf73c81de092d97f0",
+            "run_id": "41933463405"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:569c24b757d8de29aff820d9ee707cee6db9c84fc65ad3321d3ac4fbd31e9aa9"
+            }
+          },
+          "candidate_run_id": "41934151952"
+        }
+      },
+      "tag": "v6.8.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.7.0",
+        "commit_sha": "96280ca2ac7c204fc56e27a3884853d940b7108f",
+        "image_ids": {
+          "stock-api": "sha256:67d8051884638aaaac3ac180707ee3a396fc3f2dacba4e1beab7fdbcb4aa544f",
+          "stock-watch": "sha256:67d8051884638aaaac3ac180707ee3a396fc3f2dacba4e1beab7fdbcb4aa544f",
+          "stock-data": "sha256:67d8051884638aaaac3ac180707ee3a396fc3f2dacba4e1beab7fdbcb4aa544f"
+        }
+      },
+      "rollback": {
+        "tag": "v6.7.0",
+        "version": "6.7.0",
+        "commit_sha": "96280ca2ac7c204fc56e27a3884853d940b7108f",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:8cb067a40d0fd9ba3212df5009cfff6526fbff93604f53ab61fb35bc3c4a1b8b"
+        },
+        "image_ids": {
+          "app": "sha256:67d8051884638aaaac3ac180707ee3a396fc3f2dacba4e1beab7fdbcb4aa544f"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "只新增兼容只读查询契约和业务派生投影，无DDL或基础事实/交易账本改写；旧API与证据保留，按用户部署偏好skip。",
+        "evidence": "CHG-20261105-001：52项Provider、45项Consumer实际PG、384项UI及构建/格式；632股列表481400字节/0.104秒。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "9798221d295264aaf68dd1ee374ee952b466da13",
+        "version": "2.8.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:511ea7cb0ccb47564a67001697a0cf9d3a6ab35aafe42f5799af8b350e247a13",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8e34900c506aafaa057fcdddde5b6d2d019154722f2ffd7147aae1296b468eb3"
+        },
+        "image_ids": {
+          "api": "sha256:973cfec5edfae6b5f6a12d029c7dba0e6dda4311f0a87aca472f85d78be7b5d7",
+          "web": "sha256:3df994b47f39a6737bfcd08ee034883b329f395a678af1af68e60de189355390"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "9798221d295264aaf68dd1ee374ee952b466da13",
+            "run_id": "41931374553"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:511ea7cb0ccb47564a67001697a0cf9d3a6ab35aafe42f5799af8b350e247a13",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8e34900c506aafaa057fcdddde5b6d2d019154722f2ffd7147aae1296b468eb3"
+            }
+          },
+          "candidate_run_id": "41932064243"
+        }
+      },
+      "tag": "v2.8.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.7.0",
+        "commit_sha": "77ff6e7e651cdd3b9efa5c3777cc40538d7e8741",
+        "image_ids": {
+          "api": "sha256:772af33c64e89de5e5a3c9fd9d8aaa0b2fd1db74e748ca8976c6a7ce3f5d9f11",
+          "web": "sha256:3ea4231fdbe42cbdd365d6b594de45ac08c1f441264e219e8f055c631ab526d2"
+        }
+      },
+      "rollback": {
+        "tag": "v2.7.0",
+        "version": "2.7.0",
+        "commit_sha": "77ff6e7e651cdd3b9efa5c3777cc40538d7e8741",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8ba6189f9b4a23373ff6124c09c185331e32363ee30aa44f60b019083f88076c",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:103ad31fde6fe1c3ca24c57155e82b03638647447c6f9381b7d3d491525048f4"
+        },
+        "image_ids": {
+          "api": "sha256:772af33c64e89de5e5a3c9fd9d8aaa0b2fd1db74e748ca8976c6a7ce3f5d9f11",
+          "web": "sha256:3ea4231fdbe42cbdd365d6b594de45ac08c1f441264e219e8f055c631ab526d2"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "只新增兼容只读查询契约和业务派生投影，无DDL或基础事实/交易账本改写；旧API与证据保留，按用户部署偏好skip。",
+        "evidence": "CHG-20261105-001：52项Provider、45项Consumer实际PG、384项UI及构建/格式；632股列表481400字节/0.104秒。"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户2026-11-05授权：修复吧，修复之后提交代码，然后查询一下未上线的需求，一并生产上线。"
+  },
+  "changes": [
+    "CHG-20261104-005",
+    "CHG-20261105-001"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

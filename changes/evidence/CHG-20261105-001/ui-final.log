@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@2.8.0 test
+> vitest run --maxWorkers=2 src/views/SwingSelectionView.spec.ts src/components/ShortResearchSelection.spec.ts src/components/ShortStrengthExperiment.spec.ts src/components/ShortEffectTracking.spec.ts
+
+
+ RUN  v4.1.11 /private/tmp/CHG-20261105-001/investment-research-dashboard
+
+
+ Test Files  4 passed (4)
+      Tests  63 passed (63)
+   Start at  05:56:18
+   Duration  15.94s (transform 1.04s, setup 39ms, import 3.36s, tests 18.46s, environment 1.64s)

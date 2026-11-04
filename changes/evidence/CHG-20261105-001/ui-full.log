@@ -1,0 +1,12 @@
+
+> investment-research-dashboard@2.8.0 test
+> vitest run --maxWorkers=2
+
+
+ RUN  v4.1.11 /private/tmp/CHG-20261105-001/investment-research-dashboard
+
+
+ Test Files  65 passed (65)
+      Tests  384 passed (384)
+   Start at  04:31:18
+   Duration  45.28s (transform 2.61s, setup 196ms, import 22.16s, tests 40.04s, environment 19.65s)
