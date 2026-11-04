@@ -1,0 +1,38 @@
+{
+  "scope": "production actual HTTP API loopback; imports and SSH excluded, browser network/render excluded",
+  "results": [
+    {
+      "kind": "list_first",
+      "status": "PASS",
+      "headers_seconds": 14.876,
+      "response_seconds": 14.927,
+      "with_json_seconds": 15.617,
+      "bytes": 33756516,
+      "items": 100,
+      "trade_date": "2026-11-04",
+      "total": 632
+    },
+    {
+      "kind": "list_repeat",
+      "status": "PASS",
+      "headers_seconds": 14.152,
+      "response_seconds": 14.242,
+      "with_json_seconds": 15.081,
+      "bytes": 33756516,
+      "items": 100,
+      "trade_date": "2026-11-04",
+      "total": 632
+    },
+    {
+      "kind": "stats",
+      "status": "PASS",
+      "headers_seconds": 0.216,
+      "response_seconds": 0.219,
+      "with_json_seconds": 0.307,
+      "bytes": 5710,
+      "items": 0,
+      "trade_date": null,
+      "total": null
+    }
+  ]
+}

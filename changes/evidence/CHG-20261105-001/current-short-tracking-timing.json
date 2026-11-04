@@ -1,0 +1,23 @@
+{
+  "measured_at": "2026-11-05T00:10:20.855084+08:00",
+  "runtime": "production API HTTP loopback; imports/SSH and browser rendering excluded",
+  "parallel_initial_load_seconds": null,
+  "results": [
+    {
+      "kind": "current_short_stats",
+      "status": "FAILED",
+      "error_type": "TimeoutError",
+      "seconds": 40.096
+    },
+    {
+      "kind": "current_short_tracking",
+      "status": "PASS",
+      "header_seconds": 14.689,
+      "response_seconds": 14.692,
+      "with_json_seconds": 14.734,
+      "bytes": 1655689,
+      "trade_date": null,
+      "requested_date": "2026-11-05"
+    }
+  ]
+}
