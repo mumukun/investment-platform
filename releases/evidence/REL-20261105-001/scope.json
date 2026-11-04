@@ -1,0 +1,17 @@
+{
+  "changes": [
+    "CHG-20261105-001",
+    "CHG-20261104-005"
+  ],
+  "versions": {
+    "stock-analyzer": "6.8.0",
+    "investment-research-dashboard": "2.8.0"
+  },
+  "excluded": [
+    "marketNewsFeed",
+    "already released field/explanation/industry/evaluation changes",
+    "original manual and prototype worktrees"
+  ],
+  "acceptance": "Actual production HTTP 20 samples each wave/short P95 <=2 seconds, list <=1 MB; environment <=20 KB; current simulation query <=2 seconds; count/score/same-generation checks",
+  "authorization": "修复吧，修复之后提交代码，然后查询一下未上线的需求，一并生产上线"
+}

@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "measured_at": "2026-11-05T07:46:17.919122+08:00",
+  "scope": "actual production HTTP through web gzip; excludes household network/browser rendering",
+  "results": {
+    "wave": {
+      "first_seconds": 1.0408,
+      "p95_seconds": 1.0408,
+      "max_seconds": 1.8838,
+      "bytes": 550471,
+      "wire_bytes": 48538,
+      "samples": 20
+    },
+    "short": {
+      "first_seconds": 0.4187,
+      "p95_seconds": 0.6042,
+      "max_seconds": 0.6817,
+      "bytes": 153893,
+      "wire_bytes": 27234,
+      "samples": 20
+    },
+    "environment": {
+      "first_seconds": 0.3297,
+      "p95_seconds": 0.3772,
+      "max_seconds": 0.3772,
+      "bytes": 5972,
+      "wire_bytes": 2788,
+      "samples": 3
+    },
+    "stats": {
+      "first_seconds": 0.1054,
+      "p95_seconds": 0.1054,
+      "max_seconds": 0.1054,
+      "bytes": 7833,
+      "wire_bytes": 1473,
+      "samples": 3
+    },
+    "tracking": {
+      "first_seconds": 0.3585,
+      "p95_seconds": 0.3585,
+      "max_seconds": 0.3585,
+      "bytes": 63190,
+      "wire_bytes": 3565,
+      "samples": 3
+    },
+    "wave_detail": {
+      "seconds": 2.213,
+      "first_byte": 2.2105,
+      "bytes": 86793,
+      "wire_bytes": 9588
+    },
+    "short_detail": {
+      "seconds": 0.0397,
+      "first_byte": 0.0394,
+      "bytes": 2472,
+      "wire_bytes": 1351
+    }
+  },
+  "counts": {
+    "wave": 632,
+    "short": 985
+  },
+  "trade_dates": {
+    "wave": "2026-11-04",
+    "short": "2026-11-04"
+  },
+  "stats_as_of": "2026-11-05",
+  "wave_return_basis_readback": {
+    "contract": "investment-dashboard-swing-history-v3",
+    "rules_version": "swing-rules-v5.3.1",
+    "trade_date": "2026-11-03",
+    "samples": 76,
+    "first_day_status": {
+      "complete": 76
+    }
+  }
+}

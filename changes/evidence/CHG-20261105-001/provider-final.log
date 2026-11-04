@@ -1,0 +1,19 @@
+.....confirmation metadata: 6000 rows in 0.0077s, no per-stock database queries
+.................500-stock × 48-generation archive/read/reconcile: 1.959s (local budget 5s)
+..............................
+=============================== warnings summary ===============================
+../../../../Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/mukun/work/workspace/stock/stock-analyzer/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+52 passed, 1 warning in 20.37s
+2026-11-05 05:56:29,055 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail/tracking "HTTP/1.1 401 Unauthorized"
+2026-11-05 05:56:29,073 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail/tracking?model=observed_trail_a2_d1 "HTTP/1.1 200 OK"
+2026-11-05 05:56:29,075 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail/stats "HTTP/1.1 401 Unauthorized"
+2026-11-05 05:56:29,093 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tail/stats?model=observed_trail_a2_d1 "HTTP/1.1 200 OK"
+2026-11-05 05:56:29,094 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tracking "HTTP/1.1 401 Unauthorized"
+2026-11-05 05:56:29,114 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/tracking?rules_version=short-observation-v2 "HTTP/1.1 200 OK"
+2026-11-05 05:56:29,115 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/stats "HTTP/1.1 401 Unauthorized"
+2026-11-05 05:56:29,155 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/stats?rules_version=short-observation-v2 "HTTP/1.1 200 OK"
+2026-11-05 05:56:29,156 INFO HTTP Request: GET http://test/api/integrations/investment-dashboard/short-selection/stats?rules_version=unrelated "HTTP/1.1 422 Unprocessable Entity"
