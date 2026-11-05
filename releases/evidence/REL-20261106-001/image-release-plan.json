@@ -1,0 +1,168 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261106-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "7409befc440e4e0d705e945449da2c94dc54757b",
+        "version": "6.11.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c10db92c8ad68a9c33d2c74564481738edd95e890f94ae3fc200b4ea4dd6cb58"
+        },
+        "image_ids": {
+          "app": "sha256:f1335f0a0d79708785a47c693ea027125f81fbba058b0811d017228f76f39b93"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "7409befc440e4e0d705e945449da2c94dc54757b",
+            "run_id": "42065055245"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:c10db92c8ad68a9c33d2c74564481738edd95e890f94ae3fc200b4ea4dd6cb58"
+            }
+          },
+          "candidate_run_id": "42066023194"
+        }
+      },
+      "tag": "v6.11.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.10.0",
+        "commit_sha": "374d4819104dfb19cef4424894a545ee1a742f2f",
+        "image_ids": {
+          "stock-api": "sha256:fb6b9ae2c67740b6bb2c81b535b363ebd4058639da8db6e075724583ef0bed8a",
+          "stock-watch": "sha256:fb6b9ae2c67740b6bb2c81b535b363ebd4058639da8db6e075724583ef0bed8a",
+          "stock-data": "sha256:fb6b9ae2c67740b6bb2c81b535b363ebd4058639da8db6e075724583ef0bed8a"
+        }
+      },
+      "rollback": {
+        "tag": "v6.10.0",
+        "version": "6.10.0",
+        "commit_sha": "374d4819104dfb19cef4424894a545ee1a742f2f",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:8cc47e9f8c3bfc1d3e5adad0b63630914c427b6c0c3f1ee23adb425db6492aba"
+        },
+        "image_ids": {
+          "app": "sha256:fb6b9ae2c67740b6bb2c81b535b363ebd4058639da8db6e075724583ef0bed8a"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "只读查询范围为可选扩展，前端变更无DDL或既有数据改写，沿用部署备份偏好。",
+        "evidence": "CHG-20261105-006 隔离 PostgreSQL、代理契约、双页面模拟及查询等价；CHG-20261105-007 组件、构建和三种宽度预览。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "d6e04cd75b261af1b09e816c2c6dc75677fcb27e",
+        "version": "2.11.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:fc40ad1c907e5a7c2e8bacd36876cb20cf429e5e1ae39d6eba9b38aad8b93221",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b855883528d279f253ec499409154a45b9e93b09999f296ef9c4b4f5e02c3383"
+        },
+        "image_ids": {
+          "api": "sha256:6a405edffd928ded84dd42cf3d6dbbb01c85ab1a7c032116bae58a345e64a7b8",
+          "web": "sha256:35a34ed6b5e32ca80b700429daaa24557dde413f9bf0fbb7ddc8bb76fd7d096d"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "d6e04cd75b261af1b09e816c2c6dc75677fcb27e",
+            "run_id": "42073680380"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:fc40ad1c907e5a7c2e8bacd36876cb20cf429e5e1ae39d6eba9b38aad8b93221",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b855883528d279f253ec499409154a45b9e93b09999f296ef9c4b4f5e02c3383"
+            }
+          },
+          "candidate_run_id": "42074600412"
+        }
+      },
+      "tag": "v2.11.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.10.0",
+        "commit_sha": "414ecbf0521edc575a8c8fb6ba988ecac88f4055",
+        "image_ids": {
+          "api": "sha256:ae7649dcec6a050efd0bce9304b7f00e8acb938a48724d471cc4dad0dda72376",
+          "web": "sha256:d01b9b544d4178e98491f67fbc891fa2cfeb3456a85531a178ae303ef522e6f7"
+        }
+      },
+      "rollback": {
+        "tag": "v2.10.0",
+        "version": "2.10.0",
+        "commit_sha": "414ecbf0521edc575a8c8fb6ba988ecac88f4055",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e000aa6145b98308e062365fb39f900f4b604c526a67c77e809f58a0090ef69b",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:af0480bb6f8430d46f9634d5f35e41b8a407cf2d2d69384f0b161f5dbd5eb738"
+        },
+        "image_ids": {
+          "api": "sha256:ae7649dcec6a050efd0bce9304b7f00e8acb938a48724d471cc4dad0dda72376",
+          "web": "sha256:d01b9b544d4178e98491f67fbc891fa2cfeb3456a85531a178ae303ef522e6f7"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "只读查询范围为可选扩展，前端变更无DDL或既有数据改写，沿用部署备份偏好。",
+        "evidence": "CHG-20261105-006 隔离 PostgreSQL、代理契约、双页面模拟及查询等价；CHG-20261105-007 组件、构建和三种宽度预览。"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-05T16:18:22+00:00",
+    "evidence": "用户明确要求：其他开发的需求上线，生产上线。已核对 CHG-20261105-006、007。"
+  },
+  "changes": [
+    "CHG-20261105-006",
+    "CHG-20261105-007"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
