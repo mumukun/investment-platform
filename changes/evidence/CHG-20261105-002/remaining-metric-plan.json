@@ -1,0 +1,26 @@
+{
+  "indexes": [
+    {
+      "indexname": "a_share_daily_metric_pkey",
+      "indexdef": "CREATE UNIQUE INDEX a_share_daily_metric_pkey ON stock_analyzer.a_share_daily_metric USING btree (trade_date, code)"
+    }
+  ],
+  "plan": [
+    {
+      "Plan": {
+        "Node Type": "Index Scan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Scan Direction": "Forward",
+        "Index Name": "a_share_daily_metric_pkey",
+        "Relation Name": "a_share_daily_metric",
+        "Alias": "a_share_daily_metric",
+        "Startup Cost": 0.42,
+        "Total Cost": 10238.93,
+        "Plan Rows": 5912,
+        "Plan Width": 284,
+        "Index Cond": "(trade_date = '2026-11-04'::text)"
+      }
+    }
+  ]
+}

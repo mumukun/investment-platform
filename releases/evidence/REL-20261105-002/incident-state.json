@@ -1,0 +1,1 @@
+{"status":"PARTIAL","production_switch":"containers_started_but_verification_failed","runtime_target":"v6.8.1","tag":"v6.8.1","commit_sha":"836df61adfc029d1bef8fdd6cecb9106adf73fdc","observed_at":"2026-11-05T10:49:26+08:00","evidence":"deployment-receipt.json","selection_recovery":"NOT_VERIFIED"}

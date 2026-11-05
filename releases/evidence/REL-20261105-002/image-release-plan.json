@@ -1,0 +1,95 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261105-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "836df61adfc029d1bef8fdd6cecb9106adf73fdc",
+        "version": "6.8.1",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b1ef355c798fd20d51f9b98acd195df3b69a997d220ab07642fc4c7e6b332bd8"
+        },
+        "image_ids": {
+          "app": "sha256:22d665f309a9247eabdacd93782bb5c6700c95cd56fc5b988b3f082563784030"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "836df61adfc029d1bef8fdd6cecb9106adf73fdc",
+            "run_id": "41955687031"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:b1ef355c798fd20d51f9b98acd195df3b69a997d220ab07642fc4c7e6b332bd8"
+            }
+          },
+          "candidate_run_id": "41956043415"
+        }
+      },
+      "tag": "v6.8.1",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.8.0",
+        "commit_sha": "9ae25ae6fe6740ac6672fc3cf73c81de092d97f0",
+        "image_ids": {
+          "stock-api": "sha256:73fb02b664ac0832e6b1621b5164ab2e370cc9346e9900a2e7e5a65e6fd4f442",
+          "stock-watch": "sha256:73fb02b664ac0832e6b1621b5164ab2e370cc9346e9900a2e7e5a65e6fd4f442",
+          "stock-data": "sha256:73fb02b664ac0832e6b1621b5164ab2e370cc9346e9900a2e7e5a65e6fd4f442"
+        }
+      },
+      "rollback": {
+        "tag": "v6.8.0",
+        "version": "6.8.0",
+        "commit_sha": "9ae25ae6fe6740ac6672fc3cf73c81de092d97f0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:569c24b757d8de29aff820d9ee707cee6db9c84fc65ad3321d3ac4fbd31e9aa9"
+        },
+        "image_ids": {
+          "app": "sha256:73fb02b664ac0832e6b1621b5164ab2e370cc9346e9900a2e7e5a65e6fd4f442"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "只补充兼容查询索引、减少大快照重复读取及修正选股局部语句预算/预热；无基础行情、历史收益或交易账本改写；v6.8.0兼容新增索引，沿用用户部署不备份偏好。",
+        "evidence": "CHG-20261105-002：真实本机PG94项相关回归、配置/编译及精确mainCI/候选通过。"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户对本轮v6.8.1生产发布明确答复：正式发布 v6.8.1 到生产。替代先前被自动审批拒绝的授权推断；精确SHA/digest、版本与范围保持不变。"
+  },
+  "changes": [
+    "CHG-20261105-002"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

@@ -1,0 +1,652 @@
+{
+  "quote_clock": {
+    "error": "QueryCanceled"
+  },
+  "selection_cycles": [
+    {
+      "cache_key": "selection-cycle:swing:2026-11-05",
+      "built_at": "2026-11-05 10:05:45.659052+08:00",
+      "payload": {
+        "error": "QueryCanceled",
+        "status": "failed",
+        "overrun": false,
+        "seconds": 19.5307,
+        "cycle_id": "2026-11-05T10:05:26.099848+08:00",
+        "started_at": "2026-11-05T10:05:26.099848+08:00",
+        "finished_at": "2026-11-05T10:05:45.630628+08:00",
+        "evaluated_at": "2026-11-05T10:05:45.630628+08:00",
+        "coalesced_triggers": 0,
+        "refresh_interval_seconds": 300
+      }
+    },
+    {
+      "cache_key": "selection-cycle:tail:2026-11-05",
+      "built_at": "2026-11-05 10:05:32.846666+08:00",
+      "payload": {
+        "error": "QueryCanceled",
+        "status": "failed",
+        "overrun": false,
+        "seconds": 32.0534,
+        "cycle_id": "2026-11-05T10:05:00.780373+08:00",
+        "started_at": "2026-11-05T10:05:00.780373+08:00",
+        "finished_at": "2026-11-05T10:05:32.833863+08:00",
+        "evaluated_at": "2026-11-05T10:05:32.833863+08:00",
+        "coalesced_triggers": 0,
+        "refresh_interval_seconds": 300
+      }
+    }
+  ],
+  "selection_metadata": [
+    {
+      "cache_key": "query-meta:current:swing:swing-rules-v5.3.1",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "swing",
+        "quality": "partial",
+        "source_key": "current:swing:swing-rules-v5.3.1",
+        "trade_date": "2026-11-04",
+        "evaluated_at": "2026-11-04T23:39:02+08:00",
+        "generation_id": "9d436c05dd0397ed9e1f39b0b6e8905c9ad94823ef17b5531782c2281712500e",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:swing:swing-rules-v5.3.0",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "swing",
+        "quality": "partial",
+        "source_key": "current:swing:swing-rules-v5.3.0",
+        "trade_date": "2026-10-29",
+        "evaluated_at": "2026-10-29T22:18:10+08:00",
+        "generation_id": "c0b37bb85ad00211ee6e8e57db5571237f7b12dad4a6e3b67c97094724cdb048",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:swing:swing-rules-v5.2.0",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "swing",
+        "quality": "partial",
+        "source_key": "current:swing:swing-rules-v5.2.0",
+        "trade_date": "2026-10-29",
+        "evaluated_at": "2026-10-29T20:19:35+08:00",
+        "generation_id": "71b291a8447914892bfd9229d45b1e701ebe06b5d58d8d1de8a9977c3b3eb546",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:research:2026-11-04",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "tail",
+        "quality": "healthy",
+        "source_key": "current:research:2026-11-04",
+        "trade_date": "2026-11-04",
+        "evaluated_at": "2026-11-04T23:41:50.400496+08:00",
+        "generation_id": "201f35ee9fbada9e15d3cad449bfff1d4dcb22587234b8d9a0869ac68673327c",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:research:2026-11-03",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "tail",
+        "quality": "healthy",
+        "source_key": "current:research:2026-11-03",
+        "trade_date": "2026-11-03",
+        "evaluated_at": "2026-11-03T20:46:36.815656+08:00",
+        "generation_id": "d525995ba932674eff332a213a25fa7850a660e712ac779bfacc05cabee3ccea",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:research:2026-11-02",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "tail",
+        "quality": "healthy",
+        "source_key": "current:research:2026-11-02",
+        "trade_date": "2026-11-02",
+        "evaluated_at": "2026-11-02T22:50:19.569096+08:00",
+        "generation_id": "f2aa26a773cc7e252b0458b38605e23f555393a7f9649cff864d7caf76b10efb",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:research:2026-10-30",
+      "built_at": "2026-11-05 10:04:10.577157+08:00",
+      "payload": {
+        "kind": "tail",
+        "quality": "healthy",
+        "source_key": "current:research:2026-10-30",
+        "trade_date": "2026-10-30",
+        "evaluated_at": "2026-10-30T23:59:59+08:00",
+        "generation_id": "f6c0cbca847f74417e636d4c6e83e04a141c9fca538e1cffba587bef9efef4ca",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    }
+  ],
+  "collection_summary": [
+    {
+      "dataset": "boards",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:55:06.947043+08:00",
+      "last_success_at": "2026-11-05 09:28:11.507526+08:00"
+    },
+    {
+      "dataset": "boards",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 4,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:00:48.933099+08:00",
+      "last_success_at": "2026-11-05 10:00:48.933099+08:00"
+    },
+    {
+      "dataset": "cn-daily",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 08:25:15.975323+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "cn-daily",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 2,
+      "data_time": null,
+      "checked_at": "2026-11-05 08:44:13.758641+08:00",
+      "last_success_at": "2026-11-05 08:44:13.758641+08:00"
+    },
+    {
+      "dataset": "cn-daily",
+      "source": "per-security",
+      "status": "ready",
+      "scopes": 5576,
+      "data_time": null,
+      "checked_at": "2026-11-04 23:08:00.257921+08:00",
+      "last_success_at": "2026-11-04 23:08:00.257921+08:00"
+    },
+    {
+      "dataset": "cn-kline",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:10:05.627764+08:00",
+      "last_success_at": "2026-11-05 09:10:05.627764+08:00"
+    },
+    {
+      "dataset": "cn-market-flow",
+      "source": "sina",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": "2026-11-05 10:07:00+08:00",
+      "checked_at": "2026-11-05 10:08:55.028225+08:00",
+      "last_success_at": "2026-11-05 10:08:55.028225+08:00"
+    },
+    {
+      "dataset": "cn-minute",
+      "source": "per-security",
+      "status": "ready",
+      "scopes": 77299,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:09:09.761362+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "cn-quote-samples",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": "2026-11-05 10:00:54+08:00",
+      "checked_at": "2026-11-05 10:09:09.766459+08:00",
+      "last_success_at": "2026-11-05 10:09:09.766459+08:00"
+    },
+    {
+      "dataset": "cn-quotes",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 3,
+      "data_time": "2026-11-05 10:00:56+08:00",
+      "checked_at": "2026-11-05 10:09:26.983579+08:00",
+      "last_success_at": "2026-11-05 10:09:26.983579+08:00"
+    },
+    {
+      "dataset": "cn-snapshot",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 2,
+      "data_time": "2026-11-05 09:47:54+08:00",
+      "checked_at": "2026-11-05 10:09:37.214677+08:00",
+      "last_success_at": "2026-11-05 10:09:37.211964+08:00"
+    },
+    {
+      "dataset": "cn-stock-daily-raw",
+      "source": "sina:none",
+      "status": "ready",
+      "scopes": 388,
+      "data_time": null,
+      "checked_at": "2026-11-05 08:42:05.429077+08:00",
+      "last_success_at": "2026-11-05 08:42:05.429077+08:00"
+    },
+    {
+      "dataset": "cn-stock-daily-raw",
+      "source": "tencent:none+kline:amount",
+      "status": "ready",
+      "scopes": 5222,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:15:59.746402+08:00",
+      "last_success_at": "2026-11-05 09:15:59.746402+08:00"
+    },
+    {
+      "dataset": "daily-price-projection",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 5579,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:10:05.628476+08:00",
+      "last_success_at": "2026-11-05 09:10:05.628476+08:00"
+    },
+    {
+      "dataset": "data-retention",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 05:01:11.822763+08:00",
+      "last_success_at": "2026-11-04 05:01:10.355057+08:00"
+    },
+    {
+      "dataset": "database-backup",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 01:20:49.599167+08:00",
+      "last_success_at": "2026-11-05 01:20:49.599167+08:00"
+    },
+    {
+      "dataset": "global",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 2,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:08:50.395561+08:00",
+      "last_success_at": "2026-11-05 09:29:22.899017+08:00"
+    },
+    {
+      "dataset": "industry-fund-history",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:54:41.878514+08:00",
+      "last_success_at": "2026-11-05 09:54:41.878514+08:00"
+    },
+    {
+      "dataset": "industry-intraday",
+      "source": "configured",
+      "status": "unavailable",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:09:05.020371+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "limit-up-pool",
+      "source": "configured",
+      "status": "collecting",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:09:09.238730+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "limit-up-pool",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": "2026-11-05 10:04:05.851542+08:00",
+      "checked_at": "2026-11-05 10:04:07.101224+08:00",
+      "last_success_at": "2026-11-05 10:04:07.101224+08:00"
+    },
+    {
+      "dataset": "market-flow",
+      "source": "configured",
+      "status": "unavailable",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:30:01.641338+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "minute-rollover",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:09:09.240222+08:00",
+      "last_success_at": "2026-11-05 09:30:47.412885+08:00"
+    },
+    {
+      "dataset": "reference",
+      "source": "AkShare交易所证券列表",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:36:38.821844+08:00",
+      "last_success_at": "2026-11-05 09:36:38.821844+08:00"
+    },
+    {
+      "dataset": "reference",
+      "source": "configured",
+      "status": "unavailable",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-03 09:46:32.053535+08:00",
+      "last_success_at": null
+    },
+    {
+      "dataset": "reference",
+      "source": "sina-calendar",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:36:38.821844+08:00",
+      "last_success_at": "2026-11-05 09:36:38.821844+08:00"
+    },
+    {
+      "dataset": "seat-directory",
+      "source": "eastmoney:seat-authorized",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 08:57:17.063783+08:00",
+      "last_success_at": "2026-11-05 08:57:17.063783+08:00"
+    },
+    {
+      "dataset": "seat-trades",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 2,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:04:39.951321+08:00",
+      "last_success_at": "2026-11-05 09:04:39.951321+08:00"
+    },
+    {
+      "dataset": "seat-trades",
+      "source": "eastmoney:seat-authorized",
+      "status": "ready",
+      "scopes": 2656,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:04:35.636702+08:00",
+      "last_success_at": "2026-11-05 09:04:35.636702+08:00"
+    },
+    {
+      "dataset": "sina-index-daily",
+      "source": "sina",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:42:05.654208+08:00",
+      "last_success_at": "2026-11-05 09:42:05.654208+08:00"
+    },
+    {
+      "dataset": "sina-industry-catalog",
+      "source": "sina",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:41:14.671854+08:00",
+      "last_success_at": "2026-11-05 09:41:14.671854+08:00"
+    },
+    {
+      "dataset": "sina-industry-daily",
+      "source": "sina",
+      "status": "ready",
+      "scopes": 48,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:54:36.370287+08:00",
+      "last_success_at": "2026-11-05 09:54:36.370287+08:00"
+    },
+    {
+      "dataset": "sina-industry-intraday",
+      "source": "sina",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": "2026-11-05 10:04:37+08:00",
+      "checked_at": "2026-11-05 10:07:55.569361+08:00",
+      "last_success_at": "2026-11-05 10:07:55.569361+08:00"
+    },
+    {
+      "dataset": "sina-industry-members",
+      "source": "sina",
+      "status": "ready",
+      "scopes": 48,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:41:13.720712+08:00",
+      "last_success_at": "2026-11-05 09:41:13.720712+08:00"
+    },
+    {
+      "dataset": "stock-fund-history",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 09:02:57.672734+08:00",
+      "last_success_at": "2026-11-05 09:02:57.672734+08:00"
+    },
+    {
+      "dataset": "system",
+      "source": "configured",
+      "status": "partial",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:09:37.739157+08:00",
+      "last_success_at": "2026-11-05 09:30:22.537012+08:00"
+    },
+    {
+      "dataset": "system",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": "2026-11-05 10:09:09.238600+08:00",
+      "checked_at": "2026-11-05 10:09:37.730943+08:00",
+      "last_success_at": "2026-11-05 10:09:37.730943+08:00"
+    },
+    {
+      "dataset": "system",
+      "source": "runtime",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": null,
+      "checked_at": "2026-11-05 07:36:21.186199+08:00",
+      "last_success_at": "2026-11-05 07:36:21.186199+08:00"
+    },
+    {
+      "dataset": "us-quotes",
+      "source": "configured",
+      "status": "ready",
+      "scopes": 1,
+      "data_time": "2026-11-05 09:50:45+08:00",
+      "checked_at": "2026-11-05 10:09:09.898718+08:00",
+      "last_success_at": "2026-11-05 10:09:09.898718+08:00"
+    }
+  ],
+  "activity": [
+    {
+      "pid": 26890,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "3548",
+      "blockers": [],
+      "query": "autovacuum: VACUUM pg_toast.pg_toast_2625477"
+    },
+    {
+      "pid": 7580,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "42",
+      "blockers": [],
+      "query": "autovacuum: VACUUM ANALYZE stock_analyzer.market_quote_latest"
+    },
+    {
+      "pid": 8988,
+      "application_name": "",
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "seconds": "29",
+      "blockers": [],
+      "query": "SELECT pg_try_advisory_lock(52182404) locked"
+    },
+    {
+      "pid": 8985,
+      "application_name": "",
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "seconds": "26",
+      "blockers": [],
+      "query": "SELECT revision,failed_at,built_at FROM api_read_projection WHERE cache_key=$1"
+    },
+    {
+      "pid": 9062,
+      "application_name": "",
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "seconds": "4",
+      "blockers": [],
+      "query": "SELECT * FROM market_data_state ORDER BY dataset,scope_key,source"
+    },
+    {
+      "pid": 9058,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "3",
+      "blockers": [],
+      "query": "INSERT INTO a_share_snapshot (trade_date,update_time,code,name,close,change_pct,amount,turnover_pct,pe_ttm,open,high,low,industry,subindustry,limit_pct,is_limit_up,is_20cm,is_30cm,is_st,source,source_time,received_at,quote_quality"
+    },
+    {
+      "pid": 9066,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": null,
+      "wait_event": null,
+      "seconds": "3",
+      "blockers": [],
+      "query": "SELECT * FROM market_data_state ORDER BY dataset,scope_key,source"
+    },
+    {
+      "pid": 7714,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "1",
+      "blockers": [],
+      "query": "INSERT INTO tech_board_fact(kind,entity_id,source_date,fact_hash,observed_at,payload,source_time)\n                    VALUES($1,$2,$3,$4,now(),$5,$6) ON CONFLICT DO NOTHING"
+    },
+    {
+      "pid": 29378,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "1",
+      "blockers": [],
+      "query": "COMMIT"
+    },
+    {
+      "pid": 9080,
+      "application_name": "",
+      "state": "idle in transaction",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "seconds": "1",
+      "blockers": [],
+      "query": "SELECT pg_try_advisory_xact_lock(hashtext($1)) AS locked"
+    },
+    {
+      "pid": 9092,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "IO",
+      "wait_event": "DataFileRead",
+      "seconds": "0",
+      "blockers": [],
+      "query": "SELECT max(update_time) AS last FROM a_share_snapshot WHERE trade_date<=$1"
+    },
+    {
+      "pid": 9093,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "IPC",
+      "wait_event": "BtreePage",
+      "seconds": "0",
+      "blockers": [],
+      "query": "SELECT max(update_time) AS last FROM a_share_snapshot WHERE trade_date<=$1"
+    },
+    {
+      "pid": 9086,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "IPC",
+      "wait_event": "BtreePage",
+      "seconds": "0",
+      "blockers": [],
+      "query": "SELECT max(update_time) AS last FROM a_share_snapshot WHERE trade_date<=$1"
+    },
+    {
+      "pid": 9095,
+      "application_name": "",
+      "state": "active",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "0",
+      "blockers": [],
+      "query": "INSERT INTO watchlist_strategy_snapshot\n               (trade_date, generated_at, watchlist_revision, contract_version,\n                short_rules_version, swing_rules_version, quality, payload)\n               VALUES ($1, $2, $3,"
+    }
+  ],
+  "relations": {
+    "error": "QueryCanceled"
+  },
+  "indexes": [
+    {
+      "tablename": "swing_daily_validation",
+      "indexname": "swing_daily_validation_pkey",
+      "indexdef": "CREATE UNIQUE INDEX swing_daily_validation_pkey ON stock_analyzer.swing_daily_validation USING btree (code, validated_as_of, content_hash)"
+    },
+    {
+      "tablename": "swing_daily_validation",
+      "indexname": "idx_swing_daily_validation_session",
+      "indexdef": "CREATE INDEX idx_swing_daily_validation_session ON stock_analyzer.swing_daily_validation USING btree (validated_as_of, code, checked_at DESC)"
+    },
+    {
+      "tablename": "swing_daily_validation",
+      "indexname": "idx_swing_daily_validation_code",
+      "indexdef": "CREATE INDEX idx_swing_daily_validation_code ON stock_analyzer.swing_daily_validation USING btree (code, validated_as_of DESC, checked_at DESC)"
+    },
+    {
+      "tablename": "swing_setup_snapshot",
+      "indexname": "swing_setup_snapshot_pkey",
+      "indexdef": "CREATE UNIQUE INDEX swing_setup_snapshot_pkey ON stock_analyzer.swing_setup_snapshot USING btree (trade_date, code, pattern, rules_version)"
+    }
+  ]
+}

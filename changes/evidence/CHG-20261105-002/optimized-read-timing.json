@@ -1,0 +1,30 @@
+{
+  "new_quote_revision": [
+    {
+      "seconds": 0.0542,
+      "rows": 1
+    },
+    {
+      "seconds": 0.0392,
+      "rows": 1
+    },
+    {
+      "seconds": 0.0266,
+      "rows": 1
+    }
+  ],
+  "missing_metadata_only": [
+    {
+      "seconds": 3.7541,
+      "rows": 0
+    },
+    {
+      "seconds": 0.0977,
+      "rows": 0
+    },
+    {
+      "seconds": 0.0523,
+      "rows": 0
+    }
+  ]
+}

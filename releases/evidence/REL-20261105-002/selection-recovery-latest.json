@@ -1,0 +1,59 @@
+{
+  "day": "2026-11-05",
+  "read_at": "2026-11-05T11:20:49.210277+08:00",
+  "records": [
+    {
+      "cache_key": "query-meta:current:research:2026-11-05",
+      "built_at": "2026-11-05 11:15:54.797792+08:00",
+      "payload": {
+        "kind": "tail",
+        "quality": "healthy",
+        "source_key": "current:research:2026-11-05",
+        "trade_date": "2026-11-05",
+        "evaluated_at": "2026-11-05T11:15:23.639622+08:00",
+        "generation_id": "5642f32357eec0b3e51234fd8e68c36915fe024f3927b6eb831f7036962f40f9",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "query-meta:current:swing:swing-rules-v5.3.1",
+      "built_at": "2026-11-05 10:39:21.291821+08:00",
+      "payload": {
+        "kind": "swing",
+        "quality": "partial",
+        "source_key": "current:swing:swing-rules-v5.3.1",
+        "trade_date": "2026-11-04",
+        "evaluated_at": "2026-11-04T23:39:02+08:00",
+        "generation_id": "9d436c05dd0397ed9e1f39b0b6e8905c9ad94823ef17b5531782c2281712500e",
+        "contract_version": "investment-dashboard-selection-status-v1"
+      }
+    },
+    {
+      "cache_key": "selection-cycle:swing:2026-11-05",
+      "built_at": "2026-11-05 11:19:25.670406+08:00",
+      "payload": {
+        "error": "QueryCanceled",
+        "status": "failed",
+        "overrun": false,
+        "seconds": 145.6514,
+        "cycle_id": "2026-11-05T11:17:00.001555+08:00",
+        "started_at": "2026-11-05T11:17:00.001555+08:00",
+        "finished_at": "2026-11-05T11:19:25.653069+08:00",
+        "evaluated_at": "2026-11-05T11:19:25.653069+08:00",
+        "coalesced_triggers": 0,
+        "refresh_interval_seconds": 300
+      }
+    },
+    {
+      "cache_key": "selection-cycle:tail:2026-11-05",
+      "built_at": "2026-11-05 11:20:00.030079+08:00",
+      "payload": {
+        "status": "running",
+        "cycle_id": "2026-11-05T11:20:00.001505+08:00",
+        "started_at": "2026-11-05T11:20:00.001505+08:00",
+        "evaluated_at": "2026-11-05T11:20:00.001505+08:00",
+        "refresh_interval_seconds": 300
+      }
+    }
+  ]
+}

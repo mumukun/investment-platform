@@ -1,0 +1,10 @@
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+    keys=[r['cache_key'] for r in c.execute("SELECT cache_key FROM api_read_projection WHERE cache_key>=%s AND cache_key<=%s ORDER BY cache_key",(root+'000000',root+'999999')).fetchall()]
+                                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/psycopg/connection.py", line 304, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
