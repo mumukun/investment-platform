@@ -1,0 +1,132 @@
+2026-11-05 13:10:00,903 ERROR swing cycle failed id=2026-11-05T13:05:00.707626+08:00
+Traceback (most recent call last):
+  File "/app/stock_analyzer/selection_worker.py", line 93, in selection_cycle
+    result = run(database, at.date().isoformat(), settings=settings.swing_engine)
+  File "/app/stock_analyzer/swing_intraday_discovery.py", line 25, in run
+    return _run(database_url, trade_date, settings=settings, poll_time=poll_time, dry_run=dry_run, scope_codes=scope_codes)
+  File "/app/stock_analyzer/swing_intraday_discovery.py", line 141, in _run
+    bars, history_cache_hit = completed_bars(database_url,
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+        [c for c in codes if c not in cached_baselines],baseline_date=baseline,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session_dates=calendar,rules_version=settings.rules_version,dry_run=dry_run,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        known_at=current, initial_versions=daily_revisions if price_rules else None, stats=history_stats)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/stock_analyzer/swing_intraday_cache.py", line 29, in completed_bars
+    return security_daily_window(database_url, codes, sessions,
+        cache_key="intraday-history:v1:" + rules_version, dry_run=dry_run,
+        known_at=known_at, initial_versions=initial_versions, stats=stats,
+        load_codes=lambda changed: swing_store.load_swing_bars(database_url, changed,
+            days=features.MIN_VALID_BARS, end_date=baseline_date, session_dates=sessions, known_at=known_at))
+  File "/app/stock_analyzer/history_projection.py", line 151, in security_daily_window
+    loaded = load_codes(batch)
+  File "/app/stock_analyzer/swing_intraday_cache.py", line 32, in <lambda>
+    load_codes=lambda changed: swing_store.load_swing_bars(database_url, changed,
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        days=features.MIN_VALID_BARS, end_date=baseline_date, session_dates=sessions, known_at=known_at))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/stock_analyzer/swing_store.py", line 427, in load_swing_bars
+    grouped = verified_daily_rows(conn, sorted(set(codes)), sessions, known_at=known_at)
+  File "/app/stock_analyzer/history_projection.py", line 183, in verified_daily_rows
+    rows = conn.execute('''WITH receipts AS (
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+        SELECT DISTINCT ON(code) code,validated_as_of,content_hash
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        ORDER BY b.code,b.trade_date''',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (codes, max(sessions), known_at.date().isoformat(), known_at, sessions, codes, sessions)).fetchall()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/psycopg/connection.py", line 304, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
+2026-11-05 13:10:07,636 INFO swing cycle completed {"coalesced_triggers": 1, "cycle_id": "2026-11-05T13:05:00.707626+08:00", "error": "QueryCanceled", "evaluated_at": "2026-11-05T13:10:01.390802+08:00", "finished_at": "2026-11-05T13:10:01.390802+08:00", "overrun": true, "refresh_interval_seconds": 300, "seconds": 300.6773, "started_at": "2026-11-05T13:05:00.707626+08:00", "status": "failed"}
+2026-11-05 13:15:12,690 ERROR swing cycle failed id=2026-11-05T13:10:12.637067+08:00
+Traceback (most recent call last):
+  File "/app/stock_analyzer/selection_worker.py", line 93, in selection_cycle
+    result = run(database, at.date().isoformat(), settings=settings.swing_engine)
+  File "/app/stock_analyzer/swing_intraday_discovery.py", line 25, in run
+    return _run(database_url, trade_date, settings=settings, poll_time=poll_time, dry_run=dry_run, scope_codes=scope_codes)
+  File "/app/stock_analyzer/swing_intraday_discovery.py", line 141, in _run
+    bars, history_cache_hit = completed_bars(database_url,
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+        [c for c in codes if c not in cached_baselines],baseline_date=baseline,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session_dates=calendar,rules_version=settings.rules_version,dry_run=dry_run,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        known_at=current, initial_versions=daily_revisions if price_rules else None, stats=history_stats)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/stock_analyzer/swing_intraday_cache.py", line 29, in completed_bars
+    return security_daily_window(database_url, codes, sessions,
+        cache_key="intraday-history:v1:" + rules_version, dry_run=dry_run,
+        known_at=known_at, initial_versions=initial_versions, stats=stats,
+        load_codes=lambda changed: swing_store.load_swing_bars(database_url, changed,
+            days=features.MIN_VALID_BARS, end_date=baseline_date, session_dates=sessions, known_at=known_at))
+  File "/app/stock_analyzer/history_projection.py", line 151, in security_daily_window
+    loaded = load_codes(batch)
+  File "/app/stock_analyzer/swing_intraday_cache.py", line 32, in <lambda>
+    load_codes=lambda changed: swing_store.load_swing_bars(database_url, changed,
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        days=features.MIN_VALID_BARS, end_date=baseline_date, session_dates=sessions, known_at=known_at))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/stock_analyzer/swing_store.py", line 427, in load_swing_bars
+    grouped = verified_daily_rows(conn, sorted(set(codes)), sessions, known_at=known_at)
+  File "/app/stock_analyzer/history_projection.py", line 183, in verified_daily_rows
+    rows = conn.execute('''WITH receipts AS (
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+        SELECT DISTINCT ON(code) code,validated_as_of,content_hash
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        ORDER BY b.code,b.trade_date''',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (codes, max(sessions), known_at.date().isoformat(), known_at, sessions, codes, sessions)).fetchall()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/psycopg/connection.py", line 304, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
+2026-11-05 13:15:16,474 INFO swing cycle completed {"coalesced_triggers": 1, "cycle_id": "2026-11-05T13:10:12.637067+08:00", "error": "QueryCanceled", "evaluated_at": "2026-11-05T13:15:13.038395+08:00", "finished_at": "2026-11-05T13:15:13.038395+08:00", "overrun": true, "refresh_interval_seconds": 300, "seconds": 300.4012, "started_at": "2026-11-05T13:10:12.637067+08:00", "status": "failed"}
+2026-11-05 13:20:21,523 ERROR swing cycle failed id=2026-11-05T13:15:21.475543+08:00
+Traceback (most recent call last):
+  File "/app/stock_analyzer/selection_worker.py", line 93, in selection_cycle
+    result = run(database, at.date().isoformat(), settings=settings.swing_engine)
+  File "/app/stock_analyzer/swing_intraday_discovery.py", line 25, in run
+    return _run(database_url, trade_date, settings=settings, poll_time=poll_time, dry_run=dry_run, scope_codes=scope_codes)
+  File "/app/stock_analyzer/swing_intraday_discovery.py", line 141, in _run
+    bars, history_cache_hit = completed_bars(database_url,
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+        [c for c in codes if c not in cached_baselines],baseline_date=baseline,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session_dates=calendar,rules_version=settings.rules_version,dry_run=dry_run,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        known_at=current, initial_versions=daily_revisions if price_rules else None, stats=history_stats)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/stock_analyzer/swing_intraday_cache.py", line 29, in completed_bars
+    return security_daily_window(database_url, codes, sessions,
+        cache_key="intraday-history:v1:" + rules_version, dry_run=dry_run,
+        known_at=known_at, initial_versions=initial_versions, stats=stats,
+        load_codes=lambda changed: swing_store.load_swing_bars(database_url, changed,
+            days=features.MIN_VALID_BARS, end_date=baseline_date, session_dates=sessions, known_at=known_at))
+  File "/app/stock_analyzer/history_projection.py", line 151, in security_daily_window
+    loaded = load_codes(batch)
+  File "/app/stock_analyzer/swing_intraday_cache.py", line 32, in <lambda>
+    load_codes=lambda changed: swing_store.load_swing_bars(database_url, changed,
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        days=features.MIN_VALID_BARS, end_date=baseline_date, session_dates=sessions, known_at=known_at))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/stock_analyzer/swing_store.py", line 427, in load_swing_bars
+    grouped = verified_daily_rows(conn, sorted(set(codes)), sessions, known_at=known_at)
+  File "/app/stock_analyzer/history_projection.py", line 183, in verified_daily_rows
+    rows = conn.execute('''WITH receipts AS (
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+        SELECT DISTINCT ON(code) code,validated_as_of,content_hash
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        ORDER BY b.code,b.trade_date''',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (codes, max(sessions), known_at.date().isoformat(), known_at, sessions, codes, sessions)).fetchall()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/psycopg/connection.py", line 304, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
+2026-11-05 13:20:25,909 INFO swing cycle completed {"coalesced_triggers": 1, "cycle_id": "2026-11-05T13:15:21.475543+08:00", "error": "QueryCanceled", "evaluated_at": "2026-11-05T13:20:22.005293+08:00", "finished_at": "2026-11-05T13:20:22.005293+08:00", "overrun": true, "refresh_interval_seconds": 300, "seconds": 300.5296, "started_at": "2026-11-05T13:15:21.475543+08:00", "status": "failed"}

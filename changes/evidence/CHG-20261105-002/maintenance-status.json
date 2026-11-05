@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "rolsuper": true,
+    "can_signal": true
+  },
+  "vacuum": [
+    {
+      "pid": 15996,
+      "backend_type": "autovacuum worker",
+      "query": "autovacuum: VACUUM ANALYZE stock_analyzer.market_quote_latest",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "888"
+    },
+    {
+      "pid": 26890,
+      "backend_type": "autovacuum worker",
+      "query": "autovacuum: VACUUM pg_toast.pg_toast_2625477",
+      "wait_event_type": "LWLock",
+      "wait_event": "WALWrite",
+      "seconds": "6810"
+    }
+  ],
+  "vacuum_reloptions": [
+    {
+      "nspname": "pg_toast",
+      "relname": "pg_toast_2625477",
+      "reloptions": null,
+      "xid_age": 3200216
+    },
+    {
+      "nspname": "stock_analyzer",
+      "relname": "api_read_projection",
+      "reloptions": null,
+      "xid_age": 1987673
+    },
+    {
+      "nspname": "stock_analyzer",
+      "relname": "market_quote_latest",
+      "reloptions": null,
+      "xid_age": 1949923
+    }
+  ]
+}

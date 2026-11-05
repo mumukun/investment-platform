@@ -1,0 +1,47 @@
+[
+  {
+    "cache_key": "query-meta:current:swing:swing-rules-v5.3.1",
+    "built_at": "2026-11-05 10:09:18.434393+08:00",
+    "payload": {
+      "kind": "swing",
+      "quality": "partial",
+      "source_key": "current:swing:swing-rules-v5.3.1",
+      "trade_date": "2026-11-04",
+      "evaluated_at": "2026-11-04T23:39:02+08:00",
+      "generation_id": "9d436c05dd0397ed9e1f39b0b6e8905c9ad94823ef17b5531782c2281712500e",
+      "contract_version": "investment-dashboard-selection-status-v1"
+    }
+  },
+  {
+    "cache_key": "selection-cycle:swing:2026-11-05",
+    "built_at": "2026-11-05 10:10:57.282421+08:00",
+    "payload": {
+      "error": "QueryCanceled",
+      "status": "failed",
+      "overrun": false,
+      "seconds": 31.134,
+      "cycle_id": "2026-11-05T10:10:26.100075+08:00",
+      "started_at": "2026-11-05T10:10:26.100075+08:00",
+      "finished_at": "2026-11-05T10:10:57.234131+08:00",
+      "evaluated_at": "2026-11-05T10:10:57.234131+08:00",
+      "coalesced_triggers": 0,
+      "refresh_interval_seconds": 300
+    }
+  },
+  {
+    "cache_key": "selection-cycle:tail:2026-11-05",
+    "built_at": "2026-11-05 10:10:15.166831+08:00",
+    "payload": {
+      "error": "QueryCanceled",
+      "status": "failed",
+      "overrun": false,
+      "seconds": 14.3727,
+      "cycle_id": "2026-11-05T10:10:00.780574+08:00",
+      "started_at": "2026-11-05T10:10:00.780574+08:00",
+      "finished_at": "2026-11-05T10:10:15.153360+08:00",
+      "evaluated_at": "2026-11-05T10:10:15.153360+08:00",
+      "coalesced_triggers": 0,
+      "refresh_interval_seconds": 300
+    }
+  }
+]

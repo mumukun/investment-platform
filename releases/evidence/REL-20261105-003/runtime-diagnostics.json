@@ -1,0 +1,26 @@
+[
+  {
+    "name": "identity",
+    "seconds": 0.656,
+    "returncode": 0,
+    "output": "/stock-api sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6 9a8e08a9d44bf4c5c721a40df8f5ed9671208059 6.8.2\n/stock-data sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6 9a8e08a9d44bf4c5c721a40df8f5ed9671208059 6.8.2\n/stock-watch sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6 9a8e08a9d44bf4c5c721a40df8f5ed9671208059 6.8.2\n"
+  },
+  {
+    "name": "api_health",
+    "seconds": 0.03,
+    "returncode": 0,
+    "output": "{\"ok\":true,\"service\":\"stock-analyzer-api\",\"version\":\"6.8.2\",\"auth_configured\":true,\"time\":\"2026-11-05T12:36:16+08:00\"}"
+  },
+  {
+    "name": "data_health",
+    "seconds": 9.646,
+    "returncode": 0,
+    "output": ""
+  },
+  {
+    "name": "version",
+    "seconds": 0.893,
+    "returncode": 0,
+    "output": "6.8.2\n"
+  }
+]

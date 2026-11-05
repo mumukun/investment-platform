@@ -1,0 +1,24 @@
+{
+  "status": "SHORT_ONLY_PASS",
+  "read_at": "2026-11-05T11:14:31.495642+08:00",
+  "results": {
+    "short": {
+      "seconds": 2.9334,
+      "bytes": 108533,
+      "trade_date": "2026-11-05",
+      "total": 1158,
+      "quality": null,
+      "current_quality": "stale",
+      "evaluated_at": "2026-11-05T11:10:40.691272+08:00",
+      "calculation": {
+        "status": "published",
+        "seconds": 78.6493,
+        "processed": 5578,
+        "started_at": "2026-11-05T11:10:00.001068+08:00",
+        "finished_at": "2026-11-05T11:11:18.650443+08:00"
+      },
+      "snapshot_id": "601494a597687c66cb206636135dddf72263e8fc7b391d7dfdb6c89d1de1d3b6",
+      "market_data_date": null
+    }
+  }
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "pid": 26890,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "6598",
+    "blockers": [],
+    "query": "autovacuum: VACUUM pg_toast.pg_toast_2625477"
+  },
+  {
+    "pid": 15996,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "WALSync",
+    "seconds": "676",
+    "blockers": [],
+    "query": "autovacuum: VACUUM ANALYZE stock_analyzer.market_quote_latest"
+  },
+  {
+    "pid": 17773,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "301",
+    "blockers": [],
+    "query": "SELECT revision,failed_at,built_at FROM api_read_projection WHERE cache_key=$1"
+  },
+  {
+    "pid": 17858,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "278",
+    "blockers": [],
+    "query": "WITH receipts AS (\n        SELECT DISTINCT ON(code) code,validated_as_of,content_hash\n        FROM swing_daily_validation WHERE code=ANY($1) AND invalidated_at IS NULL\n          AN"
+  },
+  {
+    "pid": 18243,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "218",
+    "blockers": [],
+    "query": "SELECT pg_try_advisory_xact_lock(hashtext($1)) locked"
+  },
+  {
+    "pid": 18291,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "215",
+    "blockers": [],
+    "query": "SELECT pg_try_advisory_xact_lock(hashtext(current_schema()),hashtext($1)) locked"
+  },
+  {
+    "pid": 18352,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "201",
+    "blockers": [],
+    "query": "SELECT requested.code,h.trade_date,h.close,h.amount\n            FROM unnest($1::text[]) requested(code) CROSS JOIN LATERAL (\n              (SELECT trade_date,close,amount FROM a_sh"
+  },
+  {
+    "pid": 18976,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "43",
+    "blockers": [],
+    "query": "SELECT cache_key,payload FROM api_read_projection WHERE cache_key=ANY($1)"
+  },
+  {
+    "pid": 18995,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "30",
+    "blockers": [],
+    "query": "SELECT pg_try_advisory_xact_lock(hashtext($1)) locked"
+  },
+  {
+    "pid": 19037,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "26",
+    "blockers": [],
+    "query": "SELECT pg_try_advisory_lock(52182403) locked"
+  },
+  {
+    "pid": 19074,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "17",
+    "blockers": [],
+    "query": "WITH RECURSIVE instruments AS (\n          (SELECT instrument_id FROM global_board_fact WHERE kind='quote' ORDER BY instrument_id LIMIT 1)\n          UNION ALL\n          SELECT next."
+  },
+  {
+    "pid": 19122,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "4",
+    "blockers": [],
+    "query": "FETCH FORWARD 100 FROM \"market_structure_fact_read\""
+  },
+  {
+    "pid": 19094,
+    "state": "active",
+    "wait_event_type": null,
+    "wait_event": null,
+    "seconds": "2",
+    "blockers": [],
+    "query": "COMMIT"
+  },
+  {
+    "pid": 19112,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "2",
+    "blockers": [],
+    "query": "COMMIT"
+  }
+]

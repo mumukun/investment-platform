@@ -1,0 +1,74 @@
+{
+  "release_id": "REL-20261105-003",
+  "result": "DEPLOY_FAILED",
+  "state": "/volume1/docker/.investment-platform-releases/REL-20261105-003/state.json",
+  "receipt": {
+    "release_id": "REL-20261105-003",
+    "plan_hash": "452fb435144eecf5252a720f49d975f4feca73dca18f6a92b9218c16de4d1e4e",
+    "repositories": {
+      "stock-analyzer": {
+        "backup": {
+          "status": "SKIPPED",
+          "policy": {
+            "mode": "skip",
+            "data_impact": "none",
+            "rollback_compatible": true,
+            "reason": "\u5386\u53f2\u7f13\u5b58\u6bcf\u6279100\u53ea\u5e76\u9010\u6279\u590d\u7528\u3001\u5468\u671f\u72b6\u6001\u72ec\u7acb30\u79d2\u6536\u5c3e\uff1b\u65e0DDL\u3001\u884c\u60c5\u91c7\u96c6\u6216\u57fa\u7840/\u4ea4\u6613\u4e8b\u5b9e\u6539\u5199\uff0c6.8.1\u517c\u5bb9\u5168\u90e8\u7f13\u5b58\uff0c\u6cbf\u7528\u7528\u6237\u90e8\u7f72\u4e0d\u5907\u4efd\u504f\u597d\u3002",
+            "evidence": "CHG-20261105-002\uff1a\u771f\u5b9e\u672c\u673aPG95\u9879\u76f8\u5173\u56de\u5f52\u3001\u914d\u7f6e/\u7f16\u8bd1\u53ca\u7cbe\u786emainCI/\u5019\u9009\u901a\u8fc7\u3002"
+          }
+        },
+        "deployment_started": true
+      }
+    },
+    "events": [
+      {
+        "repository": "stock-analyzer",
+        "stage": "pull",
+        "started_at": "2026-11-05T04:29:41.882812+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 75.807
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "backup",
+        "started_at": "2026-11-05T04:31:08.078421+00:00",
+        "status": "SKIPPED",
+        "elapsed_seconds": 2.207
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "checkout",
+        "started_at": "2026-11-05T04:31:12.804951+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 3.117
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "start",
+        "started_at": "2026-11-05T04:31:19.147727+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 113.912
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "verify",
+        "started_at": "2026-11-05T04:33:13.419912+00:00",
+        "status": "FAILED",
+        "elapsed_seconds": 53.855
+      }
+    ],
+    "identity": [
+      {
+        "repository": "stock-analyzer",
+        "tag": "v6.8.2",
+        "commit_sha": "9a8e08a9d44bf4c5c721a40df8f5ed9671208059",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b61115d5d8dc0c0429bdfcff0c16a46d090bd137225eb48be344d85ad9447a3e"
+        }
+      }
+    ],
+    "last_operation": "deploy",
+    "last_result": "FAILED",
+    "last_operation_at": "2026-11-05T04:34:09.747388+00:00"
+  }
+}

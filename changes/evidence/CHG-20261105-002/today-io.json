@@ -1,0 +1,132 @@
+{
+  "vacuum_relation": [
+    {
+      "oid": 69183,
+      "nspname": "stock_analyzer",
+      "relname": "a_share_snapshot",
+      "reltuples": 422363.0,
+      "relpages": 16388,
+      "reltoastrelid": 69193
+    },
+    {
+      "oid": 2625477,
+      "nspname": "stock_analyzer",
+      "relname": "api_read_projection",
+      "reltuples": 15447.0,
+      "relpages": 3209,
+      "reltoastrelid": 2625480
+    },
+    {
+      "oid": 3262462,
+      "nspname": "stock_analyzer",
+      "relname": "market_quote_latest",
+      "reltuples": 6919.0,
+      "relpages": 22423,
+      "reltoastrelid": 3262465
+    },
+    {
+      "oid": 3262433,
+      "nspname": "stock_analyzer",
+      "relname": "swing_daily_validation",
+      "reltuples": 33648.0,
+      "relpages": 3193,
+      "reltoastrelid": 3262437
+    },
+    {
+      "oid": 408474,
+      "nspname": "stock_analyzer",
+      "relname": "swing_setup_snapshot",
+      "reltuples": 76487.0,
+      "relpages": 11783,
+      "reltoastrelid": 408477
+    }
+  ],
+  "vacuum_progress": [
+    {
+      "pid": 7580,
+      "relid": 3262462,
+      "phase": "scanning heap",
+      "heap_blks_total": 22423,
+      "heap_blks_scanned": 1879,
+      "heap_blks_vacuumed": 0,
+      "index_vacuum_count": 0
+    },
+    {
+      "pid": 26890,
+      "relid": 2625480,
+      "phase": "scanning heap",
+      "heap_blks_total": 200158,
+      "heap_blks_scanned": 90764,
+      "heap_blks_vacuumed": 0,
+      "index_vacuum_count": 0
+    }
+  ],
+  "collection_detail": [
+    {
+      "dataset": "cn-quote-samples",
+      "scope_key": "published",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 240,
+      "data_time": "2026-11-05 10:09:47+08:00",
+      "checked_at": "2026-11-05 10:10:14.025569+08:00",
+      "last_success_at": "2026-11-05 10:10:14.025569+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "all",
+      "status": "ready",
+      "expected_count": 5578,
+      "ready_count": 5578,
+      "data_time": "2026-11-05 10:00:56+08:00",
+      "checked_at": "2026-11-05 10:09:26.982079+08:00",
+      "last_success_at": "2026-11-05 10:09:26.982079+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "cursor",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 4010,
+      "data_time": null,
+      "checked_at": "2026-11-05 10:09:26.983579+08:00",
+      "last_success_at": "2026-11-05 10:09:26.983579+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-quotes",
+      "scope_key": "published",
+      "status": "ready",
+      "expected_count": null,
+      "ready_count": 60,
+      "data_time": "2026-11-05 10:09:49+08:00",
+      "checked_at": "2026-11-05 10:09:50.930671+08:00",
+      "last_success_at": "2026-11-05 10:09:50.930671+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-snapshot",
+      "scope_key": "all",
+      "status": "partial",
+      "expected_count": 5578,
+      "ready_count": 1860,
+      "data_time": "2026-11-05 09:47:54+08:00",
+      "checked_at": "2026-11-05 10:10:38.176146+08:00",
+      "last_success_at": "2026-11-05 10:10:38.173332+08:00",
+      "issue": null
+    },
+    {
+      "dataset": "cn-snapshot",
+      "scope_key": "quote-limits",
+      "status": "partial",
+      "expected_count": null,
+      "ready_count": null,
+      "data_time": null,
+      "checked_at": "2026-10-30 15:08:11.600943+08:00",
+      "last_success_at": null,
+      "issue": "Derived quote-limit archive deferred: QueryCanceled"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "contexts": [
+    {
+      "Plan": {
+        "Node Type": "Unique",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 12265.54,
+        "Total Cost": 12285.15,
+        "Plan Rows": 2247,
+        "Plan Width": 928,
+        "Plans": [
+          {
+            "Node Type": "Sort",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 12265.54,
+            "Total Cost": 12272.08,
+            "Plan Rows": 2615,
+            "Plan Width": 928,
+            "Sort Key": [
+              "code",
+              "pattern",
+              "trade_date DESC"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "swing_setup_snapshot_pkey",
+                "Relation Name": "swing_setup_snapshot",
+                "Alias": "swing_setup_snapshot",
+                "Startup Cost": 13.1,
+                "Total Cost": 12117.1,
+                "Plan Rows": 2615,
+                "Plan Width": 928
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "receipt": [
+    {
+      "Plan": {
+        "Node Type": "Unique",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 3834.56,
+        "Total Cost": 3834.57,
+        "Plan Rows": 1,
+        "Plan Width": 91,
+        "Plans": [
+          {
+            "Node Type": "Sort",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 3834.56,
+            "Total Cost": 3834.57,
+            "Plan Rows": 1,
+            "Plan Width": 91,
+            "Sort Key": [
+              "code",
+              "validated_as_of DESC",
+              "checked_at DESC"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "swing_daily_validation",
+                "Alias": "swing_daily_validation",
+                "Startup Cost": 399.18,
+                "Total Cost": 3834.55,
+                "Plan Rows": 1,
+                "Plan Width": 91,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "idx_swing_daily_validation_session",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 386.49,
+                    "Plan Rows": 5605,
+                    "Plan Width": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "query_revision": [
+    {
+      "Plan": {
+        "Node Type": "Aggregate",
+        "Strategy": "Plain",
+        "Partial Mode": "Finalize",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 14495.61,
+        "Total Cost": 14495.62,
+        "Plan Rows": 1,
+        "Plan Width": 32,
+        "Plans": [
+          {
+            "Node Type": "Gather",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 14495.4,
+            "Total Cost": 14495.61,
+            "Plan Rows": 2,
+            "Plan Width": 32,
+            "Workers Planned": 2,
+            "Single Copy": false,
+            "Plans": [
+              {
+                "Node Type": "Aggregate",
+                "Strategy": "Plain",
+                "Partial Mode": "Partial",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 13495.4,
+                "Total Cost": 13495.41,
+                "Plan Rows": 1,
+                "Plan Width": 32,
+                "Plans": [
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": true,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "idx_a_share_snapshot_update",
+                    "Relation Name": "a_share_snapshot",
+                    "Alias": "a_share_snapshot",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 13055.44,
+                    "Plan Rows": 175985,
+                    "Plan Width": 21
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

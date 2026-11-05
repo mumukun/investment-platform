@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "version": "6.8.2",
+  "read_at": "2026-11-05T13:03:23.039912+08:00",
+  "seconds": 29.6808,
+  "scope": "new process with empty in-process cache; 300 securities; DB/OS caches not cleared; read-only enforced",
+  "baseline": "2026-11-04",
+  "securities": 300,
+  "nonempty_histories": 300,
+  "cache_read_sizes": [
+    100,
+    100,
+    100
+  ],
+  "stats": {
+    "memory_hits": 0,
+    "persistent_hits": 223,
+    "loaded_codes": 77,
+    "batches": 1,
+    "version_checks": 2,
+    "version_codes": 377,
+    "version_seconds": 1.8342,
+    "load_seconds": 8.3541,
+    "cache_seconds": 18.2008,
+    "total_seconds": 28.3894
+  }
+}

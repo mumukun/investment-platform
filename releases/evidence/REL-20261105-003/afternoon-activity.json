@@ -1,0 +1,128 @@
+[
+  {
+    "pid": 26890,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "14281",
+    "blockers": [],
+    "query": "autovacuum: VACUUM pg_toast.pg_toast_2625477"
+  },
+  {
+    "pid": 21362,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "220",
+    "blockers": [],
+    "query": "SELECT pg_try_advisory_xact_lock(hashtext($1)) locked"
+  },
+  {
+    "pid": 21378,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "216",
+    "blockers": [],
+    "query": "SELECT pg_try_advisory_xact_lock(hashtext(current_schema()),hashtext($1)) locked"
+  },
+  {
+    "pid": 21663,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "139",
+    "blockers": [],
+    "query": "SELECT requested.code,h.trade_date,h.close,h.amount\n            FROM unnest($1::text[]) requested(code) CROSS JOIN LATERAL (\n              (SELECT trade_date,close,amount FROM a_sh"
+  },
+  {
+    "pid": 22052,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "25",
+    "blockers": [],
+    "query": "WITH RECURSIVE instruments AS (\n          (SELECT instrument_id FROM global_board_fact WHERE kind='quote' ORDER BY instrument_id LIMIT 1)\n          UNION ALL\n          SELECT next."
+  },
+  {
+    "pid": 22061,
+    "state": "idle in transaction",
+    "wait_event_type": "Client",
+    "wait_event": "ClientRead",
+    "seconds": "16",
+    "blockers": [],
+    "query": "SELECT revision,failed_at,built_at FROM api_read_projection WHERE cache_key=$1"
+  },
+  {
+    "pid": 22102,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "15",
+    "blockers": [],
+    "query": "SELECT cache_key,payload FROM api_read_projection WHERE cache_key=ANY($1)"
+  },
+  {
+    "pid": 22094,
+    "state": "active",
+    "wait_event_type": "IO",
+    "wait_event": "DataFileRead",
+    "seconds": "14",
+    "blockers": [],
+    "query": "SELECT t.trade_id,v.*\n                FROM swing_simulated_trade t CROSS JOIN LATERAL (\n                  SELECT verified_dates,source,invalidated_at\n                  FROM swing_d"
+  },
+  {
+    "pid": 22141,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "1",
+    "blockers": [],
+    "query": "INSERT INTO intraday_stock_bar (trade_date,minute,code,open,high,low,close,volume,amount,vwap,source,source_time,received_at,sample_kind,content_hash,change_pct,turnover_pct) SELEC"
+  },
+  {
+    "pid": 21230,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "0",
+    "blockers": [],
+    "query": "INSERT INTO tech_board_fact(kind,entity_id,source_date,fact_hash,observed_at,payload,source_time)\n                    VALUES($1,$2,$3,$4,now(),$5,$6) ON CONFLICT DO NOTHING"
+  },
+  {
+    "pid": 22154,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "0",
+    "blockers": [],
+    "query": "COMMIT"
+  },
+  {
+    "pid": 22152,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "0",
+    "blockers": [],
+    "query": "COMMIT"
+  },
+  {
+    "pid": 11747,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "0",
+    "blockers": [],
+    "query": "INSERT INTO security_trade_rule (trade_date,code,exchange,board,security_name,is_st,is_suspended,listing_date,price_limit_pct,limit_up_price,limit_down_price,price_tick,is_no_limit"
+  },
+  {
+    "pid": 22160,
+    "state": "active",
+    "wait_event_type": "LWLock",
+    "wait_event": "WALWrite",
+    "seconds": "0",
+    "blockers": [],
+    "query": "SELECT issue FROM market_data_state WHERE dataset='system'\n           AND scope_key='collector-owner' AND source='runtime' FOR SHARE"
+  }
+]

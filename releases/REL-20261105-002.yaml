@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261105-002",
+  "status": "PARTIAL",
+  "changes": [
+    "CHG-20261105-002"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.8.1",
+      "commit_sha": "836df61adfc029d1bef8fdd6cecb9106adf73fdc",
+      "planned_version": "6.8.1",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b1ef355c798fd20d51f9b98acd195df3b69a997d220ab07642fc4c7e6b332bd8"
+      },
+      "artifact_id": {
+        "app": "sha256:22d665f309a9247eabdacd93782bb5c6700c95cd56fc5b988b3f082563784030"
+      },
+      "rollback": {
+        "tag": "v6.8.0",
+        "version": "6.8.0",
+        "commit_sha": "9ae25ae6fe6740ac6672fc3cf73c81de092d97f0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:569c24b757d8de29aff820d9ee707cee6db9c84fc65ad3321d3ac4fbd31e9aa9"
+        },
+        "image_ids": {
+          "app": "sha256:73fb02b664ac0832e6b1621b5164ab2e370cc9346e9900a2e7e5a65e6fd4f442"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "836df61adfc029d1bef8fdd6cecb9106adf73fdc",
+          "run_id": "41955687031"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b1ef355c798fd20d51f9b98acd195df3b69a997d220ab07642fc4c7e6b332bd8"
+          }
+        },
+        "candidate_run_id": "41956043415"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261105-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PARTIAL",
+    "completed_at": "2026-11-05T02:51:43.386925+00:00"
+  },
+  "verification": {
+    "runtime_identity_health_smoke": "PASS_AFTER_SAME_PLAN_RESUME",
+    "initial_failed_receipt": "releases/evidence/REL-20261105-002/deployment-initial-failure.json",
+    "selection_recovery": "SHORT_PUBLISHED_WAVE_PENDING_FOLLOWUP",
+    "note": "Container health passed; waiting for both current-day publications and actual consumer readback.",
+    "short_page": "releases/evidence/REL-20261105-002/short-page-readback.json",
+    "followup_version": "6.8.2",
+    "timing": {
+      "user_request_timestamp": "UNKNOWN",
+      "first_work_observed_at": "2026-11-05T02:13:24+00:00",
+      "nas_first_launch_at": "2026-11-05T02:38:59.410085+00:00",
+      "initial_verify_failed_at": "2026-11-05T02:48:33.265723+00:00",
+      "same_plan_health_smoke_pass_at": "2026-11-05T02:51:43.386925+00:00",
+      "followup_candidate_ready_observed_at": "2026-11-05T03:31:06+00:00",
+      "note": "Includes diagnosis, implementation/local tests, PR/main CI/candidate, explicit approval and NAS execution/recovery. First release physical deployment is not full incident resolution; wave still pending followup. No exact full request elapsed can be claimed; do not attribute unmeasured gaps to NAS or CI."
+    },
+    "followup_release": "REL-20261105-003",
+    "followup_result": "V6.8.2_DEPLOYED_WAVE_ACCEPTANCE_PENDING"
+  }
+}
