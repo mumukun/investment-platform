@@ -70,7 +70,7 @@
     "identity_health_smoke": "PASS",
     "cold_history_read": "releases/evidence/REL-20261105-003/production-cache-verification.json",
     "actual_current_day_wave_publication": "NOT_VERIFIED",
-    "note": "Formal identity/health/smoke passed via same-plan resume without a second container switch. Wave 13:05 timed out in historical fact reads at the 300-second cycle budget. Latest read did not establish today wave. PostgreSQL autovacuum left active. No artificial replay.",
+    "note": "Formal identity/health/smoke passed via same-plan resume without a second container switch. Wave 13:05, 13:10, and 13:15 timed out in historical fact reads at the 300-second cycle budget. Latest read did not establish today wave. PostgreSQL autovacuum left active. No artificial replay.",
     "latest_wave_trade_date": "2026-11-04",
     "wave_trace": "releases/evidence/REL-20261105-003/wave-cycle-trace.log",
     "current_selection_metadata": "releases/evidence/REL-20261105-003/selection-recovery-latest.json",
@@ -80,7 +80,7 @@
     "timing": {
       "same_plan_health_smoke_pass_at": "2026-11-05T04:59:31.605315+00:00",
       "short_dashboard_readback_at": "2026-11-05T13:14:38.864475+08:00",
-      "current_selection_last_checked_at": "2026-11-05T13:16:22.919732+08:00"
+      "current_selection_last_checked_at": "2026-11-05T13:20:43.812545+08:00"
     }
   }
 }

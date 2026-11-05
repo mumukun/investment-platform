@@ -939,6 +939,6 @@
       }
     }
   },
-  "verification_note": "REL-20261105-003: deployed stock-analyzer v6.8.2; verified current-day short Dashboard readback, wave current-day publication pending at 2026-11-05T13:16:22.919732+08:00. Dashboard and marketNewsFeed unchanged.",
+  "verification_note": "REL-20261105-003: deployed stock-analyzer v6.8.2; verified current-day short Dashboard readback, wave current-day publication pending at 2026-11-05T13:20:43.812545+08:00. Dashboard and marketNewsFeed unchanged.",
   "last_verified_at": "2026-11-05T04:59:31.605315+00:00"
 }
