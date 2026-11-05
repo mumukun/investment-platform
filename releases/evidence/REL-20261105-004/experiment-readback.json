@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "read_at": "2026-11-05T18:34:09.035072+08:00",
+  "pages": {
+    "2026-11-04": {
+      "seconds": 1.039,
+      "trade_date": "2026-11-04",
+      "groups": {
+        "eligible": 84,
+        "scored": 0,
+        "high": 0
+      },
+      "board_experiment_in_page": 0,
+      "scored_v2_in_page": 0,
+      "evaluated_at": "2026-11-04T23:41:50.400496+08:00"
+    },
+    "2026-11-05": {
+      "seconds": 0.318,
+      "trade_date": "2026-11-05",
+      "groups": {
+        "eligible": 172,
+        "scored": 0,
+        "high": 0
+      },
+      "board_experiment_in_page": 0,
+      "scored_v2_in_page": 0,
+      "evaluated_at": "2026-11-05T16:50:33.810720+08:00"
+    }
+  },
+  "stats": {
+    "seconds": 2.585,
+    "result_as_of": "2026-11-05",
+    "projection_status": "current",
+    "version": "short-strength-v2",
+    "days": []
+  }
+}

@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-11-04T23:41:51.464780+00:00",
+  "verified_at": "2026-11-05T10:33:45.607152+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -55,20 +55,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-11-05T04:59:31.605315+00:00",
-        "application_version": "6.8.2",
+        "verified_at": "2026-11-05T10:33:45.607152+00:00",
+        "application_version": "6.9.0",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v6.8.2",
-        "commit_sha": "9a8e08a9d44bf4c5c721a40df8f5ed9671208059",
+        "tag": "v6.9.0",
+        "commit_sha": "980baee3474cc8656c8866f8635e45eda20e4232",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b61115d5d8dc0c0429bdfcff0c16a46d090bd137225eb48be344d85ad9447a3e"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:a685119935c6040471ef0f806df2a4e289b9a424773598a0c86ac9971e4c8168"
         },
         "artifact_id": {
-          "app": "sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6"
+          "app": "sha256:07324251aa53454100970666e7a3d1b8b617a8dc1d98b414fb1856006f978817"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b61115d5d8dc0c0429bdfcff0c16a46d090bd137225eb48be344d85ad9447a3e"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:a685119935c6040471ef0f806df2a4e289b9a424773598a0c86ac9971e4c8168"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -76,17 +76,17 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-11-05T04:59:31.605315+00:00",
-        "health": "PASS: runtime identity/health/smoke; PARTIAL: current-day short available, wave publication unverified",
+        "deployment_timestamp": "2026-11-05T10:33:45.607152+00:00",
+        "health": "PASS: runtime identity, health and smoke; targeted short experiment readback verified",
         "rollback_baseline": {
-          "tag": "v6.8.1",
-          "version": "6.8.1",
-          "commit_sha": "836df61adfc029d1bef8fdd6cecb9106adf73fdc",
+          "tag": "v6.8.2",
+          "version": "6.8.2",
+          "commit_sha": "9a8e08a9d44bf4c5c721a40df8f5ed9671208059",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b1ef355c798fd20d51f9b98acd195df3b69a997d220ab07642fc4c7e6b332bd8"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b61115d5d8dc0c0429bdfcff0c16a46d090bd137225eb48be344d85ad9447a3e"
           },
           "image_ids": {
-            "app": "sha256:22d665f309a9247eabdacd93782bb5c6700c95cd56fc5b988b3f082563784030"
+            "app": "sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6"
           },
           "runtime_services": {
             "app": [
@@ -97,7 +97,7 @@
           }
         },
         "next_release_rollback_images": {
-          "app": "sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6"
+          "app": "sha256:07324251aa53454100970666e7a3d1b8b617a8dc1d98b414fb1856006f978817"
         },
         "evidence": [
           "releases/REL-20261103-001.yaml",
@@ -208,8 +208,8 @@
             "mode": "skip",
             "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "历史缓存每批100只并逐批复用、周期状态独立30秒收尾；无DDL、行情采集或基础/交易事实改写，6.8.1兼容全部缓存，沿用用户部署不备份偏好。",
-            "evidence": "CHG-20261105-002：真实本机PG95项相关回归、配置/编译及精确mainCI/候选通过。"
+            "reason": "兼容新增业务派生对照和可选读取字段，无DDL或基础及交易事实改写，沿用用户部署备份偏好。",
+            "evidence": "CHG-20261105-003：隔离 PostgreSQL、合成规模、认证 HTTP 和 Dashboard 构建/浏览器验证。"
           }
         },
         "short_tail": {
@@ -353,7 +353,7 @@
           "tag": "v6.4.0",
           "commit_sha": "38b368e9c4df5297375652cb36b682661d463072"
         },
-        "release_limitations_evidence": "releases/REL-20261105-003.yaml",
+        "release_limitations_evidence": "releases/REL-20261105-004.yaml",
         "foundation": {
           "read_at": "2026-10-28T14:59:09.749744+08:00",
           "fresh_coverage_latest": 1.0,
@@ -437,7 +437,7 @@
           "hasGap": false,
           "seconds": 0.06
         },
-        "deployment_timestamp_basis": "Formal resume health/smoke completion, not first container start",
+        "deployment_timestamp_basis": "Exact artifact runtime health and smoke passed",
         "selection_release_limitations": "2026-11-03 current short candidates classify existing participation evidence only; missing historical evidence is never fabricated.",
         "release_limitations": "Only this release boundary verified; earlier domain observations retain their original dated evidence.",
         "live_kline_readback": [
@@ -477,52 +477,52 @@
           "carried": 17,
           "unknown": 0
         },
-        "latest_release": "REL-20261105-003",
-        "verification_evidence": "releases/evidence/REL-20261105-003/deployment-receipt.json"
+        "latest_release": "REL-20261105-004",
+        "verification_evidence": "releases/evidence/REL-20261105-004/deployment-receipt.json"
       }
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-11-04T23:41:51.464780+00:00",
-        "application_version": "2.8.0",
+        "verified_at": "2026-11-05T10:33:45.607152+00:00",
+        "application_version": "2.9.0",
         "application_version_source": "VERSION",
-        "tag": "v2.8.0",
-        "commit_sha": "9798221d295264aaf68dd1ee374ee952b466da13",
+        "tag": "v2.9.0",
+        "commit_sha": "f559540390ae8bf73b7caa78b51371e7bed5a4df",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:511ea7cb0ccb47564a67001697a0cf9d3a6ab35aafe42f5799af8b350e247a13",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8e34900c506aafaa057fcdddde5b6d2d019154722f2ffd7147aae1296b468eb3"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7f33d34ee689809066a662f18dac798956ebfe22a7099352d4c086c69ad87d7b",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3f376d182ff2fa4152baf80fc3723cf881afa0315ddd438f7fef1e5a98159686"
         },
         "artifact_id": {
-          "api": "sha256:973cfec5edfae6b5f6a12d029c7dba0e6dda4311f0a87aca472f85d78be7b5d7",
-          "web": "sha256:3df994b47f39a6737bfcd08ee034883b329f395a678af1af68e60de189355390"
+          "api": "sha256:acc45d3c12d0fbd9494ddffe24a947436cc8b9cc93723918c81d7d5bc99baa77",
+          "web": "sha256:bf31b108809b07c1a7d328e2891c8ed085969c208f415c2ef45c31a9246411f8"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:511ea7cb0ccb47564a67001697a0cf9d3a6ab35aafe42f5799af8b350e247a13",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8e34900c506aafaa057fcdddde5b6d2d019154722f2ffd7147aae1296b468eb3"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7f33d34ee689809066a662f18dac798956ebfe22a7099352d4c086c69ad87d7b",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:3f376d182ff2fa4152baf80fc3723cf881afa0315ddd438f7fef1e5a98159686"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
           "api",
           "web"
         ],
-        "health": "PASS: exact runtime identity/health/smoke and compact-query performance/consistency acceptance",
+        "health": "PASS: runtime identity, health and smoke; targeted short experiment readback verified",
         "rollback_baseline": {
-          "tag": "v2.7.0",
-          "version": "2.7.0",
-          "commit_sha": "77ff6e7e651cdd3b9efa5c3777cc40538d7e8741",
+          "tag": "v2.8.0",
+          "version": "2.8.0",
+          "commit_sha": "9798221d295264aaf68dd1ee374ee952b466da13",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8ba6189f9b4a23373ff6124c09c185331e32363ee30aa44f60b019083f88076c",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:103ad31fde6fe1c3ca24c57155e82b03638647447c6f9381b7d3d491525048f4"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:511ea7cb0ccb47564a67001697a0cf9d3a6ab35aafe42f5799af8b350e247a13",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:8e34900c506aafaa057fcdddde5b6d2d019154722f2ffd7147aae1296b468eb3"
           },
           "image_ids": {
-            "api": "sha256:772af33c64e89de5e5a3c9fd9d8aaa0b2fd1db74e748ca8976c6a7ce3f5d9f11",
-            "web": "sha256:3ea4231fdbe42cbdd365d6b594de45ac08c1f441264e219e8f055c631ab526d2"
+            "api": "sha256:973cfec5edfae6b5f6a12d029c7dba0e6dda4311f0a87aca472f85d78be7b5d7",
+            "web": "sha256:3df994b47f39a6737bfcd08ee034883b329f395a678af1af68e60de189355390"
           }
         },
         "next_release_rollback_images": {
-          "api": "sha256:973cfec5edfae6b5f6a12d029c7dba0e6dda4311f0a87aca472f85d78be7b5d7",
-          "web": "sha256:3df994b47f39a6737bfcd08ee034883b329f395a678af1af68e60de189355390"
+          "api": "sha256:acc45d3c12d0fbd9494ddffe24a947436cc8b9cc93723918c81d7d5bc99baa77",
+          "web": "sha256:bf31b108809b07c1a7d328e2891c8ed085969c208f415c2ef45c31a9246411f8"
         },
         "evidence": [
           "releases/REL-20261103-001.yaml",
@@ -633,8 +633,8 @@
             "mode": "skip",
             "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "只新增兼容只读查询契约和业务派生投影，无DDL或基础事实/交易账本改写；旧API与证据保留，按用户部署偏好skip。",
-            "evidence": "CHG-20261105-001：52项Provider、45项Consumer实际PG、384项UI及构建/格式；632股列表481400字节/0.104秒。"
+            "reason": "兼容新增业务派生对照和可选读取字段，无DDL或基础及交易事实改写，沿用用户部署备份偏好。",
+            "evidence": "CHG-20261105-003：隔离 PostgreSQL、合成规模、认证 HTTP 和 Dashboard 构建/浏览器验证。"
           }
         },
         "short_tail": {
@@ -807,7 +807,7 @@
           "actual_trade_date": "2026-10-28",
           "read_seconds": 23.991
         },
-        "release_limitations_evidence": "releases/REL-20261105-001.yaml",
+        "release_limitations_evidence": "releases/REL-20261105-004.yaml",
         "selection_reliability": {
           "status": "DEPLOYED_REAL_SESSION_SLO_PENDING",
           "changes": [
@@ -932,13 +932,13 @@
           "carried": 17,
           "unknown": 0
         },
-        "latest_release": "REL-20261105-001",
-        "verification_evidence": "releases/evidence/REL-20261105-001/deployment-receipt.json",
-        "deployment_timestamp": "2026-11-04T23:41:51.464780+00:00",
-        "deployment_timestamp_basis": "Verified release completion, not container StartedAt"
+        "latest_release": "REL-20261105-004",
+        "verification_evidence": "releases/evidence/REL-20261105-004/deployment-receipt.json",
+        "deployment_timestamp": "2026-11-05T10:33:45.607152+00:00",
+        "deployment_timestamp_basis": "Exact artifact runtime health and smoke passed"
       }
     }
   },
-  "verification_note": "REL-20261105-003: deployed stock-analyzer v6.8.2; verified current-day short Dashboard readback, wave current-day publication pending at 2026-11-05T13:20:43.812545+08:00. Dashboard and marketNewsFeed unchanged.",
-  "last_verified_at": "2026-11-05T04:59:31.605315+00:00"
+  "verification_note": "REL-20261105-004: stock-analyzer v6.9.0 and Dashboard v2.9.0 on verified artifacts. See runtime and experiment readback.",
+  "last_verified_at": "2026-11-05T10:33:45.607152+00:00"
 }

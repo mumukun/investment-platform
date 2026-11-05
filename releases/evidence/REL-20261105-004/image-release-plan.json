@@ -154,8 +154,9 @@
     }
   ],
   "authorization": {
-    "status": "PREPARE_ONLY",
-    "evidence": "用户确认实施；按长期交付规则提交与准备，等待正式上线授权。"
+    "status": "FORMAL",
+    "evidence": "用户在当前对话明确授权：“那发布生产 上线吧”。",
+    "approved_at": "2026-11-05T10:18:35.818808+00:00"
   },
   "changes": [
     "CHG-20261105-003"
