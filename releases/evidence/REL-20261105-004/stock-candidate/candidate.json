@@ -1,0 +1,36 @@
+{
+  "schema_version": "candidate-v2",
+  "repository": "stock-analyzer",
+  "commit_sha": "980baee3474cc8656c8866f8635e45eda20e4232",
+  "version": "6.9.0",
+  "platform": "linux/amd64",
+  "images": {
+    "app": "ghcr.io/mumukun/stock-analyzer@sha256:a685119935c6040471ef0f806df2a4e289b9a424773598a0c86ac9971e4c8168"
+  },
+  "image_ids": {
+    "app": "sha256:07324251aa53454100970666e7a3d1b8b617a8dc1d98b414fb1856006f978817"
+  },
+  "build_args": {},
+  "runtime_services": {
+    "app": [
+      "stock-api",
+      "stock-watch",
+      "stock-data"
+    ]
+  },
+  "evidence": {
+    "quality": {
+      "status": "PASS",
+      "commit_sha": "980baee3474cc8656c8866f8635e45eda20e4232",
+      "run_id": "42006276608"
+    },
+    "image_smoke": {
+      "status": "PASS",
+      "scope": "isolated-fixture",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:a685119935c6040471ef0f806df2a4e289b9a424773598a0c86ac9971e4c8168"
+      }
+    },
+    "candidate_run_id": "42007140311"
+  }
+}
