@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261105-003",
+  "status": "PARTIAL",
+  "changes": [
+    "CHG-20261105-002"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.8.2",
+      "commit_sha": "9a8e08a9d44bf4c5c721a40df8f5ed9671208059",
+      "planned_version": "6.8.2",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b61115d5d8dc0c0429bdfcff0c16a46d090bd137225eb48be344d85ad9447a3e"
+      },
+      "artifact_id": {
+        "app": "sha256:c2dcf40c86832c1ba43ae77b17ba0cb5ae2fa5d9e9c8f60a3321a79b62b0cbc6"
+      },
+      "rollback": {
+        "tag": "v6.8.1",
+        "version": "6.8.1",
+        "commit_sha": "836df61adfc029d1bef8fdd6cecb9106adf73fdc",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b1ef355c798fd20d51f9b98acd195df3b69a997d220ab07642fc4c7e6b332bd8"
+        },
+        "image_ids": {
+          "app": "sha256:22d665f309a9247eabdacd93782bb5c6700c95cd56fc5b988b3f082563784030"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "9a8e08a9d44bf4c5c721a40df8f5ed9671208059",
+          "run_id": "41961514047"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b61115d5d8dc0c0429bdfcff0c16a46d090bd137225eb48be344d85ad9447a3e"
+          }
+        },
+        "candidate_run_id": "41961843587"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261105-003/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "PARTIAL",
+    "completed_at": "2026-11-05T04:59:31.605315+00:00"
+  },
+  "verification": {
+    "identity_health_smoke": "PASS",
+    "cold_history_read": "releases/evidence/REL-20261105-003/production-cache-verification.json",
+    "actual_current_day_wave_publication": "NOT_VERIFIED",
+    "note": "Formal identity/health/smoke passed via same-plan resume without a second container switch. Wave 13:05 timed out in historical fact reads at the 300-second cycle budget. Latest read did not establish today wave. PostgreSQL autovacuum left active. No artificial replay.",
+    "latest_wave_trade_date": "2026-11-04",
+    "wave_trace": "releases/evidence/REL-20261105-003/wave-cycle-trace.log",
+    "current_selection_metadata": "releases/evidence/REL-20261105-003/selection-recovery-latest.json",
+    "short_dashboard_readback": "releases/evidence/REL-20261105-003/short-page-readback.json",
+    "initial_failed_receipt": "releases/evidence/REL-20261105-003/deployment-initial-failure.json",
+    "runtime_probe": "releases/evidence/REL-20261105-003/runtime-diagnostics.json",
+    "timing": {
+      "same_plan_health_smoke_pass_at": "2026-11-05T04:59:31.605315+00:00",
+      "short_dashboard_readback_at": "2026-11-05T13:14:38.864475+08:00",
+      "current_selection_last_checked_at": "2026-11-05T13:16:22.919732+08:00"
+    }
+  }
+}

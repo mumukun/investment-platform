@@ -81,6 +81,8 @@
       "same_plan_health_smoke_pass_at": "2026-11-05T02:51:43.386925+00:00",
       "followup_candidate_ready_observed_at": "2026-11-05T03:31:06+00:00",
       "note": "Includes diagnosis, implementation/local tests, PR/main CI/candidate, explicit approval and NAS execution/recovery. First release physical deployment is not full incident resolution; wave still pending followup. No exact full request elapsed can be claimed; do not attribute unmeasured gaps to NAS or CI."
-    }
+    },
+    "followup_release": "REL-20261105-003",
+    "followup_result": "V6.8.2_DEPLOYED_WAVE_ACCEPTANCE_PENDING"
   }
 }

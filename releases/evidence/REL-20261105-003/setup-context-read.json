@@ -1,0 +1,43 @@
+{
+  "mode": "read-only",
+  "start": "2026-11-05T13:05:06.051821+08:00",
+  "finished_at": "2026-11-05T13:05:18.392444+08:00",
+  "codes": 693,
+  "batches": [
+    {
+      "offset": 0,
+      "contexts": 144,
+      "seconds": 0.226
+    },
+    {
+      "offset": 100,
+      "contexts": 134,
+      "seconds": 0.0927
+    },
+    {
+      "offset": 200,
+      "contexts": 140,
+      "seconds": 3.1316
+    },
+    {
+      "offset": 300,
+      "contexts": 153,
+      "seconds": 0.5038
+    },
+    {
+      "offset": 400,
+      "contexts": 139,
+      "seconds": 0.3022
+    },
+    {
+      "offset": 500,
+      "contexts": 144,
+      "seconds": 6.3804
+    },
+    {
+      "offset": 600,
+      "contexts": 138,
+      "seconds": 0.1107
+    }
+  ]
+}

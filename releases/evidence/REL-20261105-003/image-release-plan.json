@@ -83,8 +83,8 @@
     }
   ],
   "authorization": {
-    "status": "PREPARE_ONLY",
-    "evidence": "用户要求定位并尽快解决。本轮正式Tag/部署已被自动审批拒绝：需单独明确本次hotfix正式上线授权；当前仅准备精确产物和回滚计划。"
+    "status": "FORMAL",
+    "evidence": "用户对本轮追加补丁明确答复：正式发布 v6.8.2 到生产。精确SHA/digest、版本、范围及回滚身份保持不变。"
   },
   "changes": [
     "CHG-20261105-002"
