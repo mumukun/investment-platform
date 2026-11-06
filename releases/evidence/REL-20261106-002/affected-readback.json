@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "read_at": "2026-11-06T17:35:49.713868+08:00",
+  "checks": {
+    "short_history": {
+      "rows": 5,
+      "total": 406,
+      "seconds": 0.809
+    },
+    "short_progress": {
+      "rows": 5,
+      "total": 194,
+      "seconds": 0.139
+    },
+    "swing_drawer": {
+      "rows": 5,
+      "total": 240,
+      "seconds": 0.414
+    },
+    "swing_progress": {
+      "rows": 5,
+      "total": 146,
+      "seconds": 1.247
+    },
+    "margin_list": {
+      "rows": 5,
+      "total": 3539,
+      "actual_trade_date": "2026-11-05",
+      "seconds": 4.937
+    }
+  }
+}
