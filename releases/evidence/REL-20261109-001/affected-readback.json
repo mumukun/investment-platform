@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "read_at": "2026-11-09T21:13:41.214025+08:00",
+  "checks": {
+    "tech-board": {
+      "rows": 25,
+      "last_sync_at": "2026-11-09T21:13:29.089748+08:00",
+      "stale": false,
+      "seconds": 0.299
+    },
+    "rotation-board": {
+      "rows": 30,
+      "last_sync_at": "2026-11-09T21:12:40.204200+08:00",
+      "stale": false,
+      "seconds": 0.145
+    },
+    "swing": {
+      "rules_version": "swing-rules-v5.4.0",
+      "trade_date": "2026-11-09",
+      "items": 478,
+      "freshness_status": "delayed",
+      "seconds": 0.371,
+      "accumulation_paths": 0
+    }
+  },
+  "swing_runtime_rules": "swing-rules-v5.4.0"
+}
