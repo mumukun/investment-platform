@@ -1,0 +1,10 @@
+{"section": "short", "day": "2026-11-09", "state": "refreshed", "total": 593, "settled": 532, "pending": {"not_due": 61}}
+{"section": "short", "day": "2026-11-08", "state": "refreshed", "total": 532, "settled": 406, "pending": {"not_due": 126}}
+{"section": "short", "day": "2026-11-07", "state": "refreshed", "total": 532, "settled": 406, "pending": {"not_due": 126}}
+{"section": "short", "day": "2026-11-06", "state": "refreshed", "total": 532, "settled": 406, "pending": {"not_due": 126}}
+{"section": "short", "day": "2026-11-05", "state": "refreshed", "total": 406, "settled": 259, "pending": {"not_due": 147}}
+{"section": "short", "day": "2026-11-04", "state": "refreshed", "total": 259, "settled": 248, "pending": {"not_due": 11}}
+{"section": "short", "day": "2026-11-03", "state": "refreshed", "total": 248, "settled": 85, "pending": {"not_due": 163}}
+{"section": "swing", "as_of": "2026-11-09", "rules_version": "swing-rules-v5.2.0", "total": 222, "settled": 222, "stored_settled": 222, "repaired": 168, "due_pending": 0, "not_due": 0, "due_pending_reasons": {}}
+{"section": "swing", "as_of": "2026-11-09", "rules_version": "swing-rules-v5.3.1", "total": 283, "settled": 1, "stored_settled": 1, "repaired": 0, "due_pending": 0, "not_due": 282, "due_pending_reasons": {}}
+{"section": "done", "run_day": "2026-11-09", "last_closed_session": "2026-11-09", "active_swing_rules": "swing-rules-v5.4.0"}
