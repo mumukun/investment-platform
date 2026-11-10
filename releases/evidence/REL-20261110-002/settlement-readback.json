@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "dashboard_version": "2.12.3",
+  "cohorts": {
+    "2026-11-09": {
+      "rules_version": "swing-rules-v5.3.1",
+      "purchases": 43
+    },
+    "2026-11-10": {
+      "rules_version": "swing-rules-v5.4.0",
+      "purchases": 44
+    }
+  },
+  "stats": {
+    "samples": 903,
+    "settled": 653
+  },
+  "older_rule_settlements": {
+    "rules_version": "swing-rules-v5.3.1",
+    "total": 77
+  },
+  "runtime_image_ids": {
+    "stock-api": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+    "stock-watch": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+    "stock-data": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+    "investment-research-dashboard-nas-api-1": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de",
+    "investment-research-dashboard-nas-web-1": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+  }
+}

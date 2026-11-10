@@ -1,0 +1,96 @@
+{
+  "release_id": "REL-20261110-002",
+  "result": "DEPLOY_FAILED",
+  "state": "/volume1/docker/.investment-platform-releases/REL-20261110-002/state.json",
+  "receipt": {
+    "release_id": "REL-20261110-002",
+    "plan_hash": "6f4f22663a8525ecd525ffd57b865c13c982314060ca1a3d3b0c9affe4d0da64",
+    "repositories": {
+      "stock-analyzer": {
+        "backup": {
+          "status": "SKIPPED",
+          "policy": {
+            "mode": "skip",
+            "data_impact": "additive",
+            "rollback_compatible": true,
+            "reason": "\u9075\u5faa 2026-10-29 \u53d1\u5e03\u89c4\u5219\u3002\u65b0\u589e\u517c\u5bb9\u7ed3\u7b97\u5b57\u6bb5\uff1b\u65e5\u5e38\u7ed3\u7b97\u4fdd\u7559\u5165\u8d26\u4e8b\u5b9e\u53ca\u65e2\u6709\u5b8c\u6210\u7ed3\u679c\uff0c\u56de\u9000\u955c\u50cf\u4ecd\u53ef\u8bfb\u53d6\u539f\u5b57\u6bb5\u3002",
+            "evidence": "CHG-20261110-003 \u72ec\u7acb PostgreSQL \u63a5\u5165\u3001\u5e76\u884c\u89c4\u5219\u3001\u5386\u53f2\u548c\u63a5\u53e3\u9a8c\u8bc1\uff1bCHG-20261110-002 \u4ec5\u770b\u677f\u5217\u8c03\u6574\u3002"
+          }
+        },
+        "deployment_started": true,
+        "completed": true,
+        "image_ids": {
+          "stock-api": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+          "stock-watch": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+          "stock-data": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+        }
+      }
+    },
+    "events": [
+      {
+        "repository": "stock-analyzer",
+        "stage": "pull",
+        "started_at": "2026-11-10T12:32:31.521267+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 127.486
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "backup",
+        "started_at": "2026-11-10T12:34:44.978616+00:00",
+        "status": "SKIPPED",
+        "elapsed_seconds": 2.767
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "checkout",
+        "started_at": "2026-11-10T12:34:50.057763+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 2.238
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "start",
+        "started_at": "2026-11-10T12:34:54.115203+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 168.677
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "verify",
+        "started_at": "2026-11-10T12:37:44.800995+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 29.684
+      },
+      {
+        "repository": "investment-research-dashboard",
+        "stage": "pull",
+        "started_at": "2026-11-10T12:38:16.111580+00:00",
+        "status": "FAILED",
+        "elapsed_seconds": 18.638
+      }
+    ],
+    "identity": [
+      {
+        "repository": "stock-analyzer",
+        "tag": "v6.12.3",
+        "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+        }
+      },
+      {
+        "repository": "investment-research-dashboard",
+        "tag": "v2.12.3",
+        "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+        }
+      }
+    ],
+    "last_operation": "deploy",
+    "last_result": "FAILED",
+    "last_operation_at": "2026-11-10T12:38:35.711707+00:00"
+  }
+}

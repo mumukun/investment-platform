@@ -1,0 +1,36 @@
+[
+  {
+    "repository": "stock-analyzer",
+    "archive_sha256": "4128bd41d63ae1703a06e3a5941b394d5f494e9a72533a13f418134ea6937c33",
+    "bytes": 663287296,
+    "verified_images": [
+      {
+        "component": "app",
+        "registry_reference": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74",
+        "platform_digest": "sha256:c62bdb068c525ff37c32af32a865b77de6eda1bc271f36473604382e741d3097",
+        "ci_config_id": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+      }
+    ],
+    "nas_cache": "ALREADY_VERIFIED"
+  },
+  {
+    "repository": "investment-research-dashboard",
+    "archive_sha256": "7c3ae79d39c12ac9ce520a53b70bc6303bdfd35b0f1a9720a9512e2f25e53656",
+    "bytes": 124196864,
+    "verified_images": [
+      {
+        "component": "api",
+        "registry_reference": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+        "platform_digest": "sha256:305532ebc3ff0b798e82b8006641665a7d0ec6d9f238e85d4c7f734fe2a1bcb1",
+        "ci_config_id": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de"
+      },
+      {
+        "component": "web",
+        "registry_reference": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2",
+        "platform_digest": "sha256:3a87b009232c4924de31a119d6681a3386fd0fbb03ea8189dc3848084e06e383",
+        "ci_config_id": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+      }
+    ],
+    "nas_cache": "SSH_STDIN_LOAD_VERIFIED"
+  }
+]

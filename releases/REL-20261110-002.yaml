@@ -1,0 +1,177 @@
+{
+  "release_id": "REL-20261110-002",
+  "status": "RELEASED",
+  "environment": "Production",
+  "requested_at": "2026-11-10T11:56:23.734920+00:00",
+  "changes": [
+    "CHG-20261110-002",
+    "CHG-20261110-003"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "previous_release": "REL-20261110-001",
+  "management_connection": "NAS 局域网 SSH，原密钥及主机校验",
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "6.12.3",
+      "previous_version": "6.12.2",
+      "rollback_version": "6.12.2",
+      "rollback_tag": "v6.12.2",
+      "rollback_commit": "776dc97ca85a329d7750f252ad202562fdffa9a4",
+      "rollback_image_ids": {
+        "app": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7"
+      },
+      "tag": "v6.12.3",
+      "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+      },
+      "artifact_id": {
+        "app": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+      },
+      "rollback": {
+        "tag": "v6.12.2",
+        "version": "6.12.2",
+        "commit_sha": "776dc97ca85a329d7750f252ad202562fdffa9a4",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5499fe58056bd61d39472f61ddf752578821a30a6fdad35e2d03875cef46c3bf"
+        },
+        "image_ids": {
+          "app": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/96",
+      "quality_run": "https://github.com/mumukun/stock-analyzer/actions/runs/42815155069",
+      "candidate_run": "https://github.com/mumukun/stock-analyzer/actions/runs/42815651188",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+          "run_id": "42815155069"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+          }
+        },
+        "candidate_run_id": "42815651188"
+      },
+      "state": "RELEASED",
+      "artifact_model": "CI_BUILD_ONCE",
+      "first_verified_at": "2026-11-10T12:38:14.484995+00:00"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "2.12.3",
+      "previous_version": "2.12.2",
+      "rollback_version": "2.12.2",
+      "rollback_tag": "v2.12.2",
+      "rollback_commit": "270b76050d4fba5b34c14fa883070c8b80073b49",
+      "rollback_image_ids": {
+        "api": "sha256:4ecd8d781421353ffb9d2e6ebf036980090ded2d6281867e08069201f6706228",
+        "web": "sha256:26c330cf295a89b659ed7f6cb43d7d903974a32fa74b8b956aee3fb44cc2c0f7"
+      },
+      "tag": "v2.12.3",
+      "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+      },
+      "artifact_id": {
+        "api": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de",
+        "web": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+      },
+      "rollback": {
+        "tag": "v2.12.2",
+        "version": "2.12.2",
+        "commit_sha": "270b76050d4fba5b34c14fa883070c8b80073b49",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7a819586e54e29b573660fab773f5a5e479b580bb4fc0af668df508932831ca0",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b569fa569ecc71fd8d81a84dbeb5379b429f50fc068849f8f27ae00d889e688e"
+        },
+        "image_ids": {
+          "api": "sha256:4ecd8d781421353ffb9d2e6ebf036980090ded2d6281867e08069201f6706228",
+          "web": "sha256:26c330cf295a89b659ed7f6cb43d7d903974a32fa74b8b956aee3fb44cc2c0f7"
+        }
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/79",
+      "quality_run": "https://github.com/mumukun/investment-research-dashboard/actions/runs/42815090578",
+      "candidate_run": "https://github.com/mumukun/investment-research-dashboard/actions/runs/42815566540",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+          "run_id": "42815090578"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+          }
+        },
+        "candidate_run_id": "42815566540"
+      },
+      "state": "RELEASED",
+      "artifact_model": "CI_BUILD_ONCE",
+      "first_verified_at": "2026-11-10T13:02:57.405133+00:00"
+    }
+  ],
+  "updated_at": "2026-11-10T13:03:12.320008+00:00",
+  "image_execution_plan": "releases/evidence/REL-20261110-002/image-release-plan.json",
+  "review": {
+    "scope": "CHG-20261110-002 and CHG-20261110-003.",
+    "compatibility": "Additive settlement JSONB fields and history/stats v4. Existing v2/v3 retained.",
+    "integration": "Targeted local PostgreSQL, authenticated two-repository HTTP fixtures, and frozen-main CI.",
+    "real_data": "Authenticated readback of both historical purchase cohorts through Dashboard v4. Existing daily settlement job processes eligible trades.",
+    "configuration": "Existing NAS release controller and configured proxy. No environment or credentials change.",
+    "rollback": "Verified previous production artifacts and repository tags from REL-20261110-001, matched over LAN."
+  },
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-10T13:03:01.145690+00:00",
+    "started_at": "2026-11-10T12:31:24.628922+00:00",
+    "prior_attempts": [
+      "releases/evidence/REL-20261110-002/dashboard-pull-failure-receipt.json",
+      "releases/evidence/REL-20261110-002/dashboard-pull-retry-failure-receipt.json"
+    ],
+    "recovery": {
+      "mode": "ARCHIVE_CACHE",
+      "frozen_inputs": "Unchanged source, CI digests, Image IDs, and rollback baselines.",
+      "transfer": "releases/evidence/REL-20261110-002/archive-cache-transfer.json",
+      "effective_plan": "releases/evidence/REL-20261110-002/image-release-plan-archive.json",
+      "note": "Verified CI archives were prepared on the desktop. The Dashboard archive was loaded into the NAS Docker cache over LAN SSH. The restricted release runner verified candidate and rollback identities before deployment."
+    },
+    "timing_seconds": {
+      "request_to_first_launch": 2101,
+      "first_launch_to_deployment_receipt": 1897
+    }
+  },
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261110-002/deployment-receipt.json"
+  ],
+  "verification": {
+    "status": "PASS",
+    "settlement_readback": "releases/evidence/REL-20261110-002/settlement-readback.json",
+    "known_limitations": [
+      "Production release checks validated ledger visibility and runtime image identity. Future-dated settlements continue through the scheduled job."
+    ]
+  }
+}
