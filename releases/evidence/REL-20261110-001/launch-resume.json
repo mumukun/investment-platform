@@ -1,0 +1,8 @@
+{
+  "status": "STARTED",
+  "pid": 11027,
+  "directory": "/var/services/homes/freemumu/.local/state/investment-platform/releases/REL-20261110-001",
+  "started_at": "2026-11-10T04:48:26.954443+00:00",
+  "retry": true,
+  "log": "deployment-resume.log"
+}

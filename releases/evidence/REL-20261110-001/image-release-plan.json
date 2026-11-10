@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261110-001",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "776dc97ca85a329d7750f252ad202562fdffa9a4",
+        "version": "6.12.2",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5499fe58056bd61d39472f61ddf752578821a30a6fdad35e2d03875cef46c3bf"
+        },
+        "image_ids": {
+          "app": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "776dc97ca85a329d7750f252ad202562fdffa9a4",
+            "run_id": "42755717357"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:5499fe58056bd61d39472f61ddf752578821a30a6fdad35e2d03875cef46c3bf"
+            }
+          },
+          "candidate_run_id": "42756369509"
+        }
+      },
+      "tag": "v6.12.2",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.12.1",
+        "commit_sha": "211f422c67bcfb394062f7e0647a192f783bd0c8",
+        "image_ids": {
+          "stock-api": "sha256:dc27242c68dd0dbf86028bb23ed54a9f7a55242ad376823406823c4dfccaa3e6",
+          "stock-watch": "sha256:dc27242c68dd0dbf86028bb23ed54a9f7a55242ad376823406823c4dfccaa3e6",
+          "stock-data": "sha256:dc27242c68dd0dbf86028bb23ed54a9f7a55242ad376823406823c4dfccaa3e6"
+        }
+      },
+      "rollback": {
+        "tag": "v6.12.1",
+        "version": "6.12.1",
+        "commit_sha": "211f422c67bcfb394062f7e0647a192f783bd0c8",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:be50b30dca3f0abcb8190e935ee3c64003906c23174a3e5313984ab861e9e76f"
+        },
+        "image_ids": {
+          "app": "sha256:dc27242c68dd0dbf86028bb23ed54a9f7a55242ad376823406823c4dfccaa3e6"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "遵循 2026-10-29 发布规则。仅新增兼容报价快照及事实，现有库结构、原始行情和历史保留。",
+        "evidence": "CHG-20261110-001 本地独立 PostgreSQL 和契约验证。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "270b76050d4fba5b34c14fa883070c8b80073b49",
+        "version": "2.12.2",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7a819586e54e29b573660fab773f5a5e479b580bb4fc0af668df508932831ca0",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b569fa569ecc71fd8d81a84dbeb5379b429f50fc068849f8f27ae00d889e688e"
+        },
+        "image_ids": {
+          "api": "sha256:4ecd8d781421353ffb9d2e6ebf036980090ded2d6281867e08069201f6706228",
+          "web": "sha256:26c330cf295a89b659ed7f6cb43d7d903974a32fa74b8b956aee3fb44cc2c0f7"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "270b76050d4fba5b34c14fa883070c8b80073b49",
+            "run_id": "42755179608"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7a819586e54e29b573660fab773f5a5e479b580bb4fc0af668df508932831ca0",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b569fa569ecc71fd8d81a84dbeb5379b429f50fc068849f8f27ae00d889e688e"
+            }
+          },
+          "candidate_run_id": "42755595623"
+        }
+      },
+      "tag": "v2.12.2",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.12.1",
+        "commit_sha": "5b67bd7e19577b81e08f92765950f79e4bcb1d38",
+        "image_ids": {
+          "api": "sha256:b09592a33182b922983a2100bb22e83d4e94790f0091313c736088ddc88382dc",
+          "web": "sha256:18f0bf07766f637e7f6e80282fe73ff40c12726a501c9186aced02be1e3fdafd"
+        }
+      },
+      "rollback": {
+        "tag": "v2.12.1",
+        "version": "2.12.1",
+        "commit_sha": "5b67bd7e19577b81e08f92765950f79e4bcb1d38",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:8b6bc3c4beceabf0db9c597f2a191a5f579c10f3c667ee43c6d3265017d263e3",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bac39d5779a15cb2b7f152badfc572413d9d4396feffad2bb1028549997c2478"
+        },
+        "image_ids": {
+          "api": "sha256:b09592a33182b922983a2100bb22e83d4e94790f0091313c736088ddc88382dc",
+          "web": "sha256:18f0bf07766f637e7f6e80282fe73ff40c12726a501c9186aced02be1e3fdafd"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "遵循 2026-10-29 发布规则。仅新增兼容报价快照及事实，现有库结构、原始行情和历史保留。",
+        "evidence": "CHG-20261110-001 本地独立 PostgreSQL 和契约验证。"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-10T04:13:04+00:00",
+    "evidence": "用户要求完成开发后提交代码并部署本轮盘中报价改造。"
+  },
+  "changes": [
+    "CHG-20261110-001"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

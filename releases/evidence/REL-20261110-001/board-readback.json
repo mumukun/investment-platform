@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "dashboard_version": "2.12.2",
+  "boards": {
+    "tech": {
+      "index_count": 25,
+      "with_quote": 25,
+      "last_sync_at": "2026-11-10T12:53:27.299220+08:00",
+      "latest_market_time": "2026-11-10T12:05:57+08:00",
+      "latest_market_age_seconds": 2864
+    },
+    "rotation": {
+      "index_count": 30,
+      "with_quote": 30,
+      "last_sync_at": "2026-11-10T12:53:28.330006+08:00",
+      "latest_market_time": "2026-11-10T12:05:57+08:00",
+      "latest_market_age_seconds": 2865
+    }
+  },
+  "runtime_image_ids": {
+    "stock-api": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7",
+    "stock-watch": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7",
+    "stock-data": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7",
+    "investment-research-dashboard-nas-api-1": "sha256:4ecd8d781421353ffb9d2e6ebf036980090ded2d6281867e08069201f6706228",
+    "investment-research-dashboard-nas-web-1": "sha256:26c330cf295a89b659ed7f6cb43d7d903974a32fa74b8b956aee3fb44cc2c0f7"
+  }
+}
