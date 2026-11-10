@@ -1,0 +1,168 @@
+{
+  "schema_version": "image-release-v1",
+  "release_id": "REL-20261110-002",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+        "version": "6.12.3",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+        },
+        "image_ids": {
+          "app": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+            "run_id": "42815155069"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+            }
+          },
+          "candidate_run_id": "42815651188"
+        }
+      },
+      "tag": "v6.12.3",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.12.2",
+        "commit_sha": "776dc97ca85a329d7750f252ad202562fdffa9a4",
+        "image_ids": {
+          "stock-api": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7",
+          "stock-watch": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7",
+          "stock-data": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7"
+        }
+      },
+      "rollback": {
+        "tag": "v6.12.2",
+        "version": "6.12.2",
+        "commit_sha": "776dc97ca85a329d7750f252ad202562fdffa9a4",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:5499fe58056bd61d39472f61ddf752578821a30a6fdad35e2d03875cef46c3bf"
+        },
+        "image_ids": {
+          "app": "sha256:eb8b8d92c744beb0be760cc7e916dec1b54ca3abca3da8a7dfa429ce392140c7"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "遵循 2026-10-29 发布规则。新增兼容结算字段；日常结算保留入账事实及既有完成结果，回退镜像仍可读取原字段。",
+        "evidence": "CHG-20261110-003 独立 PostgreSQL 接入、并行规则、历史和接口验证；CHG-20261110-002 仅看板列调整。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+        "version": "2.12.3",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+        },
+        "image_ids": {
+          "api": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de",
+          "web": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+            "run_id": "42815090578"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+            }
+          },
+          "candidate_run_id": "42815566540"
+        }
+      },
+      "tag": "v2.12.3",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.12.2",
+        "commit_sha": "270b76050d4fba5b34c14fa883070c8b80073b49",
+        "image_ids": {
+          "api": "sha256:4ecd8d781421353ffb9d2e6ebf036980090ded2d6281867e08069201f6706228",
+          "web": "sha256:26c330cf295a89b659ed7f6cb43d7d903974a32fa74b8b956aee3fb44cc2c0f7"
+        }
+      },
+      "rollback": {
+        "tag": "v2.12.2",
+        "version": "2.12.2",
+        "commit_sha": "270b76050d4fba5b34c14fa883070c8b80073b49",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7a819586e54e29b573660fab773f5a5e479b580bb4fc0af668df508932831ca0",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b569fa569ecc71fd8d81a84dbeb5379b429f50fc068849f8f27ae00d889e688e"
+        },
+        "image_ids": {
+          "api": "sha256:4ecd8d781421353ffb9d2e6ebf036980090ded2d6281867e08069201f6706228",
+          "web": "sha256:26c330cf295a89b659ed7f6cb43d7d903974a32fa74b8b956aee3fb44cc2c0f7"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "遵循 2026-10-29 发布规则。新增兼容结算字段；日常结算保留入账事实及既有完成结果，回退镜像仍可读取原字段。",
+        "evidence": "CHG-20261110-003 独立 PostgreSQL 接入、并行规则、历史和接口验证；CHG-20261110-002 仅看板列调整。"
+      }
+    }
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-10T11:56:23.734920+00:00",
+    "evidence": "用户要求将本地已开发的跨规则结算与波段候选列位置调整一起上线，回家后从局域网操作。"
+  },
+  "changes": [
+    "CHG-20261110-002",
+    "CHG-20261110-003"
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
