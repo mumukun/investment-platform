@@ -1,0 +1,8 @@
+report 08:05 ready chars 531 seconds 1.71 has_link True
+us_snapshot 05:15 check 07:45
+discord_configured True feishu_configured False
+stock_models_flash True
+us_upstream_http 200 dates ['2026-11-11', '2026-11-10', '2026-11-09', '2026-11-06', '2026-11-05'] values [18, 18, 18, 18, 18]
+dashboard_projected_days 5
+dashboard_model_flash True sync 01:25,02:25,04:25,05:25,07:55
+us_grid_bundle=present
