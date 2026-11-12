@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-11-12T10:00:16.396449+00:00",
+  "verified_at": "2026-11-12T14:20:15.904853+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -55,20 +55,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-11-12T10:00:16.396449+00:00",
-        "application_version": "6.12.4",
+        "verified_at": "2026-11-12T14:20:15.904853+00:00",
+        "application_version": "6.12.5",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v6.12.4",
-        "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+        "tag": "v6.12.5",
+        "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
         },
         "artifact_id": {
-          "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+          "app": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -76,18 +76,18 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-11-12T10:00:16.396449+00:00",
-        "health": "PASS: existing release controller health/version/smoke",
+        "deployment_timestamp": "2026-11-12T14:20:15.904853+00:00",
+        "health": "PASS: installed health/version/smoke",
         "rollback_baseline": {
-          "version": "6.12.3",
-          "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+          "version": "6.12.4",
+          "tag": "v6.12.4",
+          "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
           },
           "image_ids": {
-            "app": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+            "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
           },
-          "tag": "v6.12.3",
           "runtime_services": {
             "app": [
               "stock-api",
@@ -97,11 +97,12 @@
           }
         },
         "next_release_rollback_images": {
-          "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+          "app": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
         },
         "evidence": [
-          "releases/REL-20261112-001.yaml",
-          "releases/evidence/REL-20261112-001/deployment-receipt.json"
+          "releases/REL-20261112-002.yaml",
+          "releases/evidence/REL-20261112-002/deployment-receipt.json",
+          "releases/evidence/REL-20261112-002/post-release-verification.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -204,10 +205,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "additive",
+            "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "遵循2026-10-29部署不自动备份要求：兼容新增来源字段和状态小表，正式交易/评分历史保留、旧镜像可读取。临时缓存夜间按白名单淘汰；本次主动清理和物理收缩另行维护、先做目标表备份，不夹带在部署中。",
-            "evidence": "CHG-20261112-001/002受影响测试、main CI与精确候选smoke；独立维护脚本及文档。"
+            "reason": "镜像切换没有迁移或删除；定时缓存清理只有近期独立可读备份存在且在单独维护窗口才执行。上线前已确认该回执有效。表物理收缩不随应用发布执行。",
+            "evidence": "CHG-20261112-003 本地 PostgreSQL 16.14 回归、已验证的定时备份回执和精确 main 候选。"
           }
         },
         "short_tail": {
@@ -435,7 +436,7 @@
           "hasGap": false,
           "seconds": 0.06
         },
-        "deployment_timestamp_basis": "Both repositories passed exact-artifact health/version/smoke; full receipt completion time",
+        "deployment_timestamp_basis": "Actual deployment receipt completed",
         "selection_release_limitations": "2026-11-03 current short candidates classify existing participation evidence only; missing historical evidence is never fabricated.",
         "release_limitations": "Only this release boundary verified; earlier domain observations retain their original dated evidence.",
         "live_kline_readback": [
@@ -475,9 +476,16 @@
           "carried": 17,
           "unknown": 0
         },
-        "latest_release": "REL-20261112-001",
-        "verification_evidence": "releases/evidence/REL-20261112-001/deployment-receipt.json",
-        "health_probe_limitation": "Existing --health loads 124934 market_data_state rows to find one heartbeat. Observed transient probe timeout; collector heartbeat remained fresh and final original release gate passed. Probe implementation not changed in this release."
+        "latest_release": "REL-20261112-002",
+        "verification_evidence": "releases/evidence/REL-20261112-002/deployment-receipt.json",
+        "health_probe_limitation": "Existing --health loads 124934 market_data_state rows to find one heartbeat. Observed transient probe timeout; collector heartbeat remained fresh and final original release gate passed. Probe implementation not changed in this release.",
+        "projection_retention": {
+          "automatic_job": "06:15 Asia/Shanghai",
+          "eligible_rows_at_readback": 0,
+          "physical_compaction": "NOT_PERFORMED",
+          "same_input_metadata_only_checks": 0,
+          "evidence": "releases/evidence/REL-20261112-002/post-release-verification.json"
+        }
       }
     },
     "investment-research-dashboard": {
@@ -945,6 +953,6 @@
       }
     }
   },
-  "verification_note": "REL-20261112-001: both affected repositories passed exact artifact deployment verification; marketNewsFeed and unrelated domain observations retain previous evidence. Separate snapshots compaction completed and Dashboard readback passed.",
+  "verification_note": "REL-20261112-002: stock-analyzer v6.12.5 passed deployment and affected reads; other repositories and unrelated domain observations retain their earlier evidence.",
   "last_verified_at": "2026-11-09T15:47:19.819352+00:00"
 }
