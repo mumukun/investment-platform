@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261112-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261112-001",
+    "CHG-20261112-002"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.12.4",
+      "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+      "planned_version": "6.12.4",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+      },
+      "artifact_id": {
+        "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+      },
+      "rollback": {
+        "version": "6.12.3",
+        "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+        },
+        "image_ids": {
+          "app": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+        },
+        "tag": "v6.12.3",
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+          "run_id": "43182235919"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+          }
+        },
+        "candidate_run_id": "43182807437"
+      },
+      "artifact_verification_basis": "resume_verify PASS for frozen identity"
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.12.4",
+      "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+      "planned_version": "2.12.4",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e3e839f2d9443f07d0656fcf6f64f692aa46f1eb17e29c9a6820cb6c1a589320",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1f4c28bfd327bf15c25fb4bfbfcefdc87a86e27e43b7a4aea5e15b2a63d2cd91"
+      },
+      "artifact_id": {
+        "api": "sha256:76b7930e304ea3e9e67faafb6361eb3b52346edb21d3d2061c681c869cb376c1",
+        "web": "sha256:83aebc536b0268e8e818122914bcdfab1373ed9c57275598cdf8daf8694a6de0"
+      },
+      "rollback": {
+        "version": "2.12.3",
+        "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+        },
+        "image_ids": {
+          "api": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de",
+          "web": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+        },
+        "tag": "v2.12.3"
+      },
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+          "run_id": "43181330203"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e3e839f2d9443f07d0656fcf6f64f692aa46f1eb17e29c9a6820cb6c1a589320",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1f4c28bfd327bf15c25fb4bfbfcefdc87a86e27e43b7a4aea5e15b2a63d2cd91"
+          }
+        },
+        "candidate_run_id": "43181930178"
+      },
+      "artifact_verification_basis": "receipt.image_ids"
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261112-001/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-12T10:00:16.396449+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS"
+  }
+}

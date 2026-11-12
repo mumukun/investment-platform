@@ -118,6 +118,29 @@ class ReleaseRecordTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Release ID"):
             self.record()
 
+    def test_legacy_resume_receipt_uses_successful_exact_identity_check_without_rewriting_receipt(self):
+        state = self.receipt["repositories"]["stock-analyzer"]
+        del state["image_ids"]
+        self.receipt["events"] = [
+            {"repository": "stock-analyzer", "stage": "verify", "status": "FAILED"},
+            {"repository": "stock-analyzer", "stage": "resume_verify", "status": "PASS"}]
+        original = json.dumps(self.receipt, sort_keys=True)
+        result = self.record()
+        self.assertEqual(result["status"], "RELEASED")
+        self.assertEqual(result["repositories"][0]["artifact_verification_basis"],
+                         "resume_verify PASS for frozen identity")
+        self.assertEqual(json.dumps(self.receipt, sort_keys=True), original)
+
+        state["image_ids"] = {"stock-api": "sha256:" + "9" * 64}
+        self.assertEqual(self.record()["status"], "PARTIAL")
+        del state["image_ids"]
+        self.receipt["events"].append(
+            {"repository": "stock-analyzer", "stage": "resume_verify", "status": "FAILED"})
+        self.assertEqual(self.record()["status"], "PARTIAL")
+        self.receipt["events"].pop()
+        self.receipt["identity"] = []
+        self.assertEqual(self.record()["status"], "PARTIAL")
+
     def test_read_only_recording_does_not_overwrite_manually_maintained_manifest(self):
         content = '{"release_id":"REL-20261010-999","notes":["user work"]}'
         self.output.write_text(content)

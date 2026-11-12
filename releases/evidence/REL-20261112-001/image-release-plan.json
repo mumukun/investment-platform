@@ -1,0 +1,168 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "release_id": "REL-20261112-001",
+  "changes": [
+    "CHG-20261112-001",
+    "CHG-20261112-002"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-12T08:00:52+00:00",
+    "evidence": "用户明确授权提交、正式发布及非交易时段暂停看板执行空间收缩，随后确认001和002一起发布。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+        "version": "6.12.4",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+        },
+        "image_ids": {
+          "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+            "run_id": "43182235919"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+            }
+          },
+          "candidate_run_id": "43182807437"
+        }
+      },
+      "tag": "v6.12.4",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.12.3",
+        "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+        "image_ids": {
+          "stock-api": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+          "stock-watch": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d",
+          "stock-data": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+        }
+      },
+      "rollback": {
+        "version": "6.12.3",
+        "commit_sha": "80891b3c19e6d29f810cd73cdb9e4a8062ecfcfe",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:c9a9f18aa97f9d1060d131bcb045043a20d5588f8796763c726427a89efaac74"
+        },
+        "image_ids": {
+          "app": "sha256:95c12733e217aef96954fa191067035d09acee2541d6dc1a6dec727aa07d276d"
+        },
+        "tag": "v6.12.3",
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "遵循2026-10-29部署不自动备份要求：兼容新增来源字段和状态小表，正式交易/评分历史保留、旧镜像可读取。临时缓存夜间按白名单淘汰；本次主动清理和物理收缩另行维护、先做目标表备份，不夹带在部署中。",
+        "evidence": "CHG-20261112-001/002受影响测试、main CI与精确候选smoke；独立维护脚本及文档。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+        "version": "2.12.4",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e3e839f2d9443f07d0656fcf6f64f692aa46f1eb17e29c9a6820cb6c1a589320",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1f4c28bfd327bf15c25fb4bfbfcefdc87a86e27e43b7a4aea5e15b2a63d2cd91"
+        },
+        "image_ids": {
+          "api": "sha256:76b7930e304ea3e9e67faafb6361eb3b52346edb21d3d2061c681c869cb376c1",
+          "web": "sha256:83aebc536b0268e8e818122914bcdfab1373ed9c57275598cdf8daf8694a6de0"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+            "run_id": "43181330203"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e3e839f2d9443f07d0656fcf6f64f692aa46f1eb17e29c9a6820cb6c1a589320",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1f4c28bfd327bf15c25fb4bfbfcefdc87a86e27e43b7a4aea5e15b2a63d2cd91"
+            }
+          },
+          "candidate_run_id": "43181930178"
+        }
+      },
+      "tag": "v2.12.4",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.12.3",
+        "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+        "image_ids": {
+          "api": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de",
+          "web": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+        }
+      },
+      "rollback": {
+        "version": "2.12.3",
+        "commit_sha": "8d8ca91d1e01a492eb458fb2c7334d6949d3de20",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:2a8597d2da76ef88b82dac6a43c6ad7a76f1e86ea2721987e7d54ee7f3bfd3c7",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:96d3d5598d5495c08180e4cdc133c2beb44b8d4f6fa61aac51ad5792b444dff2"
+        },
+        "image_ids": {
+          "api": "sha256:1f2dda1b610791a7baf3210331ccd2601e7c489d69a2077e1b2016b504c6f9de",
+          "web": "sha256:9bfd68b3bd3daaa5cefa6e0437bb791346c22f7538ca73063d0ee82c56f6ec06"
+        },
+        "tag": "v2.12.3"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "遵循2026-10-29部署不自动备份要求：兼容新增来源字段和状态小表，正式交易/评分历史保留、旧镜像可读取。临时缓存夜间按白名单淘汰；本次主动清理和物理收缩另行维护、先做目标表备份，不夹带在部署中。",
+        "evidence": "CHG-20261112-001/002受影响测试、main CI与精确候选smoke；独立维护脚本及文档。"
+      }
+    }
+  ]
+}
