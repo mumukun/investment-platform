@@ -1,0 +1,17 @@
+{
+  "postgresql": "16.14 local isolated",
+  "same_business_inputs": true,
+  "displayed_candidate_and_score_unchanged": true,
+  "baseline": {
+    "initial_builds": 1,
+    "later_checks": 6,
+    "later_full_writes": 6,
+    "stored_payload_bytes": 13981112
+  },
+  "optimized": {
+    "initial_builds": 1,
+    "later_checks": 6,
+    "later_full_writes": 0,
+    "stored_payload_bytes": 13981112
+  }
+}
