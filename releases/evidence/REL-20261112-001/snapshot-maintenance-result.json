@@ -1,0 +1,46 @@
+{
+  "release_id": "REL-20261112-001",
+  "status": "PASS",
+  "completed_at": "2026-11-12T12:35:28.264639+00:00",
+  "observed_at": "2026-11-12T12:53:38.761977+00:00",
+  "relation": "investment_dashboard.public.snapshots",
+  "backup": {
+    "backup_bytes": 694088305,
+    "readability": "PASS"
+  },
+  "expired_cache_rows_deleted": 217,
+  "eligible_rows_remaining": 0,
+  "rows_preserved_by_compaction": 3173,
+  "per_domain_record_counts_and_stored_payload_sizes_unchanged": true,
+  "storage_before": {
+    "total_bytes": 386775277568,
+    "toast_bytes": 382425219072
+  },
+  "storage_after": {
+    "total_bytes": 2838650880,
+    "toast_bytes": 2803376128
+  },
+  "relation_bytes_released": 383936626688,
+  "nas_volume_free_bytes_before": 14392885325824,
+  "nas_volume_free_bytes_after": 14849342070784,
+  "nas_volume_free_bytes_net_change": 456456744960,
+  "dashboard_api": "running healthy",
+  "production_smoke": "PASS",
+  "swing_list_and_detail_readback": [
+    {
+      "trade_date": "2026-11-12",
+      "list_http": 200,
+      "has_item": true,
+      "snapshot_id_present": true,
+      "detail_http": 200
+    },
+    {
+      "trade_date": "2026-11-11",
+      "list_http": 200,
+      "has_item": true,
+      "snapshot_id_present": true,
+      "detail_http": 200
+    }
+  ],
+  "log": "releases/evidence/REL-20261112-001/snapshot-maintenance.log"
+}

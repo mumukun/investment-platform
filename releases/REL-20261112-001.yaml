@@ -116,5 +116,12 @@
   },
   "verification": {
     "status": "DEPLOYMENT_SMOKE_PASS"
+  },
+  "snapshot_maintenance": {
+    "status": "PASS",
+    "completed_at": "2026-11-12T12:35:28.264639+00:00",
+    "relation_bytes_released": 383936626688,
+    "nas_volume_free_bytes_net_change": 456456744960,
+    "evidence": "releases/evidence/REL-20261112-001/snapshot-maintenance-result.json"
   }
 }
