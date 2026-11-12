@@ -935,12 +935,16 @@
         "deployment_timestamp_basis": "Both repositories passed exact-artifact health/version/smoke; full receipt completion time",
         "snapshot_maintenance": {
           "automatic_cleanup": "Enabled: daily 02:10 Asia/Shanghai; protected formal history",
-          "physical_compaction": "PENDING_ADMIN_START",
-          "evidence": "releases/evidence/REL-20261112-001/nas-snapshot-maintenance.py"
+          "physical_compaction": "PASS",
+          "evidence": "releases/evidence/REL-20261112-001/snapshot-maintenance-result.json",
+          "status": "PASS",
+          "completed_at": "2026-11-12T12:35:28.264639+00:00",
+          "relation_bytes_released": 383936626688,
+          "nas_volume_free_bytes_net_change": 456456744960
         }
       }
     }
   },
-  "verification_note": "REL-20261112-001: both affected repositories passed exact artifact deployment verification; marketNewsFeed and unrelated domain observations retain previous evidence. Physical snapshots compaction remains separate and pending.",
+  "verification_note": "REL-20261112-001: both affected repositories passed exact artifact deployment verification; marketNewsFeed and unrelated domain observations retain previous evidence. Separate snapshots compaction completed and Dashboard readback passed.",
   "last_verified_at": "2026-11-09T15:47:19.819352+00:00"
 }
