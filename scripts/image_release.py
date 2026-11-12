@@ -423,11 +423,26 @@ def write_manifest(path, plan, receipt, receipt_path):
             expected = {service: candidate["image_ids"][component]
                         for component, services in service_components(repo, candidate).items()
                         for service in services}
-            complete = complete and state.get("completed", False) and state.get("image_ids") == expected
+            # The installed runner's resume path verifies exact running images but
+            # omits the redundant image_ids summary after a failed first verify.
+            # Reuse that explicit successful verification; never replace conflicting IDs.
+            last_verify = next((event for event in reversed(receipt.get("events", []))
+                                if event.get("repository") == repo
+                                and event.get("stage") in {"verify", "resume_verify"}), {})
+            resumed_identity = {"repository": repo, "tag": entry["tag"],
+                                "commit_sha": candidate["commit_sha"], "images": candidate["images"]}
+            verified_resume = ("image_ids" not in state and state.get("deployment_started", False)
+                               and last_verify.get("stage") == "resume_verify"
+                               and last_verify.get("status") == "PASS"
+                               and resumed_identity in receipt.get("identity", []))
+            complete = complete and state.get("completed", False) and (
+                state.get("image_ids") == expected or verified_resume)
             rows.append({"repository": repo, "tag": entry["tag"],
                          "commit_sha": candidate["commit_sha"], "planned_version": candidate["version"],
                          "artifact_model": "CI_BUILD_ONCE", "artifact": candidate["images"],
                          "artifact_id": candidate["image_ids"], "rollback": entry["rollback"],
+                         "artifact_verification_basis": "resume_verify PASS for frozen identity"
+                         if verified_resume else "receipt.image_ids",
                          "ci_evidence": candidate["evidence"]})
         if receipt.get("last_result") == "PASS" and operation == "rollback":
             status = "ROLLED_BACK"

@@ -1,0 +1,185 @@
+{
+  "observed_at": "2026-11-12T10:01:22.671632+00:00",
+  "filesystem_free_bytes": 14392885325824,
+  "snapshots": {
+    "mode": "preview",
+    "before": {
+      "storage": {
+        "total_bytes": 386664210432,
+        "toast_bytes": 382315397120
+      },
+      "domains": [
+        {
+          "domain": "board-quotes:rotation",
+          "records": 1,
+          "payload_bytes": 3604
+        },
+        {
+          "domain": "board-quotes:tech",
+          "records": 1,
+          "payload_bytes": 10372
+        },
+        {
+          "domain": "capital-flow",
+          "records": 38,
+          "payload_bytes": 373729
+        },
+        {
+          "domain": "company-profile",
+          "records": 29,
+          "payload_bytes": 61835
+        },
+        {
+          "domain": "current-candidates:swing",
+          "records": 14,
+          "payload_bytes": 150558388
+        },
+        {
+          "domain": "current-candidates:tail",
+          "records": 14,
+          "payload_bytes": 10021009
+        },
+        {
+          "domain": "current-candidates:watch",
+          "records": 14,
+          "payload_bytes": 401982
+        },
+        {
+          "domain": "decision-trading-calendar",
+          "records": 1,
+          "payload_bytes": 28823
+        },
+        {
+          "domain": "global-board",
+          "records": 1,
+          "payload_bytes": 233740
+        },
+        {
+          "domain": "limit-up-ladder",
+          "records": 23,
+          "payload_bytes": 716853
+        },
+        {
+          "domain": "margin-observation",
+          "records": 88,
+          "payload_bytes": 1161072
+        },
+        {
+          "domain": "market-structure",
+          "records": 1620,
+          "payload_bytes": 36952581
+        },
+        {
+          "domain": "rotation-board",
+          "records": 15,
+          "payload_bytes": 5003059
+        },
+        {
+          "domain": "seat-flow",
+          "records": 4,
+          "payload_bytes": 74945
+        },
+        {
+          "domain": "seat-tracking",
+          "records": 197,
+          "payload_bytes": 2857660
+        },
+        {
+          "domain": "sector-fund-members",
+          "records": 5,
+          "payload_bytes": 42697
+        },
+        {
+          "domain": "sector-fund-research",
+          "records": 30,
+          "payload_bytes": 754696
+        },
+        {
+          "domain": "selection-light-history:swing",
+          "records": 120,
+          "payload_bytes": 297865984
+        },
+        {
+          "domain": "selection-light-history:tail",
+          "records": 108,
+          "payload_bytes": 66996207
+        },
+        {
+          "domain": "selection-light:swing",
+          "records": 14,
+          "payload_bytes": 19733097
+        },
+        {
+          "domain": "selection-light:tail",
+          "records": 13,
+          "payload_bytes": 7094835
+        },
+        {
+          "domain": "short-selection",
+          "records": 34,
+          "payload_bytes": 1241428
+        },
+        {
+          "domain": "short-tail-selection",
+          "records": 5,
+          "payload_bytes": 2158087
+        },
+        {
+          "domain": "snapshot-maintenance",
+          "records": 1,
+          "payload_bytes": 1663
+        },
+        {
+          "domain": "swing-current-evidence",
+          "records": 70,
+          "payload_bytes": 1991783476
+        },
+        {
+          "domain": "swing-selection",
+          "records": 30,
+          "payload_bytes": 79142701
+        },
+        {
+          "domain": "swing-selection-live",
+          "records": 11,
+          "payload_bytes": 51853674
+        },
+        {
+          "domain": "swing-selection:swing-rules-v5.2.0",
+          "records": 10,
+          "payload_bytes": 14764767
+        },
+        {
+          "domain": "swing-selection:swing-rules-v5.3.0",
+          "records": 1,
+          "payload_bytes": 496890
+        },
+        {
+          "domain": "swing-selection:swing-rules-v5.3.1",
+          "records": 8,
+          "payload_bytes": 33134233
+        },
+        {
+          "domain": "tail-current-evidence",
+          "records": 108,
+          "payload_bytes": 69744129
+        },
+        {
+          "domain": "tech-board",
+          "records": 22,
+          "payload_bytes": 15539232
+        },
+        {
+          "domain": "us-calendar",
+          "records": 654,
+          "payload_bytes": 1274117
+        },
+        {
+          "domain": "us-market",
+          "records": 82,
+          "payload_bytes": 1025558
+        }
+      ]
+    }
+  }
+}
