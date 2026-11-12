@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "release_id": "REL-20261113-001",
+  "changes": [
+    "CHG-20261113-001"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-12T16:50:17.817810+00:00",
+    "evidence": "用户明确要求完成开发后生产上线并验证，随后再次授权上线。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "7319e4fabcabbbb1e536621f7ef39f45daf28f90",
+        "version": "6.13.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:2743edc743c0b44b51d547e077e99b112791bf0bbf2eca9bbe30086d1baeaa8c"
+        },
+        "image_ids": {
+          "app": "sha256:c50bb427eb46feddb6f710e4d247369050a2796c0d5511e09a21912147e65589"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "7319e4fabcabbbb1e536621f7ef39f45daf28f90",
+            "run_id": "43261195090"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:2743edc743c0b44b51d547e077e99b112791bf0bbf2eca9bbe30086d1baeaa8c"
+            }
+          },
+          "candidate_run_id": "43261986827"
+        }
+      },
+      "tag": "v6.13.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.12.5",
+        "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+        "image_ids": {
+          "stock-api": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4",
+          "stock-watch": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4",
+          "stock-data": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
+        }
+      },
+      "rollback": {
+        "version": "6.12.5",
+        "tag": "v6.12.5",
+        "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
+        },
+        "image_ids": {
+          "app": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "使用已有表读取行情并兼容增加快照返回字段，无数据迁移或不可逆改写。",
+        "evidence": "CHG-20261113-001；隔离 PostgreSQL 查询与候选 smoke。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "9723afc9f3d8e08846f063c648ff9db80425d382",
+        "version": "2.13.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a45d9a32cb1d560b23a4ce4c79037564ced7a6ba814fade9fba6f6af36f2cdd1",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:521de678eae0ba2bb597bc0e5215a40a46be1db728c45a540c094da2528b5e4b"
+        },
+        "image_ids": {
+          "api": "sha256:f4b2a0e98cd3e8dccf134dd32a53982a4c666713280c2c736e3943263f97dd53",
+          "web": "sha256:63c738ab3bee24effcdc134bb93baee87951d5eeeb41ab376a3bbbacaf809224"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "9723afc9f3d8e08846f063c648ff9db80425d382",
+            "run_id": "43261523823"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a45d9a32cb1d560b23a4ce4c79037564ced7a6ba814fade9fba6f6af36f2cdd1",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:521de678eae0ba2bb597bc0e5215a40a46be1db728c45a540c094da2528b5e4b"
+            }
+          },
+          "candidate_run_id": "43262510173"
+        }
+      },
+      "tag": "v2.13.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.12.4",
+        "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+        "image_ids": {
+          "api": "sha256:76b7930e304ea3e9e67faafb6361eb3b52346edb21d3d2061c681c869cb376c1",
+          "web": "sha256:83aebc536b0268e8e818122914bcdfab1373ed9c57275598cdf8daf8694a6de0"
+        }
+      },
+      "rollback": {
+        "version": "2.12.4",
+        "tag": "v2.12.4",
+        "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e3e839f2d9443f07d0656fcf6f64f692aa46f1eb17e29c9a6820cb6c1a589320",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1f4c28bfd327bf15c25fb4bfbfcefdc87a86e27e43b7a4aea5e15b2a63d2cd91"
+        },
+        "image_ids": {
+          "api": "sha256:76b7930e304ea3e9e67faafb6361eb3b52346edb21d3d2061c681c869cb376c1",
+          "web": "sha256:83aebc536b0268e8e818122914bcdfab1373ed9c57275598cdf8daf8694a6de0"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "使用已有表读取行情并兼容增加快照返回字段，无数据迁移或不可逆改写。",
+        "evidence": "CHG-20261113-001；隔离 PostgreSQL 查询与候选 smoke。"
+      }
+    }
+  ]
+}

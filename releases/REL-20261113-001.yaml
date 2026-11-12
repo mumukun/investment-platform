@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261113-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261113-001"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.13.0",
+      "commit_sha": "7319e4fabcabbbb1e536621f7ef39f45daf28f90",
+      "planned_version": "6.13.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:2743edc743c0b44b51d547e077e99b112791bf0bbf2eca9bbe30086d1baeaa8c"
+      },
+      "artifact_id": {
+        "app": "sha256:c50bb427eb46feddb6f710e4d247369050a2796c0d5511e09a21912147e65589"
+      },
+      "rollback": {
+        "version": "6.12.5",
+        "tag": "v6.12.5",
+        "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
+        },
+        "image_ids": {
+          "app": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "7319e4fabcabbbb1e536621f7ef39f45daf28f90",
+          "run_id": "43261195090"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:2743edc743c0b44b51d547e077e99b112791bf0bbf2eca9bbe30086d1baeaa8c"
+          }
+        },
+        "candidate_run_id": "43261986827"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.13.0",
+      "commit_sha": "9723afc9f3d8e08846f063c648ff9db80425d382",
+      "planned_version": "2.13.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a45d9a32cb1d560b23a4ce4c79037564ced7a6ba814fade9fba6f6af36f2cdd1",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:521de678eae0ba2bb597bc0e5215a40a46be1db728c45a540c094da2528b5e4b"
+      },
+      "artifact_id": {
+        "api": "sha256:f4b2a0e98cd3e8dccf134dd32a53982a4c666713280c2c736e3943263f97dd53",
+        "web": "sha256:63c738ab3bee24effcdc134bb93baee87951d5eeeb41ab376a3bbbacaf809224"
+      },
+      "rollback": {
+        "version": "2.12.4",
+        "tag": "v2.12.4",
+        "commit_sha": "0d5adeef727d5abcdbdc2fb72f18fbbdcab075c8",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:e3e839f2d9443f07d0656fcf6f64f692aa46f1eb17e29c9a6820cb6c1a589320",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1f4c28bfd327bf15c25fb4bfbfcefdc87a86e27e43b7a4aea5e15b2a63d2cd91"
+        },
+        "image_ids": {
+          "api": "sha256:76b7930e304ea3e9e67faafb6361eb3b52346edb21d3d2061c681c869cb376c1",
+          "web": "sha256:83aebc536b0268e8e818122914bcdfab1373ed9c57275598cdf8daf8694a6de0"
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "9723afc9f3d8e08846f063c648ff9db80425d382",
+          "run_id": "43261523823"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a45d9a32cb1d560b23a4ce4c79037564ced7a6ba814fade9fba6f6af36f2cdd1",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:521de678eae0ba2bb597bc0e5215a40a46be1db728c45a540c094da2528b5e4b"
+          }
+        },
+        "candidate_run_id": "43262510173"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "/Users/mukun/work/workspace/stock/investment-platform/releases/evidence/REL-20261113-001/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-12T17:05:47.019054+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "evidence": "releases/evidence/REL-20261113-001/production-verification.txt",
+    "summary": "生产美股五日接口和看板投影各覆盖五个美股交易日；生产数据简报预览与两仓模型名回读通过。Discord 目标绑定已核对，首次 08:05 发送待验证。",
+    "limitations": "飞书 MK 群 ID 已配置，PMO 小智应用凭据待接入；本次没有发测试群消息。"
+  }
+}
