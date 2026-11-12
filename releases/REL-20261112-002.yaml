@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261112-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261112-003"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.12.5",
+      "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+      "planned_version": "6.12.5",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
+      },
+      "artifact_id": {
+        "app": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
+      },
+      "rollback": {
+        "version": "6.12.4",
+        "tag": "v6.12.4",
+        "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+        },
+        "image_ids": {
+          "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+          "run_id": "43234233609"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
+          }
+        },
+        "candidate_run_id": "43235046573"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261112-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-12T14:20:15.904853+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "affected_readback": "PASS",
+    "evidence": "releases/evidence/REL-20261112-002/post-release-verification.json"
+  }
+}

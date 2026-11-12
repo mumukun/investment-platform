@@ -1,0 +1,445 @@
+{
+  "release_id": "REL-20261112-002",
+  "readback": {
+    "before": {
+      "version": "6.12.4",
+      "v3_ms": 14087.4,
+      "v3_items": 956,
+      "v4_ms": 19955.6,
+      "v4_trade_date": "2026-11-12",
+      "v4_items": 1417,
+      "ledger_ms": 3563.8,
+      "ledger_rows": 5,
+      "ledger_digest": "11ed8c6e0238373faa9b49e6dc2cbfdacff2da043447c5990697920378591487",
+      "stats_ms": 5191.9,
+      "stats_digest": "6781f5e5675523e7d52584bbf9af8654344ea8133015f3fd2f3b15d07bf2f9bb"
+    },
+    "after": {
+      "version": "6.12.5",
+      "v3_ms": 13656.6,
+      "v3_items": 1078,
+      "v4_ms": 14309.9,
+      "v4_trade_date": "2026-11-12",
+      "v4_items": 1417,
+      "ledger_ms": 1454.7,
+      "ledger_rows": 5,
+      "ledger_digest": "11ed8c6e0238373faa9b49e6dc2cbfdacff2da043447c5990697920378591487",
+      "stats_ms": 1041.4,
+      "stats_digest": "6781f5e5675523e7d52584bbf9af8654344ea8133015f3fd2f3b15d07bf2f9bb"
+    },
+    "pinned_ledger_and_stats_match": {
+      "ledger_digest": true,
+      "stats_digest": true
+    },
+    "dashboard_swing": {
+      "ok": true,
+      "checks": [
+        {
+          "trade_date": "2026-11-12",
+          "list_http": 200,
+          "has_item": true,
+          "snapshot_id_present": true,
+          "detail_http": 200
+        },
+        {
+          "trade_date": "2026-11-11",
+          "list_http": 200,
+          "has_item": true,
+          "snapshot_id_present": true,
+          "detail_http": 200
+        }
+      ]
+    },
+    "known_cold_start": "First V3 request returned 503 before initial background publication; retry after publication passed.",
+    "pre_release_unavailable_path": "Direct upstream V4 archived selection for 2026-11-11 reached a 25-second timeout on old v6.12.4 after NAS startup; the actual Dashboard cached list/detail paths passed after release."
+  },
+  "retention": {
+    "preview": {
+      "status": "preview",
+      "groups": [
+        {
+          "trade_date": "2026-11-02",
+          "rules_version": "swing-rules-v5.3.1",
+          "eligible_rows": 0,
+          "eligible_payload_bytes": 0
+        },
+        {
+          "trade_date": "2026-11-03",
+          "rules_version": "swing-rules-v5.3.1",
+          "eligible_rows": 0,
+          "eligible_payload_bytes": 0
+        },
+        {
+          "trade_date": "2026-11-04",
+          "rules_version": "swing-rules-v5.3.1",
+          "eligible_rows": 0,
+          "eligible_payload_bytes": 0
+        },
+        {
+          "trade_date": "2026-11-05",
+          "rules_version": "swing-rules-v5.3.1",
+          "eligible_rows": 0,
+          "eligible_payload_bytes": 0
+        }
+      ],
+      "eligible_rows": 0,
+      "eligible_payload_bytes": 0
+    },
+    "protection": {
+      "job_at": "06:15",
+      "backup_ready": true,
+      "old_group_guards": [
+        {
+          "trade_date": "2026-11-02",
+          "close_phase": "close",
+          "close_complete": false,
+          "has_frozen": false
+        },
+        {
+          "trade_date": "2026-11-03",
+          "close_phase": "close",
+          "close_complete": false,
+          "has_frozen": true
+        },
+        {
+          "trade_date": "2026-11-04",
+          "close_phase": "close",
+          "close_complete": false,
+          "has_frozen": true
+        },
+        {
+          "trade_date": "2026-11-05",
+          "close_phase": "close",
+          "close_complete": false,
+          "has_frozen": true
+        }
+      ]
+    },
+    "deleted_rows_during_verification": 0
+  },
+  "performance": {
+    "comparison": "Both versions measured after NVMe installation. Timings are individual on-NAS requests with normal background activity. Candidate count may change with source inputs.",
+    "pre_cutover": {
+      "observed_at": "2026-11-12T14:13:58.135664+00:00",
+      "database": {
+        "publisher": [
+          {
+            "version": "6.12.4",
+            "built_at": "2026-11-12T22:12:27.17547+08:00",
+            "checked_at": "2026-11-12T22:12:27.17547+08:00",
+            "failed_at": null,
+            "stored_bytes": 14184192,
+            "input_revision": "225aba3798dd5542b84e358becaad4d3"
+          }
+        ],
+        "table_bytes": 22773555200,
+        "table_stats": {
+          "updates": 19,
+          "dead_rows": 6,
+          "last_autovacuum": null
+        },
+        "toast_stats": {
+          "inserts": 14658,
+          "deletes": 14657,
+          "dead_chunks": 14657,
+          "last_autovacuum": null
+        }
+      },
+      "volume_available_bytes": 14850461069312,
+      "swing_selection_builds_last_10min": 2
+    },
+    "post_cutover": [
+      {
+        "observed_at": "2026-11-12T14:20:51.028323+00:00",
+        "database": {
+          "publisher": [
+            {
+              "version": "6.12.4",
+              "built_at": "2026-11-12T22:18:43.183278+08:00",
+              "checked_at": "2026-11-12T22:18:43.183278+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096950,
+              "input_revision": "447893770250eea9964acda6e5b1dd1c"
+            }
+          ],
+          "table_bytes": 22860791808,
+          "table_stats": {
+            "updates": 59,
+            "dead_rows": 19,
+            "last_autovacuum": null
+          },
+          "toast_stats": {
+            "inserts": 53097,
+            "deletes": 52126,
+            "dead_chunks": 52126,
+            "last_autovacuum": null
+          }
+        },
+        "volume_available_bytes": 14849938198528,
+        "swing_selection_builds_last_10min": 0
+      },
+      {
+        "observed_at": "2026-11-12T14:21:26.982676+00:00",
+        "database": {
+          "publisher": [
+            {
+              "version": "6.12.5",
+              "built_at": "2026-11-12T22:20:12.509847+08:00",
+              "checked_at": "2026-11-12T22:20:12.509847+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096949,
+              "input_revision": "881e0d767b7575f154f750486087835d"
+            },
+            {
+              "version": "6.12.4",
+              "built_at": "2026-11-12T22:18:43.183278+08:00",
+              "checked_at": "2026-11-12T22:18:43.183278+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096950,
+              "input_revision": "447893770250eea9964acda6e5b1dd1c"
+            }
+          ],
+          "table_bytes": 22869336064,
+          "table_stats": {
+            "updates": 60,
+            "dead_rows": 20,
+            "last_autovacuum": null
+          },
+          "toast_stats": {
+            "inserts": 61420,
+            "deletes": 52126,
+            "dead_chunks": 52126,
+            "last_autovacuum": null
+          }
+        },
+        "volume_available_bytes": 14849915744256,
+        "swing_selection_builds_last_10min": 1
+      },
+      {
+        "observed_at": "2026-11-12T14:22:02.667667+00:00",
+        "database": {
+          "publisher": [
+            {
+              "version": "6.12.5",
+              "built_at": "2026-11-12T22:21:23.400008+08:00",
+              "checked_at": "2026-11-12T22:21:23.400008+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096951,
+              "input_revision": "e7300f3a18c9fe920b773266ae89c0a5"
+            },
+            {
+              "version": "6.12.4",
+              "built_at": "2026-11-12T22:18:43.183278+08:00",
+              "checked_at": "2026-11-12T22:18:43.183278+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096950,
+              "input_revision": "447893770250eea9964acda6e5b1dd1c"
+            }
+          ],
+          "table_bytes": 22885851136,
+          "table_stats": {
+            "updates": 61,
+            "dead_rows": 21,
+            "last_autovacuum": null
+          },
+          "toast_stats": {
+            "inserts": 69485,
+            "deletes": 60191,
+            "dead_chunks": 60191,
+            "last_autovacuum": null
+          }
+        },
+        "volume_available_bytes": 14849670033408,
+        "swing_selection_builds_last_10min": 2
+      },
+      {
+        "observed_at": "2026-11-12T14:22:38.386661+00:00",
+        "database": {
+          "publisher": [
+            {
+              "version": "6.12.5",
+              "built_at": "2026-11-12T22:21:23.400008+08:00",
+              "checked_at": "2026-11-12T22:21:23.400008+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096951,
+              "input_revision": "e7300f3a18c9fe920b773266ae89c0a5"
+            },
+            {
+              "version": "6.12.4",
+              "built_at": "2026-11-12T22:18:43.183278+08:00",
+              "checked_at": "2026-11-12T22:18:43.183278+08:00",
+              "failed_at": null,
+              "stored_bytes": 16096950,
+              "input_revision": "447893770250eea9964acda6e5b1dd1c"
+            }
+          ],
+          "table_bytes": 22886187008,
+          "table_stats": {
+            "updates": 66,
+            "dead_rows": 23,
+            "last_autovacuum": null
+          },
+          "toast_stats": {
+            "inserts": 69650,
+            "deletes": 60356,
+            "dead_chunks": 60356,
+            "last_autovacuum": null
+          }
+        },
+        "volume_available_bytes": 14850480992256,
+        "swing_selection_builds_last_10min": 2
+      }
+    ],
+    "publisher_samples": [
+      {
+        "built_at": "2026-11-12T22:22:34.203115+08:00",
+        "checked_at": "2026-11-12T22:22:34.203115+08:00",
+        "failed_at": null,
+        "stored_bytes": 16096921,
+        "phase": [
+          "2026-11-12",
+          false
+        ],
+        "inputs": {
+          "market": "fadb5f47d8d34110",
+          "scan": "b7680551186fdf8d",
+          "health": "4b447d35e268a262",
+          "quotes": "fe034945f40ee4b9",
+          "states": "f57411c644c7eed1",
+          "setups": "cc43b1e554317086",
+          "bars": "55d389ccb3d1d8b6",
+          "references": "284b60c273b38b28",
+          "profiles": "daa9a7d1bfaf4c82"
+        },
+        "observed_at": "2026-11-12T14:23:15.420870+00:00"
+      },
+      {
+        "built_at": "2026-11-12T22:22:34.203115+08:00",
+        "checked_at": "2026-11-12T22:22:34.203115+08:00",
+        "failed_at": null,
+        "stored_bytes": 16096921,
+        "phase": [
+          "2026-11-12",
+          false
+        ],
+        "inputs": {
+          "market": "fadb5f47d8d34110",
+          "scan": "b7680551186fdf8d",
+          "health": "4b447d35e268a262",
+          "quotes": "fe034945f40ee4b9",
+          "states": "f57411c644c7eed1",
+          "setups": "cc43b1e554317086",
+          "bars": "55d389ccb3d1d8b6",
+          "references": "284b60c273b38b28",
+          "profiles": "daa9a7d1bfaf4c82"
+        },
+        "observed_at": "2026-11-12T14:23:50.071856+00:00"
+      },
+      {
+        "built_at": "2026-11-12T22:23:38.189608+08:00",
+        "checked_at": "2026-11-12T22:23:38.189608+08:00",
+        "failed_at": null,
+        "stored_bytes": 16125542,
+        "phase": [
+          "2026-11-12",
+          false
+        ],
+        "inputs": {
+          "market": "fadb5f47d8d34110",
+          "scan": "949bf4c545acbd46",
+          "health": "4b447d35e268a262",
+          "quotes": "fe034945f40ee4b9",
+          "states": "3c3c269b6053e776",
+          "setups": "3c3c269b6053e776",
+          "bars": "1afe64ebff278865",
+          "references": "284b60c273b38b28",
+          "profiles": "daa9a7d1bfaf4c82"
+        },
+        "observed_at": "2026-11-12T14:24:25.109732+00:00"
+      },
+      {
+        "built_at": "2026-11-12T22:23:38.189608+08:00",
+        "checked_at": "2026-11-12T22:23:38.189608+08:00",
+        "failed_at": null,
+        "stored_bytes": 16125542,
+        "phase": [
+          "2026-11-12",
+          false
+        ],
+        "inputs": {
+          "market": "fadb5f47d8d34110",
+          "scan": "949bf4c545acbd46",
+          "health": "4b447d35e268a262",
+          "quotes": "fe034945f40ee4b9",
+          "states": "3c3c269b6053e776",
+          "setups": "3c3c269b6053e776",
+          "bars": "1afe64ebff278865",
+          "references": "284b60c273b38b28",
+          "profiles": "daa9a7d1bfaf4c82"
+        },
+        "observed_at": "2026-11-12T14:24:59.717271+00:00"
+      },
+      {
+        "built_at": "2026-11-12T22:24:35.425073+08:00",
+        "checked_at": "2026-11-12T22:24:35.425073+08:00",
+        "failed_at": null,
+        "stored_bytes": 16125542,
+        "phase": [
+          "2026-11-12",
+          false
+        ],
+        "inputs": {
+          "market": "fadb5f47d8d34110",
+          "scan": "949bf4c545acbd46",
+          "health": "4b447d35e268a262",
+          "quotes": "fe034945f40ee4b9",
+          "states": "3c3c269b6053e776",
+          "setups": "3c3c269b6053e776",
+          "bars": "b3b762b60d633aef",
+          "references": "284b60c273b38b28",
+          "profiles": "daa9a7d1bfaf4c82"
+        },
+        "observed_at": "2026-11-12T14:25:34.343881+00:00"
+      }
+    ],
+    "publisher_transitions": [
+      {
+        "observed_at": "2026-11-12T14:23:50.071856+00:00",
+        "same_inputs": true,
+        "changed_inputs": [],
+        "whole_result_rebuilt": false,
+        "check_advanced": false
+      },
+      {
+        "observed_at": "2026-11-12T14:24:25.109732+00:00",
+        "same_inputs": false,
+        "changed_inputs": [
+          "scan",
+          "states",
+          "setups",
+          "bars"
+        ],
+        "whole_result_rebuilt": true,
+        "check_advanced": true
+      },
+      {
+        "observed_at": "2026-11-12T14:24:59.717271+00:00",
+        "same_inputs": true,
+        "changed_inputs": [],
+        "whole_result_rebuilt": false,
+        "check_advanced": false
+      },
+      {
+        "observed_at": "2026-11-12T14:25:34.343881+00:00",
+        "same_inputs": false,
+        "changed_inputs": [
+          "bars"
+        ],
+        "whole_result_rebuilt": true,
+        "check_advanced": true
+      }
+    ],
+    "observed_same_input_metadata_only_checks": 0,
+    "statement": "Do not infer NVMe-only impact or daily disk savings from this observation."
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "release_id": "REL-20261112-002",
+  "changes": [
+    "CHG-20261112-003"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-12T14:16:53.972588+00:00",
+    "evidence": "用户确认NAS已安装NVMe，明确要求发版本并在发完后完整测试与验证性能。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+        "version": "6.12.5",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
+        },
+        "image_ids": {
+          "app": "sha256:6a4733d8357b16d54e8e09a9ab3d43d6aefa7412661f93f53afb1c058707bcd4"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "d65e8333b43e2ac78521128d914d782ce3ac3cbc",
+            "run_id": "43234233609"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:431cb1379c4df9127ecb34ddc822b6b8ba0579aa8ed211c9db6127099106f613"
+            }
+          },
+          "candidate_run_id": "43235046573"
+        }
+      },
+      "tag": "v6.12.5",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.12.4",
+        "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+        "image_ids": {
+          "stock-api": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d",
+          "stock-watch": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d",
+          "stock-data": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+        }
+      },
+      "rollback": {
+        "version": "6.12.4",
+        "tag": "v6.12.4",
+        "commit_sha": "34cd23d112bb0c0497896346cc673e800f5bb159",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:b40c9c76df7c61a8624e11de16fdf73779a6ec774b505dfe0c0872ca33f63667"
+        },
+        "image_ids": {
+          "app": "sha256:a4b3f09ba84f7355241182b04eb435e6922e5bbeb5c9d9ccc5249468ea6b043d"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "镜像切换没有迁移或删除；定时缓存清理只有近期独立可读备份存在且在单独维护窗口才执行。上线前已确认该回执有效。表物理收缩不随应用发布执行。",
+        "evidence": "CHG-20261112-003 本地 PostgreSQL 16.14 回归、已验证的定时备份回执和精确 main 候选。"
+      }
+    }
+  ]
+}
