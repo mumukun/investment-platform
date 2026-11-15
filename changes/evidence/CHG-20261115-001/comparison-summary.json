@@ -1,0 +1,80 @@
+{
+  "source": "synthetic",
+  "trade_date": "2026-11-13",
+  "stocks": 8,
+  "path_evaluations": 24,
+  "old_rules": "swing-rules-v5.4.0",
+  "new_rules": "swing-rules-v5.5.0",
+  "participation_changes": {
+    "保留": 4,
+    "继续观察或不参与": 18,
+    "排除": 2
+  },
+  "sector_weight_sensitivity": {
+    "0": [
+      [
+        "600104",
+        88.6
+      ],
+      [
+        "600100",
+        78.0
+      ],
+      [
+        "600107",
+        69.3
+      ]
+    ],
+    "5": [
+      [
+        "600104",
+        87.3
+      ],
+      [
+        "600100",
+        75.6
+      ],
+      [
+        "600107",
+        70.1
+      ]
+    ],
+    "10": [
+      [
+        "600104",
+        86.0
+      ],
+      [
+        "600100",
+        73.2
+      ],
+      [
+        "600107",
+        70.9
+      ]
+    ]
+  },
+  "sector_gate_comparison": [
+    {
+      "code": "600106",
+      "path": "趋势通道",
+      "retained_gate": "暂缓参与",
+      "risk_hint_only_counterfactual": "可计划参与"
+    },
+    {
+      "code": "600106",
+      "path": "低位蓄势",
+      "retained_gate": "暂缓参与",
+      "risk_hint_only_counterfactual": "暂缓参与"
+    },
+    {
+      "code": "600106",
+      "path": "突破回踩",
+      "retained_gate": "不参与",
+      "risk_hint_only_counterfactual": "不参与"
+    }
+  ],
+  "return_validation": "未执行：没有完整、时间点可得的历史观察与后续成交数据；样例不证明收益或胜率",
+  "confirmation_policy": "保留跨阶段确认；本次只新增质量及位置门禁，不因提前出现结构而跳过确认",
+  "exit_research": "复用 research-replay 的 fixed5 / structure / volatility 与次日开盘、成本模型；本次不改真实跟踪账本"
+}

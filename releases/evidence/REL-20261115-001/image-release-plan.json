@@ -1,0 +1,169 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "release_id": "REL-20261115-001",
+  "changes": [
+    "CHG-20261115-001",
+    "CHG-20261115-002",
+    "CHG-20261115-003"
+  ],
+  "authorization": {
+    "status": "FORMAL",
+    "approved_at": "2026-11-15T16:16:45.616442+00:00",
+    "evidence": "用户明确要求本对话和另两个对话的三项未上线改动一起发布上线。"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "80794396ce23c116f2c147d89e305045867b8620",
+        "version": "6.14.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:be7432784ff740ad4dfcfbf19d4b51ff7754215e1fdc358344e25faad1dd7d21"
+        },
+        "image_ids": {
+          "app": "sha256:4956a788add26844b09adf3d7d9936f35338c026017f84b50e26b9fca00abb0e"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "80794396ce23c116f2c147d89e305045867b8620",
+            "run_id": "43733580292"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:be7432784ff740ad4dfcfbf19d4b51ff7754215e1fdc358344e25faad1dd7d21"
+            }
+          },
+          "candidate_run_id": "43733916020"
+        }
+      },
+      "tag": "v6.14.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.13.0",
+        "commit_sha": "7319e4fabcabbbb1e536621f7ef39f45daf28f90",
+        "image_ids": {
+          "stock-api": "sha256:c50bb427eb46feddb6f710e4d247369050a2796c0d5511e09a21912147e65589",
+          "stock-watch": "sha256:c50bb427eb46feddb6f710e4d247369050a2796c0d5511e09a21912147e65589",
+          "stock-data": "sha256:c50bb427eb46feddb6f710e4d247369050a2796c0d5511e09a21912147e65589"
+        }
+      },
+      "rollback": {
+        "version": "6.13.0",
+        "tag": "v6.13.0",
+        "commit_sha": "7319e4fabcabbbb1e536621f7ef39f45daf28f90",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:2743edc743c0b44b51d547e077e99b112791bf0bbf2eca9bbe30086d1baeaa8c"
+        },
+        "image_ids": {
+          "app": "sha256:c50bb427eb46feddb6f710e4d247369050a2796c0d5511e09a21912147e65589"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "超跌新增独立快照表与短线实验隔离记录，兼容增加返回字段及计算，不删除或不可逆改写原有数据。",
+        "evidence": "CHG-20261115-001/002/003；隔离 PostgreSQL 与精确候选验证。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "59448871b411991618038c68b57497b344c1f1a5",
+        "version": "2.14.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:d7a5b05e7f00193272ae65320879483e45657364eff3153386ad144c33f4dd0f",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:42b39e89a2702cbefe2c594012562a9ea923d8d8e1fd265120c53a489e6a90a8"
+        },
+        "image_ids": {
+          "api": "sha256:d90cfe0958acfab30443a981f5e98953f70a58d68f0439a32a83761d2b745d0a",
+          "web": "sha256:7ff800e9cc15a74445c77fdf2de8311d8cf703b0cd1a30cbc42f8974edae8bfb"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "59448871b411991618038c68b57497b344c1f1a5",
+            "run_id": "43733816587"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:d7a5b05e7f00193272ae65320879483e45657364eff3153386ad144c33f4dd0f",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:42b39e89a2702cbefe2c594012562a9ea923d8d8e1fd265120c53a489e6a90a8"
+            }
+          },
+          "candidate_run_id": "43734358824"
+        }
+      },
+      "tag": "v2.14.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.13.0",
+        "commit_sha": "9723afc9f3d8e08846f063c648ff9db80425d382",
+        "image_ids": {
+          "api": "sha256:f4b2a0e98cd3e8dccf134dd32a53982a4c666713280c2c736e3943263f97dd53",
+          "web": "sha256:63c738ab3bee24effcdc134bb93baee87951d5eeeb41ab376a3bbbacaf809224"
+        }
+      },
+      "rollback": {
+        "version": "2.13.0",
+        "tag": "v2.13.0",
+        "commit_sha": "9723afc9f3d8e08846f063c648ff9db80425d382",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:a45d9a32cb1d560b23a4ce4c79037564ced7a6ba814fade9fba6f6af36f2cdd1",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:521de678eae0ba2bb597bc0e5215a40a46be1db728c45a540c094da2528b5e4b"
+        },
+        "image_ids": {
+          "api": "sha256:f4b2a0e98cd3e8dccf134dd32a53982a4c666713280c2c736e3943263f97dd53",
+          "web": "sha256:63c738ab3bee24effcdc134bb93baee87951d5eeeb41ab376a3bbbacaf809224"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "超跌新增独立快照表与短线实验隔离记录，兼容增加返回字段及计算，不删除或不可逆改写原有数据。",
+        "evidence": "CHG-20261115-001/002/003；隔离 PostgreSQL 与精确候选验证。"
+      }
+    }
+  ]
+}
