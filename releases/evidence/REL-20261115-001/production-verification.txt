@@ -1,0 +1,11 @@
+active {"swing_rules": "swing-rules-v5.5.0", "rebound_enabled": true, "short_enabled": true, "akshare": "1.20.38"}
+rebound {"rules_version": "rebound-rules-v1.0.0", "contract_version": "investment-dashboard-rebound-v1", "trade_date": null, "requested_date": "2026-11-16", "quality": "unavailable", "message": "尚无可用快照", "selection_phase": null, "rows": 0}
+rebound_previous_session {"rules_version": "rebound-rules-v1.0.0", "contract_version": "investment-dashboard-rebound-v1", "trade_date": null, "requested_date": "2026-11-13", "quality": "unavailable", "message": "尚无可用快照", "selection_phase": null, "rows": 0}
+swing_provider Current evaluation clock is invalid
+swing_provider_raw {"rules_version": "swing-rules-v5.5.0", "contract_version": "investment-dashboard-swing-selection-v4", "trade_date": "2026-11-13", "degraded": true, "freshness_status": "stale", "selection_phase": null, "rows": 0, "current": {"trade_date": "2026-11-13", "quality": "unavailable", "evaluated_at": "2026-11-16T00:21:41+08:00", "session_state": "closed"}}
+swing_provider_latest {"rules_version": "swing-rules-v5.5.0", "contract_version": "investment-dashboard-swing-selection-v4", "trade_date": "2026-11-13", "degraded": true, "freshness_status": "stale", "selection_phase": null, "rows": 0, "current": {"trade_date": "2026-11-13", "quality": "unavailable", "evaluated_at": "2026-11-16T00:21:41+08:00", "session_state": "closed"}}
+swing_page {"rules_version": "swing-rules-v5.4.0", "contract_version": "investment-dashboard-swing-selection-v4", "trade_date": "2026-11-13", "degraded": true, "freshness_status": "delayed", "selection_phase": "close", "rows": 1351, "current": {"trade_date": "2026-11-13", "quality": "partial", "evaluated_at": "2026-11-13T22:17:18+08:00", "session_state": "closed"}}
+short {"contract_version": "investment-dashboard-selection-status-v1", "trade_date": "2026-11-13", "quality": "healthy", "evaluated_at": "2026-11-13T20:45:43.187531+08:00"}
+short_experiments {"rules_version": "short-observation-v2", "contract_version": "investment-dashboard-short-stats-v1", "requested_date": "2026-11-16", "result_as_of": "2026-11-16", "projection_status": "current", "selection_phase": null, "breakout_ranking": true, "tail_experiment": true}
+rebound UI bundle present
+running_jobs rebound_worker short_worker swing_worker
