@@ -1,0 +1,95 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261116-006",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮明确授权：本对话的开发完成的需求上线，生产上线。"
+  },
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "changes": [
+    "CHG-20261116-011"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "e08ac7d413be052f28afff14557b4bb60ecb8a1d",
+        "version": "6.17.2",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:61c1f39bdb0f6b4188789965e46f163f9b1a3f9498ab0c2f0d611e998a8759d0"
+        },
+        "image_ids": {
+          "app": "sha256:b29f8cbcb8784d23a253e98d017bb8614a764f0abd9d3fb4ea1b341612ab5be5"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "e08ac7d413be052f28afff14557b4bb60ecb8a1d",
+            "run_id": "43881625048"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:61c1f39bdb0f6b4188789965e46f163f9b1a3f9498ab0c2f0d611e998a8759d0"
+            }
+          },
+          "candidate_run_id": "43882462700"
+        }
+      },
+      "tag": "v6.17.2",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.17.1",
+        "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+        "image_ids": {
+          "stock-api": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4",
+          "stock-watch": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4",
+          "stock-data": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4"
+        }
+      },
+      "rollback": {
+        "tag": "v6.17.1",
+        "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+        "version": "6.17.1",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:46f8eee442b7f2bdb679e14489de2784c1ed93cd4032c3bd8af0967f9cf0c163"
+        },
+        "image_ids": {
+          "app": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "短线快照公开读取与新批次实验字段清理。既有持久化快照和交易逻辑保持兼容。",
+        "evidence": "CHG-20261116-011 局部实验及契约回归与主分支 CI。"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

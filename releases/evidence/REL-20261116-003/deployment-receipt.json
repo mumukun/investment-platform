@@ -1,0 +1,27 @@
+{
+  "release_id": "REL-20261116-003",
+  "repository": "marketNewsFeed",
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "tag": "v2.6.0",
+  "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+  "status": "PASS",
+  "stage": "verify",
+  "previous": {
+    "tag": "v2.5.1",
+    "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+    "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6"
+  },
+  "started_at": "2026-11-16T13:17:36.792421+00:00",
+  "backup": {
+    "status": "SKIPPED",
+    "policy": {
+      "mode": "skip",
+      "data_impact": "additive",
+      "rollback_compatible": true,
+      "reason": "只增量初始化任务调度修订及采用记录，保留已发送记录。旧版报告仍可按原配置运行。",
+      "evidence": "CHG-20261116-006～010 合并验证；本地隔离 PostgreSQL、现有/新增契约及各仓冻结 main CI。"
+    }
+  },
+  "image_id": "sha256:f2f594aae6eefb1c3e4eb07110c202d49072b70cfbac0051f9446ed298b80b2e",
+  "completed_at": "2026-11-16T13:17:59.840357+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261116-003",
+  "status": "RELEASED",
+  "created_at": "2026-11-16T12:59:24.529587+00:00",
+  "changes": [
+    "CHG-20261116-006"
+  ],
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.6.0",
+      "planned_version": "2.6.0",
+      "rollback": {
+        "tag": "v2.5.1",
+        "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+        "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6"
+      },
+      "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+      "artifact_model": "SOURCE_TAG_BUILD",
+      "artifact_id": "sha256:f2f594aae6eefb1c3e4eb07110c202d49072b70cfbac0051f9446ed298b80b2e",
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/43871396044"
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-16T13:17:59.840357+00:00"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261116-003/source-plan.json",
+  "pull_requests": {
+    "marketNewsFeed": "https://github.com/mumukun/marketNewsFeed/pull/16"
+  },
+  "generated_by": "image_release.py",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261116-003/deployment-receipt.json"
+  ],
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS"
+  }
+}

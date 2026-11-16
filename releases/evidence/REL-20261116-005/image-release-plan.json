@@ -1,0 +1,171 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261116-005",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮明确授权：本对话的开发完成的需求上线，生产上线。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261116-005",
+    "CHG-20261116-006",
+    "CHG-20261116-007",
+    "CHG-20261116-008",
+    "CHG-20261116-009",
+    "CHG-20261116-010"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+        "version": "6.17.1",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:46f8eee442b7f2bdb679e14489de2784c1ed93cd4032c3bd8af0967f9cf0c163"
+        },
+        "image_ids": {
+          "app": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+            "run_id": "43878140513"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:46f8eee442b7f2bdb679e14489de2784c1ed93cd4032c3bd8af0967f9cf0c163"
+            }
+          },
+          "candidate_run_id": "43879185592"
+        }
+      },
+      "tag": "v6.17.1",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.16.0",
+        "commit_sha": "b9b8a4ce813e2d88a4aec1fdea7acd823b28c830",
+        "image_ids": {
+          "stock-api": "sha256:4c0cc6df84cad118d4c24ae3dc538790bec744adc47c175c9bd80c23b8538ef5",
+          "stock-watch": "sha256:4c0cc6df84cad118d4c24ae3dc538790bec744adc47c175c9bd80c23b8538ef5",
+          "stock-data": "sha256:4c0cc6df84cad118d4c24ae3dc538790bec744adc47c175c9bd80c23b8538ef5"
+        }
+      },
+      "rollback": {
+        "tag": "v6.16.0",
+        "commit_sha": "b9b8a4ce813e2d88a4aec1fdea7acd823b28c830",
+        "version": "6.16.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:3e2ade17cc9844532bbc30daa854924cf4cb96b31498af3217f215af3c492761"
+        },
+        "image_ids": {
+          "app": "sha256:4c0cc6df84cad118d4c24ae3dc538790bec744adc47c175c9bd80c23b8538ef5"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "增量任务计划/采用记录，兼容短线、波段名单派生视图及诊断字段。发布不执行缓存清理、不重算历史。",
+        "evidence": "CHG-20261116-006～010 合并验证；本地隔离 PostgreSQL、现有/新增契约及各仓冻结 main CI。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+        "version": "2.17.1",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b90bab3e0d731470c3f83b3fe0d93341b3e3e19963f9d8741d15eec800e9f560",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:92b8f13bf016edbf3555e3641fbd2d0ef69c05e99e21ef9381d61c4e2813885a"
+        },
+        "image_ids": {
+          "api": "sha256:139d328d0c7f2c3e3657b6684886160a3de8493d3387dcd48d7f6b0db0b9af1d",
+          "web": "sha256:1b6d26c8c1f1d8e39b36f4ed34958a33ec595fa9d0dd4a60c26f600d939ecc49"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+            "run_id": "43878147590"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b90bab3e0d731470c3f83b3fe0d93341b3e3e19963f9d8741d15eec800e9f560",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:92b8f13bf016edbf3555e3641fbd2d0ef69c05e99e21ef9381d61c4e2813885a"
+            }
+          },
+          "candidate_run_id": "43879045627"
+        }
+      },
+      "tag": "v2.17.1",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.16.0",
+        "commit_sha": "4c51b4ac922f3814117d6dc41ab20babbf0853b4",
+        "image_ids": {
+          "api": "sha256:3b614bcb6acc6c1c3c6ec2b588cc2058d6fe39cfca0b8e95c1394441e61ee756",
+          "web": "sha256:0c2bcf324e88170e09c47fd8d79d0e56e6c4e52f228f9772e2ab7c9333c0ce36"
+        }
+      },
+      "rollback": {
+        "tag": "v2.16.0",
+        "commit_sha": "4c51b4ac922f3814117d6dc41ab20babbf0853b4",
+        "version": "2.16.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9e0fd4d8306a17fc92fb1f98260af89e765b1ae791cfb306d79c3f17573028ab",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ff2e2436774f569ba37c8110a6e107f9e0f3cefbf2f26c4f3a7596ac1b363ad7"
+        },
+        "image_ids": {
+          "api": "sha256:3b614bcb6acc6c1c3c6ec2b588cc2058d6fe39cfca0b8e95c1394441e61ee756",
+          "web": "sha256:0c2bcf324e88170e09c47fd8d79d0e56e6c4e52f228f9772e2ab7c9333c0ce36"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "使用既有快照表和新增投影键，读取上游精简名单及任务目录。无结构迁移。",
+        "evidence": "CHG-20261116-006～010 合并验证；本地隔离 PostgreSQL、现有/新增契约及各仓冻结 main CI。"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
