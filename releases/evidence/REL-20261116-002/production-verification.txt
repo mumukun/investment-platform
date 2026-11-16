@@ -1,0 +1,4 @@
+provider 6.16.0 rebound-rules-v1.1.0 full_scan_minutes 5
+rebound worker processes: 1
+{"contract": "investment-dashboard-rebound-v1", "rules": "rebound-rules-v1.0.0", "requested_date": "2026-11-16", "trade_date": "2026-11-16", "quality": "partial", "candidates": 388, "intraday_scan": null}
+rebound UI bundle present
