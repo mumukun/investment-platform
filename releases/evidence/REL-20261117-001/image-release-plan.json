@@ -1,0 +1,168 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261117-001",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确授权本对话需求及 CHG-20261116-003、012 一起生产上线。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261116-003",
+    "CHG-20261116-012",
+    "CHG-20261116-013"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "29445045ad7f7e09e2894565bccceddfa514d478",
+        "version": "6.19.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:1db89a1a45f2f4069b39cd59a153cfb39fea229b135fbeb1fee1b868b3775fad"
+        },
+        "image_ids": {
+          "app": "sha256:9596055ff92f5692d71cf788cb5230e84f8c8b888ae812d448e9ad3b4593d684"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "29445045ad7f7e09e2894565bccceddfa514d478",
+            "run_id": "43908255756"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:1db89a1a45f2f4069b39cd59a153cfb39fea229b135fbeb1fee1b868b3775fad"
+            }
+          },
+          "candidate_run_id": "43909488534"
+        }
+      },
+      "tag": "v6.19.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.17.2",
+        "commit_sha": "e08ac7d413be052f28afff14557b4bb60ecb8a1d",
+        "image_ids": {
+          "stock-api": "sha256:b29f8cbcb8784d23a253e98d017bb8614a764f0abd9d3fb4ea1b341612ab5be5",
+          "stock-watch": "sha256:b29f8cbcb8784d23a253e98d017bb8614a764f0abd9d3fb4ea1b341612ab5be5",
+          "stock-data": "sha256:b29f8cbcb8784d23a253e98d017bb8614a764f0abd9d3fb4ea1b341612ab5be5"
+        }
+      },
+      "rollback": {
+        "tag": "v6.17.2",
+        "version": "6.17.2",
+        "commit_sha": "e08ac7d413be052f28afff14557b4bb60ecb8a1d",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:61c1f39bdb0f6b4188789965e46f163f9b1a3f9498ab0c2f0d611e998a8759d0"
+        },
+        "image_ids": {
+          "app": "sha256:b29f8cbcb8784d23a253e98d017bb8614a764f0abd9d3fb4ea1b341612ab5be5"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "新增波段明细表和索引，旧归档仍写入。淘汰仅作用于新增明细表，旧应用可继续读取原归档。",
+        "evidence": "CHG-20261116-012 与 013 定向 PostgreSQL、契约及冻结 main CI。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "2219af1e28ecff77a01d4ef4d2805f5f3eee7311",
+        "version": "2.19.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b8e316c8d99f5caf1f29884814ebbe054b2e9aaa87d1beb4039f24a97201d988",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e2e14fbfbf3b677d52d92a453e3cf3e80bf3730ae5796d79fdd4bf04c7ab6709"
+        },
+        "image_ids": {
+          "api": "sha256:1a24139bffe303f4ecdb49d51f791c2f6098a94a84d94fd4abe11c1882b5e92f",
+          "web": "sha256:b37952335e02b8a2e1a6186e566d0b4b7d82afe2dcdb54226d711f1472a263a3"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "2219af1e28ecff77a01d4ef4d2805f5f3eee7311",
+            "run_id": "43907291832"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b8e316c8d99f5caf1f29884814ebbe054b2e9aaa87d1beb4039f24a97201d988",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e2e14fbfbf3b677d52d92a453e3cf3e80bf3730ae5796d79fdd4bf04c7ab6709"
+            }
+          },
+          "candidate_run_id": "43908449605"
+        }
+      },
+      "tag": "v2.19.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.17.1",
+        "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+        "image_ids": {
+          "api": "sha256:139d328d0c7f2c3e3657b6684886160a3de8493d3387dcd48d7f6b0db0b9af1d",
+          "web": "sha256:1b6d26c8c1f1d8e39b36f4ed34958a33ec595fa9d0dd4a60c26f600d939ecc49"
+        }
+      },
+      "rollback": {
+        "tag": "v2.17.1",
+        "version": "2.17.1",
+        "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b90bab3e0d731470c3f83b3fe0d93341b3e3e19963f9d8741d15eec800e9f560",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:92b8f13bf016edbf3555e3641fbd2d0ef69c05e99e21ef9381d61c4e2813885a"
+        },
+        "image_ids": {
+          "api": "sha256:139d328d0c7f2c3e3657b6684886160a3de8493d3387dcd48d7f6b0db0b9af1d",
+          "web": "sha256:1b6d26c8c1f1d8e39b36f4ed34958a33ec595fa9d0dd4a60c26f600d939ecc49"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "新增字段由旧版本兼容读取，继续使用现有数据表，旧应用可读取原投影。",
+        "evidence": "CHG-20261116-012 与 013 定向 PostgreSQL、契约及冻结 main CI。"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

@@ -1,0 +1,5 @@
+{"short_runtime_rules": "short-observation-v4", "swing_runtime_rules": "swing-rules-v5.6.0"}
+{"short_readback_rules": "short-observation-v3", "trade_date": "2026-11-16", "minimum_average_amount": 50000000, "items": 1395}
+{"dashboard_swing_list": true, "swing_same_batch_detail": true, "rules": "swing-rules-v5.5.0", "trade_date": "2026-11-16"}
+{"new_swing_batch": "pending", "provider_current_startup": "invalid evaluation clock before first v5.6 batch"}
+{"rebound_contract": "investment-dashboard-rebound-v1", "trade_date": "2026-11-16", "rows": 435, "display_quote_rows": 0}
