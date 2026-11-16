@@ -1,0 +1,55 @@
+{
+  "source": "synthetic",
+  "universe_per_strategy": 5500,
+  "short": {
+    "before": {
+      "cold_ms": 523.2,
+      "warm_ms": 555.9,
+      "history_preparation_calls": 11000,
+      "active": 2750,
+      "bytes": 8910278
+    },
+    "after": {
+      "cold_ms": 487.4,
+      "warm_ms": 490.3,
+      "history_preparation_calls": 8800,
+      "active": 2200,
+      "bytes": 7238057
+    },
+    "retained": 2200,
+    "removed": 550,
+    "removed_by_path": {
+      "平台临界／突破启动": 550
+    },
+    "removed_actionable": [],
+    "excluded_by_reason": {
+      "历史20日均额不足5000万元": 1100,
+      "有效均线结构不足，突破路径要求现价不低于MA20且MA20不下降": 2200
+    }
+  },
+  "swing": {
+    "before": {
+      "ms": 804.4,
+      "path_evaluations": 13200,
+      "active": 4400,
+      "bytes": 106706600
+    },
+    "after": {
+      "ms": 152.1,
+      "path_evaluations": 1100,
+      "active": 1100,
+      "bytes": 21780000
+    },
+    "retained_paths": 1100,
+    "removed_by_path": {
+      "趋势通道": 2200,
+      "低位蓄势": 1100
+    },
+    "removed_actionable": [],
+    "excluded_paths_by_reason": {
+      "20日趋势连续性低于0.45": 1100,
+      "最大单日涨幅超过累计正涨幅的55%": 1100,
+      "量能改善证据不足两项": 1100
+    }
+  }
+}

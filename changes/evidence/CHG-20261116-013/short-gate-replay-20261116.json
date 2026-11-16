@@ -1,0 +1,19 @@
+{
+  "trade_date": "2026-11-16",
+  "evaluated_at": "2026-11-16T22:14:40.347397+08:00",
+  "generation_id": "01e62ebcff8fa80d5969400a46227072fd6cd146838f41ebe881b34e4a21370f",
+  "source": "留档的 current:research 投影及同一批次核验的历史日线特征",
+  "scope": "仅按原活跃候选及各自已有路径复算门槛，任一路径合格即可保留该股票。各步顺序累加。",
+  "steps": [
+    {"rule": "原短线规则的活跃候选", "retained": 1049},
+    {"rule": "上一版 v4 草案增加突破路径 MA20 门槛", "retained": 986},
+    {"rule": "均线承接增加 MA10 ≥ MA20 且原触及证据或距离 ≤ 0.35 ATR", "retained": 803},
+    {"rule": "过去 20 个已完成交易日日均成交额 ≥ 7500 万元", "retained": 710},
+    {"rule": "三条路径的价格区间均为 −0.35 至 +0.75 ATR", "retained": 664}
+  ],
+  "compared_to_previous_v4_draft": {"filtered_out": 322, "percent_filtered_out": 32.7},
+  "compared_to_original_active_pool": {"filtered_out": 385, "percent_filtered_out": 36.7},
+  "qualified_paths_nonexclusive": {"均线承接": 510, "突破位承接": 110, "平台临界／突破启动": 157},
+  "original_snapshot_decisions_of_retained_rows": {"暂缓参与": 662, "禁止追高": 2},
+  "limitations": "原快照没有可计划参与记录。复算范围未覆盖整轮行情、独立报价确认或尾盘冻结信号，未测整轮耗时。"
+}
