@@ -1,0 +1,6 @@
+provider 6.15.0 rebound-score-v1
+{"contract": "investment-dashboard-rebound-v1", "quality": "unavailable", "trade_date": null, "candidates": 0, "scored": 0, "ready": 0}
+rebound UI bundle present
+
+First completed snapshot after worker initialization
+{"quality": "stale", "trade_date": "2026-11-13", "generated_at": "2026-11-16 09:22:31.862013+08:00", "candidates": 388, "scored": 269, "scores": {"observation": 269}, "example": 74.5}
