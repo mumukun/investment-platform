@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261116-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261116-004"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.16.0",
+      "commit_sha": "b9b8a4ce813e2d88a4aec1fdea7acd823b28c830",
+      "planned_version": "6.16.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:3e2ade17cc9844532bbc30daa854924cf4cb96b31498af3217f215af3c492761"
+      },
+      "artifact_id": {
+        "app": "sha256:4c0cc6df84cad118d4c24ae3dc538790bec744adc47c175c9bd80c23b8538ef5"
+      },
+      "rollback": {
+        "version": "6.15.0",
+        "commit_sha": "07c3c682a6890c7b229578cceaaf59bd48198a17",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:6db97306fe33a2324ece47c9a7394cc7301ba69d789e3a00a6a16aa11eb45f14"
+        },
+        "image_ids": {
+          "app": "sha256:caf0c424191fd0dd35f29814c694cc3814ad5261fd57c1204f400621da9c767b"
+        },
+        "tag": "v6.15.0",
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "b9b8a4ce813e2d88a4aec1fdea7acd823b28c830",
+          "run_id": "43803848763"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:3e2ade17cc9844532bbc30daa854924cf4cb96b31498af3217f215af3c492761"
+          }
+        },
+        "candidate_run_id": "43804393740"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.16.0",
+      "commit_sha": "4c51b4ac922f3814117d6dc41ab20babbf0853b4",
+      "planned_version": "2.16.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9e0fd4d8306a17fc92fb1f98260af89e765b1ae791cfb306d79c3f17573028ab",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ff2e2436774f569ba37c8110a6e107f9e0f3cefbf2f26c4f3a7596ac1b363ad7"
+      },
+      "artifact_id": {
+        "api": "sha256:3b614bcb6acc6c1c3c6ec2b588cc2058d6fe39cfca0b8e95c1394441e61ee756",
+        "web": "sha256:0c2bcf324e88170e09c47fd8d79d0e56e6c4e52f228f9772e2ab7c9333c0ce36"
+      },
+      "rollback": {
+        "version": "2.15.0",
+        "commit_sha": "07b6e7b9e4ec9d22ae45e8c9d6dc639f886d47ca",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:d7e8ad8e370562c52479c001b81114e924bcce87178008232180f0abcce2de33",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:bb458420c685369fdc7834b409d0c57de0bfddba761990a4082130da52516949"
+        },
+        "image_ids": {
+          "api": "sha256:31d7ec3a639dd5d411ba326431f25d72f3efd2f0187f3e98b029842e582a0707",
+          "web": "sha256:413b88020f227a7ada300080c70bbced378694ddaf9bed15b55bd2e59f9157c8"
+        },
+        "tag": "v2.15.0"
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "4c51b4ac922f3814117d6dc41ab20babbf0853b4",
+          "run_id": "43803928359"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9e0fd4d8306a17fc92fb1f98260af89e765b1ae791cfb306d79c3f17573028ab",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ff2e2436774f569ba37c8110a6e107f9e0f3cefbf2f26c4f3a7596ac1b363ad7"
+          }
+        },
+        "candidate_run_id": "43804479217"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "/private/tmp/CHG-20261116-004/investment-platform/releases/evidence/REL-20261116-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-16T04:34:32.656486+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "affected_readback": "releases/evidence/REL-20261116-002/production-verification.txt",
+    "intraday_timing": "12:34 北京时间午间休市时验收，规则与生产工作进程已运行，真实看板链路当时返回同日既有快照。新版盘中快照将在连续竞价恢复后计算。"
+  },
+  "pull_requests": {
+    "stock-analyzer": "https://github.com/mumukun/stock-analyzer/pull/102",
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/84"
+  }
+}
