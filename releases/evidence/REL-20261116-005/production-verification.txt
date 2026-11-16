@@ -1,0 +1,11 @@
+                               --diagnose DIAGNOSE]
+                               [--detail-minutes DETAIL_MINUTES]
+  --diagnose DIAGNOSE   build a Markdown report from sample JSONL and logs
+  --detail-minutes DETAIL_MINUTES
+diagnostic baseline sample PASS 2026-11-16T21:52:32.766800+08:00
+{"provider": "stock-analyzer", "schedule_contract": "investment-dashboard-schedules-v1", "tasks": 58, "selection_plan": {"tail": {"period": 5, "offset": 0, "enabled": true}, "rebound": {"period": 5, "offset": 100, "enabled": true}, "swing": {"period": 5, "offset": 200, "enabled": true}}}
+{"provider": "marketNewsFeed", "schedule_contract": "investment-dashboard-schedules-v1", "tasks": 31}
+swing investment-dashboard-swing-list-v1 2026-11-16 partial 1215
+swing same batch detail investment-dashboard-swing-detail-v1
+rebound investment-dashboard-rebound-v1 2026-11-16 partial 435
+short selection readback failed: 10 out of 1395 rows violated experiment participation validation in both short routes

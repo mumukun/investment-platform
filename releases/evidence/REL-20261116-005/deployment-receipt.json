@@ -1,0 +1,137 @@
+{
+  "release_id": "REL-20261116-005",
+  "plan_hash": "70243aefeecb15ee74c98d02614921f6bfbd49dce39ad4dce89003bc9b7e47c5",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "additive",
+          "rollback_compatible": true,
+          "reason": "增量任务计划/采用记录，兼容短线、波段名单派生视图及诊断字段。发布不执行缓存清理、不重算历史。",
+          "evidence": "CHG-20261116-006～010 合并验证；本地隔离 PostgreSQL、现有/新增契约及各仓冻结 main CI。"
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4",
+        "stock-watch": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4",
+        "stock-data": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4"
+      }
+    },
+    "investment-research-dashboard": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "使用既有快照表和新增投影键，读取上游精简名单及任务目录。无结构迁移。",
+          "evidence": "CHG-20261116-006～010 合并验证；本地隔离 PostgreSQL、现有/新增契约及各仓冻结 main CI。"
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "api": "sha256:139d328d0c7f2c3e3657b6684886160a3de8493d3387dcd48d7f6b0db0b9af1d",
+        "web": "sha256:1b6d26c8c1f1d8e39b36f4ed34958a33ec595fa9d0dd4a60c26f600d939ecc49"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-11-16T13:50:19.337458+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 30.477
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-11-16T13:50:50.789917+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.022
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-11-16T13:50:50.857702+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.157
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-11-16T13:50:51.089543+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 9.706
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-11-16T13:51:00.808004+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 12.273
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-11-16T13:51:13.097857+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 36.317
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-11-16T13:51:50.362907+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.024
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-11-16T13:51:50.433314+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.138
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-11-16T13:51:50.798614+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 25.658
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-11-16T13:52:16.461127+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 4.899
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.17.1",
+      "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:46f8eee442b7f2bdb679e14489de2784c1ed93cd4032c3bd8af0967f9cf0c163"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.17.1",
+      "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b90bab3e0d731470c3f83b3fe0d93341b3e3e19963f9d8741d15eec800e9f560",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:92b8f13bf016edbf3555e3641fbd2d0ef69c05e99e21ef9381d61c4e2813885a"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-11-16T13:52:21.380588+00:00"
+}

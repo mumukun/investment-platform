@@ -1,0 +1,47 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261116-003",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户本轮明确授权：本对话的开发完成的需求上线，生产上线。"
+  },
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "changes": [
+    "CHG-20261116-006"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v2.6.0",
+      "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+      "expected_production": {
+        "tag": "v2.5.1",
+        "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+        "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/43871396044"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "只增量初始化任务调度修订及采用记录，保留已发送记录。旧版报告仍可按原配置运行。",
+        "evidence": "CHG-20261116-006～010 合并验证；本地隔离 PostgreSQL、现有/新增契约及各仓冻结 main CI。"
+      }
+    }
+  ],
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "rollback": {
+    "tag": "v2.5.1",
+    "commit_sha": "43ccfd4d53bc9471436149178e8463201b46bf61",
+    "image_id": "sha256:ad49fd0a9bf1e32e67d94c4cd02e0901b7a3f9c0c1dc087f6a64446b575d62f6",
+    "note": "保留已核实源代码 Tag 和镜像；源码发布入口需按已保留版本人工回退。"
+  }
+}

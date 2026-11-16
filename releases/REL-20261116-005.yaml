@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "release_id": "REL-20261116-005",
+  "status": "RELEASED",
+  "created_at": "2026-11-16T13:36:05.981119+00:00",
+  "changes": [
+    "CHG-20261116-005",
+    "CHG-20261116-006",
+    "CHG-20261116-007",
+    "CHG-20261116-008",
+    "CHG-20261116-009",
+    "CHG-20261116-010"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "planned_version": "6.17.1",
+      "tag": "v6.17.1",
+      "rollback": {
+        "tag": "v6.16.0",
+        "commit_sha": "b9b8a4ce813e2d88a4aec1fdea7acd823b28c830",
+        "version": "6.16.0",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:3e2ade17cc9844532bbc30daa854924cf4cb96b31498af3217f215af3c492761"
+        },
+        "image_ids": {
+          "app": "sha256:4c0cc6df84cad118d4c24ae3dc538790bec744adc47c175c9bd80c23b8538ef5"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:46f8eee442b7f2bdb679e14489de2784c1ed93cd4032c3bd8af0967f9cf0c163"
+      },
+      "artifact_id": {
+        "app": "sha256:bc6141b403a1c83ff0e66ff38ad9e90934885b0ba032f07312674b248ed2aff4"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "43a73deff21dc86c6f5936bc65aaa0d14de1fd49",
+          "run_id": "43878140513"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:46f8eee442b7f2bdb679e14489de2784c1ed93cd4032c3bd8af0967f9cf0c163"
+          }
+        },
+        "candidate_run_id": "43879185592"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "planned_version": "2.17.1",
+      "tag": "v2.17.1",
+      "rollback": {
+        "tag": "v2.16.0",
+        "commit_sha": "4c51b4ac922f3814117d6dc41ab20babbf0853b4",
+        "version": "2.16.0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9e0fd4d8306a17fc92fb1f98260af89e765b1ae791cfb306d79c3f17573028ab",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ff2e2436774f569ba37c8110a6e107f9e0f3cefbf2f26c4f3a7596ac1b363ad7"
+        },
+        "image_ids": {
+          "api": "sha256:3b614bcb6acc6c1c3c6ec2b588cc2058d6fe39cfca0b8e95c1394441e61ee756",
+          "web": "sha256:0c2bcf324e88170e09c47fd8d79d0e56e6c4e52f228f9772e2ab7c9333c0ce36"
+        }
+      },
+      "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b90bab3e0d731470c3f83b3fe0d93341b3e3e19963f9d8741d15eec800e9f560",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:92b8f13bf016edbf3555e3641fbd2d0ef69c05e99e21ef9381d61c4e2813885a"
+      },
+      "artifact_id": {
+        "api": "sha256:139d328d0c7f2c3e3657b6684886160a3de8493d3387dcd48d7f6b0db0b9af1d",
+        "web": "sha256:1b6d26c8c1f1d8e39b36f4ed34958a33ec595fa9d0dd4a60c26f600d939ecc49"
+      },
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "1dfe551ccecf7168ad51cb31a8f1748ec22cbca8",
+          "run_id": "43878147590"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b90bab3e0d731470c3f83b3fe0d93341b3e3e19963f9d8741d15eec800e9f560",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:92b8f13bf016edbf3555e3641fbd2d0ef69c05e99e21ef9381d61c4e2813885a"
+          }
+        },
+        "candidate_run_id": "43879045627"
+      }
+    }
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-16T13:52:21.380588+00:00"
+  },
+  "related_releases": {
+    "upstream": "REL-20261116-003",
+    "failed_attempt": "REL-20261116-004"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261116-005/image-release-plan.json",
+  "pull_requests": {
+    "stock-analyzer": "https://github.com/mumukun/stock-analyzer/pull/104",
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/86"
+  },
+  "generated_by": "image_release.py",
+  "deployment_receipts": [
+    "releases/evidence/REL-20261116-005/deployment-receipt.json"
+  ],
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "known_limitations": [
+      "生产短线名单验证发现同一批次 1395 个候选中的 10 条失效结构在两条读取路径上都保留历史实验评分。由 CHG-20261116-011 修复。"
+    ],
+    "affected_readback": "releases/evidence/REL-20261116-005/production-verification.txt"
+  }
+}
