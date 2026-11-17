@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261117-002",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确授权本对话两项需求一起生产上线，确认筛选条件与页签数字同批发布。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261117-001",
+    "CHG-20261117-002"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "3b2fbfe0c82a676ff0674c279d362aa8021c15c8",
+        "version": "6.20.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:8017b8fa98173caa060b467a57c13fe611375d502aa47ceefc822fab339e6e50"
+        },
+        "image_ids": {
+          "app": "sha256:06224d45e2c5c3191638ee9292eaf7b31b5c061abd993be212e59df29edc59fa"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "3b2fbfe0c82a676ff0674c279d362aa8021c15c8",
+            "run_id": "44117298952"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:8017b8fa98173caa060b467a57c13fe611375d502aa47ceefc822fab339e6e50"
+            }
+          },
+          "candidate_run_id": "44118345925"
+        }
+      },
+      "tag": "v6.20.0",
+      "dependencies": [],
+      "expected_production": {
+        "tag": "v6.19.0",
+        "commit_sha": "29445045ad7f7e09e2894565bccceddfa514d478",
+        "image_ids": {
+          "stock-api": "sha256:9596055ff92f5692d71cf788cb5230e84f8c8b888ae812d448e9ad3b4593d684",
+          "stock-watch": "sha256:9596055ff92f5692d71cf788cb5230e84f8c8b888ae812d448e9ad3b4593d684",
+          "stock-data": "sha256:9596055ff92f5692d71cf788cb5230e84f8c8b888ae812d448e9ad3b4593d684"
+        }
+      },
+      "rollback": {
+        "tag": "v6.19.0",
+        "version": "6.19.0",
+        "commit_sha": "29445045ad7f7e09e2894565bccceddfa514d478",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:1db89a1a45f2f4069b39cd59a153cfb39fea229b135fbeb1fee1b868b3775fad"
+        },
+        "image_ids": {
+          "app": "sha256:9596055ff92f5692d71cf788cb5230e84f8c8b888ae812d448e9ad3b4593d684"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "现有表新增独立规则标识的快照，保留旧快照与模拟账本，未修改表结构或历史数据。",
+        "evidence": "CHG-20261117-001、002 定向 PostgreSQL、契约及冻结 main CI。"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "37bf4a8a3560135764f45c3073b6c5eedc5edec8",
+        "version": "2.20.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:49ffe2e0e865ab9ea3b69cd9140b621529cbff51b6fe9e8adab2220c052330c6",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b06f2b77b27c18f7f1bbb4dc2083f5db9a63f3e5bab440aa89f94ba67df1bfde"
+        },
+        "image_ids": {
+          "api": "sha256:89a9e37568f14ed8039429966521bd9d50d9e57dd6206c38fe6bffd6c2c9af4a",
+          "web": "sha256:feaa3e8169ab11af5ccf71f48816503dddc1c02840bb5afdd3662dc565cfb3c6"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "37bf4a8a3560135764f45c3073b6c5eedc5edec8",
+            "run_id": "44118257588"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:49ffe2e0e865ab9ea3b69cd9140b621529cbff51b6fe9e8adab2220c052330c6",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b06f2b77b27c18f7f1bbb4dc2083f5db9a63f3e5bab440aa89f94ba67df1bfde"
+            }
+          },
+          "candidate_run_id": "44119312098"
+        }
+      },
+      "tag": "v2.20.0",
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "expected_production": {
+        "tag": "v2.19.0",
+        "commit_sha": "2219af1e28ecff77a01d4ef4d2805f5f3eee7311",
+        "image_ids": {
+          "api": "sha256:1a24139bffe303f4ecdb49d51f791c2f6098a94a84d94fd4abe11c1882b5e92f",
+          "web": "sha256:b37952335e02b8a2e1a6186e566d0b4b7d82afe2dcdb54226d711f1472a263a3"
+        }
+      },
+      "rollback": {
+        "tag": "v2.19.0",
+        "version": "2.19.0",
+        "commit_sha": "2219af1e28ecff77a01d4ef4d2805f5f3eee7311",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b8e316c8d99f5caf1f29884814ebbe054b2e9aaa87d1beb4039f24a97201d988",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e2e14fbfbf3b677d52d92a453e3cf3e80bf3730ae5796d79fdd4bf04c7ab6709"
+        },
+        "image_ids": {
+          "api": "sha256:1a24139bffe303f4ecdb49d51f791c2f6098a94a84d94fd4abe11c1882b5e92f",
+          "web": "sha256:b37952335e02b8a2e1a6186e566d0b4b7d82afe2dcdb54226d711f1472a263a3"
+        }
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "可选 v1 扩展与只读适配，沿用现有表。",
+        "evidence": "CHG-20261117-001、002 定向 PostgreSQL、契约及冻结 main CI。"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
