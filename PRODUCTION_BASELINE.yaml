@@ -501,23 +501,23 @@
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-11-17T15:57:31.645069+00:00",
-        "application_version": "2.20.0",
+        "verified_at": "2026-11-17T23:38:13.896461+00:00",
+        "application_version": "2.20.1",
         "application_version_source": "VERSION",
-        "tag": "v2.20.0",
-        "commit_sha": "37bf4a8a3560135764f45c3073b6c5eedc5edec8",
+        "tag": "v2.20.1",
+        "commit_sha": "060e8638edc1651211380c8e51ce595465f064e8",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:49ffe2e0e865ab9ea3b69cd9140b621529cbff51b6fe9e8adab2220c052330c6",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b06f2b77b27c18f7f1bbb4dc2083f5db9a63f3e5bab440aa89f94ba67df1bfde"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:540eae0899130655b23fe9df03c35e44b1c33c14c730859e97dd882cfd6f3d19",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:20653731ab08e31afe4dd5d4e0d937a29c2fba8de82598180a93753bb48e3891"
         },
         "artifact_id": {
-          "api": "sha256:89a9e37568f14ed8039429966521bd9d50d9e57dd6206c38fe6bffd6c2c9af4a",
-          "web": "sha256:feaa3e8169ab11af5ccf71f48816503dddc1c02840bb5afdd3662dc565cfb3c6"
+          "api": "sha256:93c08c55ee5796078fdbca1cb49fae33bce3eb1d396b9c2b5e42520a235a5eec",
+          "web": "sha256:d306543c9385e1ab3f39f96ca4aa7d1142eb3c1c4bee2ec7d228bab2419a58f6"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:49ffe2e0e865ab9ea3b69cd9140b621529cbff51b6fe9e8adab2220c052330c6",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b06f2b77b27c18f7f1bbb4dc2083f5db9a63f3e5bab440aa89f94ba67df1bfde"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:540eae0899130655b23fe9df03c35e44b1c33c14c730859e97dd882cfd6f3d19",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:20653731ab08e31afe4dd5d4e0d937a29c2fba8de82598180a93753bb48e3891"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -526,21 +526,21 @@
         ],
         "health": "PASS: exact artifact, health and production smoke",
         "rollback_baseline": {
-          "tag": "v2.19.0",
-          "version": "2.19.0",
-          "commit_sha": "2219af1e28ecff77a01d4ef4d2805f5f3eee7311",
+          "tag": "v2.20.0",
+          "version": "2.20.0",
+          "commit_sha": "37bf4a8a3560135764f45c3073b6c5eedc5edec8",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:b8e316c8d99f5caf1f29884814ebbe054b2e9aaa87d1beb4039f24a97201d988",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e2e14fbfbf3b677d52d92a453e3cf3e80bf3730ae5796d79fdd4bf04c7ab6709"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:49ffe2e0e865ab9ea3b69cd9140b621529cbff51b6fe9e8adab2220c052330c6",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b06f2b77b27c18f7f1bbb4dc2083f5db9a63f3e5bab440aa89f94ba67df1bfde"
           },
           "image_ids": {
-            "api": "sha256:1a24139bffe303f4ecdb49d51f791c2f6098a94a84d94fd4abe11c1882b5e92f",
-            "web": "sha256:b37952335e02b8a2e1a6186e566d0b4b7d82afe2dcdb54226d711f1472a263a3"
+            "api": "sha256:89a9e37568f14ed8039429966521bd9d50d9e57dd6206c38fe6bffd6c2c9af4a",
+            "web": "sha256:feaa3e8169ab11af5ccf71f48816503dddc1c02840bb5afdd3662dc565cfb3c6"
           }
         },
         "next_release_rollback_images": {
-          "api": "sha256:89a9e37568f14ed8039429966521bd9d50d9e57dd6206c38fe6bffd6c2c9af4a",
-          "web": "sha256:feaa3e8169ab11af5ccf71f48816503dddc1c02840bb5afdd3662dc565cfb3c6"
+          "api": "sha256:93c08c55ee5796078fdbca1cb49fae33bce3eb1d396b9c2b5e42520a235a5eec",
+          "web": "sha256:d306543c9385e1ab3f39f96ca4aa7d1142eb3c1c4bee2ec7d228bab2419a58f6"
         },
         "evidence": [
           "releases/REL-20261116-005.yaml",
@@ -549,7 +549,9 @@
           "releases/REL-20261117-001.yaml",
           "releases/evidence/REL-20261117-001/deployment-receipt.json",
           "releases/REL-20261117-002.yaml",
-          "releases/evidence/REL-20261117-002/deployment-receipt.json"
+          "releases/evidence/REL-20261117-002/deployment-receipt.json",
+          "releases/REL-20261118-001.yaml",
+          "releases/evidence/REL-20261118-001/deployment-receipt.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -654,8 +656,8 @@
             "mode": "skip",
             "data_impact": "none",
             "rollback_compatible": true,
-            "reason": "可选 v1 扩展与只读适配，沿用现有表。",
-            "evidence": "CHG-20261117-001、002 定向 PostgreSQL、契约及冻结 main CI。"
+            "reason": "仅前端读取同批次主导路径已有结构完成度，没有数据库或契约变化。",
+            "evidence": "CHG-20261117-003 的 52 项受影响页面测试、构建及冻结 main CI/candidate。"
           }
         },
         "short_tail": {
@@ -953,9 +955,9 @@
           "carried": 17,
           "unknown": 0
         },
-        "latest_release": "REL-20261117-002",
-        "verification_evidence": "releases/evidence/REL-20261117-002/deployment-receipt.json",
-        "deployment_timestamp": "2026-11-17T15:57:31.645069+00:00",
+        "latest_release": "REL-20261118-001",
+        "verification_evidence": "releases/evidence/REL-20261118-001/deployment-receipt.json",
+        "deployment_timestamp": "2026-11-17T23:38:13.896461+00:00",
         "deployment_timestamp_basis": "生产健康与 smoke 通过时间",
         "snapshot_maintenance": {
           "automatic_cleanup": "Enabled: daily 02:10 Asia/Shanghai; protected formal history",
@@ -974,5 +976,5 @@
     }
   },
   "verification_note": "Production deploy and smoke passed: marketNewsFeed v2.6.0, stock-analyzer v6.17.2, investment-research-dashboard v2.17.1",
-  "last_verified_at": "2026-11-17T15:57:31.662858+00:00"
+  "last_verified_at": "2026-11-17T23:38:13.913574+00:00"
 }
