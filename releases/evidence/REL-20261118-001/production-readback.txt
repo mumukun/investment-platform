@@ -1,0 +1,3 @@
+{"page":"/swing-selection","viewport":1440,"rows":100,"deferred":100,"numeric":100,"completion":100,"samples":[{"code":"601318","score":"结构完成度 100.0 / 100"},{"code":"601998","score":"结构完成度 100.0 / 100"},{"code":"002807","score":"结构完成度 100.0 / 100"}]}
+{"page":"/swing-selection","viewport":390,"rows":100,"deferred":100,"numeric":100,"completion":100,"samples":[{"code":"601318","score":"结构完成度 100.0 / 100"},{"code":"601998","score":"结构完成度 100.0 / 100"},{"code":"002807","score":"结构完成度 100.0 / 100"}]}
+{"source":"production API","status":200,"trade_date":"2026-11-17","rules_version":"swing-rules-v5.6.0","candidates":[{"code":"601318","qualityScore":null,"completion":100},{"code":"601998","qualityScore":null,"completion":100}]}

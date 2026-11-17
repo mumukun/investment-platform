@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261118-001",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261117-003"
+  ],
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v2.20.1",
+      "commit_sha": "060e8638edc1651211380c8e51ce595465f064e8",
+      "planned_version": "2.20.1",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:540eae0899130655b23fe9df03c35e44b1c33c14c730859e97dd882cfd6f3d19",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:20653731ab08e31afe4dd5d4e0d937a29c2fba8de82598180a93753bb48e3891"
+      },
+      "artifact_id": {
+        "api": "sha256:93c08c55ee5796078fdbca1cb49fae33bce3eb1d396b9c2b5e42520a235a5eec",
+        "web": "sha256:d306543c9385e1ab3f39f96ca4aa7d1142eb3c1c4bee2ec7d228bab2419a58f6"
+      },
+      "rollback": {
+        "tag": "v2.20.0",
+        "version": "2.20.0",
+        "commit_sha": "37bf4a8a3560135764f45c3073b6c5eedc5edec8",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:49ffe2e0e865ab9ea3b69cd9140b621529cbff51b6fe9e8adab2220c052330c6",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:b06f2b77b27c18f7f1bbb4dc2083f5db9a63f3e5bab440aa89f94ba67df1bfde"
+        },
+        "image_ids": {
+          "api": "sha256:89a9e37568f14ed8039429966521bd9d50d9e57dd6206c38fe6bffd6c2c9af4a",
+          "web": "sha256:feaa3e8169ab11af5ccf71f48816503dddc1c02840bb5afdd3662dc565cfb3c6"
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "060e8638edc1651211380c8e51ce595465f064e8",
+          "run_id": "44199772023"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:540eae0899130655b23fe9df03c35e44b1c33c14c730859e97dd882cfd6f3d19",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:20653731ab08e31afe4dd5d4e0d937a29c2fba8de82598180a93753bb48e3891"
+          }
+        },
+        "candidate_run_id": "44200626959"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261118-001/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-17T23:38:13.913574+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "limitations": [
+      "没有质量结构分的批次显示主导路径已有结构完成度，并明确标注口径。"
+    ],
+    "changed_boundary_evidence": "releases/evidence/REL-20261118-001/production-readback.txt"
+  },
+  "image_execution_plan": "releases/evidence/REL-20261118-001/image-release-plan.json",
+  "pull_requests": {
+    "investment-research-dashboard": "https://github.com/mumukun/investment-research-dashboard/pull/90"
+  },
+  "timing": {
+    "resumed_first_recorded_at": "2026-11-18T07:22:19+08:00",
+    "authorization_wait": "此前因自动审批拒绝而暂停，跨夜等待用户明确授权，该等待与本次执行分别记录。",
+    "deployment_evidence": [
+      "releases/evidence/REL-20261118-001/deployment-receipt.json"
+    ],
+    "resumed_handling_seconds_to_production": 954.914,
+    "nas_deployment_seconds": 45.093,
+    "notes": "约 1 分钟用于恢复与基线核对，约 14 分钟为 PR / main CI 及候选阶段，随后校验身份和发布。此前跨夜等待用户授权单列。"
+  }
+}
