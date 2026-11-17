@@ -1,0 +1,2 @@
+{"page":"/rebound-selection","tabs":["候选观察 487","模拟跟踪 0","研究统计 0 笔已结算"],"controls":["板块","行业","状态","信号来源"],"searchAndReset":true,"purchaseSummary":true,"research":true,"statuses":[200,200],"date":"2026-11-17","contract":"investment-dashboard-rebound-v1","rules":"rebound-rules-v1.0.0","demo":false,"detailsItems":0,"covered":4474,"universe":5026,"screeningAvailable":false,"newEntries":null}
+{"page":"/swing-selection","total":100,"numeric":0}
