@@ -1,0 +1,1 @@
+{"boundary": "production Dashboard adapter holding an old close snapshot", "trade_date": "2026-11-18", "basis_day": "2026-11-17", "candles": 81, "latest_chart_day": "2026-11-18", "missing_chart_days": []}
