@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261118-003",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确要求本轮发版本，生产上线。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261118-003",
+    "CHG-20261118-004"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "81363b3164320396fa3c4131e7430e482e94ad94",
+        "version": "6.22.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f35168528905da6c0c89e33005c822a39760fbf51961c078f187ee8d9333867a"
+        },
+        "image_ids": {
+          "app": "sha256:73ba7c82bdfbb73a4c7d66d77d15a0c1ccd12bb6a60767a918a1506d53898a1b"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "81363b3164320396fa3c4131e7430e482e94ad94",
+            "run_id": "44334459420"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:f35168528905da6c0c89e33005c822a39760fbf51961c078f187ee8d9333867a"
+            }
+          },
+          "candidate_run_id": "44335709837"
+        }
+      },
+      "tag": "v6.22.0",
+      "rollback": {
+        "tag": "v6.21.0",
+        "version": "6.21.0",
+        "commit_sha": "0a92d572f03024524b0cd90dc31a5b59a996c66d",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:a322fc9f9961a195b984fc6beb486d90457e4637894ed8bbd30a7dbad1ae0e53"
+        },
+        "image_ids": {
+          "app": "sha256:c5d9030d8e2e2cc163ff5c6523b37dc18ec9feee4f6c3dbc7f1fd38354adb081"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "expected_production": {
+        "tag": "v6.21.0",
+        "commit_sha": "0a92d572f03024524b0cd90dc31a5b59a996c66d",
+        "image_ids": {
+          "stock-api": "sha256:c5d9030d8e2e2cc163ff5c6523b37dc18ec9feee4f6c3dbc7f1fd38354adb081",
+          "stock-watch": "sha256:c5d9030d8e2e2cc163ff5c6523b37dc18ec9feee4f6c3dbc7f1fd38354adb081",
+          "stock-data": "sha256:c5d9030d8e2e2cc163ff5c6523b37dc18ec9feee4f6c3dbc7f1fd38354adb081"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "选股初评使用现有表独立策略键，正式快照与既有读写兼容；看板只读。无数据库迁移、旧批次回填或重算。",
+        "evidence": "changes/CHG-20261118-003.md"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "b1ff3e827291cb7e693f2a5df7639fad75cbc9f9",
+        "version": "2.22.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4702d83e7e9ad68214b29eeccf910e0a399edf8cb99bab9d02971bb1beb0ea6f",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:856b3df0d09b5e109161023bce9cebef99c53d4c04f859e209578d068ff632ee"
+        },
+        "image_ids": {
+          "api": "sha256:d18a07743bdd4bf3e936869fa0927dd4f3bb5f96f5c164b9385233f1b0f1055f",
+          "web": "sha256:48a8fe8c9fbc98d71cfa90fca3f8450e0de76f750987bb765ee95ecb0d1ca7db"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "b1ff3e827291cb7e693f2a5df7639fad75cbc9f9",
+            "run_id": "44334214227"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4702d83e7e9ad68214b29eeccf910e0a399edf8cb99bab9d02971bb1beb0ea6f",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:856b3df0d09b5e109161023bce9cebef99c53d4c04f859e209578d068ff632ee"
+            }
+          },
+          "candidate_run_id": "44335317436"
+        }
+      },
+      "tag": "v2.22.0",
+      "rollback": {
+        "tag": "v2.21.0",
+        "version": "2.21.0",
+        "commit_sha": "35018c08d9726a76b851b81ab8b5fa1700dee7e5",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:294e72f9617e7714f47cc8c1c071266793d6e8de5c57e5585acb4e917f01a681",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:880846dd4db1e5801b19a9efa9d7c051873874b184cb12c1dafbb3e79d033844"
+        },
+        "image_ids": {
+          "api": "sha256:41c392cdb73d61eeaabf8dd192a397447fb9d4b388b60f86459d785061f25364",
+          "web": "sha256:b07b4130e6d4b1f86109d9c9c52d108359ab5ef0491a49dbe4696070094edd0d"
+        }
+      },
+      "expected_production": {
+        "tag": "v2.21.0",
+        "commit_sha": "35018c08d9726a76b851b81ab8b5fa1700dee7e5",
+        "image_ids": {
+          "api": "sha256:41c392cdb73d61eeaabf8dd192a397447fb9d4b388b60f86459d785061f25364",
+          "web": "sha256:b07b4130e6d4b1f86109d9c9c52d108359ab5ef0491a49dbe4696070094edd0d"
+        }
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "选股初评使用现有表独立策略键，正式快照与既有读写兼容；看板只读。无数据库迁移、旧批次回填或重算。",
+        "evidence": "changes/CHG-20261118-003.md"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
