@@ -1,0 +1,1 @@
+{"source": "official Dashboard adapter reading the live Stock Analyzer", "contract": "investment-dashboard-capital-flow-sina-v2", "latest_real_sample": "2026-11-18T15:00:24+08:00", "quality": "partial", "series": 24, "unique_series": 24, "morning_and_afternoon": true, "lunch_samples": 0}
