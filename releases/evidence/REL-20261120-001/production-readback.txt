@@ -1,0 +1,1 @@
+{"short": {"page": 1, "page_size": 100, "total": 336}, "swing": {"page": 1, "page_size": 100, "total": 263, "scope": "all"}, "rebound_contract": "investment-dashboard-rebound-v1", "rebound_trade_date": "2026-11-20", "rebound_rows": 1294, "continuation_reviews": 0}

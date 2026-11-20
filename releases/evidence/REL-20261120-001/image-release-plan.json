@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261120-001",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确要求本轮发版本，生产上线。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261120-002",
+    "CHG-20261120-001"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "be2f8fc588a8cf06ea4b6007e68451198c2fee77",
+        "version": "6.23.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f87071191e30d69d244ec1c00bc1e0bc30f9d28be84dab2ec0ff78fd68c5682d"
+        },
+        "image_ids": {
+          "app": "sha256:ebfa4175a99d6ebfd05754f24d2e8d0fc7f9cbb4822400735521460e082977f2"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "be2f8fc588a8cf06ea4b6007e68451198c2fee77",
+            "run_id": "44699511664"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:f87071191e30d69d244ec1c00bc1e0bc30f9d28be84dab2ec0ff78fd68c5682d"
+            }
+          },
+          "candidate_run_id": "44700366371"
+        }
+      },
+      "tag": "v6.23.0",
+      "rollback": {
+        "tag": "v6.22.0",
+        "version": "6.22.0",
+        "commit_sha": "81363b3164320396fa3c4131e7430e482e94ad94",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:f35168528905da6c0c89e33005c822a39760fbf51961c078f187ee8d9333867a"
+        },
+        "image_ids": {
+          "app": "sha256:73ba7c82bdfbb73a4c7d66d77d15a0c1ccd12bb6a60767a918a1506d53898a1b"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "expected_production": {
+        "tag": "v6.22.0",
+        "commit_sha": "81363b3164320396fa3c4131e7430e482e94ad94",
+        "image_ids": {
+          "stock-api": "sha256:73ba7c82bdfbb73a4c7d66d77d15a0c1ccd12bb6a60767a918a1506d53898a1b",
+          "stock-watch": "sha256:73ba7c82bdfbb73a4c7d66d77d15a0c1ccd12bb6a60767a918a1506d53898a1b",
+          "stock-data": "sha256:73ba7c82bdfbb73a4c7d66d77d15a0c1ccd12bb6a60767a918a1506d53898a1b"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "复核数据是既有业务快照的兼容扩展，正式模拟事件成本和原记录延续；看板只读。无数据库迁移、旧批次回填或重算。",
+        "evidence": "changes/CHG-20261120-002.md"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "992238ef699b712e2120da8cbc2cf0d33a5f622d",
+        "version": "2.23.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7eac94e813ef2fcf38fde3cee8c0b9135abda2e1d29ab3fafb421e00f5e7c4ee",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5d6d00ed44486c6effd9c73a1518cb318b3d47b3a091fc3a4344dd9883eea5c"
+        },
+        "image_ids": {
+          "api": "sha256:185b2a1880a855f1b340270c5ca2179cfed1761168016ee2a7e0fdf3c13cc4e3",
+          "web": "sha256:c728ff9f3df279876c6be561a37fb06c25dc57447b6b2cdde81fd774dc788719"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "992238ef699b712e2120da8cbc2cf0d33a5f622d",
+            "run_id": "44699674947"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7eac94e813ef2fcf38fde3cee8c0b9135abda2e1d29ab3fafb421e00f5e7c4ee",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5d6d00ed44486c6effd9c73a1518cb318b3d47b3a091fc3a4344dd9883eea5c"
+            }
+          },
+          "candidate_run_id": "44700497247"
+        }
+      },
+      "tag": "v2.23.0",
+      "rollback": {
+        "tag": "v2.22.0",
+        "version": "2.22.0",
+        "commit_sha": "b1ff3e827291cb7e693f2a5df7639fad75cbc9f9",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:4702d83e7e9ad68214b29eeccf910e0a399edf8cb99bab9d02971bb1beb0ea6f",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:856b3df0d09b5e109161023bce9cebef99c53d4c04f859e209578d068ff632ee"
+        },
+        "image_ids": {
+          "api": "sha256:d18a07743bdd4bf3e936869fa0927dd4f3bb5f96f5c164b9385233f1b0f1055f",
+          "web": "sha256:48a8fe8c9fbc98d71cfa90fca3f8450e0de76f750987bb765ee95ecb0d1ca7db"
+        }
+      },
+      "expected_production": {
+        "tag": "v2.22.0",
+        "commit_sha": "b1ff3e827291cb7e693f2a5df7639fad75cbc9f9",
+        "image_ids": {
+          "api": "sha256:d18a07743bdd4bf3e936869fa0927dd4f3bb5f96f5c164b9385233f1b0f1055f",
+          "web": "sha256:48a8fe8c9fbc98d71cfa90fca3f8450e0de76f750987bb765ee95ecb0d1ca7db"
+        }
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "复核数据是既有业务快照的兼容扩展，正式模拟事件成本和原记录延续；看板只读。无数据库迁移、旧批次回填或重算。",
+        "evidence": "changes/CHG-20261120-002.md"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
