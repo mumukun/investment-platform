@@ -1,0 +1,89 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261122-001",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确授权 Dashboard 3.0.0 生产上线。"
+  },
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261122-001"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "a018a7bb818b30e0c5c00643be91a170207e76ac",
+        "version": "3.0.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9d4338de95dcdea92f66fb37f38409e31ed9c8cdc1179bb226d1dac8c7d4ae35",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1e19b65d33a23d5f0e3550dab0b4f72dd02a5e3d5a87276e94cb9c87367c4bad"
+        },
+        "image_ids": {
+          "api": "sha256:56d433ed68c5f169c4a878fb4dae21231c265115b23bbaf8312cf6b45bd2c405",
+          "web": "sha256:5ba0e43481be99e3050ca2ec8ed7052e5a11ad5290fd579834bd2e1e548a0822"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "a018a7bb818b30e0c5c00643be91a170207e76ac",
+            "run_id": "45027922149"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:9d4338de95dcdea92f66fb37f38409e31ed9c8cdc1179bb226d1dac8c7d4ae35",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:1e19b65d33a23d5f0e3550dab0b4f72dd02a5e3d5a87276e94cb9c87367c4bad"
+            }
+          },
+          "candidate_run_id": "45028439637"
+        }
+      },
+      "tag": "v3.0.0",
+      "rollback": {
+        "tag": "v2.23.0",
+        "version": "2.23.0",
+        "commit_sha": "992238ef699b712e2120da8cbc2cf0d33a5f622d",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:7eac94e813ef2fcf38fde3cee8c0b9135abda2e1d29ab3fafb421e00f5e7c4ee",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:c5d6d00ed44486c6effd9c73a1518cb318b3d47b3a091fc3a4344dd9883eea5c"
+        },
+        "image_ids": {
+          "api": "sha256:185b2a1880a855f1b340270c5ca2179cfed1761168016ee2a7e0fdf3c13cc4e3",
+          "web": "sha256:c728ff9f3df279876c6be561a37fb06c25dc57447b6b2cdde81fd774dc788719"
+        }
+      },
+      "expected_production": {
+        "tag": "v2.23.0",
+        "commit_sha": "992238ef699b712e2120da8cbc2cf0d33a5f622d",
+        "image_ids": {
+          "api": "sha256:185b2a1880a855f1b340270c5ca2179cfed1761168016ee2a7e0fdf3c13cc4e3",
+          "web": "sha256:c728ff9f3df279876c6be561a37fb06c25dc57447b6b2cdde81fd774dc788719"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "移除页面、接口与日历同步。数据库结构、历史记录、现有快照和反馈保留。回滚可继续读取原表。",
+        "evidence": "changes/CHG-20261122-001.md"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
