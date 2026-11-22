@@ -1,0 +1,2 @@
+Dashboard API OpenAPI version 3.0.0. Decision routes absent. Health and watchlist routes present.
+Web serves the app shell for the former /decisions bookmark.
