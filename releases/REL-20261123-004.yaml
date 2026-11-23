@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261123-004",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261123-002"
+  ],
+  "release_order": [
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v4.0.0",
+      "commit_sha": "378ebdd84c7186f9e056203f8027728b7ba2ffda",
+      "planned_version": "4.0.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff6d08559077b1657ee43214b30e4367669b537ca358e360b1323a1de9f27d5c",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4bec66be069ae7f98d3ecc5b0688b67e1602ace8f427d51d535286ff3a6bd030"
+      },
+      "artifact_id": {
+        "api": "sha256:d5e0fb43542ef6a0ad9909d3aadde17f76f9c4348bf65474ccf666b83077580f",
+        "web": "sha256:14da5ce70acbb867eccf9d8eaaa37130394eca1381f431905ce4c37b864cca61"
+      },
+      "rollback": {
+        "tag": "v3.1.0",
+        "version": "3.1.0",
+        "commit_sha": "fad8f11bad9568674a450bc11880a97fed0f38f0",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68559eac3f171aa5dab5ba74c177858d6e7c3d698d0120bf1c7c40903fec98fc",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:d34d5c135deca6dac44119bd82f51f3f7d7695b200f4ffffb16d858fe6ed5985"
+        },
+        "image_ids": {
+          "api": "sha256:4282b90f383983f4eab0ad00eec14fbb33105ce142694eaeca3a0004293b72e5",
+          "web": "sha256:8a538d926d8158146641d5df5da46d5b248aa942f60caeee90e8cbfca9e35460"
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "378ebdd84c7186f9e056203f8027728b7ba2ffda",
+          "run_id": "45203565127"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff6d08559077b1657ee43214b30e4367669b537ca358e360b1323a1de9f27d5c",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4bec66be069ae7f98d3ecc5b0688b67e1602ace8f427d51d535286ff3a6bd030"
+          }
+        },
+        "candidate_run_id": "45204619432"
+      },
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/96"
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261123-004/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-23T15:33:09.934073+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "limitations": [
+      "生产入口及登录页已打开，浏览器登录后的筛选操作未复测。已通过生产看板接口读回 663 只超跌、26 只十字星及 663 条同日收盘报价。"
+    ],
+    "changed_boundary_evidence": "releases/evidence/REL-20261123-004/dashboard-readback.json"
+  },
+  "execution_plan": "releases/evidence/REL-20261123-004/image-release-plan.json",
+  "recovery": "前两次镜像准备阶段失败，均在切换前。第三次使用同一计划、标签与镜像通过。阶段状态见正式回执。"
+}

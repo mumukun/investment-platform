@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261123-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261123-002"
+  ],
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.25.0",
+      "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+      "planned_version": "6.25.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+      },
+      "artifact_id": {
+        "app": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+      },
+      "rollback": {
+        "tag": "v6.24.0",
+        "version": "6.24.0",
+        "commit_sha": "cb77f6533021082b4c3914fb3cd94dab95470396",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:d627604b1cab8f1e5689f6c0d2c702c8857c40ef65b79e71c50afc5be92bffc6"
+        },
+        "image_ids": {
+          "app": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+          "run_id": "45203083724"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+          }
+        },
+        "candidate_run_id": "45204313338"
+      },
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/113"
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261123-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-23T15:24:39.899733+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "changed_boundary_evidence": "releases/evidence/REL-20261123-002/production-readback.jsonl"
+  },
+  "execution_plan": "releases/evidence/REL-20261123-002/image-release-plan.json"
+}

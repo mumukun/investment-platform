@@ -1,0 +1,47 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261123-003",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确指示：好的 发版本吧"
+  },
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "changes": [
+    "CHG-20261123-002"
+  ],
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "rollback": {
+    "tag": "v2.6.0",
+    "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+    "image_id": "sha256:f2f594aae6eefb1c3e4eb07110c202d49072b70cfbac0051f9446ed298b80b2e",
+    "note": "保留已验证的旧源码 Tag 和镜像，沿用受限源码回退路径。"
+  },
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v3.0.0",
+      "commit_sha": "3163c5f44081226af09170dbc390462b6fe5069b",
+      "expected_production": {
+        "tag": "v2.6.0",
+        "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+        "image_id": "sha256:f2f594aae6eefb1c3e4eb07110c202d49072b70cfbac0051f9446ed298b80b2e"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "3163c5f44081226af09170dbc390462b6fe5069b",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/45202572525"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "evidence": "changes/CHG-20261123-002.md 中隔离 PostgreSQL、契约和功能验证",
+        "reason": "资讯批处理的可选队列进度字段由旧版忽略。停用定期 AI 报告并保留历史。没有数据迁移。"
+      }
+    }
+  ]
+}

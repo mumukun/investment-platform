@@ -1,0 +1,29 @@
+{
+  "receipt": {
+    "release_id": "REL-20261123-003",
+    "repository": "marketNewsFeed",
+    "artifact_model": "SOURCE_TAG_BUILD",
+    "tag": "v3.0.0",
+    "commit_sha": "3163c5f44081226af09170dbc390462b6fe5069b",
+    "status": "PASS",
+    "stage": "verify",
+    "previous": {
+      "tag": "v2.6.0",
+      "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+      "image_id": "sha256:f2f594aae6eefb1c3e4eb07110c202d49072b70cfbac0051f9446ed298b80b2e"
+    },
+    "started_at": "2026-11-23T15:25:08.960534+00:00",
+    "backup": {
+      "status": "SKIPPED",
+      "policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "evidence": "changes/CHG-20261123-002.md 中隔离 PostgreSQL、契约和功能验证",
+        "reason": "资讯批处理的可选队列进度字段由旧版忽略。停用定期 AI 报告并保留历史。没有数据迁移。"
+      }
+    },
+    "image_id": "sha256:10e4752e72afaa9cf46ce8ba855b3f6aa487893ec0ef22cd692cd408a5d40773",
+    "completed_at": "2026-11-23T15:25:35.003837+00:00"
+  }
+}
