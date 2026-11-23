@@ -1,0 +1,80 @@
+{
+  "release_id": "REL-20261123-002",
+  "result": "DEPLOY_PASS",
+  "state": "/volume1/docker/.investment-platform-releases/REL-20261123-002/state.json",
+  "receipt": {
+    "release_id": "REL-20261123-002",
+    "plan_hash": "ddc5c3ad234a803835aeabdf327de3f89ae266487de88c3f98a28f4c6f74b275",
+    "repositories": {
+      "stock-analyzer": {
+        "backup": {
+          "status": "SKIPPED",
+          "policy": {
+            "mode": "skip",
+            "data_impact": "none",
+            "rollback_compatible": true,
+            "evidence": "changes/CHG-20261123-002.md 中隔离 PostgreSQL、契约和功能验证",
+            "reason": "可选收盘快照报价和旧报告命令停用，保留原有历史与数据库结构。"
+          }
+        },
+        "deployment_started": true,
+        "completed": true,
+        "image_ids": {
+          "stock-api": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa",
+          "stock-watch": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa",
+          "stock-data": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+        }
+      }
+    },
+    "events": [
+      {
+        "repository": "stock-analyzer",
+        "stage": "pull",
+        "started_at": "2026-11-23T15:23:32.713145+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 38.287
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "backup",
+        "started_at": "2026-11-23T15:24:12.049059+00:00",
+        "status": "SKIPPED",
+        "elapsed_seconds": 0.08
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "checkout",
+        "started_at": "2026-11-23T15:24:12.191909+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 0.118
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "start",
+        "started_at": "2026-11-23T15:24:12.356159+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 13.57
+      },
+      {
+        "repository": "stock-analyzer",
+        "stage": "verify",
+        "started_at": "2026-11-23T15:24:25.930256+00:00",
+        "status": "PASS",
+        "elapsed_seconds": 13.924
+      }
+    ],
+    "identity": [
+      {
+        "repository": "stock-analyzer",
+        "tag": "v6.25.0",
+        "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+        }
+      }
+    ],
+    "last_operation": "deploy",
+    "last_result": "PASS",
+    "last_operation_at": "2026-11-23T15:24:39.899733+00:00"
+  }
+}

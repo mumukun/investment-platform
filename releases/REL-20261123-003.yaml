@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261123-003",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261123-002"
+  ],
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v3.0.0",
+      "commit_sha": "3163c5f44081226af09170dbc390462b6fe5069b",
+      "artifact_model": "SOURCE_TAG_BUILD",
+      "artifact_id": "sha256:10e4752e72afaa9cf46ce8ba855b3f6aa487893ec0ef22cd692cd408a5d40773",
+      "rollback": {
+        "tag": "v2.6.0",
+        "commit_sha": "450b1e4f99779646e6f53b754e8828930ba96434",
+        "image_id": "sha256:f2f594aae6eefb1c3e4eb07110c202d49072b70cfbac0051f9446ed298b80b2e"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "3163c5f44081226af09170dbc390462b6fe5069b",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/45202572525"
+      },
+      "pr": "https://github.com/mumukun/marketNewsFeed/pull/17"
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261123-003/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-23T15:25:35.003837+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "limitations": [
+      "实际生产 Token 节省量待累计模型用量日志评估。"
+    ]
+  },
+  "execution_plan": "releases/evidence/REL-20261123-003/source-plan.json"
+}

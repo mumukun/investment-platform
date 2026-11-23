@@ -1,0 +1,95 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261123-002",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确指示：好的 发版本吧"
+  },
+  "release_order": [
+    "stock-analyzer"
+  ],
+  "changes": [
+    "CHG-20261123-002"
+  ],
+  "transport": {
+    "mode": "registry"
+  },
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+        "version": "6.25.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+        },
+        "image_ids": {
+          "app": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+            "run_id": "45203083724"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+            }
+          },
+          "candidate_run_id": "45204313338"
+        }
+      },
+      "tag": "v6.25.0",
+      "rollback": {
+        "tag": "v6.24.0",
+        "version": "6.24.0",
+        "commit_sha": "cb77f6533021082b4c3914fb3cd94dab95470396",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:d627604b1cab8f1e5689f6c0d2c702c8857c40ef65b79e71c50afc5be92bffc6"
+        },
+        "image_ids": {
+          "app": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "expected_production": {
+        "tag": "v6.24.0",
+        "commit_sha": "cb77f6533021082b4c3914fb3cd94dab95470396",
+        "image_ids": {
+          "stock-api": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35",
+          "stock-watch": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35",
+          "stock-data": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "evidence": "changes/CHG-20261123-002.md 中隔离 PostgreSQL、契约和功能验证",
+        "reason": "可选收盘快照报价和旧报告命令停用，保留原有历史与数据库结构。"
+      }
+    }
+  ]
+}
