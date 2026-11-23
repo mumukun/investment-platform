@@ -1,0 +1,151 @@
+{
+  "release_id": "REL-20261123-001",
+  "plan_hash": "05f5ebbc796625ee9f39c75e95527e8e9b473ae1029e81a227121cb5cbbdad61",
+  "repositories": {
+    "stock-analyzer": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "可选快照字段与只读 API 兼容扩展，沿用原业务快照和基础行情。无迁移或历史重写。",
+          "evidence": "changes/CHG-20261123-001.md"
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "stock-api": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35",
+        "stock-watch": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35",
+        "stock-data": "sha256:f8650afa982c47ca180af028c9affaf561a57f9964e4f2d022cf95342678af35"
+      }
+    },
+    "investment-research-dashboard": {
+      "backup": {
+        "status": "SKIPPED",
+        "policy": {
+          "mode": "skip",
+          "data_impact": "none",
+          "rollback_compatible": true,
+          "reason": "可选快照字段与只读 API 兼容扩展，沿用原业务快照和基础行情。无迁移或历史重写。",
+          "evidence": "changes/CHG-20261123-001.md"
+        }
+      },
+      "deployment_started": true,
+      "completed": true,
+      "image_ids": {
+        "api": "sha256:4282b90f383983f4eab0ad00eec14fbb33105ce142694eaeca3a0004293b72e5",
+        "web": "sha256:8a538d926d8158146641d5df5da46d5b248aa942f60caeee90e8cbfca9e35460"
+      }
+    }
+  },
+  "events": [
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-11-23T07:49:13.508693+00:00",
+      "status": "FAILED",
+      "elapsed_seconds": 15.463
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-11-23T07:52:46.186214+00:00",
+      "status": "FAILED",
+      "elapsed_seconds": 9.058
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "pull",
+      "started_at": "2026-11-23T08:00:25.627675+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 16.277
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "backup",
+      "started_at": "2026-11-23T08:00:42.687022+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.079
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "checkout",
+      "started_at": "2026-11-23T08:00:42.812998+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.074
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "start",
+      "started_at": "2026-11-23T08:00:42.923778+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 12.758
+    },
+    {
+      "repository": "stock-analyzer",
+      "stage": "verify",
+      "started_at": "2026-11-23T08:00:55.685652+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 13.365
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "pull",
+      "started_at": "2026-11-23T08:01:09.077461+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 48.005
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "backup",
+      "started_at": "2026-11-23T08:01:58.130627+00:00",
+      "status": "SKIPPED",
+      "elapsed_seconds": 0.066
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "checkout",
+      "started_at": "2026-11-23T08:01:58.266556+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 0.106
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "start",
+      "started_at": "2026-11-23T08:01:58.615332+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 24.996
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "stage": "verify",
+      "started_at": "2026-11-23T08:02:23.615633+00:00",
+      "status": "PASS",
+      "elapsed_seconds": 4.493
+    }
+  ],
+  "identity": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.24.0",
+      "commit_sha": "cb77f6533021082b4c3914fb3cd94dab95470396",
+      "images": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:d627604b1cab8f1e5689f6c0d2c702c8857c40ef65b79e71c50afc5be92bffc6"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v3.1.0",
+      "commit_sha": "fad8f11bad9568674a450bc11880a97fed0f38f0",
+      "images": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68559eac3f171aa5dab5ba74c177858d6e7c3d698d0120bf1c7c40903fec98fc",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:d34d5c135deca6dac44119bd82f51f3f7d7695b200f4ffffb16d858fe6ed5985"
+      }
+    }
+  ],
+  "last_operation": "deploy",
+  "last_result": "PASS",
+  "last_operation_at": "2026-11-23T08:02:28.132457+00:00"
+}
