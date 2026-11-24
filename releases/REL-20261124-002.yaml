@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "generated_by": "image_release.py",
+  "release_id": "REL-20261124-002",
+  "status": "RELEASED",
+  "changes": [
+    "CHG-20261124-002",
+    "CHG-20261124-003"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "tag": "v6.26.0",
+      "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+      "planned_version": "6.26.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+      },
+      "artifact_id": {
+        "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+      },
+      "rollback": {
+        "version": "6.25.0",
+        "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+        },
+        "image_ids": {
+          "app": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "tag": "v6.25.0"
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+          "run_id": "45417792858"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+          }
+        },
+        "candidate_run_id": "45418802050"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "tag": "v4.1.0",
+      "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+      "planned_version": "4.1.0",
+      "artifact_model": "CI_BUILD_ONCE",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+      },
+      "artifact_id": {
+        "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
+        "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+      },
+      "rollback": {
+        "version": "4.0.0",
+        "commit_sha": "378ebdd84c7186f9e056203f8027728b7ba2ffda",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff6d08559077b1657ee43214b30e4367669b537ca358e360b1323a1de9f27d5c",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4bec66be069ae7f98d3ecc5b0688b67e1602ace8f427d51d535286ff3a6bd030"
+        },
+        "image_ids": {
+          "api": "sha256:d5e0fb43542ef6a0ad9909d3aadde17f76f9c4348bf65474ccf666b83077580f",
+          "web": "sha256:14da5ce70acbb867eccf9d8eaaa37130394eca1381f431905ce4c37b864cca61"
+        },
+        "tag": "v4.0.0"
+      },
+      "artifact_verification_basis": "receipt.image_ids",
+      "ci_evidence": {
+        "quality": {
+          "status": "PASS",
+          "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+          "run_id": "45418230073"
+        },
+        "image_smoke": {
+          "status": "PASS",
+          "scope": "isolated-fixture",
+          "images": {
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+          }
+        },
+        "candidate_run_id": "45418919354"
+      }
+    }
+  ],
+  "deployment_receipts": [
+    "releases/evidence/REL-20261124-002/deployment-receipt.json"
+  ],
+  "deployment": {
+    "environment": "Production",
+    "status": "RELEASED",
+    "completed_at": "2026-11-24T15:22:16.248333+00:00"
+  },
+  "verification": {
+    "status": "DEPLOYMENT_SMOKE_PASS",
+    "affected_read_paths": {
+      "swing_deferred": "2026-11-24 生产筛选返回 100 条暂缓行及 129 个非空路径参考分。",
+      "short_simulation": "完整历史含 1,379 笔已结算记录，单笔返回的事件编号与列表行相同。近五个交易日查询返回 0 笔结算。"
+    }
+  }
+}
