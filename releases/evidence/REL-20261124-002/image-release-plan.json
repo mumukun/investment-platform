@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261124-002",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确指示：先发版本吧"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261124-002",
+    "CHG-20261124-003"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+        "version": "6.26.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+        },
+        "image_ids": {
+          "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+            "run_id": "45417792858"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+            }
+          },
+          "candidate_run_id": "45418802050"
+        }
+      },
+      "tag": "v6.26.0",
+      "rollback": {
+        "version": "6.25.0",
+        "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+        },
+        "image_ids": {
+          "app": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "tag": "v6.25.0"
+      },
+      "expected_production": {
+        "tag": "v6.25.0",
+        "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+        "image_ids": {
+          "stock-api": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa",
+          "stock-watch": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa",
+          "stock-data": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "扩展兼容的只读查询和展示，沿用已存账本及现有数据库结构。",
+        "evidence": "CHG-20261124-002/003 的本地账本、契约与兼容性验证；https://github.com/mumukun/stock-analyzer/actions/runs/45417792858"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+        "version": "4.1.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+        },
+        "image_ids": {
+          "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
+          "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+            "run_id": "45418230073"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+            }
+          },
+          "candidate_run_id": "45418919354"
+        }
+      },
+      "tag": "v4.1.0",
+      "rollback": {
+        "version": "4.0.0",
+        "commit_sha": "378ebdd84c7186f9e056203f8027728b7ba2ffda",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff6d08559077b1657ee43214b30e4367669b537ca358e360b1323a1de9f27d5c",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4bec66be069ae7f98d3ecc5b0688b67e1602ace8f427d51d535286ff3a6bd030"
+        },
+        "image_ids": {
+          "api": "sha256:d5e0fb43542ef6a0ad9909d3aadde17f76f9c4348bf65474ccf666b83077580f",
+          "web": "sha256:14da5ce70acbb867eccf9d8eaaa37130394eca1381f431905ce4c37b864cca61"
+        },
+        "tag": "v4.0.0"
+      },
+      "expected_production": {
+        "tag": "v4.0.0",
+        "commit_sha": "378ebdd84c7186f9e056203f8027728b7ba2ffda",
+        "image_ids": {
+          "api": "sha256:d5e0fb43542ef6a0ad9909d3aadde17f76f9c4348bf65474ccf666b83077580f",
+          "web": "sha256:14da5ce70acbb867eccf9d8eaaa37130394eca1381f431905ce4c37b864cca61"
+        }
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "扩展兼容的只读查询和展示，沿用已存账本及现有数据库结构。",
+        "evidence": "CHG-20261124-002/003 的本地账本、契约与兼容性验证；https://github.com/mumukun/investment-research-dashboard/actions/runs/45418230073"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}
