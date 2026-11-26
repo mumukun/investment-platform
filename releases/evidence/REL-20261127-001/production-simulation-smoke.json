@@ -1,0 +1,1 @@
+{"observation_date": "2026-11-26", "status": "PASS", "dashboard_version": "4.2.0", "wave_rows": 3, "wave_ms": 762, "short_rows": 0, "short_as_of": null, "short_ms": 60, "short_early_paths": 0, "short_path_ms": 38, "rebound_rows": 1637, "rebound_ms": 2128, "entry_audit": ["swing", "short", "rebound"]}
