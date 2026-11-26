@@ -1,0 +1,167 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "release_id": "REL-20261127-001",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户明确要求本次已开发需求生产上线；已授权未上线的 CHG-20261126-002 包含在主线基线。"
+  },
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "changes": [
+    "CHG-20261126-002",
+    "CHG-20261126-003"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "9e2c6957ec928b2a99b13d63ac954759adc3b20d",
+        "version": "6.27.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:e51ecbfc63edfea1bf55d7c8bd100fb17c88f9fd7c5a38132fed5eccf033cef2"
+        },
+        "image_ids": {
+          "app": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "9e2c6957ec928b2a99b13d63ac954759adc3b20d",
+            "run_id": "45903968397"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:e51ecbfc63edfea1bf55d7c8bd100fb17c88f9fd7c5a38132fed5eccf033cef2"
+            }
+          },
+          "candidate_run_id": "45904696033"
+        }
+      },
+      "tag": "v6.27.0",
+      "rollback": {
+        "version": "6.26.0",
+        "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+        },
+        "image_ids": {
+          "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "tag": "v6.26.0"
+      },
+      "expected_production": {
+        "tag": "v6.26.0",
+        "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+        "image_ids": {
+          "stock-api": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385",
+          "stock-watch": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385",
+          "stock-data": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "使用现有快照、入场账本和业务投影添加兼容字段，无迁移、清理、手动重算或历史回填。",
+        "evidence": "CHG-20261126-003 与已合入的 CHG-20261126-002 的独立库、接口和前端回归；https://github.com/mumukun/stock-analyzer/actions/runs/45903968397"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "86fb9cad6b514111e31d41d42389067eee6deaad",
+        "version": "4.2.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1da6a3d5fe5a5b34f026a815d0addd486131c2dc8df0220276c27955eab078b4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ad006d97419270907ac448d22d2c96d0905bf2e97884054349a6864badfbc4f0"
+        },
+        "image_ids": {
+          "api": "sha256:9fafd9d093ca637e51fddca05a4307d5c6e03b01413970161130235ea6b9e28e",
+          "web": "sha256:d61e9dc309390e77d7b5c1c21747e91c56d247c6289922d63fe1a84a69ddd311"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "86fb9cad6b514111e31d41d42389067eee6deaad",
+            "run_id": "45903757777"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1da6a3d5fe5a5b34f026a815d0addd486131c2dc8df0220276c27955eab078b4",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ad006d97419270907ac448d22d2c96d0905bf2e97884054349a6864badfbc4f0"
+            }
+          },
+          "candidate_run_id": "45904337945"
+        }
+      },
+      "tag": "v4.2.0",
+      "rollback": {
+        "version": "4.1.0",
+        "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+        },
+        "image_ids": {
+          "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
+          "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+        },
+        "tag": "v4.1.0"
+      },
+      "expected_production": {
+        "tag": "v4.1.0",
+        "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+        "image_ids": {
+          "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
+          "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+        }
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "使用现有快照、入场账本和业务投影添加兼容字段，无迁移、清理、手动重算或历史回填。",
+        "evidence": "CHG-20261126-003 与已合入的 CHG-20261126-002 的独立库、接口和前端回归；https://github.com/mumukun/investment-research-dashboard/actions/runs/45903757777"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

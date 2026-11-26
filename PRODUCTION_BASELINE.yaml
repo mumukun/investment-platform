@@ -1,6 +1,6 @@
 {
   "baseline_version": 1,
-  "verified_at": "2026-11-24T15:22:16.248333+00:00",
+  "verified_at": "2026-11-26T23:02:01.117657+00:00",
   "status": "verified_with_artifact_gaps",
   "artifact_model": "MIXED_CI_BUILD_ONCE_AND_SOURCE_TAG_BUILD",
   "repositories": {
@@ -57,20 +57,20 @@
     },
     "stock-analyzer": {
       "production": {
-        "verified_at": "2026-11-24T15:22:16.248333+00:00",
-        "application_version": "6.26.0",
+        "verified_at": "2026-11-26T23:02:01.117657+00:00",
+        "application_version": "6.27.0",
         "application_version_source": "stock_analyzer/version.py::APP_VERSION",
-        "tag": "v6.26.0",
-        "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+        "tag": "v6.27.0",
+        "commit_sha": "9e2c6957ec928b2a99b13d63ac954759adc3b20d",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:e51ecbfc63edfea1bf55d7c8bd100fb17c88f9fd7c5a38132fed5eccf033cef2"
         },
         "artifact_id": {
-          "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+          "app": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734"
         },
         "artifact_digest": {
-          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:e51ecbfc63edfea1bf55d7c8bd100fb17c88f9fd7c5a38132fed5eccf033cef2"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -78,16 +78,16 @@
           "stock-watch",
           "stock-data"
         ],
-        "deployment_timestamp": "2026-11-24T15:22:16.248333+00:00",
+        "deployment_timestamp": "2026-11-26T23:02:01.117657+00:00",
         "health": "PASS: exact artifact, health and production smoke",
         "rollback_baseline": {
-          "version": "6.25.0",
-          "commit_sha": "8b6aabdf9b0f04d560169cdefc9d135add5fb01e",
+          "version": "6.26.0",
+          "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
           "images": {
-            "app": "ghcr.io/mumukun/stock-analyzer@sha256:49f718e475f418af48f015d06d6487c1b7dfb1e9afdd8391865806bc0754746a"
+            "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
           },
           "image_ids": {
-            "app": "sha256:477f9bba3e86b603678ac5ef3c0ad2f4b158f70726724c07d5d3905ea3b787aa"
+            "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
           },
           "runtime_services": {
             "app": [
@@ -96,14 +96,14 @@
               "stock-data"
             ]
           },
-          "tag": "v6.25.0"
+          "tag": "v6.26.0"
         },
         "next_release_rollback_images": {
-          "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+          "app": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734"
         },
         "evidence": [
-          "releases/REL-20261124-002.yaml",
-          "releases/evidence/REL-20261124-002/deployment-receipt.json"
+          "releases/REL-20261127-001.yaml",
+          "releases/evidence/REL-20261127-001/deployment-receipt.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -206,10 +206,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "none",
+            "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "扩展兼容的只读查询和展示，沿用已存账本及现有数据库结构。",
-            "evidence": "CHG-20261124-002/003 的本地账本、契约与兼容性验证；https://github.com/mumukun/stock-analyzer/actions/runs/45417792858"
+            "reason": "使用现有快照、入场账本和业务投影添加兼容字段，无迁移、清理、手动重算或历史回填。",
+            "evidence": "CHG-20261126-003 与已合入的 CHG-20261126-002 的独立库、接口和前端回归；https://github.com/mumukun/stock-analyzer/actions/runs/45903968397"
           }
         },
         "short_tail": {
@@ -477,8 +477,8 @@
           "carried": 17,
           "unknown": 0
         },
-        "latest_release": "REL-20261124-002",
-        "verification_evidence": "releases/evidence/REL-20261124-002/deployment-receipt.json",
+        "latest_release": "REL-20261127-001",
+        "verification_evidence": "releases/evidence/REL-20261127-001/deployment-receipt.json",
         "health_probe_limitation": "Existing --health loads 124934 market_data_state rows to find one heartbeat. Observed transient probe timeout; collector heartbeat remained fresh and final original release gate passed. Probe implementation not changed in this release.",
         "projection_retention": {
           "automatic_job": "06:15 Asia/Shanghai",
@@ -495,23 +495,23 @@
     },
     "investment-research-dashboard": {
       "production": {
-        "verified_at": "2026-11-24T15:22:16.248333+00:00",
-        "application_version": "4.1.0",
+        "verified_at": "2026-11-26T23:02:01.117657+00:00",
+        "application_version": "4.2.0",
         "application_version_source": "VERSION",
-        "tag": "v4.1.0",
-        "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+        "tag": "v4.2.0",
+        "commit_sha": "86fb9cad6b514111e31d41d42389067eee6deaad",
         "artifact_model": "CI_BUILD_ONCE",
         "artifact": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1da6a3d5fe5a5b34f026a815d0addd486131c2dc8df0220276c27955eab078b4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ad006d97419270907ac448d22d2c96d0905bf2e97884054349a6864badfbc4f0"
         },
         "artifact_id": {
-          "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
-          "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+          "api": "sha256:9fafd9d093ca637e51fddca05a4307d5c6e03b01413970161130235ea6b9e28e",
+          "web": "sha256:d61e9dc309390e77d7b5c1c21747e91c56d247c6289922d63fe1a84a69ddd311"
         },
         "artifact_digest": {
-          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
-          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1da6a3d5fe5a5b34f026a815d0addd486131c2dc8df0220276c27955eab078b4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ad006d97419270907ac448d22d2c96d0905bf2e97884054349a6864badfbc4f0"
         },
         "artifact_identity_status": "VERIFIED",
         "containers": [
@@ -520,25 +520,25 @@
         ],
         "health": "PASS: exact artifact, health and production smoke",
         "rollback_baseline": {
-          "version": "4.0.0",
-          "commit_sha": "378ebdd84c7186f9e056203f8027728b7ba2ffda",
+          "version": "4.1.0",
+          "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
           "images": {
-            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:ff6d08559077b1657ee43214b30e4367669b537ca358e360b1323a1de9f27d5c",
-            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4bec66be069ae7f98d3ecc5b0688b67e1602ace8f427d51d535286ff3a6bd030"
+            "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+            "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
           },
           "image_ids": {
-            "api": "sha256:d5e0fb43542ef6a0ad9909d3aadde17f76f9c4348bf65474ccf666b83077580f",
-            "web": "sha256:14da5ce70acbb867eccf9d8eaaa37130394eca1381f431905ce4c37b864cca61"
+            "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
+            "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
           },
-          "tag": "v4.0.0"
+          "tag": "v4.1.0"
         },
         "next_release_rollback_images": {
-          "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
-          "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+          "api": "sha256:9fafd9d093ca637e51fddca05a4307d5c6e03b01413970161130235ea6b9e28e",
+          "web": "sha256:d61e9dc309390e77d7b5c1c21747e91c56d247c6289922d63fe1a84a69ddd311"
         },
         "evidence": [
-          "releases/REL-20261124-002.yaml",
-          "releases/evidence/REL-20261124-002/deployment-receipt.json"
+          "releases/REL-20261127-001.yaml",
+          "releases/evidence/REL-20261127-001/deployment-receipt.json"
         ],
         "market_structure": {
           "status": "AVAILABLE_WITH_DECLARED_SOURCE_GAPS",
@@ -641,10 +641,10 @@
           "status": "SKIPPED",
           "policy": {
             "mode": "skip",
-            "data_impact": "none",
+            "data_impact": "additive",
             "rollback_compatible": true,
-            "reason": "扩展兼容的只读查询和展示，沿用已存账本及现有数据库结构。",
-            "evidence": "CHG-20261124-002/003 的本地账本、契约与兼容性验证；https://github.com/mumukun/investment-research-dashboard/actions/runs/45418230073"
+            "reason": "使用现有快照、入场账本和业务投影添加兼容字段，无迁移、清理、手动重算或历史回填。",
+            "evidence": "CHG-20261126-003 与已合入的 CHG-20261126-002 的独立库、接口和前端回归；https://github.com/mumukun/investment-research-dashboard/actions/runs/45903757777"
           }
         },
         "short_tail": {
@@ -942,9 +942,9 @@
           "carried": 17,
           "unknown": 0
         },
-        "latest_release": "REL-20261124-002",
-        "verification_evidence": "releases/evidence/REL-20261124-002/deployment-receipt.json",
-        "deployment_timestamp": "2026-11-24T15:22:16.248333+00:00",
+        "latest_release": "REL-20261127-001",
+        "verification_evidence": "releases/evidence/REL-20261127-001/deployment-receipt.json",
+        "deployment_timestamp": "2026-11-26T23:02:01.117657+00:00",
         "deployment_timestamp_basis": "Production deployment receipt completed",
         "snapshot_maintenance": {
           "automatic_cleanup": "Enabled: daily 02:10 Asia/Shanghai; protected formal history",
@@ -967,6 +967,6 @@
       }
     }
   },
-  "verification_note": "Production deploy and smoke passed: marketNewsFeed v2.6.0, stock-analyzer v6.17.2, investment-research-dashboard v2.17.1",
-  "last_verified_at": "2026-11-22T13:55:54.386034+00:00"
+  "verification_note": "REL-20261127-001 出具了精确标签、提交、镜像及生产健康和模拟跟踪回读。资讯服务沿用原验证。",
+  "last_verified_at": "2026-11-26T23:02:01.117657+00:00"
 }

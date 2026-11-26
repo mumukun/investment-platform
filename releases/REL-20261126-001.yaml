@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "release_id": "REL-20261126-001",
+  "status": "BLOCKED",
+  "environment": "Production",
+  "updated_at": "2026-11-26T21:38:36+08:00",
+  "changes": [
+    "CHG-20261126-002"
+  ],
+  "scope": [
+    "波段选股暂缓评分样式",
+    "短线盘后保留有效结果及尾盘模拟入场"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "repository": "stock-analyzer",
+      "pr": "https://github.com/mumukun/stock-analyzer/pull/115",
+      "planned_version": "6.26.1",
+      "planned_tag": "v6.26.1",
+      "commit_sha": "94b951856ba2e4dd3a111a1327dfc63d521cf7bb",
+      "artifact": {
+        "app": "ghcr.io/mumukun/stock-analyzer@sha256:1e99965dd86f84228c5a4e76f05ffe7ffdeb894af58703a27f976c0075bd69cd"
+      },
+      "artifact_id": {
+        "app": "sha256:c5c4d55c3cfe7bc4db03ced743beade2b590c339d189f47c51264a28601341b8"
+      },
+      "quality_run": "45829492185",
+      "candidate_run": "45830293606",
+      "rollback": {
+        "version": "6.26.0",
+        "commit_sha": "4af680f3dae7d51cc4a32773ae6894a88cbc0316",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:7ea769682f77f88d449c7ed35ee4c40d3d3bf4969eee5dfaebdb9221683a4ae2"
+        },
+        "image_ids": {
+          "app": "sha256:85c45516bb42e54674128dc48e16824bb09a527863701cf11df0153c7dbdb385"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "tag": "v6.26.0"
+      }
+    },
+    {
+      "repository": "investment-research-dashboard",
+      "pr": "https://github.com/mumukun/investment-research-dashboard/pull/98",
+      "planned_version": "4.1.1",
+      "planned_tag": "v4.1.1",
+      "commit_sha": "72858102310e5e6b2ab764e7b226e18c01b87164",
+      "artifact": {
+        "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:52706935e95bdd790f3f83b67e357c6f80244f3330ef884b20d536e905533d65",
+        "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:e182bbcf93dacb71fdfa0018fc5b42639768adea3de0aff006cd467b702c5e0a"
+      },
+      "artifact_id": {
+        "api": "sha256:73421ce9d35e46eccc9456040581d3a6b1f05e7b440a6a22a4de3a920a2a480c",
+        "web": "sha256:c7e9aca38489d137cd19f92e3e9ea23ba974592aa245320679f8faa1c914118b"
+      },
+      "quality_run": "45829637592",
+      "candidate_run": "45830617034",
+      "rollback": {
+        "version": "4.1.0",
+        "commit_sha": "07c107f1e3b8f944eda6d6f8d18bcb420a8bd811",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:68225848bb71b4d72b9b56b41a0868ee6df624a627a1c2659bcf51fd75cb41d6",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:5abc9b28bc4e530b24695848aedbf7737d77cf1b06abb6ab401ea8bf1e5372f8"
+        },
+        "image_ids": {
+          "api": "sha256:7b9ae645d438161ebbccfc42c1f0e5490653a585e7e6426f8ba92d6c788ecdbe",
+          "web": "sha256:45d9ffe5e1b4b295c6f8f44564106ff3c98b7e9c06c7f9e98f636b83298a632b"
+        },
+        "tag": "v4.1.0"
+      }
+    }
+  ],
+  "plan": "releases/evidence/REL-20261126-001/image-release-plan.json",
+  "blocking_gate": "当前执行环境禁止连接已登记 NAS SSH 端口 9352，并拒绝权限提升。",
+  "production_mutations": [],
+  "production_smoke": "NOT_RUN",
+  "receipt": null
+}
