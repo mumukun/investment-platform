@@ -1,0 +1,29 @@
+{
+  "receipt": {
+    "release_id": "REL-20261127-002",
+    "repository": "marketNewsFeed",
+    "artifact_model": "SOURCE_TAG_BUILD",
+    "tag": "v3.0.2",
+    "commit_sha": "14319ef83b41ac7841018ba5384b329ef41087dc",
+    "status": "PASS",
+    "stage": "verify",
+    "previous": {
+      "tag": "v3.0.1",
+      "commit_sha": "210f88b9b5d7642f345757da8dbac40d31e478dd",
+      "image_id": "sha256:5937b1ebb1ba3b3cf54286d9c578042706ac0bd9400e02cb94bd1c8cbae2d3ed"
+    },
+    "started_at": "2026-11-27T10:50:06.030077+00:00",
+    "backup": {
+      "status": "SKIPPED",
+      "policy": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "调整新帖评级规则，复用原新闻事件及推送字段。",
+        "evidence": "CHG-20261125-001 离线 PostgreSQL 和 https://github.com/mumukun/marketNewsFeed/actions/runs/45928748019"
+      }
+    },
+    "image_id": "sha256:58675b06c9c317c86c7c1d3ea992407c8b620a33474526e2be653dc2d40494b9",
+    "completed_at": "2026-11-27T10:50:25.810456+00:00"
+  }
+}
