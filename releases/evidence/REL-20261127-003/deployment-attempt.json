@@ -1,0 +1,28 @@
+{
+  "release_id": "REL-20261127-003",
+  "environment": "Production",
+  "recorded_at": "2026-11-27T02:49:28.800758+00:00",
+  "changes": [
+    "CHG-20261126-001"
+  ],
+  "frozen_plan": "releases/evidence/REL-20261127-003/image-release-plan.json",
+  "tag_verification": "PASS",
+  "deployment_receipt": "releases/evidence/REL-20261127-003/deployment-receipt.json",
+  "blocker": "DS920plus port 9352 did not establish an SSH session. Tailscale peer reachable via DERP, but SSH timed out. Verified LAN fallback reached no SSH banner; public address closed the connection.",
+  "last_confirmed_task_stage": "DEPLOYMENT_READY_SHARED_NAS_CONNECTION_UNAVAILABLE",
+  "resume": "Restore the existing SSH path. Inspect NAS task/journal and use the same frozen plan and immutable tags. Collect production receipt and affected readback.",
+  "retries": [
+    {
+      "checked_at": "2026-11-27T04:00:08.993889+00:00",
+      "tailscale_peer": "REACHABLE_VIA_DERP",
+      "registered_ssh": "TCP_CONNECT_TIMEOUT",
+      "verified_lan_ssh": "BANNER_EXCHANGE_TIMEOUT",
+      "remote_task_status": "UNREADABLE",
+      "deployment_dispatched_by_retry": false
+    }
+  ],
+  "status_at_last_failed_attempt": "BLOCKED",
+  "final_status": "RELEASED",
+  "completed_at": "2026-11-27T10:53:25.091600+00:00",
+  "release_manifest": "releases/REL-20261127-003.yaml"
+}

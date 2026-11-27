@@ -1,0 +1,166 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户在四项待发布需求确认清单后明确指示上线"
+  },
+  "release_id": "REL-20261127-003",
+  "changes": [
+    "CHG-20261126-001"
+  ],
+  "release_order": [
+    "stock-analyzer",
+    "investment-research-dashboard"
+  ],
+  "repositories": [
+    {
+      "candidate": {
+        "schema_version": "candidate-v2",
+        "repository": "stock-analyzer",
+        "commit_sha": "ab24ae72222820b57e68584834e5f5afeada8acc",
+        "version": "6.28.0",
+        "platform": "linux/amd64",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:89bc8f99e68bf1139b0c4e6986014e764a11c96f17bc4370b174d9309740046b"
+        },
+        "image_ids": {
+          "app": "sha256:da4f8bd2bf6d4ac72763c521caebda1b581db18f75dc55d40882781b58d80851"
+        },
+        "build_args": {},
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "ab24ae72222820b57e68584834e5f5afeada8acc",
+            "run_id": "45929259595"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "app": "ghcr.io/mumukun/stock-analyzer@sha256:89bc8f99e68bf1139b0c4e6986014e764a11c96f17bc4370b174d9309740046b"
+            }
+          },
+          "candidate_run_id": "45929824544"
+        }
+      },
+      "tag": "v6.28.0",
+      "rollback": {
+        "tag": "v6.27.0",
+        "version": "6.27.0",
+        "commit_sha": "9e2c6957ec928b2a99b13d63ac954759adc3b20d",
+        "images": {
+          "app": "ghcr.io/mumukun/stock-analyzer@sha256:e51ecbfc63edfea1bf55d7c8bd100fb17c88f9fd7c5a38132fed5eccf033cef2"
+        },
+        "image_ids": {
+          "app": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734"
+        },
+        "runtime_services": {
+          "app": [
+            "stock-api",
+            "stock-watch",
+            "stock-data"
+          ]
+        }
+      },
+      "expected_production": {
+        "tag": "v6.27.0",
+        "commit_sha": "9e2c6957ec928b2a99b13d63ac954759adc3b20d",
+        "image_ids": {
+          "stock-api": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734",
+          "stock-watch": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734",
+          "stock-data": "sha256:2728289004b859b73c0a94eb3ac74f787f823db5dc1d20f38c1ae23d652d3734"
+        }
+      },
+      "dependencies": [],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "可选复核字段和已存席位资料的只读接口。沿用原业务快照，旧版本可读。",
+        "evidence": "CHG-20261126-001 本地隔离库与契约验证和 https://github.com/mumukun/stock-analyzer/actions/runs/45929259595"
+      }
+    },
+    {
+      "candidate": {
+        "schema_version": "candidate-v1",
+        "repository": "investment-research-dashboard",
+        "commit_sha": "fccc1a8b6c53b36481099edc6094afa7934d8d1b",
+        "version": "4.3.0",
+        "platform": "linux/amd64",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:94d787d0920007fef3d7cc8f87f7d32355964b8f1a4eeddac0f2ae12a8d90237",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4a916257d57a14885e2cfd5dd62990879762130e3ed2686e36a6bd574a59d660"
+        },
+        "image_ids": {
+          "api": "sha256:8ae2011a041e40ad72aa67b7dc8e72733df5275caa12abf67c60e6cb3ad1c25e",
+          "web": "sha256:9893a6f6af1104bcf6bbb78dc6def026ca2815c9d7f75ae5e832a290a61cf10d"
+        },
+        "build_args": {
+          "VITE_LIMIT_UP_LADDER_ENABLED": "true",
+          "VITE_PRO_KLINE_ENABLED": "true",
+          "VITE_MARKET_STRUCTURE_ENABLED": "true"
+        },
+        "evidence": {
+          "quality": {
+            "status": "PASS",
+            "commit_sha": "fccc1a8b6c53b36481099edc6094afa7934d8d1b",
+            "run_id": "45929115723"
+          },
+          "image_smoke": {
+            "status": "PASS",
+            "scope": "isolated-fixture",
+            "images": {
+              "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:94d787d0920007fef3d7cc8f87f7d32355964b8f1a4eeddac0f2ae12a8d90237",
+              "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:4a916257d57a14885e2cfd5dd62990879762130e3ed2686e36a6bd574a59d660"
+            }
+          },
+          "candidate_run_id": "45929674375"
+        }
+      },
+      "tag": "v4.3.0",
+      "rollback": {
+        "tag": "v4.2.0",
+        "version": "4.2.0",
+        "commit_sha": "86fb9cad6b514111e31d41d42389067eee6deaad",
+        "images": {
+          "api": "ghcr.io/mumukun/investment-research-dashboard-api@sha256:1da6a3d5fe5a5b34f026a815d0addd486131c2dc8df0220276c27955eab078b4",
+          "web": "ghcr.io/mumukun/investment-research-dashboard-web@sha256:ad006d97419270907ac448d22d2c96d0905bf2e97884054349a6864badfbc4f0"
+        },
+        "image_ids": {
+          "api": "sha256:9fafd9d093ca637e51fddca05a4307d5c6e03b01413970161130235ea6b9e28e",
+          "web": "sha256:d61e9dc309390e77d7b5c1c21747e91c56d247c6289922d63fe1a84a69ddd311"
+        }
+      },
+      "expected_production": {
+        "tag": "v4.2.0",
+        "commit_sha": "86fb9cad6b514111e31d41d42389067eee6deaad",
+        "image_ids": {
+          "api": "sha256:9fafd9d093ca637e51fddca05a4307d5c6e03b01413970161130235ea6b9e28e",
+          "web": "sha256:d61e9dc309390e77d7b5c1c21747e91c56d247c6289922d63fe1a84a69ddd311"
+        }
+      },
+      "dependencies": [
+        "stock-analyzer"
+      ],
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "additive",
+        "rollback_compatible": true,
+        "reason": "可选复核字段和已存席位资料的只读接口。沿用原业务快照，旧版本可读。",
+        "evidence": "CHG-20261126-001 本地隔离库与契约验证和 https://github.com/mumukun/investment-research-dashboard/actions/runs/45929115723"
+      }
+    }
+  ],
+  "transport": {
+    "mode": "registry"
+  }
+}

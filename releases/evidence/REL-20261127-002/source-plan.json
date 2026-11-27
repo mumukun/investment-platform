@@ -1,0 +1,46 @@
+{
+  "schema_version": "image-release-v1",
+  "environment": "Production",
+  "status": "READY_FOR_FORMAL_RELEASE",
+  "authorization": {
+    "status": "FORMAL",
+    "evidence": "用户在四项待发布需求确认清单后明确指示上线"
+  },
+  "release_id": "REL-20261127-002",
+  "changes": [
+    "CHG-20261125-001"
+  ],
+  "release_order": [
+    "marketNewsFeed"
+  ],
+  "artifact_model": "SOURCE_TAG_BUILD",
+  "rollback": {
+    "tag": "v3.0.1",
+    "commit_sha": "210f88b9b5d7642f345757da8dbac40d31e478dd",
+    "image_id": "sha256:5937b1ebb1ba3b3cf54286d9c578042706ac0bd9400e02cb94bd1c8cbae2d3ed"
+  },
+  "repositories": [
+    {
+      "repository": "marketNewsFeed",
+      "tag": "v3.0.2",
+      "commit_sha": "14319ef83b41ac7841018ba5384b329ef41087dc",
+      "expected_production": {
+        "tag": "v3.0.1",
+        "commit_sha": "210f88b9b5d7642f345757da8dbac40d31e478dd",
+        "image_id": "sha256:5937b1ebb1ba3b3cf54286d9c578042706ac0bd9400e02cb94bd1c8cbae2d3ed"
+      },
+      "quality": {
+        "status": "PASS",
+        "commit_sha": "14319ef83b41ac7841018ba5384b329ef41087dc",
+        "evidence": "https://github.com/mumukun/marketNewsFeed/actions/runs/45928748019"
+      },
+      "database_backup": {
+        "mode": "skip",
+        "data_impact": "none",
+        "rollback_compatible": true,
+        "reason": "调整新帖评级规则，复用原新闻事件及推送字段。",
+        "evidence": "CHG-20261125-001 离线 PostgreSQL 和 https://github.com/mumukun/marketNewsFeed/actions/runs/45928748019"
+      }
+    }
+  ]
+}
